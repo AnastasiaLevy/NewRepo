@@ -68,31 +68,16 @@
             <img class="img-responsive displayed" src="../images/line-separator.png" alt="short" />
             <h3>Smth about it</h3>
             <p>
-                The study of human memory stretches back at least 2,000 years to Aristotle’s early attempts to understand memory in his treatise 
-                “On the Soul”. In this, he compared the human mind to a blank slate and theorized that all humans are born free of any knowledge and 
-                are merely the sum of their experiences. Aristotle compared memory to making impressions in wax, sometimes referred to as the "storehouse metaphor", 
-                a theory of memory which held sway for many centuries.
+                Currently, there is not a formal intelligence test offered by CogQuiz. However, several of our tests show medium correlations with intelligence. For example, speed of processing (Part A of Trails Test) and problem solving (Tower of London) demonstrate medium sized correations with intelligence. The performance on the N-back working memory test shows a slightly higher correlation with intelligence. The study of human memory stretches back at least 2,000 years to Aristotle’s early attempts to understand memory in his treatise 
+    
 
             </p>
-            <h3>Memory type 1</h3>
-            <p>
-                Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. 
-                Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. 
-                Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, 
-                sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. 
-                Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. 
-                Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh.
-                Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc!
+            <h3></h3>
+            <p> 
             </p>
-            <h3>Memory type 2</h3>
+            <h3></h3>
             <p>
-                Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. 
-                Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. 
-                Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, 
-                sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. 
-                Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. 
-                Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh.
-                Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc!
+
             </p>
         </div>
     </section>
@@ -101,7 +86,7 @@
         <div class="container">
             <div class="row">
                 <div class="text-center">
-                    <h2>Intelligence Tests:</h2>
+                     <h2>Intelligence Tests:</h2>
                     <img class="img-responsive displayed" src="../images/line-separator.png" alt="about">
                 </div>
                 <ul class="port2">

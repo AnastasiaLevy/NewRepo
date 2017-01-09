@@ -79,6 +79,7 @@ namespace TestSite
             OpenTestPage(str);
         }
 
+
         private void OpenTestPage(string str)
         {
          
@@ -89,12 +90,19 @@ namespace TestSite
 
         protected void showResults_Click(object sender, EventArgs e)
         {
-
+            LinkButton btn = (LinkButton)sender;
+            GridViewRow row = (GridViewRow)btn.NamingContainer;
+            string tId = row.Cells[4].Text;
+            string userId = Membership.GetUser(User.Identity.Name).ProviderUserKey.ToString();
+            string test = row.Cells[3].Text;
+            string url = "ResultsPage.aspx?userId=" + userId + "&tid=" + tId + "&test="+ test;
+            //"ResultsPage.aspx?userId=" + user + "&tid=" + tId + "&test=Trails"
+            Response.Redirect(url);
         }
 
-      
 
-     
-      
+
+
+
     }
 }

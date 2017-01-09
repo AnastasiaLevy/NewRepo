@@ -210,7 +210,7 @@ namespace TestSite
             ppHref.Append("&item_name=" + itemName);
             ppHref.Append("&amount=" + itemAmount.ToString("#.00"));
             ppHref.Append("&currency_code=" + currencyCode);
-            ppHref.Append("&return=" + "http://cogQuiz.com/TrailsWrapper.aspx");//http://localhost:52606//WCSTPage.aspx/go?nachatTest //TrailsWrapper.aspx
+            ppHref.Append("&return=" + "http://localhost:52606/TrailsWrapper.aspx");//http://localhost:52606//WCSTPage.aspx/go?nachatTest //TrailsWrapper.aspx
 
             Response.Redirect(ppHref.ToString(), true);
         }

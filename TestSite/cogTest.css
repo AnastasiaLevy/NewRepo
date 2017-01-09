@@ -1,4 +1,4 @@
-﻿@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700);
+﻿/*@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700);*/
 
 .cb-slideshow, .cb-slideshow:after {
     position: absolute;
@@ -2981,4 +2981,21 @@ form .buttons {
 .finishesTest p {
     font-size:larger;
 
+}
+
+.resultImage img{
+
+    padding-top:80px;
+     max-width: 80%;
+}
+
+.resultGridView {
+    margin-top: 20px;
+    max-width: 80%;
+    text-align:center;
+    margin-left:  10%; 
+}
+.chartTitle {
+    font-size: large;
+    font-weight: bold;
 }

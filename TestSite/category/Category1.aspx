@@ -64,33 +64,24 @@
         <div class="container MemoryBlock">
             <h2 class="middle">Memory</h2>
             <img class="img-responsive displayed" src="../images/line-separator.png" alt="short" />
-            <h3>Smth about it</h3>
+            <h3>Types of Memory</h3>
             <p>
-                The study of human memory stretches back at least 2,000 years to Aristotle’s early attempts to understand memory in his treatise 
-                “On the Soul”. In this, he compared the human mind to a blank slate and theorized that all humans are born free of any knowledge and 
-                are merely the sum of their experiences. Aristotle compared memory to making impressions in wax, sometimes referred to as the "storehouse metaphor", 
-                a theory of memory which held sway for many centuries.
-
+                An early theory proposed by Aristotle of memory conceived of it as a single entity and likened it to an impression made in wax. Current theorist have proposed that memory comes in several different varieties. One distinction is between declarative and nondeclarative memory.  
+                
             </p>
-            <h3>Memory type 1</h3>
+            <h3>Declarative Memory</h3>
             <p>
-                Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. 
-                Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. 
-                Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, 
-                sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. 
-                Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. 
-                Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh.
-                Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc!
+                Declartive memory is the form of memory with which most of us are familiar. A subtype of declarative memory is episodic memory and is characterized by temporal and personal tags. For example, I drove to Albany New York yesterday. A second subtype of declarative memory is semantic memory. This type of memory is reflective of general knowledge (e.g., our knowledge tha Albany is the capital of New York state). 
+                
             </p>
-                <h3>Memory type 2</h3>
+                <h3>Nondeclarative Memory</h3>
             <p>
-                Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. 
-                Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. 
-                Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, 
-                sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. 
-                Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. 
-                Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh.
-                Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc!
+                Nondeclarative memory is a pervasive form of memory that frequently occurs without conscious awareness and tends to occur automatically. Familiar and easily understood examples of this form of memory are driving a car or typing an email. We are all aware that driving and typing can occur effortlessly and without conscious awareness. Less familiar examples are a conversation where people know the cues telling them when it is their turn to speak and more broadley when one can take a variety of cues from the environment to inform them about their safety or preditions about the day's weather.                             
+            </p>
+               <h3>Working Memory and Short-term Memory</h3>
+            <p>Working memory has become one of the hottest topics in memory research. Working memory is a form of memory that is held in conscious awareness and is characterized by active manipulation of information. For example, think about the process of multiplying 13 times 17 in your head. You might think 7 times 3 is 21 and I keep the 1 and carry the 2. I multiple 7 time 1 and add the 2 for a place holder of 91. I then multiple 13 times 1 and place 13 one digit to the left under 91. Next I add the numbers to get 221. I've temporarly held and manipulated information in my conscious awareness. Short-term memory is similar except that I don't manipulate the information. I look up a phone number and repeated it until I've dialed the number and then I drop it from awareness.  
+                . 
+                
             </p>
         </div>
     </section>

@@ -1,5 +1,6 @@
 ﻿window.onload = function () {
     RunDemoTest();
+    //finishIt();
 
     
 };
@@ -189,7 +190,7 @@ function RunDemoTest() {
                         });
                         makeLine(path, paper);
                      
-                        //alert(new Date() - time);
+               
                         var message = getMessage("trailsA")
                         setTimeout(function () { displayInstructions(message); }, 1000);
                        
@@ -234,6 +235,16 @@ function displayInstructions(text) {
     document.getElementById("displayMessage").hidden = false;
     document.getElementById("displayMessage").innerHTML = text;
 
+}
+
+function finishIt() {
+    $('#testArea').empty();
+    $('#testArea').append("<div id = 'finishesTest' class='center finishesTest '><p>The Test Has Finished Running. <br/></p><input type='button' id='finishIt'class='signup-btn' value='View Results'></div>");
+    $('#testArea').on('click', '#finishIt', function () {
+        var user = document.getElementById("userId").value;
+        var tId = document.getElementById("tId").value;
+        window.location.href = "ResultsPage.aspx?userId=" + user + "&tid=" + tId + "&test=1";
+    });
 }
 
 function startTrailTestB() {
@@ -569,7 +580,8 @@ function startTrailA() {
                     paper.remove();
                     paper.clear();
                     timeTrailsA = (new Date() - time);
-                    alert("pass 2:" + timeTrailsA / 1000)
+             
+
                     //passResultsA(finishTime / 1000);
                     var message = getMessage("testB")
                     setTimeout(function () { displayInstructions(message); }, 1000);
@@ -619,7 +631,7 @@ function startTrailA() {
                     paper.clear();
                     timeTrailsA = (new Date() - time);
            
-                    alert("pass 3:" + timeTrailsA / 1000)
+
                     //passResultsA(finishTime /1000);
                     var message = getMessage("testB")
                     setTimeout(function () { displayInstructions(message); }, 1000);
@@ -783,13 +795,14 @@ cleanDiv()
                     });
                  
                     paper.remove;
-                    alert(new Date() - time);
+               
                     makeLine(path, paper);
                     var finishTime = (new Date() - time);
                     passResultsB(finishTime / 1000);
-                    displayInstructions("The Test Has Finished");
+                    finishIt();
+                    //displayInstructions("The Test Has Finished");
                     //goToNextPage();
-                    alert(new Date() - time);
+             
                 }
                 else {
 
@@ -828,8 +841,10 @@ cleanDiv()
                     displayInstructions("The Test Has Finished Running.");
                     //goToNextPage();
                     var finishTime = (new Date() - time)
-                    alert(time / 1000);
+                 
+
                     passResultsB(finishTime / 1000);
+                    finishIt();
                 } else {
                     makeLine(path, paper);
                     selected = cName.id;
@@ -976,8 +991,7 @@ function passResultsB(timeB) {
         data: JSON.stringify(data),
         type: 'POST',
         success: function (resp) {
-            alert(timeTrailsA);
-            //request sent and response received.
+       
          
         }
     });

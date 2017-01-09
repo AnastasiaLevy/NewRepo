@@ -73,10 +73,14 @@
             <img class="img-responsive displayed" src="../images/line-separator.png" alt="short" />
             <h3>Smth about it</h3>
             <p>
-                The study of human memory stretches back at least 2,000 years to Aristotle’s early attempts to understand memory in his treatise 
-                “On the Soul”. In this, he compared the human mind to a blank slate and theorized that all humans are born free of any knowledge and 
-                are merely the sum of their experiences. Aristotle compared memory to making impressions in wax, sometimes referred to as the "storehouse metaphor", 
-                a theory of memory which held sway for many centuries.
+                Speed of processing has been a major explantory varialbe for enhanced cognitive performace during development. 
+                Specifically, there is a exponential increase in the speed of processing from early childhood up through the teenage 
+                years. This speed of processing is associated with enhanced cognitive performance. For example, imagine how the
+                 number of words in a recall test might increase if increased speed of processing allowed for more word rehersal.
+                 Similarly, there are reported medium sized correlations between speed of processing and fluid intelligence.
+                 Currently, the first part of the Trails test can be considered to provide an assessment of speed of processing.
+                 Speed of processing increases from early childhood up into the twenties and begins to show a significant decline 
+                by the fifties.  .
 
             </p>
             <h3>Memory type 1</h3>

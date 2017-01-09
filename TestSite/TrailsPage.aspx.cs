@@ -22,7 +22,8 @@ namespace TestSite
              _userTestId = (int)Session["userTestId"];
              _user = Membership.GetUser(User.Identity.Name);
              _userId = _user.ProviderUserKey.ToString();
-              userId.Text = User.Identity.Name;
+             userId.Text = _userId;
+              tId.Text = _userTestId.ToString();
               DataMethods.UpdateTestStart(_userTestId);
      
 

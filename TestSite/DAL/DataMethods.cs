@@ -48,6 +48,7 @@ namespace TestSite.DAL
 
         }
 
+     
         public static void UpdateRegCheck(string userId)
         {
 
@@ -71,7 +72,7 @@ namespace TestSite.DAL
             }
         }
 
-        public static DataTable GetTestResults(string userId, int tId)
+        public static DataTable GetTestResultsLondon(string userId, int tId)
         {
             DataTable ds = new DataTable();
             SqlConnection conn = new SqlConnection(connectionSring);
@@ -87,11 +88,78 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
-                throw new Exception("Execption getting account. " + ex.Message);
+                throw new Exception("Execption getting London Results. " + ex.Message);
             }
 
             return ds;
         }
+
+        public static DataTable GetTestResultsTrails(string userId, int tId)
+        {
+            DataTable ds = new DataTable();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("GetUserTestResultsTrails", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@userId", userId);
+            cmd.Parameters.AddWithValue("@tId", tId);
+
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                adp.Fill(ds);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption getting Trails Results " + ex.Message);
+            }
+
+            return ds;
+        }
+
+        public static DataTable GetTestResultsNBack(string userId, int tId)
+        {
+            DataTable ds = new DataTable();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("GetUserTestResultsNback", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@userId", userId);
+            cmd.Parameters.AddWithValue("@tId", tId);
+
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                adp.Fill(ds);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption getting Nback results. " + ex.Message);
+            }
+
+            return ds;
+        }
+
+        public static DataTable GetTestResultsCardSort(string userId, int tId)
+        {
+            DataTable ds = new DataTable();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("GetUserTestResultsNback", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@userId", userId);
+            cmd.Parameters.AddWithValue("@tId", tId);
+
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                adp.Fill(ds);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption getting Card Sort results. " + ex.Message);
+            }
+
+            return ds;
+        }
+
 
         public static bool GetRegKey(string userId)
         {

@@ -361,11 +361,10 @@ function updateTestFinished() {
     });
 }
 
-
 $('body').on('click', '#finishIt', function () {
     var user = document.getElementById("userId").value;
     var tId = document.getElementById("tId").value;
-    window.location.href = "ResultsPage.aspx?userId=" + user + "&tid=" + tId+ "&test=London";
+    window.location.href = "ResultsPage.aspx?userId=" + user + "&tid=" + tId+ "&test=2";
 });
 
 

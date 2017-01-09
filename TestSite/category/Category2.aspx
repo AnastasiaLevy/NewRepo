@@ -70,33 +70,19 @@
         <div class="container MemoryBlock">
             <h2 class="middle">Executive Function</h2>
             <img class="img-responsive displayed" src="../images/line-separator.png" alt="short" />
-            <h3>Smth about it</h3>
+            <h3>Executive Function</h3>
             <p>
-                The study of human memory stretches back at least 2,000 years to Aristotle’s early attempts to understand memory in his treatise 
-                “On the Soul”. In this, he compared the human mind to a blank slate and theorized that all humans are born free of any knowledge and 
-                are merely the sum of their experiences. Aristotle compared memory to making impressions in wax, sometimes referred to as the "storehouse metaphor", 
-                a theory of memory which held sway for many centuries.
+               Executive functions are a set of cognitive processes that monitor, guide, and control our behavior.  These processes facilitate our successful navigation of the world. There is no agreed concensus on the number and nature of these components. However, there is general agreement that these processes are involved in working memory (actively holding and manipulating several bits of information in conscious awareness), inhibition (witholding a response), shifting strategies, attention, and problem solving. For example, imagine the processes a drone pilot has to engage in when flying.  A future Amazon drone pilot has a number of instruments he must monitor and attend to (working memory and attention), be able to switch back and forth between activates (shifting), not drop a package at the wrong address (inhibition), and plan a route to the correct address (problem solving).
 
             </p>
-            <h3>Memory type 1</h3>
+            <h3>Tests of Executive Function</h3>
             <p>
-                Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. 
-                Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. 
-                Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, 
-                sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. 
-                Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. 
-                Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh.
-                Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc!
+                The Card Sorting Test available in CogQuiz is thought to measure several different processes of Executive Function. However, it is most prominently associated with an assessment of be able to switch strateges. Secondarly, the Card Sort is associated with working memory where one must hold in awareness the strategy associated with successful performance. The Tower of London is associated primarily with the planning strategy necessary for problem solving. Additionally, working memory will play a role in holding a successful set of moves in conscious awareness when solving a particular problem. The Trails tests has both a speed of processing component and a switching component. The Stroop test has a strong inhibition component. One must overcome the prepotent tendency to read words rather than state their color. 
+              
             </p>
-                <h3>Memory type 2</h3>
+                <h3></h3>
             <p>
-                Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. 
-                Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. 
-                Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, 
-                sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. 
-                Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. 
-                Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh.
-                Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc!
+                
             </p>
         </div>
     </section>
