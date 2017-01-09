@@ -78,6 +78,7 @@
             </asp:GridView>
         </div>
            <div id="interpretation"></div>
+            <asp:Button runat="server" class="signup-btn" ID="btnPrint" Text="Print" OnClientClick="javascript:window.print();"/>
         </section>
  
         <section id="follow-us">

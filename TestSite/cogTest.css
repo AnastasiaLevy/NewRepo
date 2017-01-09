@@ -2999,3 +2999,9 @@ form .buttons {
     font-size: large;
     font-weight: bold;
 }
+
+@media print {
+
+   #follow-us { display: none; }
+
+}

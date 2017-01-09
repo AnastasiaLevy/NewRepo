@@ -71,38 +71,24 @@
         <div class="container MemoryBlock">
             <h2 class="middle">Processing Speed</h2>
             <img class="img-responsive displayed" src="../images/line-separator.png" alt="short" />
-            <h3>Smth about it</h3>
+            <h3>About:</h3>
             <p>
                 Speed of processing has been a major explantory varialbe for enhanced cognitive performace during development. 
                 Specifically, there is a exponential increase in the speed of processing from early childhood up through the teenage 
                 years. This speed of processing is associated with enhanced cognitive performance. For example, imagine how the
-                 number of words in a recall test might increase if increased speed of processing allowed for more word rehersal.
-                 Similarly, there are reported medium sized correlations between speed of processing and fluid intelligence.
-                 Currently, the first part of the Trails test can be considered to provide an assessment of speed of processing.
+                number of words in a recall test might increase if increased speed of processing allowed for more word rehersal.
+            </p>
+            <h3></h3>
+              <p>
                  Speed of processing increases from early childhood up into the twenties and begins to show a significant decline 
-                by the fifties.  .
-
+                by the fifties.
             </p>
-            <h3>Memory type 1</h3>
-            <p>
-                Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. 
-                Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. 
-                Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, 
-                sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. 
-                Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. 
-                Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh.
-                Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc!
+                <h3></h3>
+              <p>
+                Similarly, there are reported medium sized correlations between speed of processing and fluid intelligence.
+                Currently, the first part of the Trails test can be considered to provide an assessment of speed of processing.
             </p>
-                <h3>Memory type 2</h3>
-            <p>
-                Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. 
-                Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. 
-                Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, 
-                sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. 
-                Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. 
-                Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh.
-                Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc!
-            </p>
+          
         </div>
     </section>
   
