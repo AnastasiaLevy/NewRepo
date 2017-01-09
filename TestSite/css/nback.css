@@ -1,0 +1,104 @@
+html,body {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+	-webkit-text-size-adjust: none;
+}
+canvas {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    z-index: 1;
+    position: absolute;
+}
+#test1 {
+    visibility: hidden;
+    background-color: #607334;
+    position: absolute;
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: bold;
+    color: #FFF;
+    border: none;
+    width: 150px;
+    height: 50px;
+}
+#test1:focus {
+    outline: none;
+}
+#test2 {
+    visibility: hidden;
+    background-color: #607334;
+    position: absolute;
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: bold;
+    color: #FFF;
+    border: none;
+    width: 150px;
+    height: 50px;
+}
+#test2:focus {
+    outline: none;
+}
+#test3 {
+    visibility: hidden;
+    background-color: #607334;
+    position: absolute;
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: bold;
+    color: #FFF;
+    border: none;
+    width: 150px;
+    height: 50px;
+}
+#test3:focus {
+    outline: none;
+}
+#backToChoise {
+    visibility: hidden;
+    background-color: #607334;
+    position: absolute;
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: bold;
+    color: #FFF;
+    border: none;
+    width: 250px;
+    height: 50px;
+}
+#backToChoise:focus {
+    outline: none;
+}
+#fullScreenOn {
+    visibility: hidden;
+    background: url("../images/fullscreenon.png") no-repeat bottom;
+    position: absolute;
+    border: none;
+    width: 30px;
+    height: 30px;
+}
+#fullScreenOn:focus {
+    outline: none;
+}
+#fullScreenClose {
+    visibility: hidden;
+    background: url("../images/fullscreenoff.png") no-repeat bottom;
+    position: absolute;
+    border: none;
+    width: 30px;
+    height: 30px;
+}
+#fullScreenClose:focus {
+    outline: none;
+}
+#game {
+    margin: 0px auto; 
+}
+.bdCSS {
+    background-color: #b0c4de;
+}
