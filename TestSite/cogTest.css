@@ -3002,6 +3002,6 @@ form .buttons {
 
 @media print {
 
-   #follow-us { display: none; }
+   #follow-us, #btnPrint { display: none; }
 
 }
