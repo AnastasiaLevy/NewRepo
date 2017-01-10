@@ -12,8 +12,8 @@
 
 </head>
 <body>
-    <div id="testArea">
-        <%--   <input id="Button1" type="button" onclick="RunDemoTest()" value="Start" />--%>
+    <div id="testArea" class="withBorder center">
+        
         <div id="canvas_container" class="center"></div>
         <div id="displayMessage" class="center">
             <p></p>

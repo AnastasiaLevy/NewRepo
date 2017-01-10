@@ -164,7 +164,7 @@ function finishGame(needMoves) {
     passResultsForGame(game, initTTime,over, nm, nmWr, false, false);
     canMove = false;
     displayFinalMessage(needMoves, nm);
-    if (game == 3) {
+    if (game == 13) {
         
         displayTestFinishedMessage();
     }

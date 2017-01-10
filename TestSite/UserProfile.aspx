@@ -269,7 +269,7 @@
                          <div class="col-lg-6">
                             <p class="min"><strong>Finished Tests:</strong> </p>
                             <asp:GridView ID="gvFinishedTests" runat="server" CellSpacing="10"
-                                GridLines="Horizontal" AutoGenerateColumns="False" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="10" ForeColor="Black" Height="235px" Width="498px">
+                                GridLines="Horizontal" AutoGenerateColumns="False" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="10" ForeColor="Black" Height="68px" Width="500px">
                                 <Columns>
                                     <asp:BoundField DataField="Name" HeaderText="Test Name &nbsp;&nbsp;" />
                                     <asp:BoundField DataField="Finished On" DataFormatString="{0:d}" HeaderText="Finished On &nbsp;&nbsp;" />

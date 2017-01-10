@@ -14,6 +14,10 @@ namespace TestSite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+        
+            logOut.Visible = true;
+            login.Visible = false;
+
             string userId = Request.QueryString["userId"].ToString();
             int tId = Convert.ToInt32(Request.QueryString["tId"]);
             string test = Request.QueryString["test"].ToString();

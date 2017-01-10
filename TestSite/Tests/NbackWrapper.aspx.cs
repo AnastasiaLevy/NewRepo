@@ -209,7 +209,7 @@ namespace TestSite.Tests
             ppHref.Append("&item_name=" + itemName);
             ppHref.Append("&amount=" + itemAmount.ToString("#.00"));
             ppHref.Append("&currency_code=" + currencyCode);
-            ppHref.Append("&return=" + "http://cogquiz.com/Tests/NbackWrapper.aspx"); //"http://localhost:52606/Tests/NbackWrapper.aspx"
+            ppHref.Append("&return=" + "http://localhost:52606/Tests/NbackWrapper.aspx"); //"http://localhost:52606/Tests/NbackWrapper.aspx"
 
             Response.Redirect(ppHref.ToString(), true);
         }
