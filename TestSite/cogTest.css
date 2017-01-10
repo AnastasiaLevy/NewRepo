@@ -3005,3 +3005,10 @@ form .buttons {
    #follow-us, #btnPrint { display: none; }
 
 }
+.testDescription p{
+    font-size:large;
+}
+#btnPrint {
+    margin-top: 50px;
+    margin-left: 20px;
+}

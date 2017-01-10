@@ -53,25 +53,21 @@
         <!-- Page Content -->
         <section id="about">
             <div class="container testDescription">
-                <h2>Nback Test</h2>
+                <h2>Nback Test(n-back test)</h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, 
-                nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. 
-                Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. 
-                In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. 
-                Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. 
-                Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. 
+                     The n-back task is a continuous performance task that is
+                     commonly used as an assessment in cognitive neuroscience to 
+                    measure a part of working memory and working memory capacity.
+                     The n-back was introduced by Wayne Kirchner in 1958.
                 </p>
-
-                <p>
-                    Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. 
-                Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. 
-                Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, 
-                sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. 
-                Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. 
-                Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh.
-                Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc!
+                <p>There are two main hypotheses for this weak correlation between the n-back task and other 
+                    working memory assessments. One proposal is that the n-back task assesses different 
+                    "sub-components" of working memory than do other assessments. A more critical explanation is 
+                    that rather than primarily assessing working memory, performance on the n-back task depends on 
+                    "familiarity- and recognition-based discrimination processes," whereas valid assessments of 
+                    working memory demand "active recall." Whatever the cause of the performance differences 
+                    between the n-back and other assessments of working memory, some researchers stress the need 
+                    for further exploration of the construct validity of the n-back task.
                 </p>
             </div>
         </section>
