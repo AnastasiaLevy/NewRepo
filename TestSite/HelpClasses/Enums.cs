@@ -15,13 +15,10 @@ namespace TestSite.HelpClasses
             public const string TowerOfLondon = "2";
             public const string WisconsinCardSort = "3";
             public const string Nback = "4";
-
-
-
             // public TestId();
         }
 
-        public int GetAgeGroup(int age)
+        public static int GetAgeGroup(int age)
         {
             if (age >= 10 && age <= 14)
             {

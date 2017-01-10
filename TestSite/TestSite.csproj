@@ -330,7 +330,12 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="LondonResults.cs" />
+    <Compile Include="Resources\Text.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Text.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ResultsObjs\LondonResults.cs" />
     <Compile Include="LondonWrapper.aspx.cs">
       <DependentUpon>LondonWrapper.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -360,6 +365,7 @@
     <Compile Include="Registration.aspx.designer.cs">
       <DependentUpon>Registration.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ResultsObjs\TrailsResults.cs" />
     <Compile Include="ResultsPage.aspx.cs">
       <DependentUpon>ResultsPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -424,7 +430,12 @@
       <DependentUpon>WCSTWrapper.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Text.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Text.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

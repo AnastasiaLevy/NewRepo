@@ -22,6 +22,7 @@ namespace TestSite
                 user.Text = User.Identity.Name;
                 email.Text = Membership.GetUser().Email;
                 age.Text = GetUserAge().ToString();
+                ageValue = age.Text;
                 //bday.Text = GetUserBithdate();
                 LoadPaidTests();
                 LoadFinishedTests();

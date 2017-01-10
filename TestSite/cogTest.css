@@ -3026,4 +3026,8 @@ form .buttons {
     color:red;
     border-style:none;
 }
-
+#interpretation {
+    font-size:large;
+    width:80%;
+    margin-left:10%;
+}

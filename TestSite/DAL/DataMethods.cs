@@ -48,6 +48,48 @@ namespace TestSite.DAL
 
         }
 
+        internal static DataTable GetLondonUserResultsTotal(string userId, int tId, int ageGroup)
+        {
+            DataTable ds = new DataTable();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("GetLondonUserResultsTotal", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@ageGroup", ageGroup);
+
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                adp.Fill(ds);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption getting London Total Results. " + ex.Message);
+            }
+
+            return ds;
+        }
+
+        internal static DataTable GetTestNormsTrails(int ageGroup)
+        {
+            DataTable ds = new DataTable();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("GetUserNormsTrails", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@ageGroup", ageGroup);
+
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                adp.Fill(ds);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption getting Trails Norm Results. " + ex.Message);
+            }
+
+            return ds;
+        }
+
         internal static int GetUserAge(string userId)
         {
             object age;

@@ -78,9 +78,15 @@
                 <SortedDescendingHeaderStyle BackColor="#15524A" />
             </asp:GridView>
         </div>
-           <div id="interpretation"></div>
+            <div id="interpretation">
+                <p>
+                    <asp:Literal ID="textStr" runat="server"></asp:Literal>
+                </p>
+            </div>
+           
             <asp:Button runat="server" class="signup-btn" ID="btnPrint" Text="Print" OnClientClick="javascript:window.print();"/>
         </section>
+        
  
         <section id="follow-us">
             <div class="container">

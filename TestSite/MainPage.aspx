@@ -533,7 +533,7 @@
                         <li><a href="https://www.linkedin.com/in/hasker-davis-8849a914"><i class="fa fa-linkedin social-icons"></i></a></li>
                         <li><a href="mailto:support@cogquiz.com" target="_top"><i class="fa fa-envelope social-icons"></i></a></li>
                     </ul>
-                    +1(213)400 4089
+                   <p>+1(719)888 9121</p> 
                 </div>
             </div>
         </section>
@@ -705,10 +705,7 @@
                        
                     }
                     $("#wrong").text("");
-                    eHasErrors = false;
-                    
-                    
-                    
+                    eHasErrors = false; 
                 }
             });
 
