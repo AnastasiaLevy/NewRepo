@@ -69,6 +69,15 @@
                     between the n-back and other assessments of working memory, some researchers stress the need 
                     for further exploration of the construct validity of the n-back task.
                 </p>
+                      <div class="specifications">
+            <h3>Specifications:</h3>
+            <p>
+                This test will take about 20 minutes to complete. 
+            </p>
+            <p>
+                Recommended minimum screen resolution is 1000 x 700. 
+            </p>
+        </div>
             </div>
         </section>
         <section>

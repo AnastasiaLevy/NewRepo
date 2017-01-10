@@ -945,6 +945,7 @@ footer {
     }
 }
 
+
 .blog-sidebar h4:hover {
     color: #99ddff;
     -webkit-transition: all .3s;
@@ -3015,6 +3016,14 @@ form .buttons {
     margin-top: 50px;
     margin-left: 20px;
 }
+.specifications {
+    border-style: outset;
+    border-color: green;
+    padding: 20px;
+}
 
-
+.red {
+    color:red;
+    border-style:none;
+}
 

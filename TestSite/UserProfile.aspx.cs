@@ -11,6 +11,7 @@ namespace TestSite
 {
     public partial class UserProfile : System.Web.UI.Page
     {
+        public string ageValue;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -20,6 +21,7 @@ namespace TestSite
                 Logout.Visible = true;
                 user.Text = User.Identity.Name;
                 email.Text = Membership.GetUser().Email;
+                age.Text = GetUserAge().ToString();
                 //bday.Text = GetUserBithdate();
                 LoadPaidTests();
                 LoadFinishedTests();
@@ -56,10 +58,11 @@ namespace TestSite
 
         }
 
-        //private string GetUserBithdate()
-        //{
-        //    throw new NotImplementedException();
-        //}
+        private int GetUserAge()
+        {
+            int age = DAL.DataMethods.GetUserAge(Membership.GetUser(User.Identity.Name).ProviderUserKey.ToString());
+            return age;
+        }
 
 
 
@@ -95,8 +98,8 @@ namespace TestSite
             string tId = row.Cells[4].Text;
             string userId = Membership.GetUser(User.Identity.Name).ProviderUserKey.ToString();
             string test = row.Cells[3].Text;
-            string url = "ResultsPage.aspx?userId=" + userId + "&tid=" + tId + "&test="+ test;
-            //"ResultsPage.aspx?userId=" + user + "&tid=" + tId + "&test=Trails"
+            string url = "ResultsPage.aspx?userId=" + userId + "&tid=" + tId + "&test="+ test + "&age=" + ageValue;
+          
             Response.Redirect(url);
         }
 

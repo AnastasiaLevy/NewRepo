@@ -251,7 +251,14 @@ namespace TestSite
             bool isFilled = false;
 
             DateTime birthDate;
-
+            if (cbAgree.Checked != true)
+            {
+                error.Text = "Please check this to continue";
+            }
+            else
+            {
+                error.Text = "";
+            }
 
             userName = User.Identity.Name;
             birthDate = (txtBDay.Text != null && txtBDay.Text != "") ? DateTime.ParseExact(txtBDay.Text, "MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture) : DateTime.Today;
@@ -274,7 +281,7 @@ namespace TestSite
 
             int id = 0;
             id = DataMethods.SaveRegistration(firstName, lastName, education, medications, gender, hand, brainActivity, ethnisity, language, headInjury, selfEsteem, exercise, userName, selfHealth, birthDate, isOnMeds, isInj, isFilled, _userId, income);
-            if (id > 0)
+            if (id > 0 && cbAgree.Checked == true)
             {
                 DataMethods.UpdateRegCheck(_userId);
                 PopulateRegistration();

@@ -48,7 +48,33 @@ namespace TestSite.DAL
 
         }
 
-     
+        internal static int GetUserAge(string userId)
+        {
+            object age;
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("GetUserAge", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("userId", userId);
+
+            try
+            {
+                conn.Open();
+                age = cmd.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption checking Reg account. " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+
+            return Int32.Parse(age.ToString());
+        }
+
         public static void UpdateRegCheck(string userId)
         {
 
@@ -177,7 +203,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
-                throw new Exception("Execption saving account. " + ex.Message);
+                throw new Exception("Execption checking Reg account. " + ex.Message);
             }
             finally
             {

@@ -62,22 +62,33 @@
     <!-- Page Content -->
     <section id="about">
         <div class="container testDescription">
-            <h2>Card Sort Test</h2>
-            <p>
-               Since 1948, the test has been used by neuropsychologists and clinical psychologists in patients with acquired brain 
+        <h2>Card Sort Test</h2>
+        <p>
+            Since 1948, the test has been used by neuropsychologists and clinical psychologists in patients with acquired brain 
                 injury, neurodegenerative disease, or mental illness such as schizophrenia. It is one of several psychological 
                 tests which can be administered to patients to measure frontal lobe dysfunction. When administered, the Card Sort
                  allows the clinician speculate to the following "frontal" lobe functions: strategic planning, organized searching, 
                 utilizing environmental feedback to shift cognitive sets, directing behavior toward achieving a goal, 
                 and modulating impulsive responding. The test can be administered to those from 6.5 years to 89 years of age.
                  The Card Sort Test relies upon a number of cognitive functions including attention, working memory, and visual processing. 
-            </p>
+           
+        </p>
 
-            <p>
-              This  test may be used to help measure an individual's competence in abstract reasoning, and the ability to change problem-solving strategies when needed. In this test, a number of cards are presented to the participants. 
+        <p>
+            This  test may be used to help measure an individual's competence in abstract reasoning, and the ability to change problem-solving strategies when needed. In this test, a number of cards are presented to the participants. 
                 The figures on the cards differ with respect to color, quantity, and shape.
+           
+        </p>
+        <div class="specifications">
+            <h3>Specifications:</h3>
+            <p>
+                This test will take about 20 minutes to complete. 
+            </p>
+            <p>
+                Recommended minimum screen resolution is 1000 x 700. 
             </p>
         </div>
+    </div>
     </section>
     <section>
         

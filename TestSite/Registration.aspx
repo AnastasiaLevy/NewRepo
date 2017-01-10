@@ -71,16 +71,27 @@
                  <p>Please fill out the form to ensure the most accurate scoring results for the test.</p>
                  <p>Required fields are marked with *</p>
              </div>
+ 
+              <div class="box">
+                 <h3>Disclaimer</h3>
+                 <hr />
+                 <p>To utilize the assessments on this site you need to read and agree to the conditions for taking any of the assessments provided by CogQuiz.com. The tests on this site are considered and provided solely as experimental assessments. They are not clinically or medically diagnostic or for use in treating or preventing clinical of medical conditions. If you have questions or concerns about the results or our reporting of your results on any assessment taken on this site, you may want to print your results and discuss them with a licensed medical of psychological professional. CogQuiz.com, CogQuiz, LLC, or the owners of this company and/or website are not responsible for any errors or misinterpretation of the results by users of this website and assessments. By checking accept below you are acknowledging that you have read and understood the conditions for taking any assessment provided on this website.</p>
+                 <asp:CheckBox ID="cbAgree" runat="server" /> I agree
+                 <asp:CheckBox ID="cbDoNotAgree" runat="server" /> I do not agree
+                 <p>
+                  <asp:Label ID="error" CssClass="red" runat="server" Text=""></asp:Label></p>
+             </div>
+
          <%--   <div class="row">--%>
               <%--  <div class="col-md-6 col-md-offset-3">--%>
                    <div class ="box"> 
                         <div id="name" class="col-xs-6 col-md-6 nopadding">
                             <asp:Label class="labelForm" ID="lbFistName" runat="server" Text="*Fist Name:" ></asp:Label>
-                            <input type="text" id="txtFirstName" value="" class="form-control input-lg" runat="server" placeholder="First Name"/>
+                            <input type="text" id="txtFirstName" value="" class="form-control input-lg" runat="server" placeholder="First Name" required/>
                         </div>
                         <div class="col-xs-6 col-md-6">
                             <asp:Label class="labelForm" ID="lbLastName" runat="server" Text="*Last Name:"></asp:Label>
-                            <input type="text" id="txtLastName" value="" class="form-control input-lg" runat="server" placeholder="Last Name" required ="true"/>
+                            <input type="text" id="txtLastName" value="" class="form-control input-lg" runat="server" placeholder="Last Name" required/>
                         </div>
                   
                   
@@ -362,12 +373,21 @@
 
     })
 
+
     $('#cbMale').click(function () {
         $('#cbFmale').prop('checked', false);
     })
 
     $('#cbFmale').click(function () {
         $('#cbMale').prop('checked', false);
+    })
+
+    $('#cbAgree').click(function () {
+        $('#cbDoNotAgree').prop('checked', false);
+    })
+
+    $('#cbDoNotAgree').click(function () {
+        $('#cbAgree').prop('checked', false);
     })
 
 

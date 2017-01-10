@@ -82,6 +82,10 @@
                                 Email:
                                 <asp:Label ID="email" runat="server" class="profile" Text=""></asp:Label>
                             </p>
+                             <p>
+                                Age:
+                                <asp:Label ID="age" runat="server" class="profile" Text=""></asp:Label>
+                            </p>
                              <p><a class="profile" href="Registration.aspx"><strong><u>Profile Form</u></strong></a></p>
                         </div>
                         <div class="col-lg-4">

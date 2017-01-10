@@ -72,6 +72,15 @@
                     cognitive ability, especially as it may relate to brain damage.
                      A certain degree of controversy surrounds the test's construct validity.
                 </p>
+                      <div class="specifications">
+            <h3>Specifications:</h3>
+            <p>
+                This test will take abiut 20 minutes to complete. 
+            </p>
+            <p>
+                Recommended minimum screen resolution is 1000 x 700. 
+            </p>
+        </div>
             </div>
         </section>
         <section>

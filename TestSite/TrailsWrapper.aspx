@@ -59,22 +59,33 @@
     <!-- Page Content -->
     <section id="about">
         <div class="container testDescription">
-            <h2>Make Trails Test</h2>
-            <p>
-              The test can provide information about visual search speed, scanning, speed of processing, mental flexibility, 
+        <h2>Make Trails Test</h2>
+        <p>
+            The test can provide information about visual search speed, scanning, speed of processing, mental flexibility, 
                 as well as executive functioning.
                 It is sensitive to detecting cognitive impairment associated with dementia, for example, Alzheimer's disease.
-            </p>
+           
+        </p>
 
-            <p>
-           The test was used in 1944 for assessing general intelligence, and was part of the Army Individual Test of General Ability.
+        <p>
+            The test was used in 1944 for assessing general intelligence, and was part of the Army Individual Test of General Ability.
                  In the 1950s researchers began using the test to assess cognitive dysfunction stemming from brain damage,
                  and it has since been incorporated into the Halstead-Reitan battery. The Trail Making Test is now commonly 
                 used as a diagnostic tool in clinical settings. Poor performance
                  is known to be associated with many types of brain impairment, in particular frontal lobe lesion.    
 
+           
+        </p>
+        <div class="specifications">
+            <h3>Specifications:</h3>
+            <p>
+                This test will take 3 to 5 minutes to complete. 
+            </p>
+            <p>
+                Recommended minimum screen resolution is 1000 x 700. 
             </p>
         </div>
+    </div>
     </section>
     <section>
         
