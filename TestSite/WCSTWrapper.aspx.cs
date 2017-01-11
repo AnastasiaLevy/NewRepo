@@ -42,7 +42,7 @@ namespace TestSite
                 if (!String.IsNullOrEmpty(Request.QueryString["st"]) && Request.QueryString["st"] == "Completed")
                 {
                     string error = "";
-                    if (UpdateTestPaid(_userId))
+                    if (UpdateTestPaid(_userId) && hasPaidTest(_userId))
                     {
                         InitiateTest();
                     }

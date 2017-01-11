@@ -21,10 +21,11 @@ namespace TestSite
             login.Visible = false;
 
             string userId = Request.QueryString["userId"].ToString();
+            int age = DataMethods.GetUserAge(userId);
             int tId = Convert.ToInt32(Request.QueryString["tId"]);
             string test = Request.QueryString["test"].ToString();
             string userName = User.Identity.Name;
-            int age = Convert.ToInt32(Request.QueryString["age"]);
+            //int age = Convert.ToInt32(Request.QueryString["age"]);
             int ageGroup = Enums.GetAgeGroup(age);
             DataTable dt;
        

@@ -42,7 +42,7 @@ namespace TestSite
                 if (!String.IsNullOrEmpty(Request.QueryString["st"]) && Request.QueryString["st"] == "Completed")
                 {
                     string error = "";
-                    if (UpdateTestPaid(_userId))
+                    if (UpdateTestPaid(_userId) && hasPaidTest(_userId))
                     {
 
                         InitiateTest();
@@ -209,7 +209,7 @@ namespace TestSite
             ppHref.Append("&item_name=" + itemName);
             ppHref.Append("&amount=" + itemAmount.ToString("#.00"));
             ppHref.Append("&currency_code=" + currencyCode);
-            ppHref.Append("&return=" + "http://localhost:52606/LondonWrapper.aspx");//"http://cogquiz.com/LondonWrapper.aspx");
+            ppHref.Append("&return=" + "http://cogQuiz.com/LondonWrapper.aspx");//"http://cogquiz.com/LondonWrapper.aspx");
 
             Response.Redirect(ppHref.ToString(), true);
         }

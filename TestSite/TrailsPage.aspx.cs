@@ -23,8 +23,8 @@ namespace TestSite
              _user = Membership.GetUser(User.Identity.Name);
              _userId = _user.ProviderUserKey.ToString();
              userId.Text = _userId;
-              tId.Text = _userTestId.ToString();
-              DataMethods.UpdateTestStart(_userTestId);
+             tId.Text = _userTestId.ToString();
+             DataMethods.UpdateTestStart(_userTestId);
      
 
         }
