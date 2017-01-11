@@ -205,6 +205,11 @@ footer a {
 }
 footer a:hover, footer a:focus { color: #fff; border-bottom: 1px dotted #fff; }
 
+.errorMessage {
+    color: red;
+    font-size:large;
+    font-weight:bold;
+}
 
 /***** Media queries *****/
 
