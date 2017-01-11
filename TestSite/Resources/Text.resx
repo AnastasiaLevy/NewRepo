@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Disclaimer" xml:space="preserve">
+    <value>To utilize the assessments on this site you need to read and agree to the conditions for taking any of the assessments provided by CogQuiz.com. The tests on this site are considered and provided solely as experimental assessments. They are not clinically or medically diagnostic or for use in treating or preventing clinical of medical conditions. If you have questions or concerns about the results or our reporting of your results on any assessment taken on this site, you may want to print your results and discuss them with a licensed medical of psychological professional. CogQuiz.com, CogQuiz, LLC, or the owners of this company and/or website are not responsible for any errors or misinterpretation of the results by users of this website and assessments. By checking accept below you are acknowledging that you have read and understood the conditions for taking any assessment provided on this website.</value>
+  </data>
   <data name="ResultBelowStdDev" xml:space="preserve">
     <value>Lower     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</value>
   </data>

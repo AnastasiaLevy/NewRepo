@@ -21,7 +21,9 @@ namespace TestSite
                 Logout.Visible = true;
                 user.Text = User.Identity.Name;
                 email.Text = Membership.GetUser().Email;
-                age.Text = GetUserAge().ToString();
+
+                int uAge = GetUserAge();
+                age.Text = uAge > 0 ? uAge.ToString(): "Undefined";
                 ageValue = age.Text;
                 //bday.Text = GetUserBithdate();
                 LoadPaidTests();
@@ -61,8 +63,7 @@ namespace TestSite
 
         private int GetUserAge()
         {
-            int age = DAL.DataMethods.GetUserAge(Membership.GetUser(User.Identity.Name).ProviderUserKey.ToString());
-            return age;
+            return DAL.DataMethods.GetUserAge(Membership.GetUser(User.Identity.Name).ProviderUserKey.ToString());
         }
 
 

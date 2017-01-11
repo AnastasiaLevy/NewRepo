@@ -49,6 +49,8 @@ namespace TestSite
         private void PopulateRegistration()
         {
             DataTable data = DataMethods.GetRegistarionDataByUser(_userId);
+            cbAgree.Checked =Convert.ToBoolean(data.Rows[0]["disclamerField"]);
+            cbAgree.Enabled = !cbAgree.Checked;
             txtFirstName.Value = data.Rows[0]["firstName"].ToString();
             txtLastName.Value = data.Rows[0]["lastName"].ToString();
             DateTime date = (DateTime)data.Rows[0]["birthDate"];
@@ -253,42 +255,45 @@ namespace TestSite
             DateTime birthDate;
             if (cbAgree.Checked != true)
             {
-                error.Text = "Please check this to continue";
+                error.Text = "*Please check this to continue";
             }
             else
             {
                 error.Text = "";
-            }
 
-            userName = User.Identity.Name;
-            birthDate = (txtBDay.Text != null && txtBDay.Text != "") ? DateTime.ParseExact(txtBDay.Text, "MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture) : DateTime.Today;
 
-            exercise = GetExercise();
-            firstName = txtFirstName.Value;
-            lastName = txtLastName.Value;
-            education = ddlEducation.SelectedValue;
-            medications = GetMedications(ref isOnMeds);
+                userName = User.Identity.Name;
+                birthDate = (txtBDay.Text != null && txtBDay.Text != "") ? DateTime.ParseExact(txtBDay.Text, "MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture) : DateTime.Today;
 
-            hand = ddlHand.SelectedValue;
-            brainActivity = GetBrainActValue();
-            gender = GetGender();
-            ethnisity = ddlEthnicity.SelectedValue;
-            language = GetLanguage();
-            selfEsteem = GetSelfEsteem();
-            selfHealth = GetSelfHealth();
-            headInjury = GetHeadInjury(ref isInj);
-            income = ddlIncome.SelectedValue;
+                exercise = GetExercise();
+                firstName = txtFirstName.Value;
+                lastName = txtLastName.Value;
+                education = ddlEducation.SelectedValue;
+                medications = GetMedications(ref isOnMeds);
 
-            int id = 0;
-            id = DataMethods.SaveRegistration(firstName, lastName, education, medications, gender, hand, brainActivity, ethnisity, language, headInjury, selfEsteem, exercise, userName, selfHealth, birthDate, isOnMeds, isInj, isFilled, _userId, income);
-            if (id > 0 && cbAgree.Checked == true)
-            {
-                DataMethods.UpdateRegCheck(_userId);
-                PopulateRegistration();
-            }
-            if (_redirectTo != null)
-            {
-                Response.Redirect(_redirectTo);
+                hand = ddlHand.SelectedValue;
+                brainActivity = GetBrainActValue();
+                gender = GetGender();
+                ethnisity = ddlEthnicity.SelectedValue;
+                language = GetLanguage();
+                selfEsteem = GetSelfEsteem();
+                selfHealth = GetSelfHealth();
+                headInjury = GetHeadInjury(ref isInj);
+                income = ddlIncome.SelectedValue;
+
+                int id = 0;
+                id = DataMethods.SaveRegistration(firstName, lastName, education, medications, gender, hand,
+                    brainActivity, ethnisity, language, headInjury, selfEsteem, exercise, userName, selfHealth,
+                    birthDate, isOnMeds, isInj, isFilled, _userId, income, cbAgree.Checked);
+                if (id > 0)
+                {
+                    DataMethods.UpdateRegCheck(_userId);
+                    PopulateRegistration();
+                }
+                if (_redirectTo != null)
+                {
+                    Response.Redirect(_redirectTo);
+                }
             }
         }
 

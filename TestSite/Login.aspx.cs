@@ -13,11 +13,11 @@ namespace TestSite
         protected string _back;
         protected void Page_Load(object sender, EventArgs e)
         {
-         
+
         }
         protected void clcLogin(object sender, EventArgs e)
         {
-      
+
             var provider = Membership.Provider;
             string name = provider.ApplicationName;
 
@@ -29,7 +29,7 @@ namespace TestSite
                 Session["Username"] = userNameLg.Value;
                 Response.Redirect("~/UserProfile.aspx");
                 wrongLogin.Text = "";
-             
+
 
             }
             else
@@ -42,20 +42,21 @@ namespace TestSite
 
         protected void Register_Single(object sender, EventArgs e)
         {
-            try
-            {
-                MembershipUser user = Membership.CreateUser(singleName.Value, singlePw.Text, single_email.Value);
-            }
-            catch(Exception ex)
-            {
-                wrong.Text = "This username is already taken.";
-            }
-            if (Membership.ValidateUser(singleName.Value, singlePw.Text))
-            {
 
-                FormsAuthentication.SetAuthCookie(singleName.Value, true);
-                Session["Username"] = singleName.Value;
-                Response.Redirect("~/UserProfile.aspx");
+            if (Membership.ValidateUser(singleName.Value, singlePw.Text))
+                wrong.Text = "This username is already taken.";
+            else
+            {
+                MembershipUser user = Membership.CreateUser(singleName.Value, singlePw.Text, single_email.Value);//if (Membership.ValidateUser(singleName.Value, singlePw.Text))
+
+                if (user != null)
+                {
+
+                    FormsAuthentication.SetAuthCookie(singleName.Value, true);
+                    Session["Username"] = singleName.Value;
+                    Response.Redirect("~/UserProfile.aspx");
+                }
+
             }
         }
     }

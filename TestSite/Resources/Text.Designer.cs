@@ -61,6 +61,15 @@ namespace TestSite.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to To utilize the assessments on this site you need to read and agree to the conditions for taking any of the assessments provided by CogQuiz.com. The tests on this site are considered and provided solely as experimental assessments. They are not clinically or medically diagnostic or for use in treating or preventing clinical of medical conditions. If you have questions or concerns about the results or our reporting of your results on any assessment taken on this site, you may want to print your results and di [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Disclaimer {
+            get {
+                return ResourceManager.GetString("Disclaimer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Lower     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         /// </summary>
         internal static string ResultBelowStdDev {

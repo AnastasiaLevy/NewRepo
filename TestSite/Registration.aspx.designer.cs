@@ -31,15 +31,6 @@ namespace TestSite {
         protected global::System.Web.UI.WebControls.CheckBox cbAgree;
         
         /// <summary>
-        /// cbDoNotAgree control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cbDoNotAgree;
-        
-        /// <summary>
         /// error control.
         /// </summary>
         /// <remarks>
@@ -67,6 +58,15 @@ namespace TestSite {
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtFirstName;
         
         /// <summary>
+        /// firstNameValid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator firstNameValid;
+        
+        /// <summary>
         /// lbLastName control.
         /// </summary>
         /// <remarks>
@@ -85,6 +85,15 @@ namespace TestSite {
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtLastName;
         
         /// <summary>
+        /// lastNameValid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator lastNameValid;
+        
+        /// <summary>
         /// lbBday control.
         /// </summary>
         /// <remarks>
@@ -101,6 +110,15 @@ namespace TestSite {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtBDay;
+        
+        /// <summary>
+        /// RequiredFieldValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
         
         /// <summary>
         /// lbEducation control.

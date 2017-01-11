@@ -251,9 +251,7 @@ namespace TestSite.DAL
             {
                 conn.Close();
             }
-
-            bool isUserReg = (isReg == null || isReg.ToString() == "0") ? false : true;
-            return isUserReg;
+            return Convert.ToBoolean(isReg);
         }
 
 
@@ -277,7 +275,8 @@ namespace TestSite.DAL
                      bool isInj,
                      bool isFilled,
                      string userId,
-                     string income
+                     string income,
+                     bool disclamerField
                     )
         {
             int id;
@@ -304,6 +303,7 @@ namespace TestSite.DAL
             cmd.Parameters.AddWithValue("profileFilled", isFilled == true ? "1" : "0");
             cmd.Parameters.AddWithValue("userId", userId);
             cmd.Parameters.AddWithValue("income", income);
+            cmd.Parameters.AddWithValue("disclamerField", disclamerField);
 
             try
             {
