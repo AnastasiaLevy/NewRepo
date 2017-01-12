@@ -210,9 +210,8 @@ namespace TestSite
             ppHref.Append("&item_name=" + itemName);
             ppHref.Append("&amount=" + itemAmount.ToString("#.00"));
             ppHref.Append("&currency_code=" + currencyCode);
-            ppHref.Append("&return=" + "http://localhost:52606/TrailsWrapper.aspx"); //"http://cogQuiz.com/TrailsWrapper.aspx");
+            ppHref.Append("&return=" + "http://cogQuiz.com/TrailsWrapper.aspx"); //"http://localhost:52606/TrailsWrapper.aspx");
 
-            string t = System.Net.NetworkInformation.IPGlobalProperties.GetIPGlobalProperties().DomainName;
             Response.Redirect(ppHref.ToString(), true);
         }
 

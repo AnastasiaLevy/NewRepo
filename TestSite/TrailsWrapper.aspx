@@ -61,21 +61,34 @@
         <div class="container testDescription">
         <h2>Make Trails Test</h2>
         <p>
-            The test can provide information about visual search speed, scanning, speed of processing, mental flexibility, 
-                as well as executive functioning.
-                It is sensitive to detecting cognitive impairment associated with dementia, for example, Alzheimer's disease.
+            The Trail Making Test (TMT), originally devised in 1938, was known as the “Partington’s 
+            Pathways Test,” or “Divided Attention Test” (Partington & Leiter, 1949). It was initially part of 
+            a battery of tests (Army Individual Test Battery) used to assess “…a variety of intellectual functions 
+            different from those measured by the Wechsler-Bellevue Intelligence Scale.” (Spreen & Strauss, 1998).
+            The test is not typically part of a test battery but administered single in its original paper and pencil
+            form. The TMT provides a measure of attention, visual scanning, speed of eye-hand coordination (Part A),
+            and mental flexibility (Strauss, Sherman, & Spreen, 2007). In addition, Part B assesses the ability to 
+            alternate between stimulus sets and as such is a measure of “executive function” (Mitrushina, et al., 1999).
+            Performance on the TMT has been obtained for normal and various clinical populations such as Attention Deficit
+            Disorder ADD), Attention Deficit Hyperactivity Disorder, Alzheimer’s disease, Post Traumatic Stress
+            Disorder to name a few.
            
         </p>
 
         <p>
-            The test was used in 1944 for assessing general intelligence, and was part of the Army Individual Test of General Ability.
-                 In the 1950s researchers began using the test to assess cognitive dysfunction stemming from brain damage,
-                 and it has since been incorporated into the Halstead-Reitan battery. The Trail Making Test is now commonly 
-                used as a diagnostic tool in clinical settings. Poor performance
-                 is known to be associated with many types of brain impairment, in particular frontal lobe lesion.    
-
-           
+            The TMT and its several variants require the Participant to, in the correct order, link together an array 
+            of objects that are labeled in a way indicating a specific order (e.g., numerical, alphabetical). Part A of 
+            the TMT contains an array of 25 circles containing the numbers 1 to 25. By clicking the numbered bubbles, 
+            the test-taker creates a line from the circle containing the number 1 to the circle containing the number 
+            2 and then to the circle containing the number 3 and so on until he/she reaches the circle containing the 
+            number 25. In Part B the test-taker is required to alternate between numbers and letters (e.g., the sequence 
+            of 1, A, 2, B, 3, C,…..).    
         </p>
+    <p>
+        CogQuiz’s provides norms for children to older adults (age range 5 to 89 and an N = 708). The descriptive statistics 
+        are broken out in five year cohorts for the child to young adult (5 to 19 years of age) and ten year 
+        cohorts for the young adult to elderly.   
+    </p>
         <div class="specifications">
             <h3>Specifications:</h3>
             <p>

@@ -142,7 +142,6 @@ function RunDemoTest() {
                         });
                         makeLine(path, paper);
                        
-                        //goToNextPage();
                         var message = getMessage("trailsA")
                         setTimeout(function () { displayInstructions(message); }, 1000);
                         $('#displayMessage').click(function () {
@@ -198,9 +197,6 @@ function RunDemoTest() {
                             startTrailA();
 
                         });
-
-                        //passResults();
-
                     }
                     else
                     {
@@ -249,14 +245,8 @@ function finishIt() {
 
 function startTrailTestB() {
     var time = getTime();
-    //if (typeof paper == 'object')
-    //    paper.remove();
     document.getElementById("displayMessage").hidden = true;
     cleanDiv();
-    //var iDiv = document.createElement('div');
-  
-
-
     var paper = new Raphael(document.getElementById('canvas_container'), 1000, 700);
 
     var selected = "";
@@ -367,7 +357,6 @@ function startTrailTestB() {
                     });
                  
                     makeLine(path, paper);
-                    //alert(new Date() - time);
                     var time = (new Date() - time)
                     var message = getMessage("trailsB")
                     setTimeout(function () { displayInstructions(message); }, 1000);
@@ -409,12 +398,7 @@ function startTrailTestB() {
                         opacity: 0.9,
                     });
                     makeLine(path, paper);
-                    //paper.clear();
-                    //paper.remove();
-                    
-                    //timeTrailsA = (new Date() - time)
-                    //alert("pass1:" + finishTime / 1000)
-                   // passResultsA(finishTime / 1000);
+              
                     var message = getMessage("trailsB")
                     setTimeout(function () { displayInstructions(message); }, 1000);
                     $('#displayMessage').click(function () {
@@ -522,7 +506,6 @@ function startTrailA() {
                     selectedY = 338;
                 }
                 var pathNew = "M " + selectedX + " " + selectedY + " L " + c1.attrs.cx + " " + c1.attrs.cy;
-
                 blinkLine(pathNew, paper);
 
             }
@@ -567,29 +550,19 @@ function startTrailA() {
         cName.node.onclick = function () {
             var right = id - 1;
             if (right == selected) {
-
                 if (last) {
-
                     cName.glow({
                         color: "#D3D3D3",
                         width: 20,
                         opacity: 0.9,
                     });
-                    //passResults();
                     makeLine(path, paper);
-                    paper.remove();
-                    paper.clear();
                     timeTrailsA = (new Date() - time);
-             
-
-                    //passResultsA(finishTime / 1000);
                     var message = getMessage("testB")
-                    setTimeout(function () { displayInstructions(message); }, 1000);
+                    setTimeout(function () { displayInstructions(message); }, 2000);
                     $('#displayMessage').click(function () {
                         startTrailTestB();
                     });
-
-
                 }
                 else {
 
@@ -598,7 +571,6 @@ function startTrailA() {
                     selectedY = cName.attrs.cy
                     makeLine(path, paper);
                 }
-
             }
             else {
                 blink(cName);
@@ -610,7 +582,6 @@ function startTrailA() {
                 var pathNew = "M " + selectedX + " " + selectedY + " L " + cName.attrs.cx + " " + cName.attrs.cy;
 
                 blinkLine(pathNew, paper);
-
             }
         }
 
@@ -627,19 +598,13 @@ function startTrailA() {
                     });
                     makeLine(path, paper);
             
-                    paper.remove();
-                    paper.clear();
                     timeTrailsA = (new Date() - time);
-           
 
-                    //passResultsA(finishTime /1000);
                     var message = getMessage("testB")
                     setTimeout(function () { displayInstructions(message); }, 1000);
                     $('#displayMessage').click(function () {
                         startTrailTestB();
                     });
-
-
 
                 } else {
                     makeLine(path, paper);
@@ -662,14 +627,13 @@ function startTrailA() {
             }
         }
     }
-
 };
 
 function startTrailB() {
     var time = getTime();
 
     document.getElementById("displayMessage").hidden = true;
-cleanDiv()
+    cleanDiv()
 
     var paper = new Raphael(document.getElementById('canvas_container'), 1000, 700);
     var selected = "";
@@ -839,10 +803,7 @@ cleanDiv()
                     });
                     makeLine(path, paper);
                     displayInstructions("The Test Has Finished Running.");
-                    //goToNextPage();
-                    var finishTime = (new Date() - time)
-                 
-
+                    var finishTime = (new Date() - time);
                     passResultsB(finishTime / 1000);
                     finishIt();
                 } else {
@@ -868,10 +829,6 @@ cleanDiv()
     }
 };
 
-
-//function goToNextPage() {
-//    window.location.href = '/TrailsReport.aspx?';
-//}
 
 function getMessage(type) {
     var message = ""
@@ -914,7 +871,14 @@ function getMessage(type) {
 "Click anywhere on this message to begin."].join("\n");
             break;
         case "trailsB":
-            message = ["Change plz"].join("\n");
+            message = ["You are going to see 25 circles. Some of the circles will contain numbers and",
+     "the rest will contain letters.",
+"I want you to begin by clicking the circle containing the number 1, ",
+"then click the circle containing the letter 'A'.",
+"Continue clicking the circles in ascending order altering between numbers and letters until you have clicked ",
+"on all the circles.",
+"Work as quickly and as accurately as possible.",
+"Click anywhere on this message to begin."].join("\n");
 
 
     }

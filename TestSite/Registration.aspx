@@ -479,7 +479,7 @@
     })
 
     $('#submit').click(function () {
-        alert("Smth");
+    
     });
 
 </script>

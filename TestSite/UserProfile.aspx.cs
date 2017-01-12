@@ -23,7 +23,7 @@ namespace TestSite
                 email.Text = Membership.GetUser().Email;
 
                 int uAge = GetUserAge();
-                age.Text = uAge > 0 ? uAge.ToString(): "Undefined";
+                age.Text = uAge > 0 ? uAge.ToString(): "Not entered";
                 ageValue = age.Text;
                 //bday.Text = GetUserBithdate();
                 LoadPaidTests();

@@ -47,9 +47,10 @@
                     <ul class="nav navbar-nav navbar-right custom-menu">
                         <li class="active"><a href="../MainPage.aspx">Home</a></li>
                         <li><a href="#userInfo">Profile</a></li>
+                         <li><a href="#paidTests">User Tests</a></li>
+                         <li><a href="#testList">Available Tests</a></li>
                         <li><a href="#testCategories">Test Ctegories</a></li>
-                        <li><a href="#testList">Available Tests</a></li>
-                        <li><a href="#reports">Report</a></li>
+                        <li><a href="#reports">Results</a></li>
                         <li id="login" runat="server"><a href="Login.aspx">Login</a></li>
                         <li>
                             <asp:LinkButton ID="Logout" class="btn button" type="submit" runat="server" OnClick="logOut_Click">Log Out</asp:LinkButton>
@@ -141,6 +142,52 @@
                     </div>
                 </div>
             </section>
+              <section id="testList">
+                <div class="row">
+                    <div class="box">
+                        <div class="col-lg-12">
+                            <hr>
+                            <h2 class="intro-text text-center">Available 
+                       
+                        <strong>Test</strong>
+                            </h2>
+                            <hr>
+                        </div>
+                        <div class="col-sm-3 text-center">
+                         <a href="WCSTWrapper.aspx" id="mobileapps1">
+                                <img class="img-responsive" src="images/cardSort.png" alt=""></a>
+                            <h3>Card Sort
+                        <small></small>
+                            </h3>
+                        </div>
+                        <div class="col-sm-3 text-center">
+                            <a href="TrailsWrapper.aspx" id="webdesign1">
+                                <img class="img-responsive" src="images/trails.jpg" alt=""></a>
+                            <h3>Trails
+                       
+                        <small></small>
+                            </h3>
+                        </div>
+                        <div class="col-sm-3 text-center">
+                          <a href="Tests/NbackWrapper.aspx" id="memory2">
+                                <img class="img-responsive" src="images/Nback.jpg" alt=""></a>
+                            <h3>Nback
+                       
+                        <small></small>
+                            </h3>
+                        </div>
+                           <div class="col-sm-3 text-center">
+                            <a href="LondonWrapper.aspx" id="webdesign2">
+                                <img class="img-responsive" src="images/tower.jpg" alt=""></a>
+                            <h3>Tower Of London
+                       
+                        <small></small>
+                            </h3>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </section>
             <section id="testCategories">
                 <div class="row">
                     <div class="box" id="box">
@@ -207,54 +254,6 @@
                     </div>
                 </div>
             </section>
-
-            <section id="testList">
-                <div class="row">
-                    <div class="box">
-                        <div class="col-lg-12">
-                            <hr>
-                            <h2 class="intro-text text-center">Available 
-                       
-                        <strong>Test</strong>
-                            </h2>
-                            <hr>
-                        </div>
-                        <div class="col-sm-3 text-center">
-                         <a href="WCSTWrapper.aspx" id="mobileapps1">
-                                <img class="img-responsive" src="images/cardSort.png" alt=""></a>
-                            <h3>Card Sort
-                        <small></small>
-                            </h3>
-                        </div>
-                        <div class="col-sm-3 text-center">
-                            <a href="TrailsWrapper.aspx" id="webdesign1">
-                                <img class="img-responsive" src="images/trails.jpg" alt=""></a>
-                            <h3>Trails
-                       
-                        <small></small>
-                            </h3>
-                        </div>
-                        <div class="col-sm-3 text-center">
-                          <a href="Tests/NbackWrapper.aspx" id="memory2">
-                                <img class="img-responsive" src="images/Nback.jpg" alt=""></a>
-                            <h3>Nback
-                       
-                        <small></small>
-                            </h3>
-                        </div>
-                           <div class="col-sm-3 text-center">
-                            <a href="LondonWrapper.aspx" id="webdesign2">
-                                <img class="img-responsive" src="images/tower.jpg" alt=""></a>
-                            <h3>Tower Of London
-                       
-                        <small></small>
-                            </h3>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-            </section>
-
             <section id="reports">
                 <div class="row">
                     <div class="box">

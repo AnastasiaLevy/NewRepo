@@ -48,14 +48,15 @@ namespace TestSite.DAL
 
         }
 
-        internal static DataTable GetLondonUserResultsTotal(string userId, int tId, int ageGroup)
+        internal static DataSet GetLondonUserResultsTotal(string userId, int tId, int ageGroup)
         {
-            DataTable ds = new DataTable();
+            DataSet ds = new DataSet();
             SqlConnection conn = new SqlConnection(connectionSring);
             SqlCommand cmd = new SqlCommand("GetLondonUserResultsTotal", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@ageGroup", ageGroup);
-
+            cmd.Parameters.AddWithValue("@tId", tId);
+            cmd.Parameters.AddWithValue("@userId", userId);
             try
             {
                 SqlDataAdapter adp = new SqlDataAdapter(cmd);

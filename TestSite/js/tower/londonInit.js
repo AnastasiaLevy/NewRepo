@@ -30,6 +30,9 @@ var peg2 = null;
 var peg3 = null;
 
 function initField() {
+     up1 = null;
+     up2 = null;
+     up3 = null;
 
     var paper = new Raphael(document.getElementById('canvas_small'), paperWidth, paperHeight);
      

@@ -45,8 +45,6 @@
 <script src="js/tower/pegs.js"></script>
 <script src="js/tower/images.js"></script>
 <script src="js/tower/gameCode.js"></script>
-<%--<p>the download will begin in <span id="countdowntimer">10 </span>seconds</p>--%>
-
 <script type="text/javascript">
     var game = 0;
     var canMove = false;
@@ -55,6 +53,7 @@
     var time;
     var totalTime;
     var initTTime;
+    var gameTimer;
     startGame(1, 1);
 
 

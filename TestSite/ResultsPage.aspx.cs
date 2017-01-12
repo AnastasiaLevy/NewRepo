@@ -28,6 +28,9 @@ namespace TestSite
             //int age = Convert.ToInt32(Request.QueryString["age"]);
             int ageGroup = Enums.GetAgeGroup(age);
             DataTable dt;
+            DataSet ds;
+            decimal score;
+            string text;
        
                 
 
@@ -37,7 +40,12 @@ namespace TestSite
                 dt = DataMethods.GetTestResultsLondon(userId, tId);
                 gvTestResults.DataSource = dt;
                 gvTestResults.DataBind();
-                dt = DataMethods.GetLondonUserResultsTotal(userId, tId, ageGroup);
+                ds = DataMethods.GetLondonUserResultsTotal(userId, tId, ageGroup);
+                //if (ds.Tables[0].Rows[0]["avgUserScore"] != DBNull)
+                score = Convert.ToDecimal(ds.Tables[0].Rows[0]["avgUserScore"]);
+                text = CalculateResults(score, Convert.ToDecimal(ds.Tables[0].Rows[0]["avgUserScore"]), Convert.ToDecimal(ds.Tables[0].Rows[0]["avgUserScore"]));
+                textStr.Text = text;
+
 
 
             }
@@ -55,16 +63,22 @@ namespace TestSite
                 dt = DataMethods.GetTestNormsTrails(ageGroup);
                 tr.Mean = Convert.ToDecimal(dt.Rows[0]["mean"]);
                 tr.StdDev = Convert.ToDecimal(dt.Rows[0]["stdDeviation"]);
-                decimal score = (tr.PartA + tr.PartB) / 2;
-                string text = CalculateResults(score, tr.Mean, tr.StdDev);
+                score = (tr.PartA + tr.PartB) / 2;
+                text = CalculateResults(score, tr.Mean, tr.StdDev);
                 textStr.Text = text;   
             }
 
         }
 
-        protected string CalculateResults(decimal score, decimal mean, decimal stdDev)
+        protected string CalculateResults(decimal? score, decimal? mean, decimal? stdDev)
         {
             string text = "";
+            if (score == null || mean == null || stdDev== null)
+            {
+                return "Impossible to calculate results";
+            }
+                 
+          
             if (score < mean - stdDev * 3)
             {
                 text = Resources.Text.ResultLower3StdDev;

@@ -14,14 +14,17 @@ var text = [" See these two boards? They are both alike.",
     "coplete the problem in 20 moves or fewer. If you are not ",
     "finished within two minutes or in less than 20 moves,",
     "the trial ends and the new problem is presented. Click here to start."].join("");
-var timer;
-function startGame(gameNum) {
+
+function startGame(gameNum) { //change back w/o s to use
     hideFinalMessage();
     nm = 0;
     nmWr = 0;
     initTTime = 0;
     totalTime;
 
+ 
+
+    time = getTime();
     if (gameNum == 1) {
         displayInstructions(text);
         var field = document.getElementById("countdown");
@@ -29,40 +32,20 @@ function startGame(gameNum) {
         totalTime = getTime();
     }
     else {
-        //startCountDownTimer(gameNum);
+        countdown()
     }
-    //
+    
     initField();
     showImage(gameNum);
     game = gameNum;
-
-    if (game == 1) //TODO: change back!
-    {
-        time = getTime();
-    }
-    else {
-        timer = 0;
-        countdown()
-    }
+   // if (game > 1)
+      // countdown()
+    
 }
 
 function countdown() {
-
-    timer = 0;
-    var seconds = 120;
-    function tick() {
-
-        seconds--;
-        if (seconds > 0) {
-            timer = setTimeout(tick, 1000);
-        } else {
-            alert(game);
-            displayFinalMessageOnTimeout(game + 1);
-            clearTimeout(timer);
-
-        }
-    }
-    tick();
+    
+     gameTimer = setTimeout( displayFinalMessageOnTimeout, 120000);    
 }
 
 
@@ -80,14 +63,20 @@ function displayTestFinishedMessage() {
 
 }
 
-function displayFinalMessageOnTimeout(game) {
+function displayFinalMessageOnTimeout() {
+
     var finalMessage = document.getElementById("finalMessage");
     finalMessage.style.display = '';
-
-    finalMessage.innerHTML = "This trial is over. The new trial will start soon.";
+    finalMessage.innerHTML = "You've exceeded time for trial #" + game; 
+    if (game !=13)
+    finalMessage.innerHTML += ". The new trial will start soon.";
     setTimeout(hideFinalMessage, 2000);
-    passResultsForGame(game, initTTime, 0, 20, nmWr, true, false);
-    startCountDownTimer(game);
+    if (game == 13) {
+        updateTestFinished();
+        displayTestFinishedMessage();
+    }
+    passResultsForGame(game, initTTime, 120000, 20, nmWr, true, false);
+    startCountDownTimer(game +1);
 }
 
 function displayFinalMessage20move(game) {
@@ -95,8 +84,12 @@ function displayFinalMessage20move(game) {
     var finalMessage = document.getElementById("finalMessage");
     finalMessage.style.display = '';
 
-    finalMessage.innerHTML = "You made more that 20 moves. The new trial will start soon.";
+    finalMessage.innerHTML = "You made more that 20 moves in trial " + game + ". The new trial will start soon.";
     setTimeout(hideFinalMessage, 2000);
+    if (game == 13) {
+        updateTestFinished();
+        displayTestFinishedMessage();
+    }
  
     passResultsForGame(game, initTTime,over, 20, nmWr, false, true);
     startCountDownTimer(game);
@@ -157,27 +150,26 @@ function startCountDownTimer(game) {
 }
 
 function finishGame(needMoves) {
-    timer = 0;
+    window.clearTimeout(gameTimer);
     over = new Date() - time;
-
     gameFinished = true;
     passResultsForGame(game, initTTime,over, nm, nmWr, false, false);
     canMove = false;
-    displayFinalMessage(needMoves, nm);
+    setTimeout(function () { displayFinalMessage(needMoves, nm); }, 0)
+  
     if (game == 13) {
-        
-        displayTestFinishedMessage();
+        updateTestFinished();
+        displayTestFinishedMessage();   
     }
     else
-
-
         game++;
-    startCountDownTimer(game);
+       startCountDownTimer(game);
   
 }
 
 function checkPos(out) {
-    if (nm > 20) {
+   
+    if (nm == 20) {
         displayFinalMessage20move(game)
     }
     canMove = false;
@@ -297,8 +289,7 @@ function checkPos(out) {
          p3 != null && p3.id == "blue") {
 
             finishGame(1);
-            updateTestFinished();
-            displayTestFinishedMessage();
+           
         }
     }
 };

@@ -3,7 +3,12 @@
 	margin-bottom: 20px;
 }
 
+.qst {
+	z-index: 1;
+}
+
 .card {
+	background-color: white;
 	border: 1px solid #808080;
 	border-radius: 12px;
 	color: #000000;
@@ -83,7 +88,7 @@
 	color: red;
 }
 
-.red .dot, .red .square {
+.red .dot, .red .square, .red .triangle {
 	background-color: #e60000;
 }
 
@@ -92,7 +97,7 @@
 }
 
 
-.green .dot, .green .square {
+.green .dot, .green .square, .green .triangle {
 	background-color: green;
 }
 
@@ -100,7 +105,7 @@
 	color: green;
 }
 
-.blue .dot, .blue .square {
+.blue .dot, .blue .square, .blue .triangle {
 	background-color: blue;
 }
 
@@ -108,7 +113,7 @@
 	color: blue;
 }
 
-.yellow .dot, .yellow .square {
+.yellow .dot, .yellow .square, .yellow .triangle {
 	background-color: #ecec0a;
 }
 
@@ -168,6 +173,39 @@
 .cross:before {
 	content: "\271A";
 }
+
+
+.triangle {
+	margin-left: 5px;
+	margin-top: 2px;
+	text-align: left;
+}
+
+.triangle:before,
+.triangle:after {
+	content: '';
+	position: absolute;
+	background-color: inherit;
+}
+
+.triangle,
+.triangle:before,
+.triangle:after {
+	width:  20px;
+	height: 20px;
+	border-top-right-radius: 30%;
+}
+
+.triangle {
+	transform: rotate(-60deg) skewX(-30deg) scale(1,.866);
+}
+.triangle:before {
+	transform: rotate(-135deg) skewX(-45deg) scale(1.414,.707) translate(0,-50%);
+}
+.triangle:after {
+	transform: rotate(135deg) skewY(-45deg) scale(.707,1.414) translate(50%);
+}
+
 
 /*--== positions ==--*/
 
@@ -263,5 +301,44 @@
 .finished {
 	text-transform: uppercase;
 	width: 100%;
+	text-align: center;
+}
+
+/* result table */
+.res-table {
+	border: 1px solid lightgray;
+	border-radius: 10px;
+	border-collapse: collapse;
+}
+
+.res-table thead tr th:first-child {
+	text-align: left!important;
+	width: 100px;
+}
+
+.res-table th {
+	font-weight: normal;
+	background: #aee6ad;
+	border: 1px solid #ffffff;
+}
+
+.res-table tbody tr td:first-child {
+	text-align: left!important;
+}
+
+.res-table .total {
+	font-weight: 800;
+}
+
+.res-table td {
+	text-align: center;
+	border: 1px solid #aee6ad;
+}
+
+.leftAlgn {
+	text-align: left;
+}
+
+.center {
 	text-align: center;
 }
