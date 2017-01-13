@@ -15,12 +15,8 @@
 </head>
 <body>
     <form runat="server">
-        <%--   <input id="Button1" type="button" onclick="RunDemoTest()" value="Start" />--%>
-        <asp:TextBox ID="firstName" runat="server" hidden="true"></asp:TextBox>
-        <asp:TextBox ID="lastName" runat="server" hidden="true"></asp:TextBox>
-        <asp:TextBox ID="birthDate" runat="server" hidden="true"></asp:TextBox>
-        <asp:TextBox ID="userId" runat="server" Visible ="false"></asp:TextBox>
-
+          <asp:TextBox ID="userId" runat="server"  hidden="true"></asp:TextBox>
+        <asp:TextBox ID="tId" runat="server" hidden="true"></asp:TextBox>
         <div id="wsct">
             <div class="variants"></div>
             <div class="answers"></div>

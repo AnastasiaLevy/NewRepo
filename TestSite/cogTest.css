@@ -2451,7 +2451,7 @@ padding: 10px;
         box-shadow: 0px 1px 0px 0px;
     }
 
-.blue {
+/*.blue {
     background-color: #55acee;
     box-shadow: 0px 5px 0px 0px #3C93D5;
 }
@@ -2459,7 +2459,7 @@ padding: 10px;
     .blue:hover {
         background-color: #6FC6FF;
         color: white;
-    }
+    }*/
 
 .label {
     display: inline-block;

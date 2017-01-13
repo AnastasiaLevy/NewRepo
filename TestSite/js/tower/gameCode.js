@@ -37,10 +37,7 @@ function startGame(gameNum) { //change back w/o s to use
     
     initField();
     showImage(gameNum);
-    game = gameNum;
-   // if (game > 1)
-      // countdown()
-    
+    game = gameNum;   
 }
 
 function countdown() {

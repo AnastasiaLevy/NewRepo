@@ -48,6 +48,63 @@ namespace TestSite.DAL
 
         }
 
+        internal static void InsertCardSortUserResult(
+           
+            string userId,
+            int tId,
+            int respCount,
+            decimal resTime,
+            int correctCnt,
+            int errorCnt,
+            decimal errorTime,
+            int persevResp,
+            decimal persevTime,
+            int persevRespError,
+            decimal persevRespErrTime,
+            int uniqueErr,
+            decimal uniqErrTime,
+            int failureSetCnt,
+            string category
+            )
+        {
+            DataTable ds = new DataTable();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("InsertCardSortUserResults", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@userId", userId);
+            cmd.Parameters.AddWithValue("@tId", tId);
+            cmd.Parameters.AddWithValue("@respCount", respCount);
+            cmd.Parameters.AddWithValue("@respTime", resTime);
+            cmd.Parameters.AddWithValue("@correctCnt", correctCnt);
+            cmd.Parameters.AddWithValue("@errorCnt", errorCnt);
+            if (errorTime > 0) cmd.Parameters.AddWithValue("@errorTime", errorTime);
+            else cmd.Parameters.AddWithValue("@errorTime", DBNull.Value);
+            cmd.Parameters.AddWithValue("@persevResp", persevResp);
+            if (persevTime > 0) cmd.Parameters.AddWithValue("@persevTime", persevTime);
+            else cmd.Parameters.AddWithValue("@persevTime", DBNull.Value);
+            cmd.Parameters.AddWithValue("@persevRespError", persevRespError);
+            if (persevRespErrTime> 0) cmd.Parameters.AddWithValue("@persevRespErrTime", persevRespErrTime);
+            else cmd.Parameters.AddWithValue("@persevRespErrTime", DBNull.Value);
+            cmd.Parameters.AddWithValue("@uniqErr", uniqueErr);
+            if ( uniqErrTime > 0 ) cmd.Parameters.AddWithValue("@uniqErrTime", uniqErrTime);
+            else cmd.Parameters.AddWithValue("@uniqErrTime", DBNull.Value);
+            cmd.Parameters.AddWithValue("@failureSetCnt", failureSetCnt);
+            cmd.Parameters.AddWithValue("@category", category);
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption saving CST results. " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        
+        }
         internal static DataSet GetLondonUserResultsTotal(string userId, int tId, int ageGroup)
         {
             DataSet ds = new DataSet();
@@ -120,7 +177,6 @@ namespace TestSite.DAL
 
         public static void UpdateRegCheck(string userId)
         {
-
             SqlConnection conn = new SqlConnection(connectionSring);
             SqlCommand cmd = new SqlCommand("UpdateRegCheck", conn);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -139,6 +195,28 @@ namespace TestSite.DAL
             {
                 conn.Close();
             }
+        }
+
+        public static DataTable GetTestResultsCardSort(string userId, int tId)
+        {
+            DataTable ds = new DataTable();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("GetUserCardSortTestResults", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@userId", userId);
+            cmd.Parameters.AddWithValue("@tId", tId);
+
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                adp.Fill(ds);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption getting London Results. " + ex.Message);
+            }
+
+            return ds;
         }
 
         public static DataTable GetTestResultsLondon(string userId, int tId)
@@ -207,7 +285,7 @@ namespace TestSite.DAL
             return ds;
         }
 
-        public static DataTable GetTestResultsCardSort(string userId, int tId)
+        public static DataTable GetTestResultsNback(string userId, int tId)
         {
             DataTable ds = new DataTable();
             SqlConnection conn = new SqlConnection(connectionSring);

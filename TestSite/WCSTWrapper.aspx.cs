@@ -37,7 +37,7 @@ namespace TestSite
             }
             if (!IsPostBack)
             {
-                
+
 
                 if (!String.IsNullOrEmpty(Request.QueryString["st"]) && Request.QueryString["st"] == "Completed")
                 {
@@ -148,7 +148,7 @@ namespace TestSite
 
         }
 
-  
+
 
         protected void runTest_Click(object sender, EventArgs e)
         {
@@ -169,7 +169,7 @@ namespace TestSite
                 Session["name"] = User.Identity.Name;
                 Session["userTestId"] = _userTestId;
                 Response.Redirect("WCSTPage.aspx");
-             
+
             }
             else
             {

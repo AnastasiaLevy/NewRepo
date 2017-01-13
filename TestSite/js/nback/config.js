@@ -3,15 +3,16 @@
 var nBack1Trial = ["J", "I", "I", "E", "T", "O", "O", "A", "E", "E"];
 
 var nBack1Full = ["B", "B", "E", "B", "A", "J", "J", "N", "T", "T",
-                  "D", "D", "I", "N", "D", "N", "N", "I", "A", "A",
-                  "I", "I", "E", "D", "N", "D", "E", "O", "O", "A",
-                  "J", "J", "B", "B", "I", "I", "O", "T", "T", "U", 
-                  "U", "O", "E", "O", "A", "A", "U", "T", "U", "U",
-                  "J", "E", "E", "J", "J", "D", "D", "T", "O", "T",
-                  "T", "I", "N", "N", "A", "U", "U", "A", "A", "U",
-                  "D", "O", "T", "T", "I", "J", "J", "B", "E", "B",
-                  "A", "B", "D", "D", "I", "I", "O", "O", "N", "T", 
-                  "D", "D", "B", "E", "N", "N", "T", "U", "U", "J"];
+                  //"D", "D", "I", "N", "D", "N", "N", "I", "A", "A",
+                  //"I", "I", "E", "D", "N", "D", "E", "O", "O", "A",
+                  //"J", "J", "B", "B", "I", "I", "O", "T", "T", "U", 
+                  //"U", "O", "E", "O", "A", "A", "U", "T", "U", "U",
+                  //"J", "E", "E", "J", "J", "D", "D", "T", "O", "T",
+                  //"T", "I", "N", "N", "A", "U", "U", "A", "A", "U",
+                  //"D", "O", "T", "T", "I", "J", "J", "B", "E", "B",
+                  //"A", "B", "D", "D", "I", "I", "O", "O", "N", "T", 
+                  //"D", "D", "B", "E", "N", "N", "T", "U", "U", "J"
+];
                   
 var test1Message1 = ["You are going to be shown a series of letters. If",
                      "the letter currently being shown is identical to",
@@ -38,15 +39,16 @@ var rectangleTest1Message = [250, 250, 510, 200]; //left, top, width, height
 var nBack2Trial = ["J", "I", "I", "E", "T", "O", "O", "A", "E", "E"];
 
 var nBack2Full = ["B", "B", "E", "B", "A", "J", "J", "N", "T", "T",
-                  "D", "D", "I", "N", "D", "N", "N", "I", "A", "A",
-                  "I", "I", "E", "D", "N", "D", "E", "O", "O", "A",
-                  "J", "J", "B", "B", "I", "I", "O", "T", "T", "U", 
-                  "U", "O", "E", "O", "A", "A", "U", "T", "U", "U",
-                  "J", "E", "E", "J", "J", "D", "D", "T", "O", "T",
-                  "T", "I", "N", "N", "A", "U", "U", "A", "A", "U",
-                  "D", "O", "T", "T", "I", "J", "J", "B", "E", "B",
-                  "A", "B", "D", "D", "I", "I", "O", "O", "N", "T", 
-                  "D", "D", "B", "E", "N", "N", "T", "U", "U", "J"];
+                  //"D", "D", "I", "N", "D", "N", "N", "I", "A", "A",
+                  //"I", "I", "E", "D", "N", "D", "E", "O", "O", "A",
+                  //"J", "J", "B", "B", "I", "I", "O", "T", "T", "U", 
+                  //"U", "O", "E", "O", "A", "A", "U", "T", "U", "U",
+                  //"J", "E", "E", "J", "J", "D", "D", "T", "O", "T",
+                  //"T", "I", "N", "N", "A", "U", "U", "A", "A", "U",
+                  //"D", "O", "T", "T", "I", "J", "J", "B", "E", "B",
+                  //"A", "B", "D", "D", "I", "I", "O", "O", "N", "T", 
+                  //"D", "D", "B", "E", "N", "N", "T", "U", "U", "J"
+];
 
 var test2Message1 = ["You are going to be shown a series of letters. If",
                      "the letter currently being shown is identical to",
@@ -73,15 +75,16 @@ var rectangleTest2Message = [250, 250, 510, 200]; //left, top, width, height
 var nBack3Trial = ["J", "I", "I", "E", "T", "O", "O", "A", "E", "E"];
 
 var nBack3Full = ["B", "B", "E", "B", "A", "J", "J", "N", "T", "T",
-                  "D", "D", "I", "N", "D", "N", "N", "I", "A", "A",
-                  "I", "I", "E", "D", "N", "D", "E", "O", "O", "A",
-                  "J", "J", "B", "B", "I", "I", "O", "T", "T", "U", 
-                  "U", "O", "E", "O", "A", "A", "U", "T", "U", "U",
-                  "J", "E", "E", "J", "J", "D", "D", "T", "O", "T",
-                  "T", "I", "N", "N", "A", "U", "U", "A", "A", "U",
-                  "D", "O", "T", "T", "I", "J", "J", "B", "E", "B",
-                  "A", "B", "D", "D", "I", "I", "O", "O", "N", "T", 
-                  "D", "D", "B", "E", "N", "N", "T", "U", "U", "J"];
+                  //"D", "D", "I", "N", "D", "N", "N", "I", "A", "A",
+                  //"I", "I", "E", "D", "N", "D", "E", "O", "O", "A",
+                  //"J", "J", "B", "B", "I", "I", "O", "T", "T", "U", 
+                  //"U", "O", "E", "O", "A", "A", "U", "T", "U", "U",
+                  //"J", "E", "E", "J", "J", "D", "D", "T", "O", "T",
+                  //"T", "I", "N", "N", "A", "U", "U", "A", "A", "U",
+                  //"D", "O", "T", "T", "I", "J", "J", "B", "E", "B",
+                  //"A", "B", "D", "D", "I", "I", "O", "O", "N", "T", 
+                  //"D", "D", "B", "E", "N", "N", "T", "U", "U", "J"
+];
 
 var test3Message1 = ["You are going to be shown a series of letters. If",
                      "the letter currently being shown is identical to",

@@ -32,6 +32,14 @@ namespace TestSite
             decimal score;
             string text;
        
+            if (test == "3")
+            {
+                chartTitle.Text = "Results for Card Sort Test for participant " + userName;
+                dt = DataMethods.GetTestResultsCardSort(userId, tId);
+                gvTestResults.DataSource = dt;
+                gvTestResults.DataBind();
+            }
+               
                 
 
             if (test == "2")
