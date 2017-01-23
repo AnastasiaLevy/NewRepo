@@ -11,6 +11,7 @@ namespace TestSite
     public partial class Login : System.Web.UI.Page
     {
         protected string _back;
+        bool isProvider = true;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -27,8 +28,18 @@ namespace TestSite
                 User.ToString();
                 FormsAuthentication.SetAuthCookie(userNameLg.Value, true);
                 Session["Username"] = userNameLg.Value;
-                Response.Redirect("~/UserProfile.aspx");
                 wrongLogin.Text = "";
+                if (isProvider)
+                {
+                    string userId = Membership.GetUser(userNameLg.Value).ProviderUserKey.ToString();
+                    int? providerId = DAL.DataMethods.GetProviderId(userId) != null ? DAL.DataMethods.GetProviderId(userId) : 0;
+
+                Response.Redirect("~/Provider/ProviderPortal.aspx");
+                }
+        
+
+                Response.Redirect("~/UserProfile.aspx");
+
 
 
             }
@@ -54,7 +65,14 @@ namespace TestSite
 
                     FormsAuthentication.SetAuthCookie(singleName.Value, true);
                     Session["Username"] = singleName.Value;
-                    Response.Redirect("~/UserProfile.aspx");
+                    if (isProvider)
+                    {
+                        string userId = user.ProviderUserKey.ToString();
+                        DAL.DataMethods.UpdateProviderTable(userId);
+                        Response.Redirect("~/Provider/ProviderPortal.aspx");
+                    }
+                    else
+                        Response.Redirect("~/UserProfile.aspx");
                 }
 
             }

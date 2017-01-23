@@ -325,7 +325,7 @@
                     </div>
                 </div>
                 <div class="col-lg-12 text-center">
-                    <p>Copyright &copy; Your Website 2014</p>
+                    <p>Copyright &copy; cogQuiz 2016</p>
                 </div>
             </div>
         </div>

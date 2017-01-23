@@ -12,7 +12,7 @@
     <title>Tower Of London</title>
     <link rel="shortcut icon" href="images/favicon.ico" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
     <link href="cogTest.css" rel="stylesheet" />
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -24,33 +24,33 @@
 <body data-spy="scroll" runat="server">
     <form runat="server">
         <!-- Navigation -->
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+             <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" 
+                        data-target="#bs-example-navbar-collapse-1">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="~/MainPage.aspx">
-                        <i class="fa fa-cogs" aria-hidden="true">Quiz</i>
-                    </a>
-
+                    <a class="navbar-brand" href="MainPage.aspx">
+                         <i class="fa fa-cogs" aria-hidden="true">Quiz</i></a>   
+                
                 </div>
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-right custom-menu">
-                        <li><a href="../MainPage.aspx">Home</a></li>
-                        <li class="active"><a href="#about">About</a></li>
-                        <li id="profOpt" runat="server"><a href="../UserProfile.aspx">Profile</a></li>
-                        <li id="login" runat="server"><a href="../Login.aspx">Login</a></li>
-                        <li>
-                            <asp:LinkButton ID="logOut" class="btn button" type="submit" runat="server" OnClick="logOut_Click">Log Out</asp:LinkButton>
-                        </li>
-                    </ul>
-                </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right custom-menu">
+                    <li ><a href="MainPage.aspx">Home</a></li>
+                    <li class="active"><a href="#about">About</a></li>
+                    <li id="profOpt" runat ="server"><a href="UserProfile.aspx">Profile</a></li>
+                    <li id="login" runat="server"><a href="../Login.aspx">Login</a></li>
+                    <li>
+                        <asp:LinkButton ID="logOut" class="btn button" type="submit" runat="server" OnClick="logOut_Click">Log Out</asp:LinkButton>
+                    </li>
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
 
         <header>
         </header>
@@ -59,30 +59,80 @@
         <section id="about">
             <div class="container testDescription">
                 <h2>Tower of London</h2>
-                <p>
-           The Tower of London test is a well-known test used in applied clinical neuropsychology 
+                <div class="panel-group testDescription " id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel">
+                        <div class="col-md-12 visible-xs">
+                            <p>
+                                <button data-parent="#accordion" class="btn btn-primary btn-lg btn-block" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                                    About
+                                </button>
+                            </p>
+                        </div>
+                        <div id="collapse1" class="div-collapse collapse col-md-12">
+                            <h3>About:</h3>
+                            <p>
+                     The Tower of London test is a well-known test used in applied clinical neuropsychology 
                     for the assessment of executive functioning specifically to detect deficits in planning, 
                     which may occur due to a variety of medical and neuropsychiatric conditions. 
                     It is related to the classic problem-solving puzzle known as the Tower of Hanoi. 
-                </p>
-
-                <p>One common use is for diagnosis of executive impairment.
+               
+                            </p>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="col-md-12 visible-xs">
+                            <p>
+                                <button data-parent="#accordion" class="btn btn-primary btn-lg btn-block" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                    Measure
+                                </button>
+                            </p>
+                        </div>
+                        <div id="collapse2" class="div-collapse collapse col-md-12">
+                            <h3>Measure:</h3>
+                            <p>
+                                One common use is for diagnosis of executive impairment.
                      The performance of the examinee is compared to representative samples of 
                     individuals of the same age to derive hypotheses about the person's executive 
                     cognitive ability, especially as it may relate to brain damage.
-                     A certain degree of controversy surrounds the test's construct validity.
+               
+                            </p>
+                        </div>
+                    </div>
+                    <%--      <div class="panel">
+            <div class="col-md-12 visible-xs">
+                <p>
+                    <button data-parent="#accordion" class="btn btn-primary btn-lg btn-block" type="button" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+  Description
+                    </button>
                 </p>
-                      <div class="specifications">
-            <h3>Specifications:</h3>
-            <p>
-                This test will take abiut 20 minutes to complete. 
-            </p>
-            <p>
-                Recommended minimum screen resolution is 1000 x 700. 
-            </p>
-        </div>
             </div>
+            <div id="collapse3" class="div-collapse collapse col-md-12">
+                <h3>Description</h3>
+                <p>  The TMT and its several variants require the Participant to, in the correct order, link together an array 
+            of objects that are labeled in a way indicating a specific order (e.g., numerical, alphabetical). Part A of 
+            the TMT contains an array of 25 circles containing the numbers 1 to 25. By clicking the numbered bubbles, 
+            the test-taker creates a line from the circle containing the number 1 to the circle containing the number 
+            2 and then to the circle containing the number 3 and so on until he/she reaches the circle containing the 
+            number 25. In Part B the test-taker is required to alternate between numbers and letters (e.g., the sequence 
+            of 1, A, 2, B, 3, C,…)</p>
+            </div>
+            </div>--%>
+                </div>
+                <p>The test consists of two boards with pegs and several beads with different colors. The examiner (usually a clinical psychologist or a neuropsychologist) uses the beads and the boards to present the examinee with problem-solving tasks.</p>
+                <div class="specifications">
+                    <h3>Specifications:</h3>
+                    <p>
+                        This test will take abiut 20 minutes to complete. 
+                    </p>
+                    <p>
+                        Recommended minimum screen resolution is 1000 x 700. 
+                    </p>
+                </div>
+            </div>
+            
         </section>
+
+
         <section>
 
             <div class="container right">
@@ -103,7 +153,6 @@
                     </p>
                 </div>
             </div>
-
         </section>
         <section id="follow-us">
             <div class="container">
@@ -127,7 +176,7 @@
             <div class="row myfooter">
                 <div class="col-sm-6">
                     <div class="pull-left">
-                        © Copyright Company 2016 | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a>
+                        © Copyright CogQuiz 2016 | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a>
                     </div>
                 </div>
                 <div class="col-sm-6">
@@ -136,6 +185,57 @@
             </div>
         </div>
     </footer>
+       <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+       
+        $(document).ready(function () {
+       
+            $('.custom-menu a[href^="#"], .intro-scroller .inner-link').on('click', function (e) {
+                e.preventDefault();
+
+                var target = this.hash;
+                var $target = $(target);
+
+                $('html, body').stop().animate({
+                    'scrollTop': $target.offset().top
+                }, 900, 'swing', function () {
+                    window.location.hash = target;
+                });
+            });
+
+            $('a.page-scroll').bind('click', function (event) {
+                var $anchor = $(this);
+                $('html, body').stop().animate({
+                    scrollTop: $($anchor.attr('href')).offset().top
+                }, 1500, 'easeInOutExpo');
+                event.preventDefault();
+            });
+
+            $(".nav a").on("click", function () {
+                $(".nav").find(".active").removeClass("active");
+                $(this).parent().addClass("active");
+            });
+
+            $('body').append('<div id="toTop" class="btn btn-primary color1"><span class="glyphicon glyphicon-chevron-up"></span></div>');
+            $(window).scroll(function () {
+                if ($(this).scrollTop() != 0) {
+                    $('#toTop').fadeIn();
+                } else {
+                    $('#toTop').fadeOut();
+                }
+            });
+            $('#toTop').click(function () {
+                $("html, body").animate({ scrollTop: 0 }, 700);
+                return false;
+            });
+
+        });
+    </script>
 </body>
 </html>
+
+
 

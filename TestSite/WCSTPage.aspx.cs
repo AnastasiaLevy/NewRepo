@@ -42,7 +42,8 @@ namespace TestSite
              string persevRespErrTime,
              string uniqueErr,
              string uniqErrTime,
-             string failureSetCnt)
+             string failureSetCnt,
+             string moves)
         {
             int respCountVar = Convert.ToInt32(respCount);
             decimal resTimeVar = String.IsNullOrEmpty(resTime) ? -1: Convert.ToDecimal(resTime);
@@ -62,6 +63,10 @@ namespace TestSite
                 errorTimeVar, persevRespVar, persevTimeVar, persevRespErrorVar, persevRespErrTimeVar, uniqueErrVar,
                 uniqErrTimeVar, failureSetCntVar, category);
             DataMethods.UpdateTestFinished(_userId, _userTestId);
+            if (!String.IsNullOrEmpty(moves))
+            {
+                DataMethods.InsertCardSortUserMovesMap(_userTestId, moves);
+            }
 
         }
 

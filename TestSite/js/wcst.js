@@ -366,7 +366,7 @@
 
     WSCT.prototype.prepareForTest = function () {
         var answers = this.$element.find('.' + this.options.answers);
-        answers.html('<button id="start" type="button" class="signup-btn">Start test</button>');
+        answers.html('<button id="start"  class="signup-btn">Start test</button>');
         this.$element.find('.' + this.options.answers + ' #start').on('click', _.bind(function (e) {
             e.preventDefault();
             $(e.currentTarget).off('click');
@@ -444,7 +444,8 @@
 			    'persev_resp_err_time': 0,
 			    'uniq_err': 0,
 			    'uniq_err_time': 0,
-			    'failure_set_cnt': 0
+			    'failure_set_cnt': 0,
+                'moves': ''
 			};
 
         this.resultString = [];
@@ -633,6 +634,7 @@
         total['uniq_err_time'] += res['uniq_err_time'];
         total['failure_set_cnt'] += res['failure_set_cnt'];
 
+        total['moves'] = this.resultString.join(',');
         //table += this._buildResultRow(res);
         this._SendResultRow(res);
         //table += this._buildResultRow(total, true);
@@ -691,6 +693,7 @@
     };
 
     WSCT.prototype._SendResultRow = function (params) {
+     
         var data = {
             'category':this._translate(params.strategy, true),
             'respCount': params.resp_cnt,

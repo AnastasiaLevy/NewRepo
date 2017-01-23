@@ -617,7 +617,7 @@
             <div class="row myfooter">
                 <div class="col-sm-6">
                     <div class="pull-left">
-                        © Copyright Company 2016 | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a>
+                        © Copyright CogQuiz 2016 | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a>
                     </div>
                 </div>
                 <div class="col-sm-6">
@@ -631,10 +631,7 @@
 
 
     <script>
-        //$('#login').on('click', function (e) {
-        //    e.preventDefault();
 
-        //});
         $('.btn_login').on('click', function (e) {
             e.preventDefault();
 

@@ -38,6 +38,8 @@ namespace TestSite
                 dt = DataMethods.GetTestResultsCardSort(userId, tId);
                 gvTestResults.DataSource = dt;
                 gvTestResults.DataBind();
+
+
             }
                
                 

@@ -20,8 +20,16 @@ namespace TestSite
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            _user = Membership.GetUser(User.Identity.Name);
-            _userId = _user.ProviderUserKey.ToString();
+            if (!String.IsNullOrEmpty(Request.QueryString["provId"]))
+            {
+                _userId = Request.QueryString["userId"];
+
+            }
+            else
+            {
+                _user = Membership.GetUser(User.Identity.Name);
+                _userId = _user.ProviderUserKey.ToString();
+            }
             _isProfilefilled = ProfileIsFilled(_userId);
             if (!String.IsNullOrEmpty(Request.QueryString["return"]) && Request.QueryString["return"] != null)
             {
@@ -49,7 +57,7 @@ namespace TestSite
         private void PopulateRegistration()
         {
             DataTable data = DataMethods.GetRegistarionDataByUser(_userId);
-            cbAgree.Checked =Convert.ToBoolean(data.Rows[0]["disclamerField"]);
+            cbAgree.Checked = Convert.ToBoolean(data.Rows[0]["disclamerField"]);
             cbAgree.Enabled = !cbAgree.Checked;
             txtFirstName.Value = data.Rows[0]["firstName"].ToString();
             txtLastName.Value = data.Rows[0]["lastName"].ToString();
@@ -65,7 +73,7 @@ namespace TestSite
                     cbMedicationsN.Checked = true;
             }
             cbMedicationsY.Checked = (bool)data.Rows[0]["medications"];
-            
+
             txtKindMeds.Text = data.Rows[0]["medName"].ToString();
             ddlIncome.SelectedIndex = data.Rows[0]["income"] != null ? Convert.ToInt32(data.Rows[0]["income"]) : ddlIncome.SelectedIndex;
             ddlHand.SelectedIndex = data.Rows[0]["hand"] != null ? Convert.ToInt32(data.Rows[0]["hand"]) : ddlIncome.SelectedIndex;
@@ -87,7 +95,7 @@ namespace TestSite
                     cbHeadInjN.Checked = true;
                     ddlHeadInjNum.SelectedIndex = 0;
                 }
-                 
+
 
             }
             ddlEthnicity.SelectedIndex = data.Rows[0]["ethnisity"] != null ? Convert.ToInt32(data.Rows[0]["ethnisity"]) : ddlEthnicity.SelectedIndex;

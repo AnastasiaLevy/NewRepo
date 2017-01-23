@@ -50,7 +50,7 @@
                          <li><a href="#paidTests">User Tests</a></li>
                          <li><a href="#testList">Available Tests</a></li>
                         <li><a href="#testCategories">Test Ctegories</a></li>
-                        <li><a href="#reports">Results</a></li>
+                    <%--    <li><a href="#reports">Results</a></li>--%>
                         <li id="login" runat="server"><a href="Login.aspx">Login</a></li>
                         <li>
                             <asp:LinkButton ID="Logout" class="btn button" type="submit" runat="server" OnClick="logOut_Click">Log Out</asp:LinkButton>
@@ -60,201 +60,245 @@
             </div>
         </nav>
         <div class="container">
-            <section id="userInfo">
-                <div class="row">
-                    <div class="box box1">
-                        <div class="col-lg-12">
-                            <hr>
-                            <h2 class="intro-text text-center">User 
-                        <strong>Profile</strong>
-                            </h2>
-                            <hr>
-                        </div>
-                        <div class="col-md-4 ">
-                            <img class="img-responsive img-border-left" src="images/mind.jpg" alt="">
-                        </div>
-                        <div class="col-lg-4  ">
-                            <p class="min"><strong>User Information and Profile Data:</strong> </p>
-                            <p>
-                                User Name:
-                                <asp:Label ID="user" runat="server" class="profile" Text=""></asp:Label>
-                            </p>
-                            <p>
-                                Email:
-                                <asp:Label ID="email" runat="server" class="profile" Text=""></asp:Label>
-                            </p>
-                             <p>
-                               Age:
-                                <asp:Label ID="age" runat="server" class="profile" Text=""></asp:Label>
-                            </p>
-                             <p><a class="profile" href="Registration.aspx"><strong><u>Profile Form</u></strong></a></p>
-                        </div>
-                        <div class="col-lg-4">
+        <section id="userInfo">
+            <div class="row">
+                <div class="box box1">
+                    <div class="col-lg-12">
+                        <hr>
+                        <h2 class="intro-text text-center">User 
+                       
+                            <strong>Profile</strong>
+                        </h2>
+                        <hr>
+                    </div>
+                    <div class="col-md-4 ">
+                        <img class="img-responsive img-border-left" src="images/mind.jpg" alt="">
+                    </div>
+                    <div class="col-lg-4  ">
+                        <p class="min"><strong>User Information and Profile Data:</strong> </p>
+                        <p>
+                            User Name:
+                               
+                            <asp:Label ID="user" runat="server" class="profile" Text=""></asp:Label>
+                        </p>
+                        <p>
+                            Email:
+                               
+                            <asp:Label ID="email" runat="server" class="profile" Text=""></asp:Label>
+                        </p>
+                        <p>
+                            Age:
+                               
+                            <asp:Label ID="age" runat="server" class="profile" Text=""></asp:Label>
+                        </p>
+                        <p><a class="profile" href="Registration.aspx"><strong><u>Profile Form</u></strong></a></p>
+                    </div>
+                    <div class="col-lg-4">
                         <%--    <p class="min"><strong>Update Account Information:</strong> </p>
                             <p><a class="profile" href="#">Reset Password</a></p>
                             <p><a class="profile" href="#">Reset Email</a></p>
                             <p><a class="profile" href="Registration.aspx">Profile Form</a></p>--%>
-                        </div>
-                        <div class="clearfix"></div>
                     </div>
+                    <div class="clearfix"></div>
                 </div>
-            </section>
+            </div>
+        </section>
 
 
-            <section id="paidTests">
-                <div class="row">
-                    <div class="box">
-                           <div class="col-lg-12">
-                            <hr>
-                            <h2 class="intro-text text-center">Your 
-                        <strong>Tests</strong>
-                            </h2>
-                            <hr>
-                        </div>
-                         <div class="col-lg-6">
-                         <p class="min"><strong>Paid Test (not finished):</strong> </p>
-                             <asp:GridView ID="gvAvailableTests" runat="server" CellSpacing="10" class="gridview"
-
-                                 GridLines="Horizontal" AutoGenerateColumns="False" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="10" ForeColor="Black" Height="68px" Width="500px">
-                                 <Columns>
-                                     <asp:BoundField DataField="Name" HeaderText="Test Name &nbsp;&nbsp;" />
-                                     <asp:BoundField DataField="Paid On" DataFormatString="{0:d}" HeaderText="Paid On &nbsp;&nbsp; &nbsp;&nbsp;" />
-                                     <asp:TemplateField HeaderText="Start">
-                                         <ItemTemplate>
-                                             <asp:LinkButton ID="redirect" runat="server" CausesValidation="false" OnClick="Redirect_Click" Text="Start"></asp:LinkButton>
-                                         </ItemTemplate>
-                                     </asp:TemplateField>
-                                     <asp:BoundField Visible="true" DataField="TestId" />
-                                     <asp:BoundField Visible="true" DataField="tID" />
-                                 </Columns>
-                                 <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
-                                 <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
-                                 <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
-                                 <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
-                                 <SortedAscendingCellStyle BackColor="#F7F7F7" />
-                                 <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
-                                 <SortedDescendingCellStyle BackColor="#E5E5E5" />
-                                 <SortedDescendingHeaderStyle BackColor="#242121" />
-                             </asp:GridView>
-                             </div>
-                
-                                <div class="clearfix"></div>
+        <section id="paidTests">
+            <div class="row">
+                <div class="box">
+                    <div class="col-lg-12">
+                        <hr>
+                        <h2 class="intro-text text-center">Your 
+                       
+                            <strong>Tests</strong>
+                        </h2>
+                        <hr>
                     </div>
-                </div>
-            </section>
-              <section id="testList">
-                <div class="row">
-                    <div class="box">
-                        <div class="col-lg-12">
-                            <hr>
-                            <h2 class="intro-text text-center">Available 
-                       
-                        <strong>Test</strong>
-                            </h2>
-                            <hr>
-                        </div>
-                        <div class="col-sm-3 text-center">
-                         <a href="WCSTWrapper.aspx" id="mobileapps1">
-                                <img class="img-responsive" src="images/cardSort.png" alt=""></a>
-                            <h3>Card Sort
-                        <small></small>
-                            </h3>
-                        </div>
-                        <div class="col-sm-3 text-center">
-                            <a href="TrailsWrapper.aspx" id="webdesign1">
-                                <img class="img-responsive" src="images/trails.jpg" alt=""></a>
-                            <h3>Trails
-                       
-                        <small></small>
-                            </h3>
-                        </div>
-                        <div class="col-sm-3 text-center">
-                          <a href="Tests/NbackWrapper.aspx" id="memory2">
-                                <img class="img-responsive" src="images/Nback.jpg" alt=""></a>
-                            <h3>Nback
-                       
-                        <small></small>
-                            </h3>
-                        </div>
-                           <div class="col-sm-3 text-center">
-                            <a href="LondonWrapper.aspx" id="webdesign2">
-                                <img class="img-responsive" src="images/tower.jpg" alt=""></a>
-                            <h3>Tower Of London
-                       
-                        <small></small>
-                            </h3>
-                        </div>
-                        <div class="clearfix"></div>
+                    <div class="col-lg-6">
+                        <p class="min"><strong>Paid Test (not finished):</strong> </p>
+                        <asp:GridView ID="gvAvailableTests" runat="server" CellSpacing="10" class="gridview"
+                            GridLines="Horizontal" AutoGenerateColumns="False" BorderColor="#CCCCCC" BorderStyle="None"
+                            BorderWidth="1px" CellPadding="20" ForeColor="Black" Height="75px" Width="320px"
+                            RowStyle-Height="40px" Font-Size="Larger">
+                            <Columns>
+                                <asp:BoundField DataField="Name" HeaderText="Test Name &nbsp;&nbsp;" />
+                                <asp:BoundField DataField="Paid On" DataFormatString="{0:d}" HeaderText="Paid On &nbsp;&nbsp; &nbsp;&nbsp;" />
+                                <asp:TemplateField HeaderText="Start">
+                                    <ItemTemplate>
+                                        <asp:LinkButton ID="redirect" runat="server" CausesValidation="false" OnClick="Redirect_Click" Text="Start"></asp:LinkButton>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:BoundField Visible="true" DataField="TestId" />
+                                <asp:BoundField Visible="true" DataField="tID" />
+                            </Columns>
+                            <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+                            <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
+                            <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
+                            <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
+                            <SortedAscendingCellStyle BackColor="#F7F7F7" />
+                            <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
+                            <SortedDescendingCellStyle BackColor="#E5E5E5" />
+                            <SortedDescendingHeaderStyle BackColor="#242121" />
+                        </asp:GridView>
                     </div>
-                </div>
-            </section>
-            <section id="testCategories">
-                <div class="row">
-                    <div class="box" id="box">
-                        <div class="col-lg-12">
-                            <hr>
-                            <h2 class="intro-text text-center">Test
-                       
-                        <strong>Categories</strong>
-                            </h2>
-                            <hr>
-                        </div>
-                        <div class="col-md-3 portfolio-item">
-                            <div class="text-center">
-                                <a href="javascript:void(0);">
-                                    <a href="category/Category1.aspx"><span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-medium fa-stack-1x "></i>
-                                    </span></a>
-                                </a>
-                                <h4><a href="category/Category1.aspx">Memory</a></h4>
+                    <div class="col-lg-6">
 
-                            </div>
-                        </div>
-
-                        <div class="col-md-3 portfolio-item">
-                            <div class="text-center">
-                                <a href="javascript:void(0);">
-                                    <a href="category/Category2.aspx"><span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-book fa-stack-1x"></i>
-                                    </span></a>
-
-                                </a>
-                                <h4><a href="category/Category2.aspx">Executive function and Planning</a></h4>
-
-                            </div>
-                        </div>
-                        <div class="col-md-3 portfolio-item">
-                            <div class="text-center">
-                                <a href="javascript:void(0);">
-                                    <a href="category/Category3.aspx"><span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-cogs fa-stack-1x"></i>
-                                    </span></a>
-
-                                </a>
-                                <h4><a href="category/Category3.aspx">Processing Speed</a></h4>
-                            </div>
-                        </div>
-                        <div class="col-md-3 portfolio-item">
-                            <div class="text-center">
-                                <a href="javascript:void(0);">
-                                    <a href="category/Category4.aspx"><span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-lightbulb-o fa-stack-1x"></i>
-                                    </span></a>
-
-                                </a>
-                                <h4><a href="category/Category4.aspx">Intelligence</a></h4>
-
-                            </div>
-                        </div>
-                        <div class="clearfix"></div>
+                        <p class="min"><strong>Finished Tests:</strong> </p>
+                        <asp:GridView ID="gvFinishedTests" runat="server" CellSpacing="20" class="gridview"
+                            GridLines="Horizontal" AutoGenerateColumns="False" BorderColor="#CCCCCC" BorderStyle="None"
+                            BorderWidth="1px" CellPadding="10" ForeColor="Black" Height="75px" Width="320px"
+                            RowStyle-Height="40px" Font-Size="Larger">
+                            <Columns>
+                                <asp:BoundField DataField="Name" HeaderText="Test Name &nbsp;&nbsp;" />
+                                <asp:BoundField DataField="Finished On" DataFormatString="{0:d}" HeaderText="Finished On" />
+                                <asp:TemplateField HeaderText="View">
+                                    <ItemTemplate>
+                                        <asp:LinkButton ID="showResults" runat="server" CausesValidation="false" OnClick="showResults_Click" Text="View Results"></asp:LinkButton>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:BoundField Visible="true" DataField="TestId" />
+                                <asp:BoundField Visible="true" DataField="tID" />
+                            </Columns>
+                            <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+                            <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
+                            <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
+                            <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
+                            <SortedAscendingCellStyle BackColor="#F7F7F7" />
+                            <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
+                            <SortedDescendingCellStyle BackColor="#E5E5E5" />
+                            <SortedDescendingHeaderStyle BackColor="#242121" />
+                        </asp:GridView>
                     </div>
+                    <div class="clearfix"></div>
                 </div>
-            </section>
-            <section id="reports">
+            </div>
+        </section>
+        <section id="testList">
+            <div class="row">
+                <div class="box">
+                    <div class="col-lg-12">
+                        <hr>
+                        <h2 class="intro-text text-center">Available 
+                       
+                       
+
+                            <strong>Test</strong>
+                        </h2>
+                        <hr>
+                    </div>
+                    <div class="col-sm-3 text-center">
+                        <a href="WCSTWrapper.aspx" id="mobileapps1">
+                            <img class="img-responsive" src="images/cardSort.png" alt=""></a>
+                        <h3>Card Sort
+                       
+                            <small></small>
+                        </h3>
+                    </div>
+                    <div class="col-sm-3 text-center">
+                        <a href="TrailsWrapper.aspx" id="webdesign1">
+                            <img class="img-responsive" src="images/trails.jpg" alt=""></a>
+                        <h3>Trails
+                       
+                       
+
+                            <small></small>
+                        </h3>
+                    </div>
+                    <div class="col-sm-3 text-center">
+                        <a href="Tests/NbackWrapper.aspx" id="memory2">
+                            <img class="img-responsive" src="images/Nback.jpg" alt=""></a>
+                        <h3>Nback
+                       
+                       
+
+                            <small></small>
+                        </h3>
+                    </div>
+                    <div class="col-sm-3 text-center">
+                        <a href="LondonWrapper.aspx" id="webdesign2">
+                            <img class="img-responsive" src="images/tower.jpg" alt=""></a>
+                        <h3>Tower Of London
+                       
+                       
+
+                            <small></small>
+                        </h3>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </section>
+        <section id="testCategories">
+            <div class="row">
+                <div class="box" id="box">
+                    <div class="col-lg-12">
+                        <hr>
+                        <h2 class="intro-text text-center">Test
+                       
+                       
+
+                            <strong>Categories</strong>
+                        </h2>
+                        <hr>
+                    </div>
+                    <div class="col-md-3 portfolio-item">
+                        <div class="text-center">
+                            <a href="javascript:void(0);">
+                                <a href="category/Category1.aspx"><span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-medium fa-stack-1x "></i>
+                                </span></a>
+                            </a>
+                            <h4><a href="category/Category1.aspx">Memory</a></h4>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 portfolio-item">
+                        <div class="text-center">
+                            <a href="javascript:void(0);">
+                                <a href="category/Category2.aspx"><span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-book fa-stack-1x"></i>
+                                </span></a>
+
+                            </a>
+                            <h4><a href="category/Category2.aspx">Executive function and Planning</a></h4>
+
+                        </div>
+                    </div>
+                    <div class="col-md-3 portfolio-item">
+                        <div class="text-center">
+                            <a href="javascript:void(0);">
+                                <a href="category/Category3.aspx"><span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-cogs fa-stack-1x"></i>
+                                </span></a>
+
+                            </a>
+                            <h4><a href="category/Category3.aspx">Processing Speed</a></h4>
+                        </div>
+                    </div>
+                    <div class="col-md-3 portfolio-item">
+                        <div class="text-center">
+                            <a href="javascript:void(0);">
+                                <a href="category/Category4.aspx"><span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-lightbulb-o fa-stack-1x"></i>
+                                </span></a>
+
+                            </a>
+                            <h4><a href="category/Category4.aspx">Intelligence</a></h4>
+
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </section>
+        <%--           <section id="reports">
                 <div class="row">
                     <div class="box">
                         <div class="col-lg-12">
@@ -271,7 +315,7 @@
                     
                          <div class="col-lg-6">
                             <p class="min"><strong>Finished Tests:</strong> </p>
-                            <asp:GridView ID="gvFinishedTests" runat="server" CellSpacing="10"
+                            <%--<asp:GridView ID="gvFinishedTests" runat="server" CellSpacing="10"
                                 GridLines="Horizontal" AutoGenerateColumns="False" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="10" ForeColor="Black" Height="68px" Width="500px">
                                 <Columns>
                                     <asp:BoundField DataField="Name" HeaderText="Test Name &nbsp;&nbsp;" />
@@ -292,12 +336,12 @@
                                 <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
                                 <SortedDescendingCellStyle BackColor="#E5E5E5" />
                                 <SortedDescendingHeaderStyle BackColor="#242121" />
-                            </asp:GridView>
-                        </div>
+                            </asp:GridView>--%>
+    </div>
                         <div class="clearfix"></div>
                     </div>
                 </div>
-            </section>
+            </section>--%>
         </div>
         <footer>
             <div class="container">
@@ -317,7 +361,7 @@
                         </div>
                     </div>
                     <div class="col-lg-12 text-center">
-                        <p>Copyright &copy; Your Website 2014</p>
+                        <p>Copyright &copy; Cogquiz 2016</p>
                     </div>
                 </div>
             </div>

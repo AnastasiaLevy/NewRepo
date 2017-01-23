@@ -13,8 +13,8 @@
     <link rel="shortcut icon" href="images/favicon.ico" />
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+  
     <!-- Custom CSS -->
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -33,7 +33,8 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
              <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" 
+                        data-target="#bs-example-navbar-collapse-1">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -60,30 +61,64 @@
     <section id="about">
         <div class="container testDescription">
         <h2>Make Trails Test</h2>
-        <p>
-            The Trail Making Test (TMT), originally devised in 1938, was known as the “Partington’s 
+            <div class="panel-group testDescription" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel">
+            <div class="col-md-12 visible-xs">
+                <p>
+                    <button data-parent="#accordion" class="btn btn-primary btn-lg btn-block" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+ About
+                    </button>
+                </p>
+            </div>
+            <div id="collapse1" class="div-collapse collapse col-md-12">
+                <h3>About:</h3>
+                <p>The Trail Making Test (TMT), originally devised in 1938, was known as the “Partington’s 
             Pathways Test,” or “Divided Attention Test” (Partington & Leiter, 1949). It was initially part of 
             a battery of tests (Army Individual Test Battery) used to assess “…a variety of intellectual functions 
             different from those measured by the Wechsler-Bellevue Intelligence Scale.” (Spreen & Strauss, 1998).
             The test is not typically part of a test battery but administered single in its original paper and pencil
-            form. The TMT provides a measure of attention, visual scanning, speed of eye-hand coordination (Part A),
+            form. </p>
+            </div>
+            </div>
+            <div class="panel">
+            <div class="col-md-12 visible-xs">
+                <p>
+                    <button data-parent="#accordion" class="btn btn-primary btn-lg btn-block" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+  Measure
+                    </button>
+                </p>
+            </div>
+            <div id="collapse2"  class="div-collapse collapse col-md-12">
+                <h3>Measure:</h3>
+                <p> The TMT provides a measure of attention, visual scanning, speed of eye-hand coordination (Part A),
             and mental flexibility (Strauss, Sherman, & Spreen, 2007). In addition, Part B assesses the ability to 
             alternate between stimulus sets and as such is a measure of “executive function” (Mitrushina, et al., 1999).
             Performance on the TMT has been obtained for normal and various clinical populations such as Attention Deficit
             Disorder ADD), Attention Deficit Hyperactivity Disorder, Alzheimer’s disease, Post Traumatic Stress
-            Disorder to name a few.
-           
-        </p>
-
-        <p>
-            The TMT and its several variants require the Participant to, in the correct order, link together an array 
+            Disorder to name a few. </p>
+            </div>
+            </div>
+           <div class="panel">
+            <div class="col-md-12 visible-xs">
+                <p>
+                    <button data-parent="#accordion" class="btn btn-primary btn-lg btn-block" type="button" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+  Description
+                    </button>
+                </p>
+            </div>
+            <div id="collapse3" class="div-collapse collapse col-md-12">
+                <h3>Description</h3>
+                <p>  The TMT and its several variants require the Participant to, in the correct order, link together an array 
             of objects that are labeled in a way indicating a specific order (e.g., numerical, alphabetical). Part A of 
             the TMT contains an array of 25 circles containing the numbers 1 to 25. By clicking the numbered bubbles, 
             the test-taker creates a line from the circle containing the number 1 to the circle containing the number 
             2 and then to the circle containing the number 3 and so on until he/she reaches the circle containing the 
             number 25. In Part B the test-taker is required to alternate between numbers and letters (e.g., the sequence 
-            of 1, A, 2, B, 3, C,…..).    
-        </p>
+            of 1, A, 2, B, 3, C,…)</p>
+            </div>
+            </div>
+            </div>
+
     <p>
         CogQuiz’s provides norms for children to older adults (age range 5 to 89 and an N = 708). The descriptive statistics 
         are broken out in five year cohorts for the child to young adult (5 to 19 years of age) and ten year 
@@ -99,7 +134,10 @@
             </p>
         </div>
     </div>
+         
     </section>
+
+
     <section>
         
             <div class="container right">
@@ -120,9 +158,6 @@
                     </p>
                 </div>
             </div>
-       
-
-     
        
     </section>
     <section id="follow-us">
@@ -147,7 +182,7 @@
             <div class="row myfooter">
                 <div class="col-sm-6">
                     <div class="pull-left">
-                        © Copyright Company 2016 | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a>
+                        © Copyright Cogquiz 2016 | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a>
                     </div>
                 </div>
                 <div class="col-sm-6">
@@ -166,10 +201,7 @@
     <!--Jquery Smooth Scrolling-->
     <script>
         $(document).ready(function () {
-            //$('#login').on('click', function (e) {
-            //    e.preventDefault();
-
-            //});
+       
             $('.custom-menu a[href^="#"], .intro-scroller .inner-link').on('click', function (e) {
                 e.preventDefault();
 
@@ -209,34 +241,9 @@
                 return false;
             });
 
-         
-
-
         });
 
     </script>
-
-    <script>
-        function gallery() { };
-
-        var $itemsHolder = $('ul.port2');
-        var $itemsClone = $itemsHolder.clone();
-        var $filterClass = "";
-        $('ul.filter li').click(function (e) {
-            e.preventDefault();
-            $filterClass = $(this).attr('data-value');
-            if ($filterClass == 'all') { var $filters = $itemsClone.find('li'); }
-            else { var $filters = $itemsClone.find('li[data-type=' + $filterClass + ']'); }
-            $itemsHolder.quicksand(
-			  $filters,
-			  { duration: 1000 },
-			  gallery
-			  );
-        });
-
-        $(document).ready(gallery);
-    </script>
- 
 </body>
 </html>
 

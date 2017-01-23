@@ -152,6 +152,7 @@
     <Content Include="images\network.jpg" />
     <Content Include="images\test-point.jpg" />
     <Content Include="images\tower.jpg" />
+    <Content Include="js\jquery-responsiveTables.js" />
     <Content Include="js\nback\config.js" />
     <Content Include="js\nback\config_min.js" />
     <Content Include="js\nback\game_min.js" />
@@ -213,6 +214,7 @@
     <Content Include="assets\bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="assets\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Properties\PublishProfiles\testPub.pubxml" />
+    <Content Include="Provider\ProviderPortal.aspx" />
     <Content Include="ResultsPage.aspx" />
     <Content Include="Scripts\jquery.timelify.js" />
     <Content Include="Scripts\underscore-min.js" />
@@ -314,6 +316,7 @@
     <Compile Include="category\Category1.aspx.designer.cs">
       <DependentUpon>Category1.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Class1.cs" />
     <Compile Include="ComingSoon.aspx.cs">
       <DependentUpon>ComingSoon.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -329,6 +332,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Provider\ProviderPortal.aspx.cs">
+      <DependentUpon>ProviderPortal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Provider\ProviderPortal.aspx.designer.cs">
+      <DependentUpon>ProviderPortal.aspx</DependentUpon>
     </Compile>
     <Compile Include="Resources\Text.Designer.cs">
       <AutoGen>True</AutoGen>

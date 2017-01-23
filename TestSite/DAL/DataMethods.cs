@@ -48,8 +48,104 @@ namespace TestSite.DAL
 
         }
 
+        internal static object GetAllProviderParticipants(int? providerId)
+        {
+            DataSet ds = new DataSet();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("GetAllProviderParticipants", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@providerId", providerId);
+    ;
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                adp.Fill(ds);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption getting All Provider Participants. " + ex.Message);
+            }
+
+            return ds;
+        }
+
+        internal static int? GetProviderId(string userId)
+        {
+
+            object id;
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("GerProviderId", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("userId", userId);
+
+            try
+            {
+                conn.Open();
+                id = cmd.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption checking ProviderIdAccount. " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return Int32.Parse(id.ToString());
+        }
+
+        internal static void UpdateProviderTable(string userId)
+        {
+            DataTable ds = new DataTable();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("CreateProvider", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@userId", userId);
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption saving Provider " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        internal static void InsertCardSortUserMovesMap( int tId, string text)
+        {
+            DataTable ds = new DataTable();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("InsertCardSortUserMovesMap", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@movesText", text);
+            cmd.Parameters.AddWithValue("@tId", tId);
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption saving CST moves. " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+        }
+
         internal static void InsertCardSortUserResult(
-           
+
             string userId,
             int tId,
             int respCount,
@@ -83,10 +179,10 @@ namespace TestSite.DAL
             if (persevTime > 0) cmd.Parameters.AddWithValue("@persevTime", persevTime);
             else cmd.Parameters.AddWithValue("@persevTime", DBNull.Value);
             cmd.Parameters.AddWithValue("@persevRespError", persevRespError);
-            if (persevRespErrTime> 0) cmd.Parameters.AddWithValue("@persevRespErrTime", persevRespErrTime);
+            if (persevRespErrTime > 0) cmd.Parameters.AddWithValue("@persevRespErrTime", persevRespErrTime);
             else cmd.Parameters.AddWithValue("@persevRespErrTime", DBNull.Value);
             cmd.Parameters.AddWithValue("@uniqErr", uniqueErr);
-            if ( uniqErrTime > 0 ) cmd.Parameters.AddWithValue("@uniqErrTime", uniqErrTime);
+            if (uniqErrTime > 0) cmd.Parameters.AddWithValue("@uniqErrTime", uniqErrTime);
             else cmd.Parameters.AddWithValue("@uniqErrTime", DBNull.Value);
             cmd.Parameters.AddWithValue("@failureSetCnt", failureSetCnt);
             cmd.Parameters.AddWithValue("@category", category);
@@ -103,7 +199,7 @@ namespace TestSite.DAL
             {
                 conn.Close();
             }
-        
+
         }
         internal static DataSet GetLondonUserResultsTotal(string userId, int tId, int ageGroup)
         {
@@ -539,7 +635,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
-               
+
             }
             finally
             {
