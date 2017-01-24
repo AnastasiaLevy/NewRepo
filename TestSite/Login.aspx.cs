@@ -31,10 +31,10 @@ namespace TestSite
                 wrongLogin.Text = "";
                 if (isProvider)
                 {
-                    string userId = Membership.GetUser(userNameLg.Value).ProviderUserKey.ToString();
-                    int? providerId = DAL.DataMethods.GetProviderId(userId) != null ? DAL.DataMethods.GetProviderId(userId) : 0;
-
-                Response.Redirect("~/Provider/ProviderPortal.aspx");
+                    //string userId = Membership.GetUser(userNameLg.Value).ProviderUserKey.ToString();
+                    //int? providerId = DAL.DataMethods.GetProviderId(userId) != null ? DAL.DataMethods.GetProviderId(userId) : 0;
+                    Response.Redirect("~/UserProfile.aspx?isProvider=true;");
+                    //Response.Redirect("~/Provider/ProviderPortal.aspx");
                 }
         
 
@@ -72,7 +72,7 @@ namespace TestSite
                         Response.Redirect("~/Provider/ProviderPortal.aspx");
                     }
                     else
-                        Response.Redirect("~/UserProfile.aspx");
+                        Response.Redirect("~/UserProfile.aspx?isProvider=true;");
                 }
 
             }

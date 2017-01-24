@@ -1128,7 +1128,7 @@ img.displayed {
 @media only screen and (max-width:767px) {
     .navbar-collapse {
         border: none;
-        background-color:#126BAD; /*#66ccff*/
+        background-color: #126BAD; /*#66ccff*/
     }
 
     .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover {
@@ -1388,7 +1388,7 @@ img.displayed {
     color: #b9b9b9;
 }
 
- .centerim:hover {
+    .centerim:hover {
         color: #2D2D2D;
     }
 
@@ -2166,7 +2166,6 @@ button {
     margin: 8px 0;
     border: none;
     cursor: pointer;
-   
 }
 
 /* Extra styles for the cancel button */
@@ -2351,15 +2350,14 @@ padding: 10px;
     left: 30%;
     transform: translate(-50%, -50%);
     -webkit-box-shadow: inset 0px 0px 10px 6px rgba(107,106,106,1);
-    
     -moz-box-shadow: inset 0px 0px 10px 6px rgba(107,106,106,1);
-    
     box-shadow: inset 0px 0px 10px 6px rgba(107,106,106,1);
 }
 
 .left, .display h3 {
     padding-left: 20px;
 }
+
 .display {
     width: 330px;
     height: 500px;
@@ -2388,16 +2386,16 @@ padding: 10px;
 }
 
 .blueFont a {
-    color: #8FB0F2 !important; 
+    color: #8FB0F2 !important;
 }
 
 .blueFont p {
-    color: #fff !important; 
+    color: #fff !important;
     font-size: 16px;
 }
 
 .blueFont1 {
-    color: #8FB0F2 !important; 
+    color: #8FB0F2 !important;
 }
 
 
@@ -2478,10 +2476,9 @@ padding: 10px;
 #displayMessageL {
     width: 998px;
     height: 150px;
-    font-style:oblique;
+    font-style: oblique;
     margin-top: 550px;
     padding-left: 5px;
-   
 }
 
 /*register form:*/
@@ -2750,12 +2747,11 @@ placeholder { /* Chrome */
 
 .short {
     max-width: 400px;
- 
     padding-left: -50%;
 }
 
 .gridview {
-    word-wrap:break-word;
+    word-wrap: break-word;
     table-layout: fixed;
 }
 
@@ -2785,7 +2781,6 @@ form .likert {
     padding: 0 0 35px;
     display: block;
     text-align: left;
-  
 }
 
     form .likert:last-of-type {
@@ -2936,65 +2931,65 @@ form .buttons {
 .countdown {
     border: 2px solid;
     background-color: white;
-    min-height:100px;
+    min-height: 100px;
     width: 150px;
     position: fixed;
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
-    overflow:hidden;
-    z-index:1;
+    overflow: hidden;
+    z-index: 1;
     font-size: 1.3em;
 }
+
 .finalMessage {
     border: 2px solid;
     background-color: white;
-    min-height:100px;
+    min-height: 100px;
     width: 500px;
     position: fixed;
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
-    overflow:hidden;
-    z-index:1;
+    overflow: hidden;
+    z-index: 1;
     font-size: 1.3em;
 }
 
-.aboutHeader{
+.aboutHeader {
     font-size: 20px;
     font-weight: bold;
-
 }
+
 #center {
-    text-align:center;
+    text-align: center;
 }
 
 .errorMessage {
     color: red;
-    font-size:25px;
+    font-size: 25px;
 }
 
 .finishesTest {
     text-align: center;
 }
 
-.finishesTest p {
-    font-size:larger;
+    .finishesTest p {
+        font-size: larger;
+    }
 
-}
-
-.resultImage img{
-
-    padding-top:80px;
-     max-width: 80%;
+.resultImage img {
+    padding-top: 80px;
+    max-width: 80%;
 }
 
 .resultGridView {
     margin-top: 20px;
     max-width: 80%;
-    text-align:center;
-    margin-left:  10%; 
+    text-align: center;
+    margin-left: 10%;
 }
+
 .chartTitle {
     font-size: large;
     font-weight: bold;
@@ -3002,16 +2997,20 @@ form .buttons {
 
 @media print {
 
-   #follow-us, #btnPrint { display: none; }
+    #follow-us, #btnPrint {
+        display: none;
+    }
+}
 
+.testDescription p {
+    font-size: large;
 }
-.testDescription p{
-    font-size:large;
-}
+
 #btnPrint {
     margin-top: 50px;
     margin-left: 20px;
 }
+
 .specifications {
     border-style: outset;
     border-color: green;
@@ -3019,33 +3018,34 @@ form .buttons {
 }
 
 .red {
-    color:red;
-    border-style:none;
+    color: red;
+    border-style: none;
 }
+
 #interpretation {
-    font-size:large;
-    width:80%;
-    margin-left:10%;
+    font-size: large;
+    width: 80%;
+    margin-left: 10%;
 }
 
 #accordion .panel {
-  border:none;
-  -webkit-box-shadow:none; 
-  box-shadow:none;
+    border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
 
 .div-collapse {
-  border-top: 0;
-  -webkit-box-shadow: none;
-  box-shadow: none;
+    border-top: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
 
 .div-collapse {
-  overflow-x: visible;
-  -webkit-overflow-scrolling: touch;
-  border-top: 1px solid transparent;
-  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.1);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.1);
+    overflow-x: visible;
+    -webkit-overflow-scrolling: touch;
+    border-top: 1px solid transparent;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.1);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.1);
 }
 
 /* Small devices (tablets, 768px and up) */
@@ -3056,12 +3056,55 @@ form .buttons {
         overflow: visible !important;
     }
 }
-@media screen and (-webkit-min-device-pixel-ratio:0)
- { @font-face { font-family:'FontAwesome'; src: url('fonts/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular') format('svg'); } }
 
-#gvAllParticipants
-{
-        width: 100%; 
-    word-wrap:break-word;
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+        font-family: 'FontAwesome';
+        src: url('fonts/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular') format('svg');
+    }
+}
+
+#gvAllParticipants, #gvTestPerUser {
+    width: 100%;
+    word-wrap: break-word;
     table-layout: fixed;
+}
+
+
+
+
+label {
+    display: block;
+    margin-bottom: 3px;
+    padding-left: 15px;
+    text-indent: -15px;
+}
+
+
+
+#pop {
+    position: fixed;
+    top: 25%;
+    left: 25%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 50%;
+    height: 50%;
+    z-index: 100;
+    background-color: white;
+    border: 2px double;
+    border-bottom-color: darkblue;
+    border-radius: 5px;
+ 
+    padding: 10px;
+    padding-top:0px;
+}
+#btnCancel {
+    margin-left: 98%;
+    font-size: x-large;
+    color: white;
+    border: 1px solid;
+    border-radius: 5px;
+    background-color:dodgerblue;
+    
 }

@@ -40,13 +40,49 @@ namespace TestSite.Tests {
         protected global::System.Web.UI.WebControls.LinkButton logOut;
         
         /// <summary>
-        /// PayPalBtn control.
+        /// price control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton PayPalBtn;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl price;
+        
+        /// <summary>
+        /// single control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button single;
+        
+        /// <summary>
+        /// ten control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ten;
+        
+        /// <summary>
+        /// hundred control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button hundred;
+        
+        /// <summary>
+        /// unlim control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button unlim;
         
         /// <summary>
         /// runTest control.

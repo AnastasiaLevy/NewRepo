@@ -12,8 +12,16 @@ namespace TestSite
     public partial class UserProfile : System.Web.UI.Page
     {
         public string ageValue;
+        private string userId;
         protected void Page_Load(object sender, EventArgs e)
         {
+            userId = Membership.GetUser(User.Identity.Name).ProviderUserKey.ToString();
+         
+          
+                if (UserIsProvider())
+                    Response.Redirect("~/Provider/ProviderPortal.aspx");
+
+            
 
             if (User.Identity.IsAuthenticated)
             {
@@ -36,6 +44,12 @@ namespace TestSite
                 Logout.Visible = false;
             }
      
+        }
+
+        private bool UserIsProvider()
+        {
+            int? providerId = DAL.DataMethods.GetProviderId(userId);
+            return providerId > 0;
         }
 
         private void LoadFinishedTests()

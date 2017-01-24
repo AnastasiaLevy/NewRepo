@@ -72,7 +72,7 @@ namespace TestSite.DAL
         internal static int? GetProviderId(string userId)
         {
 
-            object id;
+            object id = null;
             SqlConnection conn = new SqlConnection(connectionSring);
             SqlCommand cmd = new SqlCommand("GerProviderId", conn);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -86,14 +86,14 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
-                throw new Exception("Execption checking ProviderIdAccount. " + ex.Message);
+                id = null; //throw new Exception("Execption checking ProviderIdAccount. " + ex.Message);
             }
             finally
             {
                 conn.Close();
             }
 
-            return Int32.Parse(id.ToString());
+            return id != null ? Int32.Parse(id.ToString()) :0;
         }
 
         internal static void UpdateProviderTable(string userId)
@@ -532,6 +532,27 @@ namespace TestSite.DAL
             SqlCommand cmd = new SqlCommand("GetRegistarionDataByUser", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("ageGroup", ageGroup);
+
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                adp.Fill(ds);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption getting account. " + ex.Message);
+            }
+
+            return ds;
+        }
+
+        public static DataTable GetAllUserTestsP(string userId)
+        {
+            DataTable ds = new DataTable();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("SelectAllUserTests", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("userId", userId);
 
             try
             {

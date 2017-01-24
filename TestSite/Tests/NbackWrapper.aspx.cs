@@ -61,7 +61,7 @@ namespace TestSite.Tests
 
                         if (hasPaidTest(_userId))
                         {
-                            PayPalBtn.Attributes.Add("style", "display:none");
+                           price.Attributes.Add("style", "display:none");
                             InitiateTest();
                         }
                         else
@@ -72,7 +72,7 @@ namespace TestSite.Tests
                             runTest.Visible = false;
                         }
 
-                        PayPalBtn.Visible = true;
+                        price.Visible = true;
                     }
                     else
                     {
@@ -94,7 +94,7 @@ namespace TestSite.Tests
                 logOut.Visible = true;
                 requestToReg.Visible = false;
                 login.Visible = false;
-                PayPalBtn.Visible = false;
+                price.Visible = false;
             }
             else if (User.Identity.IsAuthenticated)
             {
@@ -212,6 +212,26 @@ namespace TestSite.Tests
             ppHref.Append("&return=" + "http://localhost:52606/Tests/NbackWrapper.aspx"); //"http://localhost:52606/Tests/NbackWrapper.aspx"
 
             Response.Redirect(ppHref.ToString(), true);
+        }
+
+        protected void single_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ten_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void hundred_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void unlim_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

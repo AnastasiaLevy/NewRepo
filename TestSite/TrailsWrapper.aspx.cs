@@ -21,6 +21,7 @@ namespace TestSite
         protected bool _isProfilefilled;
         protected string _testId = Enums.TestId.Trails;
         protected static int _userTestId;
+        protected static bool _isUserProvider;
      
 
         protected void Page_Load(object sender, EventArgs e)
@@ -30,11 +31,10 @@ namespace TestSite
                 _user = Membership.GetUser(User.Identity.Name);
                 _userId = _user.ProviderUserKey.ToString();
                 _isProfilefilled = ProfileIsFilled(_userId);
+                _isUserProvider = false;
             }
             if (!IsPostBack)
             {
-
-
                 if (!String.IsNullOrEmpty(Request.QueryString["st"]) && Request.QueryString["st"] == "Completed")
                 {
                     string error = "";
@@ -50,13 +50,12 @@ namespace TestSite
                 }
                 else
                 {
-
-                    if (User.Identity.IsAuthenticated)
+                    if (User.Identity.IsAuthenticated && !_isUserProvider)
                     {
 
                         if (hasPaidTest(_userId))
                         {
-                            PayPalBtn.Visible = false;
+                            price.Visible = false;
                             InitiateTest();
                         }
                         else
@@ -65,10 +64,8 @@ namespace TestSite
                             logOut.Visible = true;
                             requestToReg.Visible = false;
                             runTest.Visible = false;
-                            PayPalBtn.Visible = true;
+                            price.Visible = true;
                         }
-
-                        
                     }
                     else
                     {
@@ -77,7 +74,6 @@ namespace TestSite
                         requestToReg.Visible = false;
                         runTest.Visible = false;
                     }
-
                 }
             }
         }
@@ -90,7 +86,7 @@ namespace TestSite
                 logOut.Visible = true;
                 requestToReg.Visible = false;
                 login.Visible = false;
-                PayPalBtn.Visible = false; 
+                price.Visible = false; 
             }
             else if (User.Identity.IsAuthenticated)
             {
@@ -184,14 +180,14 @@ namespace TestSite
 
         protected void PayPalBtn_Click(object sender, ImageClickEventArgs e)
         {
-             if (User.Identity.IsAuthenticated)
-             {
-                 PostPaypal();
-             }
-             else
-             {
-                 requestToReg.Visible = true;
-             }
+             //if (User.Identity.IsAuthenticated)
+             //{
+             //    PostPaypal();
+             //}
+             //else
+             //{
+             //    requestToReg.Visible = true;
+             //}
 
 
         }
@@ -215,8 +211,32 @@ namespace TestSite
             Response.Redirect(ppHref.ToString(), true);
         }
 
+        protected void single_Click(object sender, EventArgs e)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                PostPaypal();
+            }
+            else
+            {
+                requestToReg.Visible = true;
+            }
+        }
 
+        protected void ten_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        protected void hundred_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void unlim_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

@@ -336,7 +336,7 @@
                                 <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
                                 <SortedDescendingCellStyle BackColor="#E5E5E5" />
                                 <SortedDescendingHeaderStyle BackColor="#242121" />
-                            </asp:GridView>--%>
+                            </asp:GridView>
     </div>
                         <div class="clearfix"></div>
                     </div>

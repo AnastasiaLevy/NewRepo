@@ -43,7 +43,8 @@
                     <ul class="nav navbar-nav navbar-right custom-menu">
                         <li><a href="MainPage.aspx">Home</a></li>
 
-                        <li class="active"><a href="UserProfile.aspx">Back to Profile</a></li>
+                        <li class="active"><a id="hgoBack" runat="server" href="">Back to Profile
+                        </a></li>
                         <li>
                             <asp:Button ID="saveTop" runat="server" class="signup-btn" Text="Save" OnClick="submit_Click" />
                         </li>

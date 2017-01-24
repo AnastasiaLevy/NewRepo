@@ -83,10 +83,10 @@
                                 <asp:Label ID="user" runat="server" class="profile" Text=""></asp:Label>
                             </p>
                             <p>
-                               Contact Email:
+                                Contact Email:
                                 <asp:Label ID="email" runat="server" class="profile" Text=""></asp:Label>
                             </p>
-                         
+
                             <p><a class="profile" href="Registration.aspx"><strong><u>Profile Form</u></strong></a></p>
                         </div>
                         <%--                    <div class="col-lg-4">
@@ -100,6 +100,7 @@
                 </div>
             </section>
 
+           
             <section id="participant Data">
                 <div class="row">
                     <div class="box">
@@ -110,37 +111,86 @@
                             </h2>
                             <hr>
                         </div>
-                        <div class="col-lg-12">
+                        <div class="col-lg-6"> 
                             <p class="min"><strong>Participants Data</strong> </p>
+                            </div>
+                         <div class="col-lg-6 row">
+                            <div id="pop" class="" runat="server">
+                                <asp:Button ID="btnCancel" runat="server" Text="X" OnClick="Button1_Click" />
+                                <asp:GridView ID="gvTestPerUser" runat="server" RowStyle-Wrap="false" CellSpacing="10" class="gridview"
+                                GridLines="Horizontal" AutoGenerateColumns="False" BorderColor="#CCCCCC" BorderStyle="None"
+                                BorderWidth="1px" CellPadding="20" ForeColor="Black" Height="75px"
+                                RowStyle-Height="40px" Font-Size="Larger">
+
+                                    <Columns>
+                                        <asp:BoundField DataField="Name" HeaderText="Text Name"></asp:BoundField>
+                                        <asp:BoundField DataField="Assigned Date" DataFormatString="{0:d}" HeaderText="Assigned Date"></asp:BoundField>
+                                        <asp:BoundField DataField="Finished Date" DataFormatString="{0:d}" NullDisplayText="Not Finished" HeaderText="Finished Date"></asp:BoundField>
+
+                                        <asp:TemplateField HeaderText="Results">
+                                            <ItemTemplate>
+                                                <asp:LinkButton runat="server" Text=""  CausesValidation="false" ID="lbViewTestResults" OnClick="lbViewTestResults_Click"><i class="fa fa-eye  fa-2x" aria-hidden="true"></i></asp:LinkButton>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        <asp:TemplateField HeaderText="Remove">
+                                            <ItemTemplate>
+                                                <asp:LinkButton runat="server" Text=""  CausesValidation="false" ID="lbRemoveTestFromUserList" OnClick="lbRemoveTestFromUserList_Click"><i class="fa fa-minus-square-o  fa-2x" aria-hidden="true"></i></asp:LinkButton>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                          <asp:BoundField Visible="true" DataField="tID" />
+
+                                    </Columns>
+
+                                    <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+                                <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
+                                <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
+                                <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
+                                <SortedAscendingCellStyle BackColor="#F7F7F7" />
+                                <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
+                                <SortedDescendingCellStyle BackColor="#E5E5E5" />
+                                <SortedDescendingHeaderStyle BackColor="#242121" />
+                                <RowStyle Wrap="False" Height="40px"></RowStyle>
+                                </asp:GridView>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                        
                             <asp:GridView ID="gvAllParticipants" runat="server" RowStyle-Wrap="false" CellSpacing="10" class="gridview"
-                            GridLines="Horizontal" AutoGenerateColumns="False" BorderColor="#CCCCCC" BorderStyle="None"
-                            BorderWidth="1px" CellPadding="20" ForeColor="Black" Height="75px" 
-                            RowStyle-Height="40px" Font-Size="Larger">
+                                GridLines="Horizontal" AutoGenerateColumns="False" BorderColor="#CCCCCC" BorderStyle="None"
+                                BorderWidth="1px" CellPadding="20" ForeColor="Black" Height="75px"
+                                RowStyle-Height="40px" Font-Size="Larger">
                                 <Columns>
                                     <asp:BoundField DataField="First Name" HeaderText="First Name &nbsp;&nbsp;" />
                                     <asp:BoundField DataField="Last Name" HeaderText="Last Name &nbsp;&nbsp;" />
-                                    <asp:BoundField DataField="DOB" DataFormatString="{0:d}" HeaderText="DOB &nbsp;&nbsp; &nbsp;&nbsp;" />
-                                    <asp:TemplateField HeaderText="View" ItemStyle-Width="15px">
+                                    <asp:BoundField DataField="Age" HeaderText="Age &nbsp;&nbsp; &nbsp;&nbsp;" />
+                                    <asp:TemplateField HeaderText="Profile" ItemStyle-Width="15px">
                                         <ItemTemplate>
-                                            <asp:LinkButton ID="view" runat="server" CausesValidation="false" onclick="view_Click" Text="View"></asp:LinkButton>
-                                    
+                                            <asp:LinkButton ID="view" runat="server" CausesValidation="false" OnClick="view_Click"> <i class="fa fa-pencil-square-o  fa-2x" aria-hidden="true"></i></asp:LinkButton>
+
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                     <asp:TemplateField HeaderText="Delete">
                                         <ItemTemplate>
-                                            <asp:LinkButton ID="delete" runat="server" CausesValidation="false" onclick="delete_Click" Text="Delete"></asp:LinkButton>
+                                            <asp:LinkButton ID="delete" runat="server" CausesValidation="false" OnClick="delete_Click" Text="X"><i class="fa fa-minus-square-o  fa-2x" aria-hidden="true"></i></asp:LinkButton>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                      <asp:BoundField Visible="true" DataField="userId" />
+                              
+                                    <asp:TemplateField HeaderText="Tests">
+                                        <ItemTemplate>
+                                            <asp:LinkButton ID="viewTest" runat="server" CausesValidation="false" OnClick="viewTest_Click" Text ="open"><i class="fa fa-eye  fa-2x" aria-hidden="true"></i></asp:LinkButton>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                      <asp:BoundField DataField="userId" />
                                 </Columns>
-                                    <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
-                            <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
-                            <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
-                            <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
-                            <SortedAscendingCellStyle BackColor="#F7F7F7" />
-                            <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
-                            <SortedDescendingCellStyle BackColor="#E5E5E5" />
-                            <SortedDescendingHeaderStyle BackColor="#242121" />
+                                <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+                                <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
+                                <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
+                                <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
+                                <SortedAscendingCellStyle BackColor="#F7F7F7" />
+                                <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
+                                <SortedDescendingCellStyle BackColor="#E5E5E5" />
+                                <SortedDescendingHeaderStyle BackColor="#242121" />
                                 <RowStyle Wrap="False" Height="40px"></RowStyle>
                             </asp:GridView>
                         </div>
@@ -279,7 +329,6 @@
                     </div>
                 </div>
             </section>
-
         </div>
 
         <footer>
@@ -313,14 +362,14 @@
 <script src="../js/jquery.js"></script>
 
 <script>
-    $(document).ready(function () {
-        $('table').responsiveTable({
-            staticColumns: 2,
-            scrollRight: true,
-            scrollHintEnabled: true,
-            scrollHintDuration: 2000
-        });
-    });
+    //$(document).ready(function () {
+    //    $('table').responsiveTable({
+    //        staticColumns: 2,
+    //        scrollRight: true,
+    //        scrollHintEnabled: true,
+    //        scrollHintDuration: 2000
+    //    });
+    //});
 
     $('.custom-menu a[href^="#"], .intro-scroller .inner-link').on('click', function (e) {
         e.preventDefault();
@@ -360,5 +409,49 @@
         $("html, body").animate({ scrollTop: 0 }, 700);
         return false;
     });
+
+    function deselect(e) {
+        $('.pop').slideFadeToggle(function () {
+            e.removeClass('selected');
+        });
+    }
+
+
+    <%--    $('#' + '<%=gvAllParticipants.ClientID %>').on('click', function () {
+
+        if ($(this).hasClass('popped')) {
+            deselect($(this));
+        } else {
+            $(this).addClass('popped');
+            $('.pop').slideFadeToggle();
+        }
+        return false;
+    });--%>
+
+    function test()
+    {
+        
+
+        if ($(this).hasClass('popped')) {
+            deselect($(this));
+        } else {
+            $(this).addClass('popped');
+            $('.pop').slideFadeToggle();
+        }
+        return false;
+
+    }
+
+    $('.close').on('click', function () {
+
+        $('#pop').removeClass("popped");
+        //deselect($('#contact'));
+        return false;
+    });
+
+
+    $.fn.slideFadeToggle = function (easing, callback) {
+        return this.animate({ opacity: 'toggle', height: 'toggle' }, 'fast', easing, callback);
+    };
 
 </script>

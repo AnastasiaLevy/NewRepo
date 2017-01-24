@@ -60,7 +60,7 @@ namespace TestSite
 
                         if (hasPaidTest(_userId))
                         {
-                            PayPalBtn.Attributes.Add("style", "display:none");
+                            price.Attributes.Add("style", "display:none");
                             InitiateTest();
                         }
                         else
@@ -71,7 +71,7 @@ namespace TestSite
                             runTest.Visible = false;
                         }
 
-                        PayPalBtn.Visible = true;
+                        price.Visible = true;
                     }
                     else
                     {
@@ -93,7 +93,7 @@ namespace TestSite
                 logOut.Visible = true;
                 requestToReg.Visible = false;
                 login.Visible = false;
-                PayPalBtn.Visible = false;
+                price.Visible = false;
             }
             else if (User.Identity.IsAuthenticated)
             {
@@ -213,6 +213,11 @@ namespace TestSite
             ppHref.Append("&return=" + "http://localhost:52606/WCSTWrapper.aspx"); //"http://cogquiz.com/WCSTWrapper.aspx");//h/go?nachatTest");
 
             Response.Redirect(ppHref.ToString(), true);
+        }
+
+        protected void single_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

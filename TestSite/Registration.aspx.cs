@@ -23,10 +23,12 @@ namespace TestSite
             if (!String.IsNullOrEmpty(Request.QueryString["provId"]))
             {
                 _userId = Request.QueryString["userId"];
+                hgoBack.HRef = "~/Provider/ProviderPortal.aspx";
 
             }
             else
             {
+                hgoBack.HRef = "~/UserProfile.aspx";
                 _user = Membership.GetUser(User.Identity.Name);
                 _userId = _user.ProviderUserKey.ToString();
             }
