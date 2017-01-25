@@ -119,7 +119,7 @@ function displayInstructions(text) {
 }
 
 function startCountDownTimer(game) {
-    var timeleft = 3;
+    var timeleft = 10;
     canMove = false;
     var field = document.getElementById("countdown");
     field.style.display = '';
@@ -191,7 +191,7 @@ function checkPos(out) {
             p3 != null && p3.id == "green" &&
             p6 != null && p6.id == "blue") {
 
-            finishGame(1);
+            finishGame(2);
         }
     }
     else if (game == 3) {
@@ -199,7 +199,7 @@ function checkPos(out) {
             p3 != null && p3.id == "green" &&
             p2 != null && p2.id == "blue") {
 
-            finishGame(1);
+            finishGame(2);
         }
     }
     else if (game == 4) {
@@ -207,7 +207,7 @@ function checkPos(out) {
             p4 != null && p4.id == "green" &&
             p3 != null && p3.id == "blue") {
 
-            finishGame(1);
+            finishGame(4);
         }
     }
     else if (game == 5) {
@@ -215,7 +215,7 @@ function checkPos(out) {
             p6 != null && p6.id == "green" &&
             p4 != null && p4.id == "blue") {
 
-            finishGame(1);
+            finishGame(4);
         }
     }
     else if (game == 6) {
@@ -223,7 +223,7 @@ function checkPos(out) {
             p3 != null && p3.id == "blue" &&
             p2 != null && p2.id == "green") {
 
-            finishGame(1);
+            finishGame(5);
         }
     }
     else if (game == 7) {
@@ -231,7 +231,7 @@ function checkPos(out) {
          p6 != null && p6.id == "green" &&
          p3 != null && p3.id == "blue") {
 
-            finishGame(1);
+            finishGame(5);
  
         }
     }
@@ -240,7 +240,7 @@ function checkPos(out) {
          p2 != null && p2.id == "green" &&
          p6 != null && p6.id == "blue") {
 
-            finishGame(1);
+            finishGame(5);
 
         }
     }
@@ -249,7 +249,7 @@ function checkPos(out) {
          p2 != null && p2.id == "green" &&
          p3 != null && p3.id == "blue") {
 
-            finishGame(1);
+            finishGame(6);
 
         }
     }
@@ -258,7 +258,7 @@ function checkPos(out) {
          p3 != null && p3.id == "blue" &&
          p6 != null && p6.id == "green") {
 
-            finishGame(1);
+            finishGame(6);
 
         }
     }
@@ -267,7 +267,7 @@ function checkPos(out) {
          p2 != null && p2.id == "green" &&
          p3 != null && p3.id == "blue") {
 
-            finishGame(1);
+            finishGame(6);
 
         }
     }
@@ -276,7 +276,7 @@ function checkPos(out) {
             p1 != null && p1.id == "green" &&
             p3 != null && p3.id == "blue") {
 
-            finishGame(1);
+            finishGame(7);
 
         }
     }
@@ -285,7 +285,7 @@ function checkPos(out) {
          p5 != null && p5.id == "green" &&
          p3 != null && p3.id == "blue") {
 
-            finishGame(1);
+            finishGame(7);
            
         }
     }

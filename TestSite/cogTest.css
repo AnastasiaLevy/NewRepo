@@ -1066,7 +1066,7 @@ img.displayed {
 }
 
 .navbar-inverse {
-    background-color: #99ddff;
+    background-color: #009ACD;
     opacity: 0.85;
     font-size: 15px;
     padding-top: 6px;
@@ -3064,8 +3064,14 @@ form .buttons {
     }
 }
 
-#gvAllParticipants, #gvTestPerUser {
+#gvAllParticipants, #gvTestPerUser, #gvProviderTests {
     width: 100%;
+    word-wrap: break-word;
+    table-layout: fixed;
+ 
+}
+.testResGrid {
+  width: 100%;
     word-wrap: break-word;
     table-layout: fixed;
 }
@@ -3084,12 +3090,12 @@ label {
 
 #pop {
     position: fixed;
-    top: 25%;
-    left: 25%;
-    margin-top: -50px;
-    margin-left: -50px;
-    width: 50%;
-    height: 50%;
+    top: 20%;
+    left: 20%;
+    /*margin-top: -50px;
+    margin-left: -50px;*/
+    width: 60%;
+    min-height: 50%;
     z-index: 100;
     background-color: white;
     border: 2px double;
@@ -3100,11 +3106,16 @@ label {
     padding-top:0px;
 }
 #btnCancel {
-    margin-left: 98%;
+    margin-left: 66%;
     font-size: x-large;
     color: white;
     border: 1px solid;
     border-radius: 5px;
     background-color:dodgerblue;
     
+}
+.createUser{
+ margin-top : 15px;
+ border-radius:5px;
+ width:100%;
 }

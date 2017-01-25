@@ -64,7 +64,8 @@
         </div>
         <div class="resultGridView">
             <asp:Label class="chartTitle" ID="chartTitle" runat="server" Text="Label"></asp:Label>
-            <asp:GridView ID="gvTestResults" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%">
+            <asp:Panel ID="pResultPanel" runat="server" Width ="100%"></asp:Panel>
+<%--            <asp:GridView ID="gvTestResults" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%">
                 <AlternatingRowStyle BackColor="White" />
                 <EditRowStyle BackColor="#7C6F57" />
                 <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
@@ -76,7 +77,7 @@
                 <SortedAscendingHeaderStyle BackColor="#246B61" />
                 <SortedDescendingCellStyle BackColor="#D4DFE1" />
                 <SortedDescendingHeaderStyle BackColor="#15524A" />
-            </asp:GridView>
+            </asp:GridView>--%>
         </div>
             <div id="interpretation">
                 <p>

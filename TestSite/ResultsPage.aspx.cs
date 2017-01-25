@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
@@ -30,14 +31,14 @@ namespace TestSite
             DataTable dt;
             DataSet ds;
             decimal score;
-            string text;
-       
+            int factor;
+
+
             if (test == "3")
             {
                 chartTitle.Text = "Results for Card Sort Test for participant " + userName;
                 dt = DataMethods.GetTestResultsCardSort(userId, tId);
-                gvTestResults.DataSource = dt;
-                gvTestResults.DataBind();
+         
 
 
             }
@@ -48,75 +49,98 @@ namespace TestSite
             {
                 chartTitle.Text = "Results for Tower of London test for participant " + userName;
                 dt = DataMethods.GetTestResultsLondon(userId, tId);
-                gvTestResults.DataSource = dt;
-                gvTestResults.DataBind();
+         
                 ds = DataMethods.GetLondonUserResultsTotal(userId, tId, ageGroup);
                 //if (ds.Tables[0].Rows[0]["avgUserScore"] != DBNull)
                 score = Convert.ToDecimal(ds.Tables[0].Rows[0]["avgUserScore"]);
-                text = CalculateResults(score, Convert.ToDecimal(ds.Tables[0].Rows[0]["avgUserScore"]), Convert.ToDecimal(ds.Tables[0].Rows[0]["avgUserScore"]));
-                textStr.Text = text;
+                //text = CalculateResults(score, Convert.ToDecimal(ds.Tables[0].Rows[0]["avgUserScore"]), Convert.ToDecimal(ds.Tables[0].Rows[0]["avgUserScore"]));
+                //textStr.Text = text;
+                GridView gvA = new GridView();
+                SetGvProperties(gvA);
+
 
 
 
             }
 
-            if (test == "1")
+            if (test == "1" || test == "Trails")
             {
-                chartTitle.Text = "Results for Trails test for participant " + userName;
+                chartTitle.Text = "Results for Trails Test";
                 dt = DataMethods.GetTestResultsTrails(userId, tId);
-                gvTestResults.DataSource = dt;
-                gvTestResults.DataBind();
+             
                 
                 TrailsResults tr = new TrailsResults();
                 tr.PartA =Convert.ToDecimal( dt.Rows[0]["Trail A"]);
                 tr.PartB = Convert.ToDecimal(dt.Rows[0]["Trail B"]);
-                dt = DataMethods.GetTestNormsTrails(ageGroup);
-                tr.Mean = Convert.ToDecimal(dt.Rows[0]["mean"]);
-                tr.StdDev = Convert.ToDecimal(dt.Rows[0]["stdDeviation"]);
-                score = (tr.PartA + tr.PartB) / 2;
-                text = CalculateResults(score, tr.Mean, tr.StdDev);
-                textStr.Text = text;   
-            }
+                DataSet dts = DataMethods.GetTestNormsTrails(ageGroup);
+                DataTable dtA = dts.Tables[0];
+                DataTable dtB = dts.Tables[1];
 
+                decimal meanA = Convert.ToDecimal(dtA.Rows[0]["mean"]);
+                decimal meanB = Convert.ToDecimal(dtB.Rows[0]["mean"]);
+
+                decimal stdA = Convert.ToDecimal(dtA.Rows[0]["stdDeviation"]);
+                decimal stdB = Convert.ToDecimal(dtB.Rows[0]["stdDeviation"]);
+                GridView gvA = new GridView();
+                SetGvProperties(gvA);
+                    
+                gvA.DataSource = dtA;
+                gvA.DataBind();
+                pResultPanel.Controls.Add(gvA);
+                factor = CalculateResults(tr.PartA, meanA, stdA);
+                Literal resA = new Literal();
+                resA.Text = Enums.ReturnTrailsResultStrings(factor);
+                pResultPanel.Controls.Add(resA);
+
+                GridView gvB = new GridView();
+                SetGvProperties(gvB);
+
+                gvB.DataSource = dtB;
+                gvB.DataBind();
+                pResultPanel.Controls.Add(gvB);
+                factor = CalculateResults(tr.PartB, meanB, stdB);
+                Literal resB = new Literal();
+                resB.Text = Enums.ReturnTrailsResultStrings(factor);
+                pResultPanel.Controls.Add(resB);
+            }
         }
 
-        protected string CalculateResults(decimal? score, decimal? mean, decimal? stdDev)
+        protected int CalculateResults(decimal? score, decimal? mean, decimal? stdDev)
         {
-            string text = "";
+            int category = 10;
             if (score == null || mean == null || stdDev== null)
             {
-                return "Impossible to calculate results";
+                return 10;
             }
-                 
-          
+
             if (score < mean - stdDev * 3)
             {
-                text = Resources.Text.ResultLower3StdDev;
+                category = -3;
             }
             else if (score < mean - stdDev *2)
             {
-                text = Resources.Text.ResultLower2StdDev;
+               category = -2;
             }
             else if (score < mean - stdDev)
             {
-                text = Resources.Text.ResultBelowStdDev;
+                category = -1;
             }
             else if (score > mean + stdDev)
             {
-                text = Resources.Text.ResultHigherStdDev;
+                category = +1;
             }
             else if (score > mean + stdDev*2)
             {
-                text = Resources.Text.ResultHigher2StdDev;
+                category = +2;
             }
             else if (score > mean + stdDev * 3)
             {
-                text = Resources.Text.ResultHigher3StdDev;
+                category = +3;
             }
             else
-                text = Resources.Text.ResultMiddleStdDev;
+                category =0;
 
-            return text;
+            return category;
 
         }
 
@@ -124,6 +148,26 @@ namespace TestSite
         {
             FormsAuthentication.SignOut();
             Response.Redirect("~/MainPage.aspx");
+
+        }
+
+        private void SetGvProperties(GridView gv)
+        {
+            gv.AlternatingRowStyle.BackColor = System.Drawing.Color.White;
+            gv.EditRowStyle.BackColor = System.Drawing.Color.Wheat;
+            gv.GridLines = GridLines.None;
+            //TODO:style class from css
+            gv.CellPadding = 4;
+            gv.ForeColor = Color.Ivory;
+            gv.HeaderStyle.BackColor = Color.DarkGreen;
+            gv.HeaderStyle.ForeColor = Color.White;
+            gv.ForeColor = Color.Black;
+            gv.RowStyle.BackColor = Color.FloralWhite;
+            gv.CssClass = "testResGrid";
+          
+
+
+
 
         }
     }

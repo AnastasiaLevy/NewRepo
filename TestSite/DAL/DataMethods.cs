@@ -48,14 +48,14 @@ namespace TestSite.DAL
 
         }
 
-        internal static object GetAllProviderParticipants(int? providerId)
+        internal static object GetAllProviderTests(int? providerId)
         {
             DataSet ds = new DataSet();
             SqlConnection conn = new SqlConnection(connectionSring);
-            SqlCommand cmd = new SqlCommand("GetAllProviderParticipants", conn);
+            SqlCommand cmd = new SqlCommand("GetAllProviderTests", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@providerId", providerId);
-    ;
+
             try
             {
                 SqlDataAdapter adp = new SqlDataAdapter(cmd);
@@ -67,6 +67,52 @@ namespace TestSite.DAL
             }
 
             return ds;
+        }
+
+        internal static object GetAllProviderParticipants(int? providerId)
+        {
+            DataSet ds = new DataSet();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("GetAllProviderParticipants", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@providerId", providerId);
+    
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                adp.Fill(ds);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption getting All Provider Participants. " + ex.Message);
+            }
+
+            return ds;
+        }
+
+        internal static void DeactivateParticipant(string userId, string providerId)
+        {
+            DataTable ds = new DataTable();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("DeactivateParticipant", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@userID", userId);
+            cmd.Parameters.AddWithValue("@providerId", providerId);
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption saving CST moves. " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
         }
 
         internal static int? GetProviderId(string userId)
@@ -117,6 +163,36 @@ namespace TestSite.DAL
             {
                 conn.Close();
             }
+        }
+
+        internal static void RemoveTestFromUserList(string userId, string tId)
+        {
+            DataTable ds = new DataTable();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("RemoveTestFromUserList", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@userId", userId);
+            cmd.Parameters.AddWithValue("@tId", tId);
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption Removing test from the list. " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+;
+        }
+
+        internal static void InsertProviderToTheUser(object providerUserKey, string v)
+        {
+            throw new NotImplementedException();
         }
 
         internal static void InsertCardSortUserMovesMap( int tId, string text)
@@ -223,9 +299,9 @@ namespace TestSite.DAL
             return ds;
         }
 
-        internal static DataTable GetTestNormsTrails(int ageGroup)
+        internal static DataSet GetTestNormsTrails(int ageGroup)
         {
-            DataTable ds = new DataTable();
+            DataSet ds = new DataSet();
             SqlConnection conn = new SqlConnection(connectionSring);
             SqlCommand cmd = new SqlCommand("GetUserNormsTrails", conn);
             cmd.CommandType = CommandType.StoredProcedure;

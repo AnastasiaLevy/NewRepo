@@ -87,5 +87,40 @@ namespace TestSite.HelpClasses
 
         }
 
+        public static string ReturnTrailsResultStrings(int factor)
+        {
+            string text = "";
+            switch(factor)
+            {
+              
+                case -3:
+                    text = "Exellent";
+                    break;
+                case -2:
+                    text = "Very Good";
+                    break;
+                case -1:
+                    text = "Above Average";
+                    break;
+                case 0:
+                    text = "Average";
+                    break;
+                case 1:
+                    text = "Below Average";
+                    break;
+                case 2:
+                    text = "Pretty Bad";
+                    break;
+                case 3:
+                    text = "Bad";
+                    break;
+                case 10:
+                    text = "Unable determing results. Please contact administrator.";
+                    break;
+            }
+            return text;
+
+        }
+
     }
 }
