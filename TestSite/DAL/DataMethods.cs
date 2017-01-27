@@ -48,9 +48,30 @@ namespace TestSite.DAL
 
         }
 
-        internal static object GetAllProviderTests(int? providerId)
+        internal static DataTable GetLondonNorms(int ageGroup)
         {
-            DataSet ds = new DataSet();
+            DataTable ds = new DataTable();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("GetLondonNorms", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@ageGroup", ageGroup);
+
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                adp.Fill(ds);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption getting All Provider Participants. " + ex.Message);
+            }
+
+            return ds;
+        }
+
+        internal static DataTable GetAllProviderTests(int? providerId)
+        {
+            DataTable ds = new DataTable();
             SqlConnection conn = new SqlConnection(connectionSring);
             SqlCommand cmd = new SqlCommand("GetAllProviderTests", conn);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -69,9 +90,9 @@ namespace TestSite.DAL
             return ds;
         }
 
-        internal static object GetAllProviderParticipants(int? providerId)
+        internal static DataTable GetAllProviderParticipants(int? providerId)
         {
-            DataSet ds = new DataSet();
+            DataTable ds = new DataTable();
             SqlConnection conn = new SqlConnection(connectionSring);
             SqlCommand cmd = new SqlCommand("GetAllProviderParticipants", conn);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -92,7 +113,7 @@ namespace TestSite.DAL
 
         internal static void DeactivateParticipant(string userId, string providerId)
         {
-            DataTable ds = new DataTable();
+           
             SqlConnection conn = new SqlConnection(connectionSring);
             SqlCommand cmd = new SqlCommand("DeactivateParticipant", conn);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -144,7 +165,7 @@ namespace TestSite.DAL
 
         internal static void UpdateProviderTable(string userId)
         {
-            DataTable ds = new DataTable();
+          
             SqlConnection conn = new SqlConnection(connectionSring);
             SqlCommand cmd = new SqlCommand("CreateProvider", conn);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -167,7 +188,7 @@ namespace TestSite.DAL
 
         internal static void RemoveTestFromUserList(string userId, string tId)
         {
-            DataTable ds = new DataTable();
+           
             SqlConnection conn = new SqlConnection(connectionSring);
             SqlCommand cmd = new SqlCommand("RemoveTestFromUserList", conn);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -189,15 +210,35 @@ namespace TestSite.DAL
             }
 ;
         }
-
-        internal static void InsertProviderToTheUser(object providerUserKey, string v)
+        //InsertProviderToUser
+        internal static void InsertProviderToTheUser(string providerUserKey, int providerId, string userName)
         {
-            throw new NotImplementedException();
+         
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("InsertProviderToUser", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@providerId", providerId);
+            cmd.Parameters.AddWithValue("@userID", providerUserKey);
+            cmd.Parameters.AddWithValue("@userName", userName);
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption saving User Provider. " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
 
         internal static void InsertCardSortUserMovesMap( int tId, string text)
         {
-            DataTable ds = new DataTable();
+           
             SqlConnection conn = new SqlConnection(connectionSring);
             SqlCommand cmd = new SqlCommand("InsertCardSortUserMovesMap", conn);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -220,6 +261,28 @@ namespace TestSite.DAL
 
         }
 
+        internal static void InsertTestToParticipant(int provTestId, string userId)
+        {
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("InsertProviderUserTest", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("provTestId", provTestId);
+            cmd.Parameters.AddWithValue("userId", userId);
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption in Insert Provider Test: " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
         internal static void InsertCardSortUserResult(
 
             string userId,
@@ -239,7 +302,7 @@ namespace TestSite.DAL
             string category
             )
         {
-            DataTable ds = new DataTable();
+           
             SqlConnection conn = new SqlConnection(connectionSring);
             SqlCommand cmd = new SqlCommand("InsertCardSortUserResults", conn);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -395,7 +458,7 @@ namespace TestSite.DAL
         {
             DataTable ds = new DataTable();
             SqlConnection conn = new SqlConnection(connectionSring);
-            SqlCommand cmd = new SqlCommand("GetUserTestResults", conn);
+            SqlCommand cmd = new SqlCommand("GetUserLondonTestResults", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@userId", userId);
             cmd.Parameters.AddWithValue("@tId", tId);
@@ -502,7 +565,7 @@ namespace TestSite.DAL
             {
                 conn.Close();
             }
-            return Convert.ToBoolean(isReg);
+            return (isReg == DBNull.Value) ? false : Convert.ToBoolean(isReg);
         }
 
 
@@ -708,7 +771,9 @@ namespace TestSite.DAL
             }
         }
 
-        public static void UpdateLondonUserResults(string userId, int tId, string testId, int game, decimal initThinkTime, decimal totalTime, int numMoves, int numWrongMoves, bool overTime, bool overMoves)
+        public static void UpdateLondonUserResults(string userId, int tId, string testId,
+            int game, decimal initThinkTime, decimal totalTime, int numMoves, 
+            int numWrongMoves, bool overTime, bool overMoves, int minMoves)
         {
             DataTable ds = new DataTable();
             SqlConnection conn = new SqlConnection(connectionSring);
@@ -724,6 +789,7 @@ namespace TestSite.DAL
             cmd.Parameters.AddWithValue("@numberWrongMoves", numWrongMoves);
             cmd.Parameters.AddWithValue("@overTime", overTime);
             cmd.Parameters.AddWithValue("@overMove", overMoves);
+            cmd.Parameters.AddWithValue("@minMoves", minMoves);
 
             try
             {
@@ -789,7 +855,7 @@ namespace TestSite.DAL
 
         public static void UpdateTrailsResults(string userId, decimal decimalValA, decimal decimalValB, int tId)
         {
-            DataTable ds = new DataTable();
+            
             SqlConnection conn = new SqlConnection(connectionSring);
             SqlCommand cmd = new SqlCommand("UpdateTrailsResultsUser", conn);
             cmd.CommandType = CommandType.StoredProcedure;

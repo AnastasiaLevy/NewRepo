@@ -34,13 +34,13 @@ namespace TestSite
         public static void SaveResults(string game, 
             string initThinkTime, string timeTotal,
             string numberOfMoves,string numberOfWrongMoves,
-            string overTime, string overMoves)
+            string overTime, string overMoves, string minMoves)
         {
           string testId = Enums.TestId.TowerOfLondon;
           DataMethods.UpdateLondonUserResults(_userId, _userTestId, testId, Convert.ToInt32(game),
           System.Convert.ToDecimal(initThinkTime), System.Convert.ToDecimal(timeTotal),
           Convert.ToInt32(numberOfMoves), Convert.ToInt32(numberOfWrongMoves),
-          Convert.ToBoolean(overTime), Convert.ToBoolean(overMoves));
+          Convert.ToBoolean(overTime), Convert.ToBoolean(overMoves), Convert.ToInt32(minMoves));
         }
 
 

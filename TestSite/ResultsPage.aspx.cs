@@ -26,11 +26,8 @@ namespace TestSite
             int tId = Convert.ToInt32(Request.QueryString["tId"]);
             string test = Request.QueryString["test"].ToString();
             string userName = User.Identity.Name;
-            //int age = Convert.ToInt32(Request.QueryString["age"]);
             int ageGroup = Enums.GetAgeGroup(age);
             DataTable dt;
-            DataSet ds;
-            decimal score;
             int factor;
 
 
@@ -38,28 +35,25 @@ namespace TestSite
             {
                 chartTitle.Text = "Results for Card Sort Test for participant " + userName;
                 dt = DataMethods.GetTestResultsCardSort(userId, tId);
-         
+
 
 
             }
                
-                
-
-            if (test == "2")
+            if (test == "2" || test == "Tower Of London")
             {
-                chartTitle.Text = "Results for Tower of London test for participant " + userName;
-                dt = DataMethods.GetTestResultsLondon(userId, tId);
-         
-                ds = DataMethods.GetLondonUserResultsTotal(userId, tId, ageGroup);
-                //if (ds.Tables[0].Rows[0]["avgUserScore"] != DBNull)
-                score = Convert.ToDecimal(ds.Tables[0].Rows[0]["avgUserScore"]);
-                //text = CalculateResults(score, Convert.ToDecimal(ds.Tables[0].Rows[0]["avgUserScore"]), Convert.ToDecimal(ds.Tables[0].Rows[0]["avgUserScore"]));
-                //textStr.Text = text;
-                GridView gvA = new GridView();
-                SetGvProperties(gvA);
+                chartTitle.Text = "Results for Tower of London test";
+                GridView gv;
+                SetUpUserResultGrid(userId, tId, out dt, out gv);
 
-
-
+                DataTable dtr = DataMethods.GetLondonNorms(ageGroup);
+                decimal mean = Convert.ToDecimal(dtr.Rows[0]["mean"]);
+                decimal std = Convert.ToDecimal(dtr.Rows[0]["stdDeviation"]);
+                int totalM = dt.AsEnumerable().Where(row => row.Field<int>("game") > 3).Sum(r => r.Field<int>("Exess Moves"));
+                factor = CalculateResults(totalM, mean, std);
+                Label descr = new Label();
+                descr.Text = "You have made " + totalM + Enums.ReturnLondonResultStrings(factor);
+                pResultPanel.Controls.Add(gv);
 
             }
 
@@ -68,7 +62,6 @@ namespace TestSite
                 chartTitle.Text = "Results for Trails Test";
                 dt = DataMethods.GetTestResultsTrails(userId, tId);
              
-                
                 TrailsResults tr = new TrailsResults();
                 tr.PartA =Convert.ToDecimal( dt.Rows[0]["Trail A"]);
                 tr.PartB = Convert.ToDecimal(dt.Rows[0]["Trail B"]);
@@ -84,25 +77,29 @@ namespace TestSite
                 GridView gvA = new GridView();
                 SetGvProperties(gvA);
                     
-                gvA.DataSource = dtA;
+                gvA.DataSource = dt;
                 gvA.DataBind();
                 pResultPanel.Controls.Add(gvA);
                 factor = CalculateResults(tr.PartA, meanA, stdA);
-                Literal resA = new Literal();
-                resA.Text = Enums.ReturnTrailsResultStrings(factor);
+                Label resA = new Label();
+                resA.Text = "Trails part A: " +Enums.ReturnTrailsResultStrings(factor);
                 pResultPanel.Controls.Add(resA);
 
-                GridView gvB = new GridView();
-                SetGvProperties(gvB);
-
-                gvB.DataSource = dtB;
-                gvB.DataBind();
-                pResultPanel.Controls.Add(gvB);
                 factor = CalculateResults(tr.PartB, meanB, stdB);
-                Literal resB = new Literal();
-                resB.Text = Enums.ReturnTrailsResultStrings(factor);
+                Label resB = new Label();
+                resB.Text = "Trails part B: " +Enums.ReturnTrailsResultStrings(factor);
+               
                 pResultPanel.Controls.Add(resB);
             }
+        }
+
+        private void SetUpUserResultGrid(string userId, int tId, out DataTable dt, out GridView gv)
+        {
+            dt = DataMethods.GetTestResultsLondon(userId, tId);
+            gv = new GridView();
+            SetGvProperties(gv);
+            gv.DataSource = dt;
+            gv.DataBind();
         }
 
         protected int CalculateResults(decimal? score, decimal? mean, decimal? stdDev)

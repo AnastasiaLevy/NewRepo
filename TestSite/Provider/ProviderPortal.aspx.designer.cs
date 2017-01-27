@@ -31,31 +31,31 @@ namespace TestSite.Provider {
         protected global::System.Web.UI.WebControls.LinkButton Logout;
         
         /// <summary>
-        /// user control.
+        /// btnUpdateProfile control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label user;
+        protected global::System.Web.UI.WebControls.Button btnUpdateProfile;
         
         /// <summary>
-        /// email control.
+        /// btnAddNewPart control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label email;
+        protected global::System.Web.UI.WebControls.Button btnAddNewPart;
         
         /// <summary>
-        /// updateProfile control.
+        /// btnAddUserTest control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button updateProfile;
+        protected global::System.Web.UI.WebControls.Button btnAddUserTest;
         
         /// <summary>
         /// pProviderTools control.
@@ -65,6 +65,15 @@ namespace TestSite.Provider {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pProviderTools;
+        
+        /// <summary>
+        /// createUser control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl createUser;
         
         /// <summary>
         /// lblError control.
@@ -148,6 +157,60 @@ namespace TestSite.Provider {
         protected global::System.Web.UI.WebControls.Button btnCancelUser;
         
         /// <summary>
+        /// assignTest control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl assignTest;
+        
+        /// <summary>
+        /// ddlAllParticipants control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlAllParticipants;
+        
+        /// <summary>
+        /// ddlProvTests control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlProvTests;
+        
+        /// <summary>
+        /// btnPartAddTest control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnPartAddTest;
+        
+        /// <summary>
+        /// btnCloseAddTest control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCloseAddTest;
+        
+        /// <summary>
+        /// pProviderInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pProviderInfo;
+        
+        /// <summary>
         /// btnAddParticipant control.
         /// </summary>
         /// <remarks>
@@ -175,15 +238,6 @@ namespace TestSite.Provider {
         protected global::System.Web.UI.WebControls.Label partName;
         
         /// <summary>
-        /// Button3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button3;
-        
-        /// <summary>
         /// btnCancel control.
         /// </summary>
         /// <remarks>
@@ -209,15 +263,6 @@ namespace TestSite.Provider {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvAllParticipants;
-        
-        /// <summary>
-        /// Button1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
         /// gvProviderTests control.

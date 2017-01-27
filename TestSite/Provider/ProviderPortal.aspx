@@ -73,11 +73,11 @@
                             <hr>
                         </div>
 
-                        <div class="col-md-2">
+                      <%--  <div class="col-md-2">
                             <img class="img-responsive img-border-left" src="../images/mind.jpg" alt="">
-                        </div>
+                        </div>--%>
                         <div class="col-lg-4">
-                            <p class="min"><strong>User Information and Profile Data:</strong> </p>
+                      <%--      <p class="min"><strong>User Information and Profile Data:</strong> </p>
                             <p>
                                 Company Name:
                                 <asp:Label ID="user" runat="server" class="profile" Text=""></asp:Label>
@@ -85,46 +85,59 @@
                             <p>
                                 Contact Email:
                                 <asp:Label ID="email" runat="server" class="profile" Text=""></asp:Label>
-                            </p>
-                            <asp:Button ID="updateProfile" runat="server" Text="profile" OnClick="updateProfile_Click" />
+                            </p>--%>
+                            <asp:Button ID="btnUpdateProfile" runat="server" Text="profile"  class="btn btn-labeled btn-info" width =" 100%"/>
+                             <asp:Button ID="btnAddNewPart" runat="server" Text="Add New Participant" OnClick="btnAddNewPart_Click" class="btn btn-labeled btn-info" width="100%"/>
+                              <asp:Button ID="btnAddUserTest" runat="server" Text="Assign Participant Test" onClick="btnAddUserTest_Click" class="btn btn-labeled btn-info" width="100%"/>
                         </div>
-                        <div class="col-lg-6" >
-                            <asp:Panel ID="pProviderTools" runat="server">
+                        <div class="col-lg-8" >
+                            <asp:Panel ID="pProviderTools" runat="server" >
                           
-                                    <div class="panel panel-success">
-                                        <div class="panel-heading">
-                                            <h3 class="panel-title">Create New User:</h3>
-                                        </div>
-                                        <div class="panel-body" >
-                                            <div <%--class="row"--%>>
-                                                        <asp:Label ID="lblError" runat="server" Text=""></asp:Label>
+                                <div id="createUser" class="panel panel-success" runat ="server">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Create New User:</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div>
+                                               <asp:Label ID="lblError" runat="server" Text=""></asp:Label>
                                                 <div class="col-xs-12 col-sm-12 col-md-12 ">
-                                            
+                                                <asp:Label ID="Label4" runat="server" Text="User email"></asp:Label>
+                                                <asp:TextBox ID="txtUserEmail" runat="server" CssClass="createUser" Width="100%"></asp:TextBox>
 
-                                                      <asp:Label ID="Label4" runat="server" Text="User email"></asp:Label>
-                                                    <asp:TextBox ID="txtUserEmail" runat="server" CssClass="createUser" Width="100%"></asp:TextBox>
+                                                <asp:Label ID="Label1" runat="server" Text="User Name"></asp:Label>
+                                                <asp:TextBox ID="txtNewUser" runat="server" CssClass="createUser" Width="100%"></asp:TextBox>
 
-                                                    <asp:Label ID="Label1" runat="server" Text="User Name"></asp:Label>
-                                                    <asp:TextBox ID="txtNewUser" runat="server" CssClass="createUser" Width="100%"></asp:TextBox>
+                                                <asp:Label ID="Label2" runat="server" Text="Password"></asp:Label>
+                                                <asp:TextBox ID="txtPassword" runat="server" CssClass="createUser" Width="100%"></asp:TextBox>
 
-                                                    <asp:Label ID="Label2" runat="server" Text="Password"></asp:Label>
-                                                    <asp:TextBox ID="txtPassword" runat="server" CssClass="createUser" Width="100%"></asp:TextBox>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="panel-footer">
-                                            <div class="row">
-                                                <div class="col-xs-6 col-sm-6 col-md-6">
-                                                    <asp:Button ID="btnCreateNewUser" class="btn btn-labeled btn-success" runat="server" Text="Create"  OnClick="btnCreateNewUser_Click"/>
-                                                </div>
-                                                <div class="col-xs-6 col-sm-6 col-md-6">
-                                                    <asp:Button ID="btnCancelUser" runat="server" class="btn btn-labeled btn-info" Text="Cancel" OnClick="btnCancelUser_Click" />
-                                                   
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="panel-footer">
+                                        <div class="row">
+                                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                                <asp:Button ID="btnCreateNewUser" class="btn btn-labeled btn-success" runat="server" Text="Create" OnClick="btnCreateNewUser_Click" />
+                                            </div>
+                                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                                <asp:Button ID="btnCancelUser" runat="server" class="btn btn-labeled btn-info" Text="Close" OnClick="btnCancelUser_Click" />
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="assignTest" class="panel panel-success" runat="server">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Assign Test</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <asp:DropDownList ID="ddlAllParticipants" runat="server" Width="50%"></asp:DropDownList>
+                                        <asp:DropDownList ID="ddlProvTests" runat="server" Width="40%"></asp:DropDownList>
+                                        <asp:Button ID="btnPartAddTest" class="btn btn-labeled btn-success" runat="server" Text="Assign" OnClick="btnPartAddTest_Click1" />
+                                        <asp:Button ID="btnCloseAddTest" class="btn btn-labeled btn-info" runat="server" Text="Close" OnClick="btnCloseAddTest_Click" />
+                                    </div>
+                                </div>
+                            </asp:Panel>
+                                <asp:Panel ID="pProviderInfo" runat="server" >
                             </asp:Panel>
                         </div>
                         <div class="clearfix"></div>
@@ -151,22 +164,24 @@
                          <div class="col-lg-6 row">
                              <div id="pop" class="" runat="server">
                                  <asp:Label ID="partName" runat="server" Text="" CssClass="col-lg-2"></asp:Label>
-                                 <asp:Button ID="Button3" runat="server" Text="Button " class="col-lg-1" />
+                                 
+                          
+                               
                                  <asp:Button ID="btnCancel" runat="server" Text="X" OnClick="Button1_Click" class="col-md-1" />
                                  <asp:GridView ID="gvTestPerUser" runat="server" RowStyle-Wrap="false" CellSpacing="10" class="gridview"
                                      GridLines="Horizontal" AutoGenerateColumns="False" BorderColor="#CCCCCC" BorderStyle="None"
                                      BorderWidth="1px" CellPadding="20" ForeColor="Black" Height="75px"
-                                     RowStyle-Height="40px" Font-Size="Larger">
+                                     RowStyle-Height="40px" Font-Size="Larger" >
 
                                      <Columns>
                                          <asp:BoundField DataField="Name" HeaderText="Text Name"></asp:BoundField>
                                          <asp:BoundField DataField="Assigned Date" DataFormatString="{0:d}" HeaderText="Assigned Date"></asp:BoundField>
-                                         <asp:BoundField DataField="Finished Date" DataFormatString="{0:d}" NullDisplayText="Not Finished" HeaderText="Finished Date"></asp:BoundField>
+                                         <asp:BoundField DataField="Finished Date"  DataFormatString="{0:d}" NullDisplayText ="Not Finished" HeaderText="Finished Date"></asp:BoundField>
 
                                          <asp:TemplateField HeaderText="Results" HeaderStyle-Width="10%" ItemStyle-Width="10%"
                                              FooterStyle-Width="10%">
                                              <ItemTemplate>
-                                                 <asp:LinkButton runat="server" Text="" CausesValidation="false" ID="lbViewTestResults" OnClick="lbViewTestResults_Click"><i class="fa fa-eye  fa-2x" aria-hidden="true"></i></asp:LinkButton>
+                                                 <asp:LinkButton runat="server" Text="" CausesValidation="false" ID="lbViewTestResults" OnClick="lbViewTestResults_Click" Visible='<%# Eval("Finished Date") != DBNull.Value  %>'><i class="fa fa-eye  fa-2x" aria-hidden="true"></i></asp:LinkButton>
                                              </ItemTemplate>
                                          </asp:TemplateField>
                                          <asp:TemplateField HeaderText="Remove" HeaderStyle-Width="10%" ItemStyle-Width="10%"
@@ -194,19 +209,19 @@
                         </div>
                         <div class="col-lg-12">
                         
-                            <asp:GridView ID="gvAllParticipants" runat="server" RowStyle-Wrap="false" CellSpacing="10" class="gridview"
+                            <asp:GridView ID="gvAllParticipants" runat="server"  CellSpacing="10" class="gridview"
                                 GridLines="Horizontal" AutoGenerateColumns="False" BorderColor="#CCCCCC" BorderStyle="None"
                                 BorderWidth="1px" CellPadding="20" ForeColor="Black" Height="100px"
                                 RowStyle-Height="40px" Font-Size="x-Large">
                                 <Columns>
                                     <asp:BoundField DataField="First Name" HeaderText="First Name &nbsp;&nbsp;" />
                                     <asp:BoundField DataField="Last Name" HeaderText="Last Name &nbsp;&nbsp;" />
+                                      <asp:BoundField DataField="Username" HeaderText="UserName &nbsp;&nbsp;" />
                                     <asp:BoundField DataField="Age" HeaderText="Age &nbsp;&nbsp; &nbsp;&nbsp;" />
                                     <asp:TemplateField HeaderText="Profile"   HeaderStyle-Width="10%" ItemStyle-Width="10%"
                                   FooterStyle-Width="10%">
                                         <ItemTemplate>
                                             <asp:LinkButton ID="view" runat="server" CausesValidation="false" OnClick="view_Click"> <i class="fa fa-pencil-square-o  fa-2x" aria-hidden="true"></i></asp:LinkButton>
-
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                     <asp:TemplateField HeaderText="Delete"   HeaderStyle-Width="10%" ItemStyle-Width="10%"
@@ -232,7 +247,7 @@
                                 <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
                                 <SortedDescendingCellStyle BackColor="#E5E5E5" />
                                 <SortedDescendingHeaderStyle BackColor="#242121" />
-                                <RowStyle Wrap="False" Height="40px"></RowStyle>
+                              
                             </asp:GridView>
                         </div>
                         <div class="clearfix"></div>
@@ -251,7 +266,7 @@
                             <hr>
                         </div>
                         <p class=col-lg-2>Purchased Tests</p>
-                        <asp:Button ID="Button1" runat="server" Text="Button" CssClass ="col-lg-1" />
+                       
 
                         <asp:GridView ID="gvProviderTests" runat="server" RowStyle-Wrap="false" CellSpacing="10" class="gridview"
                                 GridLines="Horizontal"  BorderColor="#CCCCCC" BorderStyle="None"
@@ -289,14 +304,14 @@
                             <hr>
                         </div>
                         <div class="col-sm-3 text-center">
-                            <a href="WCSTWrapper.aspx" id="mobileapps1">
+                            <a href="../WCSTWrapper.aspx" id="mobileapps1">
                                 <img class="img-responsive" src="../images/cardSort.png" alt=""></a>
                             <h3>Card Sort
                         <small></small>
                             </h3>
                         </div>
                         <div class="col-sm-3 text-center">
-                            <a href="TrailsWrapper.aspx" id="webdesign1">
+                            <a href="../TrailsWrapper.aspx" id="webdesign1">
                                 <img class="img-responsive" src="../images/trails.jpg" alt=""></a>
                             <h3>Trails
                        
@@ -304,7 +319,7 @@
                             </h3>
                         </div>
                         <div class="col-sm-3 text-center">
-                            <a href="Tests/NbackWrapper.aspx" id="memory2">
+                            <a href="../Tests/NbackWrapper.aspx" id="memory2">
                                 <img class="img-responsive" src="../images/Nback.jpg" alt=""></a>
                             <h3>Nback
                        
@@ -312,7 +327,7 @@
                             </h3>
                         </div>
                         <div class="col-sm-3 text-center">
-                            <a href="LondonWrapper.aspx" id="webdesign2">
+                            <a href="../LondonWrapper.aspx" id="webdesign2">
                                 <img class="img-responsive" src="../images/tower.jpg" alt=""></a>
                             <h3>Tower Of London
                         <small></small>

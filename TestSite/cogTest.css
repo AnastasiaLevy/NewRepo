@@ -2940,6 +2940,7 @@ form .buttons {
     overflow: hidden;
     z-index: 1;
     font-size: 1.3em;
+    text-align:center;
 }
 
 .finalMessage {
@@ -2954,6 +2955,7 @@ form .buttons {
     overflow: hidden;
     z-index: 1;
     font-size: 1.3em;
+    text-align:center;
 }
 
 .aboutHeader {
@@ -3119,3 +3121,10 @@ label {
  border-radius:5px;
  width:100%;
 }
+.resultImage{
+    text-align:center;
+    width:60%;
+    height:60%;
+    margin-top: 50px;
+}
+.countdown

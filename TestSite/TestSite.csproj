@@ -82,6 +82,7 @@
     <Content Include="assets\js\jquery-1.11.1.min.js" />
     <Content Include="assets\js\jquery.backstretch.js" />
     <Content Include="assets\js\jquery.backstretch.min.js" />
+    <Content Include="assets\js\jquery.imgzoom.js" />
     <Content Include="assets\js\placeholder.js" />
     <Content Include="assets\js\scripts.js" />
     <Content Include="audio\FeedbackIncorrect.mp3" />
@@ -149,6 +150,7 @@
     <Content Include="images\fullscreenon.png" />
     <Content Include="images\mindsm.jpg" />
     <Content Include="images\mind.jpg" />
+    <Content Include="images\myImage.png" />
     <Content Include="images\Nback.jpg" />
     <Content Include="images\network.jpg" />
     <Content Include="images\open-alt-icon.png" />

@@ -20,7 +20,9 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
-    <script src="https://use.fontawesome.com/0138464303.js"></script>
+ 
+    <script src="js/jquery.js"></script>
+    <script src="assets/js/jquery.imgzoom.js"></script>
 </head>
 <body data-spy="scroll" runat="server">
     <form runat="server">
@@ -60,24 +62,11 @@
         <section id="content">
           
             <div class="resultImage">
-            <img src="images/68-95-997.png" />
+            <img src="images/myImage.png" data-origin="images/myImage.png"/>
         </div>
         <div class="resultGridView">
             <asp:Label class="chartTitle" ID="chartTitle" runat="server" Text="Label"></asp:Label>
             <asp:Panel ID="pResultPanel" runat="server" Width ="100%"></asp:Panel>
-<%--            <asp:GridView ID="gvTestResults" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%">
-                <AlternatingRowStyle BackColor="White" />
-                <EditRowStyle BackColor="#7C6F57" />
-                <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-                <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
-                <RowStyle BackColor="#E3EAEB" />
-                <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
-                <SortedAscendingCellStyle BackColor="#F8FAFA" />
-                <SortedAscendingHeaderStyle BackColor="#246B61" />
-                <SortedDescendingCellStyle BackColor="#D4DFE1" />
-                <SortedDescendingHeaderStyle BackColor="#15524A" />
-            </asp:GridView>--%>
         </div>
             <div id="interpretation">
                 <p>
@@ -120,6 +109,16 @@
             </div>
         </div>
     </footer>
+
+        <script type="text/javascript">
+            $('.resultImage').imgZoom({
+            boxWidth: 400,
+            boxHeight: 400,
+            marginLeft: 5,
+            origin: 'data-origin'
+        });
+    </script>
+
 </body>
 </html>
 

@@ -67,6 +67,7 @@ function onclickPeg(objName) {
                     up3.animate(moveToP3.delay(700));
                     p3 = up3;
                     up3 = null;
+                    nm++;
                     checkPos();
 
                 }

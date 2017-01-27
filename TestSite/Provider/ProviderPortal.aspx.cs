@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+using static TestSite.HelpClasses.Enums;
 
 namespace TestSite.Provider
 {
@@ -15,18 +16,15 @@ namespace TestSite.Provider
         protected void Page_Load(object sender, EventArgs e)
         {
             pop.Style["display"] = "none";
-            //if (ViewState["CreatingUser"]!= null)
-            //{
-            //    pProviderTools.Visible = true;
-            //}
-            //else
-                pProviderTools.Visible = false;
+    
+            createUser.Visible = false;
+            assignTest.Visible = false;
             if (User.Identity.IsAuthenticated)
             {
                 login.Visible = false;
                 Logout.Visible = true;
-                user.Text = User.Identity.Name;
-                email.Text = Membership.GetUser().Email;
+                //user.Text = User.Identity.Name;
+                //email.Text = Membership.GetUser().Email;
 
 
             }
@@ -56,10 +54,10 @@ namespace TestSite.Provider
         private void SetParticipantGrid(int? partId)
         {
             gvAllParticipants.DataSource = DAL.DataMethods.GetAllProviderParticipants(partId);
-            gvAllParticipants.Columns[6].Visible = true;
+            gvAllParticipants.Columns[7].Visible = true;
 
             gvAllParticipants.DataBind();
-            gvAllParticipants.Columns[6].Visible = false;
+            gvAllParticipants.Columns[7].Visible = false;
         }
 
         protected void logOut_Click(object sender, EventArgs e)
@@ -74,7 +72,7 @@ namespace TestSite.Provider
             LinkButton btn = (LinkButton)sender;
             GridViewRow row = (GridViewRow)btn.NamingContainer;
             string providerId = ViewState["providerId"].ToString();
-            ViewState["tUserId"] = row.Cells[6].Text;
+            ViewState["tUserId"] = row.Cells[7].Text;
 
             Response.Redirect("~/Registration.aspx?userId="+ Convert.ToString(ViewState["tUserId"]) + "&provId=" + providerId);
         }
@@ -84,7 +82,7 @@ namespace TestSite.Provider
             LinkButton btn = (LinkButton)sender;
             GridViewRow row = (GridViewRow)btn.NamingContainer;
             string providerId = ViewState["providerId"].ToString();
-            ViewState["tUserId"] = row.Cells[6].Text;
+            ViewState["tUserId"] = row.Cells[7].Text;
 
             DAL.DataMethods.DeactivateParticipant(ViewState["tUserId"].ToString(), providerId);
             SetParticipantGrid(Convert.ToInt32(providerId));
@@ -97,7 +95,7 @@ namespace TestSite.Provider
             LinkButton btn = (LinkButton)sender;
             GridViewRow row = (GridViewRow)btn.NamingContainer;
             partName.Text = row.Cells[0].Text + " , " + row.Cells[1].Text;
-            string userId = row.Cells[6].Text;//Convert.ToString(ViewState["tUserId"]);
+            string userId = row.Cells[7].Text;//Convert.ToString(ViewState["tUserId"]);
             ViewState["tUserId"] = userId;
             SetUserTestsGrig(userId);
             string age = row.Cells[2].Text;
@@ -156,12 +154,12 @@ namespace TestSite.Provider
 
         protected void updateProfile_Click(object sender, EventArgs e)
         {
-            pProviderTools.Visible = true;
+            
         }
 
         protected void btnCancelUser_Click(object sender, EventArgs e)
         {
-            pProviderTools.Visible =false;
+            createUser.Visible =false;
             txtUserEmail.Text = "";
             txtNewUser.Text = "";
             txtPassword.Text = "";
@@ -176,17 +174,79 @@ namespace TestSite.Provider
             {
                 MembershipUser user = Membership.CreateUser(userName, password, email);
                 ViewState.Remove("CreatingUser");
-                pProviderTools.Visible = true;
+               createUser.Visible = true;
                 lblError.Text = "New User was created";
-                pProviderTools.Visible = true;
-                DAL.DataMethods.InsertProviderToTheUser(user.ProviderUserKey, ViewState["providerId"].ToString());
+                createUser.Visible = true;
+                DAL.DataMethods.InsertProviderToTheUser(user.ProviderUserKey.ToString(), Convert.ToInt32(ViewState["providerId"]), userName);
+                SetProviderTestsGrid(Convert.ToInt32(ViewState["providerId"]));
             }
             catch (Exception ex)
             {
                 lblError.Text = ex.Message;
                 //ViewState["CreatingUser"] = true;
-                pProviderTools.Visible = true;
+                createUser.Visible = true;
             }
         }
+
+        protected void btnAddNewPart_Click(object sender, EventArgs e)
+        {
+           createUser.Visible = true;
+        }
+
+        protected void addUserTest_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnAddUserTest_Click(object sender, EventArgs e)
+        {
+            assignTest.Visible = true;
+            int providerId = Convert.ToInt32(ViewState["providerId"]);
+            DataTable dt = DAL.DataMethods.GetAllProviderParticipants(providerId);
+
+            ddlAllParticipants.Items.Clear();
+            foreach (DataRow dr in dt.Rows)
+            {
+                string display = dr["Last Name"].ToString() + " , " + dr["First Name"].ToString();
+                if (String.IsNullOrEmpty(dr["Last Name"].ToString()))
+                    display = "(" + dr["userName"].ToString() + ")";
+                ddlAllParticipants.Items.Add(new ListItem(display, dr["userId"].ToString()));
+            }
+           SetDllProviderTests(providerId);
+
+        }
+
+        private void SetDllProviderTests(int providerId)
+        {
+            ddlProvTests.Items.Clear();
+            DataTable dt = DAL.DataMethods.GetAllProviderTests(providerId);
+            foreach (DataRow dr in dt.Rows)
+            {
+                string display = dr["Name"].ToString() + "(amount:" + dr["Left"].ToString() + ")";
+                ddlProvTests.Items.Add(new ListItem(display, dr["Id"].ToString()));
+            }
+        }
+
+        protected void btnPartAddTest_Click1(object sender, EventArgs e)
+        {
+            string userId = ddlAllParticipants.SelectedValue;
+            string provTestId =ddlProvTests.SelectedValue;
+
+            DAL.DataMethods.InsertTestToParticipant(Convert.ToInt32(provTestId), userId);
+            int providerId = Convert.ToInt32(ViewState["providerId"]);
+            SetDllProviderTests(providerId);
+            SetProviderTestsGrid(providerId);
+            //TODO: Display success message;
+
+
+        }
+
+        protected void btnCloseAddTest_Click(object sender, EventArgs e)
+        {
+            assignTest.Visible = false;
+        }
+        
+
+        //<%----%>
     }
 } 

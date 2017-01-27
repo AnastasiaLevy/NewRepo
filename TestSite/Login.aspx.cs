@@ -11,7 +11,7 @@ namespace TestSite
     public partial class Login : System.Web.UI.Page
     {
         protected string _back;
-        bool isProvider = true;
+        bool isProvider = false;
         protected void Page_Load(object sender, EventArgs e)
         {
 
