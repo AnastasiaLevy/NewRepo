@@ -297,6 +297,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CardSortRow.cs" />
     <Compile Include="category\Category2.aspx.cs">
       <DependentUpon>Category2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

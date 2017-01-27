@@ -90,6 +90,29 @@ namespace TestSite.DAL
             return ds;
         }
 
+        internal static void InsertCardSortTable(string html, int tId)
+        {
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("InsertCardSortTable", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@tId", tId);
+                cmd.Parameters.AddWithValue("@html",html);
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption saving Provider " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
         internal static DataTable GetAllProviderParticipants(int? providerId)
         {
             DataTable ds = new DataTable();
@@ -242,7 +265,7 @@ namespace TestSite.DAL
             SqlConnection conn = new SqlConnection(connectionSring);
             SqlCommand cmd = new SqlCommand("InsertCardSortUserMovesMap", conn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@movesText", text);
+            cmd.Parameters.AddWithValue("@text", text);
             cmd.Parameters.AddWithValue("@tId", tId);
 
             try
@@ -299,7 +322,8 @@ namespace TestSite.DAL
             int uniqueErr,
             decimal uniqErrTime,
             int failureSetCnt,
-            string category
+            string category,
+            string completedSet
             )
         {
            
@@ -325,6 +349,7 @@ namespace TestSite.DAL
             else cmd.Parameters.AddWithValue("@uniqErrTime", DBNull.Value);
             cmd.Parameters.AddWithValue("@failureSetCnt", failureSetCnt);
             cmd.Parameters.AddWithValue("@category", category);
+            cmd.Parameters.AddWithValue("@catComplete", completedSet);
             try
             {
                 conn.Open();

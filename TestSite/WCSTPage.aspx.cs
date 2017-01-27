@@ -28,25 +28,26 @@ namespace TestSite
 
         }
 
-        [WebMethod]
+        [WebMethod]//get Total
         public static void Save_Data(
             string category,
             string respCount,
-             string resTime,
+            string resTime,
             string correctCnt,
-             string errorCnt,
-             string errorTime,
-             string persevResp,
-             string persevTime,
-             string persevRespError,
-             string persevRespErrTime,
-             string uniqueErr,
-             string uniqErrTime,
-             string failureSetCnt,
-             string moves)
+            string errorCnt,
+            string errorTime,
+            string persevResp,
+            string persevTime,
+            string persevRespError,
+            string persevRespErrTime,
+            string uniqueErr,
+            string uniqErrTime,
+            string failureSetCnt,
+            string completedSet,
+            string moves)
         {
             int respCountVar = Convert.ToInt32(respCount);
-            decimal resTimeVar = String.IsNullOrEmpty(resTime) ? -1: Convert.ToDecimal(resTime);
+            decimal resTimeVar = String.IsNullOrEmpty(resTime) ? -1 : Convert.ToDecimal(resTime);
             int correctCntVar = Convert.ToInt32(correctCnt);
             int errorCntVar = Convert.ToInt32(errorCnt);
             decimal errorTimeVar = String.IsNullOrEmpty(errorTime) ? -1 : Convert.ToDecimal(errorTime);
@@ -61,12 +62,19 @@ namespace TestSite
             DataMethods.InsertCardSortUserResult(
                 _userId, _userTestId, respCountVar, resTimeVar, correctCntVar, errorCntVar,
                 errorTimeVar, persevRespVar, persevTimeVar, persevRespErrorVar, persevRespErrTimeVar, uniqueErrVar,
-                uniqErrTimeVar, failureSetCntVar, category);
+                uniqErrTimeVar, failureSetCntVar, category, completedSet);
+
             DataMethods.UpdateTestFinished(_userId, _userTestId);
             if (!String.IsNullOrEmpty(moves))
             {
                 DataMethods.InsertCardSortUserMovesMap(_userTestId, moves);
             }
+        }
+
+        [WebMethod]
+        public static void SaveHTMLstring(string html)
+        {
+            DataMethods.InsertCardSortTable(html, _userTestId);
 
         }
 

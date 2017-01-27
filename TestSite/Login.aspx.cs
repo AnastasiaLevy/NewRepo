@@ -11,7 +11,7 @@ namespace TestSite
     public partial class Login : System.Web.UI.Page
     {
         protected string _back;
-        bool isProvider = false;
+      
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -29,10 +29,8 @@ namespace TestSite
                 FormsAuthentication.SetAuthCookie(userNameLg.Value, true);
                 Session["Username"] = userNameLg.Value;
                 wrongLogin.Text = "";
-                if (isProvider)
+                if (isUserProvider())
                 {
-                    //string userId = Membership.GetUser(userNameLg.Value).ProviderUserKey.ToString();
-                    //int? providerId = DAL.DataMethods.GetProviderId(userId) != null ? DAL.DataMethods.GetProviderId(userId) : 0;
                     Response.Redirect("~/UserProfile.aspx?isProvider=true;");
                     //Response.Redirect("~/Provider/ProviderPortal.aspx");
                 }
@@ -51,6 +49,13 @@ namespace TestSite
 
         }
 
+        private bool isUserProvider()
+        {
+            string userId = Membership.GetUser(userNameLg.Value).ProviderUserKey.ToString();
+            int? providerId = DAL.DataMethods.GetProviderId(userId) != null ? DAL.DataMethods.GetProviderId(userId) : 0;
+            return providerId > 0 ? true : false;
+        }
+
         protected void Register_Single(object sender, EventArgs e)
         {
 
@@ -65,13 +70,13 @@ namespace TestSite
 
                     FormsAuthentication.SetAuthCookie(singleName.Value, true);
                     Session["Username"] = singleName.Value;
-                    if (isProvider)
-                    {
-                        string userId = user.ProviderUserKey.ToString();
-                        DAL.DataMethods.UpdateProviderTable(userId);
-                        Response.Redirect("~/Provider/ProviderPortal.aspx");
-                    }
-                    else
+                    //if (1!=1)//isProvider)
+                    //{
+                    //    string userId = user.ProviderUserKey.ToString();
+                    //    DAL.DataMethods.UpdateProviderTable(userId);
+                    //    Response.Redirect("~/Provider/ProviderPortal.aspx");
+                    //}
+                    //else
                         Response.Redirect("~/UserProfile.aspx?isProvider=true;");
                 }
 
