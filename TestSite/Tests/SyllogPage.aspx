@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 <html>
-<head runat="server">
+<head >
     <title></title>
     <script src="../js/syllog/jquery-3.1.1.min.js"></script>
     <script src="../js/syllog/jquery-ui.min.js"></script>
@@ -14,7 +14,11 @@
     <link href="../css/jquery-ui.min.css" rel="stylesheet" />
 </head>
 
-<body>
+<body >
+    <form runat="server">
+          <asp:TextBox ID="userId" runat="server"  hidden="true"></asp:TextBox>
+        <asp:TextBox ID="tId" runat="server" hidden="true"></asp:TextBox>
+    </form>
 
 <div id="start">
     <div id="container" style="pointer-events: none">
@@ -25,7 +29,7 @@
 </div>
 
 <button id="startButton" class="buttonStyle">START TEST</button>
-
+      
 <div id="answerAndDialog">
 
     <div id="answerButtons">
@@ -57,7 +61,7 @@
 
 </div>
 
-<button id="refreshButton" class="buttonStyle" style="display: none">Repeat test</button>
+<button id="refreshButton" class="buttonStyle" style="display: none">View Results</button>
 
-</body>>
+</body>
 </html>

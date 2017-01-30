@@ -169,7 +169,7 @@ $(document).ready(function () {
     $('#howSureButton').on('click', function () {
 
         var input = $('input[type="radio"]:checked').val(); //get the value of checked radio button
-        var scorecard = $('#scorecard'); //get the div element where we load scorecard table later
+        //var scorecard = $('#scorecard'); //get the div element where we load scorecard table later
 
         arrayOfHowSure.push(input) //push the selected value in array of how sure was user
         console.log(arrayOfHowSure.length);
@@ -188,8 +188,8 @@ $(document).ready(function () {
             $('#answerAndDialog').css('display', 'none');
             $('#start').css('display', 'none'); //hiding unnecessary content
 
-            scorecard.html(createScoreCard()); //create scorecard
-            scorecard.fadeIn(1500); //show scorecard
+            //scorecard.html(createScoreCard()); //create scorecard
+            //scorecard.fadeIn(1500); //show scorecard
 
             $('#refreshButton').css('display', 'block'); //show button for restarting test
         }
@@ -199,7 +199,9 @@ $(document).ready(function () {
 
     // event listener for restarting test
     $('#refreshButton').on('click', function () {
-        location.reload();
+        var scorecard = $('#scorecard');
+        scorecard.html(createScoreCard()); //create scorecard
+        scorecard.fadeIn(1500); //show scorecard
     });
 
 
@@ -253,11 +255,11 @@ $(document).ready(function () {
     {
         var flipBook = $('#flipbook'); //get the flipbook DOM element (div)
 
-        var html = "<div style='width: 400px; height: 500px'><p class='pQuestions'>Syllogism test</p></div>";
+        var html = "<div style='width: 500px; height: 700px'><p class='pQuestions'>Syllogism test</p></div>";
 
         for (var i = 0; i < LENGTH; i++) {
             html += "<div><p></p></div>";
-            html += "<div style='width: 400px; height: 500px'><p class='pQuestions'>" + loadedArray[i].question + "</p></div>";
+            html += "<div style='width: 500px; height: 700px'><p class='pQuestions'>" + loadedArray[i].question + "</p></div>";
         }
 
         flipBook.html(html); //load HTML string with pages inside flipbook div
@@ -315,67 +317,124 @@ $(document).ready(function () {
 
         html += "</table>";
 
+        saveHtmlString(html);
+        saveUserTotal();
+
         return html;
     }
 
-    /**
-     * function that calculates total number of correct answers
-     * @returns {number}
-     */
-    function totalCorrect() {
-        var correct = 0;
-
-        for(var i = 0; i < LENGTH;i++)
-        {
-            if(loadedArray[i].value == arrayOfAnswers[i])
-            {
-                correct++;
+    function saveUserTotal()
+    {
+        var data = {
+            totalCorrect: totalCorrect(),
+            totalError: totalIncorrect(),
+            certAverage: certainityAverage().toFixed(2),
+            certRatingCorrect: certainityCorrect().toFixed(2)
+        };
+        jQuery.ajax({
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            url: 'SyllogPage.aspx/SaveSyllogUserTotal',
+            dataType: 'json',
+            data: JSON.stringify(data),
+            type: 'POST',
+            success: function (resp) {
+             
+                   var user = document.getElementById("userId").value;
+                   var tId = document.getElementById("tId").value;
+                   window.location.href = "ResultsPage.aspx?userId=" + user + "&tid=" + tId + "&test=5";
+              
+            },
+            error: function (resp) {
+                alert("The results were not saved correctly");
             }
+        });
+}
+
+function  saveHtmlString(html)
+{
+
+    var data = {
+        html: html
+    };
+    jQuery.ajax({
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        url: 'SyllogPage.aspx/SaveHTMLstring',
+        dataType: 'json',
+        data: JSON.stringify(data),
+        type: 'POST',
+        success: function (resp) {
+            //if (data.moves.length > 0) {
+            //    var user = document.getElementById("userId").value;
+            //    var tId = document.getElementById("tId").value;
+            //    window.location.href = "ResultsPage.aspx?userId=" + user + "&tid=" + tId + "&test=3";
+            //}
+        },
+        error: function (resp) {
+            alert("The Table was not saved correctly");
         }
+    });
+};
 
-        return correct;
-    }
+/**
+ * function that calculates total number of correct answers
+ * @returns {number}
+ */
+function totalCorrect() {
+    var correct = 0;
 
-    /**
-     * calculates the total number of incorect answers
-     * @returns {number}
-     */
-    function totalIncorrect() {
-        return LENGTH - totalCorrect();
-    }
-
-    /**
-     * calculates the average of how certain user was
-     * @returns {number}
-     */
-    function certainityAverage() {
-        var sum = 0;
-
-        for(var i = 0; i < LENGTH; i++)
+    for(var i = 0; i < LENGTH;i++)
+    {
+        if(loadedArray[i].value == arrayOfAnswers[i])
         {
+            correct++;
+        }
+    }
+
+    return correct;
+}
+
+/**
+ * calculates the total number of incorect answers
+ * @returns {number}
+ */
+function totalIncorrect() {
+    return LENGTH - totalCorrect();
+}
+
+/**
+ * calculates the average of how certain user was
+ * @returns {number}
+ */
+function certainityAverage() {
+    var sum = 0;
+
+    for(var i = 0; i < LENGTH; i++)
+    {
+        sum += parseFloat(arrayOfHowSure[i]);
+    }
+
+    return sum/LENGTH;
+}
+
+/**
+ * calculates average of how certain user was for correct answers
+ * @returns {number}
+ */
+function certainityCorrect() {
+    var sum = 0;
+    var correct = 0;
+
+    for(var i = 0; i < LENGTH; i++)
+    {
+        if(loadedArray[i].value == arrayOfAnswers[i])
+        {
+            correct++;
             sum += parseFloat(arrayOfHowSure[i]);
         }
-
-        return sum/LENGTH;
     }
 
-    /**
-     * calculates average of how certain user was for correct answers
-     * @returns {number}
-     */
-    function certainityCorrect() {
-        var sum = 0;
-        var correct = 0;
-
-        for(var i = 0; i < LENGTH; i++)
-        {
-            if(loadedArray[i].value == arrayOfAnswers[i])
-            {
-                correct++;
-                sum += parseFloat(arrayOfHowSure[i]);
-            }
-        }
-
-        return sum/correct;
-    }
+    return sum/correct;
+}
 });

@@ -90,6 +90,55 @@ namespace TestSite.DAL
             return ds;
         }
 
+        internal static void InsertSyllogismsTable(string html, int tId)
+        {
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("InsertSyllogismsTable", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@tId", tId);
+            cmd.Parameters.AddWithValue("@htmlString", html);
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption saving Syllog Table " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        internal static void InsertSyllogismsTotal(int tId, int totalCorrect, int totalIncorrect, decimal certAvarage, decimal certRatingCorrect)
+        {
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("InsertSyllogismsUserResults ", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@tId", tId);
+            cmd.Parameters.AddWithValue("@totalCorrect", totalCorrect);
+            cmd.Parameters.AddWithValue("@totalIncorrect", totalIncorrect);
+            cmd.Parameters.AddWithValue("@certAverage",certAvarage);
+            cmd.Parameters.AddWithValue("@certRatingCorrect", certRatingCorrect);
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption saving SyllogismsUserResults " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
         internal static void InsertCardSortTable(string html, int tId)
         {
             SqlConnection conn = new SqlConnection(connectionSring);

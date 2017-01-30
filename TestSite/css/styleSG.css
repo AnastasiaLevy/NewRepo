@@ -1,5 +1,5 @@
 body{
-    background: linear-gradient(to right, #A1FFCE, #FAFFD1);
+    background: #C1CDC1; /*linear-gradient(to right, #A1FFCE, #FAFFD1);*/
 }
 
 div p{
@@ -14,7 +14,7 @@ label{
 
 .pQuestions
 {
-    color: #78c878;
+    color: black;/*#78c878 ;*/
 }
 
 #answerAndDialog
