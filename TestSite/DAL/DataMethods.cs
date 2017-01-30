@@ -528,6 +528,51 @@ namespace TestSite.DAL
             }
         }
 
+
+        public static DataTable GetSyllogismsUserTable(int tId)
+        {
+            DataTable ds = new DataTable();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("SelectSyllogismsUserResultTable", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@tId", tId);
+
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                adp.Fill(ds);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption getting Syllog Results. " + ex.Message);
+            }
+
+            return ds;
+        }
+
+        public static DataSet GetSyllogismsUserResults( int tId)
+        {
+            DataSet ds = new DataSet();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("SelectSyllogismsUserResults", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+    
+            cmd.Parameters.AddWithValue("@tId", tId);
+
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                adp.Fill(ds);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption getting Syllog Results. " + ex.Message);
+            }
+
+            return ds;
+        }
+
         public static DataSet GetTestResultsCardSort(string userId, int tId)
         {
             DataSet ds = new DataSet();
@@ -544,7 +589,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
-                throw new Exception("Execption getting London Results. " + ex.Message);
+                throw new Exception("Execption getting CardSort Results. " + ex.Message);
             }
 
             return ds;

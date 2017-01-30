@@ -157,6 +157,7 @@
     <Content Include="images\Nback.jpg" />
     <Content Include="images\network.jpg" />
     <Content Include="images\open-alt-icon.png" />
+    <Content Include="images\sillog.png" />
     <Content Include="images\test-point.jpg" />
     <Content Include="images\tower.jpg" />
     <Content Include="js\jquery-responsiveTables.js" />

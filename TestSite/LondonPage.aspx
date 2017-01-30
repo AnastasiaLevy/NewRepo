@@ -9,6 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.1/raphael.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <link href="../cogTest.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="images/favicon.ico" />
 </head>
 <body>
     <div id="testArea" class="withBorder center">

@@ -12,6 +12,7 @@
     <link href="../css/styleSG.css" rel="stylesheet" />
     <link href="../css/flipbookstyle.css" rel="stylesheet" />
     <link href="../css/jquery-ui.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="../images/favicon.ico" />
 </head>
 
 <body >

@@ -290,19 +290,17 @@ $(document).ready(function () {
 
         var html = "<table class='table'>";
         html += "<tr><th>Correct answer</th><th>Response</th>" +
-                "<th>Response latency</th><th>Certainity rating</th>" +
-                "<th>Total correct</th>" + "<th>Total incorect</th>"
-                +"<th>Certainity average</th>" + "<th>Certainity rating for correct</th>" + "</tr>"; //Headers
+                "<th>Response latency</th><th>Certainity rating</th>" + "</tr>"; //Headers
 
         html += "<tr>" //table rows and data
             + "<td>" + loadedArray[0].value + "</td>"
             + "<td>" + arrayOfAnswers[0] + "</td>"
             + "<td>" + arrayOfLatency[0] + "ms" + "</td>"
             + "<td>" + arrayOfHowSure[0] + "</td>"
-            + "<td>" + totalCorrect() + "</td>"                 //
-            + "<td>" + totalIncorrect() + "</td>"               //
-            + "<td>" + certainityAverage().toFixed(2) + "</td>" //
-            + "<td>" + certainityCorrect().toFixed(2) + "</td>" //these are loaded only once
+            //+ "<td>" + totalCorrect() + "</td>"                 //
+            //+ "<td>" + totalIncorrect() + "</td>"               //
+            //+ "<td>" + certainityAverage().toFixed(2) + "</td>" //
+            //+ "<td>" + certainityCorrect().toFixed(2) + "</td>" //these are loaded only once
             + "</tr>";
 
         for(var i = 1; i < LENGTH; i++)
@@ -320,7 +318,7 @@ $(document).ready(function () {
         saveHtmlString(html);
         saveUserTotal();
 
-        return html;
+       // return html;
     }
 
     function saveUserTotal()
@@ -342,7 +340,7 @@ $(document).ready(function () {
              
                    var user = document.getElementById("userId").value;
                    var tId = document.getElementById("tId").value;
-                   window.location.href = "ResultsPage.aspx?userId=" + user + "&tid=" + tId + "&test=5";
+                   window.location.href = "../ResultsPage.aspx?userId=" + user + "&tid=" + tId + "&test=5";
               
             },
             error: function (resp) {

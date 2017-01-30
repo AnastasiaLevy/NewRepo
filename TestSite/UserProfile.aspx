@@ -217,7 +217,7 @@
                     </div>
                          <div class="col-sm-3 text-center">
                         <a href="Tests/SyllogWrapper.aspx" id="syllog">
-                            <img class="img-responsive" src="images/tower.jpg" alt=""></a>
+                            <img class="img-responsive" src="images/sillog.png"" alt=""></a>
                         <h3>Tower Of London
 
                             <small></small>

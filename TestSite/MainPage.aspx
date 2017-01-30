@@ -1,4 +1,4 @@
-﻿ <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MainPage.aspx.cs" Inherits="TestSite.MainPage" %>
+﻿f <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MainPage.aspx.cs" Inherits="TestSite.MainPage" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -328,7 +328,7 @@
                         </li>
                         <li data-type="mobileapps" data-id="id-6" class="port3">
                             <a href="Tests/SyllogWrapper.aspx" id="mobileapps2">
-                                <img src="images/coming_soon.jpg" alt=""></a>
+                                <img src="images/sillog.png" /></a>
                         </li>
                     </ul>
                 </div>

@@ -20,11 +20,11 @@ namespace TestSite
 
             logOut.Visible = true;
             login.Visible = false;
-        
+
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            movesMap.Visible = false;
+            movesMap.Visible = movesMap.Visible ? true : false;
 
             string userId = Request.QueryString["userId"].ToString();
             int age = DataMethods.GetUserAge(userId);
@@ -36,6 +36,28 @@ namespace TestSite
             DataSet ds;
             int factor;
 
+            if (test == "5")
+            {
+                dt = DataMethods.GetSyllogismsUserTable(tId);
+                if (dt == null)
+                { chartTitle.Text = "There was an error loading results. Please contact the administrator."; }
+                else
+                {
+
+                    chartTitle.Text = "Results for Syllogisms Test for participant " + userName;
+                    GridView gvSyllogResTotal = new GridView();
+                    gvSyllogResTotal.DataSource = DataMethods.GetSyllogismsUserResults(tId);
+                    gvSyllogResTotal.DataBind();
+                    SetGvProperties(gvSyllogResTotal);
+                    pResultPanel.Controls.Add(gvSyllogResTotal);
+
+                    string html = dt.Rows[0]["htmlText"].ToString();
+                    CreateMapButton();
+                    AppendLog(html);
+                    
+
+                }
+            }
 
             if (test == "3")
             {
@@ -68,11 +90,11 @@ namespace TestSite
                     DataSet dsNorms = DataMethods.GetCardSortNorms(ageGroup);
                     decimal mean;
                     decimal std;
-                    
+
                     decimal catComplete = cats.Length;
                     GetValues(dsNorms, 0, out mean, out std);
                     factor = CalculateResults(catComplete, mean, std);
-                    textStr.Text ="Total Number Categories Completed:" + Enums.ReturnCardSortCatNumber(factor);
+                    textStr.Text = "Total Number Categories Completed:" + Enums.ReturnCardSortCatNumber(factor);
 
                     GetValues(dsNorms, 1, out mean, out std);
                     factor = CalculateResults(respcount, mean, std);
@@ -96,7 +118,7 @@ namespace TestSite
                     textStr.Text += "Total Unique Error Count:" + Enums.ReturnCardSortNormsUniqueErrors(factor);
                 }
             }
-               
+
             if (test == "2" || test == "Tower Of London")
             {
                 chartTitle.Text = "Results for Tower of London test";
@@ -118,10 +140,10 @@ namespace TestSite
             {
                 chartTitle.Text = "Results for Trails Test";
                 dt = DataMethods.GetTestResultsTrails(userId, tId);
-             
+
                 TrailsResults tr = new TrailsResults();
-                tr.PartA = (dt.Rows[0]["Trail A"]) == DBNull.Value ? 0 : Convert.ToDecimal( dt.Rows[0]["Trail A"]);
-                tr.PartB = (dt.Rows[0]["Trail B"]) == DBNull.Value ? 0: Convert.ToDecimal(dt.Rows[0]["Trail B"]);
+                tr.PartA = (dt.Rows[0]["Trail A"]) == DBNull.Value ? 0 : Convert.ToDecimal(dt.Rows[0]["Trail A"]);
+                tr.PartB = (dt.Rows[0]["Trail B"]) == DBNull.Value ? 0 : Convert.ToDecimal(dt.Rows[0]["Trail B"]);
                 DataSet dts = DataMethods.GetTestNormsTrails(ageGroup);
                 DataTable dtA = dts.Tables[0];
                 DataTable dtB = dts.Tables[1];
@@ -133,7 +155,7 @@ namespace TestSite
                 decimal stdB = Convert.ToDecimal(dtB.Rows[0]["stdDeviation"]);
                 GridView gvA = new GridView();
                 SetGvProperties(gvA);
-                    
+
                 gvA.DataSource = dt;
                 gvA.DataBind();
                 pResultPanel.Controls.Add(gvA);
@@ -145,7 +167,7 @@ namespace TestSite
                 factor = CalculateResults(tr.PartB, meanB, stdB);
                 Label resB = new Label();
                 resB.Text = "Trails part B: " + Enums.ReturnTrailsResultStrings(factor);
-               
+
                 pResultPanel.Controls.Add(resB);
             }
         }
@@ -158,17 +180,21 @@ namespace TestSite
 
         private void SetMovesMapDiv(string[] moves)
         {
-            Button bt = new Button();
-            bt.Click += new EventHandler(this.btHide_click);
-            bt.CssClass = "btn button";
-            bt.Text = "Moves Map";
-
-            pResultPanel.Controls.Add(bt);
-
+            CreateMapButton();
             foreach (string s in moves)
             {
                 AppendLog(s);
             }
+        }
+
+        private void CreateMapButton()
+        {
+            Button bt = new Button();
+            bt.Click += new EventHandler(this.btHide_click);
+            bt.CssClass = "btn button";
+            bt.Text = "Moves Map";
+            pResultPanel.Controls.Add(bt);
+           
         }
 
         private void btHide_click(object sender, EventArgs e)
@@ -209,7 +235,7 @@ namespace TestSite
         protected int CalculateResults(decimal? score, decimal? mean, decimal? stdDev)
         {
             int category = 10;
-            if (score == null || mean == null || stdDev== null)
+            if (score == null || mean == null || stdDev == null)
             {
                 return 10;
             }
@@ -218,9 +244,9 @@ namespace TestSite
             {
                 category = -3;
             }
-            else if (score < mean - stdDev *2)
+            else if (score < mean - stdDev * 2)
             {
-               category = -2;
+                category = -2;
             }
             else if (score < mean - stdDev)
             {
@@ -230,7 +256,7 @@ namespace TestSite
             {
                 category = +1;
             }
-            else if (score > mean + stdDev*2)
+            else if (score > mean + stdDev * 2)
             {
                 category = +2;
             }
@@ -239,7 +265,7 @@ namespace TestSite
                 category = +3;
             }
             else
-                category =0;
+                category = 0;
 
             return category;
 
@@ -265,7 +291,7 @@ namespace TestSite
             gv.ForeColor = Color.Black;
             gv.RowStyle.BackColor = Color.FloralWhite;
             gv.CssClass = "testResGrid";
-          
+
 
 
 

@@ -73,7 +73,7 @@
                     <asp:Literal ID="textStr" runat="server"></asp:Literal>
                 </p>
             </div>
-            <div id="movesMap" class="container" runat ="server">
+            <div id="movesMap" class="container" runat ="server" visible ="false">
 
             </div>
            
