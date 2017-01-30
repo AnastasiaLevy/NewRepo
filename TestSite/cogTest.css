@@ -3066,7 +3066,7 @@ form .buttons {
     }
 }
 
-#gvAllParticipants, #gvTestPerUser, #gvProviderTests {
+#gvAllParticipants, #gvTestPerUser, #gvProviderTests, #gvFinishedTests, #gvAvailableTests {
     width: 100%;
     word-wrap: break-word;
     table-layout: fixed;
@@ -3127,4 +3127,38 @@ label {
     height:60%;
     margin-top: 50px;
 }
-.countdown
+/* result table */
+.res-table {
+	border: 1px solid lightgray;
+	border-radius: 10px;
+	border-collapse: collapse;
+}
+
+.res-table thead tr th:first-child {
+	text-align: left!important;
+	width: 100px;
+}
+
+.res-table th {
+	font-weight: normal;
+	background: #aee6ad;
+	border: 1px solid #ffffff;
+}
+
+.res-table tbody tr td:first-child {
+	text-align: left!important;
+}
+
+.res-table .total {
+	font-weight: 800;
+}
+
+.res-table td {
+	text-align: center;
+	border: 1px solid #aee6ad;
+}
+
+#requestToReg{
+   
+    font-size:x-large;
+}

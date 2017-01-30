@@ -147,7 +147,24 @@
                 </p>
             </div>
         </section>
-        <section>
+
+
+            <section>
+            <div class="container right">
+
+                <asp:LinkButton ID="runTest" runat="server" class="signup-btn" OnClick="runTest_Click">Run Test</asp:LinkButton>
+                <div id="requestToReg" runat="server" visible="true">
+                    <p>
+                        <a href="../Login.aspx">Please Login </a>
+                    </p>
+                    <p>OR</p>
+                    <p>
+                        <a href="../Login.aspx">Register</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
                 <section id="price" runat="server">
             <div id="wrapper">
                 <div class="container">
@@ -156,7 +173,7 @@
                             <div class="circle c1 img-circle">
                                 <h4 class="blue">Single Test</h4>
                                 <span class="icon blue"><i class="fa fa-usd"></i></span>
-                                <span class="price-large blue">7</span>
+                                <span class="price-large blue">5</span>
                                 <span class="price-small">,00</span>
                                 <p>One Time Run</p>
                                 <asp:Button ID="single" class="btn btn-info" runat="server" OnClick="single_Click" Text="Buy Now" />
@@ -171,7 +188,7 @@
                                 <span class="price-large yellow">50</span>
                                 <span class="price-small">,00</span>
                                 <p>Small Project</p>
-                                <asp:Button ID="ten" class="btn btn-warning" runat="server" OnClick="ten_Click" Text="Call Us" />
+                                <asp:Button ID="ten" class="btn btn-warning" runat="server"  Text="Call Us" />
                             </div>
                         </div>
                         <!-- .Col-md-3 ends here -->
@@ -183,7 +200,7 @@
                                 <span class="price-large green">250</span>
                                 <span class="price-small">,00</span>
                                 <p>Medium Size Project</p>
-                                <asp:Button ID="hundred" class="btn btn-success" runat="server" OnClick="hundred_Click" Text="Call Us" />
+                                <asp:Button ID="hundred" class="btn btn-success" runat="server" Text="Call Us" />
                             </div>
                         </div>
                         <!-- .Col-md-3 ends here -->
@@ -198,7 +215,7 @@
                                     Any Number of Participants
                                 <p>
 
-                                    <asp:Button ID="unlim" class="btn btn-danger" runat="server" OnClick="unlim_Click" Text="Call Us" />
+                                    <asp:Button ID="unlim" class="btn btn-danger" runat="server"  Text="Call Us" />
                             </div>
                         </div>
                         <!-- .Col-md-3 ends here -->
@@ -207,26 +224,7 @@
                 </div>
                 <!-- .Row ends here -->
             </div>
-        </section>
-            <div class="container right">
-           <%--     <asp:ImageButton
-                    ID="PayPalBtn"
-                    runat="server"
-                    ImageUrl="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif"
-                    OnClick="PayPalBtn_Click" />--%>
-
-                <asp:LinkButton ID="runTest" runat="server" class="signup-btn" OnClick="runTest_Click">Run Test</asp:LinkButton>
-                <div id="requestToReg" runat="server" visible="true">
-                    <p>
-                        <a href="../Login.aspx">Please Login </a>
-                    </p>
-                    <p>OR</p>
-                    <p>
-                        <a href="../Login.aspx">Register</a>
-                    </p>
-                </div>
-            </div>
-        </section>
+    </section>
 
         <section id="follow-us">
             <div class="container">

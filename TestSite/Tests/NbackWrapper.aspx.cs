@@ -183,14 +183,14 @@ namespace TestSite.Tests
 
         protected void PayPalBtn_Click(object sender, ImageClickEventArgs e)
         {
-            if (User.Identity.IsAuthenticated)
-            {
-                PostPaypal();
-            }
-            else
-            {
-                requestToReg.Visible = true;
-            }
+            //if (User.Identity.IsAuthenticated)
+            //{
+            //    PostPaypal();
+            //}
+            //else
+            //{
+            //    requestToReg.Visible = true;
+            //}
 
 
         }
@@ -216,6 +216,14 @@ namespace TestSite.Tests
 
         protected void single_Click(object sender, EventArgs e)
         {
+            if (User.Identity.IsAuthenticated)
+            {
+                PostPaypal();
+            }
+            else
+            {
+                requestToReg.Visible = true;
+            }
 
         }
 

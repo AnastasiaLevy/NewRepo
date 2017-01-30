@@ -10,7 +10,7 @@
 namespace TestSite.Tests {
     
     
-    public partial class NbackWrapper {
+    public partial class Syllog {
         
         /// <summary>
         /// profOpt control.

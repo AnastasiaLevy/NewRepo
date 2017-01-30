@@ -59,16 +59,26 @@ namespace TestSite
             decimal uniqErrTimeVar = String.IsNullOrEmpty(uniqErrTime) ? -1 : Convert.ToDecimal(uniqErrTime);
             int failureSetCntVar = Convert.ToInt32(failureSetCnt);
 
-            DataMethods.InsertCardSortUserResult(
-                _userId, _userTestId, respCountVar, resTimeVar, correctCntVar, errorCntVar,
-                errorTimeVar, persevRespVar, persevTimeVar, persevRespErrorVar, persevRespErrTimeVar, uniqueErrVar,
-                uniqErrTimeVar, failureSetCntVar, category, completedSet);
-
-            DataMethods.UpdateTestFinished(_userId, _userTestId);
-            if (!String.IsNullOrEmpty(moves))
+            try
             {
-                DataMethods.InsertCardSortUserMovesMap(_userTestId, moves);
+             DataMethods.InsertCardSortUserResult(
+            _userId, _userTestId, respCountVar, resTimeVar, correctCntVar, errorCntVar,
+            errorTimeVar, persevRespVar, persevTimeVar, persevRespErrorVar, persevRespErrTimeVar, uniqueErrVar,
+            uniqErrTimeVar, failureSetCntVar, category, completedSet);
+
+                DataMethods.UpdateTestFinished(_userId, _userTestId);
+                if (!String.IsNullOrEmpty(moves))
+                {
+                    DataMethods.InsertCardSortUserMovesMap(_userTestId, moves);
+                }
             }
+            catch (Exception ex)
+            {
+
+            }
+         
+
+          
         }
 
         [WebMethod]

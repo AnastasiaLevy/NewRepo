@@ -15,6 +15,8 @@ namespace TestSite.HelpClasses
             public const string TowerOfLondon = "2";
             public const string WisconsinCardSort = "3";
             public const string Nback = "4";
+            public const string Syllogisms = "5";
+            public const string Stroop = "6";
             // public TestId();
         }
 
@@ -80,7 +82,11 @@ namespace TestSite.HelpClasses
                     //Nback
                 case "4":
                     return @"Tests\NbackPage.aspx";
-                    //Main
+                //Main
+                case "5":
+                    return @"Tests\SyllogPage.aspx";
+                case "6":
+                    return @"Tests\StroopPage.aspx";
                 default:
                     return @"\MainPage.aspx";
             }
@@ -123,6 +129,211 @@ namespace TestSite.HelpClasses
         }
 
         public static string ReturnLondonResultStrings(int factor)
+        {
+            string text = "";
+            switch (factor)
+            {
+
+                case -3:
+                    text = "Exellent";
+                    break;
+                case -2:
+                    text = "Very Good";
+                    break;
+                case -1:
+                    text = "Above Average";
+                    break;
+                case 0:
+                    text = "Average";
+                    break;
+                case 1:
+                    text = "Below Average";
+                    break;
+                case 2:
+                    text = "Pretty Bad";
+                    break;
+                case 3:
+                    text = "Bad";
+                    break;
+                case 10:
+                    text = "Unable determing results. Please contact administrator.";
+                    break;
+            }
+            return text;
+
+        }
+
+        public static string ReturnCardSortCatNumber(int factor)
+        {
+            string text = "";
+            switch (factor)
+            {
+
+                case -3:
+                    text = "Exellent";
+                    break;
+                case -2:
+                    text = "Very Good";
+                    break;
+                case -1:
+                    text = "Above Average";
+                    break;
+                case 0:
+                    text = "Average";
+                    break;
+                case 1:
+                    text = "Below Average";
+                    break;
+                case 2:
+                    text = "Pretty Bad";
+                    break;
+                case 3:
+                    text = "Bad";
+                    break;
+                case 10:
+                    text = "Unable determing results. Please contact administrator.";
+                    break;
+            }
+            return text;
+
+        }
+        public static string ReturnCardSortNonpersevErrors(int factor)
+        {
+            string text = "";
+            switch (factor)
+            {
+
+                case -3:
+                    text = "Exellent";
+                    break;
+                case -2:
+                    text = "Very Good";
+                    break;
+                case -1:
+                    text = "Above Average";
+                    break;
+                case 0:
+                    text = "Average";
+                    break;
+                case 1:
+                    text = "Below Average";
+                    break;
+                case 2:
+                    text = "Pretty Bad";
+                    break;
+                case 3:
+                    text = "Bad";
+                    break;
+                case 10:
+                    text = "Unable determing results. Please contact administrator.";
+                    break;
+            }
+            return text;
+
+        }
+        public static string ReturnCardSortPersevErrors(int factor)
+        {
+            string text = "";
+            switch (factor)
+            {
+
+                case -3:
+                    text = "Exellent";
+                    break;
+                case -2:
+                    text = "Very Good";
+                    break;
+                case -1:
+                    text = "Above Average";
+                    break;
+                case 0:
+                    text = "Average";
+                    break;
+                case 1:
+                    text = "Below Average";
+                    break;
+                case 2:
+                    text = "Pretty Bad";
+                    break;
+                case 3:
+                    text = "Bad";
+                    break;
+                case 10:
+                    text = "Unable determing results. Please contact administrator.";
+                    break;
+            }
+            return text;
+
+        }
+        public static string ReturnCardSortNormsTotalCorrect(int factor)
+        {
+            string text = "";
+            switch (factor)
+            {
+
+                case -3:
+                    text = "Exellent";
+                    break;
+                case -2:
+                    text = "Very Good";
+                    break;
+                case -1:
+                    text = "Above Average";
+                    break;
+                case 0:
+                    text = "Average";
+                    break;
+                case 1:
+                    text = "Below Average";
+                    break;
+                case 2:
+                    text = "Pretty Bad";
+                    break;
+                case 3:
+                    text = "Bad";
+                    break;
+                case 10:
+                    text = "Unable determing results. Please contact administrator.";
+                    break;
+            }
+            return text;
+
+        }
+        public static string ReturnCardSortNormsTotalErrors(int factor)
+        {
+            string text = "";
+            switch (factor)
+            {
+
+                case -3:
+                    text = "Exellent";
+                    break;
+                case -2:
+                    text = "Very Good";
+                    break;
+                case -1:
+                    text = "Above Average";
+                    break;
+                case 0:
+                    text = "Average";
+                    break;
+                case 1:
+                    text = "Below Average";
+                    break;
+                case 2:
+                    text = "Pretty Bad";
+                    break;
+                case 3:
+                    text = "Bad";
+                    break;
+                case 10:
+                    text = "Unable determing results. Please contact administrator.";
+                    break;
+            }
+            return text;
+
+        }
+        public static string ReturnCardSortNormsUniqueErrors(int factor)
         {
             string text = "";
             switch (factor)

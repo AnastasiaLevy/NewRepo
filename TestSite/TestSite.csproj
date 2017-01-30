@@ -93,10 +93,13 @@
     <Content Include="ComingSoon.aspx" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\flipbookstyle.css" />
+    <Content Include="css\jquery-ui.min.css" />
     <Content Include="css\nback.css" />
     <Content Include="css\loginCss.css" />
     <Content Include="css\rotatingMenu.css" />
     <Content Include="css\style.css" />
+    <Content Include="css\styleSG.css" />
     <Content Include="css\userProfilecss.css" />
     <Content Include="css\wcst.css" />
     <Content Include="fonts\font-awesome-4.6.3\fonts\fontawesome-webfont.eot" />
@@ -163,6 +166,10 @@
     <Content Include="js\nback\nback.js" />
     <Content Include="js\nback\scoreNback.js" />
     <Content Include="js\nback\score_min.js" />
+    <Content Include="js\syllog\jquery-3.1.1.min.js" />
+    <Content Include="js\syllog\jquery-ui.min.js" />
+    <Content Include="js\syllog\js.js" />
+    <Content Include="js\syllog\turn.min.js" />
     <Content Include="js\tower\blueBall.js" />
     <Content Include="js\gallety.js" />
     <Content Include="js\tower\gameCode.js" />
@@ -286,6 +293,8 @@
     <Content Include="Style\timelify.css" />
     <Content Include="Tests\NbackPage.aspx" />
     <Content Include="Tests\NbackWrapper.aspx" />
+    <Content Include="Tests\SyllogPage.aspx" />
+    <Content Include="Tests\SyllogWrapper.aspx" />
     <Content Include="TrailsPage.aspx" />
     <Content Include="TrailsTestRes.aspx" />
     <Content Include="TrailsWrapper.aspx" />
@@ -406,6 +415,20 @@
     </Compile>
     <Compile Include="Tests\NbackWrapper.aspx.designer.cs">
       <DependentUpon>NbackWrapper.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\SyllogPage.aspx.cs">
+      <DependentUpon>SyllogPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\SyllogPage.aspx.designer.cs">
+      <DependentUpon>SyllogPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\SyllogWrapper.aspx.cs">
+      <DependentUpon>SyllogWrapper.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\SyllogWrapper.aspx.designer.cs">
+      <DependentUpon>SyllogWrapper.aspx</DependentUpon>
     </Compile>
     <Compile Include="TrailsPage.aspx.cs">
       <DependentUpon>TrailsPage.aspx</DependentUpon>

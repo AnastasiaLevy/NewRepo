@@ -177,12 +177,6 @@
         <section>
 
             <div class="container right">
-                <%--          <asp:ImageButton
-                ID="PayPalBtn"
-                runat="server"
-                ImageUrl="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif"
-                OnClick="PayPalBtn_Click" />--%>
-
                 <asp:LinkButton ID="runTest" runat="server" class="signup-btn" OnClick="runTest_Click">Run Test</asp:LinkButton>
                 <div id="requestToReg" runat="server" visible="true">
                     <p>

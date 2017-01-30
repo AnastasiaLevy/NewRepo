@@ -327,7 +327,7 @@
                                 <img src="images/tower.jpg" alt=""></a>
                         </li>
                         <li data-type="mobileapps" data-id="id-6" class="port3">
-                            <a href="#" id="mobileapps2">
+                            <a href="Tests/SyllogWrapper.aspx" id="mobileapps2">
                                 <img src="images/coming_soon.jpg" alt=""></a>
                         </li>
                     </ul>

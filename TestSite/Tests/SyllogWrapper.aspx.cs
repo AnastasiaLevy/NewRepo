@@ -9,14 +9,14 @@ using System.Web.UI.WebControls;
 using TestSite.DAL;
 using TestSite.HelpClasses;
 
-namespace TestSite
+namespace TestSite.Tests
 {
-    public partial class LondonWrapper : System.Web.UI.Page
+    public partial class Syllog : System.Web.UI.Page
     {
         protected MembershipUser _user;
         protected string _userId;
         protected bool _isProfilefilled;
-        protected string _testId = Enums.TestId.TowerOfLondon;
+        protected string _testId = Enums.TestId.Syllogisms;
         protected static int _userTestId;
 
 
@@ -168,7 +168,7 @@ namespace TestSite
                 }
 
                 Session["userTestId"] = _userTestId;
-                Response.Redirect("LondonPage.aspx");
+                Response.Redirect("/Tests/SyllogPage.aspx");
             }
             else
             {
@@ -198,7 +198,7 @@ namespace TestSite
         private void PostPaypal()
         {
             string business = "P6JMSAGR5XCE4";// "analescheok@gmail.com"
-            string itemName = "Tower of London Test";
+            string itemName = "nback Test";
             double itemAmount = 0.01;
             string currencyCode = "USD";
 
@@ -209,23 +209,11 @@ namespace TestSite
             ppHref.Append("&item_name=" + itemName);
             ppHref.Append("&amount=" + itemAmount.ToString("#.00"));
             ppHref.Append("&currency_code=" + currencyCode);
-            ppHref.Append("&return=" + "http://localhost:52606/LondonWrapper.aspx");//"http://cogquiz.com/LondonWrapper.aspx");
+            ppHref.Append("&return=" + "http://localhost:52606/Tests/SyllogWrapper.aspx"); //"http://localhost:52606/Tests/NbackWrapper.aspx"
 
             Response.Redirect(ppHref.ToString(), true);
         }
 
-        protected void single_Click(object sender, EventArgs e)
-        {
-            if (User.Identity.IsAuthenticated)
-            {
-                PostPaypal();
-            }
-            else
-            {
-                requestToReg.Visible = true;
-            }
-
-        }
 
         protected void ten_Click(object sender, EventArgs e)
         {
@@ -239,6 +227,19 @@ namespace TestSite
 
         protected void unlim_Click(object sender, EventArgs e)
         {
+
+        }
+
+        protected void single_Click1(object sender, EventArgs e)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                PostPaypal();
+            }
+            else
+            {
+                requestToReg.Visible = true;
+            }
 
         }
     }

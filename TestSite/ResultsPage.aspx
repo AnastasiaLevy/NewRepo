@@ -73,6 +73,9 @@
                     <asp:Literal ID="textStr" runat="server"></asp:Literal>
                 </p>
             </div>
+            <div id="movesMap" class="container" runat ="server">
+
+            </div>
            
             <asp:Button runat="server" class="signup-btn" ID="btnPrint" Text="Print" OnClientClick="javascript:window.print();"/>
         </section>

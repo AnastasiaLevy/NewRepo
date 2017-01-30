@@ -120,7 +120,7 @@
                         <p class="min"><strong>Paid Test (not finished):</strong> </p>
                         <asp:GridView ID="gvAvailableTests" runat="server" CellSpacing="10" class="gridview"
                             GridLines="Horizontal" AutoGenerateColumns="False" BorderColor="#CCCCCC" BorderStyle="None"
-                            BorderWidth="1px" CellPadding="20" ForeColor="Black" Height="75px" Width="320px"
+                            BorderWidth="1px" CellPadding="20" ForeColor="Black" Height="75px" 
                             RowStyle-Height="40px" Font-Size="Larger">
                             <Columns>
                                 <asp:BoundField DataField="Name" HeaderText="Test Name &nbsp;&nbsp;" />
@@ -148,14 +148,14 @@
                         <p class="min"><strong>Finished Tests:</strong> </p>
                         <asp:GridView ID="gvFinishedTests" runat="server" CellSpacing="20" class="gridview"
                             GridLines="Horizontal" AutoGenerateColumns="False" BorderColor="#CCCCCC" BorderStyle="None"
-                            BorderWidth="1px" CellPadding="10" ForeColor="Black" Height="75px" Width="320px"
+                            BorderWidth="1px" CellPadding="10" ForeColor="Black" Height="75px" 
                             RowStyle-Height="40px" Font-Size="Larger">
                             <Columns>
                                 <asp:BoundField DataField="Name" HeaderText="Test Name &nbsp;&nbsp;" />
                                 <asp:BoundField DataField="Finished On" DataFormatString="{0:d}" HeaderText="Finished On" />
-                                <asp:TemplateField HeaderText="View">
+                                <asp:TemplateField HeaderText="View"  HeaderStyle-Width="15%" ItemStyle-Width="15%">
                                     <ItemTemplate>
-                                        <asp:LinkButton ID="showResults" runat="server" CausesValidation="false" OnClick="showResults_Click" Text="View Results"></asp:LinkButton>
+                                        <asp:LinkButton ID="showResults" runat="server" CausesValidation="false" OnClick="showResults_Click"><i class="fa fa-eye  fa-2x" aria-hidden="true"></i></asp:LinkButton>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:BoundField Visible="true" DataField="TestId" />
@@ -181,15 +181,12 @@
                     <div class="col-lg-12">
                         <hr>
                         <h2 class="intro-text text-center">Available 
-                       
-                       
-
                             <strong>Test</strong>
                         </h2>
                         <hr>
                     </div>
                     <div class="col-sm-3 text-center">
-                        <a href="WCSTWrapper.aspx" id="mobileapps1">
+                        <a href="WCSTWrapper.aspx" id="wcst">
                             <img class="img-responsive" src="images/cardSort.png" alt=""></a>
                         <h3>Card Sort
                        
@@ -197,31 +194,31 @@
                         </h3>
                     </div>
                     <div class="col-sm-3 text-center">
-                        <a href="TrailsWrapper.aspx" id="webdesign1">
+                        <a href="TrailsWrapper.aspx" id="trails">
                             <img class="img-responsive" src="images/trails.jpg" alt=""></a>
                         <h3>Trails
-                       
-                       
-
                             <small></small>
                         </h3>
                     </div>
                     <div class="col-sm-3 text-center">
-                        <a href="Tests/NbackWrapper.aspx" id="memory2">
+                        <a href="Tests/NbackWrapper.aspx" id="nBack">
                             <img class="img-responsive" src="images/Nback.jpg" alt=""></a>
                         <h3>Nback
-                       
-                       
-
                             <small></small>
                         </h3>
                     </div>
                     <div class="col-sm-3 text-center">
-                        <a href="LondonWrapper.aspx" id="webdesign2">
+                        <a href="LondonWrapper.aspx" id="london">
                             <img class="img-responsive" src="images/tower.jpg" alt=""></a>
                         <h3>Tower Of London
-                       
-                       
+
+                            <small></small>
+                        </h3>
+                    </div>
+                         <div class="col-sm-3 text-center">
+                        <a href="Tests/SyllogWrapper.aspx" id="syllog">
+                            <img class="img-responsive" src="images/tower.jpg" alt=""></a>
+                        <h3>Tower Of London
 
                             <small></small>
                         </h3>
@@ -229,6 +226,7 @@
                     <div class="clearfix"></div>
                 </div>
             </div>
+
         </section>
         <section id="testCategories">
             <div class="row">

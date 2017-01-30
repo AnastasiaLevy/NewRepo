@@ -365,6 +365,28 @@ namespace TestSite.DAL
             }
 
         }
+
+        internal static DataSet GetCardSortNorms( int ageGroup)
+        {
+            DataSet ds = new DataSet();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("GetCardSortNorms", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@ageGroup", ageGroup);
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                adp.Fill(ds);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption getting London Total Results. " + ex.Message);
+            }
+
+            return ds;
+        }
+
+
         internal static DataSet GetLondonUserResultsTotal(string userId, int tId, int ageGroup)
         {
             DataSet ds = new DataSet();
@@ -457,9 +479,9 @@ namespace TestSite.DAL
             }
         }
 
-        public static DataTable GetTestResultsCardSort(string userId, int tId)
+        public static DataSet GetTestResultsCardSort(string userId, int tId)
         {
-            DataTable ds = new DataTable();
+            DataSet ds = new DataSet();
             SqlConnection conn = new SqlConnection(connectionSring);
             SqlCommand cmd = new SqlCommand("GetUserCardSortTestResults", conn);
             cmd.CommandType = CommandType.StoredProcedure;
