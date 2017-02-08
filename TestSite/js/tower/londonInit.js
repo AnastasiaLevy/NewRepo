@@ -49,16 +49,18 @@ function initField() {
     var p3l1 = 250;
     var p3l2 = 280;
 
-    var clickArea1 = makeLine("a1", paper, p1x, p1y, p1l1, p1l2, background, 40);
-    var clickArea2 = makeLine("a2", paper, p2x, p2y, p2l1, p2l2, background, 40);
-    var clickArea3 = makeLine("a3", paper, p3x, p3y, p3l1, p3l2, background, 40);
+    var clickArea1 = makeLine("a1", paper, p1x, p1y, p1l1, p1l2, background, 50);
+    var clickArea2 = makeLine("a2", paper, p2x, p2y, p2l1, p2l2, background, 50);
+    var clickArea3 = makeLine("a3", paper, p3x, p3y, p3l1, p3l2, background, 50);
 
      rect = makeBase(paper, 20, 350, 260, 260, 5, baseColor, 40);
      peg1 = makeLine("peg1", paper, p1x, p1y, p1l1, p1l2, pegColor, pegThick);
      peg2 = makeLine("peg2", paper, p2x, p2y, p2l1, p2l2, pegColor, pegThick);
      peg3 = makeLine("peg3", paper, p3x, p3y, p3l1, p3l2, pegColor, pegThick);
 
-
+     var clickArea1b = makeLine("b1", paper, p1x, p1y + 40, p1l1, p1l2 + 180, baseColor, 50);
+     var clickArea2b = makeLine("b2", paper, p2x, p2y, p2l1, p2l2 + 170, baseColor, 50);
+     var clickArea3b = makeLine("b3", paper, p3x, p3y + 40, p3l1, p3l2 + 70, baseColor, 50);
 
      red = makeRed(paper, p3x, p3y - r, r, "red", true);//paperWidth/2  = 500, 100
      green = makeGreen( paper, p1x, p1y - r, r, "green", true);

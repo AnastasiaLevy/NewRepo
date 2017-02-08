@@ -204,13 +204,13 @@ namespace TestSite
             string currencyCode = "USD";
 
             StringBuilder ppHref = new StringBuilder();
-
+            string baseUrl = Request.Url.GetLeftPart(UriPartial.Authority);
             ppHref.Append("https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_xclick");//("https://www.paypal.com/cgi-bin/webscr?cmd=_xclick");
             ppHref.Append("&business=" + business);
             ppHref.Append("&item_name=" + itemName);
             ppHref.Append("&amount=" + itemAmount.ToString("#.00"));
             ppHref.Append("&currency_code=" + currencyCode);
-            ppHref.Append("&return=" + "http://localhost:52606/WCSTWrapper.aspx"); //"http://cogquiz.com/WCSTWrapper.aspx");//h/go?nachatTest");
+            ppHref.Append("&return=" + baseUrl + "/WCSTWrapper.aspx"); //"http://cogquiz.com/WCSTWrapper.aspx");//h/go?nachatTest");
 
             Response.Redirect(ppHref.ToString(), true);
         }

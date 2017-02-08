@@ -512,30 +512,30 @@ function startTrailA() {
         }
     }
 
-    var c2 = new makeMyObj(2, 375, 450, 30, "2", "M 587 343  L 360 450")
-    var c3 = new makeMyObj(3, 637, 500, 30, "3", "M 376 450  L 637 500");
-    var c4 = new makeMyObj(4, 632, 200, 30, "4", "M 638 500  L 632 200");
-    var c5 = new makeMyObj(5, 312, 250, 30, "5", "M 633 200  L 312 250");
-    var c6 = new makeMyObj(6, 475, 300, 30, "6", "M 313 250  L 475 300");
-    var c7 = new makeMyObj(7, 300, 387, 30, "7", "M 476 300  L 300 387");
-    var c8 = new makeMyObj(8, 200, 512, 30, "8", "M 301 387  L 200 512");
-    var c9 = new makeMyObj(9, 250, 612, 30, "9", "M 201 512  L 250 612");
-    var c10 = new makeMyObj(10, 300, 482, 30, "10", "M 251 612  L 300 482");
-    var c11 = new makeMyObj(11, 500, 637, 30, "11", "M 301 482  L 500 637");
-    var c12 = new makeMyObj(12, 75, 662, 30, "12", "M 501 637  L 75  662");
-    var c13 = new makeMyObj(13, 150, 337, 30, "13", "M 76  662  L 150 337");
-    var c14 = new makeMyObj(14, 37, 437, 30, "14", "M 151 337  L 37 437");
-    var c15 = new makeMyObj(15, 50, 75, 30, "15", "M 38  437  L 50 75,");
-    var c16 = new makeMyObj(16, 172, 225, 30, "16", "M 51  75,  L 172 225");
-    var c17 = new makeMyObj(17, 412, 62, 30, "17", "M 173 225  L 412 62");
-    var c18 = new makeMyObj(18, 412, 207, 30, "18", "M 413 62  L 412 207");
-    var c19 = new makeMyObj(19, 687, 112, 30, "19", "M 413 207  L 687 112");
-    var c20 = new makeMyObj(20, 535, 110, 30, "20", "M 688 112  L 535 110");
-    var c21 = new makeMyObj(21, 825, 50, 30, "21", "M 536 110  L 825 50");
-    var c22 = new makeMyObj(22, 800, 275, 30, "22", "M 826 50  L 800 275");
-    var c23 = new makeMyObj(23, 830, 650, 30, "23", "M 801 275  L 830 650");
-    var c24 = new makeMyObj(24, 725, 337, 30, "24", "M 831 650  L 725 337");
-    var c25 = new makeMyObj(25, 675, 625, 30, "25", "M 726 337  L 675 625", true);
+    var c2 = new makeMyObj(2, 375, 450, 30, "2",     "M 587 343  L 360 450")
+    var c3 = new makeMyObj(3, 637, 500, 30, "3",     "M 376 450  L 637 500");
+    var c4 = new makeMyObj(4, 632, 200, 30, "4",     "M 638 500  L 632 200");
+    var c5 = new makeMyObj(5, 312, 250, 30, "5",     "M 633 200  L 312 250");
+    var c6 = new makeMyObj(6, 475, 300, 30, "6",     "M 313 250  L 475 300");
+    var c7 = new makeMyObj(7, 300, 387, 30, "7",     "M 476 300  L 300 387");
+    var c8 = new makeMyObj(8, 200, 512, 30, "8",     "M 301 387  L 200 512");
+    var c9 = new makeMyObj(9, 250, 612, 30, "9",     "M 201 512  L 250 612");
+    var c10 = new makeMyObj(10, 300, 482, 30, "10",  "M 251 612  L 300 482");
+    var c11 = new makeMyObj(11, 500, 637, 30, "11",  "M 301 482  L 500 637");
+    var c12 = new makeMyObj(12, 75, 662, 30, "12",   "M 501 637  L 75  662");
+    var c13 = new makeMyObj(13, 150, 337, 30, "13",  "M 76  662  L 150 337");
+    var c14 = new makeMyObj(14, 37, 437, 30, "14",   "M 151 337  L 37 437");
+    var c15 = new makeMyObj(15, 50, 75, 30, "15",    "M 38  437  L 50 75,");
+    var c16 = new makeMyObj(16, 172, 225, 30, "16",  "M 51  75   L 172 225");
+    var c17 = new makeMyObj(17, 412, 62, 30, "17",   "M 173 225  L 412 62");
+    var c18 = new makeMyObj(18, 412, 207, 30, "18",  "M 413 62   L 412 207");
+    var c19 = new makeMyObj(19, 687, 112, 30, "19",  "M 413 207  L 687 112");
+    var c20 = new makeMyObj(20, 535, 110, 30, "20",  "M 688 112  L 535 110");
+    var c21 = new makeMyObj(21, 825, 50, 30, "21",   "M 536 110  L 825 50");
+    var c22 = new makeMyObj(22, 800, 275, 30, "22",  "M 826 50   L 800 275");
+    var c23 = new makeMyObj(23, 830, 650, 30, "23",  "M 801 275  L 830 650");
+    var c24 = new makeMyObj(24, 725, 337, 30, "24",  "M 831 650  L 725 337");
+    var c25 = new makeMyObj(25, 675, 625, 30, "25",  "M 726 337  L 675 625", true);
 
 
     function makeMyObj(id, x, y, rad, text, path, last) {
@@ -715,27 +715,27 @@ function startTrailB() {
     var ca = new makeMyObj(2, 600, 500, 30, "A", "M 572 338  L 600 500")
     var c2 = new makeMyObj(3, 270, 540, 30, "2", "M 600 500  L 270 540,");
     var cb = new makeMyObj(4, 330, 150, 30, "B", "M 270 540  L 330 150");
-    var c3 = new makeMyObj(5, 410, 240, 30, "3", "M 330 150  L 410 240,");
-    var cc = new makeMyObj(6, 560, 400, 30, "C", "M 410 240 L 560 400,,");
-    var c4 = new makeMyObj(7, 420, 130, 30, "4", "M 560 400  L 420 130");
-    var cd = new makeMyObj(8, 700, 85, 30, "D", "M 420 130  L 700 85");
+    var c3 = new makeMyObj(5, 410, 240, 30, "3", "M 330 150  L 410 240");
+    var cc = new makeMyObj(6, 500, 380, 30, "C", "M 410 240 L 500 380");
+    var c4 = new makeMyObj(7, 420, 130, 30, "4", "M 500 380  L 420 130");
+    var cd = new makeMyObj(8, 700, 85, 30, "D",  "M 420 130  L 700 85");
     var c5 = new makeMyObj(9, 700, 320, 30, "5", "M 700 85  L 700 320");
-    var ce = new makeMyObj(10, 730, 580, 30, "E", "M 700 320  L 730 580,");
+    var ce = new makeMyObj(10, 730, 580, 30, "E", "M 700 320  L 730 580");
     var c6 = new makeMyObj(11, 360, 570, 30, "6", "M 730 580  L 360 570");
     var cf = new makeMyObj(12, 170, 630, 30, "F", "M 360 570  L 170 630");
-    var c7 = new makeMyObj(13, 270, 300, 30, "7", "M 170 630  L 270 300,");
+    var c7 = new makeMyObj(13, 270, 300, 30, "7", "M 170 630  L 270 300");
     var cg = new makeMyObj(14, 150, 440, 30, "G", "M 270 300  L 150 440");
     var c8 = new makeMyObj(15, 100, 80, 30, "8", "M 150 440  L 100 80");
     var ch = new makeMyObj(16, 170, 360, 30, "H", "M 100 80  L 170 360");
     var c9 = new makeMyObj(17, 210, 90, 30, "9", "M 170 360  L 210 90");
     var ci = new makeMyObj(18, 540, 60, 30, "I", "M 210 90  L 540 60");
     var c10 = new makeMyObj(19, 850, 50, 30, "10", "M 540 60  L 850 50");
-    var cj = new makeMyObj(20, 780, 510, 30, "J", "M 850 50  L 780 510,");
+    var cj = new makeMyObj(20, 780, 510, 30, "J", "M 850 50  L 780 510");
     var c11 = new makeMyObj(21, 820, 660, 30, "11", "M 780 510 L 820 660");
     var ck = new makeMyObj(22, 40, 660, 30, "K", "M 820 660 L 40 660");
     var c12 = new makeMyObj(23, 50, 380, 30, "12", "M 40 660  L 50 380");
     var cl = new makeMyObj(24, 105, 555, 30, "L", "M 50 380  L 105 555");
-    var c13 = new makeMyObj(25, 30, 30, 30, "13", "M 105 555  L 30 30,", true);
+    var c13 = new makeMyObj(25, 30, 30, 30, "13", "M 105 555  L 30 30", true);
 
     function makeMyObj(id, x, y, rad, text, path, last) {
 

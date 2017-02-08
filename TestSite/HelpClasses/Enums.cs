@@ -72,21 +72,21 @@ namespace TestSite.HelpClasses
             {
                     //trails
                 case "1":
-                    return @"\TrailsPage.aspx";
+                    return @"\TrailsWrapper.aspx";
                     //ToL
                 case "2":
-                    return @"\LondonPage.aspx";
+                    return @"\LondonWrapper.aspx";
                     //CardSort
                 case "3":
-                    return @"\WCSTPage.aspx";
+                    return @"\WCSTWrapper.aspx";
                     //Nback
                 case "4":
-                    return @"Tests\NbackPage.aspx";
+                    return @"Tests\NbackWrapper.aspx";
                 //Main
                 case "5":
-                    return @"Tests\SyllogPage.aspx";
-                case "6":
-                    return @"Tests\StroopPage.aspx";
+                    return @"Tests\SyllogWrapper.aspx";
+                //case "6":
+                //    return @"Tests\StroopPage.aspx";
                 default:
                     return @"\MainPage.aspx";
             }
@@ -100,25 +100,25 @@ namespace TestSite.HelpClasses
             {
               
                 case -3:
-                    text = "Exellent";
+                    text = "Exellent performance! For individuals your age your score places you in the top 2 to 3 percent. Scores like yours can be interpreted to indicate rapid speed of processing. In general terms this means you are able to rapidly process information.";
                     break;
                 case -2:
-                    text = "Very Good";
+                    text = "Very Good performance. For individuals your age your score places you in the top 10 to 15 percent. Scores like yours can be interpreted to indicate rapid speed of processing. In general terms this means you are able to rapidly process information.";
                     break;
                 case -1:
-                    text = "Above Average";
+                    text = "Good performance. For individuals your age your score is within the normal range.";
                     break;
                 case 0:
-                    text = "Average";
+                    text = "Good performance. For individuals your age your score is within the normal range.";
                     break;
                 case 1:
-                    text = "Below Average";
+                    text = "Good performance. For individuals your age your score is within the normal range.";
                     break;
                 case 2:
-                    text = "Pretty Bad";
+                    text = "Your performance did not fall within the average or above average performance for someone your age. There are a large numer of factors that may have contributed to your performance. This test is not diagnostic. There are a range of scores and some will be above and some will be below average. If you have any concerns about your performance you should consult with a licensed professional health provider.";
                     break;
                 case 3:
-                    text = "Bad";
+                    text = "Your performance did not fall within the average or above average performance for someone your age. There are a large numer of factors that may have contributed to your performance. This test is not diagnostic. There are a range of scores and some will be above and some will be below average. If you have any concerns about your performance you should consult with a licensed professional health provider.";
                     break;
                 case 10:
                     text = "Unable determing results. Please contact administrator.";
@@ -135,25 +135,25 @@ namespace TestSite.HelpClasses
             {
 
                 case -3:
-                    text = "Exellent";
+                    text = "Exellent performance! For individuals your age your score places you in the top 2 to 3 percent. Scores like yours can be interpreted to indicate excellelnt problem solving ability. In general terms, you were able to look at the problem to be solved and develop an optimal set of moves to reach the goal position. These problems required you to look ahead, hold information in your conscious awareness, and inhibit inefficient moves.";
                     break;
                 case -2:
-                    text = "Very Good";
+                    text = "Very good performance! For individuals your age your score places you in the top 10 to 15 percent. Scores like yours can be interpreted to indicate excellelnt problem solving ability. In general terms, you were able to look at the problem to be solved and develop an optimal set of moves to reach the goal position. These problems required you to look ahead, hold information in your conscious awareness, and inhibit inefficient moves.";
                     break;
                 case -1:
-                    text = "Above Average";
+                    text = "Good performance. For individuals your age your score is within the normal range. In terms of excess moves, your performance was in the upper 50 percent ";
                     break;
                 case 0:
-                    text = "Average";
+                    text = "Good performance. For individuals your age your score is within the normal range. Your performance was ";
                     break;
                 case 1:
-                    text = "Below Average";
+                    text = "Average performance. For individuals your age your score is within the normal range.";
                     break;
                 case 2:
-                    text = "Pretty Bad";
+                    text = "Your performance did not fall within the average range for someone your age. There are a large numer of factors that may have contributed to your performance. This test is not diagnostic. There are a range of scores and some will be above and some will be below average. If you have any concerns about your performance you might consider consulting with a licensed professional health provider. Your results can be printed and provided to anyone you consult with.";
                     break;
                 case 3:
-                    text = "Bad";
+                    text = "Your performance did not fall within the average range for someone your age. There are a large numer of factors that may have contributed to your performance. This test is not diagnostic. There are a range of scores and some will be above and some will be below average. If you have any concerns about your performance you might consider consulting with a licensed professional health provider. Your results can be printed and provided to anyone you consult with.";
                     break;
                 case 10:
                     text = "Unable determing results. Please contact administrator.";
@@ -170,7 +170,7 @@ namespace TestSite.HelpClasses
             {
 
                 case -3:
-                    text = "Exellent";
+                    text = "Exellent performance! For individuals your age your score places you in the top 2 to 3 percent. Scores like yours can be interpreted to indicate excellelnt problem solving ability. In general terms, you were able to look at the problem to be solved and develop an optimal set of moves to reach the goal position. These problems required you to look ahead, hold information in your conscious awareness, and inhibit inefficient moves.";
                     break;
                 case -2:
                     text = "Very Good";
@@ -265,6 +265,42 @@ namespace TestSite.HelpClasses
             return text;
 
         }
+
+        public static string ReturnSyllogResultText(int factor)
+        {
+            string text = "";
+            switch (factor)
+            {
+
+                case -3:
+                    text = "Exellent";
+                    break;
+                case -2:
+                    text = "Very Good";
+                    break;
+                case -1:
+                    text = "Above Average";
+                    break;
+                case 0:
+                    text = "Average";
+                    break;
+                case 1:
+                    text = "Below Average";
+                    break;
+                case 2:
+                    text = "Pretty Bad";
+                    break;
+                case 3:
+                    text = "Bad";
+                    break;
+                case 10:
+                    text = "Unable determing results. Please contact administrator.";
+                    break;
+            }
+            return text;
+
+        }
+
         public static string ReturnCardSortNormsTotalCorrect(int factor)
         {
             string text = "";

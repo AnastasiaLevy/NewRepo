@@ -36,6 +36,7 @@ namespace TestSite
                 //bday.Text = GetUserBithdate();
                 LoadPaidTests();
                 LoadFinishedTests();
+                setUpUserCode.Visible = false;
             }
             else
             {
@@ -120,8 +121,37 @@ namespace TestSite
         }
 
 
+        protected void btnCodeSave_Click(object sender, EventArgs e)
+        {
+            string code = txtUserCode.Text;
+            if (code.Length > 0)
+            {
+                try
+                {
+                    DAL.DataMethods.AddUserToProvider(userId, code);
+                    lblError.Text = "Provider was added";
+                    setUpUserCode.Visible = true;
+                }
+                catch
+                {
+                    lblError.Text = "There was an error adding a provider.";
+                }
+               
+            }
+            else
+                lblError.Text = "User Code is not valid";
 
+        }
 
+        protected void btnCodeClose_Click(object sender, EventArgs e)
+        {
+            setUpUserCode.Visible = false;
+            lblError.Text = "";
+        }
 
+        protected void btbAddProviderCode_Click(object sender, EventArgs e)
+        {
+            setUpUserCode.Visible = true;
+        }
     }
 }

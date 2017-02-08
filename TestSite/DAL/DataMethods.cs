@@ -139,6 +139,29 @@ namespace TestSite.DAL
             }
         }
 
+        internal static void AddUserToProvider(string userId, string code)
+        {
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("InsertUserProviderId", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@userId", userId);
+            cmd.Parameters.AddWithValue("@code", code);
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption saving Provider " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
         internal static void InsertCardSortTable(string html, int tId)
         {
             SqlConnection conn = new SqlConnection(connectionSring);
@@ -162,6 +185,8 @@ namespace TestSite.DAL
             }
         }
 
+
+
         internal static DataTable GetAllProviderParticipants(int? providerId)
         {
             DataTable ds = new DataTable();
@@ -183,6 +208,59 @@ namespace TestSite.DAL
             return ds;
         }
 
+        internal static int GetUserViewResults(string userId)
+        {
+
+            object id = null;
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("SelectUserViewResults", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("userId", userId);
+
+            try
+            {
+                conn.Open();
+                id = cmd.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                id = null; //throw new Exception("Execption checking ProviderIdAccount. " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return id != null ? Int32.Parse(id.ToString()) : 0;
+
+        }
+
+        internal static void SetAllowUserViewResults(string userId, bool value)
+        {
+
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("SetUserViewResults", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@userID", userId);
+            cmd.Parameters.AddWithValue("@value", value);
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption Updating Allow User View Results. " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+        }
+
         internal static void DeactivateParticipant(string userId, string providerId)
         {
            
@@ -199,7 +277,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
-                throw new Exception("Execption saving CST moves. " + ex.Message);
+                throw new Exception("Execption Deactivating Participant. " + ex.Message);
             }
             finally
             {
@@ -233,6 +311,30 @@ namespace TestSite.DAL
             }
 
             return id != null ? Int32.Parse(id.ToString()) :0;
+        }
+
+        internal static void UpdateProviderTableSetCode(string userId, string providerCode)
+        {
+
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("UpdateProviderCode", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@userId", userId);
+            cmd.Parameters.AddWithValue("@providerCode", providerCode);
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption saving Provider Code " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
 
         internal static void UpdateProviderTable(string userId)
@@ -415,6 +517,26 @@ namespace TestSite.DAL
 
         }
 
+        internal static DataSet GetSyllogysmTestNorms(int ageGroup)
+        {
+            DataSet ds = new DataSet();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("SelectSyllogNorms", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@ageGroup", ageGroup);
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                adp.Fill(ds);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption getting Syllogisms Normal. " + ex.Message);
+            }
+
+            return ds;
+        }
+
         internal static DataSet GetCardSortNorms( int ageGroup)
         {
             DataSet ds = new DataSet();
@@ -551,9 +673,9 @@ namespace TestSite.DAL
             return ds;
         }
 
-        public static DataSet GetSyllogismsUserResults( int tId)
+        public static DataTable GetSyllogismsUserResults( int tId)
         {
-            DataSet ds = new DataSet();
+            DataTable ds = new DataTable();
             SqlConnection conn = new SqlConnection(connectionSring);
             SqlCommand cmd = new SqlCommand("SelectSyllogismsUserResults", conn);
             cmd.CommandType = CommandType.StoredProcedure;

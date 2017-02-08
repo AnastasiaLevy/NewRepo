@@ -2371,8 +2371,8 @@ padding: 10px;
 }
 
 #displayMessage {
-    width: 500px;
-    height: 300px;
+    width: 600px;
+    height: 400px;
     border-style: solid;
     border-width: 1px;
     word-wrap: break-word;
@@ -2382,6 +2382,7 @@ padding: 10px;
     align-items: center;
     justify-content: center;
     padding: 20px;
+    font-size:larger;
     /*display : flex;*/
 }
 
@@ -3070,6 +3071,7 @@ form .buttons {
     width: 100%;
     word-wrap: break-word;
     table-layout: fixed;
+   
  
 }
 .testResGrid {
@@ -3078,6 +3080,9 @@ form .buttons {
     table-layout: fixed;
 }
 
+.successMessage {
+    color: green;
+}
 
 
 
@@ -3091,21 +3096,21 @@ label {
 
 
 #pop {
-    position: fixed;
+    position:fixed;
     top: 20%;
-    left: 20%;
+    left: 10%;
     /*margin-top: -50px;
     margin-left: -50px;*/
-    width: 60%;
+    width: 80%;
     min-height: 50%;
     z-index: 100;
     background-color: white;
     border: 2px double;
     border-bottom-color: darkblue;
     border-radius: 5px;
- 
     padding: 10px;
     padding-top:0px;
+    overflow:scroll;
 }
 #btnCancel {
     margin-left: 66%;

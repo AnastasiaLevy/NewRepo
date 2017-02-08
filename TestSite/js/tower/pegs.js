@@ -1,7 +1,8 @@
 ﻿
 function onclickPeg(objName) {
     if (canMove) {
-        if (objName.id == "peg1" || objName.id == "a1") {
+        if (objName.id == "peg1" || objName.id == "a1" || objName.id == "b1") {
+           
             if (up1 != null) {
                 if (p3 == null && p2 == null && p1 == null) {
                     up1.animate(moveToP3);
@@ -95,7 +96,7 @@ function onclickPeg(objName) {
 
         }
 
-        else if (objName.id == "peg2" || objName.id == "a2") {
+        else if (objName.id == "peg2" || objName.id == "a2" || objName.id == "b2") {
 
             if (up1 !== null) {
                 if (p4 == null && p5 !== null) {
@@ -165,7 +166,7 @@ function onclickPeg(objName) {
             }
 
         }
-        else if (objName.id == "peg3" || objName.id == "a3") {
+        else if (objName.id == "peg3" || objName.id == "a3" || objName.id == "b3") {
             if (p6 == null) {
                 if (up1 != null) {
                     up1.animate(moveU1U3);

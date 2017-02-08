@@ -17,12 +17,14 @@ namespace TestSite
         protected string _userId;
         protected bool _isProfilefilled;
         protected string _redirectTo;
+        protected string _userName;
         protected void Page_Load(object sender, EventArgs e)
         {
 
             if (!String.IsNullOrEmpty(Request.QueryString["provId"]))
             {
                 _userId = Request.QueryString["userId"];
+               _userName = Request.QueryString["userName"];
                 hgoBack.HRef = "~/Provider/ProviderPortal.aspx";
 
             }
@@ -30,6 +32,7 @@ namespace TestSite
             {
                 hgoBack.HRef = "~/UserProfile.aspx";
                 _user = Membership.GetUser(User.Identity.Name);
+                _userName = User.Identity.Name;
                 _userId = _user.ProviderUserKey.ToString();
             }
             _isProfilefilled = ProfileIsFilled(_userId);
@@ -272,7 +275,7 @@ namespace TestSite
                 error.Text = "";
 
 
-                userName = User.Identity.Name;
+               
                 birthDate = (txtBDay.Text != null && txtBDay.Text != "") ? DateTime.ParseExact(txtBDay.Text, "MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture) : DateTime.Today;
 
                 exercise = GetExercise();
@@ -293,7 +296,7 @@ namespace TestSite
 
                 int id = 0;
                 id = DataMethods.SaveRegistration(firstName, lastName, education, medications, gender, hand,
-                    brainActivity, ethnisity, language, headInjury, selfEsteem, exercise, userName, selfHealth,
+                    brainActivity, ethnisity, language, headInjury, selfEsteem, exercise, _userName, selfHealth,
                     birthDate, isOnMeds, isInj, isFilled, _userId, income, cbAgree.Checked);
                 if (id > 0)
                 {

@@ -22,8 +22,6 @@ function startGame(gameNum) { //change back w/o s to use
     initTTime = 0;
     totalTime;
 
- 
-
     time = getTime();
     if (gameNum == 1) {
         displayInstructions(text);
@@ -44,7 +42,6 @@ function countdown() {
     
      gameTimer = setTimeout( displayFinalMessageOnTimeout, 120000);    
 }
-
 
 function hideFinalMessage() {
     var finalMessage = document.getElementById("finalMessage");
@@ -74,7 +71,10 @@ function displayFinalMessageOnTimeout() {
     }
     var minMoves = mapGameMoves(game);
     passResultsForGame(game, initTTime, 120000, 20, nmWr, true, false, minMoves);
-    startCountDownTimer(game +1);
+    setTimeout(function () {
+           startCountDownTimer(game +1);
+    }, 1300);
+ 
 }
 
 function mapGameMoves(game)
@@ -114,7 +114,6 @@ function displayFinalMessage20move(game) {
     over = new Date() - time;
     var finalMessage = document.getElementById("finalMessage");
     finalMessage.style.display = '';
-
     finalMessage.innerHTML = "You made more that 20 moves in trial " + game + ". The new trial will start soon.";
     setTimeout(hideFinalMessage, 2000);
     if (game == 13) {
@@ -122,8 +121,11 @@ function displayFinalMessage20move(game) {
         displayTestFinishedMessage();
     }
     var minMoves = mapGameMoves(game)
-    passResultsForGame(game, initTTime,over, 20, nmWr, false, true, minMoves);
-    startCountDownTimer(game);
+    passResultsForGame(game, initTTime, over, 20, nmWr, false, true, minMoves);
+    setTimeout(function () {
+       startCountDownTimer(game);  
+    }, 1300);
+   
 }
 
 function displayFinalMessage(needMoves, madeMoves) {
@@ -153,7 +155,7 @@ function displayInstructions(text) {
 }
 
 function startCountDownTimer(game) {
-    var timeleft = 10;
+    var timeleft = 11;
     canMove = false;
     var field = document.getElementById("countdown");
     field.style.display = '';
@@ -187,7 +189,7 @@ function finishGame(needMoves) {
   
     passResultsForGame(game, initTTime,over, nm, nmWr, false, false, needMoves);
     canMove = false;
-    setTimeout(function () { displayFinalMessage(needMoves, nm); }, 0)
+    setTimeout(function () { displayFinalMessage(needMoves, nm); }, 1200)
   
     if (game == 13) {
         updateTestFinished();
@@ -195,7 +197,10 @@ function finishGame(needMoves) {
     }
     else
         game++;
-       startCountDownTimer(game);
+    setTimeout(function () {
+        startCountDownTimer(game);
+    }, 1300);
+      
   
 }
 

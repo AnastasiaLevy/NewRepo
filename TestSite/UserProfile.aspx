@@ -92,12 +92,22 @@
                             <asp:Label ID="age" runat="server" class="profile" Text=""></asp:Label>
                         </p>
                         <p><a class="profile" href="Registration.aspx"><strong><u>Profile Form</u></strong></a></p>
+
                     </div>
                     <div class="col-lg-4">
-                        <%--    <p class="min"><strong>Update Account Information:</strong> </p>
-                            <p><a class="profile" href="#">Reset Password</a></p>
-                            <p><a class="profile" href="#">Reset Email</a></p>
-                            <p><a class="profile" href="Registration.aspx">Profile Form</a></p>--%>
+                        <asp:Button ID="btbAddProviderCode" runat="server" Text="Add Provider" CssClass ="btn btn-primary" OnClick="btbAddProviderCode_Click"/>
+                               <div id="setUpUserCode" class="panel panel-success" runat="server">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Enter Provider Code</h3>
+                                        <asp:Label ID="lblError" runat="server" Text=""></asp:Label>
+                                    </div>
+                                    <div class="panel-body">
+                                       <asp:Label ID="Label5" runat="server" Text="Enter Code:"></asp:Label>
+                                       <asp:TextBox ID="txtUserCode" runat="server" CssClass="createUser" Width="50%"></asp:TextBox>
+                                       <asp:Button ID="btnCodeSave" class="btn btn-labeled btn-success" runat="server" Text="Save" onClick="btnCodeSave_Click" />
+                                       <asp:Button ID="btnCodeClose" class="btn btn-labeled btn-info" runat="server" Text="Close" onClick ="btnCodeClose_Click"/>
+                                    </div>
+                                </div>
                     </div>
                     <div class="clearfix"></div>
                 </div>

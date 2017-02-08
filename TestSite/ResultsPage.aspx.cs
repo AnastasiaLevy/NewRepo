@@ -35,6 +35,7 @@ namespace TestSite
             DataTable dt;
             DataSet ds;
             int factor;
+            textStr.Text = "";
 
             if (test == "5")
             {
@@ -46,15 +47,27 @@ namespace TestSite
 
                     chartTitle.Text = "Results for Syllogisms Test for participant " + userName;
                     GridView gvSyllogResTotal = new GridView();
-                    gvSyllogResTotal.DataSource = DataMethods.GetSyllogismsUserResults(tId);
+                    DataTable dtRes = DataMethods.GetSyllogismsUserResults(tId);
+                    gvSyllogResTotal.DataSource = dtRes;
                     gvSyllogResTotal.DataBind();
                     SetGvProperties(gvSyllogResTotal);
                     pResultPanel.Controls.Add(gvSyllogResTotal);
-
+                    
                     string html = dt.Rows[0]["htmlText"].ToString();
                     CreateMapButton();
                     AppendLog(html);
-                    
+
+                    ds = DataMethods.GetSyllogysmTestNorms(ageGroup);
+                    decimal mean;
+                    decimal std;
+                    decimal result = Convert.ToDecimal(dtRes.Rows[0]["totalCorrect"]);
+                    GetValues(ds, 0, out mean, out std);
+                    factor = CalculateResults(result, mean, std);
+                    textStr.Text += "Total Correct Count:" + Enums.ReturnSyllogResultText(factor);
+
+
+
+
 
                 }
             }
@@ -184,6 +197,9 @@ namespace TestSite
             foreach (string s in moves)
             {
                 AppendLog(s);
+                AppendLog("<br/>");
+                
+                
             }
         }
 
