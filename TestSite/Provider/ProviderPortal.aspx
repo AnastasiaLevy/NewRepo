@@ -54,7 +54,7 @@
                         <%--    <li><a href="#reports">Results</a></li>--%>
                         <li id="login" runat="server"><a href="Login.aspx">Login</a></li>
                         <li>
-                            <asp:LinkButton ID="Logout" class="btn button" type="submit" runat="server" OnClick="logOut_Click">Log Out</asp:LinkButton>
+                            <asp:LinkButton ID="Logout" cssclass="btn button" type="submit" runat="server" OnClick="logOut_Click">Log Out</asp:LinkButton>
                         </li>
                     </ul>
                 </div>
@@ -176,7 +176,7 @@
                                  <asp:Label ID="partName" runat="server" Text="" CssClass="col-lg-2"></asp:Label>
                                  
                           
-                               
+                            
                                  <asp:Button ID="btnCancel" runat="server" Text="X" OnClick="Button1_Click" class="col-md-1" />
                                  <asp:GridView ID="gvTestPerUser" runat="server" RowStyle-Wrap="true" CellSpacing="10" class="gridview"
                                      GridLines="Horizontal" AutoGenerateColumns="False" BorderColor="#CCCCCC" BorderStyle="None"
@@ -208,11 +208,7 @@
                                              <ItemStyle Width="10%"></ItemStyle>
                                          </asp:TemplateField>
                                          <asp:BoundField Visible="true" DataField="tID" />
-                                         <asp:TemplateField HeaderText="Allow View" HeaderStyle-Width="10%" ItemStyle-Width="10%">
-                                             <ItemTemplate>
-                                                 <asp:CheckBox ID="SelectCheckBox" runat="server" OnCheckedChanged="SelectCheckBox_CheckedChanged" Checked ="true" />
-                                             </ItemTemplate>
-                                         </asp:TemplateField>
+                                     
 
                                      </Columns>
 
@@ -226,7 +222,7 @@
                                      <SortedDescendingHeaderStyle BackColor="#242121" />
                                      <RowStyle Wrap="False" Height="40px"></RowStyle>
                                  </asp:GridView>
-
+    <asp:CheckBox ID="cbViewResults" runat="server" OnCheckedChanged="SelectCheckBox_CheckedChanged" Checked ="true" Text ="Allow Participant to view results"/>
                              </div>
                         </div>
                         <div class="col-lg-12">
@@ -260,6 +256,11 @@
                                     </asp:TemplateField>
 
                                       <asp:BoundField DataField="userId" />
+<%--                                        <asp:TemplateField HeaderText="Allow View" HeaderStyle-Width="10%" ItemStyle-Width="10%">
+                                             <ItemTemplate>
+                                                 <asp:CheckBox ID="SelectCheckBox" runat="server" OnCheckedChanged="SelectCheckBox_CheckedChanged" Checked ="true" />
+                                             </ItemTemplate>
+                                         </asp:TemplateField>--%>
                                 </Columns>
                                 <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                                 <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />

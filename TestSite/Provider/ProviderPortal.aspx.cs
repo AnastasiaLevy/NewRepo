@@ -20,6 +20,8 @@ namespace TestSite.Provider
             createUser.Visible = false;
             assignTest.Visible = false;
             setUpUserCode.Visible = false;
+            cbAllowUserViewResults.Checked = true;
+
             if (User.Identity.IsAuthenticated)
             {
                 login.Visible = false;
@@ -127,6 +129,15 @@ namespace TestSite.Provider
         protected void Button1_Click(object sender, EventArgs e)
         {
             pop.Style["display"] = "none";
+            if (cbViewResults.Checked)
+            {
+
+                DAL.DataMethods.SetAllowUserViewResults(ViewState["tUserId"].ToString(), true);
+            }
+            else
+            {
+                DAL.DataMethods.SetAllowUserViewResults(ViewState["tUserId"].ToString(), false);
+            }
         }
 
         protected void lbViewTestResults_Click(object sender, EventArgs e)
@@ -137,7 +148,7 @@ namespace TestSite.Provider
             string userId = Convert.ToString(ViewState["tUserId"]);
             string age = Convert.ToString(ViewState["tUserAge"]);
             string test = row.Cells[0].Text;
-            string url = "~/ResultsPage.aspx?userId=" + userId + "&tid=" + tId + "&test=" + test + "&age=" + age;
+            string url = "~/ResultsPage.aspx?userId=" + userId + "&tid=" + tId + "&test=" + test + "&age=" + age + "&provider=true";
             Response.Redirect(url);
         }
 
@@ -186,16 +197,20 @@ namespace TestSite.Provider
                 createUser.Visible = true;
                 DAL.DataMethods.InsertProviderToTheUser(user.ProviderUserKey.ToString(), Convert.ToInt32(ViewState["providerId"]), userName);
                 SetProviderTestsGrid(Convert.ToInt32(ViewState["providerId"]));
-                //if (cbAllowUserViewResults.Checked)
-                //{
-                //    DAL.DataMethods.SetAllowUserViewResults(user.ProviderUserKey.ToString(), true);
-                //}
+                if (cbAllowUserViewResults.Checked)
+                {
+                    DAL.DataMethods.SetAllowUserViewResults(user.ProviderUserKey.ToString(), true);
+                }
+                else
+                {
+                    DAL.DataMethods.SetAllowUserViewResults(user.ProviderUserKey.ToString(), false);
+                }
             }
             catch (Exception ex)
             {
                 lblError.Text = ex.Message;
                 lblError.CssClass = "errorMessage";
-                //ViewState["CreatingUser"] = true;
+             
                 createUser.Visible = true;
             }
         }
@@ -285,15 +300,18 @@ namespace TestSite.Provider
             setUpUserCode.Visible = false;
         }
 
-        protected void gvTestPerUser_PageIndexChanging(object sender, GridViewPageEventArgs e)
-        {
-            gvTestPerUser.PageIndex = e.NewPageIndex;
-            SetUserTestsGrig(ViewState["tUserId"].ToString());
-        }
-
         protected void SelectCheckBox_CheckedChanged(object sender, EventArgs e)
         {
+           //CheckBox cb = (CheckBox)sender;
+           // if (cb.Checked)
+           // {
 
+           //     DAL.DataMethods.SetAllowUserViewResults(ViewState["tUserId"].ToString(), true);
+           // }
+           // else
+           // {
+           //     DAL.DataMethods.SetAllowUserViewResults(ViewState["tUserId"].ToString(), false);
+           // }
         }
     }
 } 

@@ -20,13 +20,21 @@ namespace TestSite
 
             logOut.Visible = true;
             login.Visible = false;
+            
 
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            movesMap.Visible = movesMap.Visible ? true : false;
 
             string userId = Request.QueryString["userId"].ToString();
+            int canView = DataMethods.GetUserViewResults(userId);
+            if (canView == 0 && Request.QueryString["provider"]== null)
+            {
+                textStr.Text = "Provider has restricted  view of the result section.";
+            }
+            else { 
+            movesMap.Visible = movesMap.Visible ? true : false;
+
             int age = DataMethods.GetUserAge(userId);
             int tId = Convert.ToInt32(Request.QueryString["tId"]);
             string test = Request.QueryString["test"].ToString();
@@ -64,15 +72,10 @@ namespace TestSite
                     GetValues(ds, 0, out mean, out std);
                     factor = CalculateResults(result, mean, std);
                     textStr.Text += "Total Correct Count:" + Enums.ReturnSyllogResultText(factor);
-
-
-
-
-
                 }
             }
 
-            if (test == "3")
+            if (test == "3" || test == "Card Sort")
             {
                 ds = DataMethods.GetTestResultsCardSort(userId, tId);
                 if (ds == null)
@@ -149,39 +152,40 @@ namespace TestSite
 
             }
 
-            if (test == "1" || test == "Trails")
-            {
-                chartTitle.Text = "Results for Trails Test";
-                dt = DataMethods.GetTestResultsTrails(userId, tId);
+                if (test == "1" || test == "Trails")
+                {
+                    chartTitle.Text = "Results for Trails Test";
+                    dt = DataMethods.GetTestResultsTrails(userId, tId);
 
-                TrailsResults tr = new TrailsResults();
-                tr.PartA = (dt.Rows[0]["Trail A"]) == DBNull.Value ? 0 : Convert.ToDecimal(dt.Rows[0]["Trail A"]);
-                tr.PartB = (dt.Rows[0]["Trail B"]) == DBNull.Value ? 0 : Convert.ToDecimal(dt.Rows[0]["Trail B"]);
-                DataSet dts = DataMethods.GetTestNormsTrails(ageGroup);
-                DataTable dtA = dts.Tables[0];
-                DataTable dtB = dts.Tables[1];
+                    TrailsResults tr = new TrailsResults();
+                    tr.PartA = (dt.Rows[0]["Trail A"]) == DBNull.Value ? 0 : Convert.ToDecimal(dt.Rows[0]["Trail A"]);
+                    tr.PartB = (dt.Rows[0]["Trail B"]) == DBNull.Value ? 0 : Convert.ToDecimal(dt.Rows[0]["Trail B"]);
+                    DataSet dts = DataMethods.GetTestNormsTrails(ageGroup);
+                    DataTable dtA = dts.Tables[0];
+                    DataTable dtB = dts.Tables[1];
 
-                decimal meanA = Convert.ToDecimal(dtA.Rows[0]["mean"]);
-                decimal meanB = Convert.ToDecimal(dtB.Rows[0]["mean"]);
+                    decimal meanA = Convert.ToDecimal(dtA.Rows[0]["mean"]);
+                    decimal meanB = Convert.ToDecimal(dtB.Rows[0]["mean"]);
 
-                decimal stdA = Convert.ToDecimal(dtA.Rows[0]["stdDeviation"]);
-                decimal stdB = Convert.ToDecimal(dtB.Rows[0]["stdDeviation"]);
-                GridView gvA = new GridView();
-                SetGvProperties(gvA);
+                    decimal stdA = Convert.ToDecimal(dtA.Rows[0]["stdDeviation"]);
+                    decimal stdB = Convert.ToDecimal(dtB.Rows[0]["stdDeviation"]);
+                    GridView gvA = new GridView();
+                    SetGvProperties(gvA);
 
-                gvA.DataSource = dt;
-                gvA.DataBind();
-                pResultPanel.Controls.Add(gvA);
-                factor = CalculateResults(tr.PartA, meanA, stdA);
-                Label resA = new Label();
-                resA.Text = "Trails part A: " + Enums.ReturnTrailsResultStrings(factor);
-                pResultPanel.Controls.Add(resA);
+                    gvA.DataSource = dt;
+                    gvA.DataBind();
+                    pResultPanel.Controls.Add(gvA);
+                    factor = CalculateResults(tr.PartA, meanA, stdA);
+                    Label resA = new Label();
+                    resA.Text = "Trails part A: " + Enums.ReturnTrailsResultStrings(factor);
+                    pResultPanel.Controls.Add(resA);
 
-                factor = CalculateResults(tr.PartB, meanB, stdB);
-                Label resB = new Label();
-                resB.Text = "Trails part B: " + Enums.ReturnTrailsResultStrings(factor);
+                    factor = CalculateResults(tr.PartB, meanB, stdB);
+                    Label resB = new Label();
+                    resB.Text = "Trails part B: " + Enums.ReturnTrailsResultStrings(factor);
 
-                pResultPanel.Controls.Add(resB);
+                    pResultPanel.Controls.Add(resB);
+                }
             }
         }
 

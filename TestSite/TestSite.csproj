@@ -292,6 +292,7 @@
     <Content Include="LondonPage.aspx" />
     <Content Include="Style\style.css" />
     <Content Include="Style\timelify.css" />
+    <Content Include="Tests\CogQuest.aspx" />
     <Content Include="Tests\NbackPage.aspx" />
     <Content Include="Tests\NbackWrapper.aspx" />
     <Content Include="Tests\SyllogPage.aspx" />
@@ -402,6 +403,13 @@
     </Compile>
     <Compile Include="ResultsPage.aspx.designer.cs">
       <DependentUpon>ResultsPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\CogQuest.aspx.cs">
+      <DependentUpon>CogQuest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\CogQuest.aspx.designer.cs">
+      <DependentUpon>CogQuest.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tests\NbackPage.aspx.cs">
       <DependentUpon>NbackPage.aspx</DependentUpon>
