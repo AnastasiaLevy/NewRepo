@@ -103,6 +103,7 @@
     <Content Include="css\styleSG.css" />
     <Content Include="css\userProfilecss.css" />
     <Content Include="css\wcst.css" />
+    <Content Include="ErrorPage.aspx" />
     <Content Include="fonts\font-awesome-4.6.3\fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\font-awesome-4.6.3\fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\font-awesome-4.6.3\fonts\fontawesome-webfont.woff" />
@@ -153,6 +154,7 @@
     <Content Include="images\favicon.ico" />
     <Content Include="images\fullscreenoff.png" />
     <Content Include="images\fullscreenon.png" />
+    <Content Include="images\giphy.gif" />
     <Content Include="images\icon.ico" />
     <Content Include="images\mindsm.jpg" />
     <Content Include="images\mind.jpg" />
@@ -357,6 +359,13 @@
       <DependentUpon>ComingSoon.aspx</DependentUpon>
     </Compile>
     <Compile Include="DAL\DataMethods.cs" />
+    <Compile Include="ErrorPage.aspx.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPage.aspx.designer.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="HelpClasses\Enums.cs" />
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

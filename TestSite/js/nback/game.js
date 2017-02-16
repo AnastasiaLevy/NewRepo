@@ -318,7 +318,7 @@ function saveResults() {
     //});
 
     for (var i = 0, len = currentScore.scoreArray.length; i < len; i++) {
-        alert(currentScore.scoreArray[i][7])
+      
         var data = {
             hits: currentScore.scoreArray[i][10],
             miss: currentScore.scoreArray[i][11],

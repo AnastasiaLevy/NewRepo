@@ -9,6 +9,7 @@
     <meta id="viewport" name='viewport' />
     <link rel="stylesheet" type="text/css" href="/css/nback.css" />
     <link rel="shortcut icon" href="../images/favicon.ico" />
+    <link href="../cogTest.css" rel="stylesheet" />
     <script src="../js/jquery.js"></script>
 </head>
 

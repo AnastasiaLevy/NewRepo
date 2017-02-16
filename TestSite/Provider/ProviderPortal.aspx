@@ -382,7 +382,7 @@
                         <div class="col-md-3 portfolio-item">
                             <div class="text-center">
                                 <a href="javascript:void(0);">
-                                    <a href="category/Category1.aspx"><span class="fa-stack fa-lg">
+                                    <a href="../category/Category1.aspx"><span class="fa-stack fa-lg">
                                         <i class="fa fa-circle fa-stack-2x"></i>
                                         <i class="fa fa-medium fa-stack-1x "></i>
                                     </span></a>
@@ -420,7 +420,7 @@
                         <div class="col-md-3 portfolio-item">
                             <div class="text-center">
                                 <a href="javascript:void(0);">
-                                    <a href="category/Category4.aspx"><span class="fa-stack fa-lg">
+                                    <a href="../category/Category4.aspx"><span class="fa-stack fa-lg">
                                         <i class="fa fa-circle fa-stack-2x"></i>
                                         <i class="fa fa-lightbulb-o fa-stack-1x"></i>
                                     </span></a>

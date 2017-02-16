@@ -717,7 +717,7 @@
                 }
             },
             error: function (resp) {
-                alert("The results were not saved correctlyyyyy");
+                alert("The results were not saved correctly");
             }
         });
     };
