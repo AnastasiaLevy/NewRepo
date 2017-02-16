@@ -48,8 +48,7 @@
             </div>
         </nav>
 
-        <header>
-        </header>
+
 
         <!-- Page Content -->
         <section id="about">
@@ -63,14 +62,7 @@
                      The n-back was introduced by Wayne Kirchner in 1958.
                 </p>
                 <div class="panel-group testDescription " id="accordion" role="tablist" aria-multiselectable="true">
-                    <div class="col-md-6 visible">
-                        <p>
-                            <button data-parent="#accordion" class="btn btn-primary btn-lg btn-block" type="button"
-                                 data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-                                Research
-                            </button>
-                        </p>
-                    </div>
+             
                     <div class="col-md-6 visible">
                         <p>
                             <button data-parent="#accordion" class="btn btn-primary btn-lg btn-block" type="button"
@@ -93,7 +85,14 @@
                             </button>
                         </p>
                     </div>
-
+                           <div class="col-md-6 visible">
+                        <p>
+                            <button data-parent="#accordion" class="btn btn-primary btn-lg btn-block" type="button"
+                                 data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                Research
+                            </button>
+                        </p>
+                    </div>
                     <div class="panel">
                         <div id="collapse1" class=" collapse col-md-12">
                             <h3>About:</h3>

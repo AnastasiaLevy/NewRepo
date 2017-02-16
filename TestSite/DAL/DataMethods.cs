@@ -48,6 +48,83 @@ namespace TestSite.DAL
 
         }
 
+
+        internal static DataSet GetNbackNorms(int ageGroup)
+        {
+            DataSet ds = new DataSet();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("SelectNbackNorms", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@ageGroup", ageGroup);
+
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                adp.Fill(ds);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption getting All Provider Participants. " + ex.Message);
+            }
+
+            return ds;
+        }
+
+        internal static DataTable GetNbackUserResults(int tId)
+        {
+            DataTable ds = new DataTable();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("SelectNbackUserResults", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@tId", tId);
+
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                adp.Fill(ds);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption getting nBabk results. " + ex.Message);
+            }
+
+            return ds;
+        }
+
+        internal static void SaveUserNbackResults(int hits, int miss, 
+            int corRej, int falseAlarm, int omitTarget, int omitNoTarget, 
+            decimal percentScore, int round, string userId, int tId)
+        {
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("InsertNbackUserResults ", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@userId", userId);
+            cmd.Parameters.AddWithValue("@tId", tId);
+            cmd.Parameters.AddWithValue("@round", round);
+            cmd.Parameters.AddWithValue("@hit", hits);
+            cmd.Parameters.AddWithValue("@miss", miss);
+            cmd.Parameters.AddWithValue("@correctReject", corRej);
+            cmd.Parameters.AddWithValue("@falseAlarm", falseAlarm);
+            cmd.Parameters.AddWithValue("@omitTarget", omitTarget);
+            cmd.Parameters.AddWithValue("@omitNoTarget", omitNoTarget);
+            cmd.Parameters.AddWithValue("@percentScore", percentScore);
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption saving Syllog Table " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
         internal static DataTable GetLondonNorms(int ageGroup)
         {
             DataTable ds = new DataTable();
@@ -121,7 +198,7 @@ namespace TestSite.DAL
             cmd.Parameters.AddWithValue("@tId", tId);
             cmd.Parameters.AddWithValue("@totalCorrect", totalCorrect);
             cmd.Parameters.AddWithValue("@totalIncorrect", totalIncorrect);
-            cmd.Parameters.AddWithValue("@certAverage",certAvarage);
+            cmd.Parameters.AddWithValue("@certAverage", certAvarage);
             cmd.Parameters.AddWithValue("@certRatingCorrect", certRatingCorrect);
 
             try
@@ -168,7 +245,7 @@ namespace TestSite.DAL
             SqlCommand cmd = new SqlCommand("InsertCardSortTable", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@tId", tId);
-                cmd.Parameters.AddWithValue("@html",html);
+            cmd.Parameters.AddWithValue("@html", html);
 
             try
             {
@@ -194,7 +271,7 @@ namespace TestSite.DAL
             SqlCommand cmd = new SqlCommand("GetAllProviderParticipants", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@providerId", providerId);
-    
+
             try
             {
                 SqlDataAdapter adp = new SqlDataAdapter(cmd);
@@ -263,7 +340,7 @@ namespace TestSite.DAL
 
         internal static void DeactivateParticipant(string userId, string providerId)
         {
-           
+
             SqlConnection conn = new SqlConnection(connectionSring);
             SqlCommand cmd = new SqlCommand("DeactivateParticipant", conn);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -310,7 +387,7 @@ namespace TestSite.DAL
                 conn.Close();
             }
 
-            return id != null ? Int32.Parse(id.ToString()) :0;
+            return id != null ? Int32.Parse(id.ToString()) : 0;
         }
 
         internal static void UpdateProviderTableSetCode(string userId, string providerCode)
@@ -339,7 +416,7 @@ namespace TestSite.DAL
 
         internal static void UpdateProviderTable(string userId)
         {
-          
+
             SqlConnection conn = new SqlConnection(connectionSring);
             SqlCommand cmd = new SqlCommand("CreateProvider", conn);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -362,7 +439,7 @@ namespace TestSite.DAL
 
         internal static void RemoveTestFromUserList(string userId, string tId)
         {
-           
+
             SqlConnection conn = new SqlConnection(connectionSring);
             SqlCommand cmd = new SqlCommand("RemoveTestFromUserList", conn);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -387,7 +464,7 @@ namespace TestSite.DAL
         //InsertProviderToUser
         internal static void InsertProviderToTheUser(string providerUserKey, int providerId, string userName)
         {
-         
+
             SqlConnection conn = new SqlConnection(connectionSring);
             SqlCommand cmd = new SqlCommand("InsertProviderToUser", conn);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -410,9 +487,9 @@ namespace TestSite.DAL
             }
         }
 
-        internal static void InsertCardSortUserMovesMap( int tId, string text)
+        internal static void InsertCardSortUserMovesMap(int tId, string text)
         {
-           
+
             SqlConnection conn = new SqlConnection(connectionSring);
             SqlCommand cmd = new SqlCommand("InsertCardSortUserMovesMap", conn);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -477,7 +554,7 @@ namespace TestSite.DAL
             string completedSet
             )
         {
-           
+
             SqlConnection conn = new SqlConnection(connectionSring);
             SqlCommand cmd = new SqlCommand("InsertCardSortUserResults", conn);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -537,7 +614,7 @@ namespace TestSite.DAL
             return ds;
         }
 
-        internal static DataSet GetCardSortNorms( int ageGroup)
+        internal static DataSet GetCardSortNorms(int ageGroup)
         {
             DataSet ds = new DataSet();
             SqlConnection conn = new SqlConnection(connectionSring);
@@ -673,13 +750,13 @@ namespace TestSite.DAL
             return ds;
         }
 
-        public static DataTable GetSyllogismsUserResults( int tId)
+        public static DataTable GetSyllogismsUserResults(int tId)
         {
             DataTable ds = new DataTable();
             SqlConnection conn = new SqlConnection(connectionSring);
             SqlCommand cmd = new SqlCommand("SelectSyllogismsUserResults", conn);
             cmd.CommandType = CommandType.StoredProcedure;
-    
+
             cmd.Parameters.AddWithValue("@tId", tId);
 
             try
@@ -1035,7 +1112,7 @@ namespace TestSite.DAL
         }
 
         public static void UpdateLondonUserResults(string userId, int tId, string testId,
-            int game, decimal initThinkTime, decimal totalTime, int numMoves, 
+            int game, decimal initThinkTime, decimal totalTime, int numMoves,
             int numWrongMoves, bool overTime, bool overMoves, int minMoves)
         {
             DataTable ds = new DataTable();
@@ -1118,7 +1195,7 @@ namespace TestSite.DAL
 
         public static void UpdateTrailsResults(string userId, decimal decimalValA, decimal decimalValB, int tId)
         {
-            
+
             SqlConnection conn = new SqlConnection(connectionSring);
             SqlCommand cmd = new SqlCommand("UpdateTrailsResultsUser", conn);
             cmd.CommandType = CommandType.StoredProcedure;

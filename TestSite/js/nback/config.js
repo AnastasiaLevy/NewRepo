@@ -1,8 +1,13 @@
 // Letters and messages for test 1
 
-var nBack1Trial = ["J", "I", "I", "E", "T", "O", "O", "A", "E", "E"];
+var nBack1Trial = ["J",
+    //"I",
+                  //"I", "E", "T", "O", "O", "A", "E", "E"
+];
 
-var nBack1Full = ["B", "B", "E", "B", "A", "J", "J", "N", "T", "T",
+var nBack1Full = ["B",
+    //"B",
+                  // "E", "B", "A", "J", "J", "N", "T", "T",
                   //"D", "D", "I", "N", "D", "N", "N", "I", "A", "A",
                   //"I", "I", "E", "D", "N", "D", "E", "O", "O", "A",
                   //"J", "J", "B", "B", "I", "I", "O", "T", "T", "U", 
@@ -36,9 +41,13 @@ var rectangleTest1Message = [250, 250, 510, 200]; //left, top, width, height
                     
 // Letters and messages for test 2
 
-var nBack2Trial = ["J", "I", "I", "E", "T", "O", "O", "A", "E", "E"];
+var nBack2Trial = ["J",
+    //"I",
+    //"I", "E", "T", "O", "O", "A", "E", "E"
+];
 
-var nBack2Full = ["B", "B", "E", "B", "A", "J", "J", "N", "T", "T",
+var nBack2Full = ["B",
+    //"B", "E", "B", "A", "J", "J", "N", "T", "T",
                   //"D", "D", "I", "N", "D", "N", "N", "I", "A", "A",
                   //"I", "I", "E", "D", "N", "D", "E", "O", "O", "A",
                   //"J", "J", "B", "B", "I", "I", "O", "T", "T", "U", 
@@ -72,9 +81,14 @@ var rectangleTest2Message = [250, 250, 510, 200]; //left, top, width, height
 
 // Letters and messages for test 3
 
-var nBack3Trial = ["J", "I", "I", "E", "T", "O", "O", "A", "E", "E"];
+var nBack3Trial = ["J",
+    //"I",
+    //"I", "E", "T", "O", "O", "A", "E", "E"
+];
 
-var nBack3Full = ["B", "B", "E", "B", "A", "J", "J", "N", "T", "T",
+var nBack3Full = ["B",
+    //"B",
+                  //"E", "B", "A", "J", "J", "N", "T", "T",
                   //"D", "D", "I", "N", "D", "N", "N", "I", "A", "A",
                   //"I", "I", "E", "D", "N", "D", "E", "O", "O", "A",
                   //"J", "J", "B", "B", "I", "I", "O", "T", "T", "U", 

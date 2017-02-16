@@ -44,8 +44,43 @@ namespace TestSite
             DataSet ds;
             int factor;
             textStr.Text = "";
+                if (test == "4" || test == "Nback")
+                {
+                    decimal mean;
+                    decimal std;
+                    int percentCorrrect;
 
-            if (test == "5")
+                    chartTitle.Text = "Results for nBack Test for participant " + userName;
+
+                    dt = DataMethods.GetNbackUserResults(tId);
+                    GridView gvNbackUserResults = new GridView();
+                    gvNbackUserResults.DataSource = dt;
+                    gvNbackUserResults.DataBind();
+                    SetGvProperties(gvNbackUserResults);
+                    pResultPanel.Controls.Add(gvNbackUserResults);
+                    ds = DataMethods.GetNbackNorms(ageGroup);
+                  
+                    GetValues(ds, 0, out mean, out std);
+                    percentCorrrect = GerPercentCorrect(dt, 1);
+                    factor = CalculateResults(percentCorrrect, mean, std);
+                    textStr.Text += "Result for nBack 1: " + Enums.ReturnNBackResultString(factor) + "<br/>";
+
+
+                    GetValues(ds, 1, out mean, out std);
+                    percentCorrrect = GerPercentCorrect(dt, 3);
+                    factor = CalculateResults(percentCorrrect, mean, std);
+                    textStr.Text += "Result for nBack 2: " + Enums.ReturnNBackResultString(factor) + "<br/>";
+
+
+                    GetValues(ds, 2, out mean, out std);
+                    percentCorrrect = GerPercentCorrect(dt, 5);
+                    factor = CalculateResults(percentCorrrect, mean, std);
+                    textStr.Text += "Result for nBack 3: " + Enums.ReturnNBackResultString(factor) + "<br/>";
+
+
+                }
+
+               else if (test == "5" || test == "Syllogisms")
             {
                 dt = DataMethods.GetSyllogismsUserTable(tId);
                 if (dt == null)
@@ -72,10 +107,10 @@ namespace TestSite
                     GetValues(ds, 0, out mean, out std);
                     factor = CalculateResults(result, mean, std);
                     textStr.Text += "Total Correct Count:" + Enums.ReturnSyllogResultText(factor);
-                }
+                    }
             }
 
-            if (test == "3" || test == "Card Sort")
+           else if (test == "3" || test == "Card Sort")
             {
                 ds = DataMethods.GetTestResultsCardSort(userId, tId);
                 if (ds == null)
@@ -110,32 +145,32 @@ namespace TestSite
                     decimal catComplete = cats.Length;
                     GetValues(dsNorms, 0, out mean, out std);
                     factor = CalculateResults(catComplete, mean, std);
-                    textStr.Text = "Total Number Categories Completed:" + Enums.ReturnCardSortCatNumber(factor);
+                        textStr.Text = "Total Number Categories Completed: " + Enums.ReturnCardSortCatNumber(factor) + "<br/>";
 
                     GetValues(dsNorms, 1, out mean, out std);
                     factor = CalculateResults(respcount, mean, std);
-                    textStr.Text += "Total Response Count:" + Enums.ReturnCardSortNormsTotalCorrect(factor);
+                    textStr.Text += "Total Response Count: " + Enums.ReturnCardSortNormsTotalCorrect(factor) + "<br/>";
 
-                    GetValues(dsNorms, 2, out mean, out std);
+                        GetValues(dsNorms, 2, out mean, out std);
                     factor = CalculateResults(persevCount, mean, std);
-                    textStr.Text += "Total Perseverative Errors Count:" + Enums.ReturnCardSortPersevErrors(factor);
+                    textStr.Text += "Total Perseverative Errors Count: " + Enums.ReturnCardSortPersevErrors(factor) + "<br/>";
 
-                    GetValues(dsNorms, 3, out mean, out std);
+                        GetValues(dsNorms, 3, out mean, out std);
                     factor = CalculateResults(correctCount, mean, std);
-                    textStr.Text += "Total Correct Count:" + Enums.ReturnCardSortNormsTotalCorrect(factor);
+                    textStr.Text += "Total Correct Count: " + Enums.ReturnCardSortNormsTotalCorrect(factor) + "<br/>";
 
 
-                    GetValues(dsNorms, 4, out mean, out std);
+                        GetValues(dsNorms, 4, out mean, out std);
                     factor = CalculateResults(errorCount, mean, std);
-                    textStr.Text += "Total Error Count:" + Enums.ReturnCardSortNormsTotalErrors(factor);
+                    textStr.Text += "Total Error Count:" + Enums.ReturnCardSortNormsTotalErrors(factor) + "<br/>";
 
-                    GetValues(dsNorms, 5, out mean, out std);
+                        GetValues(dsNorms, 5, out mean, out std);
                     factor = CalculateResults(uniqueErr, mean, std);
-                    textStr.Text += "Total Unique Error Count:" + Enums.ReturnCardSortNormsUniqueErrors(factor);
-                }
+                    textStr.Text += "Total Unique Error Count: " + Enums.ReturnCardSortNormsUniqueErrors(factor) + "<br/>";
+                    }
             }
 
-            if (test == "2" || test == "Tower Of London")
+           else if (test == "2" || test == "Tower Of London")
             {
                 chartTitle.Text = "Results for Tower of London test";
                 GridView gv;
@@ -147,12 +182,12 @@ namespace TestSite
                 int totalM = dt.AsEnumerable().Where(row => row.Field<int>("game") > 3).Sum(r => r.Field<int>("Exess Moves"));
                 factor = CalculateResults(totalM, mean, std);
                 Label descr = new Label();
-                descr.Text = "You have made " + totalM + Enums.ReturnLondonResultStrings(factor);
-                pResultPanel.Controls.Add(gv);
+                descr.Text = "You have made " + totalM + Enums.ReturnLondonResultStrings(factor) + "\n\r";
+                    pResultPanel.Controls.Add(gv);
 
             }
 
-                if (test == "1" || test == "Trails")
+              else  if (test == "1" || test == "Trails")
                 {
                     chartTitle.Text = "Results for Trails Test";
                     dt = DataMethods.GetTestResultsTrails(userId, tId);
@@ -177,16 +212,24 @@ namespace TestSite
                     pResultPanel.Controls.Add(gvA);
                     factor = CalculateResults(tr.PartA, meanA, stdA);
                     Label resA = new Label();
-                    resA.Text = "Trails part A: " + Enums.ReturnTrailsResultStrings(factor);
+                    resA.Text = "Trails part A: " + Enums.ReturnTrailsResultStrings(factor) + "<br/>";
                     pResultPanel.Controls.Add(resA);
 
                     factor = CalculateResults(tr.PartB, meanB, stdB);
                     Label resB = new Label();
-                    resB.Text = "Trails part B: " + Enums.ReturnTrailsResultStrings(factor);
+                    resB.Text = "Trails part B: " + Enums.ReturnTrailsResultStrings(factor) + "<br/>";
 
                     pResultPanel.Controls.Add(resB);
                 }
             }
+        }
+
+        private int GerPercentCorrect(DataTable dt, int v)
+        {
+       
+            DataRow[] dr = dt.Select("Trial = " + v.ToString());
+            int percentCorrrect = Convert.ToInt32(dr[0]["Score"]);
+            return percentCorrrect;
         }
 
         private void GetValues(DataSet dsNorms, int index, out decimal mean, out decimal std)
@@ -311,10 +354,6 @@ namespace TestSite
             gv.ForeColor = Color.Black;
             gv.RowStyle.BackColor = Color.FloralWhite;
             gv.CssClass = "testResGrid";
-
-
-
-
 
         }
     }

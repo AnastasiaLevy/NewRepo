@@ -32,6 +32,8 @@ namespace TestSite
                 _userId = _user.ProviderUserKey.ToString();
                 _isProfilefilled = ProfileIsFilled(_userId);
                 _isUserProvider = false;
+                logOut.Visible = true;
+                login.Visible = false;
             }
             if (!IsPostBack)
             {

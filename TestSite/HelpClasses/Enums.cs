@@ -17,6 +17,7 @@ namespace TestSite.HelpClasses
             public const string Nback = "4";
             public const string Syllogisms = "5";
             public const string Stroop = "6";
+            public const string Quest = "7";
             // public TestId();
         }
 
@@ -96,29 +97,29 @@ namespace TestSite.HelpClasses
         public static string ReturnTrailsResultStrings(int factor)
         {
             string text = "";
-            switch(factor)
+            switch (factor)
             {
-              
+
                 case -3:
-                    text = "Exellent performance! For individuals your age your score places you in the top 2 to 3 percent. Scores like yours can be interpreted to indicate rapid speed of processing. In general terms this means you are able to rapidly process information.";
+                    text = "Excellent performance! For individuals your age this score is in the top 2 to 3 percent. Scores like this can be interpreted to indicate rapid speed of processing. In general terms, this score is consistent with rapid information processing.";
                     break;
                 case -2:
-                    text = "Very Good performance. For individuals your age your score places you in the top 10 to 15 percent. Scores like yours can be interpreted to indicate rapid speed of processing. In general terms this means you are able to rapidly process information.";
+                    text = "Very Good performance. For individuals your age this score is in the top 10 to 15 percent. Scores like this can be interpreted to indicate rapid speed of processing. In general terms, this score is consistent with rapid processing of information.";
                     break;
                 case -1:
-                    text = "Good performance. For individuals your age your score is within the normal range.";
+                    text = "Good performance. This score is within the normal range.";
                     break;
                 case 0:
-                    text = "Good performance. For individuals your age your score is within the normal range.";
+                    text = "Good performance. This score is within the normal range.";
                     break;
                 case 1:
-                    text = "Good performance. For individuals your age your score is within the normal range.";
+                    text = "Good performance. This score is within the normal range.";
                     break;
                 case 2:
-                    text = "Your performance did not fall within the average or above average performance for someone your age. There are a large numer of factors that may have contributed to your performance. This test is not diagnostic. There are a range of scores and some will be above and some will be below average. If you have any concerns about your performance you should consult with a licensed professional health provider.";
+                    text = "Your performance did not fall within the average or above average performance level your age. There are a large number of factors that may have contributed to your performance. This test is not diagnostic. There are a range of scores and some will be above and some will be below average. If you have any concerns about your performance you should consult with a licensed professional health provider.";
                     break;
                 case 3:
-                    text = "Your performance did not fall within the average or above average performance for someone your age. There are a large numer of factors that may have contributed to your performance. This test is not diagnostic. There are a range of scores and some will be above and some will be below average. If you have any concerns about your performance you should consult with a licensed professional health provider.";
+                    text = "Your performance did not fall within the average or above average performance for someone your age. There are a large number of factors that may have contributed to your performance. This test is not diagnostic. There are a range of scores and some will be above and some will be below average. If you have any concerns about your performance you should consult with a licensed professional health provider.";
                     break;
                 case 10:
                     text = "Unable determing results. Please contact administrator.";
@@ -134,26 +135,27 @@ namespace TestSite.HelpClasses
             switch (factor)
             {
 
+
                 case -3:
-                    text = "Exellent performance! For individuals your age your score places you in the top 2 to 3 percent. Scores like yours can be interpreted to indicate excellelnt problem solving ability. In general terms, you were able to look at the problem to be solved and develop an optimal set of moves to reach the goal position. These problems required you to look ahead, hold information in your conscious awareness, and inhibit inefficient moves.";
+                    text = "Excellent performance! For individuals your age, your score places you in the top 2 to 3 percent. Scores like yours can be interpreted to indicate excellent problem solving ability. In general terms, you were able to look at the problem to be solved and develop an optimal set of moves to reach the goal position. These problems required you to look ahead, hold information in your conscious awareness, and inhibit inefficient moves.";
                     break;
                 case -2:
-                    text = "Very good performance! For individuals your age your score places you in the top 10 to 15 percent. Scores like yours can be interpreted to indicate excellelnt problem solving ability. In general terms, you were able to look at the problem to be solved and develop an optimal set of moves to reach the goal position. These problems required you to look ahead, hold information in your conscious awareness, and inhibit inefficient moves.";
+                    text = "Very good performance! For individuals your age your score places you in the top 10 to 15 percent. Scores like yours can be interpreted to indicate excellent problem solving ability. In general terms, you were able to look at the problem to be solved and develop an optimal set of moves to reach the goal position. These problems required you to look ahead, hold information in your conscious awareness, and inhibit inefficient moves.";
                     break;
                 case -1:
                     text = "Good performance. For individuals your age your score is within the normal range. In terms of excess moves, your performance was in the upper 50 percent ";
                     break;
                 case 0:
-                    text = "Good performance. For individuals your age your score is within the normal range. Your performance was ";
+                    text = "Good performance. For individuals your age your score is within the normal range.";
                     break;
                 case 1:
                     text = "Average performance. For individuals your age your score is within the normal range.";
                     break;
                 case 2:
-                    text = "Your performance did not fall within the average range for someone your age. There are a large numer of factors that may have contributed to your performance. This test is not diagnostic. There are a range of scores and some will be above and some will be below average. If you have any concerns about your performance you might consider consulting with a licensed professional health provider. Your results can be printed and provided to anyone you consult with.";
+                    text = "Your performance did not fall within the average range for someone your age. There are a large number of factors that may have contributed to your performance. This test is not diagnostic. There are a range of scores and some will be above and some will be below average. If you have any concerns about your performance you might consider consulting with a licensed professional health provider. Your results can be printed and provided to the professional you consult with.";
                     break;
                 case 3:
-                    text = "Your performance did not fall within the average range for someone your age. There are a large numer of factors that may have contributed to your performance. This test is not diagnostic. There are a range of scores and some will be above and some will be below average. If you have any concerns about your performance you might consider consulting with a licensed professional health provider. Your results can be printed and provided to anyone you consult with.";
+                    text = "Your performance did not fall within the average range for someone your age. There are a large number of factors that may have contributed to your performance. This test is not diagnostic. There are a range of scores and some will be above and some will be below average. If you have any concerns about your performance you might consider consulting with a licensed professional health provider. Your results can be printed and provided to anyone you consult with.";
                     break;
                 case 10:
                     text = "Unable determing results. Please contact administrator.";
@@ -170,25 +172,25 @@ namespace TestSite.HelpClasses
             {
 
                 case -3:
-                    text = "Exellent performance! For individuals your age your score places you in the top 2 to 3 percent. Scores like yours can be interpreted to indicate excellelnt problem solving ability. In general terms, you were able to look at the problem to be solved and develop an optimal set of moves to reach the goal position. These problems required you to look ahead, hold information in your conscious awareness, and inhibit inefficient moves.";
+                    text = "Excellent performance! For individuals your age your score places you in the top 2 to 3 percent. Scores like yours can be interpreted to indicate an excellent ability to use feedback (correct or incorrect matching) to make appropriate changes in your cognitive strategy. In general terms, you were able to use feedback following an attempted match to modify your strategy in matching cards. You learned to inhibit incorrect matches and explore alternative strategies.";
                     break;
                 case -2:
-                    text = "Very Good";
+                    text = "Very good performance! Excellent performance! For individuals your age your score places you in the top 10 to 15 percent. Scores like yours can be interpreted to indicate an excellent ability to use feedback (correct or incorrect matching) to make appropriate changes in your cognitive strategy. In general terms, you were able to use feedback following an attempted match to modify your stratgey in matching cards. You learned to inhibit incorrect matches and expore alternative strategies";
                     break;
                 case -1:
-                    text = "Above Average";
+                    text = "Good. You demonstrated high average performance. For individuals your age your score is within the normal range. In terms of categories shifts achieved, your performance was in the upper 50 percent.";
                     break;
                 case 0:
-                    text = "Average";
+                    text = "You demonstrated average performance. For individuals your age your score is within the normal range. In terms of categories shifts achieved, your performance was in the normal range.";
                     break;
                 case 1:
-                    text = "Below Average";
+                    text = "You demonstrated average performance. For individuals your age, your score is within the normal range. In terms of categories shifts achieved, your performance was in the normal range.";
                     break;
                 case 2:
-                    text = "Pretty Bad";
+                    text = "Your performance did not fall within the average range for someone your age. There are a large number of factors that may have contributed to your performance. This test is not diagnostic. There are a range of scores and some will be above and some will be below average. If you have any concerns about your performance you might consider consulting with a licensed professional health provider. Your results can be printed and provided to the professional you consult with.";
                     break;
                 case 3:
-                    text = "Bad";
+                    text = "Your performance did not fall within the average range for someone your age. There are a large number of factors that may have contributed to your performance. This test is not diagnostic. There are a range of scores and some will be above and some will be below average. If you have any concerns about your performance you might consider consulting with a licensed professional health provider. Your results can be printed and provided to the professional you consult with.";
                     break;
                 case 10:
                     text = "Unable determing results. Please contact administrator.";
@@ -204,25 +206,25 @@ namespace TestSite.HelpClasses
             {
 
                 case -3:
-                    text = "Exellent";
+                    text = "Excellent performance! For individuals your age, your score places you in the top 2 to 3 percent. Scores like yours can be interpreted to indicate an excellent ability to use feedback (correct or incorrect matching) to make appropriate changes in your cognitive strategy. In general terms, you were able to use feedback following an attempted match to modify your strategy in matching cards. You learned to inhibit incorrect matches and explore alternative strategies.";
                     break;
                 case -2:
-                    text = "Very Good";
+                    text = "Very good performance! For individuals your age your score places you in the top 10 to 15 percent. Scores like yours can be interpreted to indicate an excellent ability to use feedback (correct or incorrect matching) to make appropriate changes in your cognitive strategy. In general terms, you were able to use feedback following an attempted match to modify your strategy in matching cards. You learned to inhibit incorrect matches and explore alternative strategies.";
                     break;
                 case -1:
-                    text = "Above Average";
+                    text = "Good. You demonstrated high average performance. For individuals your age your score is within the normal range. In terms of the number of nonpreservative errors, your performance was in the upper 50 percent.";
                     break;
                 case 0:
-                    text = "Average";
+                    text = "You demonstrated average performance. For individuals your age your score is within the normal range. In terms of the number of nonpreservative errors, your performance was in the normal range.";
                     break;
                 case 1:
-                    text = "Below Average";
+                    text = "You demonstrated average performance. For individuals your age your score is within the normal range. In terms of the number of nonpreservative errors, your performance was in the normal range.";
                     break;
                 case 2:
-                    text = "Pretty Bad";
+                    text = "Your performance did not fall within the average range for someone your age. There are a large number of factors that may have contributed to your performance. This test is not diagnostic. There are a range of scores and some will be above and some will be below average. If you have any concerns about your performance you might consider consulting with a licensed professional health provider. Your results can be printed and provided to anyone you consult with.";
                     break;
                 case 3:
-                    text = "Bad";
+                    text = "Your performance did not fall within the average range for someone your age. There are a large number of factors that may have contributed to your performance. This test is not diagnostic. There are a range of scores and some will be above and some will be below average. If you have any concerns about your performance you might consider consulting with a licensed professional health provider. Your results can be printed and provided to anyone you consult with.";
                     break;
                 case 10:
                     text = "Unable determing results. Please contact administrator.";
@@ -236,33 +238,33 @@ namespace TestSite.HelpClasses
             string text = "";
             switch (factor)
             {
-
                 case -3:
-                    text = "Exellent";
+                    text = "Excellent performance! For individuals your age your score places you in the top 2 to 3 percent. Scores like yours can be interpreted to indicate an excellent ability to use feedback (correct or incorrect matching) to make appropriate changes in your cognitive strategy. In general terms, you were able to use feedback following an attempted match to modify your strategy in matching cards. You learned to inhibit incorrect matches and explore alternative strategies.";
                     break;
                 case -2:
-                    text = "Very Good";
+                    text = "Very Good performance! For individuals your age your score places you in the top 10 to 15 percent. Scores like yours can be interpreted to indicate an excellent ability to use feedback (correct or incorrect matching) to make appropriate changes in your cognitive strategy. In general terms, you were able to use feedback following an attempted match to modify your strategy in matching cards. You learned to inhibit incorrect matches and explore alternative strategies.";
                     break;
                 case -1:
-                    text = "Above Average";
+                    text = "Good. You demonstrated high average performance. For individuals your age your score is within the normal range. In terms of the number of preservative errors, your performance was in the upper 50 percent.";
                     break;
                 case 0:
-                    text = "Average";
+                    text = "You demonstrated average performance. For individuals your age your score is within the normal range. In terms of the number of preservative errors, your performance was in the normal range.";
                     break;
                 case 1:
-                    text = "Below Average";
+                    text = "You demonstrated average performance. For individuals your age your score is within the normal range. In terms of the number of preservative errors, your performance was in the normal range.";
                     break;
                 case 2:
-                    text = "Pretty Bad";
+                    text = "Your performance did not fall within the average range for someone your age. There are a large number of factors that may have contributed to your performance. This test is not diagnostic. There are a range of scores and some will be above and some will be below average. If you have any concerns about your performance you might consider consulting with a licensed professional health provider. Your results can be printed and provided to anyone you consult with.";
                     break;
                 case 3:
-                    text = "Bad";
+                    text = "Your performance did not fall within the average range for someone your age. There are a large number of factors that may have contributed to your performance. This test is not diagnostic. There are a range of scores and some will be above and some will be below average. If you have any concerns about your performance you might consider consulting with a licensed professional health provider. Your results can be printed and provided to anyone you consult with.";
                     break;
                 case 10:
                     text = "Unable determing results. Please contact administrator.";
                     break;
             }
             return text;
+
 
         }
 
@@ -273,25 +275,25 @@ namespace TestSite.HelpClasses
             {
 
                 case -3:
-                    text = "Exellent";
+                    text = "Your performance did not fall within the average range for someone your age. There are a large number of factors that may have contributed to your performance. This test is not diagnostic. There are a range of scores and some will be above and some will be below average. If you have any concerns about your performance you might consider consulting with a licensed professional health provider. Your results can be printed and provided to anyone you consult with.";
                     break;
                 case -2:
-                    text = "Very Good";
+                    text = "Your performance did not fall within the average range for someone your age. There are a large number of factors that may have contributed to your performance. This test is not diagnostic. There are a range of scores and some will be above and some will be below average. If you have any concerns about your performance you might consider consulting with a licensed professional health provider. Your results can be printed and provided to anyone you consult with.";
                     break;
                 case -1:
-                    text = "Above Average";
+                    text = "You demonstrated average performance.For individuals your age your score is within the normal range. In terms of the total number of syllogisms recognized as valid or invalid, your performance was in the normal range.";
                     break;
                 case 0:
-                    text = "Average";
+                    text = "You demonstrated average performance. For individuals your age your score is within the normal range. In terms of the total number of syllogisms recognized as valid or invalid, your performance was in the normal range.";
                     break;
                 case 1:
-                    text = "Below Average";
+                    text = "Good. You demonstrated high average performance. For individuals your age your score is within the normal range. In terms of the total number of syllogisms recognized as valid or invalid, your performance was in the normal range.";
                     break;
                 case 2:
-                    text = "Pretty Bad";
+                    text = "Very Good. You demonstrated very good performance. For individuals your age your score places you in the top 10 to 15 percent. Scores like yours can be interpreted to indicate an above average ability to utilize deductive reasoning to correctly recognize the majority of syllogisms as valid or invalid.";
                     break;
                 case 3:
-                    text = "Bad";
+                    text = "Excellent performance. You demonstrated excellent performance. For individuals your age your score places you in the top 2 to 3 percent. Scores like yours can be interpreted to indicate an excellent ability to utilize deductive reasoning to correctly recognize the majority of syllogisms as valid or invalid.";
                     break;
                 case 10:
                     text = "Unable determing results. Please contact administrator.";
@@ -308,25 +310,25 @@ namespace TestSite.HelpClasses
             {
 
                 case -3:
-                    text = "Exellent";
+                    text = "Excellent performance! For individuals your age, your score places you in the top 2 to 3 percent. Scores like yours can be interpreted to indicate an excellent ability to use feedback (correct or incorrect matching) to make appropriate changes in your cognitive strategy. In general terms, you were able to use feedback following an attempted match to modify your strategy in matching cards. You learned to inhibit incorrect matches and explore alternative strategies.";
                     break;
                 case -2:
-                    text = "Very Good";
+                    text = "Very Good performance! For individuals your age, your score places you in the top 10 to 15 percent. Scores like yours can be interpreted to indicate an excellent ability to use feedback (correct or incorrect matching) to make appropriate changes in your cognitive strategy. In general terms, you were able to use feedback following an attempted match to modify your strategy in matching cards. You learned to inhibit incorrect matches and explore alternative strategies";
                     break;
                 case -1:
-                    text = "Above Average";
+                    text = "Good. You demonstrated high average performance. For individuals your age your score is within the normal range. In terms of total corrects made, your performance was in the upper 50 percent. That is, you had fewer corrects beyond the criterion run of ten than 50% of the individuals taking this test.";
                     break;
                 case 0:
-                    text = "Average";
+                    text = "You demonstrated average performance. For individuals your age your score is within the normal range.In terms of total Corrects made, your performance was in the normal range.";
                     break;
                 case 1:
-                    text = "Below Average";
+                    text = "You demonstrated average performance. For individuals your age your score is within the normal range. In terms of total Corrects made, your performance was in the normal range.";
                     break;
                 case 2:
-                    text = "Pretty Bad";
+                    text = " Your performance did not fall within the average range for someone your age. There are a large number of factors that may have contributed to your performance. This test is not diagnostic. There are a range of scores and some will be above and some will be below average. If you have any concerns about your performance you might consider consulting with a licensed professional health provider. Your results can be printed and provided to anyone you consult with.";
                     break;
                 case 3:
-                    text = "Bad";
+                    text = "Your performance did not fall within the average range for someone your age. There are a large number of factors that may have contributed to your performance. This test is not diagnostic. There are a range of scores and some will be above and some will be below average. If you have any concerns about your performance you might consider consulting with a licensed professional health provider. Your results can be printed and provided to anyone you consult with.";
                     break;
                 case 10:
                     text = "Unable determing results. Please contact administrator.";
@@ -340,27 +342,26 @@ namespace TestSite.HelpClasses
             string text = "";
             switch (factor)
             {
-
                 case -3:
-                    text = "Exellent";
+                    text = "Excellent performance! For individuals your age your score places you in the top 2 to 3 percent. Scores like yours can be interpreted to indicate an excellent ability to use feedback (correct or incorrect matching) to make appropriate changes in your cognitive strategy. In general terms, you were able to use feedback following an attempted match to modify your strategy in matching cards. You learned to inhibit incorrect matches and explore alternative strategies."; 
                     break;
                 case -2:
-                    text = "Very Good";
+                    text = "Very Good performance! For individuals your age your score places you in the top 10 to 15 percent. Scores like yours can be interpreted to indicate an excellent ability to use feedback (correct or incorrect matching) to make appropriate changes in your cognitive strategy. In general terms, you were able to use feedback following an attempted match to modify your strategy in matching cards. You learned to inhibit incorrect matches and explore alternative strategies.";
                     break;
                 case -1:
-                    text = "Above Average";
+                    text = "Good. You demonstrated high average performance. For individuals your age your score is within the normal range. In terms of total matching errors made, your performance was in the upper 50 percent.";
                     break;
                 case 0:
-                    text = "Average";
+                    text = "You demonstrated average performance. For individuals your age your score is within the normal range. In terms of total matching errors made, your performance was in the normal range.";
                     break;
                 case 1:
-                    text = "Below Average";
+                    text = "You demonstrated average performance. For individuals your age your score is within the normal range. In terms of total errors made, your performance was in the normal range.";
                     break;
                 case 2:
-                    text = "Pretty Bad";
+                    text = "Your performance did not fall within the average range for someone your age. There are a large number of factors that may have contributed to your performance. This test is not diagnostic. There are a range of scores and some will be above and some will be below average. If you have any concerns about your performance you might consider consulting with a licensed professional health provider. Your results can be printed and provided to anyone you consult with";
                     break;
                 case 3:
-                    text = "Bad";
+                    text = "Your performance did not fall within the average range for someone your age. There are a large number of factors that may have contributed to your performance. This test is not diagnostic. There are a range of scores and some will be above and some will be below average. If you have any concerns about your performance you might consider consulting with a licensed professional health provider. Your results can be printed and provided to anyone you consult with";
                     break;
                 case 10:
                     text = "Unable determing results. Please contact administrator.";
@@ -369,6 +370,7 @@ namespace TestSite.HelpClasses
             return text;
 
         }
+
         public static string ReturnCardSortNormsUniqueErrors(int factor)
         {
             string text = "";
@@ -376,25 +378,25 @@ namespace TestSite.HelpClasses
             {
 
                 case -3:
-                    text = "Exellent";
+                    text = "Excellent performance! For individuals your age your score places you in the top 2 to 3 percent. Scores like yours can be interpreted to indicate an excellent ability to use feedback (correct or incorrect matching) to make appropriate changes in your cognitive strategy. In general terms, you were able to use feedback following an attempted match to modify your strategy in matching cards. You learned to inhibit incorrect matches and explore alternative strategies."; 
                     break;
                 case -2:
-                    text = "Very Good";
+                    text = "Very Good performance! For individuals your age your score places you in the top 10 to 15 percent. Scores like yours can be interpreted to indicate an excellent ability to use feedback (correct or incorrect matching) to make appropriate changes in your cognitive strategy. In general terms, you were able to use feedback following an attempted match to modify your strategy in matching cards. You learned to inhibit incorrect matches and explore alternative strategies.";
                     break;
                 case -1:
-                    text = "Above Average";
+                    text = "Good. You demonstrated high average performance. For individuals your age your score is within the normal range. In terms of unique errors made, your performance was in the upper 50 percent.";
                     break;
                 case 0:
-                    text = "Average";
+                    text = "You demonstrated average performance. For individuals your age your score is within the normal range. In terms of unique errors made, your performance was in the normal range.";
                     break;
                 case 1:
-                    text = "Below Average";
+                    text = "You demonstrated average performance. For individuals your age your score is within the normal range. In terms of unique errors made, your performance was in the normal range.";
                     break;
                 case 2:
-                    text = "Pretty Bad";
+                    text = "Your performance did not fall within the average range for someone your age. There are a large numer of factors that may have contributed to your performance. This test is not diagnostic. There are a range of scores and some will be above and some will be below average. If you have any concerns about your performance you might consider consulting with a licensed professional health provider. Your results can be printed and provided to anyone you consult with";
                     break;
                 case 3:
-                    text = "Bad";
+                    text = "Your performance did not fall within the average range for someone your age. There are a large numer of factors that may have contributed to your performance. This test is not diagnostic. There are a range of scores and some will be above and some will be below average. If you have any concerns about your performance you might consider consulting with a licensed professional health provider. Your results can be printed and provided to anyone you consult with";
                     break;
                 case 10:
                     text = "Unable determing results. Please contact administrator.";
@@ -404,6 +406,39 @@ namespace TestSite.HelpClasses
 
         }
 
+        public static string ReturnNBackResultString(int factor)
+        {
+            string text = "";
+            switch (factor)
+            {
 
+                case -3:
+                    text = "Excellent performance! For individuals your age your score places you in the top 2 to 3 percent. Scores like yours can be interpreted to indicate an excellent ability to use feedback (correct or incorrect matching) to make appropriate changes in your cognitive strategy. In general terms, you were able to use feedback following an attempted match to modify your strategy in matching cards. You learned to inhibit incorrect matches and explore alternative strategies.";
+                    break;
+                case -2:
+                    text = "Very Good performance! For individuals your age your score places you in the top 10 to 15 percent. Scores like yours can be interpreted to indicate an excellent ability to use feedback (correct or incorrect matching) to make appropriate changes in your cognitive strategy. In general terms, you were able to use feedback following an attempted match to modify your strategy in matching cards. You learned to inhibit incorrect matches and explore alternative strategies.";
+                    break;
+                case -1:
+                    text = "Good. You demonstrated high average performance. For individuals your age your score is within the normal range. In terms of unique errors made, your performance was in the upper 50 percent.";
+                    break;
+                case 0:
+                    text = "You demonstrated average performance. For individuals your age your score is within the normal range. In terms of unique errors made, your performance was in the normal range.";
+                    break;
+                case 1:
+                    text = "You demonstrated average performance. For individuals your age your score is within the normal range. In terms of unique errors made, your performance was in the normal range.";
+                    break;
+                case 2:
+                    text = "Your performance did not fall within the average range for someone your age. There are a large numer of factors that may have contributed to your performance. This test is not diagnostic. There are a range of scores and some will be above and some will be below average. If you have any concerns about your performance you might consider consulting with a licensed professional health provider. Your results can be printed and provided to anyone you consult with";
+                    break;
+                case 3:
+                    text = "Your performance did not fall within the average range for someone your age. There are a large numer of factors that may have contributed to your performance. This test is not diagnostic. There are a range of scores and some will be above and some will be below average. If you have any concerns about your performance you might consider consulting with a licensed professional health provider. Your results can be printed and provided to anyone you consult with";
+                    break;
+                case 10:
+                    text = "Unable determing results. Please contact administrator.";
+                    break;
+            }
+            return text;
+
+        }
     }
 }

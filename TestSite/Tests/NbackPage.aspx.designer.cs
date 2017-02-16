@@ -13,12 +13,21 @@ namespace TestSite.Tests {
     public partial class NbackPage {
         
         /// <summary>
-        /// userId control.
+        /// user control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox userId;
+        protected global::System.Web.UI.WebControls.TextBox user;
+        
+        /// <summary>
+        /// tId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tId;
     }
 }

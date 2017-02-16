@@ -10,7 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="AnaLevy">
-    <link rel="..//shortcut icon" href="images/favicon.ico" />
+    <link rel="..//shortcut icon" href="../images/favicon.ico"> />
+  
     <title>ProviderPortal</title>
     <link href="../fonts/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="../css/bootstrap.css" rel="stylesheet" />
@@ -47,14 +48,15 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right custom-menu">
                         <li class="active"><a href="../MainPage.aspx">Home</a></li>
-                        <li><a href="#paidTests">Create User</a></li>
-                        <li><a href="#userInfo">View Users</a></li>
+                        <li><a href="#userInfo">Dashboard</a></li>
+                        <li><a href="#participant Data">Participant Data</a></li>
+                        <li><a href="#purchached tests">Provider Tests</a></li>
                         <li><a href="#testList">Available Tests</a></li>
-                        <li><a href="#testCategories">Test Ctegories</a></li>
+                        <li><a href="#testCategories">Test Categories</a></li>
                         <%--    <li><a href="#reports">Results</a></li>--%>
                         <li id="login" runat="server"><a href="Login.aspx">Login</a></li>
                         <li>
-                            <asp:LinkButton ID="Logout" cssclass="btn button" type="submit" runat="server" OnClick="logOut_Click">Log Out</asp:LinkButton>
+                            <asp:LinkButton ID="Logout" CssClass="btn button" type="submit" runat="server" OnClick="logOut_Click">Log Out</asp:LinkButton>
                         </li>
                     </ul>
                 </div>
@@ -67,8 +69,8 @@
                     <div class="box box1">
                         <div class="col-lg-12">
                             <hr>
-                            <h2 class="intro-text text-center">User 
-                        <strong>Profile</strong>
+                            <h2 class="intro-text text-center">Provider
+                        <strong>Dashboard</strong>
                             </h2>
                             <hr>
                         </div>
