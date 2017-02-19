@@ -23,6 +23,10 @@ namespace TestSite.HelpClasses
 
         public static int GetAgeGroup(int age)
         {
+            if (age >= 5 && age <= 9)
+            {
+                return 0;
+            }
             if (age >= 10 && age <= 14)
             {
                 return 1;
@@ -64,7 +68,7 @@ namespace TestSite.HelpClasses
                 return 10;
             }
             else
-                return 0;
+                return 100;
         }
 
         public static string TestsMap(string str)

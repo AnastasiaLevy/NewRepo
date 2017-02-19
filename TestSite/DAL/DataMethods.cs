@@ -146,6 +146,27 @@ namespace TestSite.DAL
             return ds;
         }
 
+        internal static string GetUserProviderCode(string userId)
+        {
+            DataTable dt = new DataTable();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("GetUserProviderCode", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@userId", userId);
+
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                adp.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption getting All Provider Participants. " + ex.Message);
+            };
+            return (dt.Rows.Count > 0 ) ? dt.Rows[0]["code"].ToString() : "";
+
+        }
+
         internal static DataTable GetAllProviderTests(int? providerId)
         {
             DataTable ds = new DataTable();
@@ -930,34 +951,37 @@ namespace TestSite.DAL
                      bool isFilled,
                      string userId,
                      string income,
-                     bool disclamerField
+                     bool disclamerField,
+                     int providerId
                     )
         {
             int id;
             SqlConnection conn = new SqlConnection(connectionSring);
             SqlCommand cmd = new SqlCommand("UpdateRegistrationProfile", conn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("firstName", firstName);
-            cmd.Parameters.AddWithValue("lastName", lastName);
-            cmd.Parameters.AddWithValue("birthDate", birthDate);
-            cmd.Parameters.AddWithValue("education", education);
-            cmd.Parameters.AddWithValue("medications", isOnmeds == true ? "1" : "0");
-            cmd.Parameters.AddWithValue("medName", medications);
-            cmd.Parameters.AddWithValue("gender", gender);
-            cmd.Parameters.AddWithValue("hand", hand);
-            cmd.Parameters.AddWithValue("brainActivity", brainActivity);
-            cmd.Parameters.AddWithValue("ethnisity", ethnisity);
-            cmd.Parameters.AddWithValue("language", language);
-            cmd.Parameters.AddWithValue("headInjury", isInj == true ? "1" : "0");
-            cmd.Parameters.AddWithValue("headInjAmount", headInjury);
-            cmd.Parameters.AddWithValue("selfEsteem", selfEsteem);
-            cmd.Parameters.AddWithValue("exercise", exercise);
-            cmd.Parameters.AddWithValue("selfHealth", health);
-            cmd.Parameters.AddWithValue("userName", userName);
-            cmd.Parameters.AddWithValue("profileFilled", isFilled == true ? "1" : "0");
-            cmd.Parameters.AddWithValue("userId", userId);
-            cmd.Parameters.AddWithValue("income", income);
-            cmd.Parameters.AddWithValue("disclamerField", disclamerField);
+            cmd.Parameters.AddWithValue("@firstName", firstName);
+            cmd.Parameters.AddWithValue("@lastName", lastName);
+            cmd.Parameters.AddWithValue("@birthDate", birthDate);
+            cmd.Parameters.AddWithValue("@education", education);
+            cmd.Parameters.AddWithValue("@medications", isOnmeds == true ? "1" : "0");
+            cmd.Parameters.AddWithValue("@medName", medications);
+            cmd.Parameters.AddWithValue("@gender", gender);
+            cmd.Parameters.AddWithValue("@hand", hand);
+            cmd.Parameters.AddWithValue("@brainActivity", brainActivity);
+            cmd.Parameters.AddWithValue("@ethnisity", ethnisity);
+            cmd.Parameters.AddWithValue("@language", language);
+            cmd.Parameters.AddWithValue("@headInjury", isInj == true ? "1" : "0");
+            cmd.Parameters.AddWithValue("@headInjAmount", headInjury);
+            cmd.Parameters.AddWithValue("@selfEsteem", selfEsteem);
+            cmd.Parameters.AddWithValue("@exercise", exercise);
+            cmd.Parameters.AddWithValue("@selfHealth", health);
+            cmd.Parameters.AddWithValue("@userName", userName);
+            cmd.Parameters.AddWithValue("@profileFilled", isFilled == true ? "1" : "0");
+            cmd.Parameters.AddWithValue("@userId", userId);
+            cmd.Parameters.AddWithValue("@income", income);
+            cmd.Parameters.AddWithValue("@disclamerField", disclamerField);
+            if (providerId > 0) cmd.Parameters.AddWithValue("@providerId", providerId);
+            else cmd.Parameters.AddWithValue("@errorTime", DBNull.Value);
 
             try
             {
@@ -988,6 +1012,27 @@ namespace TestSite.DAL
             DataTable ds = new DataTable();
             SqlConnection conn = new SqlConnection(connectionSring);
             SqlCommand cmd = new SqlCommand("GetRegistarionDataByUser", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("userId", userId);
+
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                adp.Fill(ds);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption getting account. " + ex.Message);
+            }
+
+            return ds;
+        }
+
+        public static DataTable GetUserProviderId(string userId)
+        {
+            DataTable ds = new DataTable();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("GetUserProviderId", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("userId", userId);
 

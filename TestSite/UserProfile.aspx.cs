@@ -29,7 +29,7 @@ namespace TestSite
                 Logout.Visible = true;
                 user.Text = User.Identity.Name;
                 email.Text = Membership.GetUser().Email;
-
+                userId = Membership.GetUser(User.Identity.Name).ProviderUserKey.ToString();
                 int uAge = GetUserAge();
                 age.Text = uAge > 0 ? uAge.ToString(): "Not entered";
                 ageValue = age.Text;
@@ -152,6 +152,8 @@ namespace TestSite
         protected void btbAddProviderCode_Click(object sender, EventArgs e)
         {
             setUpUserCode.Visible = true;
+            txtUserCode.Text = DAL.DataMethods.GetUserProviderCode(userId);
+
         }
     }
 }

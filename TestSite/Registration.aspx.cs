@@ -293,11 +293,11 @@ namespace TestSite
                 selfHealth = GetSelfHealth();
                 headInjury = GetHeadInjury(ref isInj);
                 income = ddlIncome.SelectedValue;
-
+                int providerId = GetUserProviderId(_userId);
                 int id = 0;
                 id = DataMethods.SaveRegistration(firstName, lastName, education, medications, gender, hand,
                     brainActivity, ethnisity, language, headInjury, selfEsteem, exercise, _userName, selfHealth,
-                    birthDate, isOnMeds, isInj, isFilled, _userId, income, cbAgree.Checked);
+                    birthDate, isOnMeds, isInj, isFilled, _userId, income, cbAgree.Checked, providerId);
                 if (id > 0)
                 {
                     DataMethods.UpdateRegCheck(_userId);
@@ -308,6 +308,14 @@ namespace TestSite
                     Response.Redirect(_redirectTo);
                 }
             }
+        }
+
+        private int GetUserProviderId(string _userId)
+        {
+         
+            DataTable dt = DAL.DataMethods.GetUserProviderId(_userId);
+
+            return (dt.Rows.Count > 0) ? Convert.ToInt32(dt.Rows[0]["providerId"]) : 0;
         }
 
         private string GetSelfHealth()
