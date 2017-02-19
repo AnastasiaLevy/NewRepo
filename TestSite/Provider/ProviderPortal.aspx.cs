@@ -20,7 +20,7 @@ namespace TestSite.Provider
             createUser.Visible = false;
             assignTest.Visible = false;
             setUpUserCode.Visible = false;
-            cbAllowUserViewResults.Checked = true;
+            cbAllowUserViewResults.Checked = false;
 
             if (User.Identity.IsAuthenticated)
             {
@@ -286,6 +286,13 @@ namespace TestSite.Provider
         protected void btnUpdateProfile_Click(object sender, EventArgs e)
         {
             setUpUserCode.Visible = true;
+            txtUserCode.Text = GetProviderUserCode(ViewState["providerId"].ToString());
+        }
+
+        private string GetProviderUserCode(string providerId)
+        {
+            DataTable dt = DAL.DataMethods.GetProvderUserCode(providerId);
+           return  (dt.Rows.Count > 0) ? dt.Rows[0]["providerCode"].ToString() : "";
         }
 
         protected void btnCodeSave_Click(object sender, EventArgs e)

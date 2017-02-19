@@ -306,6 +306,27 @@ namespace TestSite.DAL
             return ds;
         }
 
+        internal static DataTable GetProvderUserCode(string providerId)
+        {
+            DataTable ds = new DataTable();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("GetProviderCode", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@providerId", providerId);
+
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                adp.Fill(ds);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption getting Getting Provider Code. " + ex.Message);
+            }
+
+            return ds;
+        }
+
         internal static int GetUserViewResults(string userId)
         {
 

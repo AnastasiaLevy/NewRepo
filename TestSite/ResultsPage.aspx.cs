@@ -40,7 +40,7 @@ namespace TestSite
                 int ageGroup = Enums.GetAgeGroup(age);
                 if (ageGroup == 10 || ageGroup == 100)
                 {
-                    chartTitle.Text = "Age Error"; //TODO: nice wording?
+                    chartTitle.Text = "Age Group Error. Please contact administrator."; //TODO: nice wording?
 
                 }
                 else
