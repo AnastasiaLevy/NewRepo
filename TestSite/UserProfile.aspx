@@ -195,7 +195,7 @@
                         </h2>
                         <hr>
                     </div>
-                    <div class="col-sm-3 text-center">
+                    <div class="col-sm-2 text-center">
                         <a href="WCSTWrapper.aspx" id="wcst">
                             <img class="img-responsive" src="images/cardSort.png" alt=""></a>
                         <h3>Card Sort
@@ -203,21 +203,21 @@
                             <small></small>
                         </h3>
                     </div>
-                    <div class="col-sm-3 text-center">
+                    <div class="col-sm-2 text-center">
                         <a href="TrailsWrapper.aspx" id="trails">
                             <img class="img-responsive" src="images/trails.jpg" alt=""></a>
                         <h3>Trails
                             <small></small>
                         </h3>
                     </div>
-                    <div class="col-sm-3 text-center">
+                    <div class="col-sm-2 text-center">
                         <a href="Tests/NbackWrapper.aspx" id="nBack">
                             <img class="img-responsive" src="images/Nback.jpg" alt=""></a>
                         <h3>Nback
                             <small></small>
                         </h3>
                     </div>
-                    <div class="col-sm-3 text-center">
+                    <div class="col-sm-2 text-center">
                         <a href="LondonWrapper.aspx" id="london">
                             <img class="img-responsive" src="images/tower.jpg" alt=""></a>
                         <h3>Tower Of London
@@ -225,10 +225,18 @@
                             <small></small>
                         </h3>
                     </div>
-                         <div class="col-sm-3 text-center">
+                    <div class="col-sm-2 text-center">
                         <a href="Tests/SyllogWrapper.aspx" id="syllog">
                             <img class="img-responsive" src="images/sillog.png"" alt=""></a>
                         <h3>Syllogisms
+
+                            <small></small>
+                        </h3>
+                    </div>
+                    <div class="col-sm-2 text-center">
+                        <a href="Tests/StroopWrapper.aspx" id="stroop">
+                            <img class="img-responsive" src="images/stroop.jpg"" alt=""></a>
+                        <h3>Stroop test
 
                             <small></small>
                         </h3>
@@ -409,7 +417,7 @@
         $(this).parent().addClass("active");
     });
 
-    $('body').append('<div id="toTop" class="btn btn-primary color1"><span class="glyphicon glyphicon-chevron-up"></span></div>');
+    $('body').append('<div id="toTop" class="btn btn-primary color1"><span>^</span></div>');
     $(window).scroll(function () {
         if ($(this).scrollTop() != 0) {
             $('#toTop').fadeIn();

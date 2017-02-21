@@ -12,7 +12,7 @@
 
 </head>
 <body>
-    <div id="testArea" class="withBorder center">
+    <div id="testArea" class="withBorder center no-text-select">
         
         <div id="canvas_container" class="center"></div>
         <div id="displayMessage" class="center">

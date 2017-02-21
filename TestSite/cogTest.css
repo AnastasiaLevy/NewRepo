@@ -2382,7 +2382,7 @@ padding: 10px;
     align-items: center;
     justify-content: center;
     padding: 20px;
-    font-size:larger;
+    font-size: larger;
     /*display : flex;*/
 }
 
@@ -2941,7 +2941,7 @@ form .buttons {
     overflow: hidden;
     z-index: 1;
     font-size: 1.3em;
-    text-align:center;
+    text-align: center;
 }
 
 .finalMessage {
@@ -2956,7 +2956,7 @@ form .buttons {
     overflow: hidden;
     z-index: 1;
     font-size: 1.3em;
-    text-align:center;
+    text-align: center;
 }
 
 .aboutHeader {
@@ -3071,11 +3071,10 @@ form .buttons {
     width: 100%;
     word-wrap: break-word;
     table-layout: fixed;
-   
- 
 }
+
 .testResGrid {
-  width: 100%;
+    width: 100%;
     word-wrap: break-word;
     table-layout: fixed;
 }
@@ -3096,7 +3095,7 @@ label {
 
 
 #pop {
-    position:fixed;
+    position: fixed;
     top: 20%;
     left: 10%;
     /*margin-top: -50px;
@@ -3109,64 +3108,71 @@ label {
     border-bottom-color: darkblue;
     border-radius: 5px;
     padding: 10px;
-    padding-top:0px;
-    overflow:scroll;
+    padding-top: 0px;
+    overflow: scroll;
 }
+
 #btnCancel {
     margin-left: 66%;
     font-size: x-large;
     color: white;
     border: 1px solid;
     border-radius: 5px;
-    background-color:dodgerblue;
-    
+    background-color: dodgerblue;
 }
-.createUser{
- margin-top : 15px;
- border-radius:5px;
- width:100%;
+
+.createUser {
+    margin-top: 15px;
+    border-radius: 5px;
+    width: 100%;
 }
-.resultImage{
-    text-align:center;
-    width:60%;
-    height:60%;
+
+.resultImage {
+    text-align: center;
+    width: 60%;
+    height: 60%;
     margin-top: 50px;
 }
 /* result table */
 .res-table {
-	border: 1px solid lightgray;
-	border-radius: 10px;
-	border-collapse: collapse;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    border-collapse: collapse;
 }
 
-.res-table thead tr th:first-child {
-	text-align: left!important;
-	width: 100px;
+    .res-table thead tr th:first-child {
+        text-align: left !important;
+        width: 100px;
+    }
+
+    .res-table th {
+        font-weight: normal;
+        background: #aee6ad;
+        border: 1px solid #ffffff;
+    }
+
+    .res-table tbody tr td:first-child {
+        text-align: left !important;
+    }
+
+    .res-table .total {
+        font-weight: 800;
+    }
+
+    .res-table td {
+        text-align: center;
+        border: 1px solid #aee6ad;
+    }
+
+#requestToReg {
+    font-size: x-large;
 }
 
-.res-table th {
-	font-weight: normal;
-	background: #aee6ad;
-	border: 1px solid #ffffff;
-}
-
-.res-table tbody tr td:first-child {
-	text-align: left!important;
-}
-
-.res-table .total {
-	font-weight: 800;
-}
-
-.res-table td {
-	text-align: center;
-	border: 1px solid #aee6ad;
-}
-
-#requestToReg{
-   
-    font-size:x-large;
-}
-p {
-   
+.no-text-select {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    cursor:default;
 }

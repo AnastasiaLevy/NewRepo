@@ -118,7 +118,7 @@
 
                                                 <asp:Label ID="Label2" runat="server" Text="Password"></asp:Label>
                                                 <asp:TextBox ID="txtPassword" runat="server" CssClass="createUser" Width="100%"></asp:TextBox>
-                                          <%--        <asp:Label ID="Label6" runat="server" Text="Allow View Results"></asp:Label>--%>
+                                             
                                                 <asp:CheckBox ID="cbAllowUserViewResults" runat="server" Text="Allow User View Results" TextAlign="Left"/>
 
                                             </div>
@@ -157,7 +157,6 @@
                 </div>
             </section>
 
-           
             <section id="participant Data">
                 <div class="row">
                     <div class="box">
@@ -173,59 +172,57 @@
                     
                             </div>
                             
-                         <div class="col-lg-6 row">
-                             <div id="pop" class="" runat="server">
-                                 <asp:Label ID="partName" runat="server" Text="" CssClass="col-lg-2"></asp:Label>
-                                 
-                          
+                        <div class="col-lg-6 row">
+                            <div id="pop" class="" runat="server">
+                                <asp:Label ID="partName" runat="server" Text="" CssClass="col-lg-2"></asp:Label>
+                                <asp:Button ID="btnCancel" runat="server" Text="X" OnClick="Button1_Click" class="col-md-1" />
+                                <asp:GridView ID="gvTestPerUser" runat="server" RowStyle-Wrap="true" CellSpacing="10" class="gridview"
+                                    GridLines="Horizontal" AutoGenerateColumns="False" BorderColor="#CCCCCC" BorderStyle="None"
+                                    BorderWidth="1px" CellPadding="20" ForeColor="Black"
+                                    RowStyle-Height="40px" Font-Size="Larger">
+                                  
+                                    <Columns>
+                                        <asp:BoundField DataField="Name" HeaderText="Text Name"></asp:BoundField>
+                                        <asp:BoundField DataField="Assigned Date" DataFormatString="{0:d}" HeaderText="Assigned Date"></asp:BoundField>
+                                        <asp:BoundField DataField="Finished Date" DataFormatString="{0:d}" NullDisplayText="Not Finished" HeaderText="Finished Date"></asp:BoundField>
+
+                                        <asp:TemplateField HeaderText="Results" HeaderStyle-Width="10%" ItemStyle-Width="10%"
+                                            FooterStyle-Width="10%">
+                                            <ItemTemplate>
+                                                <asp:LinkButton runat="server" Text="" CausesValidation="false" ID="lbViewTestResults" OnClick="lbViewTestResults_Click" Visible='<%# Eval("Finished Date") != DBNull.Value  %>'><i class="fa fa-eye  fa-2x" aria-hidden="true"></i></asp:LinkButton>
+                                            </ItemTemplate>
+                                            <FooterStyle Width="10%"></FooterStyle>
+                                            <HeaderStyle Width="10%"></HeaderStyle>
+                                            <ItemStyle Width="10%"></ItemStyle>
+                                        </asp:TemplateField>
+                                        <asp:TemplateField HeaderText="Remove" HeaderStyle-Width="10%" ItemStyle-Width="10%"
+                                            FooterStyle-Width="10%">
+                                            <ItemTemplate>
+                                                <asp:LinkButton runat="server" Text="" CausesValidation="false" ID="lbRemoveTestFromUserList" OnClick="lbRemoveTestFromUserList_Click"><i class="fa fa-minus-square-o  fa-2x" aria-hidden="true"></i></asp:LinkButton>
+                                            </ItemTemplate>
+
+                                            <FooterStyle Width="10%"></FooterStyle>
+                                            <HeaderStyle Width="10%"></HeaderStyle>
+                                            <ItemStyle Width="10%"></ItemStyle>
+                                        </asp:TemplateField>
+                                        <asp:BoundField Visible="true" DataField="tID" />
+                                    </Columns>
+                                    <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+                                    <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
+                                    <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
+                                    <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
+                                    <SortedAscendingCellStyle BackColor="#F7F7F7" />
+                                    <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
+                                    <SortedDescendingCellStyle BackColor="#E5E5E5" />
+                                    <SortedDescendingHeaderStyle BackColor="#242121" />
+                                    <RowStyle Wrap="False" Height="40px"></RowStyle>
+                                </asp:GridView>
+                                     <asp:Label ID="Label6" runat="server" Text=" "></asp:Label>
+                                                <br />
+                                     <br />
+                                    <asp:CheckBox ID="cbViewResults" runat="server" OnCheckedChanged="SelectCheckBox_CheckedChanged" Text="Allow Participant to view results" /></div>
                             
-                                 <asp:Button ID="btnCancel" runat="server" Text="X" OnClick="Button1_Click" class="col-md-1" />
-                                 <asp:GridView ID="gvTestPerUser" runat="server" RowStyle-Wrap="true" CellSpacing="10" class="gridview"
-                                     GridLines="Horizontal" AutoGenerateColumns="False" BorderColor="#CCCCCC" BorderStyle="None"
-                                     BorderWidth="1px" CellPadding="20" ForeColor="Black"
-                                     RowStyle-Height="40px" Font-Size="Larger"  > <%--AllowPaging="true" onPageIndexChanging="gvTestPerUser_PageIndexChanging"--%>
-
-                                     <Columns>
-                                         <asp:BoundField DataField="Name" HeaderText="Text Name"></asp:BoundField>
-                                         <asp:BoundField DataField="Assigned Date" DataFormatString="{0:d}" HeaderText="Assigned Date"></asp:BoundField>
-                                         <asp:BoundField DataField="Finished Date" DataFormatString="{0:d}" NullDisplayText="Not Finished" HeaderText="Finished Date"></asp:BoundField>
-
-                                         <asp:TemplateField HeaderText="Results" HeaderStyle-Width="10%" ItemStyle-Width="10%"
-                                             FooterStyle-Width="10%">
-                                             <ItemTemplate>
-                                                 <asp:LinkButton runat="server" Text="" CausesValidation="false" ID="lbViewTestResults" OnClick="lbViewTestResults_Click" Visible='<%# Eval("Finished Date") != DBNull.Value  %>'><i class="fa fa-eye  fa-2x" aria-hidden="true"></i></asp:LinkButton>
-                                             </ItemTemplate>
-                                             <FooterStyle Width="10%"></FooterStyle>
-                                             <HeaderStyle Width="10%"></HeaderStyle>
-                                             <ItemStyle Width="10%"></ItemStyle>
-                                         </asp:TemplateField>
-                                         <asp:TemplateField HeaderText="Remove" HeaderStyle-Width="10%" ItemStyle-Width="10%"
-                                             FooterStyle-Width="10%">
-                                             <ItemTemplate>
-                                                 <asp:LinkButton runat="server" Text="" CausesValidation="false" ID="lbRemoveTestFromUserList" OnClick="lbRemoveTestFromUserList_Click"><i class="fa fa-minus-square-o  fa-2x" aria-hidden="true"></i></asp:LinkButton>
-                                             </ItemTemplate>
-
-                                             <FooterStyle Width="10%"></FooterStyle>
-                                             <HeaderStyle Width="10%"></HeaderStyle>
-                                             <ItemStyle Width="10%"></ItemStyle>
-                                         </asp:TemplateField>
-                                         <asp:BoundField Visible="true" DataField="tID" />
-                                     
-
-                                     </Columns>
-
-                                     <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
-                                     <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
-                                     <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
-                                     <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
-                                     <SortedAscendingCellStyle BackColor="#F7F7F7" />
-                                     <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
-                                     <SortedDescendingCellStyle BackColor="#E5E5E5" />
-                                     <SortedDescendingHeaderStyle BackColor="#242121" />
-                                     <RowStyle Wrap="False" Height="40px"></RowStyle>
-                                 </asp:GridView>
-    <asp:CheckBox ID="cbViewResults" runat="server" OnCheckedChanged="SelectCheckBox_CheckedChanged" Checked ="true" Text ="Allow Participant to view results"/>
-                             </div>
+                              
                         </div>
                         <div class="col-lg-12">
                         

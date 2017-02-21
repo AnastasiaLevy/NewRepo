@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="NbackWrapper.aspx.cs" Inherits="TestSite.Tests.NbackWrapper" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="StroopWrapper.aspx.cs" Inherits="TestSite.Tests.StroopWrapper" %>
 
 <!DOCTYPE html>
 
@@ -7,9 +7,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Nback">
+    <meta name="description" content="Stroop test">
     <meta name="author" content="AnaLevy">
-    <title>Nback</title>
+    <title>Stroop</title>
     <link rel="shortcut icon" href="../images/favicon.ico" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="../cogTest.css" rel="stylesheet" />
@@ -53,15 +53,23 @@
         <!-- Page Content -->
         <section id="about">
             <div class="container testDescription">
-                <h2>Nback Test(n-back test)</h2>
+                <h2>Stroop Effect</h2>
                 <hr />
                 <p>
-                    The n-back task is a continuous performance task that is
-                     commonly used as an assessment in cognitive neuroscience to 
-                    measure a part of working memory and working memory capacity.
-                     The n-back was introduced by Wayne Kirchner in 1958.
+                   In psychology, the Stroop effect is a demonstration of interference in 
+                    the reaction time of a task. When the name of a color 
+                    (e.g., "blue", "green", or "red") is printed in a color that is
+                     not denoted by the name (e.g., the word "red" printed in blue 
+                    ink instead of red ink), naming the color of the word takes longer and is 
+                    more prone to errors than when the color of the ink matches the name of the 
+                    color. The effect is named after John Ridley Stroop, who first published 
+                    the effect in English in 1935. The effect had previously been published 
+                    in Germany in 1929. The original paper has been one of the most 
+                    cited papers in the history of experimental psychology, leading to more than 
+                    701 replications. The effect has been used to create a psychological test 
+                    (Stroop test) that is widely used in clinical practice and investigation.
                 </p>
-                <div class="panel-group testDescription " id="accordion" role="tablist" aria-multiselectable="true">
+        <%--        <div class="panel-group testDescription " id="accordion" role="tablist" aria-multiselectable="true">
              
                     <div class="col-md-6 visible">
                         <p>
@@ -132,7 +140,7 @@
                             </p>
                         </div>
                     </div>
-                </div>
+                </div>--%>
             </div>
         </section>
         <section>
@@ -145,13 +153,16 @@
                     Recommended minimum screen resolution is 1000 x 700. 
                 </p>
             </div>
+                                 
         </section>
-
+        <div class ="container">
+            <asp:LinkButton ID="runTest" runat="server" class="signup-btn" OnClick="runTest_Click">Run Test</asp:LinkButton>
+        </div>
 
             <section>
             <div class="container right">
 
-                <asp:LinkButton ID="runTest" runat="server" class="signup-btn" OnClick="runTest_Click">Run Test</asp:LinkButton>
+<%--                <asp:LinkButton ID="runTest" runat="server" class="signup-btn" OnClick="runTest_Click">Run Test</asp:LinkButton>--%>
                 <div id="requestToReg" runat="server" visible="true">
                     <p>
                         <a href="../Login.aspx">Please Login </a>
@@ -163,67 +174,8 @@
                 </div>
             </div>
         </section>
-
-                <section id="price" runat="server">
-            <div id="wrapper">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="circle c1 img-circle">
-                                <h4 class="blue">Single Test</h4>
-                                <span class="icon blue"><i class="fa fa-usd"></i></span>
-                                <span class="price-large blue">5</span>
-                                <span class="price-small">,00</span>
-                                <p>One Time Run</p>
-                                <asp:Button ID="single" class="btn btn-info" runat="server" OnClick="single_Click" Text="Buy Now" />
-                            </div>
-                        </div>
-                        <!-- .Col-md-3 ends here -->
-
-                        <div class="col-md-3">
-                            <div class="circle c2 img-circle">
-                                <h4 class="yellow">Set of 10</h4>
-                                <span class="icon yellow"><i class="fa fa-usd"></i></span>
-                                <span class="price-large yellow">50</span>
-                                <span class="price-small">,00</span>
-                                <p>Small Project</p>
-                                <asp:Button ID="ten" class="btn btn-warning" runat="server"  Text="Call Us" />
-                            </div>
-                        </div>
-                        <!-- .Col-md-3 ends here -->
-
-                        <div class="col-md-3">
-                            <div class="circle c3 img-circle">
-                                <h4 class="green">Set of 100</h4>
-                                <span class="icon green"><i class="fa fa-usd "></i></span>
-                                <span class="price-large green">250</span>
-                                <span class="price-small">,00</span>
-                                <p>Medium Size Project</p>
-                                <asp:Button ID="hundred" class="btn btn-success" runat="server" Text="Call Us" />
-                            </div>
-                        </div>
-                        <!-- .Col-md-3 ends here -->
-
-                        <div class="col-md-3">
-                            <div class="circle c4 img-circle">
-                                <h4 class="red">Unlimited Use</h4>
-                                <span class="icon red"><i class="fa fa-usd "></i></span>
-                                <span class="price-large red">600</span>
-                                <span class="price-small">,00</span>
-                                <p>
-                                    Any Number of Participants
-                                <p>
-
-                                    <asp:Button ID="unlim" class="btn btn-danger" runat="server"  Text="Call Us" />
-                            </div>
-                        </div>
-                        <!-- .Col-md-3 ends here -->
-                    </div>
-                    <!-- .Container ends here -->
-                </div>
-                <!-- .Row ends here -->
-            </div>
-    </section>
+   
+         
 
         <section id="follow-us">
             <div class="container">
@@ -243,11 +195,6 @@
         </section>
 
     </form>
-
-
-
-
-
     <footer id="footer">
         <div class="container">
             <div class="row myfooter">
@@ -312,3 +259,4 @@
     </script>
 </body>
 </html>
+

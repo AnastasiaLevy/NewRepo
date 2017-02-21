@@ -115,7 +115,14 @@ namespace TestSite.Provider
             string age = row.Cells[2].Text;
 
             ViewState["tUserAge"] = age;
+            cbViewResults.Checked = CheckAllowUserViewResults(userId);
 
+
+        }
+
+        private bool CheckAllowUserViewResults(string userId)
+        {
+            return Convert.ToBoolean(DAL.DataMethods.GetUserViewResults(userId));
         }
 
         private void SetUserTestsGrig(string userId)

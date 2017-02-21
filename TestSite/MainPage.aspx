@@ -308,8 +308,8 @@
 
                     <ul class="port2">
                         <li data-type="memory" data-id="id-1" class="port3">
-                            <a href="#" id="memory1">
-                                <img src="images/coming_soon.jpg" alt=""></a>
+                            <a href="Tests/StroopWrapper.aspx" id="memory1">
+                                <img src="images/Stroop.jpg" alt=""></a>
                         </li>
                         <li data-type="executive" data-id="id-2" class="port3">
                             <a href="TrailsWrapper.aspx" id="webdesign1">
