@@ -6,12 +6,12 @@ var timeInvisibleWord = 3000; //ms
 var taskTest1 = ["Red", "Blue", "Red", "Green", "Blue", "Red", "Green", "Red", "Green", "Blue", "Red", "Green", "Red", "Green", "Blue", "Red", "Green", "Blue", "Green", "Red"];
 var taskColor1 = ["R"];
                   
-var messageTest1 = ["Test1 BL1",
-                    "intro text",
-                    "intro text",
-                    "intro text",
-                    "intro text",
-                    "intro text",
+var messageTest1 = ["This is a base line test.",
+                    "We will capture your response times for correct and incorrect responses.",
+                    "",
+                    "You will use three keybard keys: Z, Spacebar and / . ",
+                    "",
+                    "In this test, read the word",
                     "  ",
                     "Press the spacebar to begin."];
                     
@@ -22,13 +22,12 @@ var rectangleMessageTest1 = [250, 250, 510, 200]; //left, top, width, height
 var taskTest2 = ["R", "B", "R", "G", "B", "R", "G", "R", "G", "B", "R", "G", "R", "G", "B", "R", "G", "B", "G", "R"];
 var taskColor2 = ["R"];
                   
-var messageTest2 = ["Test2 BL2",
-                    "intro text",
-                    "intro text",
-                    "intro text",
-                    "intro text",
-                    "intro text",
-                    "  ",
+var messageTest2 = ["This is a base line test.",
+                    "We will capture your response times for correct and incorrect responses.",
+"",
+"You will use three keybard keys: Z, Spacebar and / . ",
+"",
+"In this test, choose the color of the circle",
                     "Press the spacebar to begin."];
                     
 var rectangleMessageTest2 = [250, 250, 510, 200]; //left, top, width, height
@@ -38,13 +37,12 @@ var rectangleMessageTest2 = [250, 250, 510, 200]; //left, top, width, height
 var taskTest3 = ["Green", "Blue", "Red", "Green", "Red", "Green", "Blue", "Red", "Green", "Red", "Green", "Blue", "Red", "Green", "Red", "Green", "Blue", "Red", "Red", "Blue"];
 var taskColor3 = ["R", "B", "R", "G", "B", "R", "G", "R", "G", "B", "R", "G", "R", "G", "B", "R", "G", "B", "G", "R"];
                   
-var messageTest3 = ["Test3 STR1",
-                    "intro text",
-                    "intro text",
-                    "intro text",
-                    "intro text",
-                    "intro text",
-                    "  ",
+var messageTest3 = ["This is test 1.",
+                    "We will capture your response times for correct and incorrect responses.",
+"",
+"You will use three keybard keys: Z, Spacebar and / . ",
+"",
+"In this test, read the word",
                     "Press the spacebar to begin."];
                     
 var rectangleMessageTest3 = [250, 250, 510, 200]; //left, top, width, height
@@ -54,13 +52,12 @@ var rectangleMessageTest3 = [250, 250, 510, 200]; //left, top, width, height
 var taskTest4 = ["Red", "Green",  "Red", "Green", "Blue", "Red", "Red", "Blue", "Blue", "Red", "Green", "Red", "Green", "Blue", "Red", "Green", "Green", "Blue", "Red", "Green"];
 var taskColor4 = ["G", "R", "G", "B", "R", "G", "B", "G", "R", "R", "B", "R", "G", "B", "R", "G", "R", "G", "B", "R"];
                   
-var messageTest4 = ["Test4 STR2",
-                    "intro text",
-                    "intro text",
-                    "intro text",
-                    "intro text",
-                    "intro text",
-                    "  ",
+var messageTest4 = ["This is a base line test.",
+                    "We will capture your response times for correct and incorrect responses.",
+"",
+"You will use three keybard keys: Z, Spacebar and / . ",
+"",
+"In this test, select the color that the word is written in.",
                     "Press the spacebar to begin."];
                     
 var rectangleMessageTest4 = [250, 250, 510, 200]; //left, top, width, height
