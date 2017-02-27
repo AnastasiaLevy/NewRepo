@@ -46,7 +46,7 @@
                         <li id="profOpt" runat="server"><a href="../UserProfile.aspx">Profile</a></li>
                         <li id="login" runat="server"><a href="../Login.aspx">Login</a></li>
                         <li>
-                            <asp:LinkButton ID="logOut" class="btn button" type="submit" runat="server">Log Out</asp:LinkButton>
+                            <asp:LinkButton ID="logOut" class="btn button" type="submit" OnClick="logOut_Click" runat="server">Log Out</asp:LinkButton>
                         </li>
                     </ul>
                 </div>
@@ -67,7 +67,7 @@
              
                     <div class="col-md-3 visible">
                         <p>
-                            <asp:LinkButton ID="LinkButton1"  class="btn btn-primary btn-lg btn-block" runat="server">View User Manual</asp:LinkButton>
+                            <asp:LinkButton ID="LinkButton1"  class="btn btn-primary btn-lg btn-block" onclick="LinkButton1_Click"  runat ="server">View User Manual</asp:LinkButton>
                         </p>
                     </div>
                                 <div class="col-md-3 visible">
@@ -98,6 +98,7 @@
                 </div>
             </div>
               <div class="container right">
+                  <asp:Label ID="existsMessage" CssClass="errorMessage" runat="server" Text=""></asp:Label>
                <asp:LinkButton ID="runTest" runat="server" class="signup-btn"  OnClick="runTest_Click">Download</asp:LinkButton>
                   </div>
         </section>
@@ -123,7 +124,7 @@
                         </div>
                         <!-- .Col-md-3 ends here -->
 
-                        <div class="col-md-4">
+<%--                        <div class="col-md-4">
                             <div class="circle c2 img-circle">
                                 <h4 class="yellow">3 Installs</h4>
                                 <span class="icon yellow"><i class="fa fa-usd"></i></span>
@@ -132,7 +133,7 @@
                                 <p>Install on 3 computers</p>
                                 <asp:Button ID="ten" class="btn btn-warning" runat="server" OnClick="ten_Click" Text="Buy Now" />
                             </div>
-                        </div>
+                        </div>--%>
                         <!-- .Col-md-3 ends here -->
 
                         <div class="col-md-4">

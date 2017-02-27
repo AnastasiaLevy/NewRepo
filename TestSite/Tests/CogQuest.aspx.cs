@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Web;
@@ -84,6 +85,13 @@ namespace TestSite.Tests
 
         }
 
+        protected void logOut_Click(object sender, EventArgs e)
+        {
+            FormsAuthentication.SignOut();
+            Response.Redirect("~/MainPage.aspx");
+
+        }
+
         private bool hasPaidTest(string _userId)
         {
             int id = DataMethods.HasPaidTest(_userId, _testId);
@@ -117,15 +125,15 @@ namespace TestSite.Tests
 
         private void RunPayPal(string itemName, double itemAmount)
         {
-            string business = "P6JMSAGR5XCE4";// "analescheok@gmail.com"
+            string business = "L3SCKTNV3EWA4";//"P6JMSAGR5XCE4";// "analescheok@gmail.com"
           
-             itemAmount = 0.01;
+            itemAmount = 0.01;
             string currencyCode = "USD";
 
             StringBuilder ppHref = new StringBuilder();
             string baseUrl = Request.Url.GetLeftPart(UriPartial.Authority);
 
-            ppHref.Append("https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_xclick");//("https://www.paypal.com/cgi-bin/webscr?cmd=_xclick");
+            ppHref.Append("https://www.paypal.com/cgi-bin/webscr?cmd=_xclick");//();//"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_xclick"
             ppHref.Append("&business=" + business);
             ppHref.Append("&item_name=" + itemName);
             ppHref.Append("&amount=" + itemAmount.ToString("#.00"));
@@ -142,7 +150,22 @@ namespace TestSite.Tests
 
         protected void runTest_Click(object sender, EventArgs e)
         {
+            string publisherName = "CogQuiz";
+            string applicationName = "CogQuest";
+            string shortcutPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Programs), publisherName);
+            shortcutPath = Path.Combine(shortcutPath, applicationName) + ".appref-ms";
+            if (File.Exists(shortcutPath))
+            {
+                existsMessage.Text = "This application is already installed on your computer.";
+                runTest.Visible = false;
+            }
+            else
             Response.Redirect("CogQuestTool/CogQuestSetUp.aspx");
+        }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CogQuestTool/CogQuestInstructionsPDF.pdf");
         }
     }
 }

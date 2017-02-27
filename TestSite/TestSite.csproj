@@ -266,6 +266,7 @@
     <Content Include="Style\timelify.scss" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Scripts\jquery.popit.min.js.map" />
+    <Content Include="Tests\CogQuestTool\CogQuestInstructionsPDF.pdf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

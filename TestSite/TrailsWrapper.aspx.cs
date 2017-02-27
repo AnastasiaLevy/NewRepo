@@ -35,6 +35,12 @@ namespace TestSite
                 logOut.Visible = true;
                 login.Visible = false;
             }
+            else
+            {
+                login.Visible = true;
+                profOpt.Visible = false;
+
+            }
             if (!IsPostBack)
             {
                 if (!String.IsNullOrEmpty(Request.QueryString["st"]) && Request.QueryString["st"] == "Completed")
@@ -196,7 +202,7 @@ namespace TestSite
 
         private void PostPaypal()
         {
-            string business = "P6JMSAGR5XCE4";// "analescheok@gmail.com"
+            string business = "L3SCKTNV3EWA4";// "analescheok@gmail.com"
             string itemName = "Trails Test";
             double itemAmount = 0.01;
             string currencyCode = "USD";
@@ -204,7 +210,7 @@ namespace TestSite
             StringBuilder ppHref = new StringBuilder();
             string baseUrl = Request.Url.GetLeftPart(UriPartial.Authority);
 
-            ppHref.Append("https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_xclick");//("https://www.paypal.com/cgi-bin/webscr?cmd=_xclick");
+            ppHref.Append("https://www.paypal.com/cgi-bin/webscr?cmd=_xclick");//("https://www.paypal.com/cgi-bin/webscr?cmd=_xclick");
             ppHref.Append("&business=" + business);
             ppHref.Append("&item_name=" + itemName);
             ppHref.Append("&amount=" + itemAmount.ToString("#.00"));

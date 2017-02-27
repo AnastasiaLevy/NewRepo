@@ -49,6 +49,15 @@ namespace TestSite.Tests {
         protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
         
         /// <summary>
+        /// existsMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label existsMessage;
+        
+        /// <summary>
         /// runTest control.
         /// </summary>
         /// <remarks>
@@ -74,15 +83,6 @@ namespace TestSite.Tests {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button single;
-        
-        /// <summary>
-        /// ten control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ten;
         
         /// <summary>
         /// hundred control.

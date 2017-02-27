@@ -31,7 +31,7 @@ canvas {
 }
 #fullScreenOn {
     visibility: hidden;
-    background: url("/colorreadinginterference/images/fullscreenon.png") no-repeat bottom;
+    background: url("/images/fullscreenon.png") no-repeat bottom;
     position: absolute;
     border: none;
     width: 30px;
@@ -42,7 +42,7 @@ canvas {
 }
 #fullScreenClose {
     visibility: hidden;
-    background: url("/colorreadinginterference/images/fullscreenoff.png") no-repeat bottom;
+    background: url("/images/fullscreenoff.png") no-repeat bottom;
     position: absolute;
     border: none;
     width: 30px;

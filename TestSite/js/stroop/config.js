@@ -6,15 +6,39 @@ var timeInvisibleWord = 3000; //ms
 var taskTest1 = ["Red", "Blue", "Red", "Green", "Blue", "Red", "Green", "Red", "Green", "Blue", "Red", "Green", "Red", "Green", "Blue", "Red", "Green", "Blue", "Green", "Red"];
 var taskColor1 = ["R"];
                   
-var messageTest1 = ["This is a base line test.",
-                    "We will capture your response times for correct and incorrect responses.",
-                    "",
-                    "You will use three keybard keys: Z, Spacebar and / . ",
-                    "",
-                    "In this test, read the word",
-                    "  ",
-                    "Press the spacebar to begin."];
+var messageTest4 = ["Welcome to the word reading and color", //1
+                    "identification task.",
+                 "",
+                    "You will use three keys: Z, Spacebar and / . ",
                     
+                    "Your job is to respond as accurately and as quickly ",
+                    "as possible. ",
+                  "",
+                    "Speed and accuracy are equally important. ",
+                    "Press the spacebar to begin."];
+
+var messageTest2 = ["In this part of the test we want", //2
+    "to see how fast you can report the color of a \"dot\". ",
+
+    "You will use three keys: Z, Spacebar and / . ",
+
+    "Press the spacebar to begin."];
+
+var messageTest3 = ["In this part, you will press the key corresponding ",
+    "to the presented word. That is, you are essentially",
+    "reading the word.",
+    "You will use three keys: Z, Spacebar and / . ",
+    "",
+    "Press the spacebar to begin."];
+                    
+var messageTest1 = ["In this part of the Experiment, I want you to press", 
+                    "the key corresponding to the color the word is ",
+                   
+                    "printed in. That is, ignore the word and respond",
+                    "based on the color of the printed word.",
+                    "",
+                    "Press the spacebar to begin.",
+];
 var rectangleMessageTest1 = [250, 250, 510, 200]; //left, top, width, height
 
 // Test 2 BL2
@@ -22,13 +46,7 @@ var rectangleMessageTest1 = [250, 250, 510, 200]; //left, top, width, height
 var taskTest2 = ["R", "B", "R", "G", "B", "R", "G", "R", "G", "B", "R", "G", "R", "G", "B", "R", "G", "B", "G", "R"];
 var taskColor2 = ["R"];
                   
-var messageTest2 = ["This is a base line test.",
-                    "We will capture your response times for correct and incorrect responses.",
-"",
-"You will use three keybard keys: Z, Spacebar and / . ",
-"",
-"In this test, choose the color of the circle",
-                    "Press the spacebar to begin."];
+
                     
 var rectangleMessageTest2 = [250, 250, 510, 200]; //left, top, width, height
                     
@@ -37,13 +55,7 @@ var rectangleMessageTest2 = [250, 250, 510, 200]; //left, top, width, height
 var taskTest3 = ["Green", "Blue", "Red", "Green", "Red", "Green", "Blue", "Red", "Green", "Red", "Green", "Blue", "Red", "Green", "Red", "Green", "Blue", "Red", "Red", "Blue"];
 var taskColor3 = ["R", "B", "R", "G", "B", "R", "G", "R", "G", "B", "R", "G", "R", "G", "B", "R", "G", "B", "G", "R"];
                   
-var messageTest3 = ["This is test 1.",
-                    "We will capture your response times for correct and incorrect responses.",
-"",
-"You will use three keybard keys: Z, Spacebar and / . ",
-"",
-"In this test, read the word",
-                    "Press the spacebar to begin."];
+
                     
 var rectangleMessageTest3 = [250, 250, 510, 200]; //left, top, width, height
                     
@@ -52,13 +64,7 @@ var rectangleMessageTest3 = [250, 250, 510, 200]; //left, top, width, height
 var taskTest4 = ["Red", "Green",  "Red", "Green", "Blue", "Red", "Red", "Blue", "Blue", "Red", "Green", "Red", "Green", "Blue", "Red", "Green", "Green", "Blue", "Red", "Green"];
 var taskColor4 = ["G", "R", "G", "B", "R", "G", "B", "G", "R", "R", "B", "R", "G", "B", "R", "G", "R", "G", "B", "R"];
                   
-var messageTest4 = ["This is a base line test.",
-                    "We will capture your response times for correct and incorrect responses.",
-"",
-"You will use three keybard keys: Z, Spacebar and / . ",
-"",
-"In this test, select the color that the word is written in.",
-                    "Press the spacebar to begin."];
+
                     
 var rectangleMessageTest4 = [250, 250, 510, 200]; //left, top, width, height
 
