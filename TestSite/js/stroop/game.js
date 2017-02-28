@@ -73,6 +73,7 @@ function showResult()
         for ( var i = 0; i < currentScore.scoreArray[n].length; i++ )
         {
             ctx.fillText( currentScore.scoreArray[n][i], 170 + rectangleResultMessage[0] + i * 188, 200 + ( 416 / ( taskTests.length + 1 ) ) * ( n + 1 ) );
+           
         }
     }
     for ( var i = 0; i < currentScore.totalScoreArray.length; i++ )

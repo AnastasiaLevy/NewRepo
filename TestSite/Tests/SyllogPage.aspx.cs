@@ -48,7 +48,7 @@ namespace TestSite.Tests
             }
             catch (Exception ex)
             {
-
+                DataMethods.InsertErrorMessage(ex.ToString(), _userId, "SyllogPage");
             }
         }
     }

@@ -134,7 +134,8 @@ namespace TestSite
             }
             catch (Exception ex)
             {
-                return false;
+                DataMethods.InsertErrorMessage(ex.ToString(), userId, "LondonWrapper", null);
+                return false; 
             }
         }
 

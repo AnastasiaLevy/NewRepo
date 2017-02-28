@@ -134,6 +134,7 @@ namespace TestSite.Tests
             }
             catch (Exception ex)
             {
+                DAL.DataMethods.InsertErrorMessage(ex.ToString(), userId, "NBackWrapper");
                 return false;
             }
         }

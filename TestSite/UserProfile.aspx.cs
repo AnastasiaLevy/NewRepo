@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using TestSite.DAL;
 using TestSite.HelpClasses;
 
 namespace TestSite
@@ -132,8 +133,9 @@ namespace TestSite
                     lblError.Text = "Provider was added";
                     setUpUserCode.Visible = true;
                 }
-                catch
+                catch(Exception ex)
                 {
+                    DataMethods.InsertErrorMessage(ex.ToString(), userId, "UserProfile");
                     lblError.Text = "There was an error adding a provider.";
                 }
                

@@ -219,6 +219,7 @@ namespace TestSite.Provider
                 lblError.CssClass = "errorMessage";
              
                 createUser.Visible = true;
+                DAL.DataMethods.InsertErrorMessage(ex.ToString(), Convert.ToString(ViewState["tUserId"]), "providerProtal", null);
             }
         }
 
@@ -281,6 +282,7 @@ namespace TestSite.Provider
             {
                 lblTestMessage.Text = "There was an error assigning test";
                 lblTestMessage.CssClass = "errorMessage";
+                DAL.DataMethods.InsertErrorMessage(ex.ToString(), Convert.ToString(ViewState["tUserId"]), "ProviderPortal", null);
             }
 
         }

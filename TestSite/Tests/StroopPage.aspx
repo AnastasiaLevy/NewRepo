@@ -12,6 +12,10 @@
     </head>
 
     <body bgcolor="#b0c4de" class="bdCSS">
+           <form runat="server">
+          <asp:TextBox ID="userId" runat="server"  hidden="true"></asp:TextBox>
+        <asp:TextBox ID="tId" runat="server" hidden="true"></asp:TextBox>
+    </form>
         <div id="game">
           <canvas id='canvas' width="1000px" height="700px"></canvas>
           <input type="button" id="executeTest" style="z-index:2; position:absolute;" value="Execute Test"/>

@@ -64,6 +64,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "GetNbackNorms");
                 throw new Exception("Execption getting All Provider Participants. " + ex.Message);
             }
 
@@ -85,6 +86,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "GetNbackUserResults");
                 throw new Exception("Execption getting nBabk results. " + ex.Message);
             }
 
@@ -117,6 +119,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "SaveUserNbackResults");
                 throw new Exception("Execption saving Syllog Table " + ex.Message);
             }
             finally
@@ -140,6 +143,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "GetLondonNorms");
                 throw new Exception("Execption getting All Provider Participants. " + ex.Message);
             }
 
@@ -161,6 +165,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "GetUserProviderCode");
                 throw new Exception("Execption getting All Provider Participants. " + ex.Message);
             };
             return (dt.Rows.Count > 0 ) ? dt.Rows[0]["code"].ToString() : "";
@@ -182,6 +187,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "GetAllProviderTests");
                 throw new Exception("Execption getting All Provider Participants. " + ex.Message);
             }
 
@@ -203,6 +209,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "InsertSyllogismsTable");
                 throw new Exception("Execption saving Syllog Table " + ex.Message);
             }
             finally
@@ -229,6 +236,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "InsertSyllogismsTotal");
                 throw new Exception("Execption saving SyllogismsUserResults " + ex.Message);
             }
             finally
@@ -252,7 +260,32 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "AddUserToProvider");
                 throw new Exception("Execption saving Provider " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        internal static void InsertStroopTestTable(string html, int tId)
+        {
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("InsertStroopHtmlString", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@tId", tId);
+            cmd.Parameters.AddWithValue("@html", html);
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                InsertErrorMessage(ex.ToString(), null, null, "InsertStroopTestTable");
+                throw new Exception("Execption Inserting Stroop Table " + ex.Message);
             }
             finally
             {
@@ -275,6 +308,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "InsertCardSortTable");
                 throw new Exception("Execption saving Provider " + ex.Message);
             }
             finally
@@ -300,6 +334,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "GetAllProviderParticipants");
                 throw new Exception("Execption getting All Provider Participants. " + ex.Message);
             }
 
@@ -321,6 +356,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "GetProvderUserCode");
                 throw new Exception("Execption getting Getting Provider Code. " + ex.Message);
             }
 
@@ -345,6 +381,7 @@ namespace TestSite.DAL
             catch (Exception ex)
             {
                 id = null; //throw new Exception("Execption checking ProviderIdAccount. " + ex.Message);
+                InsertErrorMessage(ex.ToString(), null, null, "GetUserViewResults");
             }
             finally
             {
@@ -371,6 +408,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "SetAllowUserViewResults");
                 throw new Exception("Execption Updating Allow User View Results. " + ex.Message);
             }
             finally
@@ -396,6 +434,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "DeactivateParticipant");
                 throw new Exception("Execption Deactivating Participant. " + ex.Message);
             }
             finally
@@ -423,6 +462,7 @@ namespace TestSite.DAL
             catch (Exception ex)
             {
                 id = null; //throw new Exception("Execption checking ProviderIdAccount. " + ex.Message);
+                InsertErrorMessage(ex.ToString(), null, null, "GetProviderId");
             }
             finally
             {
@@ -448,6 +488,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "UpdateProviderTableSetCode");
                 throw new Exception("Execption saving Provider Code " + ex.Message);
             }
             finally
@@ -471,6 +512,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "UpdateProviderTable");
                 throw new Exception("Execption saving Provider " + ex.Message);
             }
             finally
@@ -495,6 +537,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "RemoveTestFromUserList");
                 throw new Exception("Execption Removing test from the list. " + ex.Message);
             }
             finally
@@ -521,6 +564,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "InsertProviderToTheUser");
                 throw new Exception("Execption saving User Provider. " + ex.Message);
             }
             finally
@@ -545,6 +589,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "InsertCardSortUserMovesMap");
                 throw new Exception("Execption saving CST moves. " + ex.Message);
             }
             finally
@@ -568,6 +613,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "InsertTestToParticipant");
                 throw new Exception("Execption in Insert Provider Test: " + ex.Message);
             }
             finally
@@ -627,6 +673,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "InsertCardSortUserResult");
                 throw new Exception("Execption saving CST results. " + ex.Message);
             }
             finally
@@ -650,6 +697,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "GetSyllogysmTestNorms");
                 throw new Exception("Execption getting Syllogisms Normal. " + ex.Message);
             }
 
@@ -670,6 +718,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "GetCardSortNorms");
                 throw new Exception("Execption getting London Total Results. " + ex.Message);
             }
 
@@ -693,6 +742,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "GetLondonUserResultsTotal");
                 throw new Exception("Execption getting London Total Results. " + ex.Message);
             }
 
@@ -714,6 +764,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "GetTestNormsTrails");
                 throw new Exception("Execption getting Trails Norm Results. " + ex.Message);
             }
 
@@ -736,6 +787,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "GetUserAge");
                 throw new Exception("Execption checking Reg account. " + ex.Message);
             }
             finally
@@ -761,6 +813,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "UpdateRegCheck");
                 throw new Exception("Execption saving account. " + ex.Message);
             }
             finally
@@ -786,6 +839,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "GetSyllogismsUserTable");
                 throw new Exception("Execption getting Syllog Results. " + ex.Message);
             }
 
@@ -808,6 +862,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "GetSyllogismsUserResults");
                 throw new Exception("Execption getting Syllog Results. " + ex.Message);
             }
 
@@ -830,6 +885,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "GetTestResultsCardSort");
                 throw new Exception("Execption getting CardSort Results. " + ex.Message);
             }
 
@@ -852,6 +908,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "GetTestResultsLondon");
                 throw new Exception("Execption getting London Results. " + ex.Message);
             }
 
@@ -874,6 +931,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "GetTestResultsTrails");
                 throw new Exception("Execption getting Trails Results " + ex.Message);
             }
 
@@ -896,6 +954,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "GetTestResultsNBack");
                 throw new Exception("Execption getting Nback results. " + ex.Message);
             }
 
@@ -918,6 +977,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "GetTestResultsNback");
                 throw new Exception("Execption getting Card Sort results. " + ex.Message);
             }
 
@@ -941,6 +1001,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "GetRegKey");
                 throw new Exception("Execption checking Reg account. " + ex.Message);
             }
             finally
@@ -1011,6 +1072,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "SaveRegistration");
                 throw new Exception("Execption saving account. " + ex.Message);
             }
             finally
@@ -1043,6 +1105,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "GetRegistarionDataByUser");
                 throw new Exception("Execption getting account. " + ex.Message);
             }
 
@@ -1064,6 +1127,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "GetUserProviderId");
                 throw new Exception("Execption getting account. " + ex.Message);
             }
 
@@ -1085,6 +1149,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "GetTrailsTestResults");
                 throw new Exception("Execption getting account. " + ex.Message);
             }
 
@@ -1106,6 +1171,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "GetAllUserTestsP");
                 throw new Exception("Execption getting account. " + ex.Message);
             }
 
@@ -1127,6 +1193,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "GetAllUserTests");
                 throw new Exception("Execption getting account. " + ex.Message);
             }
 
@@ -1148,6 +1215,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "GetAllUserFinishedTests");
                 throw new Exception("Execption getting account. " + ex.Message);
             }
 
@@ -1169,6 +1237,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "UpdateTrailsResultsA");
                 throw new Exception("Execption saving account. " + ex.Message);
             }
             finally
@@ -1204,7 +1273,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
-
+                InsertErrorMessage(ex.ToString(), null, null, "UpdateLondonUserResults");
             }
             finally
             {
@@ -1251,6 +1320,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "UpdateTrailsResultsB");
                 throw new Exception("Execption saving account. " + ex.Message);
             }
             finally
@@ -1277,6 +1347,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "UpdateTrailsResults");
                 throw new Exception("Execption saving account. " + ex.Message);
             }
             finally
@@ -1330,6 +1401,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "HasPaidTest");
                 throw new Exception("Execption Getting Saved Results. " + ex.Message);
             }
             finally
@@ -1356,6 +1428,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "InsertTestPaid");
                 throw new Exception("Execption in isTestPaid: " + ex.Message);
             }
             finally
@@ -1380,6 +1453,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "UpdateTestStart");
                 throw new Exception("Execption in isTestPaid: " + ex.Message);
             }
             finally
@@ -1403,7 +1477,47 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
+                InsertErrorMessage(ex.ToString(), null, null, "pdateTestFinished");
                 throw new Exception("Execption in isTestPaid: " + ex.Message);
+               
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        internal static void InsertErrorMessage(string exeptionMessage, string userId = null, 
+            string pageName = null, string procName = null)
+        {
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("InsertErrorMessage", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@exeptionMessage", exeptionMessage);
+
+            if (userId != null)
+                cmd.Parameters.AddWithValue("@userId", userId);
+            else
+                cmd.Parameters.AddWithValue("@userId", DBNull.Value);
+
+            if (pageName != null)
+                cmd.Parameters.AddWithValue("@pageName", pageName);
+            else
+                cmd.Parameters.AddWithValue("@pageName", DBNull.Value);
+            if (procName != null)
+                cmd.Parameters.AddWithValue("@procName", procName);
+            else
+                cmd.Parameters.AddWithValue("@procName", DBNull.Value);
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+         
+                throw new Exception("Execption Inserting exeption..." + ex.Message);
             }
             finally
             {

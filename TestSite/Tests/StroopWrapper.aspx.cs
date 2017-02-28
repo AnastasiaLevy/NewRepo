@@ -15,7 +15,7 @@ namespace TestSite.Tests
         protected MembershipUser _user;
         protected string _userId;
         protected bool _isProfilefilled;
-        protected string _testId = Enums.TestId.Nback;
+        protected string _testId = Enums.TestId.Stroop;
         protected static int _userTestId;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -100,8 +100,20 @@ namespace TestSite.Tests
                     runTest.Visible = false;
                 }
 
-                Session["userTestId"] = _userTestId;
-                Response.Redirect("/Tests/StroopPage.aspx");
+           if (!hasPaidTest(_userId))
+                {
+                    DataMethods.InsertTestPaid(_userId, _testId);
+                    bool registered = hasPaidTest(_userId);
+                }
+           else
+                {
+                    Session["userTestId"] = _userTestId;
+                    Response.Redirect("/Tests/StroopPage.aspx");
+                }
+      
+              
+
+     
             }
             else
             {
@@ -133,6 +145,20 @@ namespace TestSite.Tests
             }
         }
 
+        private bool hasPaidTest(string _userId)
+        {
+
+            int id = DataMethods.HasPaidTest(_userId, _testId);
+            if (id > 1)
+            {
+                _userTestId = id;
+                return true;
+
+            }
+            else
+                return false;
+
+        }
 
     }
 

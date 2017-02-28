@@ -114,6 +114,7 @@ namespace TestSite.Tests
             }
             catch (Exception ex)
             {
+                DAL.DataMethods.InsertErrorMessage(ex.ToString(), _userId, "CogQuest");
                 return false;
             }
         }

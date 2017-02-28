@@ -132,6 +132,7 @@ namespace TestSite
             }
             catch (Exception ex)
             {
+                DataMethods.InsertErrorMessage(ex.ToString(), _userId, "WCSTWrapper");
                 return false;
             }
         }

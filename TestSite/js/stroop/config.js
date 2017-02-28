@@ -3,10 +3,11 @@ var timeInvisibleWord = 3000; //ms
 
 // Test 1 BL1
 
-var taskTest1 = ["Red", "Blue", "Red", "Green", "Blue", "Red", "Green", "Red", "Green", "Blue", "Red", "Green", "Red", "Green", "Blue", "Red", "Green", "Blue", "Green", "Red"];
+//var taskTest1 = ["Red", "Blue", "Red", "Green", "Blue", "Red", "Green", "Red", "Green", "Blue", "Red", "Green", "Red", "Green", "Blue", "Red", "Green", "Blue", "Green", "Red"];
+var taskTest1 = ["Red"];
 var taskColor1 = ["R"];
                   
-var messageTest4 = ["Welcome to the word reading and color", //1
+var messageTest1 = ["Welcome to the word reading and color", //1
                     "identification task.",
                  "",
                     "You will use three keys: Z, Spacebar and / . ",
@@ -31,7 +32,7 @@ var messageTest3 = ["In this part, you will press the key corresponding ",
     "",
     "Press the spacebar to begin."];
                     
-var messageTest1 = ["In this part of the Experiment, I want you to press", 
+var messageTest4 = ["In this part of the Experiment, I want you to press", 
                     "the key corresponding to the color the word is ",
                    
                     "printed in. That is, ignore the word and respond",
@@ -43,7 +44,8 @@ var rectangleMessageTest1 = [250, 250, 510, 200]; //left, top, width, height
 
 // Test 2 BL2
 
-var taskTest2 = ["R", "B", "R", "G", "B", "R", "G", "R", "G", "B", "R", "G", "R", "G", "B", "R", "G", "B", "G", "R"];
+//var taskTest2 = ["R", "B", "R", "G", "B", "R", "G", "R", "G", "B", "R", "G", "R", "G", "B", "R", "G", "B", "G", "R"];
+var taskTest2 = ["R"];
 var taskColor2 = ["R"];
                   
 
@@ -52,8 +54,10 @@ var rectangleMessageTest2 = [250, 250, 510, 200]; //left, top, width, height
                     
 // Test 3 STR1
 
-var taskTest3 = ["Green", "Blue", "Red", "Green", "Red", "Green", "Blue", "Red", "Green", "Red", "Green", "Blue", "Red", "Green", "Red", "Green", "Blue", "Red", "Red", "Blue"];
-var taskColor3 = ["R", "B", "R", "G", "B", "R", "G", "R", "G", "B", "R", "G", "R", "G", "B", "R", "G", "B", "G", "R"];
+//var taskTest3 = ["Green", "Blue", "Red", "Green", "Red", "Green", "Blue", "Red", "Green", "Red", "Green", "Blue", "Red", "Green", "Red", "Green", "Blue", "Red", "Red", "Blue"];
+var taskTest3 = ["Green"];
+var taskColor3 = ["R"];
+//var taskColor3 = ["R", "B", "R", "G", "B", "R", "G", "R", "G", "B", "R", "G", "R", "G", "B", "R", "G", "B", "G", "R"];
                   
 
                     
@@ -61,9 +65,10 @@ var rectangleMessageTest3 = [250, 250, 510, 200]; //left, top, width, height
                     
 // Test 4 STR2
 
-var taskTest4 = ["Red", "Green",  "Red", "Green", "Blue", "Red", "Red", "Blue", "Blue", "Red", "Green", "Red", "Green", "Blue", "Red", "Green", "Green", "Blue", "Red", "Green"];
-var taskColor4 = ["G", "R", "G", "B", "R", "G", "B", "G", "R", "R", "B", "R", "G", "B", "R", "G", "R", "G", "B", "R"];
-                  
+//var taskTest4 = ["Red", "Green",  "Red", "Green", "Blue", "Red", "Red", "Blue", "Blue", "Red", "Green", "Red", "Green", "Blue", "Red", "Green", "Green", "Blue", "Red", "Green"];
+//var taskColor4 = ["G", "R", "G", "B", "R", "G", "B", "G", "R", "R", "B", "R", "G", "B", "R", "G", "R", "G", "B", "R"];
+var taskTest4 = ["Red"];
+var taskColor4 = ["G"];
 
                     
 var rectangleMessageTest4 = [250, 250, 510, 200]; //left, top, width, height

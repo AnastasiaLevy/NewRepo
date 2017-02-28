@@ -134,6 +134,7 @@ namespace TestSite
             }
             catch(Exception ex)
             {
+                DataMethods.InsertErrorMessage(ex.ToString(), userId, "TrailsWrapper");
                 return false;
             }
         }
