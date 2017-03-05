@@ -100,12 +100,12 @@
                         <div id="collapse1" class="collapse col-md-12">
                             <h3>About:</h3>
                             <p>
-                                The Trail Making Test (TMT), originally devised in 1938, was known as the “Partington’s 
-            Pathways Test,” or “Divided Attention Test” (Partington & Leiter, 1949). It was initially part of 
-            a battery of tests (Army Individual Test Battery) used to assess “…a variety of intellectual functions 
-            different from those measured by the Wechsler-Bellevue Intelligence Scale.” (Spreen & Strauss, 1998).
-            The test is not typically part of a test battery but administered single in its original paper and pencil
-            form.
+                                CogQuiz’s card sorting test like other sorting tests might be administered to individuals
+                                 with brain injury (e.g., TBI, stroke, etc.), neurological/neurodegenerative disorders 
+                                (e.g., Parkinson’s disease, Alzheimer’s disease, etc.), psychological/mental disorders 
+                                (e.g., schizophrenia, depression, etc.), or to assess development in children and decline
+                                 in elderly.
+                            
                             </p>
                         </div>
                     </div>
@@ -114,12 +114,12 @@
                         <div id="collapse2" class="collapse col-md-12">
                             <h3>Measure:</h3>
                             <p>
-                                The TMT provides a measure of attention, visual scanning, speed of eye-hand coordination (Part A),
-            and mental flexibility (Strauss, Sherman, & Spreen, 2007). In addition, Part B assesses the ability to 
-            alternate between stimulus sets and as such is a measure of “executive function” (Mitrushina, et al., 1999).
-            Performance on the TMT has been obtained for normal and various clinical populations such as Attention Deficit
-            Disorder ADD), Attention Deficit Hyperactivity Disorder, Alzheimer’s disease, Post Traumatic Stress
-            Disorder to name a few.
+                             Card sorting tests measure cognitive flexibility by assessing the test taker’s
+                                 ability to switch a response strategy when the rules for responding along a dimension change
+                                 (e.g., size, location, etc.). These tests allow mental health professionals to assess 
+                                planning strategy, inhibition of responding, shift strategy in response to performance 
+                                feedback, and working memory as reflected by holding task relevant information in conscious
+                                 awareness. 
                             </p>
                         </div>
                     </div>
@@ -128,13 +128,10 @@
                         <div id="collapse3" class=" collapse col-md-12">
                             <h3>Description</h3>
                             <p>
-                                The TMT and its several variants require the Participant to, in the correct order, link together an array 
-            of objects that are labeled in a way indicating a specific order (e.g., numerical, alphabetical). Part A of 
-            the TMT contains an array of 25 circles containing the numbers 1 to 25. By clicking the numbered bubbles, 
-            the test-taker creates a line from the circle containing the number 1 to the circle containing the number 
-            2 and then to the circle containing the number 3 and so on until he/she reaches the circle containing the 
-            number 25. In Part B the test-taker is required to alternate between numbers and letters (e.g., the sequence 
-            of 1, A, 2, B, 3, C,…)
+    In normal individuals, the task is a measure of cognitive flexibility.
+                                 We provide several normed response parameters for individuals from 5 to 89 years of age.
+                                 Results from the CogQuiz card sorting tests administered alone or without input or supervision 
+                                from a licensed mental health specialist are not valid for assessing brain or cognitive function.
                             </p>
                         </div>
                     </div>
@@ -144,13 +141,10 @@
                         <div id="collapse4" class=" collapse col-md-12">
                             <h3>Research</h3>
                             <p>
-                                The TMT and its several variants require the Participant to, in the correct order, link together an array 
-            of objects that are labeled in a way indicating a specific order (e.g., numerical, alphabetical). Part A of 
-            the TMT contains an array of 25 circles containing the numbers 1 to 25. By clicking the numbered bubbles, 
-            the test-taker creates a line from the circle containing the number 1 to the circle containing the number 
-            2 and then to the circle containing the number 3 and so on until he/she reaches the circle containing the 
-            number 25. In Part B the test-taker is required to alternate between numbers and letters (e.g., the sequence 
-            of 1, A, 2, B, 3, C,…)
+                      Berg, E. A. (1948). A simple objective for measuring flexibility in thinking. Journal of General Psychology, 39, 15-22.
+Eling, P., Derckx, K., & Maes, R. (2008). On the historical and conceptual background of the Wisconsin Card Sorting Test. Brain and Cognition, 67, 247-253.
+Flashman, L. A., Horner, M. D., Freides, D. (1991). Note on scoring perseveration on the Wisconsin Card Sorting Test. The Clinical Neurologist, 5, 2, 190-194.
+Feldstein, S. N., Keller, F. R., Portman, R. E., Durham, R. L., Klebe, K. J., Davis, H. P. (1999). A comparison of computerized and standard versions of the Wisconsin Card Sorting Test. The Clinical Neurologist, 13, 3, 303-313
                             </p>
                         </div>
                     </div>

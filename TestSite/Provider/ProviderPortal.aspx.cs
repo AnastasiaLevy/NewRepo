@@ -329,5 +329,10 @@ namespace TestSite.Provider
            //     DAL.DataMethods.SetAllowUserViewResults(ViewState["tUserId"].ToString(), false);
            // }
         }
+
+        protected void btnModifyTest_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../Create/LondonModify.aspx");
+        }
     }
 } 

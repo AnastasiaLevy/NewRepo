@@ -16,6 +16,7 @@ var text = [" See these two boards? They are both alike.",
     "the trial ends and the new problem is presented. Click here to start."].join("");
 
 function startGame(gameNum) { //change back w/o s to use
+ 
     hideFinalMessage();
     nm = 0;
     nmWr = 0;
@@ -34,7 +35,7 @@ function startGame(gameNum) { //change back w/o s to use
     }
     
     initField();
-    showImage(gameNum);
+    showImage(gameNum, gameData);
     game = gameNum;   
 }
 
@@ -204,6 +205,47 @@ function finishGame(needMoves) {
   
 }
 
+function getMatchPos (pos, color)
+{
+    if (pos == "p1")
+    {
+        if (p1 != null && p1.id == color)
+            return true;
+        else
+            return false;
+    }
+    if (pos == "p2") {
+        if (p2 != null && p2.id == color)
+            return true;
+        else
+            return false;
+    }
+    if (pos == "p3") {
+        if (p3 != null && p3.id == color)
+            return true;
+        else
+            return false;
+    }
+    if (pos == "p4") {
+        if (p4 != null && p4.id == color)
+            return true;
+        else
+            return false;
+    }
+    if (pos == "p5") {
+        if (p5 != null && p5.id == color)
+            return true;
+        else
+            return false;
+    }
+    if (pos == "p6") {
+        if (p6 != null && p6.id == color)
+            return true;
+        else
+            return false;
+    }
+}
+
 function checkPos(out) {
    
     if (nm == 20) {
@@ -216,119 +258,135 @@ function checkPos(out) {
             initTTime = new Date() - time;
         }
     }
+    var finishPos = JSON.parse(gameData.d[game - 1].RoundFinish);
+    var numMoves = JSON.parse(gameData.d[game - 1].NumberOfMoves);
+    var red = finishPos.red;
+    var blue = finishPos.blue;
+    var green = finishPos.green;
 
-    if (game == 1) {
-        if (p5 != null && p5.id == "blue" &&
-            p3 != null && p3.id == "green" &&
-            p6 != null && p6.id == "red") {
+    if (getMatchPos(finishPos.red, "red")
+        &&
+        getMatchPos(finishPos.blue, "blue")
+        &&
+        getMatchPos(finishPos.green, "green"))
+    {
+        alert("match");
+        finishGame(numMoves);
+    }
 
-            finishGame(1);
+
+    //if (game == 1) {
+    //    if (p5 != null && p5.id == "blue" &&
+    //        p3 != null && p3.id == "green" &&
+    //        p6 != null && p6.id == "red") {
+
+    //        finishGame(1);
             
-        }
-    }
-    else if (game == 2) {
-        if (p5 != null && p5.id == "red" &&
-            p3 != null && p3.id == "green" &&
-            p6 != null && p6.id == "blue") {
+    //    }
+    //}
+    //else if (game == 2) {
+    //    if (p5 != null && p5.id == "red" &&
+    //        p3 != null && p3.id == "green" &&
+    //        p6 != null && p6.id == "blue") {
 
-            finishGame(2);
-        }
-    }
-    else if (game == 3) {
-        if (p6 != null && p6.id == "red" &&
-            p3 != null && p3.id == "green" &&
-            p2 != null && p2.id == "blue") {
+    //        finishGame(2);
+    //    }
+    //}
+    //else if (game == 3) {
+    //    if (p6 != null && p6.id == "red" &&
+    //        p3 != null && p3.id == "green" &&
+    //        p2 != null && p2.id == "blue") {
 
-            finishGame(2);
-        }
-    }
-    else if (game == 4) {
-        if (p5 != null && p5.id == "red" &&
-            p4 != null && p4.id == "green" &&
-            p3 != null && p3.id == "blue") {
+    //        finishGame(2);
+    //    }
+    //}
+    //else if (game == 4) {
+    //    if (p5 != null && p5.id == "red" &&
+    //        p4 != null && p4.id == "green" &&
+    //        p3 != null && p3.id == "blue") {
 
-            finishGame(4);
-        }
-    }
-    else if (game == 5) {
-        if (p5 != null && p5.id == "red" &&
-            p6 != null && p6.id == "green" &&
-            p4 != null && p4.id == "blue") {
+    //        finishGame(4);
+    //    }
+    //}
+    //else if (game == 5) {
+    //    if (p5 != null && p5.id == "red" &&
+    //        p6 != null && p6.id == "green" &&
+    //        p4 != null && p4.id == "blue") {
 
-            finishGame(4);
-        }
-    }
-    else if (game == 6) {
-        if (p5 != null && p5.id == "red" &&
-            p3 != null && p3.id == "blue" &&
-            p2 != null && p2.id == "green") {
+    //        finishGame(4);
+    //    }
+    //}
+    //else if (game == 6) {
+    //    if (p5 != null && p5.id == "red" &&
+    //        p3 != null && p3.id == "blue" &&
+    //        p2 != null && p2.id == "green") {
 
-            finishGame(5);
-        }
-    }
-    else if (game == 7) {
-        if (p5 != null && p5.id == "red" &&
-         p6 != null && p6.id == "green" &&
-         p3 != null && p3.id == "blue") {
+    //        finishGame(5);
+    //    }
+    //}
+    //else if (game == 7) {
+    //    if (p5 != null && p5.id == "red" &&
+    //     p6 != null && p6.id == "green" &&
+    //     p3 != null && p3.id == "blue") {
 
-            finishGame(5);
+    //        finishGame(5);
  
-        }
-    }
-    else if (game == 8) {
-        if (p3 != null && p3.id == "red" &&
-         p2 != null && p2.id == "green" &&
-         p6 != null && p6.id == "blue") {
+    //    }
+    //}
+    //else if (game == 8) {
+    //    if (p3 != null && p3.id == "red" &&
+    //     p2 != null && p2.id == "green" &&
+    //     p6 != null && p6.id == "blue") {
 
-            finishGame(5);
+    //        finishGame(5);
 
-        }
-    }
-    else if (game == 9) {
-        if (p1 != null && p1.id == "red" &&
-         p2 != null && p2.id == "green" &&
-         p3 != null && p3.id == "blue") {
+    //    }
+    //}
+    //else if (game == 9) {
+    //    if (p1 != null && p1.id == "red" &&
+    //     p2 != null && p2.id == "green" &&
+    //     p3 != null && p3.id == "blue") {
 
-            finishGame(6);
+    //        finishGame(6);
 
-        }
-    }
-    else if (game == 10) {
-        if (p2 != null && p2.id == "red" &&
-         p3 != null && p3.id == "blue" &&
-         p6 != null && p6.id == "green") {
+    //    }
+    //}
+    //else if (game == 10) {
+    //    if (p2 != null && p2.id == "red" &&
+    //     p3 != null && p3.id == "blue" &&
+    //     p6 != null && p6.id == "green") {
 
-            finishGame(6);
+    //        finishGame(6);
 
-        }
-    }
-    else if (game == 11) {
-        if (p6 != null && p6.id == "red" &&
-         p2 != null && p2.id == "green" &&
-         p3 != null && p3.id == "blue") {
+    //    }
+    //}
+    //else if (game == 11) {
+    //    if (p6 != null && p6.id == "red" &&
+    //     p2 != null && p2.id == "green" &&
+    //     p3 != null && p3.id == "blue") {
 
-            finishGame(6);
+    //        finishGame(6);
 
-        }
-    }
-    else if (game == 12) {
-        if (p2 != null && p2.id == "red" &&
-            p1 != null && p1.id == "green" &&
-            p3 != null && p3.id == "blue") {
+    //    }
+    //}
+    //else if (game == 12) {
+    //    if (p2 != null && p2.id == "red" &&
+    //        p1 != null && p1.id == "green" &&
+    //        p3 != null && p3.id == "blue") {
 
-            finishGame(7);
+    //        finishGame(7);
 
-        }
-    }
-    else if (game == 13) {
-        if (p2 != null && p2.id == "red" &&
-         p5 != null && p5.id == "green" &&
-         p3 != null && p3.id == "blue") {
+    //    }
+    //}
+    //else if (game == 13) {
+    //    if (p2 != null && p2.id == "red" &&
+    //     p5 != null && p5.id == "green" &&
+    //     p3 != null && p3.id == "blue") {
 
-            finishGame(7);
+    //        finishGame(7);
            
-        }
-    }
+    //    }
+    //}
 };
 
 function getTime() {

@@ -2,7 +2,7 @@ var gameCanvas;
 var ctx;
 var canvasWidth = 1000;
 var canvasHeight = 700;
-var btnExecuteTest, btnFullScreenOn, btnFullScreenClose;
+var btnExecuteTest, btnFullScreenOn, btnFullScreenClose, btnTestFinished;
 var currentTest;
 var currentTask;
 var testState; // 1 - Execute Test; 2 - Intro wait space; 3 - Test waiting answer; 4 - Test get answer; 5 - Test finished;
@@ -26,6 +26,10 @@ function init()
     
     btnExecuteTest = document.getElementById( "executeTest" );
     btnExecuteTest.onclick = function() { executeTestDown( 1 ); };
+
+    btnTestFinished = document.getElementById( "testFinished");
+    btnTestFinished.onclick = function() {goToResults()};
+    btnTestFinished.style.visibility = "hidden";
     
     testUpdate = new updateManager();
     currentScore = new scoreManager();
@@ -63,23 +67,66 @@ function showMessage()
 }
 
 function showResult() 
-{
-    drawTableResult();
-    drawTableLabel();
-    ctx.font = "bold 20px arial";
-    ctx.fillStyle = "#000";
+{   var array = {
+    round: "",
+    correctRespCount: 0,
+    incorrectRespCount: 0,
+    avrRespTime:0, 
+    totalTime : 0
+}
+    //drawTableResult();
+    //drawTableLabel();
+    //ctx.font = "bold 20px arial";
+    //ctx.fillStyle = "#000";
     for ( var n = 0; n < currentScore.scoreArray.length; n++ )
     {
-        for ( var i = 0; i < currentScore.scoreArray[n].length; i++ )
-        {
-            ctx.fillText( currentScore.scoreArray[n][i], 170 + rectangleResultMessage[0] + i * 188, 200 + ( 416 / ( taskTests.length + 1 ) ) * ( n + 1 ) );
-           
+        array.round = n;
+        array.correctRespCount = currentScore.scoreArray[n][0];
+        array.incorrectRespCount = currentScore.scoreArray[n][1];
+        array.avrRespTime = currentScore.scoreArray[n][2];
+        insertRow(array);
+        btnTestFinished.style.visibility = "visible";
+
+      
+        //for ( var i = 0; i < currentScore.scoreArray[n].length; i++ )
+        //{
+        //    ctx.fillText( currentScore.scoreArray[n][i], 170 + rectangleResultMessage[0] + i * 188, 200 + ( 416 / ( taskTests.length + 1 ) ) * ( n + 1 ) );
+            
+        //}
+    }
+    //for ( var i = 0; i < currentScore.totalScoreArray.length; i++ )
+    //{
+    //    ctx.fillText( currentScore.totalScoreArray[i], 170 + rectangleResultMessage[0] + i * 188, 200 + ( 416 / ( taskTests.length + 1 ) ) * ( currentScore.scoreArray.length + 1 ) );
+    //}
+}
+
+function goToResults()
+{
+    var userId = document.getElementById("userId").value;
+    var tId = document.getElementById("tId").value;
+    window.location.href = "../ResultsPage.aspx?userId=" + userId + "&tid=" + tId + "&test=6";
+}
+function insertRow(array)
+{
+    var data = {
+        round: array.round,
+        correctRespCount: array.correctRespCount, 
+        incorrectRespCount: array.incorrectRespCount ,
+        avgRespTime : array.avrRespTime  / 1000 
+    }
+    jQuery.ajax({
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        url: 'StroopPage.aspx/SaveStroopString',
+        dataType: 'json',
+        data: JSON.stringify(data),
+        type: 'POST',
+        success: function (resp) {
+        },
+        error: function (resp) {
+            alert("The results were not saved correctly");
         }
-    }
-    for ( var i = 0; i < currentScore.totalScoreArray.length; i++ )
-    {
-        ctx.fillText( currentScore.totalScoreArray[i], 170 + rectangleResultMessage[0] + i * 188, 200 + ( 416 / ( taskTests.length + 1 ) ) * ( currentScore.scoreArray.length + 1 ) );
-    }
+    });
 }
 
 function drawTableLabel() 
@@ -605,6 +652,10 @@ window.onresize = function()
     
     btnExecuteTest.style.left = leftOffset + canvasWidth / 2 - btnExecuteTest.offsetWidth / 2 + "px";
     btnExecuteTest.style.top = topOffset + canvasHeight / 2 - btnExecuteTest.offsetHeight / 2 + "px";
+
+    btnTestFinished.style.left = leftOffset + canvasWidth / 2 - btnTestFinished.offsetWidth / 2 + "px";
+    btnTestFinished.style.top = topOffset + canvasHeight / 2 - btnTestFinished.offsetHeight / 2 + "px";
+ 
 }
 
 var loopManager = function()

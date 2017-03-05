@@ -62,7 +62,7 @@
                                             <label class="sr-only" for="form-password">Password</label>
                                             <input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="userPwLg" required runat="server">
                                         </div>
-                                        <asp:LinkButton class="btn button" type="submit" runat="server" OnClick="clcLogin">Login</asp:LinkButton>
+                                        <asp:LinkButton class="btn btn-success" type="submit" runat="server" OnClick="clcLogin">Login</asp:LinkButton>
                                         <%--<button type="submit" class="btn">Login</button>--%>
                                     </div>
                                 </div>
@@ -114,7 +114,7 @@
                                         <label class="sr-only" for="s_confPw"">Confirm Password</label>
                                             <asp:TextBox ID="s_confPw" name="s_confPw" runat="server" TextMode="Password" placeholder="confirm password" class="form-email form-control"></asp:TextBox>
                                         </div>
-                                       <asp:LinkButton ID="regSingle" runat="server" class="btn" OnClick="Register_Single">REGISTER</asp:LinkButton>
+                                       <asp:LinkButton ID="regSingle" runat="server" class="btn btn-success" OnClick="Register_Single">REGISTER</asp:LinkButton>
                                     </div>
                                 </div>
                             </div>

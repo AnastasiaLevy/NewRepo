@@ -59,7 +59,7 @@ namespace TestSite.HelpClasses
             {
                 return 8;
             }
-            else if (age >= 80 && age <= 89)
+            else if (age >= 80 && age <= 150)
             {
                 return 9;
             }
@@ -90,8 +90,8 @@ namespace TestSite.HelpClasses
                 //Main
                 case "5":
                     return @"Tests\SyllogWrapper.aspx";
-                //case "6":
-                //    return @"Tests\StroopPage.aspx";
+                case "6":
+                    return @"Tests\StroopPage.aspx";
                 default:
                     return @"\MainPage.aspx";
             }

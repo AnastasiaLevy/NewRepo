@@ -59,8 +59,17 @@ namespace TestSite
             int factor;
             textStr.Text = "";
 
+            if (test == "6" || test == "Stroop")
+            {
+                dt = DataMethods.GetStroopResults(tId);
+                GridView stroopResults = new GridView();
+                stroopResults.DataSource = dt;
+                stroopResults.DataBind();
+                SetGvProperties(stroopResults);
+                pResultPanel.Controls.Add(stroopResults);
+            }
 
-            if (test == "4" || test == "Nback")
+            else if (test == "4" || test == "Nback")
             {
                 decimal mean;
                 decimal std;

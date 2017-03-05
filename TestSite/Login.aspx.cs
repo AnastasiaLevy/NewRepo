@@ -58,12 +58,26 @@ namespace TestSite
 
         protected void Register_Single(object sender, EventArgs e)
         {
-
-            if (Membership.ValidateUser(singleName.Value, singlePw.Text))
+            MembershipUser user;
+            user = Membership.GetUser(singleName.Value);//Membership.ValidateUser(singleName.Value, singlePw.Text)
+            string str = Membership.GetUserNameByEmail(single_email.Value);
+            if (user != null)
+            {
                 wrong.Text = "This username is already taken.";
+            }
+            else if (String.IsNullOrEmpty(str))
+            {
+                wrong.Text = "This email is already taken.";
+            }
+            
             else
             {
-                MembershipUser user = Membership.CreateUser(singleName.Value, singlePw.Text, single_email.Value);//if (Membership.ValidateUser(singleName.Value, singlePw.Text))
+                try { 
+                 user = Membership.CreateUser(singleName.Value, singlePw.Text, single_email.Value);//if (Membership.ValidateUser(singleName.Value, singlePw.Text))
+                }catch (Exception ex)
+                {
+                    DAL.DataMethods.InsertErrorMessage(ex.Message, singleName.Value, "Login");
+                }
 
                 if (user != null)
                 {

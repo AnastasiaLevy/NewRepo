@@ -7,64 +7,37 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TestSite {
+namespace TestSite.Create {
     
     
-    public partial class MainPage {
+    public partial class LondonModify {
         
         /// <summary>
-        /// profOpt control.
+        /// CheckBox1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl profOpt;
+        protected global::System.Web.UI.WebControls.CheckBox CheckBox1;
         
         /// <summary>
-        /// login control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl login;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// logOut control.
+        /// ddlPractice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton logOut;
-        
-        /// <summary>
-        /// contactError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl contactError;
-        
-        /// <summary>
-        /// name control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label name;
-        
-        /// <summary>
-        /// emailName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText emailName;
+        protected global::System.Web.UI.WebControls.DropDownList ddlPractice;
         
         /// <summary>
         /// Label2 control.
@@ -76,13 +49,13 @@ namespace TestSite {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// emailFrom control.
+        /// ddlNumberGames control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText emailFrom;
+        protected global::System.Web.UI.WebControls.DropDownList ddlNumberGames;
         
         /// <summary>
         /// Label3 control.
@@ -94,12 +67,21 @@ namespace TestSite {
         protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// emailText control.
+        /// ddlConuntFromRound control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea emailText;
+        protected global::System.Web.UI.WebControls.DropDownList ddlConuntFromRound;
+        
+        /// <summary>
+        /// LondonModifyPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::TestSite.UserControls.LondonModifyPanel LondonModifyPanel;
     }
 }

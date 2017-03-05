@@ -78,7 +78,7 @@
 
             </div>
            
-            <asp:Button runat="server" class="signup-btn" ID="btnPrint" Text="Print" OnClientClick="javascript:window.print();"/>
+            <asp:Button runat="server" class="btn btn-success" ID="btnPrint" Text="Print" OnClientClick="javascript:window.print();"/>
         </section>
         
  

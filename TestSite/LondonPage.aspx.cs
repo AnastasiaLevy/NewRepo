@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Web;
+using System.Web.Script.Services;
 using System.Web.Security;
 using System.Web.Services;
 using System.Web.UI;
@@ -18,10 +20,12 @@ namespace TestSite
         protected static string _userId;
         protected static int _userTestId;
         protected static List<LondonResults> res;
+        protected static string _testName;
         protected void Page_Load(object sender, EventArgs e)
         {
 
             _userTestId = (int)Session["userTestId"];
+            _testName = Session["testName"].ToString();
             _user = Membership.GetUser(User.Identity.Name);
             _userId = _user.ProviderUserKey.ToString();
             userId.Text = _userId.ToString();
@@ -49,11 +53,36 @@ namespace TestSite
         {
                DataMethods.UpdateTestFinished(_userId, _userTestId);
         }
-
+       
         [WebMethod]
-        public static void RedirectToResults()
+        [ScriptMethod(UseHttpGet = true)]
+        public static List<LondonMoves> GetLondonValues()
         {
-          
-        }
+            DataTable dt = DataMethods.GetLondonMoves(_testName); 
+             LondonMoves lm = new LondonMoves();
+            var oSerializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+            List<LondonMoves> listMoves = new List<LondonMoves>();
+            foreach(DataRow dr in dt.Rows)
+            {
+                listMoves.Add(new LondonMoves
+                {
+                    GameRound = Convert.ToInt32(dr["round"]),
+                    RoundStart = dr["roundValues"].ToString(),
+                    RoundFinish = dr["roundFinish"].ToString(),
+                    NumberOfMoves = Convert.ToInt32(dr["numMoves"]),
+
+                });
+            }
+
+            return listMoves;
+        } 
+    }
+
+    public class LondonMoves
+    {
+        public int GameRound { get; set; }
+        public string RoundStart { get; set; }
+        public string RoundFinish { get; set; }
+        public int NumberOfMoves { get; set; }
     }
 }

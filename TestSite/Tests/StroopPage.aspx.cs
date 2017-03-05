@@ -27,10 +27,20 @@ namespace TestSite.Tests
         }
 
         [WebMethod]
-        public static void SaveHTMLstring(string html)
+        public static void SaveStroopString(
+  
+            string round,
+            string correctRespCount,
+            string incorrectRespCount,
+            string avgRespTime
+            )
         {
-            DataMethods.InsertCardSortTable(html, _userTestId);
+            DataMethods.InsertStroopResult(_userId, _userTestId, round, Convert.ToInt32(correctRespCount), Convert.ToInt32(incorrectRespCount), Convert.ToDecimal(avgRespTime));
+            if (round == "3")
+            {
+                DataMethods.UpdateTestFinished(_userId, _userTestId);
 
+            }
         }
     }
 }

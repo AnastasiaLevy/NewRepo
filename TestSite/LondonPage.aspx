@@ -36,17 +36,10 @@
 </body>
 
 </html>
+
 <script>
-</script>
-<script src="js/tower/londonInit.js"></script>
-<script src="js/tower/moves.js"></script>
-<script src="js/tower/blueBall.js"></script>
-<script src="js/tower/greenBall.js"></script>
-<script src="js/tower/redBall.js"></script>
-<script src="js/tower/pegs.js"></script>
-<script src="js/tower/images.js"></script>
-<script src="js/tower/gameCode.js"></script>
-<script type="text/javascript">
+
+
     var game = 0;
     var canMove = false;
     var nm = 0;
@@ -55,8 +48,39 @@
     var totalTime;
     var initTTime;
     var gameTimer;
-    startGame(1, 1);
+    var speed = 450;
+    var gameData;
+   </script>
+   <script src="js/tower/londonInit.js"></script>
+<script src="js/tower/moves.js"></script>
+<script src="js/tower/blueBall.js"></script>
+<script src="js/tower/greenBall.js"></script>
+<script src="js/tower/redBall.js"></script>
+<script src="js/tower/pegs.js"></script>
+<script src="js/tower/images.js"></script>
+<script src="js/tower/gameCode.js"></script>
+<script type="text/javascript"></script>
+
+<script>
+    jQuery.ajax({
+        contentType: "application/json; charset=utf-8",
+        url: 'LondonPage.aspx/GetLondonValues',
+        dataType: 'json',
+       
+        type: 'GET',
+        success: function (resp) {
+
+            gameData = resp;
+            startGame(1);
+
+        },
+        error: function (resp) {
+            alert("Could not load the correct test");
+        }
+    });
+ </script>  
 
 
 
-</script>
+
+

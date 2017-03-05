@@ -48,7 +48,54 @@ namespace TestSite.DAL
 
         }
 
+        internal static void SaveUserMessage(string txtNameFrom, string txtEmailFrom, string txtMessage)
+        {
+            {
+                SqlConnection conn = new SqlConnection(connectionSring);
+                SqlCommand cmd = new SqlCommand("InsertUserMessage", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@firstName", txtNameFrom);
+                cmd.Parameters.AddWithValue("@email", txtEmailFrom);
+                cmd.Parameters.AddWithValue("@textMessage", txtMessage);
 
+                try
+                {
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    InsertErrorMessage(ex.ToString(), null, null, "SaveUserMessage");
+                    throw new Exception("Execption SaveUserMessage" + ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+
+        internal static DataTable GetLondonMoves(string testName)
+        {
+            DataTable dt = new DataTable();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("SelectLondonMoves", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@testName", testName);
+
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                adp.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                InsertErrorMessage(ex.ToString(), null, null, "GetLondonMoves");
+                throw new Exception("Execption getting London Moves. " + ex.Message);
+            }
+
+            return dt;
+        }
         internal static DataSet GetNbackNorms(int ageGroup)
         {
             DataSet ds = new DataSet();
@@ -66,6 +113,28 @@ namespace TestSite.DAL
             {
                 InsertErrorMessage(ex.ToString(), null, null, "GetNbackNorms");
                 throw new Exception("Execption getting All Provider Participants. " + ex.Message);
+            }
+
+            return ds;
+        }
+
+        internal static DataTable GetStroopResults(int tId)
+        {
+            DataTable ds = new DataTable();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("SelectStroopResults", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@tId", tId);
+
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                adp.Fill(ds);
+            }
+            catch (Exception ex)
+            {
+                InsertErrorMessage(ex.ToString(), null, null, "GetStroopResults");
+                throw new Exception("Execption getting GetStroopResults. " + ex.Message);
             }
 
             return ds;
@@ -1438,7 +1507,42 @@ namespace TestSite.DAL
 
         }
 
+        public static void InsertStroopResult(
+            string  userId,
+            int testId,
+            string round,
+            int correctRespCount,
+            int incorrectRespCount,
+            decimal avgRespTime
+            )
+        {
 
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("InserStroopResult", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@userId", userId);
+            cmd.Parameters.AddWithValue("@testId", testId);
+            cmd.Parameters.AddWithValue("@round", round);
+            cmd.Parameters.AddWithValue("@correctRespCount", correctRespCount);
+            cmd.Parameters.AddWithValue("@incorrectRespCount", incorrectRespCount);
+            cmd.Parameters.AddWithValue("@avgRespTime", avgRespTime);
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                InsertErrorMessage(ex.ToString(), null, null, "InserStroopResult");
+                throw new Exception("Execption in InserStroopResult: " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+        }
 
         public static void UpdateTestStart(int userTestId)
         {

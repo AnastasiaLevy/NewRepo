@@ -42,9 +42,21 @@ namespace TestSite
 
         protected void clcSendButton(object sender, EventArgs e)
         {
-            //     string txtNameFrom = emailName.Value;
-            //     string txtEmailFrom = emailFrom.Value;
-            //     string txtMessage = emailText.Value;
+                 string txtNameFrom = emailName.Value;
+                 string txtEmailFrom = emailFrom.Value;
+                 string txtMessage = emailText.Value;
+            try {
+                DAL.DataMethods.SaveUserMessage(txtNameFrom, txtEmailFrom, txtMessage);
+                contactError.InnerText = "Thak you. We will be in touch next business day.";
+               
+            }catch (Exception ex)
+            {
+                contactError.InnerText = "There was error sending you message. Please try again later.";
+            }
+            txtEmailFrom = "";
+            txtMessage = "";
+            txtNameFrom = "";
+            contactError.Focus();
 
             //MailMessage mailObj = new MailMessage(
             //     "analescheok@hotmail.com", "analescheok@gmail.com", "hello", "text");
@@ -52,14 +64,14 @@ namespace TestSite
             //SMTPServer.Port = 587;
             //SMTPServer.EnableSsl = true;
             //new System.Net.NetworkCredential("analescheok@gmail.com", "Ana9487LA");
-            using (SmtpClient client = new SmtpClient("localhost", 25))
-            {
-                client.EnableSsl = true;
-                MailMessage mail = new MailMessage("analescheok@hotmail.com", "support@cogquiz.com");
-                mail.Subject = "this is a test email.";
-                mail.Body = "this is my test email body";
-                client.Send(mail);
-            }
+            //using (SmtpClient client = new SmtpClient("localhost", 25))
+            //{
+            //    client.EnableSsl = true;
+            //    MailMessage mail = new MailMessage("analescheok@hotmail.com", "support@cogquiz.com");
+            //    mail.Subject = "this is a test email.";
+            //    mail.Body = "this is my test email body";
+            //    client.Send(mail);
+            //}
         }
     }
 }

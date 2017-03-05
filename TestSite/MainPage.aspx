@@ -413,7 +413,7 @@
                                     <a href="">View more</a>
                                 </figcaption>
                             </figure>
-                            <p class="text-center">Powerful and flexible descktop version of Tower of London test.</p>
+                            <p class="text-center">Powerful and flexible desktop version of Tower of London test.</p>
                     
                         </div>
                         <div class="col-md-4 col-sm-12 col-xs-12 portfolio-item">
@@ -424,7 +424,7 @@
                                     <a href="">View more</a>
                                 </figcaption>
                             </figure>
-                            <p class="text-center">Descktop version of Tower of Hanoi test.</p>
+                            <p class="text-center">Desktop version of Tower of Hanoi test.</p>
  
                         </div>
                     </div>
@@ -435,18 +435,20 @@
 
 
 
-  <%--      <section id="contact">
-            <div class="container">
+       <section id="contact">
+            <div class="container" style ="height:300px">
+                <h4 id ="contactError" runat="server"></h4>
                 <asp:Label class="label" ID="name" runat="server" Text="Your Name:"></asp:Label>
                 <input id="emailName" class="email" type="text" runat="server" />
                 <asp:Label class="label" ID="Label2" runat="server" Text="Your Email:"></asp:Label>
                 <input id="emailFrom" class="email" type="text" runat="server" />
                 <asp:Label class="label" ID="Label3" runat="server" Text="Message:"></asp:Label>
                 <textarea id="emailText" class="email" cols="20" rows="5" runat="server"></textarea>
-                <asp:LinkButton class="blue link btn" type="submit" runat="server" OnClick="clcSendButton">Send Email</asp:LinkButton>
+               
+                <asp:LinkButton class="bnt btn-sm btn-success" type="submit" runat="server" OnClick="clcSendButton">Send Email</asp:LinkButton>
 
             </div>
-        </section>--%>
+        </section>
 
 
 <%--        <section id="meet-team">

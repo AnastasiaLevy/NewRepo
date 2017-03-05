@@ -84,6 +84,7 @@
                               <asp:Button ID="btnUpdateProfile" runat="server" Text="profile"  class="btn btn-labeled btn-info" width =" 100%" OnClick ="btnUpdateProfile_Click"/>
                               <asp:Button ID="btnAddNewPart" runat="server" Text="Add New Participant" OnClick="btnAddNewPart_Click" class="btn btn-labeled btn-info" width="100%"/>
                               <asp:Button ID="btnAddUserTest" runat="server" Text="Assign Participant Test" onClick="btnAddUserTest_Click" class="btn btn-labeled btn-info" width="100%"/>
+                            <asp:Button ID="btnModifyTest" runat="server" Text="Modify Test" onClick="btnModifyTest_Click" class="btn btn-labeled btn-info" width="100%"/>
                         </div>
                         <div class="col-lg-8" >
                           
