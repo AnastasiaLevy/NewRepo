@@ -141,7 +141,7 @@
 
     </script>
 
-    <script>
+<%--    <script>
         function gallery() { };
 
         var $itemsHolder = $('ul.port2');
@@ -160,6 +160,6 @@
         });
 
         $(document).ready(gallery);
-    </script>
+    </script>--%>
 </body>
 </html>

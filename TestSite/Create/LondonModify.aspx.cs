@@ -11,15 +11,18 @@ namespace TestSite.Create
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack) { 
             ddlPractice.DataSource = Enumerable.Range(1, 3);
             ddlPractice.DataBind();
 
             ddlNumberGames.DataSource = Enumerable.Range(1, 13);
             ddlNumberGames.DataBind();
 
-            ddlConuntFromRound.DataSource = Enumerable.Range(1, 4);
+            ddlConuntFromRound.DataSource = Enumerable.Range(1,3);
             ddlConuntFromRound.DataBind();
+
+            }
         }
+
     }
 }

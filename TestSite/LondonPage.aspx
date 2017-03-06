@@ -30,8 +30,8 @@
 
     </div>
     <form runat="server">
-    <asp:TextBox ID="userId" runat="server" hidden="true"></asp:TextBox>
-    <asp:TextBox ID="tId" runat="server" hidden="true"></asp:TextBox>
+        <asp:TextBox ID="userId" runat="server" hidden="true"></asp:TextBox>
+        <asp:TextBox ID="tId" runat="server" hidden="true"></asp:TextBox>
     </form>
 </body>
 
@@ -50,8 +50,8 @@
     var gameTimer;
     var speed = 450;
     var gameData;
-   </script>
-   <script src="js/tower/londonInit.js"></script>
+</script>
+<script src="js/tower/londonInit.js"></script>
 <script src="js/tower/moves.js"></script>
 <script src="js/tower/blueBall.js"></script>
 <script src="js/tower/greenBall.js"></script>
@@ -66,7 +66,7 @@
         contentType: "application/json; charset=utf-8",
         url: 'LondonPage.aspx/GetLondonValues',
         dataType: 'json',
-       
+
         type: 'GET',
         success: function (resp) {
 
@@ -75,10 +75,10 @@
 
         },
         error: function (resp) {
-            alert("Could not load the correct test");
+            alert("Could not load the correct test. Please try again later.");
         }
     });
- </script>  
+ </script>
 
 
 
