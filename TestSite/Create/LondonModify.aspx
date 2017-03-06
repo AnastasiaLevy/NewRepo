@@ -92,16 +92,30 @@
                     </h2>
                     <hr />
                 </div>
-                <div class="col-md-6 col-sm-12 workArea" id="start">
-                </div>
-                <div class="col-md-6  workArea" id="end">
-                </div>
-                <div id="colors" class="col-lg-12">
 
+                <div class="col-md-5 col-sm-12 workArea" id="start">
+                
+                  
+                </div>
+                <div class='col-md-1'>
                     <input id="colorBlue" class="col-lg-1 btn btn-labeled btn-primary" type="button" />
                     <input id="colorGreen" class=" col-lg-1 btn btn-labeled btn-success" type="button" />
                     <input id="colorRed" class=" col-lg-1 btn btn-labeled btn-danger" type="button" />
                 </div>
+                <div class="col-md-5  workArea" id="end">
+                </div>
+                <div id="colors" class="col-lg-1">
+
+<%--                <input id="colorBlue" class="col-lg-1 btn btn-labeled btn-primary" type="button" />
+                    <input id="colorGreen" class=" col-lg-1 btn btn-labeled btn-success" type="button" />
+                    <input id="colorRed" class=" col-lg-1 btn btn-labeled btn-danger" type="button" />--%>
+                </div>
+                    <div class='col-md-1'>
+                    <input id="colorBlueR" class="col-lg-1 btn btn-labeled btn-primary" type="button" />
+                    <input id="colorGreenR" class=" col-lg-1 btn btn-labeled btn-success" type="button" />
+                    <input id="colorRedR" class=" col-lg-1 btn btn-labeled btn-danger" type="button" />
+                </div>
+                  <input id="save" class=" col-lg-1 btn btn-labeled btn-danger" type="button" value ="Save"/>
                 <div class="clearfix"></div>
             </div>
         </div>
@@ -131,18 +145,23 @@
         initField('start');
         initField('end');
         var array = [];
+        var arrayR = [];
         function data(id, value) {
             this.id = id
             this.color = value
         }
 
+        $('#save').click(function () {
 
+            alert(JSON.stringify(array));
+            alert(JSON.stringify(arrayR));
+        });
 
 
         function initField(div) {
 
             var paper = new Raphael(document.getElementById(div), paperWidth, paperHeight);
-
+         
             var p1x = 50;
             var p1y = 350;
             var p2x = 150;
@@ -173,48 +192,73 @@
             var c5 = makeBall(paper, p2x, p2y - r, r, color, "p5");
             var c6 = makeBall(paper, p3x, p3y - r, r, color, "p6");
 
+             selected = null;
+             selectedR = null;
 
             if (div == "start") {
-                var ps1 = paper.getById('p1-start');
+                ps1 = paper.getById('p1-start');
                 ps1.node.onclick = function () {
                     selected = ps1;
+                    selectedR = null;
+                    array = array.filter(function (el) {
+                        return el.id !== 'p1-start';
+                    });
                     deselectNode(ps1);
                     ps1.attr({ fill: color, "stroke-width": "3", stroke: 'blue' });
 
 
 
                 }
-                var ps2 = paper.getById('p2-start');
+                ps2 = paper.getById('p2-start');
                 ps2.node.onclick = function () {
                     selected = ps2;
-
+                    selectedR = null;
+                    array = array.filter(function (el) {
+                        return el.id !== 'p2-start';
+                    });
                     ps2.attr({ fill: color, "stroke-width": "3", stroke: 'blue' });
                     deselectNode(ps2);
 
                 }
-                var ps3 = paper.getById('p3-start');
+                ps3 = paper.getById('p3-start');
                 ps3.node.onclick = function () {
                     selected = ps3;
+                    selectedR = null;
+                    array = array.filter(function (el) {
+                        return el.id !== 'p3-start';
+                    });
                     ps3.attr({ fill: color, "stroke-width": "3", stroke: 'blue' });
                     deselectNode(ps3);
                 }
-                var ps4 = paper.getById('p4-start');
+                ps4 = paper.getById('p4-start');
                 ps4.node.onclick = function () {
                     selected = ps4;
+                    selectedR = null;
+                    array = array.filter(function (el) {
+                        return el.id !== 'p4-start';
+                    });
                     ps4.attr({ fill: color, "stroke-width": "3", stroke: 'blue' });
                     deselectNode(ps4);
 
                 }
-                var ps5 = paper.getById('p5-start');
+                ps5 = paper.getById('p5-start');
                 ps5.node.onclick = function () {
                     selected = ps5;
+                    selectedR = null;
+                    array = array.filter(function (el) {
+                        return el.id !== 'p5-start';
+                    });
                     ps5.attr({ fill: color, "stroke-width": "3", stroke: 'blue' });
                     deselectNode(ps5);
 
                 }
-                var ps6 = paper.getById('p6-start');
+                ps6 = paper.getById('p6-start');
                 ps6.node.onclick = function () {
                     selected = ps6;
+                    selectedR = null;
+                    array = array.filter(function (el) {
+                        return el.id !== 'p6-start';
+                    });
                     ps6.attr({ fill: color, "stroke-width": "3", stroke: 'blue' });
                     deselectNode(ps6);
 
@@ -222,54 +266,74 @@
             }
             else
             {
-                var pe1 = paper.getById('p1-end');
+                pe1 = paper.getById('p1-end');
                 pe1.node.onclick = function () {
-                    selected = pe1;
+                    selectedR = pe1;
+                    selected = null;
+                    arrayR = arrayR.filter(function (el) {
+                        return el.id !== 'p1-end';
+                    });
                     deselectNode(pe1);
                     pe1.attr({ fill: color, "stroke-width": "3", stroke: 'blue' });
 
 
 
                 }
-                var pe2 = paper.getById('p2-end');
+                pe2 = paper.getById('p2-end');
                 pe2.node.onclick = function () {
-                    selected = pe2;
-
+                    selectedR = pe2;
+                    selected = null;
+                    arrayR = arrayR.filter(function (el) {
+                        return el.id !== 'p2-end';
+                    });
                     pe2.attr({ fill: color, "stroke-width": "3", stroke: 'blue' });
                     deselectNode(pe2);
 
                 }
-                var pe3 = paper.getById('p3-end');
+                pe3 = paper.getById('p3-end');
                 pe3.node.onclick = function () {
-                    selected = pe3;
+                    selectedR = pe3;
+                    selected = null;
+                    arrayR = arrayR.filter(function (el) {
+                        return el.id !== 'p3-end';
+                    });
                     pe3.attr({ fill: color, "stroke-width": "3", stroke: 'blue' });
                     deselectNode(pe3);
                 }
-                var pe4 = paper.getById('p4-end');
+                pe4 = paper.getById('p4-end');
                 pe4.node.onclick = function () {
-                    selected = pe4;
+                    selectedR = pe4;
+                    selected = null;
+                    arrayR = arrayR.filter(function (el) {
+                        return el.id !== 'p4-end';
+                    });
                     pe4.attr({ fill: color, "stroke-width": "3", stroke: 'blue' });
                     deselectNode(pe4);
 
                 }
-                var pe5 = paper.getById('p5-end');
+                pe5 = paper.getById('p5-end');
                 pe5.node.onclick = function () {
-                    selected = pe5;
+                    selectedR = pe5;
+                    selected = null;
+                    arrayR = arrayR.filter(function (el) {
+                        return el.id !== 'p5-end';
+                    });
                     pe5.attr({ fill: color, "stroke-width": "3", stroke: 'blue' });
                     deselectNode(pe5);
 
                 }
-                var pe6 = paper.getById('p6-end');
+                pe6 = paper.getById('p6-end');
                 pe6.node.onclick = function () {
-                    selected = pe6;
+                    selectedR = pe6;
+                    selected = null;
+                    arrayR = arrayR.filter(function (el) {
+                        return el.id !== 'p6-end';
+                    });
                     pe6.attr({ fill: color, "stroke-width": "3", stroke: 'blue' });
                     deselectNode(pe6);
 
                 }
             }
-
-            var selected = null;
-         
 
             $('#colorRed').click(function () {
                 if (selected != null) {
@@ -277,7 +341,6 @@
                     var result = array.filter(function (obj) {
                         return obj.color == "red";
                     });
-
                     if (result.length != 0) {
                         array = array.filter(function (el) {
                             return el.id !== result[0].id;
@@ -285,10 +348,25 @@
                         p = paper.getById(result[0].id);
                         if (p.id != selected.id)
                         p.attr({ fill: "white", "stroke-width": "2", stroke: 'black' });
-
                     }
                   
                     array.push(new data (selected.id, "red"));
+                }
+                if (selectedR != null) {
+                    selectedR.attr({ fill: "red", "stroke-width": "2", stroke: 'black' });
+                    var result = arrayR.filter(function (obj) {
+                        return obj.color == "red";
+                    });
+                    if (result.length != 0) {
+                        arrayR = arrayR.filter(function (el) {
+                            return el.id !== result[0].id;
+                        });
+                        p = paper.getById(result[0].id);
+                        if (p.id != selectedR.id)
+                            p.attr({ fill: "white", "stroke-width": "2", stroke: 'black' });
+                    }
+
+                    arrayR.push(new data(selectedR.id, "red"));
                 }
 
 
@@ -311,6 +389,23 @@
                     }
                     array.push(new data(selected.id, "blue"));
                 }
+                if (selectedR != null) {
+                    selectedR.attr({ fill: "blue", "stroke-width": "2", stroke: 'black' });
+                    var result = arrayR.filter(function (obj) {
+                        return obj.color == "blue";
+                    });
+
+                    if (result.length != 0) {
+                        arrayR = arrayR.filter(function (el) {
+                            return el.id !== result[0].id;
+                        });
+                        p = paper.getById(result[0].id);
+                        if (p.id != selectedR.id)
+                            p.attr({ fill: "white", "stroke-width": "2", stroke: 'black' });
+
+                    }
+                    arrayR.push(new data(selectedR.id, "blue"));
+                }
             });
 
             $('#colorGreen').click(function () {
@@ -331,6 +426,23 @@
                     }
                     array.push(new data(selected.id, "green"));
                 }
+                if (selectedR != null) {
+                    selectedR.attr({ fill: "green", "stroke-width": "2", stroke: 'black' });
+                    var result = arrayR.filter(function (obj) {
+                        return obj.color == "green";
+                    });
+
+                    if (result.length != 0) {
+                        arrayR = arrayR.filter(function (el) {
+                            return el.id !== result[0].id;
+                        });
+                        p = paper.getById(result[0].id);
+                        if (p.id != selectedR.id)
+                            p.attr({ fill: "white", "stroke-width": "2", stroke: 'black' });
+
+                    }
+                    arrayR.push(new data(selectedR.id, "green"));
+                }
 
 
             });
@@ -338,19 +450,16 @@
             function deselectNode(node) {
                 if (ps1 != node) {
                     ps1.attr({ "stroke-width": "2", stroke: 'black' });
-                  
-            
+
                 }
                 if (ps2 != node)
                 {
-                
                     ps2.attr({ "stroke-width": "2", stroke: 'black' });
                 }
                     
 
                 if (ps3 != node)
                 {
-                  
                     ps3.attr({ "stroke-width": "2", stroke: 'black' });
                 }
                     
@@ -371,7 +480,33 @@
                   
                     ps6.attr({ "stroke-width": "2", stroke: 'black' });
                 }
-                   
+                if (pe1 != node) {
+                    pe1.attr({ "stroke-width": "2", stroke: 'black' });
+
+                }
+                if (pe2 != node) {
+                    pe2.attr({ "stroke-width": "2", stroke: 'black' });
+                }
+
+
+                if (pe3 != node) {
+                    pe3.attr({ "stroke-width": "2", stroke: 'black' });
+                }
+
+                if (pe4 != node) {
+
+                    pe4.attr({ "stroke-width": "2", stroke: 'black' });
+                }
+
+                if (pe5 != node) {
+
+                    pe5.attr({ "stroke-width": "2", stroke: 'black' });
+                }
+
+                if (pe6 != node) {
+
+                    pe6.attr({ "stroke-width": "2", stroke: 'black' });
+                }
 
             }
 
@@ -400,8 +535,6 @@
                 ball.node.onclick = function () {
 
                 }
-
-
 
                 return ball;
             }
