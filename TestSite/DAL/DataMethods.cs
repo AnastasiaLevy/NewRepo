@@ -432,6 +432,54 @@ namespace TestSite.DAL
             return ds;
         }
 
+        internal static int InsertLondonTestModify(
+            string testName,
+            string instructions,
+            bool txtToSpeech,
+            int prctRounds,
+            int testRounds,
+            int calcResFrom,
+            int timeOut,
+            int maxMoves,
+            bool showFeedback
+            )
+        {
+
+            object id = null;
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("InsertLondonModified", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@testName", testName);
+            cmd.Parameters.AddWithValue("@testInstructions", instructions);
+            cmd.Parameters.AddWithValue("@txtToSpeech", txtToSpeech);
+            cmd.Parameters.AddWithValue("@prctRounds", prctRounds);
+            cmd.Parameters.AddWithValue("@testRounds", testRounds);
+            cmd.Parameters.AddWithValue("@calcResFrom", calcResFrom);
+            cmd.Parameters.AddWithValue("@timeOut", timeOut);
+            cmd.Parameters.AddWithValue("@maxMoves", maxMoves);
+            cmd.Parameters.AddWithValue("@showFeedBack", showFeedback);
+            
+
+            try
+            {
+                conn.Open();
+                id = cmd.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                id = null; //throw new Exception("Execption checking ProviderIdAccount. " + ex.Message);
+                InsertErrorMessage(ex.ToString(), null, null, "GetUserViewResults");
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return id != null ? Int32.Parse(id.ToString()) : 0;
+
+        }
+
         internal static int GetUserViewResults(string userId)
         {
 
@@ -458,6 +506,43 @@ namespace TestSite.DAL
             }
 
             return id != null ? Int32.Parse(id.ToString()) : 0;
+
+        }
+
+        internal static void InsertLondonMoves(
+            string testName,
+            int round,
+            string roundValues,
+            string roundFinish,
+            int numMoves,
+            int? modifiedId
+            )
+        {
+
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("InsertLondonMoves", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@testName", testName);
+            cmd.Parameters.AddWithValue("@round", round);
+            cmd.Parameters.AddWithValue("@roundValues", roundValues);
+            cmd.Parameters.AddWithValue("@roundFinish", roundFinish);
+            cmd.Parameters.AddWithValue("@numMoves", numMoves);
+            cmd.Parameters.AddWithValue("@modifiedId", modifiedId);
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                InsertErrorMessage(ex.ToString(), null, null, "InsertLondonMoves");
+                //throw new Exception("Execption Updating Allow User View Results. " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
 
         }
 
