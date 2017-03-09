@@ -108,7 +108,7 @@
                 <div class="col-lg-6">
 
                     <input id="save" class="btn  btn-success btn-xs" type="button" value="Save Round" />
-                    <input id="goBack" class="btn btn-success btn-xs" type="button" value="Edit Previous" />
+               
                     <input id="makeAnother" class="btn btn-success btn-xs" type="button" value="Set Up Next" />
 
                 </div>
@@ -187,7 +187,7 @@
             });
         });
         $('#save').hide();
-        $('#goBack').hide();
+
         $('#MovesError').hide()
 
 
@@ -217,39 +217,19 @@
                 superObj = {
                     arrStart: (JSON.stringify(array)),
                     arrFinish: (JSON.stringify(arrayR)),
-                    numMoves : $('#numberOfMoves').val()
+                    numMoves: $('#numberOfMoves').val()
+
                 }
-                //superObj.arrStart = (JSON.stringify(array));
-                //superObj.arrFinish = (JSON.stringify(arrayR));
-                //superObj.numMoves = $('#numberOfMoves').val();
-                //if (superArr.indexOf(superObj) == -1) {
-                //    superArr.push(superObj);
-                //}
-                //else 
-                //{
-                //    superArr.pop();
-                //    superArr.push(superObj);
-                //}
                 if (round != 0)
                     superArr[round] = superObj;
                 else
                 superArr[roundCount - 1] = superObj;
-                var b = $('<input/>').attr({
-                    type: "button",
-                    id:  roundCount - 1,
-                    value: roundCount - 1,
-                    
-                });
 
-                function goBackClick() {
-                    alert("Hi");
-                }
-
-                //$('#pageNums').append('<input type="button" value=' + (roundCount - 1) + ' onclick="goBackClick()"/>');
-                $('#pageNums').append('<input type="button" value=' + (roundCount - 1) + ' class="booo"/>');
+                $('#pageNums').append('<input type="button" value=' + (roundCount - 1) + ' class="edit"/>');
+            
             }
 
-            $('.booo').bind("click", function () {
+            $('.edit').bind("click", function () {
                 round = this.value;
 
                 makeLabel(round);
@@ -261,7 +241,7 @@
                 var arrR = superObj.arrFinish.replace(/[\[\]']+/g, '').replace(/[\{\}']+/g, '').split(',');
                 var num = superObj.numMoves;
 
-                $('#numberOfMoves').text(num);
+                $('#numberOfMoves').val(num);
                 for (i = 0; i < arr.length; i++)
                 {
                     if (i%2 == 0)
@@ -293,8 +273,6 @@
           
         });
 
-       
-
         $('#makeAnother').click(function () {
             makeLabel(roundCount);
 
@@ -302,9 +280,7 @@
             initFieldEnd();
 
             $('#save').show();
-            if (roundCount > 1)
-                $('#goBack').show();
-            if (roundCount == prct + trl)
+            if (roundCount > prct + trl )
                 $('#makeAnother').hide();
             roundCount++;
         });
