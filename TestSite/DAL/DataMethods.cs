@@ -75,13 +75,13 @@ namespace TestSite.DAL
             }
         }
 
-        internal static DataTable GetLondonMoves(string testName)
+        internal static DataTable GetLondonMoves(string modifiedId)
         {
             DataTable dt = new DataTable();
             SqlConnection conn = new SqlConnection(connectionSring);
             SqlCommand cmd = new SqlCommand("SelectLondonMoves", conn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@testName", testName);
+            cmd.Parameters.AddWithValue("@modifiedId", modifiedId);
 
             try
             {
@@ -243,11 +243,34 @@ namespace TestSite.DAL
 
         internal static DataTable GetAllProviderTests(int? providerId)
         {
-            DataTable ds = new DataTable();
+            DataSet ds = new DataSet();
             SqlConnection conn = new SqlConnection(connectionSring);
             SqlCommand cmd = new SqlCommand("GetAllProviderTests", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@providerId", providerId);
+
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                adp.Fill(ds);
+            }
+            catch (Exception ex)
+            {
+                InsertErrorMessage(ex.ToString(), null, null, "GetAllProviderTests");
+                throw new Exception("Execption getting All Provider Participants. " + ex.Message);
+            }
+
+            return ds.Tables[0];
+        }
+
+        internal static DataTable GetModfiedTest(string providerTestId)
+        {
+            DataTable ds = new DataTable();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("GetModifiedTest", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+       
+            cmd.Parameters.AddWithValue("@providerTestId", providerTestId);
 
             try
             {
@@ -753,13 +776,17 @@ namespace TestSite.DAL
 
         }
 
-        internal static void InsertTestToParticipant(int provTestId, string userId)
+        internal static void InsertTestToParticipant(int provTestId, string userId, int modifiedId)
         {
             SqlConnection conn = new SqlConnection(connectionSring);
             SqlCommand cmd = new SqlCommand("InsertProviderUserTest", conn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("provTestId", provTestId);
-            cmd.Parameters.AddWithValue("userId", userId);
+            cmd.Parameters.AddWithValue("@provTestId", provTestId);
+            cmd.Parameters.AddWithValue("@userId", userId);
+            if (modifiedId == 0)
+            cmd.Parameters.AddWithValue("@modifiedId", DBNull.Value);
+            else
+                cmd.Parameters.AddWithValue("@modifiedId", modifiedId);
             try
             {
                 conn.Open();

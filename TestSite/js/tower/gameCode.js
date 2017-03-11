@@ -34,8 +34,9 @@ function startGame(gameNum) { //change back w/o s to use
         countdown()
     }
     
-    initField();
+    initField(gameNum, gameData);
     showImage(gameNum, gameData);
+ 
     game = gameNum;   
 }
 
@@ -253,6 +254,7 @@ function checkPos(out) {
     }
     canMove = false;
     setTimeout(function () { canMove = true }, 1200);
+    //
     if (out) {
         if (nm == 0) {
             initTTime = new Date() - time;
@@ -270,7 +272,7 @@ function checkPos(out) {
         &&
         getMatchPos(finishPos.green, "green"))
     {
-        alert("match");
+        //alert("match");
         finishGame(numMoves);
     }
 

@@ -21,11 +21,13 @@ namespace TestSite
         protected static int _userTestId;
         protected static List<LondonResults> res;
         protected static string _testName;
+        protected static string _modifiedId;
         protected void Page_Load(object sender, EventArgs e)
         {
 
             _userTestId = (int)Session["userTestId"];
-            _testName = Session["testName"].ToString();
+            //_testName = Session["testName"].ToString();
+            _modifiedId = Session["modifiedId"].ToString();
             _user = Membership.GetUser(User.Identity.Name);
             _userId = _user.ProviderUserKey.ToString();
             userId.Text = _userId.ToString();
@@ -35,34 +37,34 @@ namespace TestSite
         }
 
         [WebMethod]
-        public static void SaveResults(string game, 
+        public static void SaveResults(string game,
             string initThinkTime, string timeTotal,
-            string numberOfMoves,string numberOfWrongMoves,
+            string numberOfMoves, string numberOfWrongMoves,
             string overTime, string overMoves, string minMoves)
         {
-          string testId = Enums.TestId.TowerOfLondon;
-          DataMethods.UpdateLondonUserResults(_userId, _userTestId, testId, Convert.ToInt32(game),
-          System.Convert.ToDecimal(initThinkTime), System.Convert.ToDecimal(timeTotal),
-          Convert.ToInt32(numberOfMoves), Convert.ToInt32(numberOfWrongMoves),
-          Convert.ToBoolean(overTime), Convert.ToBoolean(overMoves), Convert.ToInt32(minMoves));
+            string testId = Enums.TestId.TowerOfLondon;
+            DataMethods.UpdateLondonUserResults(_userId, _userTestId, testId, Convert.ToInt32(game),
+            System.Convert.ToDecimal(initThinkTime), System.Convert.ToDecimal(timeTotal),
+            Convert.ToInt32(numberOfMoves), Convert.ToInt32(numberOfWrongMoves),
+            Convert.ToBoolean(overTime), Convert.ToBoolean(overMoves), Convert.ToInt32(minMoves));
         }
 
 
         [WebMethod]
         public static void SaveFininishedLondon()
         {
-               DataMethods.UpdateTestFinished(_userId, _userTestId);
+            DataMethods.UpdateTestFinished(_userId, _userTestId);
         }
-       
+
         [WebMethod]
         [ScriptMethod(UseHttpGet = true)]
         public static List<LondonMoves> GetLondonValues()
         {
-            DataTable dt = DataMethods.GetLondonMoves(_testName); 
-             LondonMoves lm = new LondonMoves();
+            DataTable dt = DataMethods.GetLondonMoves(_modifiedId);
+            LondonMoves lm = new LondonMoves();
             var oSerializer = new System.Web.Script.Serialization.JavaScriptSerializer();
             List<LondonMoves> listMoves = new List<LondonMoves>();
-            foreach(DataRow dr in dt.Rows)
+            foreach (DataRow dr in dt.Rows)
             {
                 listMoves.Add(new LondonMoves
                 {
@@ -75,8 +77,11 @@ namespace TestSite
             }
 
             return listMoves;
-        } 
+        }
     }
+
+   
+    
 
     public class LondonMoves
     {
@@ -84,5 +89,25 @@ namespace TestSite
         public string RoundStart { get; set; }
         public string RoundFinish { get; set; }
         public int NumberOfMoves { get; set; }
+    }
+
+    public class TestSetUpValues
+    {
+        public LondonMoves LondonMoves { get; set; }
+        public GeneralSettings GeneralSettings;
+    }
+
+    public class GeneralSettings
+    {
+        public string TestName { get; set; }
+        public string Instructions { get; set; }
+        public string TxtToSpeech { get; set; }
+        public string PrctRounds { get; set; }
+        public string TestRounds { get; set; }
+        public string CalcResFrom { get; set; }
+        public string TimeOut { get; set; }
+        public string MaxMoves { get; set; }
+        public string ShowFeedback { get; set; }
+       
     }
 }

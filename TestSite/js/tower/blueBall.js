@@ -1,5 +1,6 @@
 ﻿function onclickBlue(objName) {
     if (canMove) {
+
         if (up1 == null && up2 == null && up3 == null) {
             if (p6 == blue) {
                 objName.animate(moveFromP6);
@@ -30,6 +31,7 @@
                 objName.animate(moveFromP2)
                 up1 = blue;
                 p2 = null;
+                checkPos()
             }
             else if (p1 == blue) {
                 objName.animate(moveFromP1)

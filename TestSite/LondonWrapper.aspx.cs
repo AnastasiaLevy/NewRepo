@@ -169,7 +169,7 @@ namespace TestSite
                 }
 
                 Session["userTestId"] = _userTestId;
-                Session["testName"] = "drexel";
+                Session["modifiedId"] = "1";
                 Response.Redirect("LondonPage.aspx");
             }
             else

@@ -15,13 +15,14 @@ namespace TestSite.Provider
      
         protected void Page_Load(object sender, EventArgs e)
         {
-            pop.Style["display"] = "none";
+            if (!Page.IsPostBack) {
+                pop.Style["display"] = "none";
     
             createUser.Visible = false;
             assignTest.Visible = false;
             setUpUserCode.Visible = false;
             cbAllowUserViewResults.Checked = false;
-
+            }
             if (User.Identity.IsAuthenticated)
             {
                 login.Visible = false;
@@ -236,6 +237,7 @@ namespace TestSite.Provider
         protected void btnAddUserTest_Click(object sender, EventArgs e)
         {
             assignTest.Visible = true;
+            ddlModifiedID.Visible = false;
             int providerId = Convert.ToInt32(ViewState["providerId"]);
             DataTable dt = DAL.DataMethods.GetAllProviderParticipants(providerId);
 
@@ -254,22 +256,53 @@ namespace TestSite.Provider
         private void SetDllProviderTests(int providerId)
         {
             ddlProvTests.Items.Clear();
-            DataTable dt = DAL.DataMethods.GetAllProviderTests(providerId);
+
+
+            DataTable dt = DAL.DataMethods.GetAllProviderTests(providerId);//ds.Tables[0];
             foreach (DataRow dr in dt.Rows)
             {
                 string display = dr["Name"].ToString() + "(amount:" + dr["Left"].ToString() + ")";
                 ddlProvTests.Items.Add(new ListItem(display, dr["Id"].ToString()));
             }
+            //dt = ds.Tables[1];
+            //if (dt.Rows.Count > 0)
+            //{
+            //    foreach (DataRow dr in dt.Rows)
+            //    {
+            //        ddlModifiedID.Items.Add(new ListItem(dr["testName"].ToString(), dr["Id"].ToString()));
+            //    }
+            //}
+        }
+
+        protected void ddlProvTests_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ddlModifiedID.Items.Clear();
+            DataTable dt = DAL.DataMethods.GetModfiedTest(ddlProvTests.SelectedValue);
+            if (dt.Rows.Count > 0)
+            {
+                ddlModifiedID.Visible = true;
+                foreach (DataRow dr in dt.Rows)
+                {
+                    ddlModifiedID.Items.Add(new ListItem(dr["testName"].ToString(), dr["Id"].ToString()));
+                }
+            }
+            else
+            {
+                ddlModifiedID.Visible = false;
+            }
+
+            assignTest.Visible = true;
         }
 
         protected void btnPartAddTest_Click1(object sender, EventArgs e)
         {
             string userId = ddlAllParticipants.SelectedValue;
             string provTestId =ddlProvTests.SelectedValue;
+            int modifiedId = String.IsNullOrEmpty(ddlModifiedID.SelectedValue) ? 0 : Convert.ToInt32(ddlModifiedID.SelectedValue);
 
             try {
 
-                DAL.DataMethods.InsertTestToParticipant(Convert.ToInt32(provTestId), userId);
+                DAL.DataMethods.InsertTestToParticipant(Convert.ToInt32(provTestId), userId, modifiedId);
                 int providerId = Convert.ToInt32(ViewState["providerId"]);
                 SetDllProviderTests(providerId);
                 SetProviderTestsGrid(providerId);
@@ -334,5 +367,7 @@ namespace TestSite.Provider
         {
             Response.Redirect("../Create/LondonModify.aspx");
         }
+
+      
     }
 } 

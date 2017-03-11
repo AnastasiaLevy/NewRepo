@@ -78,13 +78,14 @@
                       <%--  <div class="col-md-2">
                             <img class="img-responsive img-border-left" src="../images/mind.jpg" alt="">
                         </div>--%>
-                        <div class="col-lg-4">
+                        <div class="col-lg-3">
                    
                          
                               <asp:Button ID="btnUpdateProfile" runat="server" Text="profile"  class="btn btn-labeled btn-info" width =" 100%" OnClick ="btnUpdateProfile_Click"/>
                               <asp:Button ID="btnAddNewPart" runat="server" Text="Add New Participant" OnClick="btnAddNewPart_Click" class="btn btn-labeled btn-info" width="100%"/>
                               <asp:Button ID="btnAddUserTest" runat="server" Text="Assign Participant Test" onClick="btnAddUserTest_Click" class="btn btn-labeled btn-info" width="100%"/>
-                            <asp:Button ID="btnModifyTest" runat="server" Text="Modify Test" onClick="btnModifyTest_Click" class="btn btn-labeled btn-info" width="100%"/>
+                              <asp:Button ID="btnModifyTest" runat="server" Text="Modify Test" onClick="btnModifyTest_Click" class="btn btn-labeled btn-info" width="100%"/>
+                           
                         </div>
                         <div class="col-lg-8" >
                           
@@ -142,12 +143,15 @@
                                         <h3 class="panel-title">Assign Test</h3>
                                         <asp:Label ID="lblTestMessage" runat="server" Text=""></asp:Label>
                                     </div>
-                                    <div class="panel-body">
-                                        <asp:DropDownList ID="ddlAllParticipants" runat="server" Width="50%"></asp:DropDownList>
-                                        <asp:DropDownList ID="ddlProvTests" runat="server" Width="40%"></asp:DropDownList>
+                                    <div class="panel-body ">
+                                        <asp:DropDownList class="dropDown" ID="ddlAllParticipants" runat="server" Width="50%"></asp:DropDownList>
+                                        <asp:DropDownList class="dropDown" ID="ddlProvTests" runat="server" Width="50%" OnSelectedIndexChanged="ddlProvTests_SelectedIndexChanged" AppendDataBoundItems="true"  AutoPostBack="True"></asp:DropDownList>
+                                        <asp:DropDownList class="dropDown" ID="ddlModifiedID" runat="server" Width="40%"></asp:DropDownList>
+                                        <div>
                                         <asp:Button ID="btnPartAddTest" class="btn btn-labeled btn-success" runat="server" Text="Assign" OnClick="btnPartAddTest_Click1" />
                                         <asp:Button ID="btnCloseAddTest" class="btn btn-labeled btn-info" runat="server" Text="Close" OnClick="btnCloseAddTest_Click" />
                                     </div>
+                                        </div>
                                 </div>
                             </asp:Panel>
                                 <asp:Panel ID="pProviderInfo" runat="server" >

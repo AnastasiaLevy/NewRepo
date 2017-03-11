@@ -265,6 +265,15 @@ namespace TestSite.Provider {
         protected global::System.Web.UI.WebControls.DropDownList ddlProvTests;
         
         /// <summary>
+        /// ddlModifiedID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlModifiedID;
+        
+        /// <summary>
         /// btnPartAddTest control.
         /// </summary>
         /// <remarks>

@@ -38,7 +38,6 @@ function onclickRed(objName) {
                 objName.animate(moveFromP1)
                 up1 = red;
                 p1 = null;
-
                 checkPos();
             }
             else {

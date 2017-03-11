@@ -3,11 +3,6 @@ function showImage(currentGame, gameData) {
     gameDataGlobal = gameData;
     //game 1==========================================================
 
-    var upos = null;
-    var upos1 = null;
-    var upos2 = null;
-    var upos3 = null;
-
 
     //=================================================================
 
@@ -19,6 +14,7 @@ function showImage(currentGame, gameData) {
     var pos3x = 250;
     var pos3y = 350;
     var pos1l1 = 50;
+
     var pos1l2 = 170;
     var pos2l1 = 150;
     var pos2l2 = 220;
@@ -36,17 +32,15 @@ function showImage(currentGame, gameData) {
 
 
     p = getPosition(round.red);
-    var red = makeRed(imageplace, p.x, p.y, r, "red");
+    var redL = makeRed(imageplace, p.x, p.y, r, "red");
     p = getPosition(round.blue);
-    var blue = makeBlue(imageplace, p.x, p.y, r, "blue");
+    var blueL = makeBlue(imageplace, p.x, p.y, r, "blue");
     p = getPosition(round.green);
-    var green = makeGreen(imageplace, p.x, p.y, r, "green");
+    var greenL = makeGreen(imageplace, p.x, p.y, r, "green");
 //==========================================================================
 
     game = currentGame;
     return 0;
-
-
 
     function getPosition(pos) {
         switch (pos) {
@@ -95,7 +89,6 @@ function showImage(currentGame, gameData) {
                         y: pos3y - r
                     }
                 }
-
         }
     }
 }

@@ -32,6 +32,7 @@
     <form runat="server">
         <asp:TextBox ID="userId" runat="server" hidden="true"></asp:TextBox>
         <asp:TextBox ID="tId" runat="server" hidden="true"></asp:TextBox>
+        <asp:TextBox ID="modifiedId" runat="server" hidden="true"></asp:TextBox>
     </form>
 </body>
 
@@ -62,11 +63,15 @@
 <script type="text/javascript"></script>
 
 <script>
+    var test = 1;//$('<%=modifiedId.ClientID%>').value
+    var data = {
+        modifiedId: test
+    }
     jQuery.ajax({
         contentType: "application/json; charset=utf-8",
         url: 'LondonPage.aspx/GetLondonValues',
         dataType: 'json',
-
+      
         type: 'GET',
         success: function (resp) {
 
