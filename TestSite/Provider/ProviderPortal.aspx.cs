@@ -12,16 +12,18 @@ namespace TestSite.Provider
 {
     public partial class ProviderPortal : System.Web.UI.Page
     {
-     
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Page.IsPostBack) {
+            if (!Page.IsPostBack)
+            {
                 pop.Style["display"] = "none";
-    
-            createUser.Visible = false;
-            assignTest.Visible = false;
-            setUpUserCode.Visible = false;
-            cbAllowUserViewResults.Checked = false;
+
+                createUser.Visible = false;
+                assignTest.Visible = false;
+                setUpUserCode.Visible = false;
+                editTest.Visible = false;
+                cbAllowUserViewResults.Checked = false;
             }
             if (User.Identity.IsAuthenticated)
             {
@@ -82,12 +84,12 @@ namespace TestSite.Provider
             string userName = row.Cells[2].Text; ;
             ViewState["tUserId"] = row.Cells[7].Text;
 
-            Response.Redirect("~/Registration.aspx?userId="+ Convert.ToString(ViewState["tUserId"]) + "&provId=" + providerId+ "&userName=" + userName);
+            Response.Redirect("~/Registration.aspx?userId=" + Convert.ToString(ViewState["tUserId"]) + "&provId=" + providerId + "&userName=" + userName);
         }
 
         protected void delete_Click(object sender, EventArgs e)
         {
-            LinkButton btn = (LinkButton)sender;  
+            LinkButton btn = (LinkButton)sender;
             GridViewRow row = (GridViewRow)btn.NamingContainer;
             string providerId = ViewState["providerId"].ToString();
             ViewState["tUserId"] = row.Cells[7].Text;
@@ -179,12 +181,12 @@ namespace TestSite.Provider
 
         protected void updateProfile_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         protected void btnCancelUser_Click(object sender, EventArgs e)
         {
-            createUser.Visible =false;
+            createUser.Visible = false;
             txtUserEmail.Text = "";
             txtNewUser.Text = "";
             txtPassword.Text = "";
@@ -218,7 +220,7 @@ namespace TestSite.Provider
             {
                 lblError.Text = ex.Message;
                 lblError.CssClass = "errorMessage";
-             
+
                 createUser.Visible = true;
                 DAL.DataMethods.InsertErrorMessage(ex.ToString(), Convert.ToString(ViewState["tUserId"]), "providerProtal", null);
             }
@@ -226,7 +228,7 @@ namespace TestSite.Provider
 
         protected void btnAddNewPart_Click(object sender, EventArgs e)
         {
-           createUser.Visible = true;
+            createUser.Visible = true;
         }
 
         protected void addUserTest_Click(object sender, EventArgs e)
@@ -249,7 +251,7 @@ namespace TestSite.Provider
                     display = "(" + dr["userName"].ToString() + ")";
                 ddlAllParticipants.Items.Add(new ListItem(display, dr["userId"].ToString()));
             }
-           SetDllProviderTests(providerId);
+            SetDllProviderTests(providerId);
 
         }
 
@@ -297,10 +299,11 @@ namespace TestSite.Provider
         protected void btnPartAddTest_Click1(object sender, EventArgs e)
         {
             string userId = ddlAllParticipants.SelectedValue;
-            string provTestId =ddlProvTests.SelectedValue;
+            string provTestId = ddlProvTests.SelectedValue;
             int modifiedId = String.IsNullOrEmpty(ddlModifiedID.SelectedValue) ? 0 : Convert.ToInt32(ddlModifiedID.SelectedValue);
 
-            try {
+            try
+            {
 
                 DAL.DataMethods.InsertTestToParticipant(Convert.ToInt32(provTestId), userId, modifiedId);
                 int providerId = Convert.ToInt32(ViewState["providerId"]);
@@ -311,7 +314,7 @@ namespace TestSite.Provider
                 lblTestMessage.Text = "Test was successfully assigned";
                 lblTestMessage.CssClass = "successMessage";
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 lblTestMessage.Text = "There was an error assigning test";
                 lblTestMessage.CssClass = "errorMessage";
@@ -334,7 +337,7 @@ namespace TestSite.Provider
         private string GetProviderUserCode(string providerId)
         {
             DataTable dt = DAL.DataMethods.GetProvderUserCode(providerId);
-           return  (dt.Rows.Count > 0) ? dt.Rows[0]["providerCode"].ToString() : "";
+            return (dt.Rows.Count > 0) ? dt.Rows[0]["providerCode"].ToString() : "";
         }
 
         protected void btnCodeSave_Click(object sender, EventArgs e)
@@ -351,23 +354,54 @@ namespace TestSite.Provider
 
         protected void SelectCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-           //CheckBox cb = (CheckBox)sender;
-           // if (cb.Checked)
-           // {
+            //CheckBox cb = (CheckBox)sender;
+            // if (cb.Checked)
+            // {
 
-           //     DAL.DataMethods.SetAllowUserViewResults(ViewState["tUserId"].ToString(), true);
-           // }
-           // else
-           // {
-           //     DAL.DataMethods.SetAllowUserViewResults(ViewState["tUserId"].ToString(), false);
-           // }
+            //     DAL.DataMethods.SetAllowUserViewResults(ViewState["tUserId"].ToString(), true);
+            // }
+            // else
+            // {
+            //     DAL.DataMethods.SetAllowUserViewResults(ViewState["tUserId"].ToString(), false);
+            // }
         }
 
         protected void btnModifyTest_Click(object sender, EventArgs e)
         {
+            editTest.Visible = true;
+            DataTable dt = DAL.DataMethods.GetModifyTestList(Convert.ToInt32(ViewState["providerId"]));
+
+            ddlModifyTest.Items.Clear();
+
+            foreach (DataRow dr in dt.Rows)
+            {
+               
+               ddlModifyTest.Items.Add(new ListItem(dr["testName"].ToString(), dr["Id"].ToString()));
+            }
+            
+        }
+
+
+        protected void btnSelectModify_Click(object sender, EventArgs e)
+        {
+            Session["providerId"] = Convert.ToInt32(ViewState["providerId"]);
+            Session["testId"] = ddlModifyTest.SelectedValue;
             Response.Redirect("../Create/LondonModify.aspx");
         }
 
-      
+        protected void btnCreateNewTest_Click(object sender, EventArgs e)
+        {
+            Session.Contents.Remove("testId");
+            Session["providerId"] = Convert.ToInt32(ViewState["providerId"]);
+            Response.Redirect("../Create/LondonModify.aspx");
+        }
+
+        protected void btnCancelModify_Click(object sender, EventArgs e)
+        {
+            Session.Contents.Remove("testId");
+            ddlModifyTest.Items.Clear();
+            editTest.Visible = false;
+
+        }
     }
-} 
+}

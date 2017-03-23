@@ -142,6 +142,7 @@
                                 </asp:TemplateField>
                                 <asp:BoundField Visible="true" DataField="TestId" />
                                 <asp:BoundField Visible="true" DataField="tID" />
+                                <asp:BoundField Visible="true" DataField="modifyID" />
                             </Columns>
                             <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                             <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />

@@ -10,7 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="AnaLevy">
-    <link rel="..//shortcut icon" href="../images/favicon.ico"> />
+    <link rel="..//shortcut icon" href="../images/favicon.ico">
+    />
   
     <title>ProviderPortal</title>
     <link href="../fonts/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -22,7 +23,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
 
     <link href="../cogTest.css" rel="stylesheet" />
     <link href="../css/userProfilecss.css" rel="stylesheet" />
@@ -75,33 +76,57 @@
                             <hr>
                         </div>
 
-                      <%--  <div class="col-md-2">
+                        <%--  <div class="col-md-2">
                             <img class="img-responsive img-border-left" src="../images/mind.jpg" alt="">
                         </div>--%>
                         <div class="col-lg-3">
-                   
-                         
-                              <asp:Button ID="btnUpdateProfile" runat="server" Text="profile"  class="btn btn-labeled btn-info" width =" 100%" OnClick ="btnUpdateProfile_Click"/>
-                              <asp:Button ID="btnAddNewPart" runat="server" Text="Add New Participant" OnClick="btnAddNewPart_Click" class="btn btn-labeled btn-info" width="100%"/>
-                              <asp:Button ID="btnAddUserTest" runat="server" Text="Assign Participant Test" onClick="btnAddUserTest_Click" class="btn btn-labeled btn-info" width="100%"/>
-                              <asp:Button ID="btnModifyTest" runat="server" Text="Modify Test" onClick="btnModifyTest_Click" class="btn btn-labeled btn-info" width="100%"/>
-                           
+
+
+                            <asp:Button ID="btnUpdateProfile" runat="server" Text="profile" class="btn btn-labeled btn-info" Width=" 100%" OnClick="btnUpdateProfile_Click" />
+                            <asp:Button ID="btnAddNewPart" runat="server" Text="Add New Participant" OnClick="btnAddNewPart_Click" class="btn btn-labeled btn-info" Width="100%" />
+                            <asp:Button ID="btnAddUserTest" runat="server" Text="Assign Participant Test" OnClick="btnAddUserTest_Click" class="btn btn-labeled btn-info" Width="100%" />
+                            <asp:Button ID="btnModifyTest" runat="server" Text="Modify Test" OnClick="btnModifyTest_Click" class="btn btn-labeled btn-info" Width="100%" />
+
                         </div>
-                        <div class="col-lg-8" >
-                          
+                        <div class="col-lg-8">
+
                             <asp:Panel ID="pProviderTools" runat="server">
 
-                                        <div id="setUpUserCode" class="panel panel-success" runat="server">
+                                <div id="setUpUserCode" class="panel panel-success" runat="server">
                                     <div class="panel-heading">
                                         <h3 class="panel-title">Set Up Code</h3>
                                         <asp:Label ID="Label3" runat="server" Text=""></asp:Label>
                                     </div>
                                     <div class="panel-body">
-                                       <asp:Label ID="Label5" runat="server" Text="Enter Code:"></asp:Label>
-                                       <asp:TextBox ID="txtUserCode" runat="server" CssClass="createUser" Width="50%"></asp:TextBox>
-                                       <asp:Button ID="btnCodeSave" class="btn btn-labeled btn-success" runat="server" Text="Save" OnClick="btnCodeSave_Click" />
-                                       <asp:Button ID="btnCodeClose" class="btn btn-labeled btn-info" runat="server" Text="Close" OnClick="btnCodeClose_Click"/>
+                                        <asp:Label ID="Label5" runat="server" Text="Enter Code:"></asp:Label>
+                                        <asp:TextBox ID="txtUserCode" runat="server" CssClass="createUser" Width="50%"></asp:TextBox>
+                                        <asp:Button ID="btnCodeSave" class="btn btn-labeled btn-success" runat="server" Text="Save" OnClick="btnCodeSave_Click" />
+                                        <asp:Button ID="btnCodeClose" class="btn btn-labeled btn-info" runat="server" Text="Close" OnClick="btnCodeClose_Click" />
                                     </div>
+                                </div>
+                                <div id="editTest" class="panel panel-success" runat="server">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Modify Test:</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <asp:DropDownList class="dropDown" ID="ddlModifyTest" runat="server" Width="50%"></asp:DropDownList>
+                                    </div>
+                                    <div class="panel-footer">
+                                        <div class="row">
+                                            <div class="col-xs-4 col-sm-4 col-md-4">
+                                                <asp:Button ID="btnSelectModify" class="btn btn-labeled btn-success" runat="server" Text="Modify" OnClick="btnSelectModify_Click" />
+                                            </div>
+                                            <div class="col-xs-4 col-sm-4 col-md-4">
+                                                <asp:Button ID="btnCreateNewTest" class="btn btn-labeled btn-success" runat="server" Text="Create New" OnClick="btnCreateNewTest_Click" />
+                                            </div>
+                                            <div class="col-xs-4 col-sm-4 col-md-4">
+                                                <asp:Button ID="btnCancelModify" runat="server" class="btn btn-labeled btn-info" Text="Close" OnClick="btnCancelModify_Click" />
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
                                 </div>
 
                                 <div id="createUser" class="panel panel-success" runat="server">
@@ -120,8 +145,8 @@
 
                                                 <asp:Label ID="Label2" runat="server" Text="Password"></asp:Label>
                                                 <asp:TextBox ID="txtPassword" runat="server" CssClass="createUser" Width="100%"></asp:TextBox>
-                                             
-                                                <asp:CheckBox ID="cbAllowUserViewResults" runat="server" Text="Allow User View Results" TextAlign="Left"/>
+
+                                                <asp:CheckBox ID="cbAllowUserViewResults" runat="server" Text="Allow User View Results" TextAlign="Left" />
 
                                             </div>
                                         </div>
@@ -145,16 +170,16 @@
                                     </div>
                                     <div class="panel-body ">
                                         <asp:DropDownList class="dropDown" ID="ddlAllParticipants" runat="server" Width="50%"></asp:DropDownList>
-                                        <asp:DropDownList class="dropDown" ID="ddlProvTests" runat="server" Width="50%" OnSelectedIndexChanged="ddlProvTests_SelectedIndexChanged" AppendDataBoundItems="true"  AutoPostBack="True"></asp:DropDownList>
+                                        <asp:DropDownList class="dropDown" ID="ddlProvTests" runat="server" Width="50%" OnSelectedIndexChanged="ddlProvTests_SelectedIndexChanged" AppendDataBoundItems="true" AutoPostBack="True"></asp:DropDownList>
                                         <asp:DropDownList class="dropDown" ID="ddlModifiedID" runat="server" Width="40%"></asp:DropDownList>
                                         <div>
-                                        <asp:Button ID="btnPartAddTest" class="btn btn-labeled btn-success" runat="server" Text="Assign" OnClick="btnPartAddTest_Click1" />
-                                        <asp:Button ID="btnCloseAddTest" class="btn btn-labeled btn-info" runat="server" Text="Close" OnClick="btnCloseAddTest_Click" />
-                                    </div>
+                                            <asp:Button ID="btnPartAddTest" class="btn btn-labeled btn-success" runat="server" Text="Assign" OnClick="btnPartAddTest_Click1" />
+                                            <asp:Button ID="btnCloseAddTest" class="btn btn-labeled btn-info" runat="server" Text="Close" OnClick="btnCloseAddTest_Click" />
                                         </div>
+                                    </div>
                                 </div>
                             </asp:Panel>
-                                <asp:Panel ID="pProviderInfo" runat="server" >
+                            <asp:Panel ID="pProviderInfo" runat="server">
                             </asp:Panel>
                         </div>
                         <div class="clearfix"></div>
@@ -172,11 +197,11 @@
                             </h2>
                             <hr>
                         </div>
-                        <div class="col-lg-2"> 
+                        <div class="col-lg-2">
                             <p class="min"><strong>Participants Data</strong> </p>
-                    
-                            </div>
-                            
+
+                        </div>
+
                         <div class="col-lg-6 row">
                             <div id="pop" class="" runat="server">
                                 <asp:Label ID="partName" runat="server" Text="" CssClass="col-lg-2"></asp:Label>
@@ -185,7 +210,7 @@
                                     GridLines="Horizontal" AutoGenerateColumns="False" BorderColor="#CCCCCC" BorderStyle="None"
                                     BorderWidth="1px" CellPadding="20" ForeColor="Black"
                                     RowStyle-Height="40px" Font-Size="Larger">
-                                  
+
                                     <Columns>
                                         <asp:BoundField DataField="Name" HeaderText="Text Name"></asp:BoundField>
                                         <asp:BoundField DataField="Assigned Date" DataFormatString="{0:d}" HeaderText="Assigned Date"></asp:BoundField>
@@ -222,45 +247,46 @@
                                     <SortedDescendingHeaderStyle BackColor="#242121" />
                                     <RowStyle Wrap="False" Height="40px"></RowStyle>
                                 </asp:GridView>
-                                     <asp:Label ID="Label6" runat="server" Text=" "></asp:Label>
-                                                <br />
-                                     <br />
-                                    <asp:CheckBox ID="cbViewResults" runat="server" OnCheckedChanged="SelectCheckBox_CheckedChanged" Text="Allow Participant to view results" /></div>
-                            
-                              
+                                <asp:Label ID="Label6" runat="server" Text=" "></asp:Label>
+                                <br />
+                                <br />
+                                <asp:CheckBox ID="cbViewResults" runat="server" OnCheckedChanged="SelectCheckBox_CheckedChanged" Text="Allow Participant to view results" />
+                            </div>
+
+
                         </div>
                         <div class="col-lg-12">
-                        
-                            <asp:GridView ID="gvAllParticipants" runat="server"  CellSpacing="10" class="gridview"
+
+                            <asp:GridView ID="gvAllParticipants" runat="server" CellSpacing="10" class="gridview"
                                 GridLines="Horizontal" AutoGenerateColumns="False" BorderColor="#CCCCCC" BorderStyle="None"
                                 BorderWidth="1px" CellPadding="20" ForeColor="Black" Height="100px"
                                 RowStyle-Height="40px" Font-Size="x-Large">
                                 <Columns>
                                     <asp:BoundField DataField="First Name" HeaderText="First Name &nbsp;&nbsp;" />
                                     <asp:BoundField DataField="Last Name" HeaderText="Last Name &nbsp;&nbsp;" />
-                                      <asp:BoundField DataField="Username" HeaderText="UserName &nbsp;&nbsp;" />
+                                    <asp:BoundField DataField="Username" HeaderText="UserName &nbsp;&nbsp;" />
                                     <asp:BoundField DataField="Age" HeaderText="Age &nbsp;&nbsp; &nbsp;&nbsp;" />
-                                    <asp:TemplateField HeaderText="Profile"   HeaderStyle-Width="10%" ItemStyle-Width="10%"
-                                  FooterStyle-Width="10%">
+                                    <asp:TemplateField HeaderText="Profile" HeaderStyle-Width="10%" ItemStyle-Width="10%"
+                                        FooterStyle-Width="10%">
                                         <ItemTemplate>
                                             <asp:LinkButton ID="view" runat="server" CausesValidation="false" OnClick="view_Click"> <i class="fa fa-pencil-square-o  fa-2x" aria-hidden="true"></i></asp:LinkButton>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Delete"   HeaderStyle-Width="10%" ItemStyle-Width="10%"
-            FooterStyle-Width="10%">
+                                    <asp:TemplateField HeaderText="Delete" HeaderStyle-Width="10%" ItemStyle-Width="10%"
+                                        FooterStyle-Width="10%">
                                         <ItemTemplate>
                                             <asp:LinkButton ID="delete" runat="server" CausesValidation="false" OnClick="delete_Click" Text="X"><i class="fa fa-minus-square-o  fa-2x" aria-hidden="true"></i></asp:LinkButton>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Tests"   HeaderStyle-Width="10%" ItemStyle-Width="10%"
-            FooterStyle-Width="10%">
+                                    <asp:TemplateField HeaderText="Tests" HeaderStyle-Width="10%" ItemStyle-Width="10%"
+                                        FooterStyle-Width="10%">
                                         <ItemTemplate>
-                                            <asp:LinkButton ID="viewTest" runat="server" CausesValidation="false" OnClick="viewTest_Click" Text ="open"><i class="fa fa-eye  fa-2x" aria-hidden="true"></i></asp:LinkButton>
+                                            <asp:LinkButton ID="viewTest" runat="server" CausesValidation="false" OnClick="viewTest_Click" Text="open"><i class="fa fa-eye  fa-2x" aria-hidden="true"></i></asp:LinkButton>
                                         </ItemTemplate>
                                     </asp:TemplateField>
 
-                                      <asp:BoundField DataField="userId" />
-<%--                                        <asp:TemplateField HeaderText="Allow View" HeaderStyle-Width="10%" ItemStyle-Width="10%">
+                                    <asp:BoundField DataField="userId" />
+                                    <%--                                        <asp:TemplateField HeaderText="Allow View" HeaderStyle-Width="10%" ItemStyle-Width="10%">
                                              <ItemTemplate>
                                                  <asp:CheckBox ID="SelectCheckBox" runat="server" OnCheckedChanged="SelectCheckBox_CheckedChanged" Checked ="true" />
                                              </ItemTemplate>
@@ -274,7 +300,7 @@
                                 <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
                                 <SortedDescendingCellStyle BackColor="#E5E5E5" />
                                 <SortedDescendingHeaderStyle BackColor="#242121" />
-                              
+
                             </asp:GridView>
                         </div>
                         <div class="clearfix"></div>
@@ -292,18 +318,18 @@
                             </h2>
                             <hr>
                         </div>
-                        <p class=col-lg-2>Purchased Tests</p>
-                       
+                        <p class="col-lg-2">Purchased Tests</p>
+
 
                         <asp:GridView ID="gvProviderTests" runat="server" RowStyle-Wrap="false" CellSpacing="10" class="gridview"
-                                GridLines="Horizontal"  AutoGenerateColumns="False" BorderColor="#CCCCCC" BorderStyle="None"
-                                BorderWidth="1px" CellPadding="20" ForeColor="Black" Height="100px"
-                                RowStyle-Height="40px" Font-Size="x-Large">
+                            GridLines="Horizontal" AutoGenerateColumns="False" BorderColor="#CCCCCC" BorderStyle="None"
+                            BorderWidth="1px" CellPadding="20" ForeColor="Black" Height="100px"
+                            RowStyle-Height="40px" Font-Size="x-Large">
                             <Columns>
                                 <asp:BoundField DataField="Name" HeaderText="Name" />
                                 <asp:BoundField DataField="Option" HeaderText="Option" />
                                 <asp:BoundField DataField="Left" HeaderText="Left" />
-                                 <asp:BoundField DataField="Id"  />
+                                <asp:BoundField DataField="Id" />
                             </Columns>
                             <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                             <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
@@ -469,7 +495,7 @@
 <%--<script src="../js/jquery.js"></script>  --%>
 
 <script src="../js/jquery-responsiveTables.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
 <script>
     //$(document).ready(function () {
     //    $('table').ResponsiveTable({
@@ -525,9 +551,8 @@
         });
     }
 
-   function test()
-    {
-        
+    function test() {
+
 
         if ($(this).hasClass('popped')) {
             deselect($(this));

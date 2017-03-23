@@ -14,12 +14,10 @@
         <div class="box box1">
             <div class="col-lg-12">
                 <hr />
-                <h2 class="intro-text text-center">Tower of London
-                       
+                <h2 class="intro-text text-center">Tower of London  
                             <strong>Set Up</strong>
                 </h2>
                 <hr />
-
             </div>
         </div>
     </section>
@@ -30,22 +28,63 @@
                 <div class="col-lg-12">
                     <hr />
                     <h2 class="intro-text text-center">Set Up
-                            <strong>Test:</strong>
+                            <strong>Test Instructions:</strong>
                     </h2>
                     <hr />
                 </div>
-
-                <p class="min"><strong>Enter Test Instructions:</strong> </p>
                 <div class="col-lg-12 font-larger">
-                    <textarea id="instructions" style="width: 100%" rows="5"></textarea>
+                    <p class="min"><strong>Enter Test Name:</strong> </p>
+                    <input type="text" id="testName" style="width: 100%" runat="server" />
                 </div>
-                <div class="col-lg-4 font-larger">
-                    <asp:CheckBox ID="cbTextSpeech" runat="server" Text="Use Text-To-Speech" />
+
+                <div class="col-lg-12 font-larger">
+                    <p class="min"><strong>Enter Test Instructions to display in the beginning of the test:</strong> </p>
+                    <textarea id="instructions" style="width: 100%" rows="5" runat="server"></textarea>
+                </div>
+                <div class="col-lg-12 font-larger">
+                    <p class="min"><strong>Enter Feedback Text:</strong> </p>
+                    <textarea id="feedback" style="width: 100%" rows="5" runat="server"></textarea>
+                </div>
+                <div class="col-lg-12 font-larger">
+                    <p class="min"><strong>Enter Over Move Limit feedback text:</strong> </p>
+                    <textarea id="overMoves" style="width: 100%" rows="5" runat="server"></textarea>
+                </div>
+
+                <div class="col-lg-12 font-larger">
+                    <p class="min"><strong>Enter Over Time Limit feedback text:</strong> </p>
+                    <textarea id="overTime" style="width: 100%" rows="5" runat="server"></textarea>
+                </div>
+
+                <div class="col-lg-7 font-larger">
+                    <p class="min"><strong>Enter Test Instructions to display at the end of the test:</strong> </p>
+                    <textarea id="instructionsFinish" style="width: 80%" rows="5" runat="server"></textarea>
+                </div>
+
+                <div class="col-lg-3 font-larger">
+                    <p class="min"><strong>Enter Button Text that will show at the end of the test:</strong> </p>
+                    <input type="text" id="txtButton" style="width: 100%" runat="server" />
+                </div>
+
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="params">
+        <div class="row">
+            <div class="box font-larger">
+                <div class="col-lg-12">
+                    <hr />
+                    <h2 class="intro-text text-center">Set Up
+                            <strong>Test Parameters:</strong>
+                    </h2>
+                    <hr />
                 </div>
                 <div class="col-lg-4 font-larger">
                     <asp:Label ID="Label1" runat="server" Text="Number of Practice Rounds:"></asp:Label>
                     <asp:DropDownList ID="ddlPractice" runat="server"></asp:DropDownList>
                 </div>
+
                 <div class="col-lg-4 font-larger">
                     <asp:Label ID="Label2" runat="server" Text="Number of Test Rounds:"></asp:Label>
                     <asp:DropDownList ID="ddlNumberGames" runat="server"></asp:DropDownList>
@@ -55,10 +94,6 @@
                     <asp:Label ID="Label3" runat="server" Text="Calculate Results From:"></asp:Label>
                     <asp:DropDownList ID="ddlConuntFromRound" runat="server"></asp:DropDownList>
                 </div>
-                <%--      <div class="col-lg-4 font-larger">
-                    <asp:Label ID="Label4" runat="server" Text="Bead size:"></asp:Label>
-                    <asp:TextBox ID="radius" runat="server"></asp:TextBox>
-                </div>--%>
                 <div class="col-lg-4 font-larger">
                     <asp:Label ID="Label5" runat="server" Text="Time Out After (sec):"></asp:Label>
                     <asp:TextBox ID="timeOutAfter" runat="server"></asp:TextBox>
@@ -67,10 +102,24 @@
                     <asp:Label ID="Label6" runat="server" Text="Max Moves Allowed"></asp:Label>
                     <asp:TextBox ID="maxMovesLimit" runat="server"></asp:TextBox>
                 </div>
-                <div class=" col-lg-4 font-larger ">
-                    <asp:CheckBox ID="showFeedback" runat="server" Text="Show Feedback" />
+                <div class="col-lg-4 font-larger">
+                    <asp:Label ID="Label9" runat="server" Text="Countdown time (sec)"></asp:Label>
+                    <asp:TextBox ID="countDown" runat="server"></asp:TextBox>
                 </div>
-                <div class="clearfix"></div>
+
+                <div class=" col-lg-4 font-larger ">
+                    <asp:Label ID="Label7" runat="server" Text="Show Feedback"></asp:Label>
+                    <asp:CheckBox ID="showFeedback" runat="server" />
+                </div>
+                <div class=" col-lg-4 font-larger ">
+                    <asp:Label ID="Label8" runat="server" Text="Display Result Page"></asp:Label>
+                    <asp:CheckBox ID="displayResultPage" runat="server" />
+                </div>
+                <div class="col-lg-4 font-larger">
+                    <asp:Label ID="Label4" runat="server" Text="Use Text-To-Speech"></asp:Label>
+                    <asp:CheckBox ID="cbTextSpeech" runat="server" Text="" />
+                </div>
+
             </div>
         </div>
     </section>
@@ -87,9 +136,21 @@
                 </div>
                 <div class="alert alert-danger" id="MovesError">
                 </div>
+                <input id="SetupUpdate" class="btn  btn-success btn-xs" type="button" value="Set Moves" />
+
+
                 <div class="col-lg-12">
-                    <h3 id="roundNumber"></h3>
+                    <%--//<h3 id="roundNumber"></h3>--%>
+
+                    <div class="input-group">
+                        <span class="input-group-addon" id="roundNumber"></span>
+                        <input type="text" class="form-control" id="roundValue" style="width: 50px" />
+                    </div>
                 </div>
+
+                <%--  <input id="roundValue" type="text"  />--%>
+
+
 
                 <div class="col-md-4 col-sm-12 workArea" id="start">
                 </div>
@@ -97,37 +158,38 @@
                     <input id="colorBlue" class="col-lg-1 btn btn-labeled btn-primary" type="button" />
                     <input id="colorGreen" class=" col-lg-1 btn btn-labeled btn-success" type="button" />
                     <input id="colorRed" class=" col-lg-1 btn btn-labeled btn-danger" type="button" />
+
                 </div>
+
                 <div class="col-md-4  workArea" id="end">
                 </div>
+
                 <div class='col-md-2 col-sm-offset-1'>
                     <p>Number of Moves:</p>
-                    <input type="text" id="numberOfMoves" />
+                    <input type="text" id="numberOfMoves" style="width: 50px" />
+
 
                 </div>
                 <div class="col-lg-6">
 
-                    <input id="save" class="btn  btn-success btn-xs" type="button" value="Save Round" />
-               
-                    <input id="makeAnother" class="btn btn-success btn-xs" type="button" value="Set Up Next" />
+                    <input id="save" class="btn  btn-success btn-xs" type="button" value="Save" />
+                    <input id="delete" class="btn  btn-success btn-xs" type="button" value="Delete" />
+                    <input id="makeAnother" class="btn btn-success btn-xs" type="button" value="Create" />
 
                 </div>
                 <div class="col-lg-4 col-sm-offset-2">
-                    <input class=" btn btn-info btn-xs" id="runTest" type="button" value="View" />
-                    <input class=" btn btn-danger btn-xs" id="saveTest" type="button" value="Save" />
+                    <input class=" btn btn-info btn-xs" id="viewTest" type="button" value="View Test" />
+                    <input class=" btn btn-danger btn-xs" id="saveTest" type="button" value="Save Test" />
+
                 </div>
                 <div class="col-lg-12" id="pageNums">
-                    
                 </div>
             </div>
             <div class="clearfix"></div>
         </div>
     </section>
+    <textarea id="movesText" rows="5" runat="server"></textarea>
     <script>
-
-
-
-
         //=================================================================
         superObj = {
             arrStart: "",
@@ -140,7 +202,10 @@
         var paperWidth = 300;
         var paperHeight = 370;
         roundCount = 1;
-
+        update = false;
+        idItems = [];
+        currPrct = 0;
+        currTrl = 0;
         //draw dase with 3 pegs
         var baseColor = '#7A5230';
         var pegColor = '#7A5230';
@@ -148,28 +213,143 @@
         var pegThick = 11;
         var r = 30;
         round = 0;
+        what = "";
         prct = parseInt($('#<%=ddlPractice.ClientID %> option:selected').text());
         trl = parseInt($('#<%=ddlNumberGames.ClientID %> option:selected').text());
 
 
         var array = [];
         var arrayR = [];
+
         function data(id, value) {
             this.id = id
             this.color = value
         }
+        $("#<%=ddlPractice.ClientID %>").change(function () {
+            checkForChange("prct")
+            //if (!update);
+            //what = "prct";
+
+        });
+        $("#<%=ddlNumberGames.ClientID %>").change(function () {
+            checkForChange("trl")
+            //if (!update);
+            //what = "trl";
+
+        });
+
+        hideNumGrp();
+        $('#delete').hide();
+        function hideNumGrp() {
+            $('#roundNumber').hide();
+            $('#roundValue').hide();
+        }
+
+        function showNumGrp() {
+            $('#roundNumber').show();
+            $('#roundValue').show();
+        }
+
+        function checkForChange(str) {
+            updateValues();
+            var compare = 0;
+            if (str != null && update)
+                what = str
+            
+            if (update == true) {
+                compare = moves.length
+            }
+            else compare = roundCount - 1;
+
+            if ((prct + trl) > compare) {
+
+                $('#makeAnother').show();
+               
+                showNumGrp();
+                $('#delete').hide();
+
+            }
+            else {
+
+                $('#makeAnother').hide();
+                if ((prct + trl) < compare) $('#delete').show();
+            }
+
+
+
+        }
+
+        function updateValues() {
+            prct = parseInt($('#<%=ddlPractice.ClientID %> option:selected').text());
+            trl = parseInt($('#<%=ddlNumberGames.ClientID %> option:selected').text());
+        }
+
+        $('#SetupUpdate').click(function () {
+            $('#SetupUpdate').hide();
+            $('#delete').hide();
+
+            var value = $('#<%=movesText.ClientID%>').val();
+            if (value.length == 0) {
+                what = "";
+                return;
+            }
+                
+            moves = JSON.parse(value);
+            update = true;
+            round = roundCount = moves.length + 1;
+
+            checkForChange();
+
+            jQuery.each(moves, function (index, value) {
+                superObj = {
+                    arrStart: moves[index].RoundStart,
+                    arrFinish: moves[index].RoundFinish,
+                    numMoves: moves[index].NumberOfMoves
+                }
+                superArr[moves[index].GameRound] = superObj; //{"red": "p2", "green":"p3", "blue": "p5"}
+
+                if ((moves[index].GameRound) <= prct) {
+                    currPrct++;
+                    $('#pageNums').append('<input type="button" value=' + (moves[index].GameRound) + ' id=' + (moves[index].GameRound) + ' class="edit prct"/>');
+                }
+                else {
+                    $('#pageNums').append('<input type="button" value=' + (moves[index].GameRound) + ' id=' + (moves[index].GameRound) + ' class="edit trl"/>');
+                    currTrl++;
+                }
+                idItems[(moves[index].GameRound)] = (moves[index].GameRound);
+            });
+
+
+            $('.edit').bind("click", function () {
+                update = true;
+                round = this.value;
+                test(superArr, round);
+                $('#save').show();
+            });
+
+        });
+
         $('#saveTest').click(function () {
+            //TODO add feddback text
             sendData = {
-                testName: 'test',
-                instructions: $('#instructions').val(),
+                testName: $('#<%=testName.ClientID%>').val(),
+                instructions: $('#<%=instructions.ClientID%>').val(),
+                overMoves: $('#<%=overMoves.ClientID%>').val(),
+                overTime: $('#<%=overTime.ClientID%>').val(),
+                txtButton: $('#<%=txtButton.ClientID%>').val(),
+                txtFeedback: $('#<%=feedback.ClientID%>').val(),
+                instructionsFinish: $('#<%=instructionsFinish.ClientID%>').val(),
                 txtToSpeech: $('#<%=cbTextSpeech.ClientID %>').is(':checked'),
+                displayResultPage: $('#<%=displayResultPage.ClientID %>').is(':checked'),
                 prctRounds: $('#<%=ddlPractice.ClientID %> option:selected').text(),
                 testRounds: $('#<%=ddlNumberGames.ClientID %> option:selected').text(),
                 calcResFrom: $('#<%=ddlConuntFromRound.ClientID %> option:selected').text(),
+                countDownFrom: $('#<%=countDown.ClientID%>').val(),
                 timeOut: $('#<%=timeOutAfter.ClientID%>').val(),
                 maxMoves: $('#<%=maxMovesLimit.ClientID%>').val(),
                 showFeedback: $('#<%=showFeedback.ClientID %>').is(':checked'),
                 movesData: JSON.stringify(superArr)
+
             }
             alert(JSON.stringify(sendData))
             jQuery.ajax({
@@ -183,16 +363,17 @@
 
                     //request sent and response received.
 
+                },
+                error: function () {
+                    alert("error saving the test; try again later")
                 }
             });
         });
-        $('#save').hide();
 
+        $('#save').hide();
         $('#MovesError').hide()
 
-
-
-        $('#save').click(function() {
+        $('#save').click(function () {
             var error = "";
 
             if ($('#numberOfMoves').val().length < 1) {
@@ -206,81 +387,170 @@
                 error += "! You need you set all 3 beads for End positions.<br />"
 
             }
-            //var error = ""; //To Test
+            var error = ""; //To Test
             if (error.length > 0) {
+                $('#makeAnother').hide();
                 $('#MovesError').show();
                 $('#MovesError').html(error);
             }
 
             else {
                 $('#MovesError').hide();
+                checkForChange();
                 superObj = {
                     arrStart: (JSON.stringify(array)),
                     arrFinish: (JSON.stringify(arrayR)),
                     numMoves: $('#numberOfMoves').val()
-
                 }
-                if (round != 0)
-                    superArr[round] = superObj;
-                else
-                superArr[roundCount - 1] = superObj;
+                var num; //Set Num;
+                if (what != "") {
+                    if (what == "prct"){
+                        num = parseInt($('#roundValue').val());
+                    }   
+                    else if (what == "trl")
+                    {
+                        num = parseInt($('#roundValue').val()) + prct;
+                    } 
 
-                $('#pageNums').append('<input type="button" value=' + (roundCount - 1) + ' class="edit"/>');
-            
+                    idItems.splice(num, 0, num);
+                    updateEditRow(idItems);
+                }
+
+                else {
+                    if (round != 0 || update == true) {
+                       
+                        num = round;
+                    }
+                    else {
+                        //superArr[roundCount - 1] = superObj;  //TODO: for test
+                        num = roundCount - 1;
+
+                    }
+                    superArr[num] = superObj;
+                    //if (num >= currPrct)
+                    //    currPrct++;
+                    //else
+                    //    currTrl ++;
+                    superArr.splice(num, 0, superObj);
+                    if (!$('#' + num + '').length) {
+                        if (num <= prct)
+                        {
+                            $('#pageNums').append('<input type="button" value=' + num + ' id=' + num + ' class="edit prct"/>');
+                            currPrct++;
+
+                        }
+                           
+                        else
+                        {
+                            $('#pageNums').append('<input type="button" value=' + num + ' id=' + num + ' class="edit trl"/>');
+                            currTrl++;
+                        }
+                           
+                        idItems.push(num);
+                    }
+                }
+                
             }
+
 
             $('.edit').bind("click", function () {
                 round = this.value;
-
-                makeLabel(round);
-                initFieldStart();
-                initFieldEnd();
-                superObj = superArr[round];
-             
-                var arr = superObj.arrStart.replace(/[\[\]']+/g, '').replace(/[\{\}']+/g, '').split(',');
-                var arrR = superObj.arrFinish.replace(/[\[\]']+/g, '').replace(/[\{\}']+/g, '').split(',');
-                var num = superObj.numMoves;
-
-                $('#numberOfMoves').val(num);
-                for (i = 0; i < arr.length; i++)
-                {
-                    if (i%2 == 0)
-                    {
-                        id = arr[i].substr(arr[i].indexOf('p'), 8);
-                        p = paper.getById(id);
-                    }
-                    else {
-                        color = arr[i].substr(8, arr[i].lastIndexOf('"')).replace(/['"']+/g, '');
-                        p.attr({ fill: color, "stroke-width": "2", stroke: 'black' });
-                        array.push(new data(id, color));
-                    }
-                }
-
-                for (i = 0; i < arr.length; i++) {
-                    if (i % 2 == 0) {
-                        id = arrR[i].substr(arrR[i].indexOf('p'), 6);
-                        p = paperR.getById(id);
-                    }
-                    else {
-                        color = arr[i].substr(8, arr[i].lastIndexOf('"')).replace(/['"']+/g, '');
-                        p.attr({ fill: color, "stroke-width": "2", stroke: 'black' });
-                        arrayR.push(new data(id, color));
-                    }
-                }
-                round = 0;
-
+                test(superArr, round);
             });
-          
+
         });
 
+        $('#delete').click(function () {
+            if (round > 0) {
+                updateValues();
+                superArr.splice(round, 1);
+                idItems.splice(round, 1);
+              
+                superArr.splice(num, 0, superObj);
+                
+                updateEditRow(idItems);
+
+                roundCount -= 1;
+            }
+            else {
+                alert(roundCount)
+            }
+            $('.edit').bind("click", function () {
+                round = this.value;
+                test(superArr, round);
+            });
+        });
+
+        function updateEditRow(arr) {
+            $(".edit").remove();
+            $.each(arr, function (index, value) {
+                if (index > 0) {
+                    if (index <= prct)
+                        {
+                        $('#pageNums').append('<input type="button" value=' + index + ' id=' + index + ' class="edit prct"/>');
+                        currPrct++;
+                    }
+                    else
+                    {
+                        $('#pageNums').append('<input type="button" value=' + index + ' id=' + index + ' class="edit trl"/>');
+                        currTrl ++;
+                    }
+                     
+
+                }
+            });
+        }
+
+        function test(superArr, round) {
+
+            makeLabel(round);
+            initFieldStart();
+            initFieldEnd();
+            superObj = superArr[round];
+            what = "";
+
+            var arr = superObj.arrStart.replace(/[\[\]']+/g, '').replace(/[\{\}']+/g, '').split(',');
+            var arrR = superObj.arrFinish.replace(/[\[\]']+/g, '').replace(/[\{\}']+/g, '').split(',');
+            var num = superObj.numMoves;
+
+            $('#numberOfMoves').val(num);
+            for (i = 0; i < arr.length; i++) {
+                if (i % 2 == 0) {
+                    id = arr[i].substr(arr[i].indexOf('p'), 8);
+                    p = paper.getById(id);
+                }
+                else {
+                    color = arr[i].substr(8, arr[i].lastIndexOf('"')).replace(/['"']+/g, '');
+                    p.attr({ fill: color, "stroke-width": "2", stroke: 'black' });
+                    array.push(new data(id, color));
+                }
+            }
+
+            for (i = 0; i < arr.length; i++) {
+                if (i % 2 == 0) {
+                    id = arrR[i].substr(arrR[i].indexOf('p'), 6);
+                    p = paperR.getById(id);
+                }
+                else {
+                    color = arrR[i].substr(8, arr[i].lastIndexOf('"')).replace(/['"']+/g, '');
+                    p.attr({ fill: color, "stroke-width": "2", stroke: 'black' });
+                    arrayR.push(new data(id, color));
+                }
+            }
+        }
+
         $('#makeAnother').click(function () {
+            checkForChange();
+            update = false;
+            round = 0;
             makeLabel(roundCount);
 
             initFieldStart();
             initFieldEnd();
 
             $('#save').show();
-            if (roundCount > prct + trl )
+            updateValues();
+            if (roundCount >= prct + trl)
                 $('#makeAnother').hide();
             roundCount++;
         });
@@ -397,12 +667,34 @@
         });
 
         function makeLabel(round) {
-      
-            if (roundCount <= prct) {
-                $('#roundNumber').text('Set Up Practice Trial #' + roundCount);
+            updateValues();
+            if (what == "") {
+                if (round <= prct) {
+                    $('#roundNumber').text('Set Up Practice Trial #');
+                    $('#roundValue').val(round);
+                }
+                else {
+
+                    $('#roundNumber').text('Set Up Test Trial #');
+                    $('#roundValue').val((round - prct));
+                }
             }
-            else
-                $('#roundNumber').text('Set Up Test Trial #' + (roundCount - prct));
+            else if (what == "prct") {
+                $('#roundNumber').text('Set Up Practice Trial #');
+                updateValues();
+                var total = prct + trl;
+              
+                var currPrct = round - trl;
+
+
+                $('#roundValue').val(prct);
+                $('#roundValue').focus();
+            }
+            else {
+                $('#roundNumber').text('Set Up  Test Trial #');
+                $('#roundValue').val(trl);
+                $('#roundValue').focus();
+            }
         }
 
         function initFieldStart() {
@@ -446,7 +738,7 @@
             ps6 = makeBall(paper, p3x, p3y - r, r, color, "p6");
 
             selected = null;
-        
+
             array = [];
 
 

@@ -76,7 +76,7 @@ function initField(gameNum, gameData) {
     var p;
 
 
-    var round = JSON.parse(gameData.d[gameNum - 1].RoundStart);
+    var round = JSON.parse(gameData[gameNum - 1].RoundStart);
 
 
 

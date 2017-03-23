@@ -48,6 +48,11 @@ namespace TestSite.DAL
 
         }
 
+        internal static DataTable GetModifiedTestData(string testId)
+        {
+            throw new NotImplementedException();
+        }
+
         internal static void SaveUserMessage(string txtNameFrom, string txtEmailFrom, string txtMessage)
         {
             {
@@ -75,9 +80,9 @@ namespace TestSite.DAL
             }
         }
 
-        internal static DataTable GetLondonMoves(string modifiedId)
+        internal static DataSet GetLondonMoves(string modifiedId)
         {
-            DataTable dt = new DataTable();
+            DataSet ds = new DataSet();
             SqlConnection conn = new SqlConnection(connectionSring);
             SqlCommand cmd = new SqlCommand("SelectLondonMoves", conn);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -86,7 +91,7 @@ namespace TestSite.DAL
             try
             {
                 SqlDataAdapter adp = new SqlDataAdapter(cmd);
-                adp.Fill(dt);
+                adp.Fill(ds);
             }
             catch (Exception ex)
             {
@@ -94,7 +99,7 @@ namespace TestSite.DAL
                 throw new Exception("Execption getting London Moves. " + ex.Message);
             }
 
-            return dt;
+            return ds;
         }
         internal static DataSet GetNbackNorms(int ageGroup)
         {
@@ -138,6 +143,63 @@ namespace TestSite.DAL
             }
 
             return ds;
+        }
+
+        internal static void UpdateLondonTestModify(
+            int testId,
+            string testName,
+            string instructions,
+            string overMoves,
+            string overTime,
+            string txtButton,
+            string instructionsFinish,
+            bool txtToSpeech,
+            bool displayResultPage,
+            int prctRounds,
+            int testRounds,
+            int calcResFrom,
+            int timeOut,
+            int maxMoves,
+            bool showFeedback
+            )
+        {
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("UpdatetLondonModified", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@testId", testId);
+            cmd.Parameters.AddWithValue("@testName", testName);
+            cmd.Parameters.AddWithValue("@testInstructions", instructions);
+            cmd.Parameters.AddWithValue("@txtToSpeech", txtToSpeech);
+
+            cmd.Parameters.AddWithValue("@txtOverMoves", txtToSpeech);
+            cmd.Parameters.AddWithValue("@txtOverTime", txtToSpeech);
+            cmd.Parameters.AddWithValue("@txtButton", txtToSpeech);
+            cmd.Parameters.AddWithValue("@instructionsFinish", txtToSpeech);
+
+
+            cmd.Parameters.AddWithValue("@prctRounds", prctRounds);
+            cmd.Parameters.AddWithValue("@testRounds", testRounds);
+            cmd.Parameters.AddWithValue("@calcResFrom", calcResFrom);
+            cmd.Parameters.AddWithValue("@timeOut", timeOut);
+            cmd.Parameters.AddWithValue("@maxMoves", maxMoves);
+            cmd.Parameters.AddWithValue("@showFeedBack", showFeedback);
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                InsertErrorMessage(ex.ToString(), null, null, "UpdatetLondonModified");
+                throw new Exception("Execption saving UpdatetLondonModified " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
         }
 
         internal static DataTable GetNbackUserResults(int tId)
@@ -385,6 +447,28 @@ namespace TestSite.DAL
             }
         }
 
+        internal static DataTable GetModifyTestList(int providerId)
+        {
+            DataTable ds = new DataTable();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("SelectProviderTestModfied", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@providerId", providerId);
+
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                adp.Fill(ds);
+            }
+            catch (Exception ex)
+            {
+                InsertErrorMessage(ex.ToString(), null, null, "SelectProviderTestModfied");
+                throw new Exception("Execption getting All Provider Participants. " + ex.Message);
+            }
+
+            return ds;
+        }
+
         internal static void InsertCardSortTable(string html, int tId)
         {
             SqlConnection conn = new SqlConnection(connectionSring);
@@ -458,13 +542,21 @@ namespace TestSite.DAL
         internal static int InsertLondonTestModify(
             string testName,
             string instructions,
+            string overMoves,
+            string overTime,
+            string txtButton,
+            string txtFeedBack,
+            string instructionsFinish,
             bool txtToSpeech,
+            bool displayResultPage,
             int prctRounds,
             int testRounds,
             int calcResFrom,
+            int countDownFrom,
             int timeOut,
             int maxMoves,
-            bool showFeedback
+            bool showFeedback,
+            int providerId
             )
         {
 
@@ -476,13 +568,23 @@ namespace TestSite.DAL
             cmd.Parameters.AddWithValue("@testName", testName);
             cmd.Parameters.AddWithValue("@testInstructions", instructions);
             cmd.Parameters.AddWithValue("@txtToSpeech", txtToSpeech);
+
+            cmd.Parameters.AddWithValue("@txtOverMoves", overMoves);
+            cmd.Parameters.AddWithValue("@txtOverTime", overTime);
+            cmd.Parameters.AddWithValue("@txtButton", txtToSpeech);
+            cmd.Parameters.AddWithValue("@txtFeedBack", txtFeedBack);
+            cmd.Parameters.AddWithValue("@instructionsFinish",instructionsFinish);
+            cmd.Parameters.AddWithValue("@displayResult", displayResultPage);
+
             cmd.Parameters.AddWithValue("@prctRounds", prctRounds);
             cmd.Parameters.AddWithValue("@testRounds", testRounds);
             cmd.Parameters.AddWithValue("@calcResFrom", calcResFrom);
+            cmd.Parameters.AddWithValue("@countDownFrom", countDownFrom);
             cmd.Parameters.AddWithValue("@timeOut", timeOut);
             cmd.Parameters.AddWithValue("@maxMoves", maxMoves);
             cmd.Parameters.AddWithValue("@showFeedBack", showFeedback);
-            
+            cmd.Parameters.AddWithValue("@providerId", providerId);
+
 
             try
             {

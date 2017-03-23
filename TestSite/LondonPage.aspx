@@ -11,7 +11,7 @@
     <link href="../cogTest.css" rel="stylesheet" />
     <link rel="shortcut icon" href="images/favicon.ico" />
 </head>
-<body>
+<body>countdown
     <div id="testArea" class="withBorder center">
         <div id="countdown" class="countdown"></div>
         <div id="finalMessage" class="finalMessage"></div>
@@ -63,10 +63,10 @@
 <script type="text/javascript"></script>
 
 <script>
-    var test = 1;//$('<%=modifiedId.ClientID%>').value
+<%--    var test = 1;//$('<%=modifiedId.ClientID%>').value
     var data = {
         modifiedId: test
-    }
+    }--%>
     jQuery.ajax({
         contentType: "application/json; charset=utf-8",
         url: 'LondonPage.aspx/GetLondonValues',
@@ -75,7 +75,9 @@
         type: 'GET',
         success: function (resp) {
 
-            gameData = resp;
+            //alert(JSON.parse(resp));
+            gameData = resp.d.LondonMoves;
+            gameSettings = resp.d.GeneralSettings;
             startGame(1);
 
         },

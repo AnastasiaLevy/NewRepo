@@ -30,6 +30,7 @@ namespace TestSite
                 _isProfilefilled = ProfileIsFilled(_userId);
                 logOut.Visible = true;
                 login.Visible = false;
+                string test = Session["modifiedId"].ToString();
             }
             else
             {
@@ -169,7 +170,7 @@ namespace TestSite
                 }
 
                 Session["userTestId"] = _userTestId;
-                Session["modifiedId"] = "1";
+                //Session["modifiedId"] 
                 Response.Redirect("LondonPage.aspx");
             }
             else

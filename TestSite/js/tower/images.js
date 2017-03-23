@@ -27,7 +27,7 @@ function showImage(currentGame, gameData) {
     var p;
 
 
-    var round = JSON.parse(gameData.d[currentGame - 1].RoundFinish);
+    var round = JSON.parse(gameData[currentGame - 1].RoundFinish);
 
 
 

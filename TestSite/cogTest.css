@@ -3177,3 +3177,21 @@ label {
     cursor:default;
 }
 
+.edit {
+    font-size:large;
+    margin:2px;
+}
+
+.prct {
+    background-color: lightgrey;
+
+}
+.trl
+{
+    background-color: palegreen;
+}
+#roundValue {
+    color:blueviolet;
+    font-size:large;
+    background-color:aliceblue;
+}

@@ -130,6 +130,51 @@ namespace TestSite.Provider {
         protected global::System.Web.UI.WebControls.Button btnCodeClose;
         
         /// <summary>
+        /// editTest control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl editTest;
+        
+        /// <summary>
+        /// ddlModifyTest control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlModifyTest;
+        
+        /// <summary>
+        /// btnSelectModify control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSelectModify;
+        
+        /// <summary>
+        /// btnCreateNewTest control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCreateNewTest;
+        
+        /// <summary>
+        /// btnCancelModify control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancelModify;
+        
+        /// <summary>
         /// createUser control.
         /// </summary>
         /// <remarks>

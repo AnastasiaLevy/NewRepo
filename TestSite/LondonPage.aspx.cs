@@ -56,11 +56,61 @@ namespace TestSite
             DataMethods.UpdateTestFinished(_userId, _userTestId);
         }
 
+        //[WebMethod]
+        //[ScriptMethod(UseHttpGet = true)]
+        //public static List<LondonMoves> GetLondonValues()
+        //{
+        //    return GetLondonMoves();
+        //}
+
         [WebMethod]
         [ScriptMethod(UseHttpGet = true)]
-        public static List<LondonMoves> GetLondonValues()
+        public static TestSetUpValues GetLondonValues()
         {
-            DataTable dt = DataMethods.GetLondonMoves(_modifiedId);
+            DataSet ds = DataMethods.GetLondonMoves(_modifiedId);
+
+            List<LondonMoves> moves = GetLondonMoves(ds.Tables[0]);
+            GeneralSettings settings = GetGeneralSettings(ds.Tables[1]);
+
+            return new TestSetUpValues
+            {
+                LondonMoves = moves,
+                GeneralSettings = settings
+            };
+        }
+
+        private static GeneralSettings GetGeneralSettings(DataTable dt)
+        {
+            GeneralSettings gs = new GeneralSettings();
+            if (dt.Rows.Count > 0)
+            {
+                gs.TestName = dt.Rows[0]["testName"].ToString();
+                gs.Instructions = dt.Rows[0]["testInstructions"].ToString();
+                gs.InstructionsFinish = dt.Rows[0]["instructionsFinish"].ToString();
+                gs.TxtButton = dt.Rows[0]["instructionsFinish"].ToString();
+                gs.Feedback = dt.Rows[0]["txtFeedBack"].ToString();
+                gs.CountDownFrom = dt.Rows[0]["countDownFrom"].ToString();
+                gs.TextOverMoves = dt.Rows[0]["txtOverMoves"].ToString();
+                gs.TextOverTime = dt.Rows[0]["txtOverTime"].ToString();
+                gs.DisplayResults = dt.Rows[0]["displayResult"].ToString();
+
+
+                gs.TxtToSpeech = dt.Rows[0]["txtToSpeech"].ToString();
+                gs.PrctRounds = dt.Rows[0]["prctRounds"].ToString();
+                gs.TestRounds = dt.Rows[0]["testRounds"].ToString();
+                gs.CalcResFrom = dt.Rows[0]["calcResFrom"].ToString();
+                gs.TimeOut = dt.Rows[0]["timeOut"].ToString();
+                gs.MaxMoves = dt.Rows[0]["maxMoves"].ToString();
+                gs.ShowFeedback = dt.Rows[0]["showFeedBack"].ToString();
+                
+                
+            }
+            return gs;
+        }
+
+        private static List<LondonMoves> GetLondonMoves(DataTable dt)
+        {
+          
             LondonMoves lm = new LondonMoves();
             var oSerializer = new System.Web.Script.Serialization.JavaScriptSerializer();
             List<LondonMoves> listMoves = new List<LondonMoves>();
@@ -93,7 +143,7 @@ namespace TestSite
 
     public class TestSetUpValues
     {
-        public LondonMoves LondonMoves { get; set; }
+        public List<LondonMoves> LondonMoves { get; set; }
         public GeneralSettings GeneralSettings;
     }
 
@@ -101,6 +151,14 @@ namespace TestSite
     {
         public string TestName { get; set; }
         public string Instructions { get; set; }
+        public string InstructionsFinish { get; set; }
+        public string TxtButton { get; set; }
+        public string Feedback { get; set; }
+        public string CountDownFrom { get; set; }
+        public string TextOverMoves { get; set; }
+        public string TextOverTime { get; set; }
+        public string DisplayResults { get; set; }
+         
         public string TxtToSpeech { get; set; }
         public string PrctRounds { get; set; }
         public string TestRounds { get; set; }

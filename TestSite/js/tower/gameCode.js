@@ -1,22 +1,26 @@
 ﻿//var text = ["See these two boards? They are both alike. This board on the left is the one you will use and you will make it look like the one on the right. Your task is to make this arrangement on the left look like the one on the right in as few moves as possible. There are two rules you must follow when you are arranging the beads. The first rule is that you are not allowed to place more beads on the peg that it can hold. The second rule is that you can only move one bead at a time. You cannot move two beads off the pegs at the same time. Do you have any questions? Now, arrange the beads on the left so they look like the arrangement on the right. You have two minutes to do each problem. Also, you need to coplete the problem in 20 moves or fewer. If you are not finished within two minutes or in less than 20 moves, the trial ends and the new problem is presented.", " Click here to start 123."].join('');
-var text = [" See these two boards? They are both alike.",
-    "This board on the left is the one you will use and",
-    "you will make it look like the one on the right. Your ",
-    "task is to make this arrangement on the left look like ",
-    "the one on the right in as few moves as possible. There ",
-    "are two rules you must follow when you are arranging the beads.",
-    "The first rule is that you are not allowed to place more beads ",
-    "on the peg that it can hold. The second rule is that you can only ",
-    "move one bead at a time. You cannot move two beads off the pegs ",
-    "at the same time. Now, arrange ",
-    "the beads on the left so they look like the arrangement on the right.",
-    "You have two minutes to do each problem. Also, you need to ",
-    "coplete the problem in 20 moves or fewer. If you are not ",
-    "finished within two minutes or in less than 20 moves,",
-    "the trial ends and the new problem is presented. Click here to start."].join("");
+//var text = [" See these two boards? They are both alike.",
+//    "This board on the left is the one you will use and",
+//    "you will make it look like the one on the right. Your ",
+//    "task is to make this arrangement on the left look like ",
+//    "the one on the right in as few moves as possible. There ",
+//    "are two rules you must follow when you are arranging the beads.",
+//    "The first rule is that you are not allowed to place more beads ",
+//    "on the peg that it can hold. The second rule is that you can only ",
+//    "move one bead at a time. You cannot move two beads off the pegs ",
+//    "at the same time. Now, arrange ",
+//    "the beads on the left so they look like the arrangement on the right.",
+//    "You have two minutes to do each problem. Also, you need to ",
+//    "coplete the problem in 20 moves or fewer. If you are not ",
+//    "finished within two minutes or in less than 20 moves,",
+//    "the trial ends and the new problem is presented. Click here to start."].join("");
+
+
 
 function startGame(gameNum) { //change back w/o s to use
- 
+    var text = gameSettings.Instructions;
+
+    //alert(gameSettings);
     hideFinalMessage();
     nm = 0;
     nmWr = 0;
@@ -41,8 +45,9 @@ function startGame(gameNum) { //change back w/o s to use
 }
 
 function countdown() {
-    
-     gameTimer = setTimeout( displayFinalMessageOnTimeout, 120000);    
+    var timeMlsec = gameSettings.TimeOut * 100
+    numMoves = JSON.parse(gameData[game - 1].NumberOfMoves);
+    gameTimer = setTimeout(function () { displayFinalMessageOnTimeout(numMoves, lastMove, timeMlsec) }, timeMlsec);
 }
 
 function hideFinalMessage() {
@@ -54,76 +59,46 @@ function hideFinalMessage() {
 function displayTestFinishedMessage() {
 
     $('#testArea').empty();
-    //$("#testArea").append("<div id = 'finishesTest' class='finishesTest'><p>The Test Has Finished Running. <br/></p> <button type='button>View Results</button></div>");
-    $("#testArea").append("<div id = 'finishesTest' class='center finishesTest '><p>The Test Has Finished Running. <br/></p><input type='button' id='finishIt'class='signup-btn' value='View Results'></div>");
+    var str = gameSettings.InstructionsFinish;
+    var btn = gameSettings.TxtButton;
+    $("#testArea").append("<div id = 'finishesTest' class='center finishesTest '><p>"+ str +" <br/></p><input type='button' id='finishIt'class='signup-btn' value='"+ btn +"'></div>");
 
 }
 
-function displayFinalMessageOnTimeout() {
-
+function displayFinalMessageOnTimeout(numMoves, lastMove, timeMlsec) {
+    //var text = gameSettings.InstructionsTimeOut;
+    var text = gameSettings.TextOverTime;
     var finalMessage = document.getElementById("finalMessage");
     finalMessage.style.display = '';
-    finalMessage.innerHTML = "You've exceeded time for trial #" + game; 
-    if (game !=13)
+    finalMessage.innerHTML = text;//"You've exceeded time for trial #" + game;
+    if (game != lastMove)
     finalMessage.innerHTML += ". The new trial will start soon.";
     setTimeout(hideFinalMessage, 2000);
-    if (game == 13) {
+    if (game == lastMove) {
         updateTestFinished();
         displayTestFinishedMessage();
     }
-    var minMoves = mapGameMoves(game);
-    passResultsForGame(game, initTTime, 120000, 20, nmWr, true, false, minMoves);
+  
+    passResultsForGame(game, timeMlsec, timeMlsec, 20, nmWr, true, false, numMoves);
     setTimeout(function () {
            startCountDownTimer(game +1);
     }, 1300);
- 
-}
-
-function mapGameMoves(game)
-{
-    switch(game)
-    {
-        case 1:
-            return 1;
-        case 2:
-            return 2;
-        case 3:
-            return 2;
-        case 4:
-            return 4;
-        case 5:
-            return 4;
-        case 6:
-            return 5;
-        case 7:
-            return 5;
-        case 8:
-            return 5;
-        case 9:
-            return 6;
-        case 10:
-            return 6;
-        case 11:
-            return 6;
-        case 12:
-            return 7;
-        case 13:
-            return 7;
-    }
 }
 
 function displayFinalMessage20move(game) {
+    var text = gameSettings.TxtOverMoves; //TODO
+    //var text = "Test FinalMessage over max move"
     over = new Date() - time;
     var finalMessage = document.getElementById("finalMessage");
     finalMessage.style.display = '';
-    finalMessage.innerHTML = "You made more that 20 moves in trial " + game + ". The new trial will start soon.";
+    finalMessage.innerHTML = text;//"You made more that 20 moves in trial " + game + ". The new trial will start soon.";
     setTimeout(hideFinalMessage, 2000);
-    if (game == 13) {
+    if (game == lastMove) {
         updateTestFinished();
         displayTestFinishedMessage();
     }
-    var minMoves = mapGameMoves(game)
-    passResultsForGame(game, initTTime, over, 20, nmWr, false, true, minMoves);
+    //var minMoves = mapGameMoves(game)
+    passResultsForGame(game, initTTime, over, 20, nmWr, false, true, numMoves);
     setTimeout(function () {
        startCountDownTimer(game);  
     }, 1300);
@@ -131,18 +106,20 @@ function displayFinalMessage20move(game) {
 }
 
 function displayFinalMessage(needMoves, madeMoves) {
+    
     var finalMessage = document.getElementById("finalMessage");
     finalMessage.style.display = '';
-    if (madeMoves > 1)
-        dMadeMoves = " moves";
-    else
-        dMadeMoves = " move";
+    //if (madeMoves > 1)
+    //    dMadeMoves = " moves";
+    //else
+    //    dMadeMoves = " move";
 
-    if (needMoves > 1)
-        dNeedMoves = " moves.";
-    else
-        dNeedMoves = " move.";
-    finalMessage.innerHTML = "You made " + madeMoves + dMadeMoves + ". The goal was " + needMoves + dNeedMoves;
+    //if (needMoves > 1)
+    //    dNeedMoves = " moves.";
+    //else
+    //    dNeedMoves = " move.";
+    //finalMessage.innerHTML = "You made " + madeMoves + dMadeMoves + ". The goal was " + needMoves + dNeedMoves;
+    finalMessage.innerHTML = gameSettings.txtFeedBack
     setTimeout(hideFinalMessage, 2000);
 }
 
@@ -157,7 +134,8 @@ function displayInstructions(text) {
 }
 
 function startCountDownTimer(game) {
-    var timeleft = 11;
+    var timeleft = parseInt(gameSettings.CountDownFrom);
+
     canMove = false;
     var field = document.getElementById("countdown");
     field.style.display = '';
@@ -170,30 +148,37 @@ function startCountDownTimer(game) {
         if (timeleft <= 0) {
 
             clearInterval(downloadTimer);
-            field.textContent = "Click to Start";
+            //field.textContent = "Click to Start";
+            canMove = true;
+            //gameStarted = true;
+            cleanDivs();
+            field.style.display = 'none';
+            startGame(game)
         }
 
     }, 1000);
 
-    field.onclick = function run() {
-        canMove = true;
-        //gameStarted = true;
-        cleanDivs();
-        field.style.display = 'none';
-        startGame(game)
-    }
+    //field.onclick = function run() {
+    //    canMove = true;
+    //    //gameStarted = true;
+    //    cleanDivs();
+    //    field.style.display = 'none';
+    //    startGame(game)
+    //}
 }
 
 function finishGame(needMoves) {
+    lastMove = parseInt(gameSettings.PrctRounds) + parseInt(gameSettings.TestRounds)
     window.clearTimeout(gameTimer);
     over = new Date() - time;
     gameFinished = true;
   
     passResultsForGame(game, initTTime,over, nm, nmWr, false, false, needMoves);
     canMove = false;
+    if (gameSettings.ShowFeedback == "True")
     setTimeout(function () { displayFinalMessage(needMoves, nm); }, 1200)
   
-    if (game == 13) {
+    if (game == lastMove) {
         updateTestFinished();
         displayTestFinishedMessage();   
     }
@@ -248,20 +233,21 @@ function getMatchPos (pos, color)
 }
 
 function checkPos(out) {
-   
-    if (nm == 20) {
+    finishPos = JSON.parse(gameData[game - 1].RoundFinish);
+    numMoves = JSON.parse(gameData[game - 1].NumberOfMoves);
+
+    if (nm == gameSettings.MaxMoves) {
         displayFinalMessage20move(game)
     }
     canMove = false;
-    setTimeout(function () { canMove = true }, 1200);
+    setTimeout(function () { canMove = true }, 1000);
     //
     if (out) {
         if (nm == 0) {
             initTTime = new Date() - time;
         }
     }
-    var finishPos = JSON.parse(gameData.d[game - 1].RoundFinish);
-    var numMoves = JSON.parse(gameData.d[game - 1].NumberOfMoves);
+   
     var red = finishPos.red;
     var blue = finishPos.blue;
     var green = finishPos.green;
@@ -272,123 +258,8 @@ function checkPos(out) {
         &&
         getMatchPos(finishPos.green, "green"))
     {
-        //alert("match");
         finishGame(numMoves);
     }
-
-
-    //if (game == 1) {
-    //    if (p5 != null && p5.id == "blue" &&
-    //        p3 != null && p3.id == "green" &&
-    //        p6 != null && p6.id == "red") {
-
-    //        finishGame(1);
-            
-    //    }
-    //}
-    //else if (game == 2) {
-    //    if (p5 != null && p5.id == "red" &&
-    //        p3 != null && p3.id == "green" &&
-    //        p6 != null && p6.id == "blue") {
-
-    //        finishGame(2);
-    //    }
-    //}
-    //else if (game == 3) {
-    //    if (p6 != null && p6.id == "red" &&
-    //        p3 != null && p3.id == "green" &&
-    //        p2 != null && p2.id == "blue") {
-
-    //        finishGame(2);
-    //    }
-    //}
-    //else if (game == 4) {
-    //    if (p5 != null && p5.id == "red" &&
-    //        p4 != null && p4.id == "green" &&
-    //        p3 != null && p3.id == "blue") {
-
-    //        finishGame(4);
-    //    }
-    //}
-    //else if (game == 5) {
-    //    if (p5 != null && p5.id == "red" &&
-    //        p6 != null && p6.id == "green" &&
-    //        p4 != null && p4.id == "blue") {
-
-    //        finishGame(4);
-    //    }
-    //}
-    //else if (game == 6) {
-    //    if (p5 != null && p5.id == "red" &&
-    //        p3 != null && p3.id == "blue" &&
-    //        p2 != null && p2.id == "green") {
-
-    //        finishGame(5);
-    //    }
-    //}
-    //else if (game == 7) {
-    //    if (p5 != null && p5.id == "red" &&
-    //     p6 != null && p6.id == "green" &&
-    //     p3 != null && p3.id == "blue") {
-
-    //        finishGame(5);
- 
-    //    }
-    //}
-    //else if (game == 8) {
-    //    if (p3 != null && p3.id == "red" &&
-    //     p2 != null && p2.id == "green" &&
-    //     p6 != null && p6.id == "blue") {
-
-    //        finishGame(5);
-
-    //    }
-    //}
-    //else if (game == 9) {
-    //    if (p1 != null && p1.id == "red" &&
-    //     p2 != null && p2.id == "green" &&
-    //     p3 != null && p3.id == "blue") {
-
-    //        finishGame(6);
-
-    //    }
-    //}
-    //else if (game == 10) {
-    //    if (p2 != null && p2.id == "red" &&
-    //     p3 != null && p3.id == "blue" &&
-    //     p6 != null && p6.id == "green") {
-
-    //        finishGame(6);
-
-    //    }
-    //}
-    //else if (game == 11) {
-    //    if (p6 != null && p6.id == "red" &&
-    //     p2 != null && p2.id == "green" &&
-    //     p3 != null && p3.id == "blue") {
-
-    //        finishGame(6);
-
-    //    }
-    //}
-    //else if (game == 12) {
-    //    if (p2 != null && p2.id == "red" &&
-    //        p1 != null && p1.id == "green" &&
-    //        p3 != null && p3.id == "blue") {
-
-    //        finishGame(7);
-
-    //    }
-    //}
-    //else if (game == 13) {
-    //    if (p2 != null && p2.id == "red" &&
-    //     p5 != null && p5.id == "green" &&
-    //     p3 != null && p3.id == "blue") {
-
-    //        finishGame(7);
-           
-    //    }
-    //}
 };
 
 function getTime() {
@@ -397,7 +268,6 @@ function getTime() {
 }
 
 function cleanDivs() {
-    //var ele = $("#canvas_container");
     $("#canvas_small").remove();
     $("#testArea").append("<div id = 'canvas_small' class='left'></div>");
     $("#image_holder").remove();
@@ -415,7 +285,7 @@ function passResultsForGame( game,initThinkTime, totalTime, nm, nmWrong, overTim
         'numberOfWrongMoves': nmWrong,
         'overTime': overTime,
         'overMoves': overMoves,
-        'minMoves' :minMoves
+        'minMoves' :numMoves
 
     }
     jQuery.ajax({
@@ -455,6 +325,23 @@ $('body').on('click', '#finishIt', function () {
     var tId = document.getElementById("tId").value;
     window.location.href = "ResultsPage.aspx?userId=" + user + "&tid=" + tId+ "&test=2";
 });
+
+function saveTextAsFile() {
+    var textToSave = document.getElementById("inputTextToSave").value;
+    var textToSaveAsBlob = new Blob([textToSave], { type: "text/plain" });
+    var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
+    var fileNameToSaveAs = document.getElementById("inputFileNameToSaveAs").value;
+
+    var downloadLink = document.createElement("a");
+    downloadLink.download = fileNameToSaveAs;
+    downloadLink.innerHTML = "Download File";
+    downloadLink.href = textToSaveAsURL;
+    downloadLink.onclick = destroyClickedElement;
+    downloadLink.style.display = "none";
+    document.body.appendChild(downloadLink);
+
+    downloadLink.click();
+}
 
 
 

@@ -71,9 +71,12 @@ namespace TestSite
             gvAvailableTests.DataSource = DAL.DataMethods.GetAllUserTests(Membership.GetUser(User.Identity.Name).ProviderUserKey.ToString());
             gvAvailableTests.Columns[3].Visible = true;
             gvAvailableTests.Columns[4].Visible = true;
+            gvAvailableTests.Columns[5].Visible = true;
             gvAvailableTests.DataBind();
             gvAvailableTests.Columns[3].Visible = false;
             gvAvailableTests.Columns[4].Visible = false;
+            gvAvailableTests.Columns[5].Visible = false;
+
 
         }
 
@@ -96,7 +99,12 @@ namespace TestSite
             LinkButton btn = (LinkButton)sender;
             GridViewRow row = (GridViewRow)btn.NamingContainer;
             string str = row.Cells[3].Text;
-            Session["userTestId"] = Convert.ToInt32(row.Cells[4].Text);
+            Session["userTestId"] = row.Cells[4].Text;
+            if (!String.IsNullOrEmpty(row.Cells[5].Text))
+            {
+                Session["modifiedId"] = row.Cells[5].Text;
+            }
+
             OpenTestPage(str);
         }
 
