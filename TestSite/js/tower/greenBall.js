@@ -6,7 +6,7 @@ function onclickGreen(objName) {
             objName.animate(moveFromP6);
             up3 = green;
             p6 = null;
-            checkPos();
+            checkPos(true);
 
         }
         else if (p5 == green && p4 == null) {
@@ -20,7 +20,7 @@ function onclickGreen(objName) {
             objName.animate(moveFromP4);
             p4 = null;
             up2 = green;
-            checkPos();
+            checkPos(true);
         }
         else if (p3 == green && p2 == null && p1 == null) {
             objName.animate(moveFromP3)
@@ -39,7 +39,7 @@ function onclickGreen(objName) {
             objName.animate(moveFromP1)
             up1 = green;
             p1 = null;
-            checkPos();
+            checkPos(true);
 
         }
         else {

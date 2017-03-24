@@ -32,13 +32,13 @@ var peg3 = null;
 
 
 function initField(gameNum, gameData) {
-   
-     p1 = null;
-     p2 = null;
-     p3 = null;
-     p4 = null;
-     p5 = null;
-     p6 = null;
+
+    p1 = null;
+    p2 = null;
+    p3 = null;
+    p4 = null;
+    p5 = null;
+    p6 = null;
 
     up1 = null;
     up2 = null;
@@ -78,14 +78,23 @@ function initField(gameNum, gameData) {
 
     var round = JSON.parse(gameData[gameNum - 1].RoundStart);
 
+    // x: p1x,
+    // y: p1y - 5 * r
 
+    //p = getPosition(round.red);
+    //red = makeRed(paper, p.x, p.y, r, "red", true);
+    //p = getPosition(round.blue);
+    //blue = makeBlue(paper, p.x, p.y, r, "blue", true); 
 
-    p = getPosition(round.red);
-    red = makeRed(paper, p.x, p.y, r, "red", true);
-    p = getPosition(round.blue);
-    blue = makeBlue(paper, p.x, p.y, r, "blue", true);
-    p = getPosition(round.green);
-    green = makeGreen(paper, p.x, p.y, r, "green", true);
+    //p = getPosition(round.green);
+    //green = makeGreen(paper, p.x, p.y, r, "green", true);
+
+    red = makeRed(paper, p1x, p1y - r, r, "red", true);
+    getPosition(round.red, red);
+    blue = makeBlue(paper, p1x, p1y - r, r, "blue", true);
+    getPosition(round.blue, blue);
+    green = makeGreen(paper, p1x, p1y - r, r, "green", true);
+    getPosition(round.green, green);
 
     setStartPosition(round.red, red);
     setStartPosition(round.blue, blue);
@@ -106,17 +115,19 @@ function initField(gameNum, gameData) {
     //p4 = null;
     //p6 = null;
 
-   p2.animate(Raphael.animation({
-        transform: 't0 ' + (-270)
-    },0));
-    p2.animate(Raphael.animation({
-        cx: 50,
-        y: 0
-    }, 0));
- 
-      p2.animate(Raphael.animation({
-        transform: 't0 ' + (-60)
-    }, 0).delay(0));
+    //p1.animate(Raphael.animation({
+    //     transform: 't0 ' + (-270)
+    // },0));
+    // p1.animate(Raphael.animation({
+    //     cx: 50,
+    //     y: 0
+    // }, 0));
+
+    //   p1.animate(Raphael.animation({
+    //     transform: 't0 ' + (-60)
+    // }, 0).delay(0));
+
+
 
     // red.animate(moveToP2);
     //red = makeRed(paper, p2x, p2y - r, r, "red", true);//paperWidth/2  = 500, 100
@@ -134,53 +145,94 @@ function initField(gameNum, gameData) {
     //green = makeGreen(paper, p2x, p2y - r, r, "green", true);
     //blue = makeBlue(paper, p3x, p3y - r, r, "blue",true);
 
- 
 
-    function getPosition(pos) {
+
+    //function getPosition(pos) {
+    //    switch (pos) {
+    //        case "p1":
+    //            return pos = {
+    //                x: p1x,
+    //                y: p1y - 5 * r
+    //            };
+    //        case "p2":
+    //            {
+    //                return pos = {
+    //                    x: p1x,
+    //                    y: p1y -3* r
+    //                }
+    //            }
+    //        case "p3": 
+    //            {
+    //                return pos = {
+    //                    x: p1x,
+    //                    y: p1y - r
+    //                }
+    //            }
+    //        case "p4":
+    //            {
+    //                return pos = {
+    //                    x: p2x,
+    //                    y: p2y - 3 * r
+    //                }
+    //            }
+    //        case "p5":
+    //            {
+    //                return pos = {
+    //                    x: p2x,
+    //                    y: p2y - r
+
+
+    //                }
+
+    //            }
+    //        case "p6":
+    //            {
+    //                return pos = {
+    //                    x: p3x,
+    //                    y: p3y - r
+    //                }
+    //            }
+    //    }
+    //}
+
+    function getPosition(pos, obj) {
         switch (pos) {
             case "p1":
-                return pos = {
-                    x: p1x,
-                    y: p1y - 5 * r
-                };
+                obj.animate(moveFromP3);
+                obj.animate(moveToP1);
+                break;
             case "p2":
-                {
-                    return pos = {
-                        x: p3x,
-                        y: p3y - r
-                    }
-                }
-            case "p3": 
-                {
-                    return pos = {
-                        x: p1x,
-                        y: p1y - r
-                    }
-                }
+
+                obj.animate(moveFromP3);
+                obj.animate(moveToP2);
+                break;
+
+            case "p3":
+
+                obj.animate(moveFromP3);
+                obj.animate(moveToP3);
+                break;
+
             case "p4":
-                {
-                    return pos = {
-                        x: p2x,
-                        y: p2y - 3 * r
-                    }
-                }
+
+                obj.animate(moveFromP3);
+                obj.animate(moveU1U2);
+                obj.animate(moveToP4);
+
+
             case "p5":
-                {
-                    return pos = {
-                        x: p2x,
-                        y: p2y - r
+
+                obj.animate(moveFromP3);
+                obj.animate(moveU1U2);
+                obj.animate(moveToP5);
+                break;
 
 
-                    }
 
-                }
             case "p6":
-                {
-                    return pos = {
-                        x: p3x,
-                        y: p3y - r
-                    }
-                }
+                obj.animate(moveFromP3);
+                obj.animate(moveU1U3);
+                obj.animate(moveToP6);
         }
     }
 }

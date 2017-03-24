@@ -26,6 +26,7 @@ var moveFromP1 = Raphael.animation({
 }, speed)
 
 
+
 //from top to bottom
 //     : peg 1
 var moveToP1 = Raphael.animation({

@@ -179,8 +179,8 @@ namespace TestSite.Create
                 for (int i = 0; i < strS.Count(); i++)
                 {
 
-                    movesStart += '"' + strS[i].color + "' : '" + strS[i].id.Substring(0, 2) + '"' + ',';
-                    movesFinish += '"' + strF[i].color + "' : '" + strF[i].id.Substring(0, 2) + '"' + ',';
+                    movesStart += '"' + strS[i].color + "\" : \"" + strS[i].id.Substring(0, 2) + '"' + ',';
+                    movesFinish += '"' + strF[i].color + "\" : \"" + strF[i].id.Substring(0, 2) + '"' + ',';
                 }
                 md.arrStart = movesStart.TrimEnd(',') + "}";
                 md.arrFinish = movesFinish.TrimEnd(',') + "}";

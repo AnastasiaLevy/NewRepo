@@ -6,7 +6,7 @@
                 objName.animate(moveFromP6);
                 up3 = blue;
                 p6 = null;
-                checkPos();
+                checkPos(true);
             }
 
             else if (p5 == blue && p4 == null) {
@@ -19,7 +19,7 @@
                 objName.animate(moveFromP4)
                 up2 = blue;
                 p4 = null;
-                checkPos();
+                checkPos(true);
             }
             else if (p3 == blue && p2 == null && p1 == null) {
                 objName.animate(moveFromP3)
@@ -37,7 +37,7 @@
                 objName.animate(moveFromP1)
                 up1 = blue;
                 p1 = null;
-                checkPos();
+                checkPos(true);
             }
             else
             {

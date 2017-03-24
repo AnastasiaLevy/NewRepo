@@ -253,9 +253,9 @@
         function checkForChange(str) {
             updateValues();
             var compare = 0;
-            if (str != null && update)
+            if (str != null)
                 what = str
-            
+
             if (update == true) {
                 compare = moves.length
             }
@@ -264,7 +264,7 @@
             if ((prct + trl) > compare) {
 
                 $('#makeAnother').show();
-               
+
                 showNumGrp();
                 $('#delete').hide();
 
@@ -291,35 +291,65 @@
             var value = $('#<%=movesText.ClientID%>').val();
             if (value.length == 0) {
                 what = "";
-                return;
+                updateValues();
+                update = true;
+                $('#save').show();
+                $('#makeAnother').hide();
+                //return;
+                moves = [];
+                for (i = 1; i <= prct; i++) {
+                    moves[i-1] = i;
+                    idItems[i] = i;
+                    $('#pageNums').append('<input type="button" value=' + i + ' id=' + i + ' class="edit prct"/>');
+                }
+                for (i = (prct + 1) ; i <= (trl + prct) ; i++) {
+
+                    $('#pageNums').append('<input type="button" value=' + i + ' id=' + i + ' class="edit trl"/>');
+                    moves[i-1] = i;
+                    idItems[i] = i;
+                }
+                round = roundCount = moves.length;
+
+
+
+                //$('.edit').bind("click", function () {
+                //    round = this.value;
+                //   // alert(round);
+                //    makeLabel(round);
+
+                //    initFieldStart();
+                //    initFieldEnd();
+                //});
+
             }
-                
-            moves = JSON.parse(value);
-            update = true;
-            round = roundCount = moves.length + 1;
+            else {
+                moves = JSON.parse(value);
 
-            checkForChange();
+                update = true;
+                round = roundCount = moves.length + 1;
 
-            jQuery.each(moves, function (index, value) {
-                superObj = {
-                    arrStart: moves[index].RoundStart,
-                    arrFinish: moves[index].RoundFinish,
-                    numMoves: moves[index].NumberOfMoves
-                }
-                superArr[moves[index].GameRound] = superObj; //{"red": "p2", "green":"p3", "blue": "p5"}
+                checkForChange();
 
-                if ((moves[index].GameRound) <= prct) {
-                    currPrct++;
-                    $('#pageNums').append('<input type="button" value=' + (moves[index].GameRound) + ' id=' + (moves[index].GameRound) + ' class="edit prct"/>');
-                }
-                else {
-                    $('#pageNums').append('<input type="button" value=' + (moves[index].GameRound) + ' id=' + (moves[index].GameRound) + ' class="edit trl"/>');
-                    currTrl++;
-                }
-                idItems[(moves[index].GameRound)] = (moves[index].GameRound);
-            });
+                jQuery.each(moves, function (index, value) {
+                    superObj = {
+                        arrStart: moves[index].RoundStart,
+                        arrFinish: moves[index].RoundFinish,
+                        numMoves: moves[index].NumberOfMoves
+                    }
+                    superArr[moves[index].GameRound] = superObj; //{"red": "p2", "green":"p3", "blue": "p5"}
 
+                    if ((moves[index].GameRound) <= prct) {
+                        currPrct++;
+                        $('#pageNums').append('<input type="button" value=' + (moves[index].GameRound) + ' id=' + (moves[index].GameRound) + ' class="edit prct"/>');
+                    }
+                    else {
+                        $('#pageNums').append('<input type="button" value=' + (moves[index].GameRound) + ' id=' + (moves[index].GameRound) + ' class="edit trl"/>');
+                        currTrl++;
+                    }
+                    idItems[(moves[index].GameRound)] = (moves[index].GameRound);
+                });
 
+            }
             $('.edit').bind("click", function () {
                 update = true;
                 round = this.value;
@@ -404,21 +434,21 @@
                 }
                 var num; //Set Num;
                 if (what != "") {
-                    if (what == "prct"){
+                    if (what == "prct") {
                         num = parseInt($('#roundValue').val());
-                    }   
-                    else if (what == "trl")
-                    {
+                    }
+                    else if (what == "trl") {
                         num = parseInt($('#roundValue').val()) + prct;
-                    } 
+                    }
 
                     idItems.splice(num, 0, num);
+                    superArr.splice(num, 0, superObj);
                     updateEditRow(idItems);
                 }
 
                 else {
                     if (round != 0 || update == true) {
-                       
+
                         num = round;
                     }
                     else {
@@ -431,25 +461,23 @@
                     //    currPrct++;
                     //else
                     //    currTrl ++;
-                    superArr.splice(num, 0, superObj);
+
                     if (!$('#' + num + '').length) {
-                        if (num <= prct)
-                        {
+                        if (num <= prct) {
                             $('#pageNums').append('<input type="button" value=' + num + ' id=' + num + ' class="edit prct"/>');
                             currPrct++;
 
                         }
-                           
-                        else
-                        {
+
+                        else {
                             $('#pageNums').append('<input type="button" value=' + num + ' id=' + num + ' class="edit trl"/>');
                             currTrl++;
                         }
-                           
+
                         idItems.push(num);
                     }
                 }
-                
+
             }
 
 
@@ -465,9 +493,9 @@
                 updateValues();
                 superArr.splice(round, 1);
                 idItems.splice(round, 1);
-              
-                superArr.splice(num, 0, superObj);
-                
+
+                //superArr.splice(num, 0, superObj);
+
                 updateEditRow(idItems);
 
                 roundCount -= 1;
@@ -485,17 +513,15 @@
             $(".edit").remove();
             $.each(arr, function (index, value) {
                 if (index > 0) {
-                    if (index <= prct)
-                        {
+                    if (index <= prct) {
                         $('#pageNums').append('<input type="button" value=' + index + ' id=' + index + ' class="edit prct"/>');
                         currPrct++;
                     }
-                    else
-                    {
+                    else {
                         $('#pageNums').append('<input type="button" value=' + index + ' id=' + index + ' class="edit trl"/>');
-                        currTrl ++;
+                        currTrl++;
                     }
-                     
+
 
                 }
             });
@@ -508,33 +534,35 @@
             initFieldEnd();
             superObj = superArr[round];
             what = "";
+            if (superObj != null) {
+                var arr = superObj.arrStart.replace(/[\[\]']+/g, '').replace(/[\{\}']+/g, '').split(',');
+                var arrR = superObj.arrFinish.replace(/[\[\]']+/g, '').replace(/[\{\}']+/g, '').split(',');
+                var num = superObj.numMoves;
 
-            var arr = superObj.arrStart.replace(/[\[\]']+/g, '').replace(/[\{\}']+/g, '').split(',');
-            var arrR = superObj.arrFinish.replace(/[\[\]']+/g, '').replace(/[\{\}']+/g, '').split(',');
-            var num = superObj.numMoves;
 
-            $('#numberOfMoves').val(num);
-            for (i = 0; i < arr.length; i++) {
-                if (i % 2 == 0) {
-                    id = arr[i].substr(arr[i].indexOf('p'), 8);
-                    p = paper.getById(id);
+                $('#numberOfMoves').val(num);
+                for (i = 0; i < arr.length; i++) {
+                    if (i % 2 == 0) {
+                        id = arr[i].substr(arr[i].indexOf('p'), 8);
+                        p = paper.getById(id);
+                    }
+                    else {
+                        color = arr[i].substr(8, arr[i].lastIndexOf('"')).replace(/['"']+/g, '');
+                        p.attr({ fill: color, "stroke-width": "2", stroke: 'black' });
+                        array.push(new data(id, color));
+                    }
                 }
-                else {
-                    color = arr[i].substr(8, arr[i].lastIndexOf('"')).replace(/['"']+/g, '');
-                    p.attr({ fill: color, "stroke-width": "2", stroke: 'black' });
-                    array.push(new data(id, color));
-                }
-            }
 
-            for (i = 0; i < arr.length; i++) {
-                if (i % 2 == 0) {
-                    id = arrR[i].substr(arrR[i].indexOf('p'), 6);
-                    p = paperR.getById(id);
-                }
-                else {
-                    color = arrR[i].substr(8, arr[i].lastIndexOf('"')).replace(/['"']+/g, '');
-                    p.attr({ fill: color, "stroke-width": "2", stroke: 'black' });
-                    arrayR.push(new data(id, color));
+                for (i = 0; i < arr.length; i++) {
+                    if (i % 2 == 0) {
+                        id = arrR[i].substr(arrR[i].indexOf('p'), 6);
+                        p = paperR.getById(id);
+                    }
+                    else {
+                        color = arrR[i].substr(8, arr[i].lastIndexOf('"')).replace(/['"']+/g, '');
+                        p.attr({ fill: color, "stroke-width": "2", stroke: 'black' });
+                        arrayR.push(new data(id, color));
+                    }
                 }
             }
         }
@@ -683,7 +711,7 @@
                 $('#roundNumber').text('Set Up Practice Trial #');
                 updateValues();
                 var total = prct + trl;
-              
+
                 var currPrct = round - trl;
 
 

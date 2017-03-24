@@ -87,7 +87,7 @@ namespace TestSite
                 gs.TestName = dt.Rows[0]["testName"].ToString();
                 gs.Instructions = dt.Rows[0]["testInstructions"].ToString();
                 gs.InstructionsFinish = dt.Rows[0]["instructionsFinish"].ToString();
-                gs.TxtButton = dt.Rows[0]["instructionsFinish"].ToString();
+                gs.TxtButton = dt.Rows[0]["txtButton"].ToString();
                 gs.Feedback = dt.Rows[0]["txtFeedBack"].ToString();
                 gs.CountDownFrom = dt.Rows[0]["countDownFrom"].ToString();
                 gs.TextOverMoves = dt.Rows[0]["txtOverMoves"].ToString();

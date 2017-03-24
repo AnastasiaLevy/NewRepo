@@ -45,7 +45,7 @@ function startGame(gameNum) { //change back w/o s to use
 }
 
 function countdown() {
-    var timeMlsec = gameSettings.TimeOut * 100
+    var timeMlsec = gameSettings.TimeOut * 1000
     numMoves = JSON.parse(gameData[game - 1].NumberOfMoves);
     gameTimer = setTimeout(function () { displayFinalMessageOnTimeout(numMoves, lastMove, timeMlsec) }, timeMlsec);
 }
@@ -79,15 +79,15 @@ function displayFinalMessageOnTimeout(numMoves, lastMove, timeMlsec) {
         displayTestFinishedMessage();
     }
   
-    passResultsForGame(game, timeMlsec, timeMlsec, 20, nmWr, true, false, numMoves);
+    passResultsForGame(game, timeMlsec, timeMlsec, gameSettings.MaxMoves, nmWr, true, false, numMoves);
     setTimeout(function () {
            startCountDownTimer(game +1);
     }, 1300);
 }
 
 function displayFinalMessage20move(game) {
-    var text = gameSettings.TxtOverMoves; //TODO
-    //var text = "Test FinalMessage over max move"
+    var text = gameSettings.TextOverMoves; //TODO
+    lastMove = parseInt(gameSettings.PrctRounds) + parseInt(gameSettings.TestRounds)
     over = new Date() - time;
     var finalMessage = document.getElementById("finalMessage");
     finalMessage.style.display = '';
@@ -98,9 +98,9 @@ function displayFinalMessage20move(game) {
         displayTestFinishedMessage();
     }
     //var minMoves = mapGameMoves(game)
-    passResultsForGame(game, initTTime, over, 20, nmWr, false, true, numMoves);
+    passResultsForGame(game, initTTime, over, gameSettings.MaxMoves, nmWr, false, true, numMoves);
     setTimeout(function () {
-       startCountDownTimer(game);  
+       startCountDownTimer(game +1);  
     }, 1300);
    
 }
@@ -119,7 +119,7 @@ function displayFinalMessage(needMoves, madeMoves) {
     //else
     //    dNeedMoves = " move.";
     //finalMessage.innerHTML = "You made " + madeMoves + dMadeMoves + ". The goal was " + needMoves + dNeedMoves;
-    finalMessage.innerHTML = gameSettings.txtFeedBack
+    finalMessage.innerHTML = gameSettings.Feedback
     setTimeout(hideFinalMessage, 2000);
 }
 
@@ -140,7 +140,7 @@ function startCountDownTimer(game) {
     var field = document.getElementById("countdown");
     field.style.display = '';
 
-    field.innerHTML = "Please wait <span id='countdowntimer'>10 </span> seconds";
+    field.innerHTML = "Please wait <span id='countdowntimer'>"+ timeleft+" </span> seconds";
     var div = document.getElementById("countdowntimer");
     var downloadTimer = setInterval(function () {
         timeleft--;
@@ -242,7 +242,7 @@ function checkPos(out) {
     canMove = false;
     setTimeout(function () { canMove = true }, 1000);
     //
-    if (out) {
+    if (1==1) {
         if (nm == 0) {
             initTTime = new Date() - time;
         }

@@ -11,7 +11,7 @@
     <link href="../cogTest.css" rel="stylesheet" />
     <link rel="shortcut icon" href="images/favicon.ico" />
 </head>
-<body>countdown
+<body>
     <div id="testArea" class="withBorder center">
         <div id="countdown" class="countdown"></div>
         <div id="finalMessage" class="finalMessage"></div>

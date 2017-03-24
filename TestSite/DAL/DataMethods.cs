@@ -571,7 +571,7 @@ namespace TestSite.DAL
 
             cmd.Parameters.AddWithValue("@txtOverMoves", overMoves);
             cmd.Parameters.AddWithValue("@txtOverTime", overTime);
-            cmd.Parameters.AddWithValue("@txtButton", txtToSpeech);
+            cmd.Parameters.AddWithValue("@txtButton", txtButton);
             cmd.Parameters.AddWithValue("@txtFeedBack", txtFeedBack);
             cmd.Parameters.AddWithValue("@instructionsFinish",instructionsFinish);
             cmd.Parameters.AddWithValue("@displayResult", displayResultPage);
