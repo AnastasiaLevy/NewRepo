@@ -12,6 +12,7 @@
     <link rel="shortcut icon" href="images/favicon.ico" />
 </head>
 <body>
+     <button id=play>Play</button>
     <div id="testArea" class="withBorder center">
         <div id="countdown" class="countdown"></div>
         <div id="finalMessage" class="finalMessage"></div>
@@ -25,6 +26,7 @@
         </div>
         <div id="image_holder" class="display"></div>
         <div id="displayMessageL" class="">
+            
             <p></p>
         </div>
 
@@ -63,6 +65,9 @@
 <script type="text/javascript"></script>
 
 <script>
+    var playEle = document.querySelector('#play');
+    playEle.addEventListener('click', onClickPlay);
+    $('#play').hide();
 <%--    var test = 1;//$('<%=modifiedId.ClientID%>').value
     var data = {
         modifiedId: test

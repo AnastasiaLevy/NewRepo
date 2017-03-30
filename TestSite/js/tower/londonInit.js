@@ -218,7 +218,7 @@ function initField(gameNum, gameData) {
                 obj.animate(moveFromP3);
                 obj.animate(moveU1U2);
                 obj.animate(moveToP4);
-
+                break;
 
             case "p5":
 

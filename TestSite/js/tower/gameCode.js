@@ -37,11 +37,11 @@ function startGame(gameNum) { //change back w/o s to use
     else {
         countdown()
     }
-    
+
     initField(gameNum, gameData);
     showImage(gameNum, gameData);
- 
-    game = gameNum;   
+
+    game = gameNum;
 }
 
 function countdown() {
@@ -53,7 +53,7 @@ function countdown() {
 function hideFinalMessage() {
     var finalMessage = document.getElementById("finalMessage");
     if (finalMessage != null)
-    finalMessage.style.display = 'none';
+        finalMessage.style.display = 'none';
 }
 
 function displayTestFinishedMessage() {
@@ -61,7 +61,7 @@ function displayTestFinishedMessage() {
     $('#testArea').empty();
     var str = gameSettings.InstructionsFinish;
     var btn = gameSettings.TxtButton;
-    $("#testArea").append("<div id = 'finishesTest' class='center finishesTest '><p>"+ str +" <br/></p><input type='button' id='finishIt'class='signup-btn' value='"+ btn +"'></div>");
+    $("#testArea").append("<div id = 'finishesTest' class='center finishesTest '><p>" + str + " <br/></p><input type='button' id='finishIt'class='signup-btn' value='" + btn + "'></div>");
 
 }
 
@@ -71,17 +71,17 @@ function displayFinalMessageOnTimeout(numMoves, lastMove, timeMlsec) {
     var finalMessage = document.getElementById("finalMessage");
     finalMessage.style.display = '';
     finalMessage.innerHTML = text;//"You've exceeded time for trial #" + game;
-    if (game != lastMove)
-    finalMessage.innerHTML += ". The new trial will start soon.";
+   // if (game != lastMove)
+        //finalMessage.innerHTML += ". The new trial will start soon.";
     setTimeout(hideFinalMessage, 2000);
     if (game == lastMove) {
         updateTestFinished();
         displayTestFinishedMessage();
     }
-  
+
     passResultsForGame(game, timeMlsec, timeMlsec, gameSettings.MaxMoves, nmWr, true, false, numMoves);
     setTimeout(function () {
-           startCountDownTimer(game +1);
+        startCountDownTimer(game + 1);
     }, 1300);
 }
 
@@ -100,13 +100,23 @@ function displayFinalMessage20move(game) {
     //var minMoves = mapGameMoves(game)
     passResultsForGame(game, initTTime, over, gameSettings.MaxMoves, nmWr, false, true, numMoves);
     setTimeout(function () {
-       startCountDownTimer(game +1);  
+        startCountDownTimer(game + 1);
     }, 1300);
-   
+
 }
 
 function displayFinalMessage(needMoves, madeMoves) {
-    
+    var text = gameSettings.Feedback;
+
+    if (text.indexOf("[nm]") != -1) {
+        var res = text.split("[nm]");
+        text = res[0] + madeMoves + res[1];
+    }
+    if (text.indexOf("[mm]") != -1) {
+        var res = text.split("[mm]");
+        text = res[0] + needMoves + res[1];
+    }
+
     var finalMessage = document.getElementById("finalMessage");
     finalMessage.style.display = '';
     //if (madeMoves > 1)
@@ -119,11 +129,14 @@ function displayFinalMessage(needMoves, madeMoves) {
     //else
     //    dNeedMoves = " move.";
     //finalMessage.innerHTML = "You made " + madeMoves + dMadeMoves + ". The goal was " + needMoves + dNeedMoves;
-    finalMessage.innerHTML = gameSettings.Feedback
+
+    finalMessage.innerHTML = text;
     setTimeout(hideFinalMessage, 2000);
 }
 
 function displayInstructions(text) {
+    if (gameSettings.TxtToSpeech)
+        $("#play").show();
     var field = document.getElementById("displayMessageL");
     field.textContent = text;
     field.onclick = function run() {
@@ -134,13 +147,19 @@ function displayInstructions(text) {
 }
 
 function startCountDownTimer(game) {
-    var timeleft = parseInt(gameSettings.CountDownFrom);
+    var timeleft = parseInt(gameSettings.CountDownFrom) + 2;
+    var text = gameSettings.CountDownText;
+
+    if (text.indexOf("[cd]") != -1) {
+        var res = text.split("[cd]");
+        text = res[0] + "<span id='countdowntimer'>"  +(timeleft + 2) + "</span>" + res[1];
+    }
 
     canMove = false;
     var field = document.getElementById("countdown");
     field.style.display = '';
 
-    field.innerHTML = "Please wait <span id='countdowntimer'>"+ timeleft+" </span> seconds";
+    field.innerHTML = text;//"Please wait <span id='countdowntimer'>" + (timeleft+ 2) + " </span> seconds";
     var div = document.getElementById("countdowntimer");
     var downloadTimer = setInterval(function () {
         timeleft--;
@@ -172,29 +191,31 @@ function finishGame(needMoves) {
     window.clearTimeout(gameTimer);
     over = new Date() - time;
     gameFinished = true;
-  
-    passResultsForGame(game, initTTime,over, nm, nmWr, false, false, needMoves);
+
+    passResultsForGame(game, initTTime, over, nm, nmWr, false, false, needMoves);
     canMove = false;
     if (gameSettings.ShowFeedback == "True")
-    setTimeout(function () { displayFinalMessage(needMoves, nm); }, 1200)
-  
+        setTimeout(function () { displayFinalMessage(needMoves, nm); }, 1200)
+
     if (game == lastMove) {
-        updateTestFinished();
-        displayTestFinishedMessage();   
+        setTimeout(function () {
+            updateTestFinished();
+            displayTestFinishedMessage();
+        }, 3200);
+
     }
-    else
+    else {
         game++;
-    setTimeout(function () {
-        startCountDownTimer(game);
-    }, 1300);
-      
-  
+        setTimeout(function () {
+            startCountDownTimer(game);
+        }, 1300);
+    }
+
+
 }
 
-function getMatchPos (pos, color)
-{
-    if (pos == "p1")
-    {
+function getMatchPos(pos, color) {
+    if (pos == "p1") {
         if (p1 != null && p1.id == color)
             return true;
         else
@@ -242,12 +263,12 @@ function checkPos(out) {
     canMove = false;
     setTimeout(function () { canMove = true }, 1000);
     //
-    if (1==1) {
+    if (1 == 1) {
         if (nm == 0) {
             initTTime = new Date() - time;
         }
     }
-   
+
     var red = finishPos.red;
     var blue = finishPos.blue;
     var green = finishPos.green;
@@ -256,8 +277,7 @@ function checkPos(out) {
         &&
         getMatchPos(finishPos.blue, "blue")
         &&
-        getMatchPos(finishPos.green, "green"))
-    {
+        getMatchPos(finishPos.green, "green")) {
         finishGame(numMoves);
     }
 };
@@ -275,8 +295,8 @@ function cleanDivs() {
 
 }
 
-function passResultsForGame( game,initThinkTime, totalTime, nm, nmWrong, overTime, overMoves, minMoves) {
-
+function passResultsForGame(game, initThinkTime, totalTime, nm, nmWrong, overTime, overMoves, minMoves) {
+    arrData = [];
     var data = {
         'game': game,
         'initThinkTime': initThinkTime / 1000,
@@ -285,7 +305,7 @@ function passResultsForGame( game,initThinkTime, totalTime, nm, nmWrong, overTim
         'numberOfWrongMoves': nmWrong,
         'overTime': overTime,
         'overMoves': overMoves,
-        'minMoves' :numMoves
+        'minMoves': numMoves
 
     }
     jQuery.ajax({
@@ -296,15 +316,20 @@ function passResultsForGame( game,initThinkTime, totalTime, nm, nmWrong, overTim
         data: JSON.stringify(data),
         type: 'POST',
         success: function (resp) {
-          
+
             //request sent and response received.
 
+        },
+        error: function () {
+     
+            arrData.push(data);
         }
     });
 }
 
 
 function updateTestFinished() {
+    //saveTextAsFile();
     jQuery.ajax({
         contentType: "application/json; charset=utf-8",
         dataType: "json",
@@ -313,24 +338,31 @@ function updateTestFinished() {
         data: '',
         type: 'POST',
         success: function (resp) {
-            
+
             //request sent and response received.
+
+        },
+        error: function (resp) {
 
         }
     });
 }
 
 $('body').on('click', '#finishIt', function () {
-    var user = document.getElementById("userId").value;
-    var tId = document.getElementById("tId").value;
-    window.location.href = "ResultsPage.aspx?userId=" + user + "&tid=" + tId+ "&test=2";
+    if (gameSettings.DisplayResults)
+    {
+        var user = document.getElementById("userId").value;
+        var tId = document.getElementById("tId").value;
+        window.location.href = "ResultsPage.aspx?userId=" + user + "&tid=" + tId + "&test=2";
+    }
+   
 });
 
 function saveTextAsFile() {
-    var textToSave = document.getElementById("inputTextToSave").value;
+    var textToSave = "test"; //document.getElementById("inputTextToSave").value;
     var textToSaveAsBlob = new Blob([textToSave], { type: "text/plain" });
     var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
-    var fileNameToSaveAs = document.getElementById("inputFileNameToSaveAs").value;
+    var fileNameToSaveAs = 'try1';//document.getElementById("inputFileNameToSaveAs").value;
 
     var downloadLink = document.createElement("a");
     downloadLink.download = fileNameToSaveAs;
@@ -339,9 +371,43 @@ function saveTextAsFile() {
     downloadLink.onclick = destroyClickedElement;
     downloadLink.style.display = "none";
     document.body.appendChild(downloadLink);
-
     downloadLink.click();
 }
+
+function onClickPlay() {
+    var synth = speechSynthesis;
+  
+   // var text = "Видишь эти две доски? Они оба одинаковы.";
+    var text = "test";//gameSettings.Instructions;
+    var language = "";//gameSettings.Language;
+
+    //var utterance = new SpeechSynthesisUtterance(
+    //      text);
+    //    utterance.voice = synth.getVoices()[0];
+    // 
+
+
+    //utterance.lang = 'ru'
+    //    synth.speak(utterance);
+    var utterance = new SpeechSynthesisUtterance();
+    utterance.volume = 1;
+    utterance.voice = synth.getVoices()[0];
+    if (language != "")
+    {
+        //utterance.lang = 'ru-RU';
+    }
+   
+    utterance.text = text;
+    utterance.onend = function () {
+      
+           };
+
+ 
+    synth.speak(utterance);
+    
+}
+
+
 
 
 

@@ -63,7 +63,14 @@
                 <div class="col-lg-3 font-larger">
                     <p class="min"><strong>Enter Button Text that will show at the end of the test:</strong> </p>
                     <input type="text" id="txtButton" style="width: 100%" runat="server" />
+
+                    <p class="min"><strong>Enter "Work Area" label:</strong> </p>
+                    <input type="text" id="workArea" style="width: 100%" runat="server" />
+
+                    <p class="min"><strong>Enter "Goal State" area label:</strong> </p>
+                    <input type="text" id="endArea" style="width: 100%" runat="server" />
                 </div>
+
 
                 <div class="clearfix"></div>
             </div>
@@ -80,19 +87,22 @@
                     </h2>
                     <hr />
                 </div>
-                <div class="col-lg-4 font-larger">
-                    <asp:Label ID="Label1" runat="server" Text="Number of Practice Rounds:"></asp:Label>
-                    <asp:DropDownList ID="ddlPractice" runat="server"></asp:DropDownList>
-                </div>
+                <div class="myForm">
+                    <div class="col-lg-4 font-larger">
+                        <asp:Label ID="Label1" runat="server" Text="Number of Practice Rounds:"></asp:Label>
+                        <asp:DropDownList ID="ddlPractice" runat="server"></asp:DropDownList>
+                    </div>
 
-                <div class="col-lg-4 font-larger">
-                    <asp:Label ID="Label2" runat="server" Text="Number of Test Rounds:"></asp:Label>
-                    <asp:DropDownList ID="ddlNumberGames" runat="server"></asp:DropDownList>
-                </div>
+                    <div class="col-lg-4 font-larger">
+                        <asp:Label ID="Label2" runat="server" Text="Number of Test Rounds:"></asp:Label>
+                        <asp:DropDownList ID="ddlNumberGames" runat="server"></asp:DropDownList>
+                    </div>
 
-                <div class="col-lg-4 font-larger">
-                    <asp:Label ID="Label3" runat="server" Text="Calculate Results From:"></asp:Label>
-                    <asp:DropDownList ID="ddlConuntFromRound" runat="server"></asp:DropDownList>
+                    <div class="col-lg-4 font-larger">
+                        <asp:Label ID="Label3" runat="server" Text="Calculate Results From:"></asp:Label>
+                        <asp:DropDownList ID="ddlConuntFromRound" runat="server"></asp:DropDownList>
+
+                    </div>
                 </div>
                 <div class="col-lg-4 font-larger">
                     <asp:Label ID="Label5" runat="server" Text="Time Out After (sec):"></asp:Label>
@@ -106,6 +116,10 @@
                     <asp:Label ID="Label9" runat="server" Text="Countdown time (sec)"></asp:Label>
                     <asp:TextBox ID="countDown" runat="server"></asp:TextBox>
                 </div>
+                <div class="col-lg-4 font-larger">
+                    <asp:Label ID="Label10" runat="server" Text="Countdown Text:"></asp:Label>
+                    <asp:TextBox ID="countDownText" runat="server"></asp:TextBox>
+                </div>
 
                 <div class=" col-lg-4 font-larger ">
                     <asp:Label ID="Label7" runat="server" Text="Show Feedback"></asp:Label>
@@ -118,7 +132,9 @@
                 <div class="col-lg-4 font-larger">
                     <asp:Label ID="Label4" runat="server" Text="Use Text-To-Speech"></asp:Label>
                     <asp:CheckBox ID="cbTextSpeech" runat="server" Text="" />
+                    <select id="select"> </select>
                 </div>
+
 
             </div>
         </div>
@@ -134,7 +150,9 @@
                     </h2>
                     <hr />
                 </div>
-                <div class="alert alert-danger" id="MovesError">
+                <div class="alert alert-danger" id="MovesError"></div>
+
+                <div class="alert alert-success" id="success">
                 </div>
                 <input id="SetupUpdate" class="btn  btn-success btn-xs" type="button" value="Set Moves" />
 
@@ -142,12 +160,13 @@
                 <div class="col-lg-12">
                     <%--//<h3 id="roundNumber"></h3>--%>
 
-                    <div class="input-group">
+
+                    <div class="input-group input-group-lg " id="title">
                         <span class="input-group-addon" id="roundNumber"></span>
                         <input type="text" class="form-control" id="roundValue" style="width: 50px" />
                     </div>
-                </div>
 
+                </div>
                 <%--  <input id="roundValue" type="text"  />--%>
 
 
@@ -191,6 +210,20 @@
     <textarea id="movesText" rows="5" runat="server"></textarea>
     <script>
         //=================================================================
+        window.speechSynthesis.onvoiceschanged = function () {
+            var voiceSelect = $("#select");
+            var synth = speechSynthesis;
+            var voices = synth.getVoices();
+
+            for (i = 0; i < voices.length ; i++) {
+                var option = document.createElement('option');
+                option.textContent = voices[i].name + ' (' + voices[i].lang + ')';
+                option.setAttribute('data-lang', voices[i].lang);
+                option.setAttribute('data-name', voices[i].name);
+                voiceSelect.append(option);
+            }
+        };
+
         superObj = {
             arrStart: "",
             arrFinish: "",
@@ -216,7 +249,9 @@
         what = "";
         prct = parseInt($('#<%=ddlPractice.ClientID %> option:selected').text());
         trl = parseInt($('#<%=ddlNumberGames.ClientID %> option:selected').text());
-
+        $('#makeAnother').hide();
+        $("#success").hide();
+        // $('#title').hide();
 
         var array = [];
         var arrayR = [];
@@ -275,8 +310,6 @@
                 if ((prct + trl) < compare) $('#delete').show();
             }
 
-
-
         }
 
         function updateValues() {
@@ -292,24 +325,31 @@
             if (value.length == 0) {
                 what = "";
                 updateValues();
+                $('#MovesError').hide();
+                if (prct == 0 && trl == 0) {
+                    var error = "!Please set up the value for number of rounds for this test."
+                    $('#MovesError').show();
+                    $('#MovesError').html(error);
+                    $('#SetupUpdate').show();
+                    return;
+                }
                 update = true;
                 $('#save').show();
                 $('#makeAnother').hide();
                 //return;
                 moves = [];
                 for (i = 1; i <= prct; i++) {
-                    moves[i-1] = i;
+                    moves[i - 1] = i;
                     idItems[i] = i;
                     $('#pageNums').append('<input type="button" value=' + i + ' id=' + i + ' class="edit prct"/>');
                 }
                 for (i = (prct + 1) ; i <= (trl + prct) ; i++) {
 
                     $('#pageNums').append('<input type="button" value=' + i + ' id=' + i + ' class="edit trl"/>');
-                    moves[i-1] = i;
+                    moves[i - 1] = i;
                     idItems[i] = i;
                 }
                 round = roundCount = moves.length;
-
 
 
                 //$('.edit').bind("click", function () {
@@ -328,8 +368,8 @@
                 update = true;
                 round = roundCount = moves.length + 1;
 
-                checkForChange();
-
+                //checkForChange();
+                updateValues();
                 jQuery.each(moves, function (index, value) {
                     superObj = {
                         arrStart: moves[index].RoundStart,
@@ -351,6 +391,8 @@
 
             }
             $('.edit').bind("click", function () {
+                $("#success").hide();
+                checkForChange();
                 update = true;
                 round = this.value;
                 test(superArr, round);
@@ -360,7 +402,9 @@
         });
 
         $('#saveTest').click(function () {
-            //TODO add feddback text
+            var voiceSelect = $("#select option:selected");
+            alert(voiceSelect[0].dataset.lang)
+
             sendData = {
                 testName: $('#<%=testName.ClientID%>').val(),
                 instructions: $('#<%=instructions.ClientID%>').val(),
@@ -378,7 +422,11 @@
                 timeOut: $('#<%=timeOutAfter.ClientID%>').val(),
                 maxMoves: $('#<%=maxMovesLimit.ClientID%>').val(),
                 showFeedback: $('#<%=showFeedback.ClientID %>').is(':checked'),
-                movesData: JSON.stringify(superArr)
+                movesData: JSON.stringify(superArr),
+                language: voiceSelect[0].dataset.lang,
+                workTag: $("#<%=workArea.ClientID%>").val(),
+                goalTag: $("#<%=endArea.ClientID%>").val(),
+                countDownText: $("#<%=countDownText.ClientID%>").val()
 
             }
             alert(JSON.stringify(sendData))
@@ -392,7 +440,9 @@
                 success: function (resp) {
 
                     //request sent and response received.
-
+                    var message = "Success! The test was saved."
+                    $("#success").show();
+                    $("#success").html(message);
                 },
                 error: function () {
                     alert("error saving the test; try again later")
@@ -417,7 +467,7 @@
                 error += "! You need you set all 3 beads for End positions.<br />"
 
             }
-            var error = ""; //To Test
+            //var error = ""; //To Test
             if (error.length > 0) {
                 $('#makeAnother').hide();
                 $('#MovesError').show();
@@ -478,13 +528,18 @@
                     }
                 }
 
+                $("#success").show();
+                var message = "Success! The round was saved."
+                $("#success").html(message);
             }
 
 
             $('.edit').bind("click", function () {
+                $("#success").hide();
                 round = this.value;
                 test(superArr, round);
             });
+
 
         });
 
@@ -506,6 +561,7 @@
             $('.edit').bind("click", function () {
                 round = this.value;
                 test(superArr, round);
+                $("#success").hide();
             });
         });
 
@@ -535,8 +591,8 @@
             superObj = superArr[round];
             what = "";
             if (superObj != null) {
-                var arr = superObj.arrStart.replace(/[\[\]']+/g, '').replace(/[\{\}']+/g, '').split(',');
-                var arrR = superObj.arrFinish.replace(/[\[\]']+/g, '').replace(/[\{\}']+/g, '').split(',');
+                var arr = superObj.arrStart.replace(/[\'[\]']+/g, '').replace(/[\'{\}']+/g, '').split(',');
+                var arrR = superObj.arrFinish.replace(/[\'[\]']+/g, '').replace(/[\'{\}']+/g, '').split(',');
                 var num = superObj.numMoves;
 
 
@@ -696,6 +752,8 @@
 
         function makeLabel(round) {
             updateValues();
+            //$('#title').show();
+            showNumGrp();
             if (what == "") {
                 if (round <= prct) {
                     $('#roundNumber').text('Set Up Practice Trial #');

@@ -73,7 +73,7 @@
             else if (p5 == blue && p4 == null) {
 
                 up1.animate(moveU1U2);
-                up1.animate(moveToP4.delay(1000));
+                up1.animate(moveToP4.delay(speed));
                 p4 = up1;
                 up1 = null;
                 nm++;
@@ -102,7 +102,7 @@
         else if (up2 != null && up2 != blue) {
             if (p2 == blue && p1 == null) {
                 up2.animate(moveU2U1);
-                up2.animate(moveToP1.delay(1000))
+                up2.animate(moveToP1.delay(speed));
                 p1 = up2;
                 up2 = null;
                 nm++;
@@ -112,7 +112,7 @@
             }
             else if (p3 == blue && p2 == !null && p1 == null) {
                 up2.animate(moveU1U2);
-                up2.animate(moveToP1.delay(1000));
+                up2.animate(moveToP1.delay(speed));
                 p1 = up2;
                 up2 = null;
                 checkPos();
@@ -152,7 +152,7 @@
         if (up3 != null && up3 != blue) {
             if (p2 == blue && p1 == null) {
                 up3.animate(moveU3U1);
-                up3.animate(moveToP1.delay(700))
+                up3.animate(moveToP1.delay(speed))
                 p1 = up3;
                 up3 = null;
                 nm++;
@@ -160,7 +160,7 @@
             }
             else if (p3 == blue && p2 == !null && p1 == null) {
                 up3.animate(moveU3U2);
-                up3.animate(moveToP1.delay(700));
+                up3.animate(moveToP1.delay(speed));
                 p1 = up3;
                 up3 = null;
                 nm++;
@@ -168,7 +168,7 @@
             }
             else if (p3 == blue && p2 == null && p1 == null) {
                 up3.animate(moveU2U1);
-                up3.animate(moveToP2.delay(700));
+                up3.animate(moveToP2.delay(speed));
                 p2 = up3;
                 up3 = null;
                 nm++;
@@ -176,7 +176,7 @@
             }
             else if (p5 == blue && p4 == null) {
                 up3.animate(moveU3U2)
-                up3.animate(moveToP4.delay(700));
+                up3.animate(moveToP4.delay(speed));
                 p4 = up3;
                 up3 = null;
                 nm++;

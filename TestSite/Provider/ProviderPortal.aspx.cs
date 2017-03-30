@@ -278,6 +278,7 @@ namespace TestSite.Provider
 
         protected void ddlProvTests_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ddlModifiedID.Visible = false;
             ddlModifiedID.Items.Clear();
             DataTable dt = DAL.DataMethods.GetModfiedTest(ddlProvTests.SelectedValue);
             if (dt.Rows.Count > 0)
@@ -311,6 +312,7 @@ namespace TestSite.Provider
                 SetProviderTestsGrid(providerId);
                 //TODO: Display success message;
                 assignTest.Visible = true;
+                ddlModifiedID.Visible = false;
                 lblTestMessage.Text = "Test was successfully assigned";
                 lblTestMessage.CssClass = "successMessage";
             }
@@ -385,13 +387,13 @@ namespace TestSite.Provider
         protected void btnSelectModify_Click(object sender, EventArgs e)
         {
             Session["providerId"] = Convert.ToInt32(ViewState["providerId"]);
-            Session["testId"] = ddlModifyTest.SelectedValue;
-            Response.Redirect("../Create/LondonModify.aspx");
+           // Session["testId"] = ddlModifyTest.SelectedValue;
+            Response.Redirect("../Create/LondonModify.aspx?testId=" + ddlModifyTest.SelectedValue);
         }
 
         protected void btnCreateNewTest_Click(object sender, EventArgs e)
         {
-            Session.Contents.Remove("testId");
+            //Session.Contents.Remove("testId");
             Session["providerId"] = Convert.ToInt32(ViewState["providerId"]);
             Response.Redirect("../Create/LondonModify.aspx");
         }

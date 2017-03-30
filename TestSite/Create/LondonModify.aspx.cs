@@ -15,15 +15,19 @@ namespace TestSite.Create
     public partial class LondonModify : System.Web.UI.Page
     {
         public static string testId; //modifiedTestId
+        public static int providerId;
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-            if (!string.IsNullOrEmpty((string)Session["testId"]))
+
+
+            if (!string.IsNullOrEmpty(Request.QueryString["testId"]))
             {
-                testId = Session["testId"].ToString();
+                testId = Request.QueryString["testId"];
                 SetTestModify(testId);
             }
-            if (!IsPostBack) {
+            else testId = null;
+            if (!IsPostBack)
+            {
                 ddlPractice.DataSource = Enumerable.Range(0, 10);
                 ddlPractice.DataBind();
 
@@ -58,6 +62,9 @@ namespace TestSite.Create
             displayResultPage.Checked = Convert.ToBoolean(dt.Rows[0]["displayResult"]);
             countDown.Text = dt.Rows[0]["countDownFrom"].ToString();
             movesText.Value = GetLondonMoves(ds.Tables[0]);
+            workArea.Value = dt.Rows[0]["workTag"].ToString();
+            endArea.Value = dt.Rows[0]["goalTag"].ToString();
+            countDownText.Text = dt.Rows[0]["countDownText"].ToString();
 
         }
 
@@ -96,7 +103,7 @@ namespace TestSite.Create
                 Move move = new Move(); //"[{"id":"p3-end","color":"green"},{"id":"p5-end","color":"blue"},{"id":"p6-end","color":"red"}]"
                 var temp = s.Split(':');
                 move.color = temp[0].Replace('\'', '"').Replace('"', ' ').TrimEnd().TrimStart();
-                move.id = temp[1].TrimEnd().TrimEnd('"').TrimStart('\'', ' ')+append.TrimStart();
+                move.id = temp[1].TrimEnd().TrimEnd('"').TrimStart('\'', ' ', '"') + append.TrimStart();
                 listOfMoves.Add(move);
             }
             var json = new JavaScriptSerializer().Serialize(listOfMoves);
@@ -126,17 +133,35 @@ namespace TestSite.Create
             string timeOut,
             string maxMoves,
             string showFeedback,
-            string movesData
+            string movesData,
+            string language,
+            string workTag,
+            string goalTag,
+            string countDownText
             )
         {
-            if (testId != null)
+            
+            if (testId == null)
             {
                 int? modifidId = null;
+
                 try
                 {
-                    modifidId = DAL.DataMethods.InsertLondonTestModify(testName, instructions, overMoves, overTime, txtButton, txtFeedback, instructionsFinish, Convert.ToBoolean(txtToSpeech), Convert.ToBoolean(displayResultPage),
-                       Convert.ToInt32(prctRounds), Convert.ToInt32(testRounds), Convert.ToInt32(calcResFrom), Convert.ToInt32(countDownFrom),
-                       Convert.ToInt32(timeOut), Convert.ToInt32(maxMoves), Convert.ToBoolean(showFeedback), 2); //TODO: pass ProviderId
+                   
+                        int time = Convert.ToInt32(timeOut);
+                        int numMoves = Convert.ToInt32(maxMoves);
+                        bool feedBack = Convert.ToBoolean(showFeedback);
+                        int resFrom = Convert.ToInt32(calcResFrom);
+                        int count = Convert.ToInt32(countDownFrom);
+                        int prct = Convert.ToInt32(prctRounds);
+                        int testRnd = Convert.ToInt32(testRounds);
+                        bool txtSpch = Convert.ToBoolean(txtToSpeech);
+                        bool resPage = Convert.ToBoolean(displayResultPage);
+        
+                        modifidId = DAL.DataMethods.InsertLondonTestModify(testName, instructions, overMoves, overTime, txtButton, txtFeedback, instructionsFinish, Convert.ToBoolean(txtToSpeech), Convert.ToBoolean(displayResultPage),
+                           Convert.ToInt32(prctRounds), Convert.ToInt32(testRounds), Convert.ToInt32(calcResFrom), Convert.ToInt32(countDownFrom),
+                           Convert.ToInt32(timeOut), Convert.ToInt32(maxMoves), Convert.ToBoolean(showFeedback), 2, language, workTag, goalTag, countDownText); //TODO: pass ProviderId
+                    
                 }
                 catch (Exception ex)
                 {
@@ -151,14 +176,14 @@ namespace TestSite.Create
             }
             else
             {
-                DAL.DataMethods.UpdateLondonTestModify(Convert.ToInt32(testId),testName, instructions, overMoves, overTime, txtButton, instructionsFinish, Convert.ToBoolean(txtToSpeech), Convert.ToBoolean(displayResultPage),
-                       Convert.ToInt32(prctRounds), Convert.ToInt32(testRounds), Convert.ToInt32(calcResFrom),
-                       Convert.ToInt32(timeOut), Convert.ToInt32(maxMoves), Convert.ToBoolean(showFeedback));
+                DAL.DataMethods.UpdateLondonTestModify(testId, testName, instructions, overMoves, overTime, txtButton, txtFeedback, instructionsFinish, Convert.ToBoolean(txtToSpeech), Convert.ToBoolean(displayResultPage),
+                           Convert.ToInt32(prctRounds), Convert.ToInt32(testRounds), Convert.ToInt32(calcResFrom), Convert.ToInt32(countDownFrom),
+                           Convert.ToInt32(timeOut), Convert.ToInt32(maxMoves), Convert.ToBoolean(showFeedback), 2,language,workTag, goalTag, countDownText); //TODO: pass ProviderId
 
                 UpdateMoves(testName, movesData, Convert.ToInt32(testId));
 
             }
-       
+
         }
 
         private static void UpdateMoves(string testName, string movesData, int? modifidId)
@@ -169,7 +194,7 @@ namespace TestSite.Create
             foreach (MovesData data in smth)
             {
                 if (data == null)
-                   continue;
+                    continue;
                 MovesData md = new MovesData();
                 string movesStart = "{";
                 string movesFinish = "{";
@@ -191,7 +216,7 @@ namespace TestSite.Create
             }
         }
     }
- 
+
     internal class MovesData
     {
         public string arrStart { get; set; }

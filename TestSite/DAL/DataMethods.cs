@@ -146,21 +146,28 @@ namespace TestSite.DAL
         }
 
         internal static void UpdateLondonTestModify(
-            int testId,
+            string testId,
             string testName,
             string instructions,
             string overMoves,
             string overTime,
             string txtButton,
+            string txtFeedBack,
             string instructionsFinish,
             bool txtToSpeech,
             bool displayResultPage,
             int prctRounds,
             int testRounds,
             int calcResFrom,
+            int countDownFrom,
             int timeOut,
             int maxMoves,
-            bool showFeedback
+            bool showFeedback,
+            int providerId,
+            string language,
+            string workTag,
+            string goalTag,
+            string countDownText
             )
         {
             SqlConnection conn = new SqlConnection(connectionSring);
@@ -172,18 +179,26 @@ namespace TestSite.DAL
             cmd.Parameters.AddWithValue("@testInstructions", instructions);
             cmd.Parameters.AddWithValue("@txtToSpeech", txtToSpeech);
 
-            cmd.Parameters.AddWithValue("@txtOverMoves", txtToSpeech);
-            cmd.Parameters.AddWithValue("@txtOverTime", txtToSpeech);
-            cmd.Parameters.AddWithValue("@txtButton", txtToSpeech);
-            cmd.Parameters.AddWithValue("@instructionsFinish", txtToSpeech);
+            cmd.Parameters.AddWithValue("@overMoves", overMoves);
+            cmd.Parameters.AddWithValue("@txtOverTime", overTime);
+            cmd.Parameters.AddWithValue("@txtButton", txtButton);
+            cmd.Parameters.AddWithValue("@txtFeedBack", txtFeedBack);
+            cmd.Parameters.AddWithValue("@instructionsFinish", instructionsFinish);
 
-
+            cmd.Parameters.AddWithValue("@displayResult", displayResultPage);
             cmd.Parameters.AddWithValue("@prctRounds", prctRounds);
             cmd.Parameters.AddWithValue("@testRounds", testRounds);
             cmd.Parameters.AddWithValue("@calcResFrom", calcResFrom);
+            cmd.Parameters.AddWithValue("@countDownFrom", countDownFrom);
             cmd.Parameters.AddWithValue("@timeOut", timeOut);
             cmd.Parameters.AddWithValue("@maxMoves", maxMoves);
             cmd.Parameters.AddWithValue("@showFeedBack", showFeedback);
+            cmd.Parameters.AddWithValue("@language", language);
+            cmd.Parameters.AddWithValue("@workTag", workTag);
+            cmd.Parameters.AddWithValue("@goalTag", goalTag);
+            cmd.Parameters.AddWithValue("@countDownText", countDownText);
+
+
 
             try
             {
@@ -556,7 +571,12 @@ namespace TestSite.DAL
             int timeOut,
             int maxMoves,
             bool showFeedback,
-            int providerId
+            int providerId,
+            string language,
+            string workTag,
+            string goalTag,
+            string countDownText
+
             )
         {
 
@@ -584,6 +604,10 @@ namespace TestSite.DAL
             cmd.Parameters.AddWithValue("@maxMoves", maxMoves);
             cmd.Parameters.AddWithValue("@showFeedBack", showFeedback);
             cmd.Parameters.AddWithValue("@providerId", providerId);
+            cmd.Parameters.AddWithValue("@language", language);
+            cmd.Parameters.AddWithValue("@workTag", workTag);
+            cmd.Parameters.AddWithValue("@goalTag", goalTag);
+            cmd.Parameters.AddWithValue("@countDownText", countDownText);
 
 
             try

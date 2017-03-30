@@ -50,7 +50,7 @@ function onclickGreen(objName) {
     else if (up1 != null && up1 != green) {
         if (green == p5 && p4 == null) {
             up1.animate(moveU1U2);
-            up1.animate(moveToP4.delay(700));
+            up1.animate(moveToP4.delay(speed));
             p4 = up1;
             up1 = null;
             nm++;
@@ -98,7 +98,7 @@ function onclickGreen(objName) {
     else if (up2 != null && up2 !=green) {
         if (green == p2 && p1 == null) {
             up2.animate(moveU2U1);
-            up2.animate(moveToP1.delay(700));
+            up2.animate(moveToP1.delay(speed));
             p1 = up2;
             up2 = null;
             nm++;
@@ -106,7 +106,7 @@ function onclickGreen(objName) {
         }
         else if (green == p3 && p1 == null && p2 != null) {
             up2.animate(moveU2U1);
-            up2.animate(moveToP1.delay(700));
+            up2.animate(moveToP1.delay(speed));
             p1 = up2;
             up2 = null;
             nm++;
@@ -115,7 +115,7 @@ function onclickGreen(objName) {
         }
         else if (green == p3 && p1 == null && p2 == null) {
             up2.animate(moveU2U1);
-            up2.animate(moveToP2.delay(700));
+            up2.animate(moveToP2.delay(speed));
             p2 = up2;
             up2 = null;
             nm++;
@@ -123,7 +123,7 @@ function onclickGreen(objName) {
 
         }
         else if (green == p5 && p4 == null) {
-            up2.animate(moveToP4.delay(700));
+            up2.animate(moveToP4.delay(speed));
             p4 = up2;
             up2 = null;
             nm++;
@@ -146,7 +146,7 @@ function onclickGreen(objName) {
     } else if (up3 != null && up3 != green) {
         if (green == p2 && p1 == null) {
             up3.animate(moveU3U1);
-            up3.animate(moveToP1.delay(700));
+            up3.animate(moveToP1.delay(speed));
             p1 = up3;
             up3 = null;
             nm++;
@@ -154,7 +154,7 @@ function onclickGreen(objName) {
         }
         else if (green == p3 && p1 == null && p2 != null) {
             up3.animate(moveU3U1);
-            up3.animate(moveToP1.delay(700));
+            up3.animate(moveToP1.delay(speed));
             p1 = up3;
             up3 = null;
             nm++;
@@ -163,7 +163,7 @@ function onclickGreen(objName) {
         }
         else if (green == p5 && p4 == null) {
             up3.animate(moveU3U2);
-            up3.animate(moveToP4.delay(700));
+            up3.animate(moveToP4.delay(speed));
             p4 = up3;
             up3 = null;
             nm++;

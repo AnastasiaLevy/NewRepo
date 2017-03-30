@@ -35,9 +35,9 @@
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right custom-menu">
-                        <li><a href="MainPage.aspx">Home</a></li>
+                        <li><a href="../MainPage.aspx">Home</a></li>
                         <li class="active"><a href="#about">About</a></li>
-                        <li id="profOpt" runat="server"><a href="UserProfile.aspx">Profile</a></li>
+                        <li id="profOpt" runat="server"><a href="../UserProfile.aspx">Profile</a></li>
                         <li id="login" runat="server"><a href="../Login.aspx">Login</a></li>
 
                         <li>
