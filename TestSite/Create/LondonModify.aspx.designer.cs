@@ -274,6 +274,15 @@ namespace TestSite.Create {
         protected global::System.Web.UI.WebControls.CheckBox cbTextSpeech;
         
         /// <summary>
+        /// select control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect select;
+        
+        /// <summary>
         /// movesText control.
         /// </summary>
         /// <remarks>

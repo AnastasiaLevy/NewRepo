@@ -132,7 +132,7 @@
                 <div class="col-lg-4 font-larger">
                     <asp:Label ID="Label4" runat="server" Text="Use Text-To-Speech"></asp:Label>
                     <asp:CheckBox ID="cbTextSpeech" runat="server" Text="" />
-                    <select id="select"> </select>
+                    <select id="select" runat="server"> </select>
                 </div>
 
 
@@ -171,7 +171,8 @@
 
 
 
-                <div class="col-md-4 col-sm-12 workArea" id="start">
+                <div class="col-md-4 col-sm-12 workArea  font-larger" id="start">
+                    Start Position
                 </div>
                 <div class='col-md-1'>
                     <input id="colorBlue" class="col-lg-1 btn btn-labeled btn-primary" type="button" />
@@ -180,7 +181,8 @@
 
                 </div>
 
-                <div class="col-md-4  workArea" id="end">
+                <div class="col-md-4  workArea  font-larger" id="end">
+                    Goal Position
                 </div>
 
                 <div class='col-md-2 col-sm-offset-1'>
@@ -211,7 +213,7 @@
     <script>
         //=================================================================
         window.speechSynthesis.onvoiceschanged = function () {
-            var voiceSelect = $("#select");
+            var voiceSelect = $("#<%=select.ClientID %>");
             var synth = speechSynthesis;
             var voices = synth.getVoices();
 
@@ -286,13 +288,15 @@
         }
 
         function checkForChange(str) {
+            if (idItems.length <= 0)
+                return;
             updateValues();
             var compare = 0;
             if (str != null)
                 what = str
 
             if (update == true) {
-                compare = moves.length
+                compare = idItems.length - 1;
             }
             else compare = roundCount - 1;
 
@@ -308,6 +312,7 @@
 
                 $('#makeAnother').hide();
                 if ((prct + trl) < compare) $('#delete').show();
+                else $('#delete').hide()
             }
 
         }
@@ -476,7 +481,7 @@
 
             else {
                 $('#MovesError').hide();
-                checkForChange();
+               // checkForChange();
                 superObj = {
                     arrStart: (JSON.stringify(array)),
                     arrFinish: (JSON.stringify(arrayR)),
@@ -507,10 +512,7 @@
 
                     }
                     superArr[num] = superObj;
-                    //if (num >= currPrct)
-                    //    currPrct++;
-                    //else
-                    //    currTrl ++;
+                
 
                     if (!$('#' + num + '').length) {
                         if (num <= prct) {
@@ -525,12 +527,15 @@
                         }
 
                         idItems.push(num);
+                        roundCount++;
                     }
                 }
 
                 $("#success").show();
                 var message = "Success! The round was saved."
                 $("#success").html(message);
+             
+                checkForChange();
             }
 
 
@@ -554,15 +559,21 @@
                 updateEditRow(idItems);
 
                 roundCount -= 1;
+                if (update)
+                    alert(moves.length);
+                checkForChange();
+                
+                $('.edit').bind("click", function () {
+                    round = this.value;
+                    test(superArr, round);
+                    $("#success").hide();
+                });
+                
             }
             else {
                 alert(roundCount)
             }
-            $('.edit').bind("click", function () {
-                round = this.value;
-                test(superArr, round);
-                $("#success").hide();
-            });
+          
         });
 
         function updateEditRow(arr) {
@@ -621,20 +632,23 @@
                     }
                 }
             }
+            else
+                $('#numberOfMoves').val("");
+
         }
 
         $('#makeAnother').click(function () {
             checkForChange();
-            update = false;
+            //update = false;
             round = 0;
-            makeLabel(roundCount);
+            makeLabel(idItems.length);
 
             initFieldStart();
             initFieldEnd();
-
+            $('#numberOfMoves').val() = "";
             $('#save').show();
             updateValues();
-            if (roundCount >= prct + trl)
+            if (idItems.length >= prct + trl)
                 $('#makeAnother').hide();
             roundCount++;
         });
@@ -795,7 +809,7 @@
             var p3x = 250;
             var p3y = 350;
             var p1l1 = 50;
-            var p1l2 = 160;
+            var p1l2 = 170;
             var p2l1 = 150;
             var p2l2 = 220;
             var p3l1 = 250;

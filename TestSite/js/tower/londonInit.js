@@ -198,41 +198,74 @@ function initField(gameNum, gameData) {
     function getPosition(pos, obj) {
         switch (pos) {
             case "p1":
-                obj.animate(moveFromP3);
-                obj.animate(moveToP1);
+                obj.animate(Raphael.animation({
+                    transform: 't0 ' + (-270)
+                }, 0));
+                obj.animate(Raphael.animation({
+                    transform: 't0 ' + (0 - 4 * r)
+                }, 0));
                 break;
             case "p2":
 
-                obj.animate(moveFromP3);
-                obj.animate(moveToP2);
+                obj.animate(Raphael.animation({
+                    transform: 't0 ' + (-270)
+                }, 0));
+                obj.animate(Raphael.animation({
+                    transform: 't0 ' + (0 - 2 * r)
+                }, 0));
                 break;
 
             case "p3":
 
-                obj.animate(moveFromP3);
-                obj.animate(moveToP3);
+                obj.animate(Raphael.animation({
+                    transform: 't0 ' + (-270)
+                }, 0));
+                obj.animate(Raphael.animation({
+                    transform: 't0 ' + (0)
+                }, 0));
                 break;
 
             case "p4":
 
-                obj.animate(moveFromP3);
-                obj.animate(moveU1U2);
-                obj.animate(moveToP4);
+                obj.animate(Raphael.animation({
+                    transform: 't0 ' + (-270)
+                }, 0));
+                obj.animate(Raphael.animation({
+                    cx: 150, //150
+                    y: 0
+                }, 0));
+                obj.animate(Raphael.animation({
+                    transform: 't0 ' + (0 - 2 * r)
+                }, 0));
                 break;
 
             case "p5":
 
-                obj.animate(moveFromP3);
-                obj.animate(moveU1U2);
-                obj.animate(moveToP5);
+                obj.animate(Raphael.animation({
+                    transform: 't0 ' + (-270)
+                }, 0));
+                obj.animate(Raphael.animation({
+                    cx: 150, //150
+                    y: 0
+                }, 0));
+                obj.animate(Raphael.animation({
+                    transform: 't0 ' + (0)
+                },0));
                 break;
 
 
 
             case "p6":
-                obj.animate(moveFromP3);
-                obj.animate(moveU1U3);
-                obj.animate(moveToP6);
+                obj.animate(Raphael.animation({
+                    transform: 't0 ' + (-270)
+                }, 0));
+                obj.animate(Raphael.animation({
+                    cx: 250,
+                    y: 0
+                }, 0));
+                obj.animate(Raphael.animation({
+                    transform: 't0 ' + (0)
+                }, 0));
         }
     }
 }

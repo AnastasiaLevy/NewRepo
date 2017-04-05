@@ -12,21 +12,23 @@
     <link rel="shortcut icon" href="images/favicon.ico" />
 </head>
 <body>
-     <button id=play>Play</button>
+    <button id="play">Play</button>
     <div id="testArea" class="withBorder center">
         <div id="countdown" class="countdown"></div>
         <div id="finalMessage" class="finalMessage"></div>
+            <h3 class="lefth3" id="workArea">Work Space</h3>
         <div id="work" class="left">
-            <h3>Work Space</h3>
+        
         </div>
         <div id="canvas_small" class="left">
         </div>
-        <div id="goal" class="display">
-            <h3>Goal State</h3>
+              <h3 class="displayh3" id="goalArea">Goal State</h3>
+            <div id="goal" class="display">
+          
         </div>
         <div id="image_holder" class="display"></div>
         <div id="displayMessageL" class="">
-            
+
             <p></p>
         </div>
 
@@ -90,7 +92,10 @@
             alert("Could not load the correct test. Please try again later.");
         }
     });
- </script>
+$('#workArea').val( gameSettings.WorkTag);
+$('#goalArea').val( gameSettings.EndTag);
+
+</script>
 
 
 

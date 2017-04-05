@@ -131,28 +131,31 @@ function displayFinalMessage(needMoves, madeMoves) {
     //finalMessage.innerHTML = "You made " + madeMoves + dMadeMoves + ". The goal was " + needMoves + dNeedMoves;
 
     finalMessage.innerHTML = text;
-    setTimeout(hideFinalMessage, 2000);
+    setTimeout(hideFinalMessage, 1300);
 }
 
 function displayInstructions(text) {
     if (gameSettings.TxtToSpeech)
         $("#play").show();
+    else
+        $("#play").hide();
     var field = document.getElementById("displayMessageL");
     field.textContent = text;
     field.onclick = function run() {
         canMove = true;
         field.style.display = 'none';
+        $("#play").hide();
 
     }
 }
 
 function startCountDownTimer(game) {
-    var timeleft = parseInt(gameSettings.CountDownFrom) + 2;
+    var timeleft = parseInt(gameSettings.CountDownFrom)+1;
     var text = gameSettings.CountDownText;
 
     if (text.indexOf("[cd]") != -1) {
         var res = text.split("[cd]");
-        text = res[0] + "<span id='countdowntimer'>"  +(timeleft + 2) + "</span>" + res[1];
+        text = res[0] + "<span id='countdowntimer'>"  +(timeleft)  + "</span>" + res[1];
     }
 
     canMove = false;
@@ -261,7 +264,7 @@ function checkPos(out) {
         displayFinalMessage20move(game)
     }
     canMove = false;
-    setTimeout(function () { canMove = true }, 1000);
+    setTimeout(function () { canMove = true }, 700);
     //
     if (1 == 1) {
         if (nm == 0) {
@@ -294,9 +297,9 @@ function cleanDivs() {
     $("#testArea").append("<div id = 'image_holder' class='display'></div>");
 
 }
-
+arrData = [];
 function passResultsForGame(game, initThinkTime, totalTime, nm, nmWrong, overTime, overMoves, minMoves) {
-    arrData = [];
+  
     var data = {
         'game': game,
         'initThinkTime': initThinkTime / 1000,
@@ -306,8 +309,8 @@ function passResultsForGame(game, initThinkTime, totalTime, nm, nmWrong, overTim
         'overTime': overTime,
         'overMoves': overMoves,
         'minMoves': numMoves
-
     }
+  
     jQuery.ajax({
         contentType: "application/json; charset=utf-8",
         dataType: "json",
@@ -329,7 +332,7 @@ function passResultsForGame(game, initThinkTime, totalTime, nm, nmWrong, overTim
 
 
 function updateTestFinished() {
-    //saveTextAsFile();
+  saveTextAsFile();
     jQuery.ajax({
         contentType: "application/json; charset=utf-8",
         dataType: "json",
@@ -355,6 +358,8 @@ $('body').on('click', '#finishIt', function () {
         var tId = document.getElementById("tId").value;
         window.location.href = "ResultsPage.aspx?userId=" + user + "&tid=" + tId + "&test=2";
     }
+    else
+        window.location.href = "UserProfile.aspx";
    
 });
 
@@ -378,20 +383,11 @@ function onClickPlay() {
     var synth = speechSynthesis;
   
    // var text = "Видишь эти две доски? Они оба одинаковы.";
-    var text = "test";//gameSettings.Instructions;
-    var language = "";//gameSettings.Language;
-
-    //var utterance = new SpeechSynthesisUtterance(
-    //      text);
-    //    utterance.voice = synth.getVoices()[0];
-    // 
-
-
-    //utterance.lang = 'ru'
-    //    synth.speak(utterance);
+    var text = gameSettings.Instructions;
+    var language = gameSettings.Language;
     var utterance = new SpeechSynthesisUtterance();
     utterance.volume = 1;
-    utterance.voice = synth.getVoices()[0];
+   // utterance.voice = synth.getVoices()[0];
     if (language != "")
     {
         //utterance.lang = 'ru-RU';
@@ -399,7 +395,7 @@ function onClickPlay() {
    
     utterance.text = text;
     utterance.onend = function () {
-      
+
            };
 
  

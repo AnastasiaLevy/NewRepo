@@ -2352,6 +2352,23 @@ padding: 10px;
     -webkit-box-shadow: inset 0px 0px 10px 6px rgba(107,106,106,1);
     -moz-box-shadow: inset 0px 0px 10px 6px rgba(107,106,106,1);
     box-shadow: inset 0px 0px 10px 6px rgba(107,106,106,1);
+    
+}
+.lefth3 {
+   
+    position: fixed;
+    left: 20%;
+    transform: translate(-50%, -50%);
+
+    
+}
+
+.displayh3 {
+    position: fixed;
+    left: 60%;
+    transform: translate(-50%, -50%);
+
+  
 }
 
 .left, .display h3 {
@@ -2368,6 +2385,7 @@ padding: 10px;
     -webkit-box-shadow: inset 0px 0px 10px 6px rgba(107,106,106,1);
     -moz-box-shadow: inset 0px 0px 10px 6px rgba(107,106,106,1);
     box-shadow: inset 0px 0px 10px 6px rgba(107,106,106,1);
+  
 }
 
 #displayMessage {
@@ -2381,7 +2399,7 @@ padding: 10px;
     line-height: 40px;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 30px;
     font-size: larger;
     /*display : flex;*/
 }

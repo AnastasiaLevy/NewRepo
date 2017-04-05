@@ -121,7 +121,7 @@
             }
             else if (p3 == blue && p2 == null && p1 == null) {
                 up2.animate(moveU2U1);
-                up2.animate(moveToP2);
+                up2.animate(moveToP2.delay(speed));
                 p2 = up2;
                 up2 = null;
                 nm++;
