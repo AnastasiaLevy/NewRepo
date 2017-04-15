@@ -63,7 +63,7 @@
         <!-- Page Content -->
         <section id="about">
             <div class="container testDescription">
-                <h2>Card Sort Test</h2>
+                <h1>Card Sort Test</h1>
                 <hr />
                 <div class="panel-group testDescription " id="accordion" role="tablist" aria-multiselectable="true">
                     <div class="col-md-6 visible">
@@ -253,7 +253,7 @@ Feldstein, S. N., Keller, F. R., Portman, R. E., Durham, R. L., Klebe, K. J., Da
                         <li class="active"><a href="https://www.facebook.com/CogQuiz-1644904339158958/"><i class="fa fa-facebook social-icons"></i></a></li>
                         <li><a href="https://twitter.com/cogquizcom"><i class="fa fa-twitter social-icons"></i></a></li>
                         <li><a href="https://plus.google.com/u/3/113821050703373361140?hl=en"><i class="fa fa-google-plus social-icons"></i></a></li>
-                        <li><a href="https://www.linkedin.com/in/hasker-davis-8849a914"><i class="fa fa-linkedin social-icons"></i></a></li>
+                        <li><a href="https://www.linkedin.com/company-beta/13213074/"><i class="fa fa-linkedin social-icons"></i></a></li>
                     </ul>
                 </div>
             </div>

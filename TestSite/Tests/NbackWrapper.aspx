@@ -8,7 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Nback">
-    <meta name="author" content="AnaLevy">
+    <meta name="author" content="CogQuiz">
+    <meta name="keywords" content="Nback tests, N-back test, continuous performance tests, neuropsychological tests, psych tests, psychological test"
+
     <title>Nback</title>
     <link rel="shortcut icon" href="../images/favicon.ico" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -53,7 +55,7 @@
         <!-- Page Content -->
         <section id="about">
             <div class="container testDescription">
-                <h2>Nback Test(n-back test)</h2>
+                <h1>Nback Test(n-back test)</h1>
                 <hr />
                 <p>
                     The n-back task is a continuous performance task that is
@@ -236,7 +238,7 @@
                         <li class="active"><a href="https://www.facebook.com/CogQuiz-1644904339158958/"><i class="fa fa-facebook social-icons"></i></a></li>
                         <li><a href="https://twitter.com/cogquizcom"><i class="fa fa-twitter social-icons"></i></a></li>
                         <li><a href="https://plus.google.com/u/3/113821050703373361140?hl=en"><i class="fa fa-google-plus social-icons"></i></a></li>
-                        <li><a href="https://www.linkedin.com/in/hasker-davis-8849a914"><i class="fa fa-linkedin social-icons"></i></a></li>
+                        <li><a href="https://www.linkedin.com/company-beta/13213074/"><i class="fa fa-linkedin social-icons"></i></a></li>
                     </ul>
                 </div>
             </div>

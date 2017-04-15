@@ -9,8 +9,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Memory Tests">
-    <title>executive function</title>
+    <meta name="description" content="neuroscience tests">
+    <meta name="keywords" content="Cognitive Testing, psychological testing, neuropsychologiical tests, cognitive tests, psychologiical software, survey">
+    <title>Executive function</title>
     <link rel="shortcut icon" href="../images/favicon.ico" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="../fonts/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -70,7 +71,7 @@
         <div class="container MemoryBlock">
             <h2 class="middle">Executive Function</h2>
             <img class="img-responsive displayed" src="../images/line-separator.png" alt="short" />
-            <h3>Executive Function</h3>
+            <h1>Executive Function</h1>
             <p>
                Executive functions are a set of cognitive processes that monitor, guide, and control our behavior.  These processes facilitate our successful navigation of the world. There is no agreed concensus on the number and nature of these components. However, there is general agreement that these processes are involved in working memory (actively holding and manipulating several bits of information in conscious awareness), inhibition (witholding a response), shifting strategies, attention, and problem solving. For example, imagine the processes a drone pilot has to engage in when flying.  A future Amazon drone pilot has a number of instruments he must monitor and attend to (working memory and attention), be able to switch back and forth between activates (shifting), not drop a package at the wrong address (inhibition), and plan a route to the correct address (problem solving).
 
@@ -177,7 +178,7 @@
                     <li class="active"><a href="https://www.facebook.com/CogQuiz-1644904339158958/"><i class="fa fa-facebook social-icons"></i></a></li>
                     <li><a href="https://twitter.com/cogquizcom"><i class="fa fa-twitter social-icons"></i></a></li>
                     <li><a href="https://plus.google.com/u/3/113821050703373361140?hl=en"><i class="fa fa-google-plus social-icons"></i></a></li>
-                    <li><a href="https://www.linkedin.com/in/hasker-davis-8849a914"><i class="fa fa-linkedin social-icons"></i></a></li>
+                    <li><a href="https://www.linkedin.com/company-beta/13213074/"><i class="fa fa-linkedin social-icons"></i></a></li>
                 </ul>
             </div>
         </div>

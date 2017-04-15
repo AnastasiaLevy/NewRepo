@@ -167,9 +167,10 @@
         <section id="about">
             <div class="container">
                 <div class="row">
+                    <h1><center>CogQuiz Neuropsychological Tests<center></h1> <%--TODO:CENTER--%>
                     <div class="col-md-offset-1 col-md-10">
                         <div class="text-center">
-                            <h2>About Us</h2>
+                           
                             <img class="img-responsive displayed" src="images\line-separator.png" alt="Company about" />
                             <div class="row">
                                 <h5 class="aboutHeader">The CogQuiz General Philosophy</h5>
@@ -533,7 +534,7 @@
                         <li class="active"><a href="https://www.facebook.com/CogQuiz-1644904339158958/"><i class="fa fa-facebook social-icons"></i></a></li>
                         <li><a href="https://twitter.com/cogquizcom"><i class="fa fa-twitter social-icons"></i></a></li>
                         <li><a href="https://plus.google.com/u/3/113821050703373361140?hl=en"><i class="fa fa-google-plus social-icons"></i></a></li>
-                        <li><a href="https://www.linkedin.com/in/hasker-davis-8849a914"><i class="fa fa-linkedin social-icons"></i></a></li>
+                        <li><a href="https://www.linkedin.com/company-beta/13213074/"><i class="fa fa-linkedin social-icons"></i></a></li>
                         <li><a href="mailto:support@cogquiz.com" target="_top"><i class="fa fa-envelope social-icons"></i></a></li>
                     </ul>
                    <p>+1(719)888 9121</p> 
@@ -629,8 +630,6 @@
             </div>
         </div>
     </footer>
-
-  
 
 
     <script>

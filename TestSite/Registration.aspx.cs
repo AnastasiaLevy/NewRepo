@@ -20,6 +20,8 @@ namespace TestSite
         protected string _userName;
         protected void Page_Load(object sender, EventArgs e)
         {
+            fbBad.Visible = false;
+            fbGood.Visible = false;
 
             if (!String.IsNullOrEmpty(Request.QueryString["provId"]))
             {
@@ -295,9 +297,19 @@ namespace TestSite
                 income = ddlIncome.SelectedValue;
                 int providerId = GetUserProviderId(_userId);
                 int id = 0;
+                try
+                {
+
+               
                 id = DataMethods.SaveRegistration(firstName, lastName, education, medications, gender, hand,
                     brainActivity, ethnisity, language, headInjury, selfEsteem, exercise, _userName, selfHealth,
                     birthDate, isOnMeds, isInj, isFilled, _userId, income, cbAgree.Checked, providerId);
+                    fbGood.Visible = true;
+                }
+                catch(Exception ex)
+                {
+                    fbBad.Visible = true;
+                }
                 if (id > 0)
                 {
                     DataMethods.UpdateRegCheck(_userId);
@@ -315,7 +327,7 @@ namespace TestSite
          
             DataTable dt = DAL.DataMethods.GetUserProviderId(_userId);
 
-            return (dt.Rows.Count > 0) ? Convert.ToInt32(dt.Rows[0]["providerId"]) : 0;
+            return (dt.Rows.Count > 0) && dt.Rows[0]["providerId"] !=DBNull.Value ? Convert.ToInt32(dt.Rows[0]["providerId"]) : 0;
         }
 
         private string GetSelfHealth()

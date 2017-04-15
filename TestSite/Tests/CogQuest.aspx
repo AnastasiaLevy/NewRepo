@@ -9,8 +9,9 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Nback" />
-    <meta name="author" content="AnaLevy" />
+    <meta name="description" content="Questionnaire" />
+    <meta name="keywords" content="Brain tests, psychological tests, psych test, pysch tests, brain tests, iq test, neuropsychological tests"/>
+    <meta name="author" content="CogQuiz" />
     <title>CogQuest</title>
     <link rel="shortcut icon" href="../images/favicon.ico" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
@@ -55,12 +56,12 @@
 
         <section id="about">
             <div class="container testDescription">
-                <h2>CogQuest Simple Questionnaire</h2>
+                <h1>CogQuest Simple Questionnaire</h1>
                 <hr />
                 <p>
-                 CogQuest Quesionnaire desktop tool allows to create a series of questions to gather any needed inforamtionn from participants.
-                 It has 7 type of questions, including Date and Dropdown.
-                    CogQuest allows storing data in text tile for printing or Excel Document for easy export to SPSS.
+                 CogQuest Quesionnaire desktop tool allows to create a series of questions to gather any needed inforamtion from/about participants.
+                 It has 7 types of questions, including Date and Dropdown.
+                    CogQuest allows storing data in text file for printing or Excel Document for easy export to SPSS.
                     
                 </p>
                 <div class="panel-group testDescription " id="accordion" role="tablist" aria-multiselectable="true">
@@ -83,13 +84,13 @@
                             <h3>Examples:</h3>
                             <div class="gallery-wrapper">
                                
-                                <img src="../images/quest1.png" alt="" class="g-image" />
-                                <img src="../images/quest2.png" alt="" class="g-image" />
-                                <img src="../images/quest3.png" alt="" class="g-image" />
-                                <img src="../images/quest4.png" alt="" class="g-image" />
-                                <img src="../images/quest5.png" alt="" class="g-image" />
-                                <img src="../images/quest6.png" alt="" class="g-image" />
-                                <img src="../images/quest7.png" alt="" class="g-image" />
+                                <img src="../images/quest1.png" alt="neuropsychological questionnaire" class="g-image" />
+                                <img src="../images/quest2.png" alt="psychological questionnaire maker" class="g-image" />
+                                <img src="../images/quest3.png" alt="scales questionnaire" class="g-image" />
+                                <img src="../images/quest4.png" alt="likert scale" class="g-image" />
+                                <img src="../images/quest5.png" alt="questionnaire tool" class="g-image" />
+                                <img src="../images/quest6.png" alt="questionnaire create" class="g-image" />
+                                <img src="../images/quest7.png" alt="open-ended questions" class="g-image" />
 
                                 <p class="clear"></p>
                             </div>

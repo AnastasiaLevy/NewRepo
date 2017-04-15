@@ -61,7 +61,12 @@
 
         <section id="formInstructions">
         </section>
-
+        <div class="alert alert-success" id="fbGood" runat="server">
+            Your profile is saved.
+        </div>
+        <div class="alert alert-danger" id ="fbBad" runat="server">
+            There was an error saving your profile. 
+        </div>
         <section id="regForm">
             <div class="container" id="center">
                 <div class="box">
@@ -321,7 +326,7 @@
                             <li class="active"><a href="https://www.facebook.com/CogQuiz-1644904339158958/"><i class="fa fa-facebook social-icons"></i></a></li>
                             <li><a href="https://twitter.com/cogquizcom"><i class="fa fa-twitter social-icons"></i></a></li>
                             <li><a href="https://plus.google.com/u/3/113821050703373361140?hl=en"><i class="fa fa-google-plus social-icons"></i></a></li>
-                            <li><a href="https://www.linkedin.com/in/hasker-davis-8849a914"><i class="fa fa-linkedin social-icons"></i></a></li>
+                            <li><a href="https://www.linkedin.com/company-beta/13213074/"><i class="fa fa-linkedin social-icons"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -480,7 +485,7 @@
     })
 
     $('#submit').click(function () {
-    
+
     });
 
 </script>

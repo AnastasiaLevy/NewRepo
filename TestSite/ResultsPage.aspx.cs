@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
@@ -15,6 +16,9 @@ namespace TestSite
 {
     public partial class ResultsPage : System.Web.UI.Page
     {
+        string userId;
+        int tId;
+        string userName;
         protected void Page_Prerender(object sender, EventArgs e)
         {
 
@@ -26,7 +30,7 @@ namespace TestSite
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            string userId = Request.QueryString["userId"].ToString();
+            userId = Request.QueryString["userId"].ToString();
             int canView = DataMethods.GetUserViewResults(userId);
             if (canView == 0 && Request.QueryString["provider"] == null)
             {
@@ -45,15 +49,15 @@ namespace TestSite
                 }
                 else
                 { ShowResults(userId, ageGroup); }
-               
+
             }
         }
 
         private void ShowResults(string userId, int ageGroup)
         {
-            int tId = Convert.ToInt32(Request.QueryString["tId"]);
+            tId = Convert.ToInt32(Request.QueryString["tId"]);
             string test = Request.QueryString["test"].ToString();
-            string userName = User.Identity.Name;
+            userName = User.Identity.Name;
             DataTable dt;
             DataSet ds;
             int factor;
@@ -75,7 +79,7 @@ namespace TestSite
                 decimal std;
                 int percentCorrrect;
 
-                
+
 
                 dt = DataMethods.GetNbackUserResults(tId);
                 if (dt == null)
@@ -83,31 +87,31 @@ namespace TestSite
                     chartTitle.Text = "Results for nBack Test for participant cannot be displayed. Please coctact site administrator.";
                 }
                 else
-                { 
+                {
                     chartTitle.Text = "Results for nBack Test for participant " + userName;
-                GridView gvNbackUserResults = new GridView();
-                gvNbackUserResults.DataSource = dt;
-                gvNbackUserResults.DataBind();
-                SetGvProperties(gvNbackUserResults);
-                pResultPanel.Controls.Add(gvNbackUserResults);
-                ds = DataMethods.GetNbackNorms(ageGroup);
+                    GridView gvNbackUserResults = new GridView();
+                    gvNbackUserResults.DataSource = dt;
+                    gvNbackUserResults.DataBind();
+                    SetGvProperties(gvNbackUserResults);
+                    pResultPanel.Controls.Add(gvNbackUserResults);
+                    ds = DataMethods.GetNbackNorms(ageGroup);
 
-                GetValues(ds, 0, out mean, out std);
-                percentCorrrect = GerPercentCorrect(dt, 1);
-                factor = CalculateResults(percentCorrrect, mean, std);
-                textStr.Text += "Result for nBack 1: " + Enums.ReturnNBackResultString(factor) + "<br/>";
-
-
-                GetValues(ds, 1, out mean, out std);
-                percentCorrrect = GerPercentCorrect(dt, 3);
-                factor = CalculateResults(percentCorrrect, mean, std);
-                textStr.Text += "Result for nBack 2: " + Enums.ReturnNBackResultString(factor) + "<br/>";
+                    GetValues(ds, 0, out mean, out std);
+                    percentCorrrect = GerPercentCorrect(dt, 1);
+                    factor = CalculateResults(percentCorrrect, mean, std);
+                    textStr.Text += "Result for nBack 1: " + Enums.ReturnNBackResultString(factor) + "<br/>";
 
 
-                GetValues(ds, 2, out mean, out std);
-                percentCorrrect = GerPercentCorrect(dt, 5);
-                factor = CalculateResults(percentCorrrect, mean, std);
-                textStr.Text += "Result for nBack 3: " + Enums.ReturnNBackResultString(factor) + "<br/>";
+                    GetValues(ds, 1, out mean, out std);
+                    percentCorrrect = GerPercentCorrect(dt, 3);
+                    factor = CalculateResults(percentCorrrect, mean, std);
+                    textStr.Text += "Result for nBack 2: " + Enums.ReturnNBackResultString(factor) + "<br/>";
+
+
+                    GetValues(ds, 2, out mean, out std);
+                    percentCorrrect = GerPercentCorrect(dt, 5);
+                    factor = CalculateResults(percentCorrrect, mean, std);
+                    textStr.Text += "Result for nBack 3: " + Enums.ReturnNBackResultString(factor) + "<br/>";
                 }
 
             }
@@ -204,7 +208,7 @@ namespace TestSite
 
             else if (test == "2" || test == "Tower Of London")
             {
-                chartTitle.Text = "Results for Tower of London test";
+                chartTitle.Text = "Results for Tower of London Test for participant " + userName + ".";
                 GridView gv;
                 SetUpUserResultGrid(userId, tId, out dt, out gv);
 
@@ -276,8 +280,6 @@ namespace TestSite
             {
                 AppendLog(s);
                 AppendLog("<br/>");
-
-
             }
         }
 
@@ -319,11 +321,12 @@ namespace TestSite
 
         private void SetUpUserResultGrid(string userId, int tId, out DataTable dt, out GridView gv)
         {
-            dt = DataMethods.GetTestResultsLondon(userId, tId);
+            DataSet ds = DataMethods.GetTestResultsLondon(userId, tId);
             gv = new GridView();
             SetGvProperties(gv);
-            gv.DataSource = dt;
+            gv.DataSource = ds.Tables[0];
             gv.DataBind();
+            dt = ds.Tables[0];
         }
 
         protected int CalculateResults(decimal? score, decimal? mean, decimal? stdDev)
@@ -385,7 +388,126 @@ namespace TestSite
             gv.ForeColor = Color.Black;
             gv.RowStyle.BackColor = Color.FloralWhite;
             gv.CssClass = "testResGrid";
+            gv.ID = "gv";
+            gv.Attributes.Add("runat", "server");
 
+        }
+
+
+        //private void ExportDataSetToExcel(DataTable dt)
+        //{
+        //    var excel = new Microsoft.Office.Interop.Excel.Application();
+        //    var wb = excel.Workbooks.Add(true);
+        //    Microsoft.Office.Interop.Excel.Sheets sheets = wb.Sheets;
+        //    Microsoft.Office.Interop.Excel.Worksheet newSheet = sheets.Add();
+
+        //    ExportOneLine(dt, newSheet);
+        //    ExportNormal(dt, newSheet);
+
+        //    wb.SaveAs(@"C:\LondonResults\" + userName + "_" + DateTime.Now.ToShortDateString() + ".xlsx");
+        //    wb.Close();
+        //}
+
+        private static void ExportNormal(DataSet dt, Microsoft.Office.Interop.Excel.Worksheet newSheet)
+        {
+            int iCol = 0;
+            foreach (DataColumn c in dt.Tables[0].Columns)
+            {
+                iCol++;
+                newSheet.Cells[1, iCol] = c.ColumnName;
+            }
+
+            int iRow = 0;
+            foreach (DataRow r in dt.Tables[0].Rows)
+            {
+                iRow++;
+                // add each row's cell data...
+                iCol = 0;
+                foreach (DataColumn c in dt.Tables[0].Columns)
+                {
+                    iCol++;
+                    newSheet.Cells[iRow + 1, iCol] = r[c.ColumnName];
+
+                }
+            }
+        }
+
+        private static void ExportOneLine(DataSet ds, Microsoft.Office.Interop.Excel.Worksheet newSheet)
+        {
+            int iCol = 0;
+            foreach (DataRow r in ds.Tables[1].Rows)
+            {
+                foreach (DataColumn c in ds.Tables[1].Columns)
+                {
+                    iCol++;
+                    newSheet.Cells[1, iCol] = c.ColumnName;
+                    newSheet.Cells[2, iCol] = r[c.ColumnName];
+                }
+
+            }
+
+
+            foreach (DataRow r in ds.Tables[0].Rows)
+            {
+                foreach (DataColumn c in ds.Tables[0].Columns)
+                {
+                    iCol++;
+                    newSheet.Cells[1, iCol] = c.ColumnName;
+                    newSheet.Cells[2, iCol] = r[c.ColumnName];
+                }
+
+            }
+        }
+
+        protected void btnExportLine_Click(object sender, EventArgs e)
+        {
+            DataSet ds = DataMethods.GetTestResultsLondon(userId, tId);
+            
+            var excel = new Microsoft.Office.Interop.Excel.Application();
+            var wb = excel.Workbooks.Add(true);
+            Microsoft.Office.Interop.Excel.Sheets sheets = wb.Sheets;
+            Microsoft.Office.Interop.Excel.Worksheet newSheet = sheets.Add();
+
+            ExportOneLine(ds, newSheet);
+
+            try
+            {
+
+            wb.SaveAs(@"C:\LondonResults\" + userName + "_" + DateTime.Now.ToShortDateString() + ".xlsx");
+            wb.Close();
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+        }
+
+        protected void btnExportNorm_Click(object sender, EventArgs e)
+        {
+            DataSet ds = DataMethods.GetTestResultsLondon(userId, tId);
+            string name = GetPartName(ds.Tables[1]);
+            var excel = new Microsoft.Office.Interop.Excel.Application();
+            var wb = excel.Workbooks.Add(true);
+            Microsoft.Office.Interop.Excel.Sheets sheets = wb.Sheets;
+            Microsoft.Office.Interop.Excel.Worksheet newSheet = sheets.Add();
+
+            ExportNormal(ds, newSheet);
+
+            try
+            {
+                wb.SaveAs(@"C:\LondonResults\" + name + "_" + DateTime.Now.ToShortDateString() + ".xlsx");
+                wb.Close();
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private string GetPartName(DataTable dt)
+        {
+            return string.Format("{0}_{1}", dt.Rows[0]["firstName"], dt.Rows[0]["lastName"]);
         }
     }
 }

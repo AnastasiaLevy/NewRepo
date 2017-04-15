@@ -58,7 +58,7 @@
         <!-- Page Content -->
         <section id="about">
             <div class="container testDescription">
-                <h2>Tower of London</h2>
+                <h1>Tower of London</h1>
                 <hr />
                 <p>
                     The Tower of London test is a well-known test used in applied clinical neuropsychology 
@@ -238,7 +238,7 @@
                         <li class="active"><a href="https://www.facebook.com/CogQuiz-1644904339158958/"><i class="fa fa-facebook social-icons"></i></a></li>
                         <li><a href="https://twitter.com/cogquizcom"><i class="fa fa-twitter social-icons"></i></a></li>
                         <li><a href="https://plus.google.com/u/3/113821050703373361140?hl=en"><i class="fa fa-google-plus social-icons"></i></a></li>
-                        <li><a href="https://www.linkedin.com/in/hasker-davis-8849a914"><i class="fa fa-linkedin social-icons"></i></a></li>
+                        <li><a href="https://www.linkedin.com/company-beta/13213074/"><i class="fa fa-linkedin social-icons"></i></a></li>
                     </ul>
                 </div>
             </div>

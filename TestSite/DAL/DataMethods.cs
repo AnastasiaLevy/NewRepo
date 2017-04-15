@@ -1129,6 +1129,28 @@ namespace TestSite.DAL
             }
         }
 
+        public static DataTable GetParticipantName(string userId)
+        {
+            DataTable dt = new DataTable();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("GetParticipantName", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@userId", userId);
+
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                adp.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                InsertErrorMessage(ex.ToString(), null, null, "GetParticipantName");
+                throw new Exception("Execption getting GetParticipantName. " + ex.Message);
+            }
+
+            return dt;
+        }
 
         public static DataTable GetSyllogismsUserTable(int tId)
         {
@@ -1199,9 +1221,9 @@ namespace TestSite.DAL
             return ds;
         }
 
-        public static DataTable GetTestResultsLondon(string userId, int tId)
+        public static DataSet GetTestResultsLondon(string userId, int tId)
         {
-            DataTable ds = new DataTable();
+            DataSet ds = new DataSet();
             SqlConnection conn = new SqlConnection(connectionSring);
             SqlCommand cmd = new SqlCommand("GetUserLondonTestResults", conn);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -1370,7 +1392,7 @@ namespace TestSite.DAL
             cmd.Parameters.AddWithValue("@income", income);
             cmd.Parameters.AddWithValue("@disclamerField", disclamerField);
             if (providerId > 0) cmd.Parameters.AddWithValue("@providerId", providerId);
-            else cmd.Parameters.AddWithValue("@errorTime", DBNull.Value);
+            else cmd.Parameters.AddWithValue("@providerId", DBNull.Value);
 
             try
             {

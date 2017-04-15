@@ -36,7 +36,7 @@ function RunDemoTest() {
         var correct = "";
         var start = paper.text(571, 378, "Start")
         .attr({ "font-size": 20, "font-family": "Arial, Helvetica, sans-serif" });
-        var finish = paper.text(201, 552, "Finish")//200, 512
+        var finish = paper.text(313, 290, "Finish")//200, 512//312, 250
         .attr({ "font-size": 20, "font-family": "Arial, Helvetica, sans-serif" });
 
 
@@ -111,13 +111,23 @@ function RunDemoTest() {
             }
         }
 
-        var c2 = new makeMyObj(2, 375, 450, 30, "2", "M 588 343  L 360 450")
-        var c3 = new makeMyObj(3, 637, 500, 30, "3", "M 376 450  L 637 500");
-        var c4 = new makeMyObj(4, 632, 200, 30, "4", "M 638 500  L 632 200");
-        var c5 = new makeMyObj(5, 312, 250, 30, "5", "M 633 200  L 312 250");
-        var c6 = new makeMyObj(6, 475, 300, 30, "6", "M 313 250  L 475 300");
-        var c7 = new makeMyObj(7, 300, 387, 30, "7", "M 476 300  L 300 387");
-        var c8 = new makeMyObj(8, 200, 512, 30, "8", "M 301 387  L 200 512", true);
+      
+      
+        //var c2 = new makeMyObj(2, 375, 450, 30, "2", "M 588 343  L 360 450")
+        //var c3 = new makeMyObj(3, 637, 500, 30, "3", "M 376 450  L 637 500");
+        //var c4 = new makeMyObj(4, 632, 200, 30, "4", "M 638 500  L 632 200");
+        //var c5 = new makeMyObj(5, 312, 250, 30, "5", "M 633 200  L 312 250");
+        //var c6 = new makeMyObj(6, 475, 300, 30, "6", "M 313 250  L 475 300");
+        //var c7 = new makeMyObj(7, 300, 387, 30, "7", "M 476 300  L 300 387");
+        //var c8 = new makeMyObj(8, 200, 512, 30, "8", "M 301 387  L 200 512", true);
+ 
+        var c2 = new makeMyObj(2, 632, 200, 30, "2", "M 588 343  L 632, 200");
+        var c3 = new makeMyObj(3, 637, 500, 30, "3", "M 633 200  L 637, 500"); //633 200
+        var c4 = new makeMyObj(4, 475, 300, 30, "4", "M 638 500  L 475, 300");//638 500
+        var c5 = new makeMyObj(5, 300, 387, 30, "5", "M 476 300  L 300 387");
+        var c6 = new makeMyObj(6, 200, 512, 30, "6", "M 301 387  L 200 512");
+        var c7 = new makeMyObj(7, 375, 450, 30, "7", "M 200, 512  L 375, 450");
+        var c8 = new makeMyObj(8, 312, 250, 30, "8", "M 376 450  L 312, 250", true);
 
         function makeMyObj(id, x, y, rad, text, path, last) {
 
@@ -528,8 +538,8 @@ function startTrailA() {
     var c15 = new makeMyObj(15, 50, 75, 30, "15",    "M 38  437  L 50 75,");
     var c16 = new makeMyObj(16, 172, 225, 30, "16",  "M 51  75   L 172 225");
     var c17 = new makeMyObj(17, 412, 62, 30, "17",   "M 173 225  L 412 62");
-    var c18 = new makeMyObj(18, 412, 207, 30, "18",  "M 413 62   L 412 207");
-    var c19 = new makeMyObj(19, 687, 112, 30, "19",  "M 413 207  L 687 112");
+    var c18 = new makeMyObj(18, 410, 195, 30, "18",  "M 413 62   L 412 207");
+    var c19 = new makeMyObj(19, 687, 112, 30, "19",  "M 413 195  L 687 112");
     var c20 = new makeMyObj(20, 535, 110, 30, "20",  "M 688 112  L 535 110");
     var c21 = new makeMyObj(21, 825, 50, 30, "21",   "M 536 110  L 825 50");
     var c22 = new makeMyObj(22, 800, 275, 30, "22",  "M 826 50   L 800 275");

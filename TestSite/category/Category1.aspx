@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Memory Tests">
+    <meta name="keywords" content="N Back, N-Back, NBack, Brain tests, psychological tests, psych test, pysch tests, brain tests, iq test, neuropsychological tests">
     <title>Memory</title>
     <link rel="shortcut icon" href="../images/favicon.ico"/>
 
@@ -166,7 +167,7 @@
                     <li class="active"><a href="https://www.facebook.com/CogQuiz-1644904339158958/"><i class="fa fa-facebook social-icons"></i></a></li>
                     <li><a href="https://twitter.com/cogquizcom"><i class="fa fa-twitter social-icons"></i></a></li>
                     <li><a href="https://plus.google.com/u/3/113821050703373361140?hl=en"><i class="fa fa-google-plus social-icons"></i></a></li>
-                    <li><a href="https://www.linkedin.com/in/hasker-davis-8849a914"><i class="fa fa-linkedin social-icons"></i></a></li>
+                    <li><a href="https://www.linkedin.com/company-beta/13213074/"><i class="fa fa-linkedin social-icons"></i></a></li>
                 </ul>
             </div>
         </div>

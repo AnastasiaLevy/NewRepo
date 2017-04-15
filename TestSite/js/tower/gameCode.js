@@ -298,8 +298,9 @@ function cleanDivs() {
 
 }
 arrData = [];
+var save = false;
 function passResultsForGame(game, initThinkTime, totalTime, nm, nmWrong, overTime, overMoves, minMoves) {
-  
+
     var data = {
         'game': game,
         'initThinkTime': initThinkTime / 1000,
@@ -310,7 +311,7 @@ function passResultsForGame(game, initThinkTime, totalTime, nm, nmWrong, overTim
         'overMoves': overMoves,
         'minMoves': numMoves
     }
-  
+    arrData.push(data);
     jQuery.ajax({
         contentType: "application/json; charset=utf-8",
         dataType: "json",
@@ -325,18 +326,22 @@ function passResultsForGame(game, initThinkTime, totalTime, nm, nmWrong, overTim
         },
         error: function () {
      
-            arrData.push(data);
+            save = true;
         }
     });
 }
 
 
 function updateTestFinished() {
-  saveTextAsFile();
+    if (save == true)
+    {
+        saveTextAsFile();
+    }
+ 
     jQuery.ajax({
         contentType: "application/json; charset=utf-8",
         dataType: "json",
-        url: 'LondonPage.aspx/SaveFininishedLondon',
+        //url: 'LondonPage.aspx/SaveFininishedLondon',
         dataType: 'json',
         data: '',
         type: 'POST',
@@ -364,10 +369,17 @@ $('body').on('click', '#finishIt', function () {
 });
 
 function saveTextAsFile() {
-    var textToSave = "test"; //document.getElementById("inputTextToSave").value;
+    var user = document.getElementById("userId").value;
+    var tId = document.getElementById("tId").value;
+    var text = "UserId: " + user + ".\r\n" +
+               "TestId: " +  tId +   ".\r\n" 
+    arrData.forEach(function (element) {
+        text += JSON.stringify(element) + ".\r\n";
+    });
+    var textToSave = text; 
     var textToSaveAsBlob = new Blob([textToSave], { type: "text/plain" });
     var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
-    var fileNameToSaveAs = 'try1';//document.getElementById("inputFileNameToSaveAs").value;
+    var fileNameToSaveAs = 'Tower' + (new Date()).toISOString().substring(0, 10);//document.getElementById("inputFileNameToSaveAs").value;
 
     var downloadLink = document.createElement("a");
     downloadLink.download = fileNameToSaveAs;
@@ -377,6 +389,10 @@ function saveTextAsFile() {
     downloadLink.style.display = "none";
     document.body.appendChild(downloadLink);
     downloadLink.click();
+}
+
+function destroyClickedElement(event) {
+    document.body.removeChild(event.target);
 }
 
 function onClickPlay() {

@@ -8,8 +8,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Nback">
-    <meta name="author" content="AnaLevy">
+    <meta name="description" content="Syllogisms">
+    <meta name="author" content="CogQuiz">
+    <meta name="keywords" content="Syllogisim tests, syllogisim, comparison tests, neuropsychological tests, psych tests, psychological test"
     <title>Syllogisms</title>
     <link rel="shortcut icon" href="../images/favicon.ico" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -55,7 +56,7 @@
         <!-- Page Content -->
         <section id="about">
             <div class="container testDescription">
-                <h2>Syllogisms</h2>
+                <h1>Syllogisms</h1>
                 <hr />
                 <p>
                     Practice syllogisms for psychometric aptitude tests. In general, these tests are also known as deductive reasoning tests and are used in psychometric assessments to determine your logical reasoning ability.
@@ -235,7 +236,7 @@
                         <li class="active"><a href="https://www.facebook.com/CogQuiz-1644904339158958/"><i class="fa fa-facebook social-icons"></i></a></li>
                         <li><a href="https://twitter.com/cogquizcom"><i class="fa fa-twitter social-icons"></i></a></li>
                         <li><a href="https://plus.google.com/u/3/113821050703373361140?hl=en"><i class="fa fa-google-plus social-icons"></i></a></li>
-                        <li><a href="https://www.linkedin.com/in/hasker-davis-8849a914"><i class="fa fa-linkedin social-icons"></i></a></li>
+                        <li><a href="https://www.linkedin.com/company-beta/13213074/"><i class="fa fa-linkedin social-icons"></i></a></li>
                     </ul>
                 </div>
             </div>

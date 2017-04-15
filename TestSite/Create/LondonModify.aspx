@@ -407,9 +407,46 @@
         });
 
         $('#saveTest').click(function () {
-            var voiceSelect = $("#select option:selected");
-            alert(voiceSelect[0].dataset.lang)
+            <%--    var voiceSelect = $("#select option:selected");
+            var voiceSelect = $("#<%=select.ClientID%>").val();
+            alert(voiceSelect);--%>
 
+            error = "";
+
+            error = checkIfEmpty($('#<%=testName.ClientID%>').val(), "the name of the test.", error)
+            error = checkIfEmpty($('#<%=instructions.ClientID%>').val(), "instruction field.", error)
+            error = checkIfEmpty($('#<%=overMoves.ClientID%>').val(), "over moves text.", error)
+            error = checkIfEmpty($('#<%=overTime.ClientID%>').val(), "over time text.", error)
+            error = checkIfEmpty($('#<%=txtButton.ClientID%>').val(), "Button for the end of the test.", error)
+            error = checkIfEmpty($('#<%=feedback.ClientID%>').val(), "feedback text.", error)
+            error = checkIfEmpty($('#<%=instructionsFinish.ClientID%>').val(), "text for the end of the test.", error)
+            error = checkIfEmpty($('#<%=ddlPractice.ClientID %> option:selected').text(), "set the number of the practice rounds.", error)
+            error = checkIfEmpty($('#<%=ddlNumberGames.ClientID %> option:selected').text(), "set the number of the trail rounds.", error)
+            error = checkIfEmpty($('#<%=ddlConuntFromRound.ClientID %> option:selected').text(), "the value to calculate the results from.", error)
+            error = checkIfEmpty($('#<%=countDown.ClientID%>').val(), "count down time.", error)
+            error = checkIfEmpty($('#<%=timeOutAfter.ClientID%>').val(), "Max trial time.", error)
+            error = checkIfEmpty($('#<%=maxMovesLimit.ClientID%>').val(), "Max allowed moves.", error)
+            error = checkIfEmpty($("#<%=workArea.ClientID%>").val(), "Work area title.", error)
+            error = checkIfEmpty($("#<%=endArea.ClientID%>").val(), "Goal area title.", error)
+            error = checkIfEmpty($("#<%=countDownText.ClientID%>").val(), "text for coundown message.", error)
+            if (superArr.length == 0)
+                error += "You have not set up any moves."
+            //checkIfEmpty(string, dataName, error)
+            //checkIfEmpty(string, dataName, error)
+            //checkIfEmpty(string, dataName, error)
+            //checkIfEmpty(string, dataName, error)
+           
+            if (error != "")
+            {
+                $('#MovesError').show();
+                $('#MovesError').html(error);
+            }
+            else
+            {
+                $('#MovesError').html("");
+                $('#MovesError').hide();
+            
+          
             sendData = {
                 testName: $('#<%=testName.ClientID%>').val(),
                 instructions: $('#<%=instructions.ClientID%>').val(),
@@ -428,7 +465,7 @@
                 maxMoves: $('#<%=maxMovesLimit.ClientID%>').val(),
                 showFeedback: $('#<%=showFeedback.ClientID %>').is(':checked'),
                 movesData: JSON.stringify(superArr),
-                language: voiceSelect[0].dataset.lang,
+                language:$("#<%=select.ClientID%>").val(),
                 workTag: $("#<%=workArea.ClientID%>").val(),
                 goalTag: $("#<%=endArea.ClientID%>").val(),
                 countDownText: $("#<%=countDownText.ClientID%>").val()
@@ -453,13 +490,23 @@
                     alert("error saving the test; try again later")
                 }
             });
+          }
         });
+
+       function checkIfEmpty(string, dataName, error)
+        {
+            if (string == "")
+            {
+                error += "Please fill out " + dataName + "\n\r";
+            }
+            return error;
+        }
 
         $('#save').hide();
         $('#MovesError').hide()
 
         $('#save').click(function () {
-            var error = "";
+            error = "";
 
             if ($('#numberOfMoves').val().length < 1) {
                 error = "! You need you set Number of moves for this round.<br />"

@@ -85,6 +85,8 @@
             //alert(JSON.parse(resp));
             gameData = resp.d.LondonMoves;
             gameSettings = resp.d.GeneralSettings;
+            $('#workArea').val(gameSettings.WorkTag);
+            $('#goalArea').val(gameSettings.EndTag);
             startGame(1);
 
         },
@@ -92,8 +94,7 @@
             alert("Could not load the correct test. Please try again later.");
         }
     });
-$('#workArea').val( gameSettings.WorkTag);
-$('#goalArea').val( gameSettings.EndTag);
+
 
 </script>
 

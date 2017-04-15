@@ -2352,23 +2352,18 @@ padding: 10px;
     -webkit-box-shadow: inset 0px 0px 10px 6px rgba(107,106,106,1);
     -moz-box-shadow: inset 0px 0px 10px 6px rgba(107,106,106,1);
     box-shadow: inset 0px 0px 10px 6px rgba(107,106,106,1);
-    
 }
+
 .lefth3 {
-   
     position: fixed;
     left: 20%;
     transform: translate(-50%, -50%);
-
-    
 }
 
 .displayh3 {
     position: fixed;
     left: 60%;
     transform: translate(-50%, -50%);
-
-  
 }
 
 .left, .display h3 {
@@ -2385,7 +2380,6 @@ padding: 10px;
     -webkit-box-shadow: inset 0px 0px 10px 6px rgba(107,106,106,1);
     -moz-box-shadow: inset 0px 0px 10px 6px rgba(107,106,106,1);
     box-shadow: inset 0px 0px 10px 6px rgba(107,106,106,1);
-  
 }
 
 #displayMessage {
@@ -3192,33 +3186,44 @@ label {
     -moz-user-select: none;
     -o-user-select: none;
     user-select: none;
-    cursor:default;
+    cursor: default;
 }
 
 .edit {
-    font-size:large;
-    margin:2px;
+    font-size: large;
+    margin: 2px;
 }
 
 .prct {
     background-color: lightgrey;
-
 }
-.trl
-{
+
+.trl {
     background-color: palegreen;
 }
+
 #roundValue {
-    color:blueviolet;
-    font-size:large;
-    background-color:aliceblue;
+    color: blueviolet;
+    font-size: large;
+    background-color: aliceblue;
 }
 
-   .myForm {
-        width: 500px;
-        clear: both;
-    }
+.myForm {
+    width: 500px;
+    clear: both;
+}
+
     .myForm input {
         width: 100%;
         clear: both;
+    }
+
+
+.selectBtn {
+    border: none;
+    background-color: white;
+}
+
+    .selectBtn :hover {
+        background-color:lavender
     }

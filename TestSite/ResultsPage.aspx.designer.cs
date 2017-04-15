@@ -76,12 +76,30 @@ namespace TestSite {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl movesMap;
         
         /// <summary>
-        /// btnPrint control.
+        /// btnPrintR control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPrint;
+        protected global::System.Web.UI.WebControls.Button btnPrintR;
+        
+        /// <summary>
+        /// btnExportLine control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnExportLine;
+        
+        /// <summary>
+        /// btnExportNorm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnExportNorm;
     }
 }

@@ -104,7 +104,7 @@ namespace TestSite
                 gs.ShowFeedback = dt.Rows[0]["showFeedBack"].ToString();
                 gs.CountDownText = dt.Rows[0]["countDownText"].ToString();
                 gs.Language = dt.Rows[0]["language"].ToString();
-                gs.WorktTag = dt.Rows[0]["workTag"].ToString();
+                gs.WorkTag = dt.Rows[0]["workTag"].ToString();
                 gs.GoalTag = dt.Rows[0]["goalTag"].ToString();
 
             }
@@ -169,7 +169,7 @@ namespace TestSite
         public string TimeOut { get; set; }
         public string MaxMoves { get; set; }
         public string ShowFeedback { get; set; }
-        public string WorktTag { get; set; }
+        public string WorkTag { get; set; }
         public string GoalTag { get; set; }
         public string CountDownText { get; set; }
         public string Language { get; set; }

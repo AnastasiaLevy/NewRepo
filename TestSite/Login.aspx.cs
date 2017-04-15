@@ -65,7 +65,7 @@ namespace TestSite
             {
                 wrong.Text = "This username is already taken.";
             }
-            else if (String.IsNullOrEmpty(str))
+            else if (!String.IsNullOrEmpty(str))
             {
                 wrong.Text = "This email is already taken.";
             }

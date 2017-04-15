@@ -25,12 +25,18 @@ namespace TestSite
 
             if (User.Identity.IsAuthenticated)
             {
+                string test;
                 _user = Membership.GetUser(User.Identity.Name);
                 _userId = _user.ProviderUserKey.ToString();
                 _isProfilefilled = ProfileIsFilled(_userId);
                 logOut.Visible = true;
                 login.Visible = false;
-                string test = Session["modifiedId"].ToString();
+
+                if (Session["modifiedId"] != null)
+                {
+                    test = Session["modifiedId"].ToString();
+                }
+               
             }
             else
             {
