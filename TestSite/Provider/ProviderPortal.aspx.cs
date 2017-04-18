@@ -387,15 +387,15 @@ namespace TestSite.Provider
         protected void btnSelectModify_Click(object sender, EventArgs e)
         {
             Session["providerId"] = Convert.ToInt32(ViewState["providerId"]);
-           // Session["testId"] = ddlModifyTest.SelectedValue;
+          
             Response.Redirect("../Create/LondonModify.aspx?testId=" + ddlModifyTest.SelectedValue);
         }
 
         protected void btnCreateNewTest_Click(object sender, EventArgs e)
         {
-            //Session.Contents.Remove("testId");
+          
             Session["providerId"] = Convert.ToInt32(ViewState["providerId"]);
-            Response.Redirect("../Create/LondonModify.aspx");
+            Response.Redirect("../Create/LondonModify.aspx?p" );
         }
 
         protected void btnCancelModify_Click(object sender, EventArgs e)

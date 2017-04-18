@@ -207,7 +207,6 @@
     <Content Include="js\syllog\turn.min.js" />
     <Content Include="js\tower\blueBall.js" />
     <Content Include="js\gallety.js" />
-    <Content Include="js\tower\DrexelSetUp.js" />
     <Content Include="js\tower\gameCode.js" />
     <Content Include="js\tower\greenBall.js" />
     <Content Include="js\JavaScript1.js" />

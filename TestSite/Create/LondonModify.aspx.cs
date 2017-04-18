@@ -15,10 +15,10 @@ namespace TestSite.Create
     public partial class LondonModify : System.Web.UI.Page
     {
         public static string testId; //modifiedTestId
-        public static int providerId;
+        private static int providerId;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            providerId = Convert.ToInt32(Session["providerId"]);
 
             if (!string.IsNullOrEmpty(Request.QueryString["testId"]))
             {
@@ -161,7 +161,7 @@ namespace TestSite.Create
         
                         modifidId = DAL.DataMethods.InsertLondonTestModify(testName, instructions, overMoves, overTime, txtButton, txtFeedback, instructionsFinish, Convert.ToBoolean(txtToSpeech), Convert.ToBoolean(displayResultPage),
                            Convert.ToInt32(prctRounds), Convert.ToInt32(testRounds), Convert.ToInt32(calcResFrom), Convert.ToInt32(countDownFrom),
-                           Convert.ToInt32(timeOut), Convert.ToInt32(maxMoves), Convert.ToBoolean(showFeedback), 2, language, workTag, goalTag, countDownText); //TODO: pass ProviderId
+                           Convert.ToInt32(timeOut), Convert.ToInt32(maxMoves), Convert.ToBoolean(showFeedback), providerId, language, workTag, goalTag, countDownText); //TODO: pass ProviderId
                     
                 }
                 catch (Exception ex)
@@ -179,7 +179,7 @@ namespace TestSite.Create
             {
                 DAL.DataMethods.UpdateLondonTestModify(testId, testName, instructions, overMoves, overTime, txtButton, txtFeedback, instructionsFinish, Convert.ToBoolean(txtToSpeech), Convert.ToBoolean(displayResultPage),
                            Convert.ToInt32(prctRounds), Convert.ToInt32(testRounds), Convert.ToInt32(calcResFrom), Convert.ToInt32(countDownFrom),
-                           Convert.ToInt32(timeOut), Convert.ToInt32(maxMoves), Convert.ToBoolean(showFeedback), 2,language,workTag, goalTag, countDownText); //TODO: pass ProviderId
+                           Convert.ToInt32(timeOut), Convert.ToInt32(maxMoves), Convert.ToBoolean(showFeedback), providerId, language,workTag, goalTag, countDownText); //TODO: pass ProviderId
 
                 UpdateMoves(testName, movesData, Convert.ToInt32(testId));
 

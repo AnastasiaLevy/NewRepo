@@ -80,6 +80,27 @@ namespace TestSite.DAL
             }
         }
 
+        internal static DataTable GetLondonFixedTests()
+        {
+            DataTable ds = new DataTable();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("GetLondonFixedTests", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+          
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                adp.Fill(ds);
+            }
+            catch (Exception ex)
+            {
+                InsertErrorMessage(ex.ToString(), null, null, "GetLondonFixedTests");
+                throw new Exception("Execption getting London Moves. " + ex.Message);
+            }
+
+            return ds;
+        }
+
         internal static DataSet GetLondonMoves(string modifiedId)
         {
             DataSet ds = new DataSet();
@@ -281,6 +302,30 @@ namespace TestSite.DAL
             SqlCommand cmd = new SqlCommand("GetLondonNorms", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@ageGroup", ageGroup);
+           
+
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                adp.Fill(ds);
+            }
+            catch (Exception ex)
+            {
+                InsertErrorMessage(ex.ToString(), null, null, "GetLondonNorms");
+                throw new Exception("Execption getting All Provider Participants. " + ex.Message);
+            }
+
+            return ds;
+        }
+
+        internal static DataTable GetLondonNorms(int ageGroup, int testId)
+        {
+            DataTable ds = new DataTable();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("GetLondonNorms", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@ageGroup", ageGroup);
+            cmd.Parameters.AddWithValue("@testId", testId);
 
             try
             {
@@ -1741,7 +1786,7 @@ namespace TestSite.DAL
             return id;
         }
 
-        public static void InsertTestPaid(string _userId, string _testId)
+        public static void InsertTestPaid(string _userId, string _testId, string modTestId = null)
         {
 
             SqlConnection conn = new SqlConnection(connectionSring);
@@ -1749,6 +1794,10 @@ namespace TestSite.DAL
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("userId", _userId);
             cmd.Parameters.AddWithValue("testId", _testId);
+            if (modTestId != null)
+                cmd.Parameters.AddWithValue("@modTestId ", modTestId);
+            else
+                cmd.Parameters.AddWithValue("@modTestId ", DBNull.Value);
 
             try
             {

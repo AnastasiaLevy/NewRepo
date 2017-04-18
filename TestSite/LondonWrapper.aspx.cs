@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Web;
@@ -18,6 +19,7 @@ namespace TestSite
         protected bool _isProfilefilled;
         protected string _testId = Enums.TestId.TowerOfLondon;
         protected static int _userTestId;
+        protected static string modTestId;
 
 
         protected void Page_Load(object sender, EventArgs e)
@@ -69,6 +71,7 @@ namespace TestSite
                         if (hasPaidTest(_userId))
                         {
                             price.Attributes.Add("style", "display:none");
+                            rbList.Visible = false;
                             InitiateTest();
                         }
                         else
@@ -77,6 +80,7 @@ namespace TestSite
                             logOut.Visible = true;
                             requestToReg.Visible = false;
                             runTest.Visible = false;
+                            FillOutSelection();
                         }
 
                         price.Visible = true;
@@ -88,9 +92,20 @@ namespace TestSite
                         requestToReg.Visible = false;
                         runTest.Visible = false;
                     }
-
                 }
             }
+        }
+
+        private void FillOutSelection()
+        {
+            DataTable dt = DataMethods.GetLondonFixedTests();
+
+            foreach(DataRow dr in dt.Rows)
+            {
+                ListItem lblItem = new ListItem(dr["testName"].ToString(), dr["id"].ToString());
+                rbList.Items.Add(lblItem);
+            }
+            rbList.SelectedIndex = 0;
         }
 
         private void InitiateTest()
@@ -136,7 +151,9 @@ namespace TestSite
         {
             try
             {
-                DataMethods.InsertTestPaid(userId, _testId);
+                modTestId = rbList.SelectedValue;
+              
+                DataMethods.InsertTestPaid(userId, _testId, modTestId);
                 return true;
             }
             catch (Exception ex)
@@ -167,6 +184,7 @@ namespace TestSite
                 {
                     requestToReg.Visible = false;
                     runTest.Visible = true;
+                 
 
                 }
                 else
@@ -206,6 +224,7 @@ namespace TestSite
 
         private void PostPaypal()
         {
+        
             string business = "L3SCKTNV3EWA4";// "analescheok@gmail.com"
             string itemName = "Tower of London Test";
             double itemAmount = 0.01;
@@ -215,7 +234,7 @@ namespace TestSite
             string baseUrl = Request.Url.GetLeftPart(UriPartial.Authority);
 
 
-            ppHref.Append("https://www.paypal.com/cgi-bin/webscr?cmd=_xclick");//("https://www.paypal.com/cgi-bin/webscr?cmd=_xclick");
+            ppHref.Append("https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_xclick");//("https://www.paypal.com/cgi-bin/webscr?cmd=_xclick");//https://www.paypal.com/cgi-bin/webscr?cmd=_xclick
             ppHref.Append("&business=" + business);
             ppHref.Append("&item_name=" + itemName);
             ppHref.Append("&amount=" + itemAmount.ToString("#.00"));
@@ -251,6 +270,11 @@ namespace TestSite
         protected void unlim_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void rbList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }

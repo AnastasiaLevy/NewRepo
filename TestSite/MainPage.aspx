@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Test">
-    <meta name="author" content="AnaLevy">
+    <meta name="author" content="CogQuiz">
     <title>CogQuiz</title>
     <link rel="shortcut icon" href="images/favicon.ico" />
 
@@ -27,6 +27,18 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.quicksand.js"></script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-89149772-1', 'auto');
+        ga('send', 'pageview');
+
+</script>
 </head>
 
 <body data-spy="scroll" runat="server">
@@ -642,9 +654,9 @@
             e.preventDefault();
 
         });
-        
+
         $(document).ready(function () {
-      
+
             $('.custom-menu a[href^="#"], .intro-scroller .inner-link').on('click', function (e) {
                 e.preventDefault();
 
@@ -699,12 +711,12 @@
 
                 else {
                     if (pwHasErrors == false) {
-                        
+
                         $("#regSingle").show();
-                       
+
                     }
                     $("#wrong").text("");
-                    eHasErrors = false; 
+                    eHasErrors = false;
                 }
             });
 
@@ -720,9 +732,9 @@
 
                 else {
                     if (eHasErrors == false) {
-                      
+
                         $("#regSingle").show();
-                        
+
                     }
                     $("#wrongPw").text("")
                     pwHasErrors = false;

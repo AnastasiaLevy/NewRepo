@@ -136,9 +136,12 @@
                     </div>
 
                 </div>
-
-
             </div>
+            <section class="container">
+               <p>Select Version:</p> 
+                <asp:Panel ID="pSelect" runat="server"></asp:Panel>
+                <asp:RadioButtonList ID="rbList" runat="server" OnSelectedIndexChanged="rbList_SelectedIndexChanged"></asp:RadioButtonList>
+            </section>
             <section>
                 <div class="specifications container">
                     <h3>Specifications:</h3>
@@ -152,7 +155,7 @@
             </section>
 
         </section>
-            <section>
+        <section>
             <div class="container right">
                 <asp:LinkButton ID="runTest" runat="server" class="signup-btn" OnClick="runTest_Click">Run Test</asp:LinkButton>
                 <div id="requestToReg" runat="server" visible="true">

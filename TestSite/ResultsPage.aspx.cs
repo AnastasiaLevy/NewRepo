@@ -211,8 +211,8 @@ namespace TestSite
                 chartTitle.Text = "Results for Tower of London Test for participant " + userName + ".";
                 GridView gv;
                 SetUpUserResultGrid(userId, tId, out dt, out gv);
-
-                DataTable dtr = DataMethods.GetLondonNorms(ageGroup);
+                
+                DataTable dtr = DataMethods.GetLondonNorms(ageGroup, tId);
                 decimal mean = Convert.ToDecimal(dtr.Rows[0]["mean"]);
                 decimal std = Convert.ToDecimal(dtr.Rows[0]["stdDeviation"]);
                 int totalM = dt.AsEnumerable().Where(row => row.Field<int>("game") > 3).Sum(r => r.Field<int>("Exess Moves"));
@@ -322,6 +322,7 @@ namespace TestSite
         private void SetUpUserResultGrid(string userId, int tId, out DataTable dt, out GridView gv)
         {
             DataSet ds = DataMethods.GetTestResultsLondon(userId, tId);
+            dt = ds.Tables[0];
             gv = new GridView();
             SetGvProperties(gv);
             gv.DataSource = ds.Tables[0];
