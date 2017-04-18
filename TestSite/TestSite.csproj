@@ -263,6 +263,7 @@
     <Content Include="Provider\ProviderPortal.aspx" />
     <Content Include="ResultsPage.aspx" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="robots.txt" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\jquery.popit.js" />
