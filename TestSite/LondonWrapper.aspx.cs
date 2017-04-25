@@ -91,6 +91,7 @@ namespace TestSite
                         logOut.Visible = false;
                         requestToReg.Visible = false;
                         runTest.Visible = false;
+                        FillOutSelection();
                     }
                 }
             }

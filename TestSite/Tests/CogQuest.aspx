@@ -9,10 +9,10 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Questionnaire" />
-    <meta name="keywords" content="Brain tests, psychological tests, psych test, pysch tests, brain tests, iq test, neuropsychological tests"/>
+    <meta name="description" content=" For Academics, Researchers, Practitioners and more. Cognitive test online, cognitive ability test online from CogQuiz." />
+    <meta name="keywords" content="Keywords: Cognitive Style Questionnaire, Cognitive Test Online Practice, Cognitive Ability Test Online"/>
     <meta name="author" content="CogQuiz" />
-    <title>CogQuest</title>
+    <title>Psychological Questionnaire, Cognitive Test Online Practice, Cognitive Ability Test Online</title>
     <link rel="shortcut icon" href="../images/favicon.ico" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
     <link href="../cogTest.css" rel="stylesheet" />

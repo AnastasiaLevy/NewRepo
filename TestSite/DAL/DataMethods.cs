@@ -385,7 +385,7 @@ namespace TestSite.DAL
             return ds.Tables[0];
         }
 
-        internal static DataTable GetModfiedTest(string providerTestId)
+        internal static DataTable GetModfiedTest(string providerTestId, int providerId)
         {
             DataTable ds = new DataTable();
             SqlConnection conn = new SqlConnection(connectionSring);
@@ -393,6 +393,7 @@ namespace TestSite.DAL
             cmd.CommandType = CommandType.StoredProcedure;
        
             cmd.Parameters.AddWithValue("@providerTestId", providerTestId);
+            cmd.Parameters.AddWithValue("@providerId", providerId);
 
             try
             {
@@ -406,6 +407,30 @@ namespace TestSite.DAL
             }
 
             return ds;
+        }
+
+        internal static void DeleteModifiedTest(string modTestId)
+        {
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("DeleteModifiedTest", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@modTestId", modTestId);
+          
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                InsertErrorMessage(ex.ToString(), null, null, "DeleteModTest");
+                throw new Exception("Execption saving Syllog Table " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
 
         internal static void InsertSyllogismsTable(string html, int tId)
@@ -556,6 +581,28 @@ namespace TestSite.DAL
 
 
         internal static DataTable GetAllProviderParticipants(int? providerId)
+        {
+            DataTable ds = new DataTable();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("GetAllProviderParticipants", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@providerId", providerId);
+
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                adp.Fill(ds);
+            }
+            catch (Exception ex)
+            {
+                InsertErrorMessage(ex.ToString(), null, null, "GetAllProviderParticipants");
+                throw new Exception("Execption getting All Provider Participants. " + ex.Message);
+            }
+
+            return ds;
+        }
+
+        internal static DataTable GetSearchProviderParticipants(int? providerId, string search)
         {
             DataTable ds = new DataTable();
             SqlConnection conn = new SqlConnection(connectionSring);

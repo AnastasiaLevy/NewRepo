@@ -9,9 +9,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Processing Speed">
-    <meta name="keywords" content="Brain tests, psychological tests, psych test, pysch tests, brain tests, iq test, neuropsychological tests, trails test, trails making test">
-    <title>Processing Speed</title>
+    <meta name="description" content="Test your Speed of Processing by taking Processing Speed test online from CogQuiz. Visit us for more info!">
+    <meta name="keywords" content="Processing Speed Test Online, CogQuiz">
+    <title>Processing Speed Test Online – CogQuiz</title>
     <link rel="shortcut icon" href="../images/favicon.ico"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="../fonts/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">

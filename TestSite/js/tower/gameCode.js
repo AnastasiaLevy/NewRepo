@@ -341,7 +341,7 @@ function updateTestFinished() {
     jQuery.ajax({
         contentType: "application/json; charset=utf-8",
         dataType: "json",
-        //url: 'LondonPage.aspx/SaveFininishedLondon',
+        url: 'LondonPage.aspx/SaveFininishedLondon',
         dataType: 'json',
         data: '',
         type: 'POST',
@@ -389,6 +389,7 @@ function saveTextAsFile() {
     downloadLink.style.display = "none";
     document.body.appendChild(downloadLink);
     downloadLink.click();
+    alert("There was a connection problem. Your results were saved in a file " + fileNameToSaveAs + " in Downloads folder.")
 }
 
 function destroyClickedElement(event) {

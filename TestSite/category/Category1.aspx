@@ -7,9 +7,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Memory Tests">
-    <meta name="keywords" content="N Back, N-Back, NBack, Brain tests, psychological tests, psych test, pysch tests, brain tests, iq test, neuropsychological tests">
-    <title>Memory</title>
+    <meta name="description" content="Memory Tests: Test yourself and help us learn more about the mind and brain by taking long term memory test online, short term memory test online from CogQuiz. Visit us!">
+    <meta name="keywords" content="N Back: Keywords: Long Term Memory Test Online, Short, CogQuiz">
+    <title>Keywords: Cognitive Style Questionnaire, Cognitive Test Online Practice, Cognitive Ability Test Online</title>
     <link rel="shortcut icon" href="../images/favicon.ico"/>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">

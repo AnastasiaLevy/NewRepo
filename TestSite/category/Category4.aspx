@@ -9,9 +9,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="intelligence tests">
-    <meta name="keywords" content="Brain tests, psychological tests, psychology testing, pysch tests, brain quiz, iq test, neuropsychological assessment">
-    <title>Intelligence</title>
+    <meta name="description" content="intelligence tests: Test your intelligence with our IQ Test Online. Find out your IQ, research based, academic, scientific, real results. Learn about at CogQuiz.com .">
+    <meta name="keywords" content="IQ Test, Intelligence Test Online, CogQuiz">
+    <title>Title: Intelligence Test Online - CogQuiz</title>
     <link rel="shortcut icon" href="../images/favicon.ico" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="../fonts/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">

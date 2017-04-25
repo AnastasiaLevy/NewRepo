@@ -19,17 +19,19 @@ namespace TestSite
         string userId;
         int tId;
         string userName;
+        DataTable dt;
         protected void Page_Prerender(object sender, EventArgs e)
         {
 
             logOut.Visible = true;
             login.Visible = false;
+          
 
 
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-
+          
             userId = Request.QueryString["userId"].ToString();
             int canView = DataMethods.GetUserViewResults(userId);
             if (canView == 0 && Request.QueryString["provider"] == null)
@@ -55,10 +57,12 @@ namespace TestSite
 
         private void ShowResults(string userId, int ageGroup)
         {
+            btnExportLine.Visible = false;
+            btnExportNorm.Visible = false;
             tId = Convert.ToInt32(Request.QueryString["tId"]);
             string test = Request.QueryString["test"].ToString();
             userName = User.Identity.Name;
-            DataTable dt;
+           
             DataSet ds;
             int factor;
             textStr.Text = "";
@@ -208,17 +212,22 @@ namespace TestSite
 
             else if (test == "2" || test == "Tower Of London")
             {
+                btnExportLine.Visible = true;
+                btnExportNorm.Visible = true;
                 chartTitle.Text = "Results for Tower of London Test for participant " + userName + ".";
                 GridView gv;
                 SetUpUserResultGrid(userId, tId, out dt, out gv);
                 
                 DataTable dtr = DataMethods.GetLondonNorms(ageGroup, tId);
+                if (dtr.Rows.Count > 0)
+                { 
                 decimal mean = Convert.ToDecimal(dtr.Rows[0]["mean"]);
                 decimal std = Convert.ToDecimal(dtr.Rows[0]["stdDeviation"]);
                 int totalM = dt.AsEnumerable().Where(row => row.Field<int>("game") > 3).Sum(r => r.Field<int>("Exess Moves"));
                 factor = CalculateResults(totalM, mean, std);
                 Label descr = new Label();
                 descr.Text = "You have made " + totalM + Enums.ReturnLondonResultStrings(factor) + "\n\r";
+                }
                 pResultPanel.Controls.Add(gv);
 
             }
@@ -409,22 +418,22 @@ namespace TestSite
         //    wb.Close();
         //}
 
-        private static void ExportNormal(DataSet dt, Microsoft.Office.Interop.Excel.Worksheet newSheet)
+        private static void ExportNormal(DataTable dt, Microsoft.Office.Interop.Excel.Worksheet newSheet)
         {
             int iCol = 0;
-            foreach (DataColumn c in dt.Tables[0].Columns)
+            foreach (DataColumn c in dt.Columns)
             {
                 iCol++;
                 newSheet.Cells[1, iCol] = c.ColumnName;
             }
 
             int iRow = 0;
-            foreach (DataRow r in dt.Tables[0].Rows)
+            foreach (DataRow r in dt.Rows)
             {
                 iRow++;
                 // add each row's cell data...
                 iCol = 0;
-                foreach (DataColumn c in dt.Tables[0].Columns)
+                foreach (DataColumn c in dt.Columns)
                 {
                     iCol++;
                     newSheet.Cells[iRow + 1, iCol] = r[c.ColumnName];
@@ -493,7 +502,7 @@ namespace TestSite
             Microsoft.Office.Interop.Excel.Sheets sheets = wb.Sheets;
             Microsoft.Office.Interop.Excel.Worksheet newSheet = sheets.Add();
 
-            ExportNormal(ds, newSheet);
+            ExportNormal(dt, newSheet);
 
             try
             {

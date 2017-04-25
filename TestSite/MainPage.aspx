@@ -1,4 +1,4 @@
-﻿f <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MainPage.aspx.cs" Inherits="TestSite.MainPage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MainPage.aspx.cs" Inherits="TestSite.MainPage" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,10 +6,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Neuropychological tests, psychological tests, neuro psycho, cognitive tests, psychological assessement, personality tests, iq tests">
-    <meta name="keywords" content="ADHD, ADD, alzheimers, Autism, dementia, paranoid personality disorder, schizoid personality disorder, schizotypal disorder, antisocial personality disorder, narcissistic personality disorder, avoidant personality disorder, amnesia, alexia, brain damage, head injury"
+    <meta name="description" content="Welcome to CogQuiz, We offer tests for children and adults, from ADHD to psychological personality tests online. Visit us for more information!">
+    <meta name="keywords" content="Available tests: ADHD, ADD, Autism, Dementia, Paranoid Personality Disorder, Schizoid Personality Disorder, Schizotypal Disorder, Antisocial Personality Disorder, Narcissistic Personality Disorder, Avoidant Personality Disorder, Amnesia, Alexia, Brain Damage, Head Injury, and more."
     <meta name="author" content="CogQuiz">
-    <title>CogQuiz, Neuropsychological tests</title>
+    <title>CogQuiz, psychological tests online,; Tests for kids and adults, with norms</title>
     
     <link rel="shortcut icon" href="images/favicon.ico" />
 

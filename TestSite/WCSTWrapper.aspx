@@ -7,9 +7,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Card Sort">
-    <meta name="author" content="AnaLevy">
-    <title>CST</title>
+    <meta name="description" content="We offer the Card Sort Test online. This test assesses abstract thinking and is available for kids and adults.">
+    <meta name="author" content="CogQuiz">
+    <meta name ="keywords" content ="Card Sort Test Online, CogQuiz" />
+    <title>Card Sort Test Online, Card Sorting Test Online – CogQuiz</title>
     <link rel="shortcut icon" href="images/favicon.ico" />
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">

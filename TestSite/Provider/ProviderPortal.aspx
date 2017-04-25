@@ -24,7 +24,7 @@
     <![endif]-->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
-
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
     <link href="../cogTest.css" rel="stylesheet" />
     <link href="../css/userProfilecss.css" rel="stylesheet" />
 </head>
@@ -113,13 +113,16 @@
                                     </div>
                                     <div class="panel-footer">
                                         <div class="row">
-                                            <div class="col-xs-4 col-sm-4 col-md-4">
+                                            <div class="col-xs-3 col-sm-3 col-md-3">
                                                 <asp:Button ID="btnSelectModify" class="btn btn-labeled btn-success" runat="server" Text="Modify" OnClick="btnSelectModify_Click" />
                                             </div>
-                                            <div class="col-xs-4 col-sm-4 col-md-4">
-                                                <asp:Button ID="btnCreateNewTest" class="btn btn-labeled btn-success" runat="server" Text="Create New" OnClick="btnCreateNewTest_Click" />
+                                            <div class="col-xs-3 col-sm-3 col-md-3">
+                                                <asp:Button ID="btnDeleteModify" class="btn btn-labeled btn-success" runat="server" Text="Delete" OnClick="btnDeleteModify_Click" />
                                             </div>
-                                            <div class="col-xs-4 col-sm-4 col-md-4">
+                                            <div class="col-xs-3 col-sm-3 col-md-3">
+                                                <asp:Button ID="btnCreateNewTest" class="btn btn-labeled btn-success" runat="server" Text="Create " OnClick="btnCreateNewTest_Click" />
+                                            </div>
+                                            <div class="col-xs-3 col-sm-3 col-md-3">
                                                 <asp:Button ID="btnCancelModify" runat="server" class="btn btn-labeled btn-info" Text="Close" OnClick="btnCancelModify_Click" />
 
                                             </div>
@@ -129,6 +132,19 @@
 
                                 </div>
 
+<div id="myModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- dialog body -->
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        Hello world!
+      </div>
+      <!-- dialog buttons -->
+      <div class="modal-footer"><button type="button" class="btn btn-primary">OK</button></div>
+    </div>
+  </div>
+</div>
                                 <div id="createUser" class="panel panel-success" runat="server">
                                     <div class="panel-heading">
                                         <h3 class="panel-title">Create New User:</h3>
@@ -202,10 +218,24 @@
 
                         </div>
 
+                        	<div class="row">
+    
+         <%--       <div class="input-group stylish-input-group">
+                    <input type="text" class="form-control"  placeholder="Search" >
+                    <span class="input-group-addon">
+       
+                            <asp:Button ID="Button1" runat="server" Text="Button"  OnClick="Button1_Click1"/>
+                    
+                    </span>
+                </div>--%>
+            </div>
+   
+
+
                         <div class="col-lg-6 row">
                             <div id="pop" class="" runat="server">
                                 <asp:Label ID="partName" runat="server" Text="" CssClass="col-lg-2"></asp:Label>
-                                <asp:Button ID="btnCancel" runat="server" Text="X" OnClick="Button1_Click" class="col-md-1" />
+                                <asp:Button ID="btnCancel" runat="server" OnClick="Button1_Click"  Text="X" class="col-md-1 " />
                                 <asp:GridView ID="gvTestPerUser" runat="server" RowStyle-Wrap="true" CellSpacing="10" class="gridview"
                                     GridLines="Horizontal" AutoGenerateColumns="False" BorderColor="#CCCCCC" BorderStyle="None"
                                     BorderWidth="1px" CellPadding="20" ForeColor="Black"
@@ -260,12 +290,13 @@
                             <asp:GridView ID="gvAllParticipants" runat="server" CellSpacing="10" class="gridview"
                                 GridLines="Horizontal" AutoGenerateColumns="False" BorderColor="#CCCCCC" BorderStyle="None"
                                 BorderWidth="1px" CellPadding="20" ForeColor="Black" Height="100px"
-                                RowStyle-Height="40px" Font-Size="x-Large">
+                                RowStyle-Height="40px" Font-Size="x-Large"
+                                allowsorting="True" onsorting="gvAllParticipants_Sorting">
                                 <Columns>
-                                    <asp:BoundField DataField="First Name" HeaderText="First Name &nbsp;&nbsp;" />
-                                    <asp:BoundField DataField="Last Name" HeaderText="Last Name &nbsp;&nbsp;" />
+                                    <asp:BoundField DataField="First Name" HeaderText="First Name &nbsp;&nbsp;"  sortexpression="First Name"/>
+                                    <asp:BoundField DataField="Last Name" HeaderText="Last Name &nbsp;&nbsp;" sortexpression="Last Name"/>
                                     <asp:BoundField DataField="Username" HeaderText="UserName &nbsp;&nbsp;" />
-                                    <asp:BoundField DataField="Age" HeaderText="Age &nbsp;&nbsp; &nbsp;&nbsp;" />
+                                    <asp:BoundField DataField="Age" HeaderText="Age &nbsp;&nbsp; &nbsp;&nbsp;" sortexpression="Age"/>
                                     <asp:TemplateField HeaderText="Profile" HeaderStyle-Width="10%" ItemStyle-Width="10%"
                                         FooterStyle-Width="10%">
                                         <ItemTemplate>
@@ -571,10 +602,26 @@
         return false;
     });
 
+    //$("#btnCancel").on('click', function (e) {
+    //    e.preventDefault();
+    //    document.getElementById('pop').style.display = 'none';
+    //})
+    
+
 
     $.fn.slideFadeToggle = function (easing, callback) {
         return this.animate({ opacity: 'toggle', height: 'toggle' }, 'fast', easing, callback);
     };
     $("#pop").draggable().resizable();
+
+
+    $('#btnDeleteModify').on("click", function (e) {
+      
+        var r=confirm("Are you sure you want to delete this test?");
+        if (r !== true)
+        {
+            e.preventDefault();
+        }
+    });
 
 </script>

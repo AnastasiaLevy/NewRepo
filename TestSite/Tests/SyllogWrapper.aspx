@@ -8,10 +8,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Syllogisms">
+    <meta name="description" content="Syllogism Test: Assess your aptitude and psychometric assessments to determine your logical reasoning ability by taking the online syllogism test and Intelligence Test Online from Cogquiz. Visit us!">
     <meta name="author" content="CogQuiz">
-    <meta name="keywords" content="Syllogisim tests, syllogisim, comparison tests, neuropsychological tests, psych tests, psychological test"
-    <title>Syllogisms</title>
+    <meta name="keywords" content=" Online Syllogism Test, CogQuiz, Intelligence Test Online"
+    <title>Online Syllogsim Test, Intellgence Test Online - CogQuiz</title>
     <link rel="shortcut icon" href="../images/favicon.ico" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="../cogTest.css" rel="stylesheet" />

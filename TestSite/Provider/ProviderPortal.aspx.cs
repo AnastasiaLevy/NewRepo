@@ -24,30 +24,30 @@ namespace TestSite.Provider
                 setUpUserCode.Visible = false;
                 editTest.Visible = false;
                 cbAllowUserViewResults.Checked = false;
+
+                if (User.Identity.IsAuthenticated)
+                {
+                    login.Visible = false;
+                    Logout.Visible = true;
+                    //user.Text = User.Identity.Name;
+                    //email.Text = Membership.GetUser().Email;
+                }
+                else
+                {
+                    Response.Redirect("~/ManePage.aspx");
+                    login.Visible = true;
+                    Logout.Visible = false;
+                }
+
+
+                string userId = Membership.GetUser(User.Identity.Name).ProviderUserKey.ToString();
+                ViewState["pUserId"] = userId;
+                int? providerId = DAL.DataMethods.GetProviderId(userId);
+
+                ViewState["providerId"] = providerId;
+                SetParticipantGrid(providerId);
+                SetProviderTestsGrid(providerId);
             }
-            if (User.Identity.IsAuthenticated)
-            {
-                login.Visible = false;
-                Logout.Visible = true;
-                //user.Text = User.Identity.Name;
-                //email.Text = Membership.GetUser().Email;
-            }
-            else
-            {
-                Response.Redirect("~/ManePage.aspx");
-                login.Visible = true;
-                Logout.Visible = false;
-            }
-
-
-            string userId = Membership.GetUser(User.Identity.Name).ProviderUserKey.ToString();
-            ViewState["pUserId"] = userId;
-            int? providerId = DAL.DataMethods.GetProviderId(userId);
-
-            ViewState["providerId"] = providerId;
-            SetParticipantGrid(providerId);
-            SetProviderTestsGrid(providerId);
-
         }
 
         private void SetProviderTestsGrid(int? providerId)
@@ -63,6 +63,7 @@ namespace TestSite.Provider
         private void SetParticipantGrid(int? partId)
         {
             gvAllParticipants.DataSource = DAL.DataMethods.GetAllProviderParticipants(partId);
+            ViewState["dtbl"] = DAL.DataMethods.GetAllProviderParticipants(partId);
             gvAllParticipants.Columns[7].Visible = true;
 
             gvAllParticipants.DataBind();
@@ -280,7 +281,7 @@ namespace TestSite.Provider
         {
             ddlModifiedID.Visible = false;
             ddlModifiedID.Items.Clear();
-            DataTable dt = DAL.DataMethods.GetModfiedTest(ddlProvTests.SelectedValue);
+            DataTable dt = DAL.DataMethods.GetModfiedTest(ddlProvTests.SelectedValue, Convert.ToInt32(ViewState["providerId"]));
             if (dt.Rows.Count > 0)
             {
                 ddlModifiedID.Visible = true;
@@ -371,31 +372,34 @@ namespace TestSite.Provider
         protected void btnModifyTest_Click(object sender, EventArgs e)
         {
             editTest.Visible = true;
+            SetUpModTest();
+        }
+
+        private void SetUpModTest()
+        {
             DataTable dt = DAL.DataMethods.GetModifyTestList(Convert.ToInt32(ViewState["providerId"]));
 
             ddlModifyTest.Items.Clear();
 
             foreach (DataRow dr in dt.Rows)
             {
-               
-               ddlModifyTest.Items.Add(new ListItem(dr["testName"].ToString(), dr["Id"].ToString()));
-            }
-            
-        }
 
+                ddlModifyTest.Items.Add(new ListItem(dr["testName"].ToString(), dr["Id"].ToString()));
+            }
+        }
 
         protected void btnSelectModify_Click(object sender, EventArgs e)
         {
             Session["providerId"] = Convert.ToInt32(ViewState["providerId"]);
-          
+
             Response.Redirect("../Create/LondonModify.aspx?testId=" + ddlModifyTest.SelectedValue);
         }
 
         protected void btnCreateNewTest_Click(object sender, EventArgs e)
         {
-          
+
             Session["providerId"] = Convert.ToInt32(ViewState["providerId"]);
-            Response.Redirect("../Create/LondonModify.aspx?p" );
+            Response.Redirect("../Create/LondonModify.aspx?p");
         }
 
         protected void btnCancelModify_Click(object sender, EventArgs e)
@@ -404,6 +408,68 @@ namespace TestSite.Provider
             ddlModifyTest.Items.Clear();
             editTest.Visible = false;
 
+        }
+
+        protected void btnDeleteModify_Click(object sender, EventArgs e)
+        {
+            string modTestId = ddlModifyTest.SelectedValue;
+            DAL.DataMethods.DeleteModifiedTest(modTestId);
+            SetUpModTest();
+        }
+
+        protected void Button1_Click1(object sender, EventArgs e)
+        {
+            gvAllParticipants.Focus();
+        }
+
+        protected void gvAllParticipants_Sorting(object sender, GridViewSortEventArgs e)
+        {
+            string SortDir = string.Empty;
+            if (dir == SortDirection.Ascending)
+            {
+                dir = SortDirection.Descending;
+                SortDir = "Desc";
+            }
+            else
+            {
+                dir = SortDirection.Ascending;
+                SortDir = "Asc";
+            }
+
+            DataTable dataTable = ViewState["dtbl"] as DataTable;
+            if (dataTable != null)
+            {
+                DataView sortedView = new DataView(dataTable);
+
+
+
+
+                sortedView.Sort = e.SortExpression + " " + SortDir;
+                gvAllParticipants.DataSource = sortedView;
+
+                gvAllParticipants.Columns[7].Visible = true;
+
+                gvAllParticipants.DataBind();
+                gvAllParticipants.Columns[7].Visible = false;
+            }
+
+            gvAllParticipants.Focus();
+        }
+
+        protected SortDirection dir
+        {
+            get
+            {
+                if (ViewState["dirState"] == null)
+                {
+                    ViewState["dirState"] = SortDirection.Ascending;
+                }
+                return (SortDirection)ViewState["dirState"];
+            }
+            set
+            {
+                ViewState["dirState"] = value;
+            }
         }
     }
 }
