@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Category3.aspx.cs" Inherits="TestSite.blogPosts.Category3" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ExecutiveFunction.aspx.cs" Inherits="TestSite.blogPosts.ExecutiveFunction" %>
 
 <!DOCTYPE html>
 
@@ -9,10 +9,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Test your Speed of Processing by taking Processing Speed test online from CogQuiz. Visit us for more info!">
-    <meta name="keywords" content="Processing Speed Test Online, CogQuiz">
-    <title>Processing Speed Test Online – CogQuiz</title>
-    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <meta name="description" content="Discover various neuropsychological tests for assessing executive functions in aging by taking tests of executive function, executive function test online at CogQuiz. Visit us!">
+    <meta name="keywords" content="Tests of Executive Function, Executive Function Test Online, CogQuiz">
+    <title>Tests of Executive Function, Executive Function Test Online – CogQuiz</title>
+    <link rel="shortcut icon" href="../images/favicon.ico" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="../fonts/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="../cogTest.css" rel="stylesheet" />
@@ -21,15 +21,28 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
-    <script src="https://use.fontawesome.com/0138464303.js"></script>      
+    <script src="https://use.fontawesome.com/0138464303.js"></script>
+        <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-89149772-1', 'auto');
+        ga('send', 'pageview');
+
+</script>
 </head>
+    
 
 <body data-spy="scroll" runat="server">
-    <form runat="server">
+    <form runat ="server">
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
-               <div class="navbar-header">
+            <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
@@ -47,12 +60,10 @@
                     <li><a href="../MainPage.aspx">Home</a></li>
                     <li class="active"><a href="#about">Executive Function</a></li>
                     <li id="profOpt" runat="server"><a href="../UserProfile.aspx">Profile</a></li>
-                    <li id="login" runat="server"><a href="../Login.aspx">Login</a></li>
-                    <%-- <li>
-                        <button id="login" class="btn button" onclick="document.getElementById('id01').style.display='block'" runat="server">Login</button></li>--%>
-
+                    <li id="login" runat="server"><a href="..\Login.aspx">Login</a></li>
+                    <%--   <li>
+                            <button id="login" class="btn button" onclick="document.getElementById('id01').style.display='block'" runat="server">Login</button></li>--%>
                     <li>
-
                         <asp:LinkButton ID="logOut" class="btn button" type="submit" runat="server" OnClick="logOut_Click">Log Out</asp:LinkButton>
                     </li>
                     <!-- 	<li><a href="blog.html">Blog</a></li>
@@ -63,33 +74,29 @@
     </nav>
 
     <header id="home">
-        <div class="category3">
+        <div class="ExecutiveFunction">
             <div id="tag-cloud"></div>
         </div>
     </header>
 
-    <section id="category3">
+    <section id="ExecutiveFunction">
         <div class="container MemoryBlock">
-            <h1 class="middle">Processing Speed</h1>
+            <h2 class="middle">Executive Function</h2>
             <img class="img-responsive displayed" src="../images/line-separator.png" alt="short" />
-            <h3>About:</h3>
+            <h1>Executive Function</h1>
             <p>
-                Speed of processing has been a major explantory varialbe for enhanced cognitive performace during development. 
-                Specifically, there is a exponential increase in the speed of processing from early childhood up through the teenage 
-                years. This speed of processing is associated with enhanced cognitive performance. For example, imagine how the
-                number of words in a recall test might increase if increased speed of processing allowed for more word rehersal.
+               Executive functions are a set of cognitive processes that monitor, guide, and control our behavior.  These processes facilitate our successful navigation of the world. There is no agreed concensus on the number and nature of these components. However, there is general agreement that these processes are involved in working memory (actively holding and manipulating several bits of information in conscious awareness), inhibition (witholding a response), shifting strategies, attention, and problem solving. For example, imagine the processes a drone pilot has to engage in when flying.  A future Amazon drone pilot has a number of instruments he must monitor and attend to (working memory and attention), be able to switch back and forth between activates (shifting), not drop a package at the wrong address (inhibition), and plan a route to the correct address (problem solving).
+
             </p>
-            <h3></h3>
-              <p>
-                 Speed of processing increases from early childhood up into the twenties and begins to show a significant decline 
-                by the fifties.
+            <h3>Tests of Executive Function</h3>
+            <p>
+                The Card Sorting Test available in CogQuiz is thought to measure several different processes of Executive Function. However, it is most prominently associated with an assessment of be able to switch strateges. Secondarly, the Card Sort is associated with working memory where one must hold in awareness the strategy associated with successful performance. The Tower of London is associated primarily with the planning strategy necessary for problem solving. Additionally, working memory will play a role in holding a successful set of moves in conscious awareness when solving a particular problem. The Trails tests has both a speed of processing component and a switching component. The Stroop test has a strong inhibition component. One must overcome the prepotent tendency to read words rather than state their color. 
+              
             </p>
                 <h3></h3>
-              <p>
-                Similarly, there are reported medium sized correlations between speed of processing and fluid intelligence.
-                Currently, the first part of the Trails test can be considered to provide an assessment of speed of processing.
+            <p>
+                
             </p>
-          
         </div>
     </section>
   
@@ -97,17 +104,23 @@
         <div class="container">
             <div class="row">
                 <div class="text-center">
-                    <h2>Processing Speed Tests:</h2>
+                    <h2>Executive Function Tests:</h2>
                     <img class="img-responsive displayed" src="../images/line-separator.png" alt="about">
                 </div>
+
+
                 <ul class="port2">
-                 <li data-type="memory" data-id="id-1" class="port3">
-                       <a href="../TrailsWrapper.aspx" id="webdesign1">
-                            <img src="../images/trails.jpg" alt=""></a>
+                   <li data-type="executive" data-id="id-5" class="port3">
+                        <a href="../LondonWrapper.aspx" id="webdesign2">
+                            <img src="../images/tower.jpg" alt=""></a>
                     </li>
                     <li data-type="mobileapps" data-id="id-6" class="port3">
-                        <a href="#" id="mobileapps2">
-                            <img src="../images/Coming_soon.jpg" alt=""></a>
+                        <a href="../WCSTWrapper.aspx" id="mobileapps2">
+                            <img src="../images/coming_soon.jpg" alt=""></a>
+                    </li>
+                      <li data-type="memory" data-id="id-1" class="port3">
+                        <a href="../Tests/NbackWrapper.aspx" id="memory1">
+                            <img src="../images/Nback.jpg" alt=""></a>
                     </li>
                  
                 </ul>
@@ -115,7 +128,75 @@
         </div>
     </section>
 
-       <div id="id01" class="modal">
+   
+            <section id="services">
+            <div class="blueback">
+                <div class="container">
+                    <div class="text-center homeport2">
+                        <h2>Test Categories</h2>
+                    </div>
+                    <div class="row" >
+                        <div class="col-md-12 homeservices1 blueFont row-centered">
+                       <div class="col-md-3 portfolio-item col-centered"">
+                                <div class="text-center">
+                                    <a href="javascript:void(0);">
+                                        <a href="Memory.aspx"><span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa fa-medium fa-stack-1x "></i>
+                                        </span></a>
+                                    </a>
+                                    <h3><a href="Memory.aspx">Memory</a></h3>
+                                 
+                                </div>
+                            </div>
+                            <div class="col-md-3 portfolio-item col-centered">
+                                <div class="text-center">
+                                    <a href="javascript:void(0);">
+                                        <a href="ProcessingSpeed.aspx"><span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa fa-cogs fa-stack-1x"></i>
+                                        </span></a>
+
+                                    </a>
+                                    <h3><a href="ProcessingSpeed.aspx">Processing Speed</a></h3>
+                                </div>
+                            </div>
+                            <div class="col-md-3 portfolio-item col-centered">
+                                <div class="text-center">
+                                    <a href="javascript:void(0);">
+                                        <a href="IntelligenceTest.aspx"><span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa fa-lightbulb-o fa-stack-1x"></i>
+                                        </span></a>
+
+                                    </a>
+                                    <h3><a href="IntelligenceTest.aspx">Intelligence</a></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+    <section id="follow-us">
+        <div class="container">
+            <div class="text-center height-contact-element">
+                <h3>Follow Us</h3>
+            </div>
+            <img class="img-responsive displayed" src="../images/line-separator.png" alt="short" />
+            <div class="text-center height-contact-element">
+                <ul class="list-unstyled list-inline list-social-icons">
+                    <li class="active"><a href="https://www.facebook.com/CogQuiz-1644904339158958/"><i class="fa fa-facebook social-icons"></i></a></li>
+                    <li><a href="https://twitter.com/cogquizcom"><i class="fa fa-twitter social-icons"></i></a></li>
+                    <li><a href="https://plus.google.com/u/3/113821050703373361140?hl=en"><i class="fa fa-google-plus social-icons"></i></a></li>
+                    <li><a href="https://www.linkedin.com/company-beta/13213074/"><i class="fa fa-linkedin social-icons"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+        <div id="id01" class="modal">
    
             <%--  <form class="modal-content animate" runat="server">--%>
             <div class="modal-content animate">
@@ -154,73 +235,7 @@
             }
 
         </script>
-        
-         <section id="services">
-            <div class="blueback">
-                <div class="container" id="boxCat">
-                    <div class="text-center homeport2">
-                        <h2>Test Categories</h2>
-                    </div>
-                    <div class="row" >
-                        <div class="col-md-12 homeservices1 blueFont row-centered">
-                            <div class="col-md-3 portfolio-item col-centered">
-                                <div class="text-center">
-                                    <a href="javascript:void(0);">
-                                        <a href="Category1.aspx"><span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-medium fa-stack-1x "></i>
-                                        </span></a>
-                                    </a>
-                                    <h3><a href="Category1.aspx">Memory</a></h3>
 
-                                </div>
-                            </div>
-                            <div class="col-md-3 portfolio-item col-centered">
-                                <div class="text-center">
-                                    <a href="javascript:void(0);">
-                                        <a href="Category2.aspx"><span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-book fa-stack-1x"></i>
-                                        </span></a>
-                                    </a>
-                                    <h3><a href="Category2.aspx">Executive function</a></h3>
-                                </div>
-                            </div>
-                            <div class="col-md-3 portfolio-item col-centered">
-                                <div class="text-center">
-                                    <a href="javascript:void(0);">
-                                        <a href="Category4.aspx"><span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-lightbulb-o fa-stack-1x"></i>
-                                        </span></a>
-
-                                    </a>
-                                    <h3><a href="Category4.aspx">Intelligence</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    
-    <section id="follow-us">
-        <div class="container">
-            <div class="text-center height-contact-element">
-                <h3>Follow Us</h3>
-            </div>
-            <img class="img-responsive displayed" src="../images/line-separator.png" alt="short" />
-            <div class="text-center height-contact-element">
-                <ul class="list-unstyled list-inline list-social-icons">
-                    <li class="active"><a href="https://www.facebook.com/CogQuiz-1644904339158958/"><i class="fa fa-facebook social-icons"></i></a></li>
-                    <li><a href="https://twitter.com/cogquizcom"><i class="fa fa-twitter social-icons"></i></a></li>
-                    <li><a href="https://plus.google.com/u/3/113821050703373361140?hl=en"><i class="fa fa-google-plus social-icons"></i></a></li>
-                    <li><a href="https://www.linkedin.com/company-beta/13213074/"><i class="fa fa-linkedin social-icons"></i></a></li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    </form>
     <footer id="footer">
         <div class="container">
             <div class="row myfooter">
@@ -235,7 +250,7 @@
             </div>
         </div>
     </footer>
-
+    </form>
     <!-- jQuery -->
     <script src="../js/jquery.js"></script>
     <!-- Bootstrap Core JavaScript -->
@@ -285,7 +300,7 @@
                 radius: '70%',
                 radiusMin: 80,
                 bgDraw: true,
-                bgColor: '#5A7E27',
+                bgColor: '#FFDB99',
                 opacityOver: 1.00,
                 opacityOut: 0.05,
                 opacitySpeed: 6,
@@ -308,7 +323,7 @@
 
     </script>
 
-<%--    <script type="text/javascript">
+    <script type="text/javascript">
 
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-36251023-1']);
@@ -321,7 +336,7 @@
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
         })();
 
-</script>--%>
+</script>
 
 
     <!--Jquery Smooth Scrolling-->

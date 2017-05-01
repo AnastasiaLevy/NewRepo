@@ -102,10 +102,10 @@
     <Content Include="assets\js\placeholder.js" />
     <Content Include="assets\js\scripts.js" />
     <Content Include="audio\FeedbackIncorrect.mp3" />
-    <Content Include="category\Category2.aspx" />
-    <Content Include="category\Category3.aspx" />
-    <Content Include="category\Category4.aspx" />
-    <Content Include="category\Category1.aspx" />
+    <Content Include="category\ExecutiveFunction.aspx" />
+    <Content Include="category\ProcessingSpeed.aspx" />
+    <Content Include="category\IntelligenceTest.aspx" />
+    <Content Include="category\Memory.aspx" />
     <Content Include="ComingSoon.aspx" />
     <Content Include="Create\LondonModify.aspx" />
     <Content Include="css\bootstrap.css" />
@@ -351,33 +351,33 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CardSortRow.cs" />
-    <Compile Include="category\Category2.aspx.cs">
-      <DependentUpon>Category2.aspx</DependentUpon>
+    <Compile Include="category\ExecutiveFunction.aspx.cs">
+      <DependentUpon>ExecutiveFunction.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="category\Category2.aspx.designer.cs">
-      <DependentUpon>Category2.aspx</DependentUpon>
+    <Compile Include="category\ExecutiveFunction.aspx.designer.cs">
+      <DependentUpon>ExecutiveFunction.aspx</DependentUpon>
     </Compile>
-    <Compile Include="category\Category3.aspx.cs">
-      <DependentUpon>Category3.aspx</DependentUpon>
+    <Compile Include="category\ProcessingSpeed.aspx.cs">
+      <DependentUpon>ProcessingSpeed.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="category\Category3.aspx.designer.cs">
-      <DependentUpon>Category3.aspx</DependentUpon>
+    <Compile Include="category\ProcessingSpeed.aspx.designer.cs">
+      <DependentUpon>ProcessingSpeed.aspx</DependentUpon>
     </Compile>
-    <Compile Include="category\Category4.aspx.cs">
-      <DependentUpon>Category4.aspx</DependentUpon>
+    <Compile Include="category\IntelligenceTest.aspx.cs">
+      <DependentUpon>IntelligenceTest.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="category\Category4.aspx.designer.cs">
-      <DependentUpon>Category4.aspx</DependentUpon>
+    <Compile Include="category\IntelligenceTest.aspx.designer.cs">
+      <DependentUpon>IntelligenceTest.aspx</DependentUpon>
     </Compile>
-    <Compile Include="category\Category1.aspx.cs">
-      <DependentUpon>Category1.aspx</DependentUpon>
+    <Compile Include="category\Memory.aspx.cs">
+      <DependentUpon>Memory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="category\Category1.aspx.designer.cs">
-      <DependentUpon>Category1.aspx</DependentUpon>
+    <Compile Include="category\Memory.aspx.designer.cs">
+      <DependentUpon>Memory.aspx</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
     <Compile Include="ComingSoon.aspx.cs">
@@ -402,6 +402,7 @@
     <Compile Include="ErrorPage.aspx.designer.cs">
       <DependentUpon>ErrorPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="HelpClasses\CommonMethods.cs" />
     <Compile Include="HelpClasses\Enums.cs" />
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

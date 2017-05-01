@@ -200,14 +200,20 @@ namespace TestSite.Provider
             string password = txtPassword.Text;
             try
             {
+              
                 MembershipUser user = Membership.CreateUser(userName, password, email);
+                if (user == null)
+                {
+                    
+                }
+
                 ViewState.Remove("CreatingUser");
                 createUser.Visible = true;
                 lblError.Text = "New User was created";
                 lblError.CssClass = "successMessage";
                 createUser.Visible = true;
                 DAL.DataMethods.InsertProviderToTheUser(user.ProviderUserKey.ToString(), Convert.ToInt32(ViewState["providerId"]), userName);
-                SetProviderTestsGrid(Convert.ToInt32(ViewState["providerId"]));
+               
                 if (cbAllowUserViewResults.Checked)
                 {
                     DAL.DataMethods.SetAllowUserViewResults(user.ProviderUserKey.ToString(), true);
@@ -216,12 +222,13 @@ namespace TestSite.Provider
                 {
                     DAL.DataMethods.SetAllowUserViewResults(user.ProviderUserKey.ToString(), false);
                 }
+                SetProviderTestsGrid(Convert.ToInt32(ViewState["providerId"]));
             }
             catch (Exception ex)
             {
                 lblError.Text = ex.Message;
                 lblError.CssClass = "errorMessage";
-
+               
                 createUser.Visible = true;
                 DAL.DataMethods.InsertErrorMessage(ex.ToString(), Convert.ToString(ViewState["tUserId"]), "providerProtal", null);
             }

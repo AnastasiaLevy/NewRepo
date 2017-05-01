@@ -27,6 +27,18 @@
      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
     <link href="../cogTest.css" rel="stylesheet" />
     <link href="../css/userProfilecss.css" rel="stylesheet" />
+        <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-89149772-1', 'auto');
+        ga('send', 'pageview');
+
+</script>
 </head>
 
 <body>
@@ -153,13 +165,13 @@
                                         <div>
                                             <asp:Label ID="lblError" runat="server" Text=""></asp:Label>
                                             <div class="col-xs-12 col-sm-12 col-md-12 ">
-                                                <asp:Label ID="Label4" runat="server" Text="User email"></asp:Label>
+                                                <asp:Label ID="Label4" cssClass ="labelBold" runat="server" Text="User email"></asp:Label>
                                                 <asp:TextBox ID="txtUserEmail" runat="server" CssClass="createUser" Width="100%"></asp:TextBox>
 
-                                                <asp:Label ID="Label1" runat="server" Text="User Name"></asp:Label>
-                                                <asp:TextBox ID="txtNewUser" runat="server" CssClass="createUser" Width="100%"></asp:TextBox>
+                                                <asp:Label ID="Label1" cssClass ="labelBold" runat="server" Text="User Name"></asp:Label>
+                                                <asp:TextBox ID="txtNewUser"  runat="server" CssClass="createUser" Width="100%"></asp:TextBox>
 
-                                                <asp:Label ID="Label2" runat="server" Text="Password"></asp:Label>
+                                                <asp:Label ID="Label2" cssClass ="labelBold" runat="server" Text="Password"></asp:Label>
                                                 <asp:TextBox ID="txtPassword" runat="server" CssClass="createUser" Width="100%"></asp:TextBox>
 
                                                 <asp:CheckBox ID="cbAllowUserViewResults" runat="server" Text="Allow User View Results" TextAlign="Left" />
@@ -382,51 +394,69 @@
                     </div>
                 </div>
             </section>
-            <section id="testList">
-                <div class="row">
-                    <div class="box">
-                        <div class="col-lg-12">
-                            <hr>
-                            <h2 class="intro-text text-center">All Available
-                       
-                        <strong>Test</strong>
-                            </h2>
-                            <hr>
-                        </div>
-                        <div class="col-sm-3 text-center">
-                            <a href="../WCSTWrapper.aspx" id="mobileapps1">
-                                <img class="img-responsive" src="../images/cardSort.png" alt=""></a>
-                            <h3>Card Sort
-                        <small></small>
-                            </h3>
-                        </div>
-                        <div class="col-sm-3 text-center">
-                            <a href="../TrailsWrapper.aspx" id="webdesign1">
-                                <img class="img-responsive" src="../images/trails.jpg" alt=""></a>
-                            <h3>Trails
-                       
-                        <small></small>
-                            </h3>
-                        </div>
-                        <div class="col-sm-3 text-center">
-                            <a href="../Tests/NbackWrapper.aspx" id="memory2">
-                                <img class="img-responsive" src="../images/Nback.jpg" alt=""></a>
-                            <h3>Nback
-                       
-                        <small></small>
-                            </h3>
-                        </div>
-                        <div class="col-sm-3 text-center">
-                            <a href="../LondonWrapper.aspx" id="webdesign2">
-                                <img class="img-responsive" src="../images/tower.jpg" alt=""></a>
-                            <h3>Tower Of London
-                        <small></small>
-                            </h3>
-                        </div>
-                        <div class="clearfix"></div>
+
+              <section id="testList">
+            <div class="row">
+                <div class="box">
+                    <div class="col-lg-12">
+                        <hr>
+                        <h2 class="intro-text text-center">Available 
+                            <strong>Test</strong>
+                        </h2>
+                        <hr>
                     </div>
+                    <div class="col-sm-2 text-center">
+                        <a href="../WCSTWrapper.aspx" id="wcst">
+                            <img class="img-responsive" src="../images/cardSort.png" alt=""></a>
+                        <h3>Card Sort
+                       
+                            <small></small>
+                        </h3>
+                    </div>
+                    <div class="col-sm-2 text-center">
+                        <a href="../TrailsWrapper.aspx" id="trails">
+                            <img class="img-responsive" src="../images/trails.jpg" alt=""></a>
+                        <h3>Trails
+                            <small></small>
+                        </h3>
+                    </div>
+                    <div class="col-sm-2 text-center">
+                        <a href="../Tests/NbackWrapper.aspx" id="nBack">
+                            <img class="img-responsive" src="../images/Nback.jpg" alt=""></a>
+                        <h3>Nback
+                            <small></small>
+                        </h3>
+                    </div>
+                    <div class="col-sm-2 text-center">
+                        <a href="../LondonWrapper.aspx" id="london">
+                            <img class="img-responsive" src="../images/tower.jpg" alt=""></a>
+                        <h3>Tower Of London
+
+                            <small></small>
+                        </h3>
+                    </div>
+                    <div class="col-sm-2 text-center">
+                        <a href="../Tests/SyllogWrapper.aspx" id="syllog">
+                            <img class="img-responsive" src="../images/sillog.png"" alt=""></a>
+                        <h3>Syllogisms
+
+                            <small></small>
+                        </h3>
+                    </div>
+                    <div class="col-sm-2 text-center">
+                        <a href="../Tests/StroopWrapper.aspx" id="stroop">
+                            <img class="img-responsive" src="../images/stroop.jpg"" alt=""></a>
+                        <h3>Stroop test
+
+                            <small></small>
+                        </h3>
+                    </div>
+                    <div class="clearfix"></div>
                 </div>
-            </section>
+            </div>
+
+        </section>
+
             <section id="testCategories">
                 <div class="row">
                     <div class="box" id="box">
@@ -441,12 +471,12 @@
                         <div class="col-md-3 portfolio-item">
                             <div class="text-center">
                                 <a href="javascript:void(0);">
-                                    <a href="../category/Category1.aspx"><span class="fa-stack fa-lg">
+                                    <a href="../category/Memory.aspx"><span class="fa-stack fa-lg">
                                         <i class="fa fa-circle fa-stack-2x"></i>
                                         <i class="fa fa-medium fa-stack-1x "></i>
                                     </span></a>
                                 </a>
-                                <h4><a href="../category/Category1.aspx">Memory</a></h4>
+                                <h4><a href="../category/Memory.aspx">Memory</a></h4>
 
                             </div>
                         </div>
@@ -454,38 +484,38 @@
                         <div class="col-md-3 portfolio-item">
                             <div class="text-center">
                                 <a href="javascript:void(0);">
-                                    <a href="../category/Category2.aspx"><span class="fa-stack fa-lg">
+                                    <a href="../category/ExecutiveFunction.aspx"><span class="fa-stack fa-lg">
                                         <i class="fa fa-circle fa-stack-2x"></i>
                                         <i class="fa fa-book fa-stack-1x"></i>
                                     </span></a>
 
                                 </a>
-                                <h4><a href="../category/Category2.aspx">Executive function and Planning</a></h4>
+                                <h4><a href="../category/ExecutiveFunction.aspx">Executive function and Planning</a></h4>
 
                             </div>
                         </div>
                         <div class="col-md-3 portfolio-item">
                             <div class="text-center">
                                 <a href="javascript:void(0);">
-                                    <a href="../category/Category3.aspx"><span class="fa-stack fa-lg">
+                                    <a href="../category/ProcessingSpeed.aspx"><span class="fa-stack fa-lg">
                                         <i class="fa fa-circle fa-stack-2x"></i>
                                         <i class="fa fa-cogs fa-stack-1x"></i>
                                     </span></a>
 
                                 </a>
-                                <h4><a href="../category/Category3.aspx">Processing Speed</a></h4>
+                                <h4><a href="../category/ProcessingSpeed.aspx">Processing Speed</a></h4>
                             </div>
                         </div>
                         <div class="col-md-3 portfolio-item">
                             <div class="text-center">
                                 <a href="javascript:void(0);">
-                                    <a href="../category/Category4.aspx"><span class="fa-stack fa-lg">
+                                    <a href="../category/IntelligenceTest.aspx"><span class="fa-stack fa-lg">
                                         <i class="fa fa-circle fa-stack-2x"></i>
                                         <i class="fa fa-lightbulb-o fa-stack-1x"></i>
                                     </span></a>
 
                                 </a>
-                                <h4><a href="../category/Category4.aspx">Intelligence</a></h4>
+                                <h4><a href="../category/IntelligenceTest.aspx">Intelligence</a></h4>
 
                             </div>
                         </div>

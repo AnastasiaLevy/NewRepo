@@ -70,7 +70,8 @@ namespace TestSite
                             requestToReg.Visible = false;
                             runTest.Visible = false;
                         }
-
+                        if (CommonMethods.UserIsProvider(_userId))
+                            singlePr.Visible = false;
                         price.Visible = true;
                     }
                     else
@@ -220,6 +221,7 @@ namespace TestSite
         {
             if (User.Identity.IsAuthenticated)
             {
+            
                 PostPaypal();
             }
             else

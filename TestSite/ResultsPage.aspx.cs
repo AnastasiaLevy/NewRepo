@@ -25,13 +25,13 @@ namespace TestSite
 
             logOut.Visible = true;
             login.Visible = false;
-          
+
 
 
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-          
+
             userId = Request.QueryString["userId"].ToString();
             int canView = DataMethods.GetUserViewResults(userId);
             if (canView == 0 && Request.QueryString["provider"] == null)
@@ -62,7 +62,7 @@ namespace TestSite
             tId = Convert.ToInt32(Request.QueryString["tId"]);
             string test = Request.QueryString["test"].ToString();
             userName = User.Identity.Name;
-           
+
             DataSet ds;
             int factor;
             textStr.Text = "";
@@ -217,18 +217,25 @@ namespace TestSite
                 chartTitle.Text = "Results for Tower of London Test for participant " + userName + ".";
                 GridView gv;
                 SetUpUserResultGrid(userId, tId, out dt, out gv);
-                
+
+
+
                 DataTable dtr = DataMethods.GetLondonNorms(ageGroup, tId);
-                if (dtr.Rows.Count > 0)
-                { 
-                decimal mean = Convert.ToDecimal(dtr.Rows[0]["mean"]);
-                decimal std = Convert.ToDecimal(dtr.Rows[0]["stdDeviation"]);
-                int totalM = dt.AsEnumerable().Where(row => row.Field<int>("game") > 3).Sum(r => r.Field<int>("Exess Moves"));
-                factor = CalculateResults(totalM, mean, std);
                 Label descr = new Label();
-                descr.Text = "You have made " + totalM + Enums.ReturnLondonResultStrings(factor) + "\n\r";
+                if (dtr.Rows.Count > 0)
+                {
+                    decimal mean = Convert.ToDecimal(dtr.Rows[0]["mean"]);
+                    decimal std = Convert.ToDecimal(dtr.Rows[0]["stdDeviation"]);
+                    int totalM = Convert.ToInt32(dt.Rows[0]["Excess"]);//dt.AsEnumerable().Where(row => row.Field<int>("game") > 3).Sum(r => r.Field<int>("Exess Moves"));
+                    factor = CalculateResults(totalM, mean, std);
+
+                    descr.Text = "You have made " + totalM + Enums.ReturnLondonResultStrings(factor) + "\n\r";
+                    descr.Font.Size = 16;
+
                 }
                 pResultPanel.Controls.Add(gv);
+                pResultPanel.Controls.Add(descr);
+
 
             }
 
@@ -336,7 +343,15 @@ namespace TestSite
             SetGvProperties(gv);
             gv.DataSource = ds.Tables[0];
             gv.DataBind();
-            dt = ds.Tables[0];
+            gv.ShowFooter = true;
+            gv.FooterRow.Visible = true;
+            gv.FooterStyle.BackColor = Color.AliceBlue;
+            gv.FooterRow.Font.Size = 16;
+            dt = ds.Tables[2];
+            gv.FooterRow.Cells[0].Text = "Total:";
+            gv.FooterRow.Cells[4].Text = dt.Rows[0]["NumberMoves"].ToString();
+            gv.FooterRow.Cells[6].Text = dt.Rows[0]["Excess"].ToString();
+            gv.FooterRow.Cells[7].Text = dt.Rows[0]["wrong"].ToString();
         }
 
         protected int CalculateResults(decimal? score, decimal? mean, decimal? stdDev)
@@ -472,7 +487,7 @@ namespace TestSite
         protected void btnExportLine_Click(object sender, EventArgs e)
         {
             DataSet ds = DataMethods.GetTestResultsLondon(userId, tId);
-            
+
             var excel = new Microsoft.Office.Interop.Excel.Application();
             var wb = excel.Workbooks.Add(true);
             Microsoft.Office.Interop.Excel.Sheets sheets = wb.Sheets;
@@ -483,8 +498,8 @@ namespace TestSite
             try
             {
 
-            wb.SaveAs(@"C:\LondonResults\" + userName + "_" + DateTime.Now.ToShortDateString() + ".xlsx");
-            wb.Close();
+                wb.SaveAs(@"C:\LondonResults\" + userName + "_" + DateTime.Now.ToShortDateString() + ".xlsx");
+                wb.Close();
             }
             catch (Exception ex)
             {

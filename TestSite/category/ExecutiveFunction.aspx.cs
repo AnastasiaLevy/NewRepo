@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace TestSite.blogPosts
 {
-    public partial class Category4 : System.Web.UI.Page
+    public partial class ExecutiveFunction : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -33,6 +33,27 @@ namespace TestSite.blogPosts
             Response.Redirect("~/MainPage.aspx");
 
         }
+        protected void clcLogin(object sender, EventArgs e)
+        {
 
+            var provider = Membership.Provider;
+            string name = provider.ApplicationName;
+
+            if (Membership.ValidateUser(userNameLg.Value, userPwLg.Value))
+            {
+                User.ToString();
+                FormsAuthentication.SetAuthCookie(userNameLg.Value, true);
+                Session["Username"] = userNameLg.Value;
+                Response.Redirect("~/UserProfile.aspx");
+                wrongLogin.Text = "";
+
+            }
+            else
+            {
+                wrongLogin.Text = "*Username or Password were incorrect";
+
+            }
+
+        }
     }
 }

@@ -71,7 +71,8 @@ namespace TestSite.Tests
                             requestToReg.Visible = false;
                             runTest.Visible = false;
                         }
-
+                        if (CommonMethods.UserIsProvider(_userId))
+                            singlePr.Visible = false;
                         price.Visible = true;
                     }
                     else

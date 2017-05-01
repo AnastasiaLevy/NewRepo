@@ -1,4 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Category1.aspx.cs" Inherits="TestSite.blogPosts.Memory" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProcessingSpeed.aspx.cs" Inherits="TestSite.blogPosts.ProcessingSpeed" %>
+
+<!DOCTYPE html>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,11 +9,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Memory Tests: Test yourself and help us learn more about the mind and brain by taking long term memory test online, short term memory test online from CogQuiz. Visit us!">
-    <meta name="keywords" content="N Back: Keywords: Long Term Memory Test Online, Short, CogQuiz">
-    <title>Keywords: Cognitive Style Questionnaire, Cognitive Test Online Practice, Cognitive Ability Test Online</title>
+    <meta name="description" content="Test your Speed of Processing by taking Processing Speed test online from CogQuiz. Visit us for more info!">
+    <meta name="keywords" content="Processing Speed Test Online, CogQuiz">
+    <title>Processing Speed Test Online – CogQuiz</title>
     <link rel="shortcut icon" href="../images/favicon.ico"/>
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="../fonts/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="../cogTest.css" rel="stylesheet" />
@@ -20,70 +21,87 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
-    <script src="https://use.fontawesome.com/0138464303.js"></script>      
+    <script src="https://use.fontawesome.com/0138464303.js"></script>  
+        <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-89149772-1', 'auto');
+        ga('send', 'pageview');
+
+</script>    
 </head>
+
 <body data-spy="scroll" runat="server">
     <form runat="server">
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
-          	<div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                  <a class="navbar-brand" href="../MainPage.aspx">
-                         <i class="fa fa-cogs" aria-hidden="true">Quiz</i></a>               		
-				</div>
+               <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../MainPage.aspx">
+                    <i class="fa fa-cogs" aria-hidden="true">Quiz</i>
+
+                </a>
+
+            </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right custom-menu">
                     <li><a href="../MainPage.aspx">Home</a></li>
-                    <li class="active"><a href="#about">Memory</a></li>
+                    <li class="active"><a href="#about">Executive Function</a></li>
                     <li id="profOpt" runat="server"><a href="../UserProfile.aspx">Profile</a></li>
                     <li id="login" runat="server"><a href="../Login.aspx">Login</a></li>
+                    <%-- <li>
+                        <button id="login" class="btn button" onclick="document.getElementById('id01').style.display='block'" runat="server">Login</button></li>--%>
+
                     <li>
-                        <%--<button id="login" class="btn button" onclick="document.getElementById('id01').style.display='block'" runat="server">Login</button></li>--%>
+
                         <asp:LinkButton ID="logOut" class="btn button" type="submit" runat="server" OnClick="logOut_Click">Log Out</asp:LinkButton>
                     </li>
+                    <!-- 	<li><a href="blog.html">Blog</a></li>
+                        <li><a href="single-post.html">Single</a></li> -->
                 </ul>
             </div>
         </div>
     </nav>
 
     <header id="home">
-        <div class="category1">
-            <div id="tag-cloud">
-            </div>
+        <div class="ProcessingSpeed">
+            <div id="tag-cloud"></div>
         </div>
     </header>
-    <h1>TEST</h1>
 
-    <!-- Page Content -->
-    <section id="category1">
+    <section id="ProcessingSpeed">
         <div class="container MemoryBlock">
-            <h2 class="middle">Memory</h2>
+            <h1 class="middle">Processing Speed</h1>
             <img class="img-responsive displayed" src="../images/line-separator.png" alt="short" />
-            <h3>Types of Memory</h3>
+            <h3>About:</h3>
             <p>
-                An early theory proposed by Aristotle of memory conceived of it as a single entity and likened it to an impression made in wax. Current theorist have proposed that memory comes in several different varieties. One distinction is between declarative and nondeclarative memory.  
-                
+                Speed of processing has been a major explantory varialbe for enhanced cognitive performace during development. 
+                Specifically, there is a exponential increase in the speed of processing from early childhood up through the teenage 
+                years. This speed of processing is associated with enhanced cognitive performance. For example, imagine how the
+                number of words in a recall test might increase if increased speed of processing allowed for more word rehersal.
             </p>
-            <h3>Declarative Memory</h3>
-            <p>
-                Declartive memory is the form of memory with which most of us are familiar. A subtype of declarative memory is episodic memory and is characterized by temporal and personal tags. For example, I drove to Albany New York yesterday. A second subtype of declarative memory is semantic memory. This type of memory is reflective of general knowledge (e.g., our knowledge tha Albany is the capital of New York state). 
-                
+            <h3></h3>
+              <p>
+                 Speed of processing increases from early childhood up into the twenties and begins to show a significant decline 
+                by the fifties.
             </p>
-                <h3>Nondeclarative Memory</h3>
-            <p>
-                Nondeclarative memory is a pervasive form of memory that frequently occurs without conscious awareness and tends to occur automatically. Familiar and easily understood examples of this form of memory are driving a car or typing an email. We are all aware that driving and typing can occur effortlessly and without conscious awareness. Less familiar examples are a conversation where people know the cues telling them when it is their turn to speak and more broadley when one can take a variety of cues from the environment to inform them about their safety or preditions about the day's weather.                             
+                <h3></h3>
+              <p>
+                Similarly, there are reported medium sized correlations between speed of processing and fluid intelligence.
+                Currently, the first part of the Trails test can be considered to provide an assessment of speed of processing.
             </p>
-               <h3>Working Memory and Short-term Memory</h3>
-            <p>Working memory has become one of the hottest topics in memory research. Working memory is a form of memory that is held in conscious awareness and is characterized by active manipulation of information. For example, think about the process of multiplying 13 times 17 in your head. You might think 7 times 3 is 21 and I keep the 1 and carry the 2. I multiple 7 time 1 and add the 2 for a place holder of 91. I then multiple 13 times 1 and place 13 one digit to the left under 91. Next I add the numbers to get 221. I've temporarly held and manipulated information in my conscious awareness. Short-term memory is similar except that I don't manipulate the information. I look up a phone number and repeated it until I've dialed the number and then I drop it from awareness.  
-                . 
-                
-            </p>
+          
         </div>
     </section>
   
@@ -91,89 +109,25 @@
         <div class="container">
             <div class="row">
                 <div class="text-center">
-                    <h2>Memory Tests:</h2>
-                    <img class="img-responsive displayed" src="../images/line-separator.png" alt="">
+                    <h2>Processing Speed Tests:</h2>
+                    <img class="img-responsive displayed" src="../images/line-separator.png" alt="about">
                 </div>
                 <ul class="port2">
-                    <li data-type="memory" data-id="id-1" class="port3">
-                        <a href="../Tests/NbackWrapper.aspx" id="memory1">
-                            <img src="../images/Nback.jpg" alt=""></a>
+                 <li data-type="memory" data-id="id-1" class="port3">
+                       <a href="../TrailsWrapper.aspx" id="webdesign1">
+                            <img src="../images/trails.jpg" alt=""></a>
                     </li>
-                    <li data-type="memory" data-id="id-1" class="port3">
-                       <a href="<%--../TrailsWrapper.aspx--%>" id="webdesign1">
-                            <img src="../images/coming_soon.jpg" alt=""></a>
+                    <li data-type="mobileapps" data-id="id-6" class="port3">
+                        <a href="#" id="mobileapps2">
+                            <img src="../images/Coming_soon.jpg" alt=""></a>
                     </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-        <section id="services">
-            <div class="blueback">
-                <div class="container">
-                    <div class="text-center homeport2">
-                        <h2>Test Categories</h2>
-                    </div>
-                    <div class="row row-centered">
-                        <div class="col-md-12 homeservices1 blueFont col-centered">
-                            <div class="col-md-3 portfolio-item col-centered">
-                                <div class="text-center">
-                                    <a href="javascript:void(0);">
-                                        <a href="Category2.aspx"><span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-book fa-stack-1x"></i>
-                                        </span></a>
-                                    </a>
-                                    <h3><a href="Category2.aspx">Executive function</a></h3>
-                                </div>
-                            </div>
-                            <div class="col-md-3 portfolio-item col-centered">
-                                <div class="text-center">
-                                    <a href="javascript:void(0);">
-                                        <a href="Category3.aspx"><span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-cogs fa-stack-1x"></i>
-                                        </span></a>
-
-                                    </a>
-                                    <h3><a href="Category3.aspx">Processing Speed</a></h3>
-                                </div>
-                            </div>
-                            <div class="col-md-3 portfolio-item col-centered">
-                                <div class="text-center">
-                                    <a href="javascript:void(0);">
-                                        <a href="Category4.aspx"><span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-lightbulb-o fa-stack-1x"></i>
-                                        </span></a>
-
-                                    </a>
-                                    <h3><a href="Category4.aspx">Intelligence</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    <section id="follow-us">
-        <div class="container">
-            <div class="text-center height-contact-element">
-                <h3>Follow Us</h3>
-            </div>
-            <img class="img-responsive displayed" src="../images/line-separator.png" alt="short" />
-            <div class="text-center height-contact-element">
-                <ul class="list-unstyled list-inline list-social-icons">
-                    <li class="active"><a href="https://www.facebook.com/CogQuiz-1644904339158958/"><i class="fa fa-facebook social-icons"></i></a></li>
-                    <li><a href="https://twitter.com/cogquizcom"><i class="fa fa-twitter social-icons"></i></a></li>
-                    <li><a href="https://plus.google.com/u/3/113821050703373361140?hl=en"><i class="fa fa-google-plus social-icons"></i></a></li>
-                    <li><a href="https://www.linkedin.com/company-beta/13213074/"><i class="fa fa-linkedin social-icons"></i></a></li>
+                 
                 </ul>
             </div>
         </div>
     </section>
 
-        <div id="id01" class="modal">
+       <div id="id01" class="modal">
    
             <%--  <form class="modal-content animate" runat="server">--%>
             <div class="modal-content animate">
@@ -193,15 +147,92 @@
                 </br>
                 <asp:LinkButton class="btn button" type="submit" runat="server" OnClick="clcLogin">Login</asp:LinkButton>
                 <button type="button" onclick="document.getElementById('id01').style.display='none'" class="btn cancelbtn">Cancel</button>
-                 <br />
+                   <br />
                  <span class=""><a href="../MainPage.aspx#register">Create Account</a></span>
                 <br />
-                 <span class="">Forgot <a href="#">password?</a></span>
+                <span class="">Forgot <a href="#">password?</a></span>
             </div>
         </div>
 </div>
-      
-</form>
+        <script>
+            // Get the modal
+            var modal = document.getElementById('id01');
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+
+        </script>
+        
+         <section id="services">
+            <div class="blueback">
+                <div class="container" id="boxCat">
+                    <div class="text-center homeport2">
+                        <h2>Test Categories</h2>
+                    </div>
+                    <div class="row" >
+                        <div class="col-md-12 homeservices1 blueFont row-centered">
+                            <div class="col-md-3 portfolio-item col-centered">
+                                <div class="text-center">
+                                    <a href="javascript:void(0);">
+                                        <a href="Memory.aspx"><span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa fa-medium fa-stack-1x "></i>
+                                        </span></a>
+                                    </a>
+                                    <h3><a href="Memory.aspx">Memory</a></h3>
+
+                                </div>
+                            </div>
+                            <div class="col-md-3 portfolio-item col-centered">
+                                <div class="text-center">
+                                    <a href="javascript:void(0);">
+                                        <a href="ExecutiveFunction.aspx"><span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa fa-book fa-stack-1x"></i>
+                                        </span></a>
+                                    </a>
+                                    <h3><a href="ExecutiveFunction.aspx">Executive function</a></h3>
+                                </div>
+                            </div>
+                            <div class="col-md-3 portfolio-item col-centered">
+                                <div class="text-center">
+                                    <a href="javascript:void(0);">
+                                        <a href="IntelligenceTest.aspx"><span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa fa-lightbulb-o fa-stack-1x"></i>
+                                        </span></a>
+
+                                    </a>
+                                    <h3><a href="IntelligenceTest.aspx">Intelligence</a></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+    <section id="follow-us">
+        <div class="container">
+            <div class="text-center height-contact-element">
+                <h3>Follow Us</h3>
+            </div>
+            <img class="img-responsive displayed" src="../images/line-separator.png" alt="short" />
+            <div class="text-center height-contact-element">
+                <ul class="list-unstyled list-inline list-social-icons">
+                    <li class="active"><a href="https://www.facebook.com/CogQuiz-1644904339158958/"><i class="fa fa-facebook social-icons"></i></a></li>
+                    <li><a href="https://twitter.com/cogquizcom"><i class="fa fa-twitter social-icons"></i></a></li>
+                    <li><a href="https://plus.google.com/u/3/113821050703373361140?hl=en"><i class="fa fa-google-plus social-icons"></i></a></li>
+                    <li><a href="https://www.linkedin.com/company-beta/13213074/"><i class="fa fa-linkedin social-icons"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    </form>
     <footer id="footer">
         <div class="container">
             <div class="row myfooter">
@@ -222,8 +253,8 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/jquery.quicksand.js"></script>
-    
-        <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+
+     <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
          <script src="../Scripts/jquery.svg3dtagcloud.js"></script>
 
     <script>
@@ -254,7 +285,7 @@
                 { label: 'BBC', url: 'http://www.bbc.com/news/health-25156510', target: '_top' },
                 { label: 'Memory', url: 'http://www.cerebromente.org.br/n01/memo/memory.htm', target: '_top' },
                 { label: 'Types', url: 'http://www.human-memory.net/types.html', target: '_top' }
-                
+
 
             ];
 
@@ -266,14 +297,14 @@
                 radius: '70%',
                 radiusMin: 80,
                 bgDraw: true,
-                bgColor: '#53ADF0',
+                bgColor: '#5A7E27',
                 opacityOver: 1.00,
                 opacityOut: 0.05,
                 opacitySpeed: 6,
                 fov: 800,
-                speed: 1,
+                speed: 2,
                 fontFamily: 'Oswald, Arial, sans-serif',
-                fontSize: '20',
+                fontSize: '15',
                 fontColor: '#fff',
                 fontWeight: 'normal',//bold
                 fontStyle: 'normal',//italic 
@@ -289,11 +320,7 @@
 
     </script>
 
-<%--    <script src="//code.jquery.com/jquery-2.2.0.min.js"></script>--%>
-
-
-
-    <script type="text/javascript">
+<%--    <script type="text/javascript">
 
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-36251023-1']);
@@ -306,7 +333,9 @@
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
         })();
 
-</script>
+</script>--%>
+
+
     <!--Jquery Smooth Scrolling-->
     <script>
         $(document).ready(function () {
@@ -378,20 +407,5 @@
         $(document).ready(gallery);
     </script>
 
-      <script>
-          // Get the modal
-          var modal = document.getElementById('id01');
-
-          // When the user clicks anywhere outside of the modal, close it
-          window.onclick = function (event) {
-              if (event.target == modal) {
-                  modal.style.display = "none";
-              }
-          }
-
-        </script>
-
 </body>
 </html>
-
-

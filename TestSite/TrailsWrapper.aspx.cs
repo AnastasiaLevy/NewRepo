@@ -74,6 +74,8 @@ namespace TestSite
                             runTest.Visible = false;
                             price.Visible = true;
                         }
+                        if (CommonMethods.UserIsProvider(_userId))
+                            singlePr.Visible = false;
                     }
                     else
                     {

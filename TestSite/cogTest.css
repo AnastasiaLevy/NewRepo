@@ -30,7 +30,7 @@
         animation: imageAnimation 36s linear infinite 0s;
     }
 
-.category1, .category2, .category3, .category4 {
+.Memory, .ExecutiveFunction, .ProcessingSpeed, .IntelligenceTest {
     width: 100%;
     height: 500px;
     position: absolute;
@@ -43,23 +43,23 @@
     text-align: center;
 }
 
-.category1 {
+.Memory {
     background-image: url('images/memoryPage1.jpg');
 }
 
-.category2 {
+.ExecutiveFunction {
     background-image: url('images/network.jpg');
 }
 
-.category3 {
+.ProcessingSpeed {
     background-image: url('images/test-point.jpg');
 }
 
-.category4 {
+.IntelligenceTest {
     background-image: url('images/abstract.jpg');
 }
 
-    .category1 h2, .category2 h2, .category3 h2, .category4 h2 {
+    .Memory h2, .ExecutiveFunction h2, .ProcessingSpeed h2, .IntelligenceTest h2 {
         padding-top: 550px;
     }
 
@@ -712,7 +712,7 @@ footer {
     padding: 80px 0px 40px 0px; /*background-image:url("../images/background.jpg");background-repeat:repeat;*/
 }
 
-#category1, #category2, #category3, #category4 {
+#Memory, #ExecutiveFunction, #ProcessingSpeed, #IntelligenceTest {
     padding: 500px 0px 40px 0px; /*background-image:url("../images/background.jpg");background-repeat:repeat;*/
 }
 
@@ -3134,9 +3134,14 @@ label {
 }
 
 .createUser {
-    margin-top: 15px;
+    margin-top: 5px;
+    margin-bottom: 15px;
     border-radius: 5px;
     width: 100%;
+}
+
+.labelBold{
+    font-weight:bold;
 }
 
 .resultImage {

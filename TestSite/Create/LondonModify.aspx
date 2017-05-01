@@ -471,7 +471,7 @@
                 countDownText: $("#<%=countDownText.ClientID%>").val()
 
             }
-            alert(JSON.stringify(sendData))
+            //alert(JSON.stringify(sendData))
             jQuery.ajax({
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
@@ -607,7 +607,7 @@
 
                 roundCount -= 1;
                 if (update)
-                    alert(moves.length);
+                   // alert(moves.length);
                 checkForChange();
                 
                 $('.edit').bind("click", function () {
@@ -618,7 +618,7 @@
                 
             }
             else {
-                alert(roundCount)
+               // alert(roundCount)
             }
           
         });

@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Welcome to CogQuiz, We offer tests for children and adults, from ADHD to psychological personality tests online. Visit us for more information!">
-    <meta name="keywords" content="Available tests: ADHD, ADD, Autism, Dementia, Paranoid Personality Disorder, Schizoid Personality Disorder, Schizotypal Disorder, Antisocial Personality Disorder, Narcissistic Personality Disorder, Avoidant Personality Disorder, Amnesia, Alexia, Brain Damage, Head Injury, and more."
+    <meta name="keywords" content="Available tests: ADHD, ADD, Autism, Dementia, Paranoid Personality Disorder, Schizoid Personality Disorder, Schizotypal Disorder, Antisocial Personality Disorder, Narcissistic Personality Disorder, Avoidant Personality Disorder, Amnesia, Alexia, Brain Damage, Head Injury, and more." />
     <meta name="author" content="CogQuiz">
     <title>CogQuiz, psychological tests online,; Tests for kids and adults, with norms</title>
     
@@ -223,8 +223,8 @@
                             <div class="row">
                                 <h5 class="aboutHeader">Centralized Secure Database</h5>
                                 <div class="col-md-12">
-                                    <p>All CogQuiz tests utilize a centralized database that is Hipaa secure compliant when collecting data of testees. Whether you are using only one of our tests or all of them, 
-                                        collected data is is secure. In addition to facilitating the management of all testing data, this approach also ensures heightened security 
+                                    <p>All CogQuiz tests utilize a centralized database. Whether you are using only one of our tests or all of them, 
+                                        collected data is secure. In addition to facilitating the management of all testing data, this approach also ensures heightened security 
                                         and confidentiality of all participant information. </p>
                                 </div>
                             </div>
@@ -245,12 +245,12 @@
                             <div class="col-md-3 portfolio-item">
                                 <div class="text-center">
                                     <a href="javascript:void(0);">
-                                        <a href="category/Category1.aspx"><span class="fa-stack fa-lg">
+                                        <a href="category/Memory.aspx"><span class="fa-stack fa-lg">
                                             <i class="fa fa-circle fa-stack-2x"></i>
                                             <i class="fa fa-medium fa-stack-1x "></i>
                                         </span></a>
                                     </a>
-                                    <h3><a href="category/Category1.aspx">Memory</a></h3>
+                                    <h3><a href="category/Memory.aspx">Memory</a></h3>
                                     <p>
                                         Short-term and long term-merm memory tests avaialble.
                                     Take one of our quizes and find out where you stand in relation to others. Are you capable of remembering germane or salient details, or is there cause for concern?
@@ -260,39 +260,39 @@
                             <div class="col-md-3 portfolio-item">
                                 <div class="text-center">
                                     <a href="javascript:void(0);">
-                                        <a href="category/Category2.aspx"><span class="fa-stack fa-lg">
+                                        <a href="category/ExecutiveFunction.aspx"><span class="fa-stack fa-lg">
                                             <i class="fa fa-circle fa-stack-2x"></i>
                                             <i class="fa fa-book fa-stack-1x"></i>
                                         </span></a>
 
                                     </a>
-                                    <h3><a href="category/Category2.aspx">Executive function and Planning</a></h3>
+                                    <h3><a href="category/ExecutiveFunction.aspx">Executive function and Planning</a></h3>
                                     <p>Are you concerned with your Attention span, your ability to switch between tasks effectively or your speed of processing? Executive function tests help you determine if you have alfflictions like ADHD or NNNN</p>
                                 </div>
                             </div>
                             <div class="col-md-3 portfolio-item">
                                 <div class="text-center">
                                     <a href="javascript:void(0);">
-                                        <a href="category/Category3.aspx"><span class="fa-stack fa-lg">
+                                        <a href="category/ProcessingSpeed.aspx"><span class="fa-stack fa-lg">
                                             <i class="fa fa-circle fa-stack-2x"></i>
                                             <i class="fa fa-cogs fa-stack-1x"></i>
                                         </span></a>
 
                                     </a>
-                                    <h3><a href="category/Category3.aspx">Processing Speed</a></h3>
+                                    <h3><a href="category/ProcessingSpeed.aspx">Processing Speed</a></h3>
                                     <p>Speed of processing has been a major explantory varialbe for enhanced cognitive performace during development.</p>
                                 </div>
                             </div>
                             <div class="col-md-3 portfolio-item">
                                 <div class="text-center">
                                     <a href="javascript:void(0);">
-                                        <a href="category/Category4.aspx"><span class="fa-stack fa-lg">
+                                        <a href="category/IntelligenceTest.aspx"><span class="fa-stack fa-lg">
                                             <i class="fa fa-circle fa-stack-2x"></i>
                                             <i class="fa fa-lightbulb-o fa-stack-1x"></i>
                                         </span></a>
 
                                     </a>
-                                    <h3><a href="category/Category4.aspx">Intelligence</a></h3>
+                                    <h3><a href="category/IntelligenceTest.aspx">Intelligence</a></h3>
                                     <p>Learn about human intelligence</p>
                                 </div>
                             </div>
@@ -420,7 +420,7 @@
                             <p class="text-center"> A  tool to create questionnaires for collecting participant information.</p>
                
                         </div>
-                        <div class="col-md-4 col-sm-12 col-xs-12 portfolio-item">
+              <%--          <div class="col-md-4 col-sm-12 col-xs-12 portfolio-item">
                             <figure class="effect-oscar">
                                 <img src="images/cell.jpg" alt="img09" class="img-responsive" />
                                 <figcaption>
@@ -441,7 +441,7 @@
                             </figure>
                             <p class="text-center">Desktop version of Tower of Hanoi test.</p>
  
-                        </div>
+                        </div>--%>
                     </div>
                 </div>
             </div>

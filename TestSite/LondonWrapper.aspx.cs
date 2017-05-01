@@ -82,7 +82,8 @@ namespace TestSite
                             runTest.Visible = false;
                             FillOutSelection();
                         }
-
+                        if (CommonMethods.UserIsProvider(_userId))
+                            singlePr.Visible = false;
                         price.Visible = true;
                     }
                     else
@@ -235,7 +236,7 @@ namespace TestSite
             string baseUrl = Request.Url.GetLeftPart(UriPartial.Authority);
 
 
-            ppHref.Append("https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_xclick");//("https://www.paypal.com/cgi-bin/webscr?cmd=_xclick");//https://www.paypal.com/cgi-bin/webscr?cmd=_xclick
+            ppHref.Append("https://www.paypal.com/cgi-bin/webscr?cmd=_xclick");//(");//https://www.paypal.com/cgi-bin/webscr?cmd=_xclick
             ppHref.Append("&business=" + business);
             ppHref.Append("&item_name=" + itemName);
             ppHref.Append("&amount=" + itemAmount.ToString("#.00"));

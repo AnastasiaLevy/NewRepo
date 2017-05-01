@@ -397,26 +397,44 @@ function destroyClickedElement(event) {
 }
 
 function onClickPlay() {
-    var synth = speechSynthesis;
+
+    speechSynthesis.cancel();
   
    // var text = "Видишь эти две доски? Они оба одинаковы.";
     var text = gameSettings.Instructions;
-    var language = gameSettings.Language;
-    var utterance = new SpeechSynthesisUtterance();
-    utterance.volume = 1;
+  
+
+    sentences = text.split(".")
+    for (i = 0; i < sentences.length; i++) {
+        sentence = sentences[i];
+      
+        var synth = speechSynthesis;
+        var language = gameSettings.Language;
+        var utterance = new SpeechSynthesisUtterance();
+        utterance.volume = 1;
+        // audio = new SpeechSynthesisUtterance(sentence)
+            
+     
+        utterance.text = sentence;
+       // window.speechSynthesis.speak(audio)
+        synth.speak(utterance);
+    }
+
+   
+   
    // utterance.voice = synth.getVoices()[0];
     if (language != "")
     {
         //utterance.lang = 'ru-RU';
     }
    
-    utterance.text = text;
-    utterance.onend = function () {
-
-           };
+    //utterance.text = text;
+    //utterance.onend = function () {
+    //    synth.speak = false;
+    //       };
 
  
-    synth.speak(utterance);
+   
     
 }
 

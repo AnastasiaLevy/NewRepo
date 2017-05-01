@@ -1955,7 +1955,7 @@ namespace TestSite.DAL
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@exeptionMessage", exeptionMessage);
 
-            if (userId != null)
+            if (!String.IsNullOrEmpty(userId))
                 cmd.Parameters.AddWithValue("@userId", userId);
             else
                 cmd.Parameters.AddWithValue("@userId", DBNull.Value);

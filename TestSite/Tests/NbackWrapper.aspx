@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Test your working memory by taking our Nback Memory Test Online, Short Term and Long Term Memory Test Online. Also, test your Working Memory and Capacity on CogQuiz.">
     <meta name="author" content="CogQuiz">
-    <meta name="keywords" content="Nback Memory Test Online, Short Term and Long Term Memory Test Online, Working Memory and Capacity Test, CogQuiz"
+    <meta name="keywords" content="Nback Memory Test Online, Short Term and Long Term Memory Test Online, Working Memory and Capacity Test, CogQuiz" />
 
     <title>Nback Memory Test Online, Working Memory Capacity Test - CogQuiz</title>
     <link rel="shortcut icon" href="../images/favicon.ico" />
@@ -17,6 +17,18 @@
     <link href="../cogTest.css" rel="stylesheet" />
     <link href="../css/style.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/0138464303.js"></script>
+        <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-89149772-1', 'auto');
+        ga('send', 'pageview');
+
+</script>
 </head>
 
 <body data-spy="scroll" runat="server">
@@ -171,7 +183,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-3">
-                            <div class="circle c1 img-circle">
+                            <div class="circle c1 img-circle"  id="singlePr" runat="server">
                                 <h4 class="blue">Single Test</h4>
                                 <span class="icon blue"><i class="fa fa-usd"></i></span>
                                 <span class="price-large blue">5</span>

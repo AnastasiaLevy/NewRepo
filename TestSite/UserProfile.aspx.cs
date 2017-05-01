@@ -19,7 +19,7 @@ namespace TestSite
             userId = Membership.GetUser(User.Identity.Name).ProviderUserKey.ToString();
          
           
-                if (UserIsProvider())
+                if (CommonMethods.UserIsProvider(userId))
                     Response.Redirect("~/Provider/ProviderPortal.aspx");
 
             

@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Test your working memory by taking our Nback Memory Test Online, Short Term and Long Term Memory Test Online and Working Memory and Capacity Test from CogQuiz.">
+    <meta name="description" content="Test your working memory by taking our London Test Online, Short Term and Long Term Memory Test Online and Working Memory and Capacity Test from CogQuiz.">
     <meta name="author" content="CogQuiz">
     <meta name="keywords" content="Tower of London Test Online, Short Term and Long Term Memory Test Online, Working Memory, Capacity Test, CogQuiz" />
     <title>Tower Of London Test Online – CogQuiz</title>
@@ -21,6 +21,18 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
     <script src="https://use.fontawesome.com/0138464303.js"></script>
+        <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-89149772-1', 'auto');
+        ga('send', 'pageview');
+
+</script>
 </head>
 <body data-spy="scroll" runat="server">
     <form runat="server">
@@ -175,11 +187,11 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-3">
-                            <div class="circle c1 img-circle">
+                            <div class="circle c1 img-circle"  id="singlePr" runat="server">
                                 <h4 class="blue">Single Test</h4>
                                 <span class="icon blue"><i class="fa fa-usd"></i></span>
-                                <span class="price-large blue">7</span>
-                                <span class="price-small">,00</span>
+                                <span class="price-large blue">5</span>
+                                <span class="price-small">.00</span>
                                 <p>One Time Run</p>
                                 <asp:Button ID="single" class="btn btn-info" runat="server" OnClick="single_Click" Text="Buy Now" />
                             </div>
@@ -191,7 +203,7 @@
                                 <h4 class="yellow">Set of 10</h4>
                                 <span class="icon yellow"><i class="fa fa-usd"></i></span>
                                 <span class="price-large yellow">50</span>
-                                <span class="price-small">,00</span>
+                                <span class="price-small">.00</span>
                                 <p>Small Project</p>
                                 <asp:Button ID="ten" class="btn btn-warning" runat="server" OnClick="ten_Click" Text="Call Us" />
                             </div>
@@ -202,8 +214,8 @@
                             <div class="circle c3 img-circle">
                                 <h4 class="green">Set of 100</h4>
                                 <span class="icon green"><i class="fa fa-usd "></i></span>
-                                <span class="price-large green">250</span>
-                                <span class="price-small">,00</span>
+                                <span class="price-large green">300</span>
+                                <span class="price-small">.00</span>
                                 <p>Medium Size Project</p>
                                 <asp:Button ID="hundred" class="btn btn-success" runat="server" OnClick="hundred_Click" Text="Call Us" />
                             </div>
@@ -212,12 +224,12 @@
 
                         <div class="col-md-3">
                             <div class="circle c4 img-circle">
-                                <h4 class="red">Unlimited Use</h4>
+                                <h4 class="red">Set of 500</h4>
                                 <span class="icon red"><i class="fa fa-usd "></i></span>
-                                <span class="price-large red">600</span>
-                                <span class="price-small">,00</span>
+                                <span class="price-large red">1000</span>
+                                <span class="price-small"></span>
                                 <p>
-                                    Any Number of Participants
+                                   Large Project
                                 <p>
 
                                     <asp:Button ID="unlim" class="btn btn-danger" runat="server" OnClick="unlim_Click" Text="Call Us" />

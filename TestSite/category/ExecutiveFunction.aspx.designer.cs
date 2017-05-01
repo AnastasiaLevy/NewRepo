@@ -10,7 +10,7 @@
 namespace TestSite.blogPosts {
     
     
-    public partial class Category2 {
+    public partial class ExecutiveFunction {
         
         /// <summary>
         /// profOpt control.
