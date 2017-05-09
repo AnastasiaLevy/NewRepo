@@ -18,6 +18,7 @@
 
 
 function startGame(gameNum) { //change back w/o s to use
+    canMove = true;
     var text = gameSettings.Instructions;
 
     //alert(gameSettings);
@@ -82,7 +83,7 @@ function displayFinalMessageOnTimeout(numMoves, lastMove, timeMlsec) {
     passResultsForGame(game, timeMlsec, timeMlsec, gameSettings.MaxMoves, nmWr, true, false, numMoves);
     setTimeout(function () {
         startCountDownTimer(game + 1);
-    }, 1300);
+    }, 2000);
 }
 
 function displayFinalMessage20move(game) {
@@ -101,11 +102,12 @@ function displayFinalMessage20move(game) {
     passResultsForGame(game, initTTime, over, gameSettings.MaxMoves, nmWr, false, true, numMoves);
     setTimeout(function () {
         startCountDownTimer(game + 1);
-    }, 1300);
+    }, 2000);
 
 }
 
 function displayFinalMessage(needMoves, madeMoves) {
+    canMove = false;
     var text = gameSettings.Feedback;
 
     if (text.indexOf("[nm]") != -1) {
@@ -131,10 +133,11 @@ function displayFinalMessage(needMoves, madeMoves) {
     //finalMessage.innerHTML = "You made " + madeMoves + dMadeMoves + ". The goal was " + needMoves + dNeedMoves;
 
     finalMessage.innerHTML = text;
-    setTimeout(hideFinalMessage, 1300);
+    setTimeout(hideFinalMessage, 2000);
 }
 
 function displayInstructions(text) {
+    canMove = false;
     if (gameSettings.TxtToSpeech)
         $("#play").show();
     else
@@ -150,7 +153,10 @@ function displayInstructions(text) {
 }
 
 function startCountDownTimer(game) {
-    var timeleft = parseInt(gameSettings.CountDownFrom)+1;
+
+    var timeleft = parseInt(gameSettings.CountDownFrom);
+    if (gameSettings.ShowFeedback == "True")
+        timeleft += 1;
     var text = gameSettings.CountDownText;
 
     if (text.indexOf("[cd]") != -1) {
@@ -211,7 +217,7 @@ function finishGame(needMoves) {
         game++;
         setTimeout(function () {
             startCountDownTimer(game);
-        }, 1300);
+        }, 2000);
     }
 
 

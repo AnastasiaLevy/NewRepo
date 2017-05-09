@@ -76,7 +76,6 @@ namespace TestSite.Tests
                     {
                         login.Visible = true;
                         logOut.Visible = false;
-                        
                         runTest.Visible = false;
                     }
 

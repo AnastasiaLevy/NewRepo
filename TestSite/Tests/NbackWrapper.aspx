@@ -267,11 +267,11 @@
             <div class="row myfooter">
                 <div class="col-sm-6">
                     <div class="pull-left">
-                        © Copyright Coquiz 2016 | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a>
+                        © Copyright Coquiz 2016 
                     </div>
                 </div>
                 <div class="col-sm-6">
-                    <div class="pull-right">Designed by <a href="http://www.adldenver.com">ADL</a></div>
+                    
                 </div>
             </div>
         </div>

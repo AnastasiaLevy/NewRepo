@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="intelligence tests: Test your intelligence with our IQ Test Online. Find out your IQ, research based, academic, scientific, real results. Learn about at CogQuiz.com .">
     <meta name="keywords" content="IQ Test, Intelligence Test Online, CogQuiz">
-    <title>Title: Intelligence Test Online - CogQuiz</title>
+    <title>Intelligence Test Online - CogQuiz</title>
     <link rel="shortcut icon" href="../images/favicon.ico" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="../fonts/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -228,11 +228,11 @@
             <div class="row myfooter">
                 <div class="col-sm-6">
                     <div class="pull-left">
-                        © Copyright CogQuiz 2016 | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a>
+                        © Copyright CogQuiz 2016 
                     </div>
                 </div>
                 <div class="col-sm-6">
-                    <div class="pull-right">Designed by <a href="http://www.adldenver.com">ADL</a></div>
+                    
                 </div>
             </div>
         </div>

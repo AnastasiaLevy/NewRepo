@@ -144,6 +144,28 @@ namespace TestSite.DAL
             return ds;
         }
 
+        internal static DataTable GetUserName(string userId)
+        {
+            DataTable ds = new DataTable();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("GetUserName", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@userId", userId);
+
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                adp.Fill(ds);
+            }
+            catch (Exception ex)
+            {
+                InsertErrorMessage(ex.ToString(), null, null, "GetUserName");
+                throw new Exception("Execption getting GetUserName. " + ex.Message);
+            }
+
+            return ds;
+        }
+
         internal static DataTable GetStroopResults(int tId)
         {
             DataTable ds = new DataTable();
@@ -238,13 +260,14 @@ namespace TestSite.DAL
 
         }
 
-        internal static DataTable GetNbackUserResults(int tId)
+        internal static DataSet GetNbackUserResults(string userId, int tId)
         {
-            DataTable ds = new DataTable();
+            DataSet ds = new DataSet();
             SqlConnection conn = new SqlConnection(connectionSring);
             SqlCommand cmd = new SqlCommand("SelectNbackUserResults", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@tId", tId);
+            cmd.Parameters.AddWithValue("@userId", userId);
 
             try
             {
@@ -1244,9 +1267,9 @@ namespace TestSite.DAL
             return dt;
         }
 
-        public static DataTable GetSyllogismsUserTable(int tId)
+        public static DataSet GetSyllogismsUserTable( int tId)
         {
-            DataTable ds = new DataTable();
+            DataSet ds = new DataSet();
             SqlConnection conn = new SqlConnection(connectionSring);
             SqlCommand cmd = new SqlCommand("SelectSyllogismsUserResultTable", conn);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -1290,7 +1313,7 @@ namespace TestSite.DAL
             return ds;
         }
 
-        public static DataSet GetTestResultsCardSort(string userId, int tId)
+        public static DataSet GetTestResultsCardSort(string userId, int tId, bool forExport = false)
         {
             DataSet ds = new DataSet();
             SqlConnection conn = new SqlConnection(connectionSring);
@@ -1298,6 +1321,9 @@ namespace TestSite.DAL
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@userId", userId);
             cmd.Parameters.AddWithValue("@tId", tId);
+            if (forExport)
+                cmd.Parameters.AddWithValue("@forExport", true);
+
 
             try
             {

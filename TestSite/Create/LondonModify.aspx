@@ -212,6 +212,27 @@
     <textarea id="movesText" rows="5" runat="server"></textarea>
     <script>
         //=================================================================
+        $(document).ready(function () {
+            $('#viewTest').hide();
+            $('#<%=movesText.ClientID%>').hide();
+              var value = $('#<%=movesText.ClientID%>').val();
+            if (value.length > 0) {
+                $('#SetupUpdate').hide();
+                setUpdateValues(value);
+            }
+
+
+            $('.edit').bind("click", function () {
+                $("#success").hide();
+                checkForChange();
+                update = true;
+                round = this.value;
+                test(superArr, round);
+                $('#save').show();
+            });
+
+        });
+
         window.speechSynthesis.onvoiceschanged = function () {
             var voiceSelect = $("#<%=select.ClientID %>");
             var synth = speechSynthesis;
@@ -321,6 +342,39 @@
             prct = parseInt($('#<%=ddlPractice.ClientID %> option:selected').text());
             trl = parseInt($('#<%=ddlNumberGames.ClientID %> option:selected').text());
         }
+     
+
+        function setUpdateValues(value)
+        {
+            moves = JSON.parse(value);
+
+            update = true;
+            round = roundCount = moves.length + 1;
+
+            //checkForChange();
+            updateValues();
+            jQuery.each(moves, function (index, value) {
+                superObj = {
+                    arrStart: moves[index].RoundStart,
+                    arrFinish: moves[index].RoundFinish,
+                    numMoves: moves[index].NumberOfMoves
+                }
+                superArr[moves[index].GameRound] = superObj; //{"red": "p2", "green":"p3", "blue": "p5"}
+
+                if ((moves[index].GameRound) <= prct) {
+                    currPrct++;
+                    $('#pageNums').append('<input type="button" value=' + (moves[index].GameRound) + ' id=' + (moves[index].GameRound) + ' class="edit prct"/>');
+                }
+                else {
+                    $('#pageNums').append('<input type="button" value=' + (moves[index].GameRound) + ' id=' + (moves[index].GameRound) + ' class="edit trl"/>');
+                    currTrl++;
+                }
+                idItems[(moves[index].GameRound)] = (moves[index].GameRound);
+            });
+
+        
+  
+        }
 
         $('#SetupUpdate').click(function () {
             $('#SetupUpdate').hide();
@@ -355,46 +409,12 @@
                     idItems[i] = i;
                 }
                 round = roundCount = moves.length;
-
-
-                //$('.edit').bind("click", function () {
-                //    round = this.value;
-                //   // alert(round);
-                //    makeLabel(round);
-
-                //    initFieldStart();
-                //    initFieldEnd();
-                //});
-
             }
             else {
-                moves = JSON.parse(value);
-
-                update = true;
-                round = roundCount = moves.length + 1;
-
-                //checkForChange();
-                updateValues();
-                jQuery.each(moves, function (index, value) {
-                    superObj = {
-                        arrStart: moves[index].RoundStart,
-                        arrFinish: moves[index].RoundFinish,
-                        numMoves: moves[index].NumberOfMoves
-                    }
-                    superArr[moves[index].GameRound] = superObj; //{"red": "p2", "green":"p3", "blue": "p5"}
-
-                    if ((moves[index].GameRound) <= prct) {
-                        currPrct++;
-                        $('#pageNums').append('<input type="button" value=' + (moves[index].GameRound) + ' id=' + (moves[index].GameRound) + ' class="edit prct"/>');
-                    }
-                    else {
-                        $('#pageNums').append('<input type="button" value=' + (moves[index].GameRound) + ' id=' + (moves[index].GameRound) + ' class="edit trl"/>');
-                        currTrl++;
-                    }
-                    idItems[(moves[index].GameRound)] = (moves[index].GameRound);
-                });
-
+                setUpdateValues(value);
+          
             }
+
             $('.edit').bind("click", function () {
                 $("#success").hide();
                 checkForChange();

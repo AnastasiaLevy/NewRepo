@@ -9,7 +9,7 @@
     <meta name="description" content="Welcome to CogQuiz, We offer tests for children and adults, from ADHD to psychological personality tests online. Visit us for more information!">
     <meta name="keywords" content="Available tests: ADHD, ADD, Autism, Dementia, Paranoid Personality Disorder, Schizoid Personality Disorder, Schizotypal Disorder, Antisocial Personality Disorder, Narcissistic Personality Disorder, Avoidant Personality Disorder, Amnesia, Alexia, Brain Damage, Head Injury, and more." />
     <meta name="author" content="CogQuiz">
-    <title>CogQuiz, psychological tests online,; Tests for kids and adults, with norms</title>
+    <title>CogQuiz, psychological tests online; Tests for kids and adults, with norms</title>
     
     <link rel="shortcut icon" href="images/favicon.ico" />
 
@@ -385,7 +385,7 @@
                                     <h3 class="blueFont1">Software and Hosting</h3>
                                     <p>
                                     We create the software, and we will host it for you too. 
-                                    We take the worrying out of Hipaa regulations and data integrity. We design and develop Cloud based and Desctop applications.
+                                    We take the worrying out of Hipaa regulations and data integrity. We design and develop Cloud based and Desktop applications.
                                     </p>
                                 </div>
                             </div>
@@ -409,7 +409,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12 homeport1">
-                        <div class="col-md-4 col-sm-12 col-xs-12 portfolio-item">
+                        <div class="col-md-4 col-sm-12 col-xs-12 col-md-offset-4 portfolio-item">
                             <figure class="effect-oscar">
                                 <img src="images/CogQuestPick.jpg"" alt="" class="img-responsive" />
                                 <figcaption>
@@ -635,11 +635,11 @@
             <div class="row myfooter">
                 <div class="col-sm-6">
                     <div class="pull-left">
-                        © Copyright CogQuiz 2016 | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a>
+                        © Copyright CogQuiz 2016 
                     </div>
                 </div>
                 <div class="col-sm-6">
-                    <div class="pull-right">Designed by <a href="http://www.adldenver.com">ADL</a></div>
+                    
                 </div>
             </div>
         </div>

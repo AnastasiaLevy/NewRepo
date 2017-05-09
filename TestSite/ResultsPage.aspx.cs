@@ -4,6 +4,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Security;
 using System.Web.UI;
@@ -20,6 +21,7 @@ namespace TestSite
         int tId;
         string userName;
         DataTable dt;
+        string test;
         protected void Page_Prerender(object sender, EventArgs e)
         {
 
@@ -31,37 +33,41 @@ namespace TestSite
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-
             userId = Request.QueryString["userId"].ToString();
-            int canView = DataMethods.GetUserViewResults(userId);
-            if (canView == 0 && Request.QueryString["provider"] == null)
-            {
-                textStr.Text = "Provider has restricted  view of the result section.";
-            }
-            else
-            {
-                movesMap.Visible = movesMap.Visible ? true : false;
-
-                int age = DataMethods.GetUserAge(userId);
-                int ageGroup = Enums.GetAgeGroup(age);
-                if (ageGroup == 10 || ageGroup == 100)
+            userName = User.Identity.Name;
+            tId = Convert.ToInt32(Request.QueryString["tId"]);
+            test = Request.QueryString["test"].ToString();
+        
+             
+                int canView = DataMethods.GetUserViewResults(userId);
+                if (canView == 0 && Request.QueryString["provider"] == null)
                 {
-                    chartTitle.Text = "Age Group Error. Please contact administrator."; //TODO: nice wording?
-
+                    textStr.Text = "Provider has restricted  view of the result section.";
                 }
                 else
-                { ShowResults(userId, ageGroup); }
+                {
+                    movesMap.Visible = movesMap.Visible ? true : false;
 
-            }
+                    int age = DataMethods.GetUserAge(userId);
+                    int ageGroup = Enums.GetAgeGroup(age);
+                    if (ageGroup == 10 || ageGroup == 100)
+                    {
+                        chartTitle.Text = "Age Group Error. Please contact administrator."; //TODO: nice wording?
+                
+                    }
+                    else
+                    { ShowResults(userId, ageGroup); }
+
+                }
+            
         }
 
         private void ShowResults(string userId, int ageGroup)
         {
-            btnExportLine.Visible = false;
-            btnExportNorm.Visible = false;
-            tId = Convert.ToInt32(Request.QueryString["tId"]);
-            string test = Request.QueryString["test"].ToString();
-            userName = User.Identity.Name;
+            //btnExportLine.Visible = false;
+            //btnExportNorm.Visible = false;
+          
+       
 
             DataSet ds;
             int factor;
@@ -79,13 +85,16 @@ namespace TestSite
 
             else if (test == "4" || test == "Nback")
             {
+                btnExportLine.Visible = true;
+                btnExportNorm.Visible = true;
                 decimal mean;
                 decimal std;
                 int percentCorrrect;
 
 
 
-                dt = DataMethods.GetNbackUserResults(tId);
+                ds = DataMethods.GetNbackUserResults(userId, tId);
+                dt = ds.Tables[0];
                 if (dt == null)
                 {
                     chartTitle.Text = "Results for nBack Test for participant cannot be displayed. Please coctact site administrator.";
@@ -122,7 +131,8 @@ namespace TestSite
 
             else if (test == "5" || test == "Syllogisms")
             {
-                dt = DataMethods.GetSyllogismsUserTable(tId);
+                ds = DataMethods.GetSyllogismsUserTable(tId);
+                dt = ds.Tables[0];
                 if (dt == null)
                 { chartTitle.Text = "There was an error loading results. Please contact the administrator."; }
                 else
@@ -457,82 +467,48 @@ namespace TestSite
             }
         }
 
-        private static void ExportOneLine(DataSet ds, Microsoft.Office.Interop.Excel.Worksheet newSheet)
-        {
-            int iCol = 0;
-            foreach (DataRow r in ds.Tables[1].Rows)
-            {
-                foreach (DataColumn c in ds.Tables[1].Columns)
-                {
-                    iCol++;
-                    newSheet.Cells[1, iCol] = c.ColumnName;
-                    newSheet.Cells[2, iCol] = r[c.ColumnName];
-                }
-
-            }
 
 
-            foreach (DataRow r in ds.Tables[0].Rows)
-            {
-                foreach (DataColumn c in ds.Tables[0].Columns)
-                {
-                    iCol++;
-                    newSheet.Cells[1, iCol] = c.ColumnName;
-                    newSheet.Cells[2, iCol] = r[c.ColumnName];
-                }
 
-            }
-        }
+
+        //private static void ExportOneLine(DataSet ds, Microsoft.Office.Interop.Excel.Worksheet newSheet)
+        //{
+        //    int iCol = 0;
+        //    foreach (DataRow r in ds.Tables[1].Rows)
+        //    {
+        //        foreach (DataColumn c in ds.Tables[1].Columns)
+        //        {
+        //            iCol++;
+        //            newSheet.Cells[1, iCol] = c.ColumnName;
+        //            newSheet.Cells[2, iCol] = r[c.ColumnName];
+        //        }
+
+        //    }
+
+
+        //    foreach (DataRow r in ds.Tables[0].Rows)
+        //    {
+        //        foreach (DataColumn c in ds.Tables[0].Columns)
+        //        {
+        //            iCol++;
+        //            newSheet.Cells[1, iCol] = c.ColumnName;
+        //            newSheet.Cells[2, iCol] = r[c.ColumnName];
+        //        }
+
+        //    }
+        //}
 
         protected void btnExportLine_Click(object sender, EventArgs e)
         {
-            DataSet ds = DataMethods.GetTestResultsLondon(userId, tId);
 
-            var excel = new Microsoft.Office.Interop.Excel.Application();
-            var wb = excel.Workbooks.Add(true);
-            Microsoft.Office.Interop.Excel.Sheets sheets = wb.Sheets;
-            Microsoft.Office.Interop.Excel.Worksheet newSheet = sheets.Add();
-
-            ExportOneLine(ds, newSheet);
-
-            try
-            {
-
-                wb.SaveAs(@"C:\LondonResults\" + userName + "_" + DateTime.Now.ToShortDateString() + ".xlsx");
-                wb.Close();
-            }
-            catch (Exception ex)
-            {
-
-            }
-
+            ExportData.ExportSingle(userId, tId, userName, test);
         }
 
         protected void btnExportNorm_Click(object sender, EventArgs e)
         {
-            DataSet ds = DataMethods.GetTestResultsLondon(userId, tId);
-            string name = GetPartName(ds.Tables[1]);
-            var excel = new Microsoft.Office.Interop.Excel.Application();
-            var wb = excel.Workbooks.Add(true);
-            Microsoft.Office.Interop.Excel.Sheets sheets = wb.Sheets;
-            Microsoft.Office.Interop.Excel.Worksheet newSheet = sheets.Add();
-
-            ExportNormal(dt, newSheet);
-
-            try
-            {
-                wb.SaveAs(@"C:\LondonResults\" + name + "_" + DateTime.Now.ToShortDateString() + ".xlsx");
-                wb.Close();
-            }
-            catch (Exception ex)
-            {
-
-            }
+            ExportData.ExportNormal(userId, tId, userName, test);
         }
 
-        private string GetPartName(DataTable dt)
-        {
-            return string.Format("{0}_{1}", dt.Rows[0]["firstName"], dt.Rows[0]["lastName"]);
-        }
+
     }
 }
