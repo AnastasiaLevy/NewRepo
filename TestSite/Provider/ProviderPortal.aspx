@@ -28,15 +28,15 @@
     <link href="../cogTest.css" rel="stylesheet" />
     <link href="../css/userProfilecss.css" rel="stylesheet" />
         <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date(); a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-        ga('create', 'UA-89149772-1', 'auto');
-        ga('send', 'pageview');
+            ga('create', 'UA-89149772-1', 'auto');
+            ga('send', 'pageview');
 
 </script>
 </head>
@@ -62,8 +62,8 @@
                     <ul class="nav navbar-nav navbar-right custom-menu">
                         <li class="active"><a href="../MainPage.aspx">Home</a></li>
                         <li><a href="#userInfo">Dashboard</a></li>
-                        <li><a href="#participant Data">Participant Data</a></li>
-                        <li><a href="#purchached tests">Provider Tests</a></li>
+                        <li><a href="#participantData">Participant Data</a></li>
+                        <li><a href="#purchachedTests">Provider Tests</a></li>
                         <li><a href="#testList">Available Tests</a></li>
                         <li><a href="#testCategories">Test Categories</a></li>
                         <%--    <li><a href="#reports">Results</a></li>--%>
@@ -144,7 +144,7 @@
 
                                 </div>
 
-<div id="myModal" class="modal fade">
+<%--<div id="myModal" class="modal fade">
   <div class="modal-dialog">
     <div class="modal-content">
       <!-- dialog body -->
@@ -156,7 +156,7 @@
       <div class="modal-footer"><button type="button" class="btn btn-primary">OK</button></div>
     </div>
   </div>
-</div>
+</div>--%>
                                 <div id="createUser" class="panel panel-success" runat="server">
                                     <div class="panel-heading">
                                         <h3 class="panel-title">Create New User:</h3>
@@ -164,6 +164,7 @@
                                     <div class="panel-body">
                                         <div>
                                             <asp:Label ID="lblError" runat="server" Text=""></asp:Label>
+                                            <asp:Label ID="emailError" runat="server" Text=""></asp:Label>
                                             <div class="col-xs-12 col-sm-12 col-md-12 ">
                                                 <asp:Label ID="Label4" cssClass ="labelBold" runat="server" Text="User email"></asp:Label>
                                                 <asp:TextBox ID="txtUserEmail" runat="server" CssClass="createUser" Width="100%"></asp:TextBox>
@@ -175,18 +176,23 @@
                                                 <asp:TextBox ID="txtPassword" runat="server" CssClass="createUser" Width="100%"></asp:TextBox>
 
                                                 <asp:CheckBox ID="cbAllowUserViewResults" runat="server" Text="Allow User View Results" TextAlign="Left" />
-
+                                                  
                                             </div>
+                                     
+                                               
                                         </div>
                                     </div>
                                     <div class="panel-footer">
                                         <div class="row">
-                                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                            <div class="col-xs-4 col-sm-6 col-md-4">
                                                 <asp:Button ID="btnCreateNewUser" class="btn btn-labeled btn-success" runat="server" Text="Create" OnClick="btnCreateNewUser_Click" />
                                             </div>
-                                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                            <div class="col-xs-4 col-sm-6 col-md-4">
                                                 <asp:Button ID="btnCancelUser" runat="server" class="btn btn-labeled btn-info" Text="Close" OnClick="btnCancelUser_Click" />
 
+                                            </div>
+                                                   <div class="col-xs-4 col-sm-6 col-md-4">
+                                               <input id="emailUser" type="button"  class="btn btn-labeled btn-success" value="Send User Credentials" />
                                             </div>
                                         </div>
                                     </div>
@@ -215,7 +221,7 @@
                 </div>
             </section>
 
-            <section id="participant Data">
+            <section id="participantData">
                 <div class="row">
                     <div class="box">
                         <div class="col-lg-12">
@@ -278,6 +284,7 @@
                                             <ItemStyle Width="10%"></ItemStyle>
                                         </asp:TemplateField>
                                         <asp:BoundField Visible="true" DataField="tID" />
+                                        <asp:BoundField Visible="true" DataField="testId" />
                                     </Columns>
                                     <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                                     <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
@@ -351,7 +358,7 @@
                 </div>
             </section>
 
-            <section id="purchached tests">
+            <section id="purchachedTests">
                 <div class="row">
                     <div class="box">
                         <div class="col-lg-12">
@@ -636,8 +643,26 @@
     //    e.preventDefault();
     //    document.getElementById('pop').style.display = 'none';
     //})
-    
 
+    $("#<%=txtUserEmail.ClientID%>").mouseout(function () {
+
+        var text = $("#<%=txtUserEmail.ClientID%>").val();
+        if (!validateEmail(text)) {
+            $("#<%=emailError.ClientID%>").text("Please enter a valid email *")
+        }
+
+        else {
+
+            $("#<%=emailError.ClientID%>").text("");
+
+
+        }
+    });
+
+    function validateEmail(text) {
+        var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+        return emailReg.test(text);
+    }
 
     $.fn.slideFadeToggle = function (easing, callback) {
         return this.animate({ opacity: 'toggle', height: 'toggle' }, 'fast', easing, callback);
@@ -646,11 +671,26 @@
 
 
     $('#btnDeleteModify').on("click", function (e) {
-      
-        var r=confirm("Are you sure you want to delete this test?");
-        if (r !== true)
-        {
+
+        var r = confirm("Are you sure you want to delete this test?");
+        if (r !== true) {
             e.preventDefault();
+        }
+    });
+
+    $('#emailUser').on("click", function (e) {
+        if ($("#<%=lblError.ClientID%>").text() != "New User was created")
+        {
+            alert("The user have not been created yet.");
+        }
+            
+        else {
+            var email = $("#<%=txtUserEmail.ClientID%>").val();
+            var user = $("#<%=txtNewUser.ClientID%>").val();
+            var pass = $("#<%=txtPassword.ClientID%>").val();
+            var body = "Welcome to CogQuiz.com. Use this credentials to login to site: \r\n Login: " + user + "\r\n Password: " + pass
+            //var subject =?subject=
+            document.location.href = "mailto:" + email + "?subject=Login Info From CogQuiz&body=" + encodeURIComponent(body);
         }
     });
 

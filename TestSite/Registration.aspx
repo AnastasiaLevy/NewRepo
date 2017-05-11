@@ -113,7 +113,7 @@
                 </div>
                 <div class="box">
                     <div id="name" class="col-xs-6 col-md-6 nopadding">
-                        <asp:Label class="labelForm" ID="lbFistName" runat="server" Text="*Fist Name:"></asp:Label>
+                        <asp:Label class="labelForm" ID="lbFistName" runat="server" Text="*First Name:"></asp:Label>
                         <input type="text" id="txtFirstName" value="" class="form-control input-lg" runat="server" placeholder="First Name" required />
                         <asp:RequiredFieldValidator class="red" ID="firstNameValid" runat="server" ErrorMessage="Please enter your name" ControlToValidate="txtFirstName"></asp:RequiredFieldValidator>
                     </div>

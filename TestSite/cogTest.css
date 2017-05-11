@@ -577,14 +577,15 @@ html, body {
 }
 
 a {
-    color: #99ddff;
+    color: #4cc6eb	;/*#5bc0de ;*/  /*#3385ff*/ 
+    font-weight:bold;
     text-decoration: none;
 }
 
 
 
     a:focus, a:hover {
-        color: #313131;
+        color: #3fb71f;
         text-decoration: none;
     }
 

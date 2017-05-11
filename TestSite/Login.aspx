@@ -103,7 +103,7 @@
                                         <asp:Label ID="wrongPw" class="errorMessage" runat="server" Text=""></asp:Label>
                                         <div class="form-group">
                                             <label class="sr-only" for="form-email">Email</label>
-                                            <input type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="single_email" runat="server">
+                                            <input type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="single_email" runat="server"/>
                                         </div>
                                         <div class="form-group">
                                             <label class="sr-only" for="form-first-name">User name</label>

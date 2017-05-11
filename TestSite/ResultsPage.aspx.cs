@@ -24,12 +24,8 @@ namespace TestSite
         string test;
         protected void Page_Prerender(object sender, EventArgs e)
         {
-
             logOut.Visible = true;
             login.Visible = false;
-
-
-
         }
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -140,7 +136,7 @@ namespace TestSite
 
                     chartTitle.Text = "Results for Syllogisms Test for participant " + userName;
                     GridView gvSyllogResTotal = new GridView();
-                    DataTable dtRes = DataMethods.GetSyllogismsUserResults(tId);
+                    DataTable dtRes = DataMethods.GetSyllogismsUserResults(tId).Tables[0];
                     gvSyllogResTotal.DataSource = dtRes;
                     gvSyllogResTotal.DataBind();
                     SetGvProperties(gvSyllogResTotal);
@@ -237,9 +233,11 @@ namespace TestSite
                     decimal mean = Convert.ToDecimal(dtr.Rows[0]["mean"]);
                     decimal std = Convert.ToDecimal(dtr.Rows[0]["stdDeviation"]);
                     int totalM = Convert.ToInt32(dt.Rows[0]["Excess"]);//dt.AsEnumerable().Where(row => row.Field<int>("game") > 3).Sum(r => r.Field<int>("Exess Moves"));
+                    int numberMoves = Convert.ToInt32(dt.Rows[0]["NumberMoves"]);
                     factor = CalculateResults(totalM, mean, std);
 
-                    descr.Text = "You have made " + totalM + Enums.ReturnLondonResultStrings(factor) + "\n\r";
+                    //descr.Text = "You have made " + totalM + Enums.ReturnLondonResultStrings(factor) + "\n\r";
+                    descr.Text = String.Format(Enums.ReturnLondonResultStrings(factor), numberMoves, mean);
                     descr.Font.Size = 16;
 
                 }
@@ -252,7 +250,7 @@ namespace TestSite
             else if (test == "1" || test == "Trails")
             {
                 chartTitle.Text = "Results for Trails Test";
-                dt = DataMethods.GetTestResultsTrails(userId, tId);
+                dt = DataMethods.GetTestResultsTrails(userId, tId).Tables[0];
 
                 TrailsResults tr = new TrailsResults();
                 tr.PartA = (dt.Rows[0]["Trail A"]) == DBNull.Value ? 0 : Convert.ToDecimal(dt.Rows[0]["Trail A"]);

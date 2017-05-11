@@ -34,7 +34,9 @@ namespace TestSite
                     Response.Redirect("~/UserProfile.aspx?isProvider=true;");
                     //Response.Redirect("~/Provider/ProviderPortal.aspx");
                 }
-        
+                if (userNameLg.Value == "IamAdmin")
+                    Response.Redirect("~/Admin/AdminPortal.aspx?admin=true");
+
 
                 Response.Redirect("~/UserProfile.aspx");
 

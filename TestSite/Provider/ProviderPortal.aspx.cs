@@ -133,8 +133,10 @@ namespace TestSite.Provider
         {
             gvTestPerUser.DataSource = DAL.DataMethods.GetAllUserTestsP(userId);
             gvTestPerUser.Columns[5].Visible = true;
+            gvTestPerUser.Columns[6].Visible = true;
             gvTestPerUser.DataBind();
             gvTestPerUser.Columns[5].Visible = false;
+            gvTestPerUser.Columns[6].Visible = false;
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -158,7 +160,7 @@ namespace TestSite.Provider
             string tId = row.Cells[5].Text;
             string userId = Convert.ToString(ViewState["tUserId"]);
             string age = Convert.ToString(ViewState["tUserAge"]);
-            string test = row.Cells[0].Text;
+            string test = row.Cells[6].Text;
             string url = "~/ResultsPage.aspx?userId=" + userId + "&tid=" + tId + "&test=" + test + "&age=" + age + "&provider=true";
             Response.Redirect(url);
         }
@@ -274,6 +276,7 @@ namespace TestSite.Provider
                 string display = dr["Name"].ToString() + "(amount:" + dr["Left"].ToString() + ")";
                 ddlProvTests.Items.Add(new ListItem(display, dr["Id"].ToString()));
             }
+            ddlProvTests.Items.Insert(0, new ListItem("Select Test", "NA"));
             //dt = ds.Tables[1];
             //if (dt.Rows.Count > 0)
             //{

@@ -48,6 +48,32 @@ namespace TestSite.DAL
 
         }
 
+        internal static void MakeUserProvider(string userId)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal static DataSet GetAllUsers()
+        {
+            DataSet ds = new DataSet();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("GetAllUsers", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                adp.Fill(ds);
+            }
+            catch (Exception ex)
+            {
+                InsertErrorMessage(ex.ToString(), null, null, "GetAllUsers");
+               
+            }
+
+            return ds;
+        }
+
         internal static DataTable GetModifiedTestData(string testId)
         {
             throw new NotImplementedException();
@@ -1290,9 +1316,9 @@ namespace TestSite.DAL
             return ds;
         }
 
-        public static DataTable GetSyllogismsUserResults(int tId)
+        public static DataSet GetSyllogismsUserResults(int tId)
         {
-            DataTable ds = new DataTable();
+            DataSet ds = new DataSet();
             SqlConnection conn = new SqlConnection(connectionSring);
             SqlCommand cmd = new SqlCommand("SelectSyllogismsUserResults", conn);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -1362,9 +1388,9 @@ namespace TestSite.DAL
             return ds;
         }
 
-        public static DataTable GetTestResultsTrails(string userId, int tId)
+        public static DataSet GetTestResultsTrails(string userId, int tId)
         {
-            DataTable ds = new DataTable();
+            DataSet ds = new DataSet();
             SqlConnection conn = new SqlConnection(connectionSring);
             SqlCommand cmd = new SqlCommand("GetUserTestResultsTrails", conn);
             cmd.CommandType = CommandType.StoredProcedure;

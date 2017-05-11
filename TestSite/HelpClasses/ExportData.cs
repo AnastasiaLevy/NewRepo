@@ -56,22 +56,26 @@ namespace TestSite.HelpClasses
         {
             DataTable name = DataMethods.GetUserName(userId);
             DataSet ds = null;
-            if (testType == Enums.TestId.TowerOfLondon)
+            if (testType == Enums.TestId.TowerOfLondon) //pass
             {
                 ds = DataMethods.GetTestResultsLondon(userId, tId);
             }
-            else if (testType == Enums.TestId.Nback)
+            else if (testType == Enums.TestId.Nback) //pass
             {
 
                 ds = DataMethods.GetNbackUserResults(userId, tId);
             }
             else if (testType == Enums.TestId.Syllogisms)
             {
-                ds = DataMethods.GetSyllogismsUserTable(tId);
+                ds = DataMethods.GetSyllogismsUserResults(tId);
             }
-            else if (testType == Enums.TestId.WisconsinCardSort)
+            else if (testType == Enums.TestId.WisconsinCardSort)//pass
             {
                ds = DataMethods.GetTestResultsCardSort(userId, tId, true);
+            }
+            else if (testType == Enums.TestId.Trails)
+            {
+                ds = DataMethods.GetTestResultsTrails(userId, tId);
             }
             ds.Tables.Add(name);
         
