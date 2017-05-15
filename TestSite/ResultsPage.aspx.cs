@@ -22,6 +22,7 @@ namespace TestSite
         string userName;
         DataTable dt;
         string test;
+        bool showReport;
         protected void Page_Prerender(object sender, EventArgs e)
         {
             logOut.Visible = true;
@@ -33,8 +34,13 @@ namespace TestSite
             userName = User.Identity.Name;
             tId = Convert.ToInt32(Request.QueryString["tId"]);
             test = Request.QueryString["test"].ToString();
-        
-             
+
+            showReport = Request.QueryString["provider"] ==null? true:false;
+      
+
+
+
+
                 int canView = DataMethods.GetUserViewResults(userId);
                 if (canView == 0 && Request.QueryString["provider"] == null)
                 {
@@ -55,7 +61,13 @@ namespace TestSite
                     { ShowResults(userId, ageGroup); }
 
                 }
-            
+            if (!showReport)
+            {
+                textStr.Visible = false;
+                movesMap.Visible = false;
+                
+            }
+
         }
 
         private void ShowResults(string userId, int ageGroup)
@@ -237,8 +249,8 @@ namespace TestSite
                     factor = CalculateResults(totalM, mean, std);
 
                     //descr.Text = "You have made " + totalM + Enums.ReturnLondonResultStrings(factor) + "\n\r";
-                    descr.Text = String.Format(Enums.ReturnLondonResultStrings(factor), numberMoves, mean);
-                    descr.Font.Size = 16;
+                   textStr.Text = String.Format(Enums.ReturnLondonResultStrings(factor), numberMoves, mean);
+                 
 
                 }
                 pResultPanel.Controls.Add(gv);

@@ -260,6 +260,9 @@
     <Content Include="assets\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="assets\bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="assets\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Norms\ChildGroupsNorms.pdf" />
+    <Content Include="Norms\AdultDrexelNorms.pdf" />
+    <Content Include="Instructions\TOLSetUpManual.pdf" />
     <None Include="Properties\PublishProfiles\testPub.pubxml" />
     <Content Include="Provider\ProviderPortal.aspx" />
     <Content Include="ResultsPage.aspx" />

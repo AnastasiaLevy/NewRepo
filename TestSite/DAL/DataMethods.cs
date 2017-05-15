@@ -48,12 +48,78 @@ namespace TestSite.DAL
 
         }
 
-        internal static void MakeUserProvider(string userId)
+        internal static DataSet GetProviderTable()
         {
-            throw new NotImplementedException();
+            DataSet ds = new DataSet();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("GetAllProviderTestsAdmin", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                adp.Fill(ds);
+            }
+            catch (Exception ex)
+            {
+                InsertErrorMessage(ex.ToString(), null, null, "GetAllProviderTestsAdmin");
+
+            }
+
+            return ds;
         }
 
-        internal static DataSet GetAllUsers()
+        internal static DataSet GetAvailableTest()
+        {
+            DataSet ds = new DataSet();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("GetAvailableTest", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                adp.Fill(ds);
+            }
+            catch (Exception ex)
+            {
+                InsertErrorMessage(ex.ToString(), null, null, "GetAvailableTest");
+
+            }
+
+            return ds;
+        }
+
+        internal static void InsertProviderTest(int providerId, string testType, int option, int number)
+        {
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("InsertProviderTest", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@providerId", providerId);
+            cmd.Parameters.AddWithValue("@testType", testType);
+            cmd.Parameters.AddWithValue("@testTypeOption", option);
+            if (number != -1)
+                cmd.Parameters.AddWithValue("@numLeft", number);
+            else
+                cmd.Parameters.AddWithValue("@numLeft", DBNull.Value);
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                InsertErrorMessage(ex.ToString(), null, null, "SaveUserMessage");
+                throw new Exception("Execption SaveUserMessage" + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        internal static DataSet GetAdminData()
         {
             DataSet ds = new DataSet();
             SqlConnection conn = new SqlConnection(connectionSring);

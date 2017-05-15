@@ -16,6 +16,12 @@ namespace TestSite
         private string userId;
         protected void Page_Load(object sender, EventArgs e)
         {
+         
+            if (!IsPostBack)
+            {
+                resetPw.Visible = false;
+                setUpUserCode.Visible = false;
+            }
             userId = Membership.GetUser(User.Identity.Name).ProviderUserKey.ToString();
          
           
@@ -37,7 +43,7 @@ namespace TestSite
                 //bday.Text = GetUserBithdate();
                 LoadPaidTests();
                 LoadFinishedTests();
-                setUpUserCode.Visible = false;
+                
             }
             else
             {
@@ -165,5 +171,37 @@ namespace TestSite
             txtUserCode.Text = DAL.DataMethods.GetUserProviderCode(userId);
 
         }
+           protected void btnResetPw_Click(object sender, EventArgs e)
+        {
+            MembershipUser u = Membership.GetUser(User.Identity.Name);
+
+            try
+            {
+           
+                if (u.ChangePassword(txtOldPw.Text, txtNewPw.Text))
+                {
+                   errorPW.Text = "Password changed.";
+                }
+                else
+                {
+                   errorPW.Text = "Password change failed. Please re-enter your values and try again.";
+                }
+            }
+            catch (Exception ex)
+            {
+                errorPW.Text ="Please re-enter your values and try again.";
+            }
+        }
+
+        protected void btnClosePw_Click(object sender, EventArgs e)
+        {
+            resetPw.Visible = false;
+        }
+
+        protected void btnResetPassword_Click(object sender, EventArgs e)
+        {
+            resetPw.Visible = true;
+        }
+
     }
 }

@@ -270,7 +270,7 @@ function checkPos(out) {
         displayFinalMessage20move(game)
     }
     canMove = false;
-    setTimeout(function () { canMove = true }, 700);
+    setTimeout(function () { canMove = true }, 300);
     //
     if (1 == 1) {
         if (nm == 0) {

@@ -65,7 +65,7 @@
     var totalTime;
     var initTTime;
     var gameTimer;
-    var speed = 450;
+    var speed = 200;
     var gameData;
 </script>
 <script src="js/tower/londonInit.js"></script>

@@ -31,7 +31,7 @@ namespace TestSite.Create
                 ddlPractice.DataSource = Enumerable.Range(0, 10);
                 ddlPractice.DataBind();
 
-                ddlNumberGames.DataSource = Enumerable.Range(0, 20);
+                ddlNumberGames.DataSource = Enumerable.Range(0, 101);
                 ddlNumberGames.DataBind();
 
                 ddlConuntFromRound.DataSource = Enumerable.Range(1, 20);
@@ -215,6 +215,11 @@ namespace TestSite.Create
                 DAL.DataMethods.InsertLondonMoves(testName, round, md.arrStart, md.arrFinish, data.numMoves, modifidId);
                 round++;
             }
+        }
+
+        protected void btnManual_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Instructions/TOLSetUpManual.pdf");
         }
     }
 

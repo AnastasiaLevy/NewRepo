@@ -24,6 +24,7 @@ namespace TestSite.Provider
                 setUpUserCode.Visible = false;
                 editTest.Visible = false;
                 cbAllowUserViewResults.Checked = false;
+                resetPw.Visible = false;
 
                 if (User.Identity.IsAuthenticated)
                 {
@@ -451,9 +452,6 @@ namespace TestSite.Provider
             {
                 DataView sortedView = new DataView(dataTable);
 
-
-
-
                 sortedView.Sort = e.SortExpression + " " + SortDir;
                 gvAllParticipants.DataSource = sortedView;
 
@@ -480,6 +478,48 @@ namespace TestSite.Provider
             {
                 ViewState["dirState"] = value;
             }
+        }
+
+        protected void drAdult_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Norms/AdultDrexelNorms.pdf");
+        }
+
+        protected void drChild_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Norms/ChildGroupsNorms.pdf");
+        }
+
+        protected void btnResetPassword_Click(object sender, EventArgs e)
+        {
+            resetPw.Visible = true;
+        }
+
+        protected void btnResetPw_Click(object sender, EventArgs e)
+        {
+            MembershipUser u = Membership.GetUser(User.Identity.Name);
+
+            try
+            {
+           
+                if (u.ChangePassword(txtOldPw.Text, txtNewPw.Text))
+                {
+                   errorPW.Text = "Password changed.";
+                }
+                else
+                {
+                   errorPW.Text = "Password change failed. Please re-enter your values and try again.";
+                }
+            }
+            catch (Exception ex)
+            {
+                errorPW.Text ="Please re-enter your values and try again.";
+            }
+        }
+
+        protected void btnClosePw_Click(object sender, EventArgs e)
+        {
+            resetPw.Visible = false;
         }
     }
 }

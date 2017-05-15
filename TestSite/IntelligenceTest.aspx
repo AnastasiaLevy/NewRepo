@@ -210,6 +210,7 @@
         <div class="container">
             <div class="text-center height-contact-element">
                 <h3>Follow Us</h3>
+                     <p>+1(719)888 9121</p> 
             </div>
             <img class="img-responsive displayed" src="../images/line-separator.png" alt="short" />
             <div class="text-center height-contact-element">

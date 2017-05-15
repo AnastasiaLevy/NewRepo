@@ -13,6 +13,15 @@ namespace TestSite.Create {
     public partial class LondonModify {
         
         /// <summary>
+        /// btnManual control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnManual;
+        
+        /// <summary>
         /// testName control.
         /// </summary>
         /// <remarks>

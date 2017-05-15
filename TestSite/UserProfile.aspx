@@ -107,17 +107,38 @@
 
                     </div>
                     <div class="col-lg-4">
-                        <asp:Button ID="btbAddProviderCode" runat="server" Text="Add Provider" CssClass ="btn btn-primary" OnClick="btbAddProviderCode_Click"/>
-                               <div id="setUpUserCode" class="panel panel-success" runat="server">
+                        <asp:Button ID="btbAddProviderCode" runat="server" Text="Add Provider Code" CssClass="btn btn-primary" OnClick="btbAddProviderCode_Click" width="30%"/>
+                        <div id="setUpUserCode" class="panel panel-success" runat="server">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Enter Provider Code</h3>
+                                <asp:Label ID="lblError" runat="server" Text=""></asp:Label>
+                            </div>
+                            <div class="panel-body">
+                                <asp:Label ID="Label5" runat="server" Text="Enter Code:"></asp:Label>
+                                <asp:TextBox ID="txtUserCode" runat="server" CssClass="createUser" Width="50%"></asp:TextBox>
+                                <asp:Button ID="btnCodeSave" class="btn btn-labeled btn-success" runat="server" Text="Save" OnClick="btnCodeSave_Click" />
+                                <asp:Button ID="btnCodeClose" class="btn btn-labeled btn-info" runat="server" Text="Close" OnClick="btnCodeClose_Click" />
+                            </div>
+                        </div>
+                    </div>
+                        <div class="col-lg-4">
+                        <asp:Button ID="Button1" runat="server" Text="Change Password" CssClass="btn btn-primary" OnClick="btnResetPassword_Click" width="50%"/>
+                     
+                                  <div id="resetPw" class="panel panel-success" runat="server">
                                     <div class="panel-heading">
-                                        <h3 class="panel-title">Enter Provider Code</h3>
-                                        <asp:Label ID="lblError" runat="server" Text=""></asp:Label>
+                                        <h3 class="panel-title">Reset Password</h3>
+                                        <asp:Label ID="errorPW" runat="server" Text=""></asp:Label>
                                     </div>
                                     <div class="panel-body">
-                                       <asp:Label ID="Label5" runat="server" Text="Enter Code:"></asp:Label>
-                                       <asp:TextBox ID="txtUserCode" runat="server" CssClass="createUser" Width="50%"></asp:TextBox>
-                                       <asp:Button ID="btnCodeSave" class="btn btn-labeled btn-success" runat="server" Text="Save" onClick="btnCodeSave_Click" />
-                                       <asp:Button ID="btnCodeClose" class="btn btn-labeled btn-info" runat="server" Text="Close" onClick ="btnCodeClose_Click"/>
+                                        <asp:Label ID="Label8" runat="server" Text="Old Password:"></asp:Label>
+                                        <asp:TextBox ID="txtOldPw" runat="server" CssClass="createUser" Width="100%"></asp:TextBox>
+
+                                        <asp:Label ID="Label7" runat="server" Text="New Password:"></asp:Label>
+                                        <asp:TextBox ID="txtNewPw" runat="server" CssClass="createUser" Width="100%"></asp:TextBox>
+
+
+                                        <asp:Button ID="btnResetPw" class="btn btn-labeled btn-success" runat="server" Text="Save" OnClick="btnResetPw_Click" />
+                                        <asp:Button ID="btnClosePw" class="btn btn-labeled btn-info" runat="server" Text="Close" OnClick="btnClosePw_Click" />
                                     </div>
                                 </div>
                     </div>
@@ -391,6 +412,7 @@
                     </div>
                     <div class="col-lg-12 text-center">
                         <p>Copyright &copy; Cogquiz 2016</p>
+                          <p>+1(719)888 9121</p> 
                     </div>
                 </div>
             </div>

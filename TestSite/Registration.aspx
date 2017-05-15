@@ -344,6 +344,7 @@
                 </div>
                 <div class="col-lg-12 text-center">
                     <p>Copyright &copy; cogQuiz 2016</p>
+                      <p>+1(719)888 9121</p> 
                 </div>
             </div>
         </div>

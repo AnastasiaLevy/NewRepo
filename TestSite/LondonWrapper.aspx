@@ -247,6 +247,7 @@
             <div class="container">
                 <div class="text-center height-contact-element">
                     <h3>Follow Us</h3>
+                         <p>+1(719)888 9121</p> 
                 </div>
                 <img class="img-responsive displayed" src="../images/line-separator.png" alt="short" />
                 <div class="text-center height-contact-element">
@@ -257,6 +258,7 @@
                         <li><a href="https://www.linkedin.com/company-beta/13213074/"><i class="fa fa-linkedin social-icons"></i></a></li>
                     </ul>
                 </div>
+             
             </div>
         </section>
     </form>

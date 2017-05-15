@@ -98,11 +98,30 @@
                             <asp:Button ID="btnAddNewPart" runat="server" Text="Add New Participant" OnClick="btnAddNewPart_Click" class="btn btn-labeled btn-info" Width="100%" />
                             <asp:Button ID="btnAddUserTest" runat="server" Text="Assign Participant Test" OnClick="btnAddUserTest_Click" class="btn btn-labeled btn-info" Width="100%" />
                             <asp:Button ID="btnModifyTest" runat="server" Text="Modify Test" OnClick="btnModifyTest_Click" class="btn btn-labeled btn-info" Width="100%" />
-
+                            <asp:Button ID="btnResetPassword" runat="server" Text="ResetPassword" OnClick="btnResetPassword_Click" class="btn btn-labeled btn-info" Width="100%" />
                         </div>
                         <div class="col-lg-8">
 
                             <asp:Panel ID="pProviderTools" runat="server">
+
+                                  <div id="resetPw" class="panel panel-success" runat="server">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Reset Password</h3>
+                                        <asp:Label ID="errorPW" runat="server" Text=""></asp:Label>
+                                    </div>
+                                    <div class="panel-body">
+                                        <asp:Label ID="Label8" runat="server" Text="Old Password:"></asp:Label>
+                                        <asp:TextBox ID="txtOldPw" runat="server" CssClass="createUser" Width="100%"></asp:TextBox>
+
+                                        <asp:Label ID="Label7" runat="server" Text="New Password:"></asp:Label>
+                                        <asp:TextBox ID="txtNewPw" runat="server" CssClass="createUser" Width="100%"></asp:TextBox>
+
+
+                                        <asp:Button ID="btnResetPw" class="btn btn-labeled btn-success" runat="server" Text="Save" OnClick="btnResetPw_Click" />
+                                        <asp:Button ID="btnClosePw" class="btn btn-labeled btn-info" runat="server" Text="Close" OnClick="btnClosePw_Click" />
+                                    </div>
+                                </div>
+
 
                                 <div id="setUpUserCode" class="panel panel-success" runat="server">
                                     <div class="panel-heading">
@@ -216,6 +235,7 @@
                             <asp:Panel ID="pProviderInfo" runat="server">
                             </asp:Panel>
                         </div>
+
                         <div class="clearfix"></div>
                     </div>
                 </div>
@@ -464,6 +484,42 @@
 
         </section>
 
+              <section id="NormsList">
+            <div class="row">
+                <div class="box">
+                    <div class="col-lg-12">
+                        <hr>
+                        <h2 class="intro-text text-center">Norms
+                            <strong>Tables</strong>
+                        </h2>
+                        <hr>
+                    </div>
+                    <div class="col-sm-2 text-center">
+                     <asp:Button ID="drAdult" runat="server" Text="TOL Drexel Adult"  class="btn btn-labeled btn-info"  onClick="drAdult_Click"/>
+                    </div>
+                    <div class="col-sm-2 text-center">
+                          <asp:Button ID="drChild" runat="server" Text="TOL Drexel Child"  class="btn btn-labeled btn-info"  onClick="drChild_Click"/>
+                     
+                    </div>
+                    <div class="col-sm-2 text-center">
+                    
+                    </div>
+                    <div class="col-sm-2 text-center">
+                    
+         
+                    </div>
+                    <div class="col-sm-2 text-center">
+                   
+                    </div>
+                    <div class="col-sm-2 text-center">
+                
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+
+        </section>
+
             <section id="testCategories">
                 <div class="row">
                     <div class="box" id="box">
@@ -551,7 +607,9 @@
                     </div>
                     <div class="col-lg-12 text-center">
                         <p>Copyright &copy; CogQuiz 2016</p>
+                          <p>+1(719)888 9121</p> 
                     </div>
+                     
                 </div>
             </div>
         </footer>
@@ -679,11 +737,10 @@
     });
 
     $('#emailUser').on("click", function (e) {
-        if ($("#<%=lblError.ClientID%>").text() != "New User was created")
-        {
+        if ($("#<%=lblError.ClientID%>").text() != "New User was created") {
             alert("The user have not been created yet.");
         }
-            
+
         else {
             var email = $("#<%=txtUserEmail.ClientID%>").val();
             var user = $("#<%=txtNewUser.ClientID%>").val();

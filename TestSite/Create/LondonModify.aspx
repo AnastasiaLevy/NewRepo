@@ -18,6 +18,9 @@
                             <strong>Set Up</strong>
                 </h2>
                 <hr />
+                <div>
+                         <asp:Button ID="btnManual" runat="server" Text="TOL Set Up Instructions"  class="btn btn-labeled btn-info"  onClick="btnManual_Click"/>
+                </div>
             </div>
         </div>
     </section>
@@ -707,14 +710,15 @@
         $('#makeAnother').click(function () {
             checkForChange();
             //update = false;
-            round = 0;
+            //round = 0;
             makeLabel(idItems.length);
 
             initFieldStart();
             initFieldEnd();
-            $('#numberOfMoves').val() = "";
+            $('#numberOfMoves').val("");
             $('#save').show();
             updateValues();
+        
             if (idItems.length >= prct + trl)
                 $('#makeAnother').hide();
             roundCount++;
