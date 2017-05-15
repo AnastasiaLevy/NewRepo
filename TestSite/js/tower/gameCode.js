@@ -305,6 +305,7 @@ function cleanDivs() {
 }
 arrData = [];
 var save = false;
+
 function passResultsForGame(game, initThinkTime, totalTime, nm, nmWrong, overTime, overMoves, minMoves) {
 
     var data = {
@@ -385,7 +386,7 @@ function saveTextAsFile() {
     var textToSave = text; 
     var textToSaveAsBlob = new Blob([textToSave], { type: "text/plain" });
     var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
-    var fileNameToSaveAs = 'Tower' + (new Date()).toISOString().substring(0, 10);//document.getElementById("inputFileNameToSaveAs").value;
+    var fileNameToSaveAs = 'Tower' + tId +(new Date()).toISOString().substring(0, 10);//document.getElementById("inputFileNameToSaveAs").value;
 
     var downloadLink = document.createElement("a");
     downloadLink.download = fileNameToSaveAs;

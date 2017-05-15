@@ -24,18 +24,7 @@
     <script src="js/bootstrap.min.js"></script>
     <link href="cogTest.css" rel="stylesheet" />
     <link href="css/userProfilecss.css" rel="stylesheet" />
-        <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date(); a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-        ga('create', 'UA-89149772-1', 'auto');
-        ga('send', 'pageview');
-
-</script>
 </head>
 
 <body>
@@ -107,7 +96,7 @@
 
                     </div>
                     <div class="col-lg-4">
-                        <asp:Button ID="btbAddProviderCode" runat="server" Text="Add Provider Code" CssClass="btn btn-primary" OnClick="btbAddProviderCode_Click" width="30%"/>
+                        <asp:Button ID="btbAddProviderCode" runat="server" Text="Add Provider Code" CssClass="btn btn-primary" OnClick="btbAddProviderCode_Click" width="50%"/>
                         <div id="setUpUserCode" class="panel panel-success" runat="server">
                             <div class="panel-heading">
                                 <h3 class="panel-title">Enter Provider Code</h3>
@@ -416,6 +405,18 @@
                     </div>
                 </div>
             </div>
+                    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-89149772-1', 'auto');
+        ga('send', 'pageview');
+
+</script>
         </footer>
 
     </form>

@@ -316,7 +316,8 @@ function saveResults() {
     //        percentScore: ""
     //    }
     //});
-
+    arrData = [];
+    save = false;
     for (var i = 0, len = currentScore.scoreArray.length; i < len; i++) {
       
         var data = {
@@ -329,7 +330,7 @@ function saveResults() {
             percentScore: currentScore.scoreArray[i][16],
             round: i
         }
-
+        arrData.push(data);
         jQuery.ajax({
             contentType: "application/json; charset=utf-8",
             dataType: "json",
@@ -343,18 +344,49 @@ function saveResults() {
 
             },
             error: function (resp) {
-                alert("The results were not saved correctly");
+           
+                save = true;
             }
         });
   
 
     }
+
     var user = document.getElementById("user").value;
     var tId = document.getElementById("tId").value;
     window.location.href = "../ResultsPage.aspx?userId=" + user + "&tid=" + tId + "&test=4";
+    if (save = true)
+        saveTextAsFile(arrData);
+
  }
-    
+function saveTextAsFile(arrData) {
+    var user = document.getElementById("user").value;
+    var tId = document.getElementById("tId").value;
+    var text = "UserId: " + user + ".\r\n" +
+               "TestId: " + tId + ".\r\n"
    
+    arrData.forEach(function (element) {
+        text += JSON.stringify(element) + ".\r\n";
+    });
+    
+    var textToSave = text;
+    var textToSaveAsBlob = new Blob([textToSave], { type: "text/plain" });
+    var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
+    var fileNameToSaveAs = 'Nback' + tId + (new Date()).toISOString().substring(0, 10);//document.getElementById("inputFileNameToSaveAs").value;
+
+    var downloadLink = document.createElement("a");
+    downloadLink.download = fileNameToSaveAs;
+    downloadLink.innerHTML = "Download File";
+    downloadLink.href = textToSaveAsURL;
+    downloadLink.onclick = destroyClickedElement;
+    downloadLink.style.display = "none";
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    alert("There was a connection problem. Your results were saved in a file " + fileNameToSaveAs + " in Downloads folder.")
+}
+function destroyClickedElement(event) {
+    document.body.removeChild(event.target);
+}
 
     function updateTestQuestion( showLetter ) 
     {

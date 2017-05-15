@@ -420,26 +420,26 @@ namespace TestSite.HelpClasses
             switch (factor)
             {
 
-                case -3:
+                case 3:
                     text = "Excellent performance! For individuals your age your score places you in the top 2 to 3 percent. Scores like yours can be interpreted to indicate an excellent ability to use feedback (correct or incorrect matching) to make appropriate changes in your cognitive strategy. In general terms, you were able to use feedback following an attempted match to modify your strategy in matching cards. You learned to inhibit incorrect matches and explore alternative strategies.";
                     break;
-                case -2:
+                case 2:
                     text = "Very Good performance! For individuals your age your score places you in the top 10 to 15 percent. Scores like yours can be interpreted to indicate an excellent ability to use feedback (correct or incorrect matching) to make appropriate changes in your cognitive strategy. In general terms, you were able to use feedback following an attempted match to modify your strategy in matching cards. You learned to inhibit incorrect matches and explore alternative strategies.";
                     break;
-                case -1:
+                case 1:
                     text = "Good. You demonstrated high average performance. For individuals your age your score is within the normal range. In terms of unique errors made, your performance was in the upper 50 percent.";
                     break;
                 case 0:
                     text = "You demonstrated average performance. For individuals your age your score is within the normal range. In terms of unique errors made, your performance was in the normal range.";
                     break;
-                case 1:
+                case -1:
                     text = "You demonstrated average performance. For individuals your age your score is within the normal range. In terms of unique errors made, your performance was in the normal range.";
                     break;
-                case 2:
-                    text = "Your performance did not fall within the average range for someone your age. There are a large numer of factors that may have contributed to your performance. This test is not diagnostic. There are a range of scores and some will be above and some will be below average. If you have any concerns about your performance you might consider consulting with a licensed professional health provider. Your results can be printed and provided to anyone you consult with";
+                case -2:
+                    text = "Your performance did not fall within the average range for someone your age. There are a large numer of factors that may have contributed to your performance. This test is not diagnostic. There are a range of scores and some will be above and some will be below average. If you have any concerns about your performance you might consider consulting with a licensed professional health provider. Your results can be printed and provided to anyone you consult with.";
                     break;
-                case 3:
-                    text = "Your performance did not fall within the average range for someone your age. There are a large numer of factors that may have contributed to your performance. This test is not diagnostic. There are a range of scores and some will be above and some will be below average. If you have any concerns about your performance you might consider consulting with a licensed professional health provider. Your results can be printed and provided to anyone you consult with";
+                case -3:
+                    text = "Your performance did not fall within the average range for someone your age. There are a large numer of factors that may have contributed to your performance. This test is not diagnostic. There are a range of scores and some will be above and some will be below average. If you have any concerns about your performance you might consider consulting with a licensed professional health provider. Your results can be printed and provided to anyone you consult with.";
                     break;
                 case 10:
                     text = "Unable determing results. Please contact administrator.";
