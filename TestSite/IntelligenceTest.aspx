@@ -69,7 +69,7 @@
             <img class="img-responsive displayed" src="../images/line-separator.png" alt="short" />
             <h3>About:</h3>
             <p>
-                Currently, there is not a formal intelligence test offered by CogQuiz. However, several of our tests show medium correlations with intelligence. For example, speed of processing (Part A of Trails Test) and problem solving (Tower of London) demonstrate medium sized correations with intelligence. The performance on the N-back working memory test shows a slightly higher correlation with intelligence. The study of human memory stretches back at least 2,000 years to Aristotle’s early attempts to understand memory in his treatise 
+                Currently, there is not a formal intelligence test offered by CogQuiz. However, several of our tests show medium correlations with intelligence. For example, speed of processing (Part A of Trails Test) and problem solving (Tower of London) demonstrate medium sized correations with intelligence. The performance on the N-back working memory test shows a slightly higher correlation with intelligence. The study of human memory stretches back at least 2, 000 years to Aristotle’s early attempts to understand memory in his treatise 
     
 
             </p>

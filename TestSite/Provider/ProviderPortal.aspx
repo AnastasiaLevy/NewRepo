@@ -491,7 +491,7 @@
                      
                     </div>
                     <div class="col-sm-2 text-center">
-                    
+                    <asp:Button ID="CST" runat="server" Text="Card Sort Test"  class="btn btn-labeled btn-info"  onClick="CST_Click"/>
                     </div>
                     <div class="col-sm-2 text-center">
                     

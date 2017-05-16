@@ -221,6 +221,11 @@ namespace TestSite.Create
         {
             Response.Redirect("~/Instructions/TOLSetUpManual.pdf");
         }
+
+        protected void btnVideo_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("https://youtu.be/VH4AMss26W0");
+        }
     }
 
     internal class MovesData

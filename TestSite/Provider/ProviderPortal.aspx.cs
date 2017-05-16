@@ -521,5 +521,10 @@ namespace TestSite.Provider
         {
             resetPw.Visible = false;
         }
+
+        protected void CST_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Norms/CardSort.pdf");
+        }
     }
 }

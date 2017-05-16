@@ -200,7 +200,7 @@
                                 <h4 class="blue">Single Test</h4>
                                 <span class="icon blue"><i class="fa fa-usd"></i></span>
                                 <span class="price-large blue">5</span>
-                                <span class="price-small">,00</span>
+                                <span class="price-small">.00</span>
                                 <p>One Time Run</p>
                                 <asp:Button ID="single" class="btn btn-info" runat="server" OnClick="single_Click" Text="Buy Now" />
                             </div>
@@ -212,7 +212,7 @@
                                 <h4 class="yellow">Set of 10</h4>
                                 <span class="icon yellow"><i class="fa fa-usd"></i></span>
                                 <span class="price-large yellow">40</span>
-                                <span class="price-small">,00</span>
+                                <span class="price-small">.00</span>
                                 <p>Small Project</p>
                                 <asp:Button ID="ten" class="btn btn-warning" runat="server" OnClick="ten_Click" Text="Call Us" />
                             </div>
@@ -224,7 +224,7 @@
                                 <h4 class="green">Set of 100</h4>
                                 <span class="icon green"><i class="fa fa-usd "></i></span>
                                 <span class="price-large green">80</span>
-                                <span class="price-small">,00</span>
+                                <span class="price-small">.00</span>
                                 <p>Medium Size Project</p>
                                 <asp:Button ID="hundred" class="btn btn-success" runat="server" OnClick="hundred_Click" Text="Call Us" />
                             </div>
@@ -236,7 +236,7 @@
                                 <h4 class="red">Unlimited Use</h4>
                                 <span class="icon red"><i class="fa fa-usd "></i></span>
                                 <span class="price-large red">499</span>
-                                <span class="price-small">,00</span>
+                                <span class="price-small">.00</span>
                                 <p>
                                     Any Number of Participants
                                 <p>

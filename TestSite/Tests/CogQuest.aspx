@@ -154,7 +154,7 @@
                                 <h4 class="red">Unlimited Use</h4>
                                 <span class="icon red"><i class="fa fa-usd "></i></span>
                                 <span class="price-large red">600</span>
-                                <span class="price-small">,00</span>
+                                <span class="price-small">.00</span>
                                 <p>
                                     Any Number of Participants
                                 <p>

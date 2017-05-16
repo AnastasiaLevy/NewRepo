@@ -22,6 +22,15 @@ namespace TestSite.Create {
         protected global::System.Web.UI.WebControls.Button btnManual;
         
         /// <summary>
+        /// btnVideo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnVideo;
+        
+        /// <summary>
         /// testName control.
         /// </summary>
         /// <remarks>

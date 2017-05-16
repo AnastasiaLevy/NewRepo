@@ -263,6 +263,7 @@
     <Content Include="Norms\ChildGroupsNorms.pdf" />
     <Content Include="Norms\AdultDrexelNorms.pdf" />
     <Content Include="Instructions\TOLSetUpManual.pdf" />
+    <Content Include="Norms\CardSort_norms.pdf" />
     <None Include="Properties\PublishProfiles\testPub.pubxml" />
     <Content Include="Provider\ProviderPortal.aspx" />
     <Content Include="ResultsPage.aspx" />

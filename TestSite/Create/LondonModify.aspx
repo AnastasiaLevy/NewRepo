@@ -7,6 +7,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.1/raphael.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.1/raphael.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section id="">
@@ -20,10 +21,14 @@
                 <hr />
                 <div>
                          <asp:Button ID="btnManual" runat="server" Text="TOL Set Up Instructions"  class="btn btn-labeled btn-info"  onClick="btnManual_Click"/>
+                                 <asp:Button ID="btnVideo" runat="server" Text="Video"  class="btn btn-labeled btn-info"  onClick="btnVideo_Click"/>
+
                 </div>
             </div>
         </div>
     </section>
+  
+
 
     <section id="testInstructions">
         <div class="row ">
@@ -212,6 +217,7 @@
             <div class="clearfix"></div>
         </div>
     </section>
+
     <textarea id="movesText" rows="5" runat="server"></textarea>
     <script>
         //=================================================================
@@ -1284,5 +1290,7 @@
         //    }
         //    return blue;
         //}
+
     </script>
+
 </asp:Content>
