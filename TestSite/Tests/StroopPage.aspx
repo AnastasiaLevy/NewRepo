@@ -9,7 +9,7 @@
     	<meta id="viewport" name='viewport' />
     	 <link rel="shortcut icon" href="../images/favicon.ico" />
         <link href="../css/stroopGame.css" rel="stylesheet" />
-
+        <meta name="google-site-verification" content="GMj8owmZtkuKU0Fa_4Zg82VbKsQPO8VkZD_pHsRghA4" />
     </head>
 
     <body bgcolor="#b0c4de" class="bdCSS">

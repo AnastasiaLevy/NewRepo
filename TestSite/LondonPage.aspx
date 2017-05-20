@@ -10,6 +10,7 @@
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <link href="../cogTest.css" rel="stylesheet" />
     <link rel="shortcut icon" href="images/favicon.ico" />
+    <meta name="google-site-verification" content="GMj8owmZtkuKU0Fa_4Zg82VbKsQPO8VkZD_pHsRghA4" />
   
 </head>
 <body>

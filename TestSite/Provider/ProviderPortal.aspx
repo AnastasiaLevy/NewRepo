@@ -10,9 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="AnaLevy">
-    <link rel="..//shortcut icon" href="../images/favicon.ico">
-    />
-  
+    <meta name="google-site-verification" content="GMj8owmZtkuKU0Fa_4Zg82VbKsQPO8VkZD_pHsRghA4" />
+    
+    <link rel="..//shortcut icon" href="../images/favicon.ico"/>
     <title>ProviderPortal</title>
     <link href="../fonts/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="../css/bootstrap.css" rel="stylesheet" />
@@ -90,7 +90,6 @@
                             <asp:Button ID="btnResetPassword" runat="server" Text="ResetPassword" OnClick="btnResetPassword_Click" class="btn btn-labeled btn-info" Width="100%" />
                         </div>
                         <div class="col-lg-8">
-
                             <asp:Panel ID="pProviderTools" runat="server">
 
                                   <div id="resetPw" class="panel panel-success" runat="server">
@@ -110,7 +109,6 @@
                                         <asp:Button ID="btnClosePw" class="btn btn-labeled btn-info" runat="server" Text="Close" OnClick="btnClosePw_Click" />
                                     </div>
                                 </div>
-
 
                                 <div id="setUpUserCode" class="panel panel-success" runat="server">
                                     <div class="panel-heading">
@@ -183,11 +181,8 @@
                                                 <asp:Label ID="Label2" cssClass ="labelBold" runat="server" Text="Password"></asp:Label>
                                                 <asp:TextBox ID="txtPassword" runat="server" CssClass="createUser" Width="100%"></asp:TextBox>
 
-                                                <asp:CheckBox ID="cbAllowUserViewResults" runat="server" Text="Allow User View Results" TextAlign="Left" />
-                                                  
+                                                <asp:CheckBox ID="cbAllowUserViewResults" runat="server" Text="Allow User View Results" TextAlign="Left" />                                              
                                             </div>
-                                     
-                                               
                                         </div>
                                     </div>
                                     <div class="panel-footer">
@@ -494,7 +489,7 @@
                     <asp:Button ID="CST" runat="server" Text="Card Sort Test"  class="btn btn-labeled btn-info"  onClick="CST_Click"/>
                     </div>
                     <div class="col-sm-2 text-center">
-                    
+                     <asp:Button ID="Nback" runat="server" Text="N-back"  class="btn btn-labeled btn-info"  onClick="Nback_Click"/>
          
                     </div>
                     <div class="col-sm-2 text-center">
@@ -602,15 +597,15 @@
                 </div>
             </div>
                     <script>
-            (function (i, s, o, g, r, a, m) {
-                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date(); a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+                        (function (i, s, o, g, r, a, m) {
+                            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                                (i[r].q = i[r].q || []).push(arguments)
+                            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+                        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-            ga('create', 'UA-89149772-1', 'auto');
-            ga('send', 'pageview');
+                        ga('create', 'UA-89149772-1', 'auto');
+                        ga('send', 'pageview');
 
 </script>
         </footer>
@@ -624,15 +619,6 @@
 <script src="../js/jquery-responsiveTables.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <script>
-    //$(document).ready(function () {
-    //    $('table').ResponsiveTable({
-    //        staticColumns: 2,
-    //        scrollRight: true,
-    //        scrollHintEnabled: true,
-    //        scrollHintDuration: 2000
-    //    });
-    //});
-
     $('.custom-menu a[href^="#"], .intro-scroller .inner-link').on('click', function (e) {
         e.preventDefault();
 
@@ -698,11 +684,6 @@
         return false;
     });
 
-    //$("#btnCancel").on('click', function (e) {
-    //    e.preventDefault();
-    //    document.getElementById('pop').style.display = 'none';
-    //})
-
     $("#<%=txtUserEmail.ClientID%>").mouseout(function () {
 
         var text = $("#<%=txtUserEmail.ClientID%>").val();
@@ -713,8 +694,6 @@
         else {
 
             $("#<%=emailError.ClientID%>").text("");
-
-
         }
     });
 

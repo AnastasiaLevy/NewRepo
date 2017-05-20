@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Memory Tests: Test yourself and help us learn more about the mind and brain by taking long term memory test online, short term memory test online from CogQuiz. Visit us!">
     <meta name="keywords" content="N Back: Keywords: Long Term Memory Test Online, Short, CogQuiz">
+    <meta name="google-site-verification" content="GMj8owmZtkuKU0Fa_4Zg82VbKsQPO8VkZD_pHsRghA4" />
     <title>Cognitive Style Questionnaire, Cognitive Test Online Practice, Cognitive Ability Test Online</title>
     <link rel="shortcut icon" href="../images/favicon.ico"/>
 

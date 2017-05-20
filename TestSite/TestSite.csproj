@@ -192,6 +192,11 @@
     <Content Include="images\test-point.jpg" />
     <Content Include="images\tower.jpg" />
     <Content Include="js\jquery-responsiveTables.js" />
+    <Content Include="js\memoryCards\cardsimages.js" />
+    <Content Include="js\memoryCards\config.js" />
+    <Content Include="js\memoryCards\game.js" />
+    <Content Include="js\memoryCards\hitsscheme.js" />
+    <Content Include="js\memoryCards\score.js" />
     <Content Include="js\nback\config.js" />
     <Content Include="js\nback\game.js" />
     <Content Include="js\nback\nback.js" />
@@ -222,6 +227,8 @@
     <Content Include="js\wcst.js" />
     <Content Include="Login.aspx" />
     <Content Include="LondonWrapper.aspx" />
+    <Content Include="memoryImg\fullscreenoff.png" />
+    <Content Include="memoryImg\fullscreenon.png" />
     <Content Include="packages.config" />
     <Content Include="assets\font-awesome\fonts\fontawesome-webfont.eot" />
     <Content Include="assets\font-awesome\fonts\fontawesome-webfont.ttf" />
@@ -264,6 +271,7 @@
     <Content Include="Norms\AdultDrexelNorms.pdf" />
     <Content Include="Instructions\TOLSetUpManual.pdf" />
     <Content Include="Norms\CardSort_norms.pdf" />
+    <Content Include="Norms\NbackNorms.pdf" />
     <None Include="Properties\PublishProfiles\testPub.pubxml" />
     <Content Include="Provider\ProviderPortal.aspx" />
     <Content Include="ResultsPage.aspx" />
@@ -316,8 +324,6 @@
     <Content Include="images\spinner1.gif" />
     <Content Include="images\trails.jpg" />
     <Content Include="images\unsplash11.jpg" />
-    <Content Include="images\unsplash2.jpg" />
-    <Content Include="images\unsplash3.jpg" />
     <Content Include="images\unsplash4.jpg" />
     <Content Include="images\unsplash5.jpg" />
     <Content Include="images\unsplash6.jpg" />
@@ -326,7 +332,7 @@
     <Content Include="js\jquery.js" />
     <Content Include="js\jquery.quicksand.js" />
     <Content Include="js\map.js" />
-    <Content Include="js\trailsA.js" />
+    <Content Include="Norms\trailsA.js" />
     <Content Include="MainPage.aspx" />
     <None Include="Scripts\jquery-1.8.0.intellisense.js" />
     <Content Include="Registration.aspx" />
@@ -337,6 +343,8 @@
     <Content Include="Style\timelify.css" />
     <Content Include="Tests\CogQuest.aspx" />
     <Content Include="Tests\CogQuestTool\CogQuestSetUp.aspx" />
+    <Content Include="Tests\MemoryCardsPage.aspx" />
+    <Content Include="Tests\MemoryCardsWrapper.aspx" />
     <Content Include="Tests\NbackPage.aspx" />
     <Content Include="Tests\NbackWrapper.aspx" />
     <Content Include="Tests\StroopPage.aspx" />
@@ -488,6 +496,20 @@
     <Compile Include="Tests\CogQuest.aspx.designer.cs">
       <DependentUpon>CogQuest.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Tests\MemoryCardsPage.aspx.cs">
+      <DependentUpon>MemoryCardsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\MemoryCardsPage.aspx.designer.cs">
+      <DependentUpon>MemoryCardsPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\MemoryCardsWrapper.aspx.cs">
+      <DependentUpon>MemoryCardsWrapper.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\MemoryCardsWrapper.aspx.designer.cs">
+      <DependentUpon>MemoryCardsWrapper.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Tests\NbackPage.aspx.cs">
       <DependentUpon>NbackPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -588,6 +610,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="css\images\" />
+    <Folder Include="memoryImg\faces\" />
+    <Folder Include="memoryImg\flags\" />
+    <Folder Include="memoryImg\others\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

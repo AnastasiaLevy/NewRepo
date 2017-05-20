@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Tower Of London test">
     <meta name="author" content="AnaLevy">
+    <meta name="google-site-verification" content="GMj8owmZtkuKU0Fa_4Zg82VbKsQPO8VkZD_pHsRghA4" />
     <title>Test Results
     </title>
     <link rel="shortcut icon" href="images/favicon.ico" />

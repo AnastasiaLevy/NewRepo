@@ -9,6 +9,7 @@
     <meta name="description" content="Welcome to CogQuiz, We offer tests for children and adults, from ADHD to psychological personality tests online. Visit us for more information!">
     <meta name="keywords" content="Available tests: ADHD, ADD, Autism, Dementia, Paranoid Personality Disorder, Schizoid Personality Disorder, Schizotypal Disorder, Antisocial Personality Disorder, Narcissistic Personality Disorder, Avoidant Personality Disorder, Amnesia, Alexia, Brain Damage, Head Injury, and more." />
     <meta name="author" content="CogQuiz">
+    <meta name="google-site-verification" content="GMj8owmZtkuKU0Fa_4Zg82VbKsQPO8VkZD_pHsRghA4" />
     <title>CogQuiz, psychological tests online; Tests for kids and adults, with norms</title>
     
     <link rel="shortcut icon" href="images/favicon.ico" />

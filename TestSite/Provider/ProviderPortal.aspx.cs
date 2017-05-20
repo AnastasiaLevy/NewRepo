@@ -464,6 +464,34 @@ namespace TestSite.Provider
             gvAllParticipants.Focus();
         }
 
+        protected void btnResetPw_Click(object sender, EventArgs e)
+        {
+            MembershipUser u = Membership.GetUser(User.Identity.Name);
+
+            try
+            {
+
+                if (u.ChangePassword(txtOldPw.Text, txtNewPw.Text))
+                {
+                    errorPW.Text = "Password changed.";
+                }
+                else
+                {
+                    errorPW.Text = "Password change failed. Please re-enter your values and try again.";
+                }
+            }
+            catch (Exception ex)
+            {
+                errorPW.Text = "Please re-enter your values and try again.";
+            }
+        }
+
+
+        protected void btnResetPassword_Click(object sender, EventArgs e)
+        {
+            resetPw.Visible = true;
+        }
+
         protected SortDirection dir
         {
             get
@@ -480,6 +508,12 @@ namespace TestSite.Provider
             }
         }
 
+        protected void btnClosePw_Click(object sender, EventArgs e)
+        {
+            resetPw.Visible = false;
+        }
+
+
         protected void drAdult_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Norms/AdultDrexelNorms.pdf");
@@ -487,44 +521,17 @@ namespace TestSite.Provider
 
         protected void drChild_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Norms/ChildGroupsNorms.pdf");
-        }
-
-        protected void btnResetPassword_Click(object sender, EventArgs e)
-        {
-            resetPw.Visible = true;
-        }
-
-        protected void btnResetPw_Click(object sender, EventArgs e)
-        {
-            MembershipUser u = Membership.GetUser(User.Identity.Name);
-
-            try
-            {
-           
-                if (u.ChangePassword(txtOldPw.Text, txtNewPw.Text))
-                {
-                   errorPW.Text = "Password changed.";
-                }
-                else
-                {
-                   errorPW.Text = "Password change failed. Please re-enter your values and try again.";
-                }
-            }
-            catch (Exception ex)
-            {
-                errorPW.Text ="Please re-enter your values and try again.";
-            }
-        }
-
-        protected void btnClosePw_Click(object sender, EventArgs e)
-        {
-            resetPw.Visible = false;
+            Response.Redirect("~/Norms/CardSort_norms.pdf");
         }
 
         protected void CST_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Norms/CardSort.pdf");
+        }
+
+        protected void Nback_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Norms/NbackNorms.pdf");
         }
     }
 }

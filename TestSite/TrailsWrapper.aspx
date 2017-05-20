@@ -10,6 +10,7 @@
     <meta name="description" content="CogQuiz provides Trails test online with norms for children to adults . Visit us for more info!">
     <meta name="author" content="CogQuiz">
     <meta name ="keywords" content= "Trails Test Online, CogQuiz" />
+    <meta name="google-site-verification" content="GMj8owmZtkuKU0Fa_4Zg82VbKsQPO8VkZD_pHsRghA4" />
     <title>Trails Test Online – CogQuiz</title>
     <link rel="shortcut icon" href="images/favicon.ico" />
     <!-- Bootstrap Core CSS -->
