@@ -521,12 +521,12 @@ namespace TestSite.Provider
 
         protected void drChild_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Norms/CardSort_norms.pdf");
+            Response.Redirect("~/Norms/ChildGroupsNorms.pdf");
         }
 
         protected void CST_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Norms/CardSort.pdf");
+            Response.Redirect("~/Norms/CardSort_norms.pdf");
         }
 
         protected void Nback_Click(object sender, EventArgs e)

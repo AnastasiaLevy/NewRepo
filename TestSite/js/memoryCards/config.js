@@ -18,18 +18,18 @@ var test1Message = ["Test1",
                      
 var rectangleTest1Message = [250, 250, 510, 200]; //left, top, width, height
 
-var imageForTest1 = ["images/flags/flag01.png",
-                     "images/flags/flag02.png",
-                     "images/flags/flag03.png",
-                     "images/flags/flag04.png",
-                     "images/flags/flag05.png",
-                     "images/flags/flag06.png",
-                     "images/flags/flag07.png",
-                     "images/flags/flag08.png",
-                     "images/flags/flag09.png",
-                     "images/flags/flag10.png",
-                     "images/flags/flag11.png",
-                     "images/flags/flag12.png"];
+var imageForTest1 = ["../memoryImg/flags/flag01.png",
+                     "../memoryImg/flags/flag02.png",
+                     "../memoryImg/flags/flag03.png",
+                     "../memoryImg/flags/flag04.png",
+                     "../memoryImg/flags/flag05.png",
+                     "../memoryImg/flags/flag06.png",
+                     "../memoryImg/flags/flag07.png",
+                     "../memoryImg/flags/flag08.png",
+                     "../memoryImg/flags/flag09.png",
+                     "../memoryImg/flags/flag10.png",
+                     "../memoryImg/flags/flag11.png",
+                     "../memoryImg/flags/flag12.png"];
                      
 var timeTest1 = 60000; //time of test ms
                      
@@ -54,18 +54,18 @@ var test2Message = ["Test2",
                      
 var rectangleTest2Message = [250, 250, 510, 200]; //left, top, width, height
 
-var imageForTest2 = ["images/faces/face01.png",
-                     "images/faces/face02.png",
-                     "images/faces/face03.png",
-                     "images/faces/face04.png",
-                     "images/faces/face05.png",
-                     "images/faces/face06.png",
-                     "images/faces/face07.png",
-                     "images/faces/face08.png",
-                     "images/faces/face09.png",
-                     "images/faces/face10.png",
-                     "images/faces/face11.png",
-                     "images/faces/face12.png"];
+var imageForTest2 = ["../memoryImg/faces/face01.png",
+                     "../memoryImg/faces/face02.png",
+                     "../memoryImg/faces/face03.png",
+                     "../memoryImg/faces/face04.png",
+                     "../memoryImg/faces/face05.png",
+                     "../memoryImg/faces/face06.png",
+                     "../memoryImg/faces/face07.png",
+                     "../memoryImg/faces/face08.png",
+                     "../memoryImg/faces/face09.png",
+                     "../memoryImg/faces/face10.png",
+                     "../memoryImg/faces/face11.png",
+                     "../memoryImg/faces/face12.png"];
                      
 var timeTest2 = 60000; //time of test ms
                      
@@ -89,18 +89,18 @@ var test3Message = ["Test3",
                      
 var rectangleTest3Message = [250, 250, 510, 200]; //left, top, width, height
 
-var imageForTest3 = ["images/others/other01.png",
-                     "images/others/other02.png",
-                     "images/others/other03.png",
-                     "images/others/other04.png",
-                     "images/others/other05.png",
-                     "images/others/other06.png",
-                     "images/others/other07.png",
-                     "images/others/other08.png",
-                     "images/others/other09.png",
-                     "images/others/other10.png",
-                     "images/others/other11.png",
-                     "images/others/other12.png"];
+var imageForTest3 = ["../memoryImg/others/other01.png",
+                     "../memoryImg/others/other02.png",
+                     "../memoryImg/others/other03.png",
+                     "../memoryImg/others/other04.png",
+                     "../memoryImg/others/other05.png",
+                     "../memoryImg/others/other06.png",
+                     "../memoryImg/others/other07.png",
+                     "../memoryImg/others/other08.png",
+                     "../memoryImg/others/other09.png",
+                     "../memoryImg/others/other10.png",
+                     "../memoryImg/others/other11.png",
+                     "../memoryImg/others/other12.png"];
                      
 var timeTest3 = 60000; //time of test ms
 

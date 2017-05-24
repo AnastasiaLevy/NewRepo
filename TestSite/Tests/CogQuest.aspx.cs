@@ -127,7 +127,7 @@ namespace TestSite.Tests
         {
             string business = "L3SCKTNV3EWA4";//"P6JMSAGR5XCE4";// "analescheok@gmail.com"
           
-            itemAmount = 0.01;
+       
             string currencyCode = "USD";
 
             StringBuilder ppHref = new StringBuilder();
@@ -145,7 +145,7 @@ namespace TestSite.Tests
 
         protected void ten_Click(object sender, EventArgs e)
         {
-            RunPayPal("CogQuest", 100.00);
+            //RunPayPal("CogQuest", 100.00);
         }
 
         protected void runTest_Click(object sender, EventArgs e)

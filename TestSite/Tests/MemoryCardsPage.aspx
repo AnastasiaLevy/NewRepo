@@ -44,7 +44,7 @@
 
         #fullScreenOn {
             visibility: hidden;
-            background: url("/memorycards/images/fullscreenon.png") no-repeat bottom;
+            background: url("../memoryImg/fullscreenoff.png") no-repeat bottom;
             position: absolute;
             border: none;
             width: 30px;
@@ -57,8 +57,7 @@
 
         #fullScreenClose {
             visibility: hidden;
-            background: url("/memorycards/images/fullscreenoff.png") no-repeat bottom;
-            position: absolute;
+            background: url("../memoryImg/fullscreenon.png") no-repeat bottom;
             border: none;
             width: 30px;
             height: 30px;
@@ -92,11 +91,12 @@
         <input type="button" id="fullScreenOn" style="z-index: 2; position: absolute;" />
         <input type="button" id="fullScreenClose" style="z-index: 2; position: absolute;" />
     </div>
-    <script src="config.js"></script>
-    <script src="js/score.js"></script>
-    <script src="js/hitsscheme.js"></script>
-    <script src="js/cardsimages.js"></script>
-    <script src="js/game.js"></script>
+    <script src="../js/memoryCards/config.js"></script>
+    <script src="../js/memoryCards/score.js"></script>
+    <script src="../js/memoryCards/hitsscheme.js"></script>
+    <script src="../js/memoryCards/cardsimages.js"></script>
+    <script src="../js/memoryCards/game.js"></script>
+   
 </body>
 
 </html>

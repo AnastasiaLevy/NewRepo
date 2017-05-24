@@ -17,6 +17,18 @@ var previousTime = 0;
 
 function init()
 {
+    var ur = localStorage.getItem("tId");
+    var state = localStorage.getItem("finished");
+
+    if (
+        ur == document.getElementById("tId").value && state == "true") {
+        goToPage();
+    }
+    else {
+        localStorage.setItem("tId", document.getElementById("tId").value);
+        localStorage.setItem("finished", false);
+    }
+
     btnFullScreenOn = document.getElementById( "fullScreenOn" );
     btnFullScreenOn.onclick = function() { launchIntoFullscreen( document.documentElement ); };
     btnFullScreenClose = document.getElementById( "fullScreenClose" );
@@ -305,6 +317,8 @@ function finishTest()
 }
 
 function saveResults() {
+    localStorage.setItem("tId", document.getElementById("tId").value);
+    localStorage.setItem("finished", true);
     //currentScore.scoreArray.foreach(function(element) {
     //    var data = {
     //        Hits: "",
@@ -352,13 +366,17 @@ function saveResults() {
 
     }
 
-    var user = document.getElementById("user").value;
-    var tId = document.getElementById("tId").value;
-    window.location.href = "../ResultsPage.aspx?userId=" + user + "&tid=" + tId + "&test=4";
+    goToPage();
     if (save = true)
         saveTextAsFile(arrData);
 
- }
+}
+function goToPage() {
+    var user = document.getElementById("user").value;
+    var tId = document.getElementById("tId").value;
+    window.location.href = "../ResultsPage.aspx?userId=" + user + "&tid=" + tId + "&test=4";
+}
+
 function saveTextAsFile(arrData) {
     var user = document.getElementById("user").value;
     var tId = document.getElementById("tId").value;

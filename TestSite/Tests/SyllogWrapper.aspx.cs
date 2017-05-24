@@ -200,7 +200,7 @@ namespace TestSite.Tests
         {
             string business = "L3SCKTNV3EWA4";// "analescheok@gmail.com"
             string itemName = "nback Test";
-            double itemAmount = 0.01;
+            double itemAmount = 4.00;
             string currencyCode = "USD";
 
             StringBuilder ppHref = new StringBuilder();

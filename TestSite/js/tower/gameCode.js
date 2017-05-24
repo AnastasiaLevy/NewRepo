@@ -18,6 +18,18 @@
 
 
 function startGame(gameNum) { //change back w/o s to use
+    var ur = localStorage.getItem("tId");
+    var state = localStorage.getItem("finished");
+
+    if (
+        ur == document.getElementById("tId").value && state == "true") {
+        goToPage();
+    }
+    else {
+        localStorage.setItem("tId", document.getElementById("tId").value);
+        localStorage.setItem("finished", false);
+    }
+
     canMove = true;
     var text = gameSettings.Instructions;
 
@@ -344,6 +356,8 @@ function updateTestFinished() {
     {
         saveTextAsFile();
     }
+    localStorage.setItem("tId", document.getElementById("tId").value);
+    localStorage.setItem("finished", true);
  
     jQuery.ajax({
         contentType: "application/json; charset=utf-8",
@@ -364,16 +378,27 @@ function updateTestFinished() {
 }
 
 $('body').on('click', '#finishIt', function () {
-    if (gameSettings.DisplayResults)
-    {
+    //if (gameSettings.DisplayResults)
+    //{
+    //    var user = document.getElementById("userId").value;
+    //    var tId = document.getElementById("tId").value;
+    //    window.location.href = "ResultsPage.aspx?userId=" + user + "&tid=" + tId + "&test=2";
+    //}
+    //else
+    //    window.location.href = "UserProfile.aspx";
+    goToPage();
+   
+});
+
+function goToPage() {
+    if (gameSettings.DisplayResults) {
         var user = document.getElementById("userId").value;
         var tId = document.getElementById("tId").value;
         window.location.href = "ResultsPage.aspx?userId=" + user + "&tid=" + tId + "&test=2";
     }
     else
         window.location.href = "UserProfile.aspx";
-   
-});
+}
 
 function saveTextAsFile() {
     var user = document.getElementById("userId").value;

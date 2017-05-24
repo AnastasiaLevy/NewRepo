@@ -83,11 +83,11 @@
                         <div class="col-lg-3">
 
 
-                            <asp:Button ID="btnUpdateProfile" runat="server" Text="profile" class="btn btn-labeled btn-info" Width=" 100%" OnClick="btnUpdateProfile_Click" />
+                            <asp:Button ID="btnUpdateProfile" runat="server" Text="Provider Code" class="btn btn-labeled btn-info" Width=" 100%" OnClick="btnUpdateProfile_Click" />
                             <asp:Button ID="btnAddNewPart" runat="server" Text="Add New Participant" OnClick="btnAddNewPart_Click" class="btn btn-labeled btn-info" Width="100%" />
                             <asp:Button ID="btnAddUserTest" runat="server" Text="Assign Participant Test" OnClick="btnAddUserTest_Click" class="btn btn-labeled btn-info" Width="100%" />
                             <asp:Button ID="btnModifyTest" runat="server" Text="Modify Test" OnClick="btnModifyTest_Click" class="btn btn-labeled btn-info" Width="100%" />
-                            <asp:Button ID="btnResetPassword" runat="server" Text="ResetPassword" OnClick="btnResetPassword_Click" class="btn btn-labeled btn-info" Width="100%" />
+                            <asp:Button ID="btnResetPassword" runat="server" Text="Reset Password" OnClick="btnResetPassword_Click" class="btn btn-labeled btn-info" Width="100%" />
                         </div>
                         <div class="col-lg-8">
                             <asp:Panel ID="pProviderTools" runat="server">
@@ -447,10 +447,8 @@
                         </h3>
                     </div>
                     <div class="col-sm-2 text-center">
-                        <a href="../Tests/SyllogWrapper.aspx" id="syllog">
-                            <img class="img-responsive" src="../images/sillog.png"" alt=""></a>
+                        <a href="../Tests/SyllogWrapper.aspx" id="syllog"><img class="img-responsive" src="../images/sillog.png"" alt=""></a>
                         <h3>Syllogisms
-
                             <small></small>
                         </h3>
                     </div>
@@ -465,10 +463,9 @@
                     <div class="clearfix"></div>
                 </div>
             </div>
-
         </section>
 
-              <section id="NormsList">
+        <section id="NormsList">
             <div class="row">
                 <div class="box">
                     <div class="col-lg-12">
@@ -504,6 +501,50 @@
 
         </section>
 
+                <section id="videos">
+            <div class="row">
+                <div class="box">
+                    <div class="col-lg-12">
+                        <hr>
+                        <h2 class="intro-text text-center">Instructional
+                            <strong>Videos</strong>
+                        </h2>
+                        <hr>
+                    </div>
+                    <div class="col-sm-4 text-center">
+                     Provider Dash Part 1
+<object 
+data="https://www.youtube.com/embed/-SPAjSEuBNA?fs=0">
+</object>
+                        
+                    </div>
+                    <div class="col-sm-4 text-center"> 
+                    Provider Dash Part 2
+                        <object 
+data="https://www.youtube.com/embed/k_aoilEl8h8?fs=0">
+</object>
+                    </div>
+                    <div class="col-sm-4 text-center">
+
+                    </div>
+                    <div class="col-sm-2 text-center">
+                         Provider Dash Part 3
+                        <object 
+data="https://www.youtube.com/embed/0JwN9Np1TmE?fs=0">
+</object>
+         
+                    </div>
+                    <div class="col-sm-2 text-center">
+                   
+                    </div>
+                    <div class="col-sm-2 text-center">
+                
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+
+        </section>
             <section id="testCategories">
                 <div class="row">
                     <div class="box" id="box">

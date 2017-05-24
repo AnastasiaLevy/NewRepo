@@ -11,7 +11,18 @@
 		this.endTime =
 		this.completedSet =
 		this.$element = null;
-        
+
+        var ur = localStorage.getItem("tId");
+        var state = localStorage.getItem("finished");
+
+        if (
+            ur == document.getElementById("tId").value && state == "true") {
+            goToPage();
+        }
+        else {
+            localStorage.setItem("tId", document.getElementById("tId").value);
+            localStorage.setItem("finished", false);
+        }
 
         this.init('wsct', element, options);
     };
@@ -447,7 +458,7 @@
 			    'uniq_err_time': 0,
 			    'failure_set_cnt': 0,
 			    'moves': '',
-                'completedSet': ''
+			    'completedSet': ''
 			};
 
         this.resultString = [];
@@ -638,9 +649,9 @@
         total['failure_set_cnt'] += res['failure_set_cnt'];
         total['moves'] = this.resultString.join(',');
         table += this._buildResultRow(res);
-         //this._SendResultRow(res);
+        //this._SendResultRow(res);
         table += this._buildResultRow(total, true);
-       
+
         //this._SaveCardSortObj(resArray);
 
         table += '</tbody></table>';
@@ -659,7 +670,7 @@
         total['completedSet'] = this.completedSet;
         this._SendResultRow(total);
         //answers.html('<div class="finished msg-correct">test finished (' + completed + ')</div>');
-    
+
     };
 
     WSCT.prototype._translate = function (str, full) {
@@ -680,20 +691,20 @@
 
     WSCT.prototype._buildResultRow = function (params, total_sign) {
 
-     return '<tr' + (total_sign === true ? ' class="total"' : '') + '><td>' + this._translate(params.strategy, true) + '</td>' +
-			'<td>' + params.resp_cnt + '</td>' +
-			'<td>' + (params.resp_cnt != 0 ? Math.trunc(params.resp_time / params.resp_cnt) : '') + '</td>' +
-			'<td>' + params.correct_cnt + '</td>' +
-			'<td>' + (params.correct_cnt != 0 ? Math.trunc(params.correct_time / params.correct_cnt) : '') + '</td>' +
-			'<td>' + params.error_cnt + '</td>' +
-			'<td>' + (params.error_cnt != 0 ? Math.trunc(params.error_time / params.error_cnt) : '') + '</td>' +
-			'<td>' + params.persev_resp + '</td>' +
-			'<td>' + (params.persev_resp != 0 ? Math.trunc(params.persev_time / params.persev_resp) : '') + '</td>' +
-			'<td>' + params.persev_resp_err + '</td>' +
-			'<td>' + (params.persev_resp_err != 0 ? Math.trunc(params.persev_resp_err_time / params.persev_resp_err) : '') + '</td>' +
-			'<td>' + params.uniq_err + '</td>' +
-			'<td>' + (params.uniq_err != 0 ? Math.trunc(params.uniq_err_time / params.uniq_err) : '') + '</td>' +
-			'<td>' + params.failure_set_cnt + '</td></tr>';
+        return '<tr' + (total_sign === true ? ' class="total"' : '') + '><td>' + this._translate(params.strategy, true) + '</td>' +
+               '<td>' + params.resp_cnt + '</td>' +
+               '<td>' + (params.resp_cnt != 0 ? Math.trunc(params.resp_time / params.resp_cnt) : '') + '</td>' +
+               '<td>' + params.correct_cnt + '</td>' +
+               '<td>' + (params.correct_cnt != 0 ? Math.trunc(params.correct_time / params.correct_cnt) : '') + '</td>' +
+               '<td>' + params.error_cnt + '</td>' +
+               '<td>' + (params.error_cnt != 0 ? Math.trunc(params.error_time / params.error_cnt) : '') + '</td>' +
+               '<td>' + params.persev_resp + '</td>' +
+               '<td>' + (params.persev_resp != 0 ? Math.trunc(params.persev_time / params.persev_resp) : '') + '</td>' +
+               '<td>' + params.persev_resp_err + '</td>' +
+               '<td>' + (params.persev_resp_err != 0 ? Math.trunc(params.persev_resp_err_time / params.persev_resp_err) : '') + '</td>' +
+               '<td>' + params.uniq_err + '</td>' +
+               '<td>' + (params.uniq_err != 0 ? Math.trunc(params.uniq_err_time / params.uniq_err) : '') + '</td>' +
+               '<td>' + params.failure_set_cnt + '</td></tr>';
     };
 
 
@@ -711,21 +722,57 @@
             type: 'POST',
             success: function (resp) {
                 if (data.moves.length > 0) {
-                    var user = document.getElementById("userId").value;
-                    var tId = document.getElementById("tId").value;
-                    window.location.href = "ResultsPage.aspx?userId=" + user + "&tid=" + tId + "&test=3";
+                    goToPage();
                 }
             },
             error: function (resp) {
                 alert("The results were not saved correctly");
+              
             }
         });
     };
 
-    WSCT.prototype._SendResultRow = function (params) {
+    function goToPage() {
+        var user = document.getElementById("userId").value;
+        var tId = document.getElementById("tId").value;
+        window.location.href = "ResultsPage.aspx?userId=" + user + "&tid=" + tId + "&test=3";
+    }
+
+    function saveTextAsFile(text) {
+        var user = document.getElementById("userId").value;
+        var tId = document.getElementById("tId").value;
+        var text = "UserId: " + user + ".\r\n" +
+                   "TestId: " + tId + ".\r\n"
+       
+            text += JSON.stringify(element) + ".\r\n";
      
+        var textToSave = text;
+        var textToSaveAsBlob = new Blob([textToSave], { type: "text/plain" });
+        var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
+        var fileNameToSaveAs = 'Card Sort' + tId + (new Date()).toISOString().substring(0, 10);//document.getElementById("inputFileNameToSaveAs").value;
+
+        var downloadLink = document.createElement("a");
+        downloadLink.download = fileNameToSaveAs;
+        downloadLink.innerHTML = "Download File";
+        downloadLink.href = textToSaveAsURL;
+        downloadLink.onclick = destroyClickedElement;
+        downloadLink.style.display = "none";
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        alert("There was a connection problem. Your results were saved in a file " + fileNameToSaveAs + " in Downloads folder.")
+    }
+
+    function destroyClickedElement(event) {
+        document.body.removeChild(event.target);
+    }
+
+    WSCT.prototype._SendResultRow = function (params) {
+
+        localStorage.setItem("tId", document.getElementById("tId").value);
+        localStorage.setItem("finished", true);
+
         var data = {
-            'category':this._translate(params.strategy, true),
+            'category': this._translate(params.strategy, true),
             'respCount': params.resp_cnt,
             'resTime': params.resp_cnt != 0 ? Math.trunc(params.resp_time / params.resp_cnt) : '',
             'correctCnt': params.correct_cnt,
@@ -739,7 +786,7 @@
             'uniqErrTime': params.uniq_err != 0 ? Math.trunc(params.uniq_err_time / params.uniq_err) : '',
             'failureSetCnt': params.failure_set_cnt,
             'completedSet': params.completedSet,
-             'moves': params.moves
+            'moves': params.moves
 
         }
         jQuery.ajax({
@@ -750,8 +797,7 @@
             data: JSON.stringify(data),
             type: 'POST',
             success: function (resp) {
-                if (data.moves.length > 0)
-                {
+                if (data.moves.length > 0) {
                     var user = document.getElementById("userId").value;
                     var tId = document.getElementById("tId").value;
                     window.location.href = "ResultsPage.aspx?userId=" + user + "&tid=" + tId + "&test=3";
@@ -759,8 +805,9 @@
             },
             error: function (resp) {
                 alert("The results were not saved correctly");
-        }
-        });	
+                saveTextAsFile(data.moves);
+            }
+        });
     };
 
 

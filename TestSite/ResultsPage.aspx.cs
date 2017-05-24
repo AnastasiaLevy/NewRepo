@@ -249,8 +249,8 @@ namespace TestSite
                     factor = CalculateResults(totalM, mean, std);
 
                     //descr.Text = "You have made " + totalM + Enums.ReturnLondonResultStrings(factor) + "\n\r";
-                   textStr.Text = String.Format(Enums.ReturnLondonResultStrings(factor), numberMoves, mean);
-                 
+                    textStr.Text = String.Format(Enums.ReturnLondonResultStrings(factor), numberMoves, mean);
+
 
                 }
                 pResultPanel.Controls.Add(gv);

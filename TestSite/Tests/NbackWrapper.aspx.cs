@@ -197,11 +197,11 @@ namespace TestSite.Tests
 
         }
 
-        private void PostPaypal()
+        private void PostPaypal(double itemAmount)
         {
             string business = "L3SCKTNV3EWA4";// "analescheok@gmail.com"
             string itemName = "nback Test";
-            double itemAmount = 0.01;
+            //double itemAmount = 0.01;
             string currencyCode = "USD";
 
             StringBuilder ppHref = new StringBuilder();
@@ -221,7 +221,7 @@ namespace TestSite.Tests
         {
             if (User.Identity.IsAuthenticated)
             {
-                PostPaypal();
+                PostPaypal(5);
             }
             else
             {
