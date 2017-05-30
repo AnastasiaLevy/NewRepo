@@ -3233,3 +3233,7 @@ label {
     .selectBtn :hover {
         background-color:lavender
     }
+
+    .same {
+        width:150px;
+    }

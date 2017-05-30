@@ -58,7 +58,7 @@
                 <h1>Nback Test(n-back test)</h1>
                 <hr />
                 <p>
-                    The n-back task is a continuous performance task that is
+                    The n-back task is
                      commonly used as an assessment in cognitive neuroscience to 
                     measure a part of working memory and working memory capacity.
                      The n-back was introduced by Wayne Kirchner in 1958.
@@ -186,7 +186,7 @@
                             <div class="circle c2 img-circle">
                                 <h4 class="yellow">Set of 10</h4>
                                 <span class="icon yellow"><i class="fa fa-usd"></i></span>
-                                <span class="price-large yellow">50</span>
+                                <span class="price-large yellow">40</span>
                                 <span class="price-small">.00</span>
                                 <p>Small Project</p>
                                 <asp:Button ID="ten" class="btn btn-warning" runat="server"  Text="Call Us" />
@@ -208,9 +208,9 @@
 
                         <div class="col-md-3">
                             <div class="circle c4 img-circle">
-                                <h4 class="red">Unlimited Use</h4>
+                                <h4 class="red">500</h4>
                                 <span class="icon red"><i class="fa fa-usd "></i></span>
-                                <span class="price-large red">600</span>
+                                <span class="price-large red">500</span>
                                 <span class="price-small">.00</span>
                                 <p>
                                     Any Number of Participants

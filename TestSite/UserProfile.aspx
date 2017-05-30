@@ -132,6 +132,23 @@
                                     </div>
                                 </div>
                     </div>
+                    <div class="col-lg-4">
+                        <asp:Button ID="UploadResults" runat="server" Text="Upload Results" CssClass="btn btn-primary" OnClick="btnUploadResults_Click" width="50%"/>
+                                <div id="uploadRes" class="panel panel-success" runat="server">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Upload results</h3>
+                                        <asp:Label ID="errorUpl" runat="server" Text=""></asp:Label>
+                                    </div>
+                                    <div class="panel-body">
+                                        <asp:Label ID="Label3" runat="server" Text="Choose File:"></asp:Label>
+                                        <asp:FileUpload ID="ResultsFile" runat="server" CssClass="createUser" Width="100%"></asp:FileUpload>
+
+
+                                        <asp:Button ID="btnUplRes" class="btn btn-labeled btn-success" runat="server" Text="Upload" OnClick="btnUploadRes_Click" />
+                                        <asp:Button ID="btnCloseUplRes" class="btn btn-labeled btn-info" runat="server" Text="Close" OnClick="btnCloseRes_Click" />
+                                    </div>
+                                </div>
+                    </div>
                     <div class="clearfix"></div>
                 </div>
             </div>

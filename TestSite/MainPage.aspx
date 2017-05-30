@@ -47,7 +47,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h4>Afraid your child might have ADHD, find out in the privacy of your home for a fraction of the cost of a psychological assetssment in a doctor's office.</h4>
+                        <h4>Test of attention, memory, and problem solving  in the privacy of your home for a fraction of the cost of a psychological assetssment in a doctor's office.</h4>
                     </div>
                 </li>
                 <li>
@@ -85,8 +85,8 @@
                                     <h3>Cognitive Aging Concerns?</h3>
                                 </div>
                             </div>
-                        </div>
-                        <h4>Find out if you are aging gracefully, like others in your age bracket or, if there's cause for concern.</h4>
+                        </div>/ 
+                        <h4>Find out if you are aging gracefully. Is your cognitive performance like others your age? If you're concerned you can take a copy of your results to a licensed medical and/or mental health professional.</h4>
                     </div>
                 </li>
                 <li>
@@ -95,11 +95,11 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="text-center">
-                                    <h3>COMPARE YOUR SCORE AGAINS THOUSANDS OF PEOPLE</h3>
+                                    <h3>COMPARE YOUR SCORE AGAINST THOUSANDS OF PEOPLE</h3>
                                 </div>
                             </div>
                         </div>
-                        <h4>With the most norms available, no other test can definitevly tell you about your results like CogQuiz can.</h4>
+                        <h4>With extensive norms available on many of our tests, frw other test sites can definitively tell you more about your performance than CogQuiz.</h4>
                     </div>
                 </li>
                 <li>
@@ -181,10 +181,9 @@
                                 <div class="col-md-12">
                                     <p>
                                         CogQuiz is a company committed to the development of powerful computer-based tools for cognitive and neuropsychological research and evaluation. 
-                                      Our goal is to design computerized neuropsychological and cognitive tests that are affordable for assessment of medical and/or a mental health status.
-                                      We have strived, and think we are successful, in making an easy to use, affordably priced tests usable by the general public.
-                                      As a consumer, you will take a test that is the equal of any test in terms of norms and receive feedback at a fraction of the cost of seeing a licensed professional. 
-                                      You may print out a report that you can take to a professional for an evaluation beyond the report we provide. We believe that an informed individual is their own best advocate. 
+                                      Our goal is to design computerized neuropsychological and cognitive tests that are affordable. We have strived to make easy to use affordably priced test. As a consumer, you will have access to tests with norms and recieve immidate feedback at a fraction of the cost typically charged for taking these tests.
+                                      If you have concerns about your performance, print out your report and take it with you to a licensed profressional health provider for an evaluation beyond the results we provide. 
+                                      We believe that an informed individual is their own best advocate. 
                                     </p>
 
                                 </div>
@@ -193,8 +192,8 @@
                                 <h5 class="aboutHeader">History and Validating Data</h5>
                                 <div class="col-md-12">
                                     <p>
-                                        Our products reflect over 50 years of experience in using computers for experiment control, data acquisition, and data analysis in cognitive and behavioral research. 
-                                      Our products have been used as part of a long-term research program in several universities and by licensed practitioners alike. 
+                                        Our products reflect over 50 years of experience in using computers for experimental control, data acquisition, and data analysis in cognitive and behavioral research. 
+                                      Our products have been used as part of a long-term research program in several universities and by licensed practitioners. 
                                       Many of the tests have extensive sets of age-stratified normative data which are included in each test product's report/manual.
                                     </p>
 
@@ -205,7 +204,7 @@
                                 <div class="col-md-12">
                                     <p>
                                         All CogQuiz products come with preprogrammed tests that were used to collect the normative data provided in the test documentation.
-                                       There are few or no commercial products with equivalent norms, anywhere.
+                                       There are few or no commercial products with equivalent norms.
                                     </p>
                                 </div>
                             </div>
@@ -242,8 +241,9 @@
                                     </a>
                                     <h3><a href="category/Memory.aspx">Memory</a></h3>
                                     <p>
-                                        Short-term and long term-merm memory tests avaialble.
-                                    Take one of our quizes and find out where you stand in relation to others. Are you capable of remembering germane or salient details, or is there cause for concern?
+                                        Currently, N-back test for working memory is available. 
+                                    We expect to add short-term and long term memory tests this year (2017). Take our working memory test and find out where you stand in relation to others of your age group.
+                                    Were you similar to individuals of your age, superior to most people in your age group, or do you need to work on your memory?
                                     </p>
                                 </div>
                             </div>
@@ -257,7 +257,7 @@
 
                                     </a>
                                     <h3><a href="category/ExecutiveFunction.aspx">Executive function and Planning</a></h3>
-                                    <p>Are you concerned with your Attention span, your ability to switch between tasks effectively or your speed of processing? Executive function tests help you determine if you have alfflictions like ADHD or NNNN</p>
+                                    <p>Are you concerned with your Attention span, your ability to switch between tasks effectively or your speed of processing? CogQuiz executive function tests help you determine if you are performing at a level similar to others of your age.</p>
                                 </div>
                             </div>
                             <div class="col-md-3 portfolio-item">
@@ -282,8 +282,8 @@
                                         </span></a>
 
                                     </a>
-                                    <h3><a href="category/IntelligenceTest.aspx">Intelligence</a></h3>
-                                    <p>Learn about human intelligence</p>
+                                    <h3><a href="category/IntelligenceTest.aspx">Personallity Tests</a></h3>
+                                    <p>Learn about who you are. Or those around you.</p>
                                 </div>
                             </div>
                         </div>
@@ -299,7 +299,7 @@
                         <h4>The software for each CogQuiz test has been designed with an emphasis on efficiency and ease of use. 
                         Each test comes with an easy to use example and a screen feature definition. 
                         In addition, we offer prompt, courteous customer support via email or Skype. 
-                        CogQuiz tests will run on Microsoft Windows XP SP3®, Vista®, Windows 7® Windows 8®.</h4>
+                        CogQuiz tests will run on Microsoft Windows XP SP3®, Vista®, Windows 7® - 10®, Mac, Ipad, Kindle and is capable to run on your mobile devices as well.</h4>
                         <h2>All Available Tests</h2>
                         <img class="img-responsive displayed" src="images/line-separator.png" alt="about">
                     </div>

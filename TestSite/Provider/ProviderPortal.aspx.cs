@@ -19,12 +19,9 @@ namespace TestSite.Provider
             {
                 pop.Style["display"] = "none";
 
-                createUser.Visible = false;
-                assignTest.Visible = false;
-                setUpUserCode.Visible = false;
-                editTest.Visible = false;
+                MakePanelsInvisible();
                 cbAllowUserViewResults.Checked = false;
-                resetPw.Visible = false;
+
 
                 if (User.Identity.IsAuthenticated)
                 {
@@ -49,6 +46,15 @@ namespace TestSite.Provider
                 SetParticipantGrid(providerId);
                 SetProviderTestsGrid(providerId);
             }
+        }
+
+        private void MakePanelsInvisible()
+        {
+            createUser.Visible = false;
+            assignTest.Visible = false;
+            setUpUserCode.Visible = false;
+            editTest.Visible = false;
+            resetPw.Visible = false;
         }
 
         private void SetProviderTestsGrid(int? providerId)
@@ -203,11 +209,11 @@ namespace TestSite.Provider
             string password = txtPassword.Text;
             try
             {
-              
+
                 MembershipUser user = Membership.CreateUser(userName, password, email);
                 if (user == null)
                 {
-                    
+
                 }
 
                 ViewState.Remove("CreatingUser");
@@ -216,7 +222,7 @@ namespace TestSite.Provider
                 lblError.CssClass = "successMessage";
                 createUser.Visible = true;
                 DAL.DataMethods.InsertProviderToTheUser(user.ProviderUserKey.ToString(), Convert.ToInt32(ViewState["providerId"]), userName);
-               
+
                 if (cbAllowUserViewResults.Checked)
                 {
                     DAL.DataMethods.SetAllowUserViewResults(user.ProviderUserKey.ToString(), true);
@@ -226,12 +232,13 @@ namespace TestSite.Provider
                     DAL.DataMethods.SetAllowUserViewResults(user.ProviderUserKey.ToString(), false);
                 }
                 SetProviderTestsGrid(Convert.ToInt32(ViewState["providerId"]));
+                SetParticipantGrid(Convert.ToInt32(ViewState["providerId"]));
             }
             catch (Exception ex)
             {
                 lblError.Text = ex.Message;
                 lblError.CssClass = "errorMessage";
-               
+
                 createUser.Visible = true;
                 DAL.DataMethods.InsertErrorMessage(ex.ToString(), Convert.ToString(ViewState["tUserId"]), "providerProtal", null);
             }
@@ -239,6 +246,7 @@ namespace TestSite.Provider
 
         protected void btnAddNewPart_Click(object sender, EventArgs e)
         {
+            MakePanelsInvisible();
             createUser.Visible = true;
         }
 
@@ -249,6 +257,7 @@ namespace TestSite.Provider
 
         protected void btnAddUserTest_Click(object sender, EventArgs e)
         {
+            MakePanelsInvisible();
             assignTest.Visible = true;
             ddlModifiedID.Visible = false;
             int providerId = Convert.ToInt32(ViewState["providerId"]);
@@ -313,28 +322,52 @@ namespace TestSite.Provider
         {
             string userId = ddlAllParticipants.SelectedValue;
             string provTestId = ddlProvTests.SelectedValue;
-            int modifiedId = String.IsNullOrEmpty(ddlModifiedID.SelectedValue) ? 0 : Convert.ToInt32(ddlModifiedID.SelectedValue);
-
-            try
+            if (panelAssignIsValid(userId, provTestId))
             {
 
-                DAL.DataMethods.InsertTestToParticipant(Convert.ToInt32(provTestId), userId, modifiedId);
-                int providerId = Convert.ToInt32(ViewState["providerId"]);
-                SetDllProviderTests(providerId);
-                SetProviderTestsGrid(providerId);
-                //TODO: Display success message;
-                assignTest.Visible = true;
-                ddlModifiedID.Visible = false;
-                lblTestMessage.Text = "Test was successfully assigned";
-                lblTestMessage.CssClass = "successMessage";
+
+
+                int modifiedId = String.IsNullOrEmpty(ddlModifiedID.SelectedValue) ? 0 : Convert.ToInt32(ddlModifiedID.SelectedValue);
+
+                try
+                {
+
+                    DAL.DataMethods.InsertTestToParticipant(Convert.ToInt32(provTestId), userId, modifiedId);
+                    int providerId = Convert.ToInt32(ViewState["providerId"]);
+                    SetDllProviderTests(providerId);
+                    SetProviderTestsGrid(providerId);
+                    //TODO: Display success message;
+                    assignTest.Visible = true;
+                    ddlModifiedID.Visible = false;
+                    lblTestMessage.Text = "Test was successfully assigned";
+                    lblTestMessage.CssClass = "successMessage";
+                }
+                catch (Exception ex)
+                {
+                    lblTestMessage.Text = "There was an error assigning test";
+                    lblTestMessage.CssClass = "errorMessage";
+                    DAL.DataMethods.InsertErrorMessage(ex.ToString(), Convert.ToString(ViewState["tUserId"]), "ProviderPortal", null);
+                }
             }
-            catch (Exception ex)
+        }
+
+        private bool panelAssignIsValid(string userId, string provTestId)
+        {
+            bool isValid = true;
+            if (userId.Length == 0)
             {
-                lblTestMessage.Text = "There was an error assigning test";
+                lblTestMessage.Text = "Select a User";
                 lblTestMessage.CssClass = "errorMessage";
-                DAL.DataMethods.InsertErrorMessage(ex.ToString(), Convert.ToString(ViewState["tUserId"]), "ProviderPortal", null);
+                isValid = false;
             }
 
+            if (provTestId == "NA")
+            {
+                lblTestMessage.Text = "Select a Valid Test";
+                lblTestMessage.CssClass = "errorMessage";
+                isValid = false;
+            }
+            return isValid;
         }
 
         protected void btnCloseAddTest_Click(object sender, EventArgs e)
@@ -344,6 +377,7 @@ namespace TestSite.Provider
 
         protected void btnUpdateProfile_Click(object sender, EventArgs e)
         {
+            MakePanelsInvisible();
             setUpUserCode.Visible = true;
             txtUserCode.Text = GetProviderUserCode(ViewState["providerId"].ToString());
         }
@@ -382,6 +416,7 @@ namespace TestSite.Provider
 
         protected void btnModifyTest_Click(object sender, EventArgs e)
         {
+            MakePanelsInvisible();
             editTest.Visible = true;
             SetUpModTest();
         }
@@ -460,8 +495,7 @@ namespace TestSite.Provider
                 gvAllParticipants.DataBind();
                 gvAllParticipants.Columns[7].Visible = false;
             }
-
-            gvAllParticipants.Focus();
+            //gvAllParticipants.Focus();
         }
 
         protected void btnResetPw_Click(object sender, EventArgs e)
@@ -489,6 +523,7 @@ namespace TestSite.Provider
 
         protected void btnResetPassword_Click(object sender, EventArgs e)
         {
+            MakePanelsInvisible();
             resetPw.Visible = true;
         }
 

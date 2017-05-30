@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProviderPortal.aspx.cs" Inherits="TestSite.Provider.ProviderPortal" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProviderPortal.aspx.cs" Inherits="TestSite.Provider.ProviderPortal" MaintainScrollPositionOnPostback="true" %>
 
 <!DOCTYPE html>
 
@@ -54,6 +54,8 @@
                         <li><a href="#participantData">Participant Data</a></li>
                         <li><a href="#purchachedTests">Provider Tests</a></li>
                         <li><a href="#testList">Available Tests</a></li>
+                        <li><a href="#NormsList">Norms</a></li>
+                         <li><a href="#videos">Instruntions</a></li>
                         <li><a href="#testCategories">Test Categories</a></li>
                         <%--    <li><a href="#reports">Results</a></li>--%>
                         <li id="login" runat="server"><a href="Login.aspx">Login</a></li>
@@ -83,7 +85,7 @@
                         <div class="col-lg-3">
 
 
-                            <asp:Button ID="btnUpdateProfile" runat="server" Text="Provider Code" class="btn btn-labeled btn-info" Width=" 100%" OnClick="btnUpdateProfile_Click" />
+                            <asp:Button ID="btnUpdateProfile" runat="server" Text="Set Provider Code" class="btn btn-labeled btn-info" Width=" 100%" OnClick="btnUpdateProfile_Click" />
                             <asp:Button ID="btnAddNewPart" runat="server" Text="Add New Participant" OnClick="btnAddNewPart_Click" class="btn btn-labeled btn-info" Width="100%" />
                             <asp:Button ID="btnAddUserTest" runat="server" Text="Assign Participant Test" OnClick="btnAddUserTest_Click" class="btn btn-labeled btn-info" Width="100%" />
                             <asp:Button ID="btnModifyTest" runat="server" Text="Modify Test" OnClick="btnModifyTest_Click" class="btn btn-labeled btn-info" Width="100%" />
@@ -206,7 +208,7 @@
                                         <asp:Label ID="lblTestMessage" runat="server" Text=""></asp:Label>
                                     </div>
                                     <div class="panel-body ">
-                                        <asp:DropDownList class="dropDown" ID="ddlAllParticipants" runat="server" Width="50%"></asp:DropDownList>
+                                        <asp:DropDownList class="dropDown" ID="ddlAllParticipants" runat="server" Width="50%" required="true"></asp:DropDownList>
                                         <asp:DropDownList class="dropDown" ID="ddlProvTests" runat="server" Width="50%" OnSelectedIndexChanged="ddlProvTests_SelectedIndexChanged" AppendDataBoundItems="true" AutoPostBack="True"></asp:DropDownList>
                                         <asp:DropDownList class="dropDown" ID="ddlModifiedID" runat="server" Width="40%"></asp:DropDownList>
                                         <div>
@@ -329,7 +331,7 @@
                                     <asp:TemplateField HeaderText="Delete" HeaderStyle-Width="10%" ItemStyle-Width="10%"
                                         FooterStyle-Width="10%">
                                         <ItemTemplate>
-                                            <asp:LinkButton ID="delete" runat="server" CausesValidation="false" OnClick="delete_Click" Text="X"><i class="fa fa-minus-square-o  fa-2x" aria-hidden="true"></i></asp:LinkButton>
+                                            <asp:LinkButton ID="delete" runat="server" CausesValidation="false" OnClick="delete_Click" OnClientClick="return confirm('Are you sure?')" Text="X"><i class="fa fa-minus-square-o  fa-2x" aria-hidden="true"></i></asp:LinkButton>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                     <asp:TemplateField HeaderText="Tests" HeaderStyle-Width="10%" ItemStyle-Width="10%"
@@ -447,8 +449,10 @@
                         </h3>
                     </div>
                     <div class="col-sm-2 text-center">
-                        <a href="../Tests/SyllogWrapper.aspx" id="syllog"><img class="img-responsive" src="../images/sillog.png"" alt=""></a>
+                        <a href="../Tests/SyllogWrapper.aspx" id="syllog">
+                            <img class="img-responsive" src="../images/sillog.png"" alt=""></a>
                         <h3>Syllogisms
+
                             <small></small>
                         </h3>
                     </div>
@@ -463,9 +467,10 @@
                     <div class="clearfix"></div>
                 </div>
             </div>
+
         </section>
 
-        <section id="NormsList">
+              <section id="NormsList">
             <div class="row">
                 <div class="box">
                     <div class="col-lg-12">
@@ -500,8 +505,7 @@
             </div>
 
         </section>
-
-                <section id="videos">
+                            <section id="videos">
             <div class="row">
                 <div class="box">
                     <div class="col-lg-12">
@@ -511,27 +515,27 @@
                         </h2>
                         <hr>
                     </div>
-                    <div class="col-sm-4 text-center">
-                     Provider Dash Part 1
-<object 
-data="https://www.youtube.com/embed/-SPAjSEuBNA?fs=0">
-</object>
-                        
+                    <div class="col-sm-4 text-center" id="vid1">
+                        Provider Dash Part 1
+                       <iframe src="https://www.youtube.com/embed/-SPAjSEuBNA?" frameborder="0" allowfullscreen></iframe>
+
                     </div>
                     <div class="col-sm-4 text-center"> 
                     Provider Dash Part 2
-                        <object 
+                        <iframe src="https://www.youtube.com/embed/k_aoilEl8h8?" frameborder="0" allowfullscreen></iframe>
+<%--                        <object 
 data="https://www.youtube.com/embed/k_aoilEl8h8?fs=0">
-</object>
+</object>--%>
                     </div>
                     <div class="col-sm-4 text-center">
 
                     </div>
                     <div class="col-sm-2 text-center">
                          Provider Dash Part 3
-                        <object 
+                        <iframe src="https://www.youtube.com/embed/0JwN9Np1TmE" frameborder="0" allowfullscreen></iframe>
+<%--                        <object 
 data="https://www.youtube.com/embed/0JwN9Np1TmE?fs=0">
-</object>
+</object>--%>
          
                     </div>
                     <div class="col-sm-2 text-center">
@@ -543,7 +547,6 @@ data="https://www.youtube.com/embed/0JwN9Np1TmE?fs=0">
                     <div class="clearfix"></div>
                 </div>
             </div>
-
         </section>
             <section id="testCategories">
                 <div class="row">

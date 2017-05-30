@@ -36,10 +36,6 @@ namespace TestSite
             test = Request.QueryString["test"].ToString();
 
             showReport = Request.QueryString["provider"] ==null? true:false;
-      
-
-
-
 
                 int canView = DataMethods.GetUserViewResults(userId);
                 if (canView == 0 && Request.QueryString["provider"] == null)

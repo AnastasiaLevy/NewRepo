@@ -7,6 +7,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using TestSite.DAL;
 using TestSite.HelpClasses;
+using System.IO;
+using System.Web.Script.Serialization;
+using System.Globalization;
 
 namespace TestSite
 {
@@ -19,8 +22,7 @@ namespace TestSite
          
             if (!IsPostBack)
             {
-                resetPw.Visible = false;
-                setUpUserCode.Visible = false;
+                HidePanels();
             }
             userId = Membership.GetUser(User.Identity.Name).ProviderUserKey.ToString();
          
@@ -53,6 +55,14 @@ namespace TestSite
             }
      
         }
+        
+        private void HidePanels()
+        {
+            resetPw.Visible = false;
+            setUpUserCode.Visible = false;
+            uploadRes.Visible = false;
+        }
+
 
         private bool UserIsProvider()
         {
@@ -135,6 +145,87 @@ namespace TestSite
             Response.Redirect(url);
         }
 
+        protected void btnUploadResults_Click(object sender, EventArgs e)
+        {
+            HidePanels();
+            uploadRes.Visible = true;
+        }
+
+        protected void btnCloseRes_Click(object sender, EventArgs e)
+        {
+            uploadRes.Visible = false;
+        }
+
+        protected void btnUploadRes_Click(object sender, EventArgs e)
+        {
+            var results = new List<Dictionary<string, string>>();
+            string userId="";
+            int testId=0;
+            try
+            {
+                var file = ResultsFile.PostedFile;
+                StreamReader reader = new StreamReader(file.InputStream);
+                var content = reader.ReadToEnd().Replace("\r\n", "");
+
+                int pFrom = content.IndexOf("UserId:") + "UserId:".Length;
+                int pTo = content.IndexOf(".");
+
+                userId = content.Substring(pFrom, pTo - pFrom).Trim();
+
+                content = content.Substring(pTo + 1);
+
+                pFrom = content.IndexOf("TestId:") + "TestId:".Length;
+                pTo = content.IndexOf(".");
+
+                testId = Convert.ToInt32(content.Substring(pFrom, pTo - pFrom).Trim());
+
+
+                content = content.Substring(pTo + 1);
+                content = content.Remove(content.Length - 1);
+                content = "[" + content.Replace("}.", "},") + "]";
+
+                results = new JavaScriptSerializer().Deserialize<List<Dictionary<string, string>>>(content);
+            }
+            catch(Exception ex)
+            {
+                errorUpl.Text = "The file is in wrong format";
+                return;
+            }
+
+            foreach(var result in results)
+            {
+                SaveResults(userId, testId,
+                    result["game"],
+                    result["initThinkTime"],
+                    result["timeTotal"],
+                    result["numberOfMoves"],
+                    result["numberOfWrongMoves"],
+                    result["overTime"],
+                    result["overMoves"],
+                    result["minMoves"]);
+            }
+            SaveFininishedLondon(userId, testId);
+
+            LoadPaidTests();
+            LoadFinishedTests();
+
+        }
+        public void SaveResults(string userId, int userTestId,string game,
+            string initThinkTime, string timeTotal,
+            string numberOfMoves, string numberOfWrongMoves,
+            string overTime, string overMoves, string minMoves)
+        {
+            string testId = Enums.TestId.TowerOfLondon;
+            DataMethods.UpdateLondonUserResults(userId, userTestId, testId, Convert.ToInt32(game),
+            System.Convert.ToDecimal(initThinkTime, new CultureInfo("en-US")), System.Convert.ToDecimal(timeTotal, new CultureInfo("en-US")),
+            Convert.ToInt32(numberOfMoves), Convert.ToInt32(numberOfWrongMoves),
+            Convert.ToBoolean(overTime), Convert.ToBoolean(overMoves), Convert.ToInt32(minMoves));
+        }
+
+        public static void SaveFininishedLondon(string userId, int userTestId)
+        {
+            DataMethods.UpdateTestFinished(userId, userTestId);
+        }
 
         protected void btnCodeSave_Click(object sender, EventArgs e)
         {
@@ -167,6 +258,7 @@ namespace TestSite
 
         protected void btbAddProviderCode_Click(object sender, EventArgs e)
         {
+            HidePanels();
             setUpUserCode.Visible = true;
             txtUserCode.Text = DAL.DataMethods.GetUserProviderCode(userId);
 
@@ -200,6 +292,7 @@ namespace TestSite
 
         protected void btnResetPassword_Click(object sender, EventArgs e)
         {
+            HidePanels();
             resetPw.Visible = true;
         }
 

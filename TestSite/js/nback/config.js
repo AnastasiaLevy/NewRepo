@@ -23,14 +23,14 @@ var test1Message1 = ["You are going to be shown a series of letters. If",
                      "letter, press the YES key (Z key).",
                      "If it is not the same, press the",
                      "NO key (?/ key).",
-                     "  ",
+                     "First, complete a brief sample run.",
                      "Press the spacebar to begin."];
 
 var test1Message2 = ["Again you are going to be shown a series of letters.",
                      "If the letter currently being shown is identical to",
                      "the letter shown immediately prior to the current",
                      "letter, press the YES key (Z key). If",
-                     "it is not the same, to press the NO key",
+                     "it is not the same, press the NO key",
                      "(?/ key).",
                      "  ",
                      "Press the spaceBar to begin."];
@@ -63,7 +63,7 @@ var test2Message1 = ["You are going to be shown a series of letters. If",
                      "letter, press the YES key (Z key).",
                      "If it is not the same, press the",
                      "NO key (?/ key).",
-                     "  ",
+                     "First, complete a brief sample run.",
                      "Press the spacebar to begin."]
 
 var test2Message2 = ["Again you are going to be shown a series of letters.",
@@ -102,7 +102,7 @@ var test3Message1 = ["You are going to be shown a series of letters. If",
                      "letter, press the YES key (Z key).",
                      "If it is not the same, press the",
                      "NO key (?/ key).",
-                     "  ",
+                     "First, complete a brief sample run.",
                      "Press the spacebar to begin."]
 
 var test3Message2 = ["Again you are going to be shown a series of letters.",
