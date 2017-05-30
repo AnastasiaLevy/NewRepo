@@ -22,6 +22,7 @@
     <script src="https://use.fontawesome.com/0138464303.js"></script>
     <script src="js/jquery.js"></script>
     <link href="css/userProfilecss.css" rel="stylesheet" />
+    <script src="js/sessionManager.js"></script>
 
 </head>
 

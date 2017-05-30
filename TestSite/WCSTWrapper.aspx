@@ -26,7 +26,9 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
-
+        <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <script src="js/sessionManager.js"></script>
 </head>
 
 <body data-spy="scroll" runat="server">
@@ -290,8 +292,7 @@ Feldstein, S. N., Keller, F. R., Portman, R. E., Durham, R. L., Klebe, K. J., Da
 </script>
     </footer>
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 

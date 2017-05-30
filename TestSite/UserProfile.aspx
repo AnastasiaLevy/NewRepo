@@ -5,6 +5,7 @@
 <html lang="en">
 
 <head>
+    
     <meta name="google-site-verification" content="GMj8owmZtkuKU0Fa_4Zg82VbKsQPO8VkZD_pHsRghA4" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,12 +25,19 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js"></script>
     <link href="cogTest.css" rel="stylesheet" />
-    <link href="css/userProfilecss.css" rel="stylesheet" />
-
+    <link href="css/userProfilecss.css" rel="stylesheet" />   
+    <script src="js/jquery.js"></script> 
+    <script src="js/sessionManager.js"></script>
+    
 </head>
 
 <body>
+
+  
+
+
     <form runat="server">
+        
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
 
@@ -95,7 +103,7 @@
                         </p>
                         <p><a class="profile" href="Registration.aspx"><strong><u>Profile Form</u></strong></a></p>
 
-                    </div>
+                    </div>                    
                     <div class="col-lg-4">
                         <asp:Button ID="btbAddProviderCode" runat="server" Text="Add Provider Code" CssClass="btn btn-primary" OnClick="btbAddProviderCode_Click" width="50%"/>
                         <div id="setUpUserCode" class="panel panel-success" runat="server">
@@ -439,11 +447,12 @@
 
     </form>
 </body>
-
+    
 </html>
-<script src="js/jquery.js"></script>
-
 <script>
+
+    
+
 
     $('.custom-menu a[href^="#"], .intro-scroller .inner-link').on('click', function (e) {
         e.preventDefault();
@@ -485,3 +494,6 @@
     });
 
 </script>
+
+
+    

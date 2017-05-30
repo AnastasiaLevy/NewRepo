@@ -11,6 +11,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using TestSite.DAL;
 using TestSite.HelpClasses;
+using System.Globalization;
 
 namespace TestSite
 {
@@ -44,7 +45,7 @@ namespace TestSite
         {
             string testId = Enums.TestId.TowerOfLondon;
             DataMethods.UpdateLondonUserResults(_userId, _userTestId, testId, Convert.ToInt32(game),
-            System.Convert.ToDecimal(initThinkTime), System.Convert.ToDecimal(timeTotal),
+            System.Convert.ToDecimal(initThinkTime, new CultureInfo("en-US")), System.Convert.ToDecimal(timeTotal, new CultureInfo("en-US")),
             Convert.ToInt32(numberOfMoves), Convert.ToInt32(numberOfWrongMoves),
             Convert.ToBoolean(overTime), Convert.ToBoolean(overMoves), Convert.ToInt32(minMoves));
         }

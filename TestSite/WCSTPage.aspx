@@ -18,6 +18,7 @@
         setTimeout("preventBack()", 0);
         window.onunload = function () { null };
     </script>
+    <script src="js/sessionManager.js"></script>
 </head>
 <body>
     <form runat="server">

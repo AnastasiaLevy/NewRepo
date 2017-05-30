@@ -105,9 +105,10 @@
     <Content Include="audio\FeedbackIncorrect.mp3" />
     <Content Include="category\ExecutiveFunction.aspx" />
     <Content Include="category\ProcessingSpeed.aspx" />
+    <Content Include="ComingSoon.aspx" />
+    <Content Include="Global.asax" />
     <Content Include="IntelligenceTest.aspx" />
     <Content Include="category\Memory.aspx" />
-    <Content Include="ComingSoon.aspx" />
     <Content Include="Create\LondonModify.aspx" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
@@ -203,6 +204,7 @@
     <Content Include="js\nback\score.js" />
     <Content Include="js\nback\scoreNback.js" />
     <Content Include="js\previewer.js" />
+    <Content Include="js\sessionManager.js" />
     <Content Include="js\stroop\config.js" />
     <Content Include="css\stroopGame.css" />
     <Content Include="js\stroop\game.js" />
@@ -295,6 +297,7 @@
     <Content Include="Instructions\TOLSetUpManual.pdf" />
     <Content Include="Norms\CardSort_norms.pdf" />
     <Content Include="Norms\NbackNorms.pdf" />
+    <Content Include="HTTPHandlers\SessionHandler.ashx" />
     <None Include="Properties\PublishProfiles\testPub.pubxml" />
     <Content Include="Provider\ProviderPortal.aspx" />
     <Content Include="ResultsPage.aspx" />
@@ -408,7 +411,20 @@
     <Compile Include="category\ProcessingSpeed.aspx.designer.cs">
       <DependentUpon>ProcessingSpeed.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ComingSoon.aspx.cs">
+      <DependentUpon>ComingSoon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ComingSoon.aspx.designer.cs">
+      <DependentUpon>ComingSoon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="HelpClasses\ExportData.cs" />
+    <Compile Include="HTTPHandlers\SessionHandler.ashx.cs">
+      <DependentUpon>SessionHandler.ashx</DependentUpon>
+    </Compile>
     <Compile Include="IntelligenceTest.aspx.cs">
       <DependentUpon>IntelligenceTest.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -424,13 +440,6 @@
       <DependentUpon>Memory.aspx</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
-    <Compile Include="ComingSoon.aspx.cs">
-      <DependentUpon>ComingSoon.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ComingSoon.aspx.designer.cs">
-      <DependentUpon>ComingSoon.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Create\LondonModify.aspx.cs">
       <DependentUpon>LondonModify.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

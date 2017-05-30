@@ -11,6 +11,7 @@
     <link href="../cogTest.css" rel="stylesheet" />
     <link rel="shortcut icon" href="images/favicon.ico" />
     <meta name="google-site-verification" content="GMj8owmZtkuKU0Fa_4Zg82VbKsQPO8VkZD_pHsRghA4" />
+    <script src="js/sessionManager.js"></script>
   
 </head>
 <body>
