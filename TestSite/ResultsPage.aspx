@@ -27,6 +27,7 @@
     <script src="js/jquery.js"></script>
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="assets/js/jquery.imgzoom.js"></script>
+    <script src="js/sessionManager.js"></script>
 
 </head>
 <body data-spy="scroll" runat="server" style="font-size:larger">

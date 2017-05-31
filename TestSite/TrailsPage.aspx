@@ -10,6 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.1/raphael.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.1/raphael.min.js"></script>
     <script type="text/javascript" src="js/trailsA.js"></script>
+    <script src="js/sessionManager.js"></script>
     <script>
         function preventBack() { window.history.forward(); }
         setTimeout("preventBack()", 0);

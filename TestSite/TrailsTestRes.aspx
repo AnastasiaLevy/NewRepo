@@ -13,6 +13,8 @@
             font-size: 11px;
         }
     </style>
+        <script src="js/jquery.js"></script>
+    <script src="js/sessionManager.js"></script>
 </head>
 <script type="text/javascript" src="https://www.amcharts.com/lib/3/amcharts.js"></script>
 <script type="text/javascript" src="https://www.amcharts.com/lib/3/serial.js"></script>

@@ -20,7 +20,7 @@ namespace TestSite
             }
             else
             {
-                Response.Redirect("~/ManePage.aspx");
+                Response.Redirect("~/MainPage.aspx");
                 login.Visible = true;
                 logOut.Visible = false;
             }

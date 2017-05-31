@@ -23,6 +23,9 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
     <script src="https://use.fontawesome.com/0138464303.js"></script>
+        <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <script src="js/sessionManager.js"></script>
 
 </head>
 <body data-spy="scroll" runat="server">
@@ -279,8 +282,7 @@
 
 </script>
     </footer>
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
     <script>

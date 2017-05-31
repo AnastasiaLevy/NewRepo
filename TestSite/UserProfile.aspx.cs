@@ -15,11 +15,16 @@ namespace TestSite
 {
     public partial class UserProfile : System.Web.UI.Page
     {
+
+       
+        
         public string ageValue;
         private string userId;
         protected void Page_Load(object sender, EventArgs e)
         {
-         
+           
+
+            Session["asd"] = "asd";
             if (!IsPostBack)
             {
                 HidePanels();
@@ -49,13 +54,13 @@ namespace TestSite
             }
             else
             {
-                Response.Redirect("~/ManePage.aspx");
+                Response.Redirect("~/MainPage.aspx");
                 login.Visible = true;
                 Logout.Visible = false;
             }
      
-        }
-        
+        }     
+       
         private void HidePanels()
         {
             resetPw.Visible = false;

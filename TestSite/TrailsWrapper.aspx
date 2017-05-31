@@ -26,7 +26,9 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
-
+     <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <script src="js/sessionManager.js"></script>
 </head>
 
 <body data-spy="scroll" runat="server">
@@ -62,7 +64,7 @@
         <!-- Page Content -->
         <section id="about">
             <div class="container testDescription">
-                <h1>Trails Test</h1>
+                <h1>Make Trails Test</h1>
                 <hr />
                 <p>
                     CogQuiz’s provides norms for children to older adults (age range 5 to 89 and an N = 708). The descriptive statistics 
@@ -108,7 +110,7 @@
             Pathways Test,” or “Divided Attention Test” (Partington & Leiter, 1949). It was initially part of 
             a battery of tests (Army Individual Test Battery) used to assess “…a variety of intellectual functions 
             different from those measured by the Wechsler-Bellevue Intelligence Scale.” (Spreen & Strauss, 1998).
-            The test is not typically part of a test battery but administered singlye in its original paper and pencil
+            The test is not typically part of a test battery but administered single in its original paper and pencil
             form.
                             </p>
                         </div>
@@ -122,8 +124,8 @@
             and mental flexibility (Strauss, Sherman, & Spreen, 2007). In addition, Part B assesses the ability to 
             alternate between stimulus sets and as such is a measure of “executive function” (Mitrushina, et al., 1999).
             Performance on the TMT has been obtained for normal and various clinical populations such as Attention Deficit
-            Disorder (ADD), Attention Deficit Hyperactivity Disorder (ADHD), Alzheimer’s disease, and Post-Traumatic Stress
-            Disorder (PTSD), to name a few.
+            Disorder ADD), Attention Deficit Hyperactivity Disorder, Alzheimer’s disease, Post Traumatic Stress
+            Disorder to name a few.
                             </p>
                         </div>
                     </div>
@@ -224,7 +226,7 @@
                             <div class="circle c3 img-circle">
                                 <h4 class="green">Set of 100</h4>
                                 <span class="icon green"><i class="fa fa-usd "></i></span>
-                                <span class="price-large green">200</span>
+                                <span class="price-large green">80</span>
                                 <span class="price-small">.00</span>
                                 <p>Medium Size Project</p>
                                 <asp:Button ID="hundred" class="btn btn-success" runat="server" OnClick="hundred_Click" Text="Call Us" />
@@ -234,10 +236,9 @@
 
                         <div class="col-md-3">
                             <div class="circle c4 img-circle">
-                                <h4 class="red">Set of 500</h4>
+                                <h4 class="red">Unlimited Use</h4>
                                 <span class="icon red"><i class="fa fa-usd "></i></span>
-                             
-                                <span class="price-large red">500</span>
+                                <span class="price-large red">499</span>
                                 <span class="price-small">.00</span>
                                 <p>
                                     Any Number of Participants
@@ -300,8 +301,7 @@
 </script>
     </footer>
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+   
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 

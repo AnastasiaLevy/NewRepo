@@ -207,7 +207,7 @@ namespace TestSite
         {
             string business = "L3SCKTNV3EWA4";// "analescheok@gmail.com"
             string itemName = "Trails Test";
-            double itemAmount = 5.00;
+            double itemAmount = 0.01;
             string currencyCode = "USD";
 
             StringBuilder ppHref = new StringBuilder();
