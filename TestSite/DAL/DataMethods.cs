@@ -1790,33 +1790,34 @@ namespace TestSite.DAL
             int numWrongMoves, bool overTime, bool overMoves, int minMoves)
         {
             DataTable ds = new DataTable();
-            SqlConnection conn = new SqlConnection(connectionSring);
-            SqlCommand cmd = new SqlCommand("UpdateLondonUserResults", conn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@userId", userId);
-            cmd.Parameters.AddWithValue("@testId", testId);
-            cmd.Parameters.AddWithValue("@tid", tId);
-            cmd.Parameters.AddWithValue("@game", game);
-            cmd.Parameters.AddWithValue("@initThinkTime", initThinkTime);
-            cmd.Parameters.AddWithValue("@totalTime", totalTime);
-            cmd.Parameters.AddWithValue("@numberMoves", numMoves);
-            cmd.Parameters.AddWithValue("@numberWrongMoves", numWrongMoves);
-            cmd.Parameters.AddWithValue("@overTime", overTime);
-            cmd.Parameters.AddWithValue("@overMove", overMoves);
-            cmd.Parameters.AddWithValue("@minMoves", minMoves);
+            using (SqlConnection conn = new SqlConnection(connectionSring))
+            {
+                using (SqlCommand cmd = new SqlCommand("UpdateLondonUserResults", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@userId", userId);
+                    cmd.Parameters.AddWithValue("@testId", testId);
+                    cmd.Parameters.AddWithValue("@tid", tId);
+                    cmd.Parameters.AddWithValue("@game", game);
+                    cmd.Parameters.AddWithValue("@initThinkTime", initThinkTime);
+                    cmd.Parameters.AddWithValue("@totalTime", totalTime);
+                    cmd.Parameters.AddWithValue("@numberMoves", numMoves);
+                    cmd.Parameters.AddWithValue("@numberWrongMoves", numWrongMoves);
+                    cmd.Parameters.AddWithValue("@overTime", overTime);
+                    cmd.Parameters.AddWithValue("@overMove", overMoves);
+                    cmd.Parameters.AddWithValue("@minMoves", minMoves);
 
-            try
-            {
-                conn.Open();
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                InsertErrorMessage(ex.ToString(), null, null, "UpdateLondonUserResults");
-            }
-            finally
-            {
-                conn.Close();
+                    try
+                    {
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        InsertErrorMessage(ex.ToString(), null, null, "UpdateLondonUserResults");
+                    }
+                }
+                
             }
         }
 
@@ -2102,5 +2103,41 @@ namespace TestSite.DAL
                 conn.Close();
             }
         }
+
+        //TODO: make DAL more abstract as well.
+        //TODO2:Add using statement not only to close, but to ispose connection, super dangerous code upper.
+        //methods could be declared as public, no need of internal identifiers.
+        /// <summary>
+        /// Gets all values from stored procedures
+        /// </summary>
+        /// <param name="procedureName">used in stucture as "Get+procedureName" to use stored procedure</param>
+        /// <returns></returns>
+        public DataTable GetValues(string procedureName)
+        {
+            using (SqlConnection sqc = new SqlConnection(connectionSring))
+            {
+                using (SqlCommand cmd = new SqlCommand("Get" + procedureName,sqc))
+                {
+                    DataTable dt = new DataTable();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    try
+                    {
+                        SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                        adp.Fill(dt);
+                    }
+                    catch(Exception ex)
+                    {
+                        InsertErrorMessage(ex.ToString(), null, null, "Get"+procedureName);
+                        throw new Exception("Execption getting result from Get " +procedureName +".\n" + ex.Message);
+                    }
+                    return dt;
+                    
+                }
+            }
+            
+            
+        }
+
+
     }
 }

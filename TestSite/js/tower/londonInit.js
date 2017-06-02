@@ -30,6 +30,8 @@ var peg2 = null;
 var peg3 = null;
 //draw dase with 3 pegs
 
+//result
+var result = [];
 
 function initField(gameNum, gameData) {
 

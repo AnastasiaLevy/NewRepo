@@ -80,6 +80,7 @@ function displayTestFinishedMessage() {
 
 function displayFinalMessageOnTimeout(numMoves, lastMove, timeMlsec) {
     //var text = gameSettings.InstructionsTimeOut;
+    canMove = false;
     var text = gameSettings.TextOverTime;
     var finalMessage = document.getElementById("finalMessage");
     finalMessage.style.display = '';
@@ -91,8 +92,7 @@ function displayFinalMessageOnTimeout(numMoves, lastMove, timeMlsec) {
         updateTestFinished();
         displayTestFinishedMessage();
     }
-
-    passResultsForGame(game, timeMlsec, timeMlsec, gameSettings.MaxMoves, nmWr, true, false, numMoves);
+    result.push({ game: game, initThinkTime: timeMlsec, totalTime: timeMlsec, nm: gameSettings.MaxMoves, nmWrong: nmWr, overTime: true, overMoves: false, minMoves: numMoves });
     setTimeout(function () {
         startCountDownTimer(game + 1);
     }, 2000);
@@ -111,7 +111,7 @@ function displayFinalMessage20move(game) {
         displayTestFinishedMessage();
     }
     //var minMoves = mapGameMoves(game)
-    passResultsForGame(game, initTTime, over, gameSettings.MaxMoves, nmWr, false, true, numMoves);
+    result.push({ game: game, initThinkTime: initTTime, totalTime: over, nm: gameSettings.MaxMoves, nmWrong: nmWr, overTime: false, overMoves: true, minMoves: numMoves });
     setTimeout(function () {
         startCountDownTimer(game + 1);
     }, 2000);
@@ -212,14 +212,15 @@ function finishGame(needMoves) {
     window.clearTimeout(gameTimer);
     over = new Date() - time;
     gameFinished = true;
-
-    passResultsForGame(game, initTTime, over, nm, nmWr, false, false, needMoves);
+    result.push({ game: game, initThinkTime: initTTime, totalTime: over, nm: nm, nmWrong: nmWr, overTime: false, overMoves: false, minMoves: needMoves });
+    
     canMove = false;
     if (gameSettings.ShowFeedback == "True")
         setTimeout(function () { displayFinalMessage(needMoves, nm); }, 1200)
 
     if (game == lastMove) {
         setTimeout(function () {
+            passResultsForGame(result);
             updateTestFinished();
             displayTestFinishedMessage();
         }, 3200);
@@ -282,7 +283,7 @@ function checkPos(out) {
         displayFinalMessage20move(game)
     }
     canMove = false;
-    setTimeout(function () { canMove = true }, 300);
+    
     //
     if (1 == 1) {
         if (nm == 0) {
@@ -301,6 +302,10 @@ function checkPos(out) {
         getMatchPos(finishPos.green, "green")) {
         finishGame(numMoves);
     }
+    else {
+        setTimeout(function () { canMove = true }, 300);
+    }
+    
 };
 
 function getTime() {
@@ -318,25 +323,27 @@ function cleanDivs() {
 arrData = [];
 var save = false;
 
-function passResultsForGame(game, initThinkTime, totalTime, nm, nmWrong, overTime, overMoves, minMoves) {
 
-    var data = {
-        'game': game,
-        'initThinkTime': initThinkTime / 1000,
-        'timeTotal': totalTime / 1000,
-        'numberOfMoves': nm,
-        'numberOfWrongMoves': nmWrong,
-        'overTime': overTime,
-        'overMoves': overMoves,
-        'minMoves': numMoves
-    }
-    arrData.push(data);
+function passResultsForGame(result) {
+//delete
+    //var data = {
+    //    'game': game,
+    //    'initThinkTime': initThinkTime / 1000,
+    //    'timeTotal': totalTime / 1000,
+    //    'numberOfMoves': nm,
+    //    'numberOfWrongMoves': nmWrong,
+    //    'overTime': overTime,
+    //    'overMoves': overMoves,
+    //    'minMoves': numMoves
+    //}
+    //arrData.push(data);
+   
     jQuery.ajax({
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         url: 'LondonPage.aspx/SaveResults',
         dataType: 'json',
-        data: JSON.stringify(data),
+        data: JSON.stringify({ 'result': result }),
         type: 'POST',
         success: function (resp) {
 

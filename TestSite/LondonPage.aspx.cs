@@ -12,6 +12,8 @@ using System.Web.UI.WebControls;
 using TestSite.DAL;
 using TestSite.HelpClasses;
 using System.Globalization;
+using TestSite.BL.Models;
+using TestSite.BL.Services;
 
 namespace TestSite
 {
@@ -37,18 +39,20 @@ namespace TestSite
 
         }
 
+       
+
         [WebMethod]
-        public static void SaveResults(string game,
-            string initThinkTime, string timeTotal,
-            string numberOfMoves, string numberOfWrongMoves,
-            string overTime, string overMoves, string minMoves)
+        public static void SaveResults(List<LondonResultViewModel> result)
         {
-            string testId = Enums.TestId.TowerOfLondon;
-            DataMethods.UpdateLondonUserResults(_userId, _userTestId, testId, Convert.ToInt32(game),
-            System.Convert.ToDecimal(initThinkTime, new CultureInfo("en-US")), System.Convert.ToDecimal(timeTotal, new CultureInfo("en-US")),
-            Convert.ToInt32(numberOfMoves), Convert.ToInt32(numberOfWrongMoves),
-            Convert.ToBoolean(overTime), Convert.ToBoolean(overMoves), Convert.ToInt32(minMoves));
+
+            LondonResultServices resultService = new LondonResultServices();
+            foreach(var r in result)
+            {
+                resultService.InsertRow(r, _userId, _userTestId);
+            }
+            
         }
+        
 
 
         [WebMethod]
