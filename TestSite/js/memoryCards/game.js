@@ -60,16 +60,15 @@ function drawGameCanvas()
     ctx.strokeRect( 0, 0, 1000, 700 );
 }
 
-function showMessage() 
-{
+function showMessage() {
     var offsetLeft = 10;
     var offsetTop = 20;
-    
+
     ctx.fillStyle = "#FFF";
-    ctx.fillRect( rectangleTestMessage[currentTest - 1][0], rectangleTestMessage[currentTest - 1][1], rectangleTestMessage[currentTest - 1][2], rectangleTestMessage[currentTest - 1][3] );
+    ctx.fillRect(rectangleTestMessage[currentTest - 1][0], rectangleTestMessage[currentTest - 1][1], rectangleTestMessage[currentTest - 1][2], rectangleTestMessage[currentTest - 1][3]);
     ctx.strokeStyle = "#000";
     ctx.lineWidth = 4;
-    ctx.strokeRect( rectangleTestMessage[currentTest - 1][0], rectangleTestMessage[currentTest - 1][1], rectangleTestMessage[currentTest - 1][2], rectangleTestMessage[currentTest - 1][3] );
+    ctx.strokeRect(rectangleTestMessage[currentTest - 1][0], rectangleTestMessage[currentTest - 1][1], rectangleTestMessage[currentTest - 1][2], rectangleTestMessage[currentTest - 1][3]);
     ctx.font = "bold 20px arial";
     ctx.fillStyle = "#000";
     for ( var i = 0; i < testMessage[currentTest - 1].length; i++ )
@@ -127,7 +126,7 @@ function drawTableLabel()
     ctx.font = "bold 20px arial";
     for ( var n = 0; n < labelValues.length; n++ )
     {
-        var lines = labelValues[n].split( '\n' );
+        var lines = labelValues[n].split("\\");
         for ( var i = 0; i < lines.length; i++ )
         {
             ctx.fillText( lines[i], 170 + rectangleResultMessage[0] + n * 125, 60 + rectangleResultMessage[1] + i * 20 );

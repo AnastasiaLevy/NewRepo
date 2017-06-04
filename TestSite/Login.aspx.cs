@@ -54,7 +54,7 @@ namespace TestSite
         private bool isUserProvider()
         {
             string userId = Membership.GetUser(userNameLg.Value).ProviderUserKey.ToString();
-            int? providerId = DAL.DataMethods.GetProviderId(userId) != null ? DAL.DataMethods.GetProviderId(userId) : 0;
+            int? providerId = DAL.DataMethods.GetProviderId(userId) ?? 0;
             return providerId > 0 ? true : false;
         }
 
