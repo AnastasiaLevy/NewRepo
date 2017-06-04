@@ -60,7 +60,8 @@ function startGame(gameNum) { //change back w/o s to use
 function countdown() {
     var timeMlsec = gameSettings.TimeOut * 1000
     numMoves = JSON.parse(gameData[game - 1].NumberOfMoves);
-    gameTimer = setTimeout(function () { displayFinalMessageOnTimeout(numMoves, lastMove, timeMlsec) }, timeMlsec);
+    var gameTimer = setTimeout(function () { displayFinalMessageOnTimeout(numMoves, lastMove, timeMlsec) }, timeMlsec);
+    gameTimer = 0;
 }
 
 function hideFinalMessage() {
