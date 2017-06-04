@@ -107,7 +107,7 @@
     <Content Include="category\ProcessingSpeed.aspx" />
     <Content Include="ComingSoon.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="IntelligenceTest.aspx" />
+    <Content Include="category\IntelligenceTest.aspx" />
     <Content Include="category\Memory.aspx" />
     <Content Include="Create\LondonModify.aspx" />
     <Content Include="css\bootstrap.css" />
@@ -425,11 +425,11 @@
     <Compile Include="HTTPHandlers\SessionHandler.ashx.cs">
       <DependentUpon>SessionHandler.ashx</DependentUpon>
     </Compile>
-    <Compile Include="IntelligenceTest.aspx.cs">
+    <Compile Include="category\IntelligenceTest.aspx.cs">
       <DependentUpon>IntelligenceTest.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="IntelligenceTest.aspx.designer.cs">
+    <Compile Include="category\IntelligenceTest.aspx.designer.cs">
       <DependentUpon>IntelligenceTest.aspx</DependentUpon>
     </Compile>
     <Compile Include="category\Memory.aspx.cs">
