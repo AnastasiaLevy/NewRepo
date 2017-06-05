@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Configuration;
 using System.Data.SqlClient;
+using TestSite.Models;
 
 namespace TestSite.DAL
 {
@@ -2136,6 +2137,37 @@ namespace TestSite.DAL
             }
             
             
+        }
+
+        //todo make more abstract through reflections
+        public static void InsertMemoryCardsResult(MemoryCardsResults result)
+        {
+            using (SqlConnection sqc = new SqlConnection(connectionSring))
+            {
+                using (SqlCommand cmd = new SqlCommand("InsertMemoryCardsResult", sqc))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@name", result.Name);
+                    cmd.Parameters.AddWithValue("@totalMoves", result.TotalMoves);
+                    cmd.Parameters.AddWithValue("@incorrectMatching", result.IncorrectMatching);
+                    cmd.Parameters.AddWithValue("@score", result.Score);
+                    cmd.Parameters.AddWithValue("@firstCardAvgRespTime", result.FirstCardAvgRespTime);
+                    cmd.Parameters.AddWithValue("@secondCardAvgRespTime", result.SecondCardAvgRespTime);
+                    cmd.Parameters.AddWithValue("@testTime", result.TotalMoves);
+
+                    try
+                    {
+                        sqc.Open();
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+
+                        throw new Exception("Execption Inserting exeption..." + ex.Message);
+                    }
+                }
+                
+            }
         }
 
 

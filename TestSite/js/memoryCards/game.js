@@ -25,6 +25,8 @@ var countImageLoader = 0;
 var turnX1, turnX2, turnX3, turnX4, turnY1, turnY2, turnY3, turnY4;
 var turnSecondX1, turnSecondX2, turnSecondX3, turnSecondX4, turnSecondY1, turnSecondY2, turnSecondY3, turnSecondY4;
 var xCentrCard, xCentrSecondCard, deltaXTurnCard, deltaYTurnCard;
+var resultArray = [];
+
 
 function init()
 {
@@ -107,11 +109,13 @@ function showResult()
         {
             ctx.fillText( currentScore.scoreArray[n][i] + ( i == 2 ? " %": "" ), 170 + rectangleResultMessage[0] + i * 125, 200 + ( 416 / ( schemeTests.length + 1 ) ) * ( n + 1 ) );
         }
+        addResultIntoOutput(currentScore.scoreArray[n], "Test " + (n+1) + " Score");
     }
     for ( var i = 0; i < currentScore.totalScoreArray.length; i++ )
     {
         ctx.fillText( currentScore.totalScoreArray[i] + ( i == 2 ? " %": "" ), 170 + rectangleResultMessage[0] + i * 125, 200 + ( 416 / ( schemeTests.length + 1 ) ) * ( currentScore.scoreArray.length + 1 ) );
     }
+    addResultIntoOutput(currentScore.totalScoreArray, "Total Score");
 }
 
 function drawTableLabel() 
@@ -299,6 +303,44 @@ function finishTest()
     console.log( "getTestScore", currentScore.getTestsScore() );
     console.log( "getTestTotalScore", currentScore.getTestsTotalScore() );
     showResult();
+    sendResults(resultArray);
+}
+
+//creates object from array and pushes it to array of objects to output it
+//into backend
+function addResultIntoOutput(array, name) {
+    var result = { TotalMoves: 0, IncorrectMatching: 0, Score: 0, FirstCardAvgRespTime: 0, SecondCardAvgRespTime: 0, TestTime: 0 };
+    var indexCounter = 0;
+    for (var property in result) {
+        if (result.hasOwnProperty(property)) {
+            result[property] = array[indexCounter];
+            indexCounter++;
+        }
+    }
+    result["Name"] = name;
+    resultArray.push(result);
+}
+
+function sendResults(object) {
+    
+
+    jQuery.ajax({
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        url: 'MemoryCardsPage.aspx/SaveResults',
+        dataType: 'json',
+        data: JSON.stringify({ 'result': object }),
+        type: 'POST',
+        success: function (resp) {
+
+            //request sent and response received.
+
+        },
+        error: function () {
+
+            save = true;
+        }
+    });
 }
 
 //if you have another AudioContext class use that one, as some browsers have a limit
@@ -994,7 +1036,7 @@ function imageLoading()
         if ( countImageLoader <= allImages.length )
         {
             imageLoading();
-            if ( countImageLoader <= imageForTest1.length )
+            if (countImageLoader <= testsImages[0].length )
             {
                 testCardsImages.setTestImeage( imageObj );
             }

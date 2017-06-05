@@ -40,5 +40,15 @@ namespace TestSite.Tests
             };
         }
         
+        [WebMethod]
+        public static void SaveResults(List<MemoryCardsResults> result)
+        {
+            MemoryCardsResultService _memoryCardsResultService = new MemoryCardsResultService();
+            foreach(var row in result)
+            {
+                _memoryCardsResultService.InsertRow(row);
+            }
+            
+        }
     }
 }

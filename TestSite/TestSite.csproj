@@ -413,6 +413,7 @@
     <Compile Include="BL\Models\MemoryCardsViewModel.cs" />
     <Compile Include="BL\Services\LondonResultServices.cs" />
     <Compile Include="BL\Services\MemoryCardsImagesServices.cs" />
+    <Compile Include="BL\Services\MemoryCardsResultService.cs" />
     <Compile Include="BL\Services\MemoryCardsTextsServices.cs" />
     <Compile Include="CardSortRow.cs" />
     <Compile Include="category\ExecutiveFunction.aspx.cs">
@@ -483,6 +484,7 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\MemoryCardsImages.cs" />
+    <Compile Include="Models\MemoryCardsResults.cs" />
     <Compile Include="Models\MemoryCardsStructure.cs" />
     <Compile Include="Models\MemoryCardsTexts.cs" />
     <Compile Include="Provider\ProviderPortal.aspx.cs">
