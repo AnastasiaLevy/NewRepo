@@ -235,6 +235,7 @@
     <Content Include="memoryImg\faces\face04.png" />
     <Content Include="memoryImg\faces\face05.png" />
     <Content Include="memoryImg\faces\face06.png" />
+    <Content Include="memoryImg\faces\face07.png" />
     <Content Include="memoryImg\faces\face08.png" />
     <Content Include="memoryImg\faces\face09.png" />
     <Content Include="memoryImg\faces\face10.png" />
@@ -254,6 +255,18 @@
     <Content Include="memoryImg\flags\flag12.png" />
     <Content Include="memoryImg\fullscreenoff.png" />
     <Content Include="memoryImg\fullscreenon.png" />
+    <Content Include="memoryImg\others\other01.png" />
+    <Content Include="memoryImg\others\other02.png" />
+    <Content Include="memoryImg\others\other03.png" />
+    <Content Include="memoryImg\others\other04.png" />
+    <Content Include="memoryImg\others\other05.png" />
+    <Content Include="memoryImg\others\other06.png" />
+    <Content Include="memoryImg\others\other07.png" />
+    <Content Include="memoryImg\others\other08.png" />
+    <Content Include="memoryImg\others\other09.png" />
+    <Content Include="memoryImg\others\other10.png" />
+    <Content Include="memoryImg\others\other11.png" />
+    <Content Include="memoryImg\others\other12.png" />
     <Content Include="packages.config" />
     <Content Include="assets\font-awesome\fonts\fontawesome-webfont.eot" />
     <Content Include="assets\font-awesome\fonts\fontawesome-webfont.ttf" />
@@ -396,6 +409,11 @@
     <Compile Include="Admin\AdminPortal.aspx.designer.cs">
       <DependentUpon>AdminPortal.aspx</DependentUpon>
     </Compile>
+    <Compile Include="BL\Models\LondonResultViewModel.cs" />
+    <Compile Include="BL\Models\MemoryCardsViewModel.cs" />
+    <Compile Include="BL\Services\LondonResultServices.cs" />
+    <Compile Include="BL\Services\MemoryCardsImagesServices.cs" />
+    <Compile Include="BL\Services\MemoryCardsTextsServices.cs" />
     <Compile Include="CardSortRow.cs" />
     <Compile Include="category\ExecutiveFunction.aspx.cs">
       <DependentUpon>ExecutiveFunction.aspx</DependentUpon>
@@ -464,6 +482,9 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\MemoryCardsImages.cs" />
+    <Compile Include="Models\MemoryCardsStructure.cs" />
+    <Compile Include="Models\MemoryCardsTexts.cs" />
     <Compile Include="Provider\ProviderPortal.aspx.cs">
       <DependentUpon>ProviderPortal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -514,6 +535,7 @@
     <Compile Include="ResultsPage.aspx.designer.cs">
       <DependentUpon>ResultsPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="BL\Services\MemoryCardsStructureServices.cs" />
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -642,7 +664,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="css\images\" />
-    <Folder Include="memoryImg\other\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
