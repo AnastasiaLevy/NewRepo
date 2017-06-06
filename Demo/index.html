@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Document</title>
+    <style>
+        .wrapper{
+            border: 1px black solid;
+            display: inline-block;
+            padding-bottom: 0px;
+            height: 50px;
+            width: 50px;
+            margin-right: 5px;
+        }
+        .selector{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <script src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script>
+        var data = [{"Id":1,"Name":"flag01","Path":"memoryImg/flags/flag01.png","TestNumber":1,"SortOrder":1},
+        {"Id":2,"Name":"flag02","Path":"memoryImg/flags/flag02.png","TestNumber":1,"SortOrder":2},
+        {"Id":3,"Name":"flag03","Path":"memoryImg/flags/flag03.png","TestNumber":1,"SortOrder":3},
+        {"Id":4,"Name":"flag04","Path":"memoryImg/flags/flag04.png","TestNumber":1,"SortOrder":4},
+        {"Id":5,"Name":"flag05","Path":"memoryImg/flags/flag05.png","TestNumber":1,"SortOrder":5},
+        {"Id":6,"Name":"flag06","Path":"memoryImg/flags/flag06.png","TestNumber":1,"SortOrder":6},
+        {"Id":7,"Name":"flag07","Path":"memoryImg/flags/flag07.png","TestNumber":1,"SortOrder":7},
+        {"Id":8,"Name":"flag08","Path":"memoryImg/flags/flag08.png","TestNumber":1,"SortOrder":8},
+        {"Id":9,"Name":"flag09","Path":"memoryImg/flags/flag09.png","TestNumber":1,"SortOrder":9},
+        {"Id":10,"Name":"flag10","Path":"memoryImg/flags/flag10.png","TestNumber":1,"SortOrder":10},
+        {"Id":11,"Name":"flag11","Path":"memoryImg/flags/flag11.png","TestNumber":1,"SortOrder":11},
+        {"Id":12,"Name":"flag12","Path":"memoryImg/flags/flag12.png","TestNumber":1,"SortOrder":12},
+        {"Id":13,"Name":"face01","Path":"memoryImg/faces/face01.png","TestNumber":2,"SortOrder":1},
+        {"Id":14,"Name":"face02","Path":"memoryImg/faces/face02.png","TestNumber":2,"SortOrder":2},
+        {"Id":15,"Name":"face03","Path":"memoryImg/faces/face03.png","TestNumber":2,"SortOrder":3},
+        {"Id":16,"Name":"face04","Path":"memoryImg/faces/face04.png","TestNumber":2,"SortOrder":4},
+        {"Id":17,"Name":"face05","Path":"memoryImg/faces/face05.png","TestNumber":2,"SortOrder":5},
+        {"Id":18,"Name":"face06","Path":"memoryImg/faces/face06.png","TestNumber":2,"SortOrder":6},
+        {"Id":19,"Name":"face07","Path":"memoryImg/faces/face07.png","TestNumber":2,"SortOrder":7},
+        {"Id":20,"Name":"face08","Path":"memoryImg/faces/face08.png","TestNumber":2,"SortOrder":8},
+        {"Id":21,"Name":"face09","Path":"memoryImg/faces/face09.png","TestNumber":2,"SortOrder":9},
+        {"Id":22,"Name":"face10","Path":"memoryImg/faces/face10.png","TestNumber":2,"SortOrder":10},
+        {"Id":23,"Name":"face11","Path":"memoryImg/faces/face11.png","TestNumber":2,"SortOrder":11},
+        {"Id":24,"Name":"face12","Path":"memoryImg/faces/face12.png","TestNumber":2,"SortOrder":12},
+        {"Id":25,"Name":"other01","Path":"memoryImg/others/other01.png","TestNumber":3,"SortOrder":1},
+        {"Id":26,"Name":"other02","Path":"memoryImg/others/other02.png","TestNumber":3,"SortOrder":2},
+        {"Id":27,"Name":"other03","Path":"memoryImg/others/other03.png","TestNumber":3,"SortOrder":3},
+        {"Id":28,"Name":"other04","Path":"memoryImg/others/other04.png","TestNumber":3,"SortOrder":4},
+        {"Id":29,"Name":"other05","Path":"memoryImg/others/other05.png","TestNumber":3,"SortOrder":5},
+        {"Id":30,"Name":"other06","Path":"memoryImg/others/other06.png","TestNumber":3,"SortOrder":6},
+        {"Id":31,"Name":"other07","Path":"memoryImg/others/other07.png","TestNumber":3,"SortOrder":7},
+        {"Id":32,"Name":"other08","Path":"memoryImg/others/other08.png","TestNumber":3,"SortOrder":8},
+        {"Id":33,"Name":"other09","Path":"memoryImg/others/other09.png","TestNumber":3,"SortOrder":9},
+        {"Id":34,"Name":"other10","Path":"memoryImg/others/other10.png","TestNumber":3,"SortOrder":10},
+        {"Id":35,"Name":"other11","Path":"memoryImg/others/other11.png","TestNumber":3,"SortOrder":11},
+        {"Id":36,"Name":"other12","Path":"memoryImg/others/other12.png","TestNumber":3,"SortOrder":12}];
+    
+    function selectImage(number) {
+        data.forEach(function(element) {
+                    if(element.TestNumber == number)
+                    {
+                        var $wrapper = $('<div>',{
+                            'class':'wrapper'
+                        }).appendTo('body');
+                        $('<img>',{
+                            'src':element.Path,
+                            'height':50,
+                            'width':50
+                        }).appendTo($wrapper);
+                    }
+                }, this);
+    }
+    
+        $(function()
+        {
+            
+            selectImage(1);
+            $('.selector').change(function()
+            {
+                alert("test");
+                $('.wrapper').remove();
+                selectImage(this.value);
+            })
+        })
+
+
+    </script>
+<select class="selector">
+    <option selected value="1">Flags</option>
+    <option value="2">Faces</option>
+    <option value="3">Other</option>
+</select>
+   
+
+   <p>selected option will be saved into database.(i.e. if this is Test1 then all this images will be releated to Test1 and will be shown during user's test)</p>
+</body>
+</html>
