@@ -1,23 +1,6 @@
 ﻿//var text = ["See these two boards? They are both alike. This board on the left is the one you will use and you will make it look like the one on the right. Your task is to make this arrangement on the left look like the one on the right in as few moves as possible. There are two rules you must follow when you are arranging the beads. The first rule is that you are not allowed to place more beads on the peg that it can hold. The second rule is that you can only move one bead at a time. You cannot move two beads off the pegs at the same time. Do you have any questions? Now, arrange the beads on the left so they look like the arrangement on the right. You have two minutes to do each problem. Also, you need to coplete the problem in 20 moves or fewer. If you are not finished within two minutes or in less than 20 moves, the trial ends and the new problem is presented.", " Click here to start 123."].join('');
-//var text = [" See these two boards? They are both alike.",
-//    "This board on the left is the one you will use and",
-//    "you will make it look like the one on the right. Your ",
-//    "task is to make this arrangement on the left look like ",
-//    "the one on the right in as few moves as possible. There ",
-//    "are two rules you must follow when you are arranging the beads.",
-//    "The first rule is that you are not allowed to place more beads ",
-//    "on the peg that it can hold. The second rule is that you can only ",
-//    "move one bead at a time. You cannot move two beads off the pegs ",
-//    "at the same time. Now, arrange ",
-//    "the beads on the left so they look like the arrangement on the right.",
-//    "You have two minutes to do each problem. Also, you need to ",
-//    "coplete the problem in 20 moves or fewer. If you are not ",
-//    "finished within two minutes or in less than 20 moves,",
-//    "the trial ends and the new problem is presented. Click here to start."].join("");
 
-
-
-function startGame(gameNum) { //change back w/o s to use
+function startGame(gameNum) { 
     var ur = localStorage.getItem("tId");
     var state = localStorage.getItem("finished");
 
@@ -58,9 +41,12 @@ function startGame(gameNum) { //change back w/o s to use
 }
 
 function countdown() {
+    window.clearTimeout(gameTimer);
     var timeMlsec = gameSettings.TimeOut * 1000
     numMoves = JSON.parse(gameData[game - 1].NumberOfMoves);
+    var gameTimer = 0;
     gameTimer = setTimeout(function () { displayFinalMessageOnTimeout(numMoves, lastMove, timeMlsec) }, timeMlsec);
+    
 }
 
 function hideFinalMessage() {

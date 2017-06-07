@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="AnaLevy">
+    <meta name="author" content="">
     <meta name="google-site-verification" content="GMj8owmZtkuKU0Fa_4Zg82VbKsQPO8VkZD_pHsRghA4" />
     
     <link rel="..//shortcut icon" href="../images/favicon.ico"/>
@@ -32,9 +32,9 @@
 
 <body>
     <form runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
-
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                         <span class="sr-only">Toggle navigation</span>
@@ -60,15 +60,17 @@
                         <%--    <li><a href="#reports">Results</a></li>--%>
                         <li id="login" runat="server"><a href="Login.aspx">Login</a></li>
                         <li>
-                            <asp:LinkButton ID="Logout" CssClass="btn button" type="submit" runat="server" OnClick="logOut_Click">Log Out</asp:LinkButton>
+                            <asp:LinkButton ID="Logout" CssClass="" type="submit" runat="server" OnClick="logOut_Click">Log Out</asp:LinkButton>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-
+  
         <div class="container">
-            <section id="userInfo">
+                  <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+            <ContentTemplate>
+                   <section id="userInfo">
                 <div class="row">
                     <div class="box box1">
                         <div class="col-lg-12">
@@ -78,13 +80,7 @@
                             </h2>
                             <hr>
                         </div>
-
-                        <%--  <div class="col-md-2">
-                            <img class="img-responsive img-border-left" src="../images/mind.jpg" alt="">
-                        </div>--%>
                         <div class="col-lg-3">
-
-
                             <asp:Button ID="btnUpdateProfile" runat="server" Text="Set Provider Code" class="btn btn-labeled btn-info" Width=" 100%" OnClick="btnUpdateProfile_Click" />
                             <asp:Button ID="btnAddNewPart" runat="server" Text="Add New Participant" OnClick="btnAddNewPart_Click" class="btn btn-labeled btn-info" Width="100%" />
                             <asp:Button ID="btnAddUserTest" runat="server" Text="Assign Participant Test" OnClick="btnAddUserTest_Click" class="btn btn-labeled btn-info" Width="100%" />
@@ -152,19 +148,7 @@
 
                                 </div>
 
-<%--<div id="myModal" class="modal fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <!-- dialog body -->
-      <div class="modal-body">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        Hello world!
-      </div>
-      <!-- dialog buttons -->
-      <div class="modal-footer"><button type="button" class="btn btn-primary">OK</button></div>
-    </div>
-  </div>
-</div>--%>
+
                                 <div id="createUser" class="panel panel-success" runat="server">
                                     <div class="panel-heading">
                                         <h3 class="panel-title">Create New User:</h3>
@@ -226,8 +210,12 @@
                     </div>
                 </div>
             </section>
-
-            <section id="participantData">
+            </ContentTemplate>
+        </asp:UpdatePanel>
+         
+            <asp:UpdatePanel runat="server" UpdateMode="Conditional">
+                <ContentTemplate>
+     <section id="participantData">
                 <div class="row">
                     <div class="box">
                         <div class="col-lg-12">
@@ -244,14 +232,6 @@
 
                         	<div class="row">
     
-         <%--       <div class="input-group stylish-input-group">
-                    <input type="text" class="form-control"  placeholder="Search" >
-                    <span class="input-group-addon">
-       
-                            <asp:Button ID="Button1" runat="server" Text="Button"  OnClick="Button1_Click1"/>
-                    
-                    </span>
-                </div>--%>
             </div>
    
 
@@ -282,7 +262,7 @@
                                         <asp:TemplateField HeaderText="Remove" HeaderStyle-Width="10%" ItemStyle-Width="10%"
                                             FooterStyle-Width="10%">
                                             <ItemTemplate>
-                                                <asp:LinkButton runat="server" Text="" CausesValidation="false" ID="lbRemoveTestFromUserList" OnClick="lbRemoveTestFromUserList_Click"><i class="fa fa-minus-square-o  fa-2x" aria-hidden="true"></i></asp:LinkButton>
+                                                <asp:LinkButton runat="server" Text="" CausesValidation="false" ID="lbRemoveTestFromUserList" OnClick="lbRemoveTestFromUserList_Click" OnClientClick="return confirm('Are you sure?')"><i class="fa fa-minus-square-o  fa-2x" aria-hidden="true"></i></asp:LinkButton>
                                             </ItemTemplate>
 
                                             <FooterStyle Width="10%"></FooterStyle>
@@ -342,11 +322,7 @@
                                     </asp:TemplateField>
 
                                     <asp:BoundField DataField="userId" />
-                                    <%--                                        <asp:TemplateField HeaderText="Allow View" HeaderStyle-Width="10%" ItemStyle-Width="10%">
-                                             <ItemTemplate>
-                                                 <asp:CheckBox ID="SelectCheckBox" runat="server" OnCheckedChanged="SelectCheckBox_CheckedChanged" Checked ="true" />
-                                             </ItemTemplate>
-                                         </asp:TemplateField>--%>
+                             
                                 </Columns>
                                 <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                                 <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
@@ -364,6 +340,9 @@
                 </div>
             </section>
 
+                </ContentTemplate>
+            </asp:UpdatePanel>
+       
             <section id="purchachedTests">
                 <div class="row">
                     <div class="box">

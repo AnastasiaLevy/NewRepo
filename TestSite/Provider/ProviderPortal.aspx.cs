@@ -336,6 +336,7 @@ namespace TestSite.Provider
                     int providerId = Convert.ToInt32(ViewState["providerId"]);
                     SetDllProviderTests(providerId);
                     SetProviderTestsGrid(providerId);
+                    SetParticipantGrid(providerId);
                     //TODO: Display success message;
                     assignTest.Visible = true;
                     ddlModifiedID.Visible = false;

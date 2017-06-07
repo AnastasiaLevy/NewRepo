@@ -47,6 +47,10 @@
     background-image: url('images/memoryPage1.jpg');
 }
 
+.MemoryBlock > p{
+   font-size:20px;
+}
+
 .ExecutiveFunction {
     background-image: url('images/network.jpg');
 }
@@ -1074,7 +1078,7 @@ img.displayed {
 }
 
     .navbar-inverse .navbar-nav > li > a {
-        font-size: 15px;
+        /*font-size: 15px;*/
         -webkit-transition: all .3s;
         -moz-transition: all .3s;
         -ms-transition: all .3s;
@@ -3114,7 +3118,7 @@ label {
     /*margin-top: -50px;
     margin-left: -50px;*/
     width: 80%;
-    min-height: 50%;
+   height: 500px;
     z-index: 100;
     background-color: white;
     border: 2px double;
@@ -3122,7 +3126,7 @@ label {
     border-radius: 5px;
     padding: 10px;
     padding-top: 0px;
-    overflow: scroll;
+    overflow-y: auto;
 }
 
 #btnCancel {
