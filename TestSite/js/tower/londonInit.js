@@ -29,7 +29,7 @@ var peg1 = null;
 var peg2 = null;
 var peg3 = null;
 //draw dase with 3 pegs
-
+var gameTimer = null;
 
 function initField(gameNum, gameData) {
 
