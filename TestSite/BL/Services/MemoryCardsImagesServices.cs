@@ -18,7 +18,7 @@ namespace TestSite.BL.Services
             var dataTable = dataMethods.GetValues(_procedureName);
             foreach (DataRow row in dataTable.Rows)
             {
-                images.Add(new MemoryCardsImages { Id = Int32.Parse(row["Id"].ToString()), Name = row["Name"].ToString(), Path = row["Path"].ToString(), TestNumber = Int32.Parse(row["TestNumber"].ToString()), SortOrder = Int32.Parse(row["SortOrder"].ToString()) });
+                images.Add(new MemoryCardsImages { Id = Int32.Parse(row["Id"].ToString()), Name = row["Name"].ToString(), Path = row["Path"].ToString(), SortOrder = Int32.Parse(row["SortOrder"].ToString()) });
             }
             return images;
         }

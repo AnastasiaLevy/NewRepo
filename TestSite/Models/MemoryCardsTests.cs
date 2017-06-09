@@ -5,11 +5,10 @@ using System.Web;
 
 namespace TestSite.Models
 {
-    public class MemoryCardsTexts
+    public class MemoryCardsTests
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Text { get; set; }
-        public int? TestNumber { get; set; }
+        public string Images { get; set; }
     }
 }

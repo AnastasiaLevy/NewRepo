@@ -106,6 +106,7 @@
     <Content Include="category\ExecutiveFunction.aspx" />
     <Content Include="category\ProcessingSpeed.aspx" />
     <Content Include="ComingSoon.aspx" />
+    <Content Include="Create\MemoryCardsModify.aspx" />
     <Content Include="Global.asax" />
     <Content Include="category\IntelligenceTest.aspx" />
     <Content Include="category\Memory.aspx" />
@@ -423,10 +424,13 @@
       <DependentUpon>AdminPortal.aspx</DependentUpon>
     </Compile>
     <Compile Include="BL\Models\LondonResultViewModel.cs" />
+    <Compile Include="BL\Models\MemoryCardsConfigSaveResult.cs" />
+    <Compile Include="BL\Models\MemoryCardsModifyViewModel.cs" />
     <Compile Include="BL\Models\MemoryCardsViewModel.cs" />
     <Compile Include="BL\Services\LondonResultServices.cs" />
     <Compile Include="BL\Services\MemoryCardsImagesServices.cs" />
     <Compile Include="BL\Services\MemoryCardsResultService.cs" />
+    <Compile Include="BL\Services\MemoryCardsTestsServices.cs" />
     <Compile Include="BL\Services\MemoryCardsTextsServices.cs" />
     <Compile Include="CardSortRow.cs" />
     <Compile Include="category\ExecutiveFunction.aspx.cs">
@@ -449,6 +453,13 @@
     </Compile>
     <Compile Include="ComingSoon.aspx.designer.cs">
       <DependentUpon>ComingSoon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Create\MemoryCardsModify.aspx.cs">
+      <DependentUpon>MemoryCardsModify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Create\MemoryCardsModify.aspx.designer.cs">
+      <DependentUpon>MemoryCardsModify.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -499,6 +510,7 @@
     <Compile Include="Models\MemoryCardsImages.cs" />
     <Compile Include="Models\MemoryCardsResults.cs" />
     <Compile Include="Models\MemoryCardsStructure.cs" />
+    <Compile Include="Models\MemoryCardsTests.cs" />
     <Compile Include="Models\MemoryCardsTexts.cs" />
     <Compile Include="Provider\ProviderPortal.aspx.cs">
       <DependentUpon>ProviderPortal.aspx</DependentUpon>

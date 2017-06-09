@@ -29,14 +29,17 @@ namespace TestSite.Tests
             MemoryCardsStructureServices _memoryStructureServices = new MemoryCardsStructureServices();
             MemoryCardsTextsServices _memoryTextsServices = new MemoryCardsTextsServices();
             MemoryCardsImagesServices _memoryImagesServices = new MemoryCardsImagesServices();
+            MemoryCardsTestsServices _memoryTestsServices = new MemoryCardsTestsServices();
             var structureData = _memoryStructureServices.GetAllStructures();
             var textsData = _memoryTextsServices.GetAllTexts();
             var imagesData = _memoryImagesServices.GetAllImages();
+            var testsData = _memoryTestsServices.GetAllTests();
             return new MemoryCardsViewModel
             {
                 Structures = structureData,
                 Texts = textsData,
-                Images = imagesData
+                Images = imagesData,
+                Tests = testsData
             };
         }
         

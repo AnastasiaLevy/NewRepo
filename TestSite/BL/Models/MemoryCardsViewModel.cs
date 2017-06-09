@@ -11,5 +11,6 @@ namespace TestSite.BL.Models
         public List<MemoryCardsStructure> Structures { get; set; }
         public List<MemoryCardsTexts> Texts { get; set; }
         public List<MemoryCardsImages> Images { get; set; }
+        public List<MemoryCardsTests> Tests { get; set; }
     }
 }

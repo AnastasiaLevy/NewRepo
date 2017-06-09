@@ -107,7 +107,8 @@
            success: function (resp) {
                FillStructureConfig(resp.d.Structures);
                FillTextConfig(resp.d.Texts);
-               FillImagesConfig(resp.d.Images);
+               FillImagesConfig(resp.d.Images, resp.d.Tests);
+
            },
            error: function (resp) {
                alert("Could not load the correct test. Please try again later.");

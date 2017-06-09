@@ -6,6 +6,7 @@ using System.Web;
 using System.Configuration;
 using System.Data.SqlClient;
 using TestSite.Models;
+using TestSite.BL.Models;
 
 namespace TestSite.DAL
 {
@@ -668,6 +669,28 @@ namespace TestSite.DAL
             }
 
             return ds;
+        }
+
+        internal static DataTable GetMemoryCardsTestModify(int providerId)
+        {
+            DataTable dt = new DataTable();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("SelectMemoryCardsTestModify", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@providerId", providerId);
+
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                adp.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                InsertErrorMessage(ex.ToString(), null, null, "SelectMemoryCardsTestModify");
+                throw new Exception("Execption getting All Provider Participants. " + ex.Message);
+            }
+
+            return dt;
         }
 
         internal static void InsertCardSortTable(string html, int tId)
@@ -2167,6 +2190,37 @@ namespace TestSite.DAL
                     }
                 }
                 
+            }
+        }
+
+
+        public static void UpdateMemoryCardsTrial(MemoryCardsConfigSaveResult result)
+        {
+            using (SqlConnection sqc = new SqlConnection(connectionSring))
+            {
+                using (SqlCommand cmd = new SqlCommand("UpdateMemoryCardsTrial", sqc))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Id", result.Id);
+                    cmd.Parameters.AddWithValue("@TestName", result.TestName);
+                    cmd.Parameters.AddWithValue("@TestText", result.TestText);
+                    cmd.Parameters.AddWithValue("@Matrix", result.Matrix);
+                    cmd.Parameters.AddWithValue("@Scheme", result.Scheme);
+                    cmd.Parameters.AddWithValue("@OverTime", result.OverTime);
+                    cmd.Parameters.AddWithValue("@ImagesName", result.ImagesName);
+
+                    try
+                    {
+                        sqc.Open();
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+
+                        throw new Exception("Execption Inserting exeption..." + ex.Message);
+                    }
+                }
+
             }
         }
 

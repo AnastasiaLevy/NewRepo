@@ -10,7 +10,6 @@ namespace TestSite.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Path { get; set; }
-        public int TestNumber { get; set; }
         public int SortOrder { get; set; }
     }
 }

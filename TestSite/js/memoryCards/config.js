@@ -1,6 +1,6 @@
 //putting array of strings, convert it to array of numbers and set it schemeTests array
 function InitializeTestScheme(array) {
-    schemeTests.push(ConvertStringToArray(array));
+    schemeTests.push(randomizeArray(ConvertStringToArray(array)));
 };
 
 function InitializeMatrixScheme(array) {
@@ -21,6 +21,27 @@ function ConvertStringToArray(array)
     return tempArray;
 }
 
+function randomizeArray(array)
+{
+    
+        
+    for (var i = array.length; i; i--) {
+        var j, x;
+            j = Math.floor(Math.random() * i);
+            x = array[i - 1];
+            array[i - 1] = array[j];
+            array[j] = x;
+    }
+    return array;
+    
+}
+
+function FillTestConfig(obj)
+{
+    obj.forEach(function (obj) {
+        tests.push(obj);
+    });
+}
 
 //fill structure arrays with their data
 function FillStructureConfig(obj)
@@ -72,17 +93,18 @@ function FillTextConfig(obj) {
 
 
 //Fills in all Images
-function FillImagesConfig(obj) {
-    var uniqueTest = GetUniqueTests(obj);
-    for (var index in uniqueTest) {
+function FillImagesConfig(images, tests) {
+    tests.forEach(function (test) {
         var array = [];
-        obj.forEach(function (obj) {
-            if (obj.TestNumber === uniqueTest[index]) {
-                array.push(obj.Path);
+        images.forEach(function (image) {
+            if (image.Name == test.Images)
+            {
+                array.push(image.Path);
             }
         });
         testsImages.push(array);
-    }
+    });
+    
 
     //concat all images
     testsImages.forEach(function (array) {
@@ -134,7 +156,7 @@ var rectangleResultTitle = [50, 50, 900, 180]; //left, top, width, height
 var resultWidthLeftColumn = 150; // width of first left column
 
 // Pooled Arrays
-
+var test = [];
 var testMessage = [];
 var rectangleTestMessage = [rectangleTest1Message, rectangleTest2Message, rectangleTest3Message];
 //scheme
