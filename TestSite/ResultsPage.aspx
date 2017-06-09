@@ -15,7 +15,7 @@
     <link rel="shortcut icon" href="images/favicon.ico" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
    <%-- <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">--%>
-
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
    <%-- <link href="fonts/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">--%>
     <link href="cogTest.css" rel="stylesheet" />
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -43,7 +43,8 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="../MainPage.aspx">
-                        <i class="fa fa-cogs" aria-hidden="true">Quiz</i>
+                        <i class="fa fa-cogs" aria-hidden="true"></i>
+                        Quiz
                     </a>
 
                 </div>
