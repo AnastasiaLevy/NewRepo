@@ -268,7 +268,7 @@
         //NEW SCHEME AND MATRIX
         function updateScheme(matrix) {
             if (matrix == "4x3") {
-                result.Scheme = "1;2;3;4;5;6;7;8;9;10;11;12";
+                result.Scheme = "1;2;3;4;5;6;1;2;3;4;5;6";
                 result.Matrix = "4;3";
             }
             else if (matrix == "6x4") {
