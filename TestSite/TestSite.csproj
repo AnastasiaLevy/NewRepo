@@ -182,6 +182,11 @@
     <Content Include="images\Nback.jpg" />
     <Content Include="images\network.jpg" />
     <Content Include="images\open-alt-icon.png" />
+    <Content Include="images\cool1.jpg" />
+    <Content Include="images\cool5.jpg" />
+    <Content Include="images\cool2.jpeg" />
+    <Content Include="images\cool3.jpeg" />
+    <Content Include="images\cool4.jpeg" />
     <Content Include="images\quest1.png" />
     <Content Include="images\quest2.png" />
     <Content Include="images\quest3.png" />
@@ -191,6 +196,7 @@
     <Content Include="images\quest7.png" />
     <Content Include="images\sillog.png" />
     <Content Include="images\Stroop.jpg" />
+    <Content Include="images\cool6.jpeg" />
     <Content Include="images\test-point.jpg" />
     <Content Include="images\tower.jpg" />
     <Content Include="js\jquery-responsiveTables.js" />
@@ -331,8 +337,14 @@
     <Content Include="Style\timelify.scss" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Scripts\jquery.popit.min.js.map" />
+    <Content Include="Tests\adult_ADHD.aspx" />
+    <Content Include="Tests\Autism.aspx" />
+    <Content Include="Tests\Horney.aspx" />
+    <Content Include="Tests\Personality.aspx" />
+    <Content Include="Tests\PTSD.aspx" />
     <Content Include="Tests\CogQuestTool\CogQuestInstructionsPDF.pdf" />
     <Content Include="Site1.Master" />
+    <Content Include="TestPage.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -387,6 +399,7 @@
     <Content Include="Tests\MemoryCardsWrapper.aspx" />
     <Content Include="Tests\NbackPage.aspx" />
     <Content Include="Tests\NbackWrapper.aspx" />
+    <Content Include="Tests\ADHD.aspx" />
     <Content Include="Tests\StroopPage.aspx" />
     <Content Include="Tests\StroopWrapper.aspx" />
     <Content Include="Tests\SyllogPage.aspx" />
@@ -557,6 +570,48 @@
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
     </Compile>
+    <Compile Include="TestPage.Master.cs">
+      <DependentUpon>TestPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestPage.Master.designer.cs">
+      <DependentUpon>TestPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\adult_ADHD.aspx.cs">
+      <DependentUpon>adult_ADHD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\adult_ADHD.aspx.designer.cs">
+      <DependentUpon>adult_ADHD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Autism.aspx.cs">
+      <DependentUpon>Autism.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\Autism.aspx.designer.cs">
+      <DependentUpon>Autism.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Horney.aspx.cs">
+      <DependentUpon>Horney.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\Horney.aspx.designer.cs">
+      <DependentUpon>Horney.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Personality.aspx.cs">
+      <DependentUpon>Personality.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\Personality.aspx.designer.cs">
+      <DependentUpon>Personality.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\PTSD.aspx.cs">
+      <DependentUpon>PTSD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\PTSD.aspx.designer.cs">
+      <DependentUpon>PTSD.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Tests\CogQuest.aspx.cs">
       <DependentUpon>CogQuest.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -591,6 +646,13 @@
     </Compile>
     <Compile Include="Tests\NbackWrapper.aspx.designer.cs">
       <DependentUpon>NbackWrapper.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\ADHD.aspx.cs">
+      <DependentUpon>ADHD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\ADHD.aspx.designer.cs">
+      <DependentUpon>ADHD.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tests\StroopPage.aspx.cs">
       <DependentUpon>StroopPage.aspx</DependentUpon>

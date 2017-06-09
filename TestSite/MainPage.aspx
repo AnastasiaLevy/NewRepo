@@ -309,6 +309,7 @@
                         <li data-value="memory"><a href="#">Memory</a></li>
                         <li data-value="executive"><a href="#">Executive Function</a></li>
                         <li data-value="mobileapps"><a href="#">Processing Speed</a></li>
+                        <li data-value="personality"><a href="#">Personality</a></li>
                     </ul>
 
                     <ul class="port2">
@@ -335,6 +336,31 @@
                         <li data-type="mobileapps" data-id="id-6" class="port3">
                             <a href="Tests/SyllogWrapper.aspx" id="mobileapps2">
                                 <img src="images/sillog.png" /></a>
+                        </li>
+                   
+                        <li data-type="personality" data-id="id-7" class="port3">
+                            <a href="Tests/PTSD.aspx" id="cool1">
+                                <img src="images/cool1.jpg" alt=""></a>
+                        </li>
+                        <li data-type="personality" data-id="id-8" class="port3">
+                            <a href="Tests/ADHD.aspx" id="cool2">
+                                <img src="images/cool2.jpeg" alt=""></a>
+                        </li>
+                        <li data-type="personality" data-id="id-12" class="port3">
+                            <a href="WCSTWrapper.aspx" id="cool3">
+                                <img src="images/cool3.jpeg" alt=""></a>
+                        </li>
+                        <li data-type="personality" data-id="id-9" class="port3">
+                            <a href="Tests/NbackWrapper.aspx" id="cool4">
+                                <img src="images/cool4.jpeg" alt=""></a>
+                        </li>
+                        <li data-type="personality" data-id="id-10" class="port3">
+                            <a href="LondonWrapper.aspx" id="cool5">
+                                <img src="images/cool5.jpg" alt=""></a>
+                        </li>
+                        <li data-type="personality" data-id="id-11" class="port3">
+                            <a href="Tests/SyllogWrapper.aspx" id="cool6">
+                                <img src="images/cool6.jpeg" /></a>
                         </li>
                     </ul>
                 </div>

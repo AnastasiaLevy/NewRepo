@@ -2002,17 +2002,18 @@ figure.effect-oscar {
 }
 
 .port3 {
-    width: 33%;
-    min-width: 240px;
+    
+    min-width: 180px;
     display: inline-block;
     margin: 0px 0px 7px 0px;
     padding: 0px;
+    border: 2px double  gray;
 }
 
     .port3 img {
-        width: 99%;
-        min-width: 240px;
-        max-width: 380px;
+       
+        width: 180px;
+        max-width: 240px;
         cursor: pointer;
     }
 

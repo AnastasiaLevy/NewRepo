@@ -25,6 +25,7 @@ namespace TestSite.HelpClasses
             public const string CASS_T = "12";
             public const string CASS = "13";
             public const string HCTI = "14";
+            public const string MemoryCards = "15";
 
             // public TestId(); 
         }
