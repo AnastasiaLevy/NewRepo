@@ -433,12 +433,21 @@ namespace TestSite.Provider
 
                 ddlModifyTest.Items.Add(new ListItem(dr["testName"].ToString(), dr["Id"].ToString()));
             }
+            dt = DAL.DataMethods.GetMemoryCardsTestModify(Convert.ToInt32(ViewState["providerId"]));
+            foreach (DataRow dr in dt.Rows)
+            {
+
+                ddlModifyTest.Items.Add(new ListItem("Memory Cards", dr["Id"].ToString()));
+            }
         }
 
         protected void btnSelectModify_Click(object sender, EventArgs e)
         {
             Session["providerId"] = Convert.ToInt32(ViewState["providerId"]);
-
+            if(ddlModifyTest.SelectedItem.Text == "Memory Cards")
+            {
+                Response.Redirect("../Create/MemoryCardsModify.aspx");
+            }
             Response.Redirect("../Create/LondonModify.aspx?testId=" + ddlModifyTest.SelectedValue);
         }
 

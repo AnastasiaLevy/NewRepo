@@ -411,6 +411,8 @@
       <DependentUpon>AdminPortal.aspx</DependentUpon>
     </Compile>
     <Compile Include="BL\Models\LondonResultViewModel.cs" />
+    <Compile Include="BL\Models\MemoryCardsConfigSaveResult.cs" />
+    <Compile Include="BL\Models\MemoryCardsModifyViewModel.cs" />
     <Compile Include="BL\Models\MemoryCardsViewModel.cs" />
     <Compile Include="BL\Services\LondonResultServices.cs" />
     <Compile Include="BL\Services\MemoryCardsImagesServices.cs" />
