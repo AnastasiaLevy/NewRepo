@@ -58,6 +58,7 @@ function startGame(gameNum) { //change back w/o s to use
 }
 
 function countdown() {
+    window.clearTimeout(gameTimer);
     var timeMlsec = gameSettings.TimeOut * 1000
     numMoves = JSON.parse(gameData[game - 1].NumberOfMoves);
     gameTimer = setTimeout(function () { displayFinalMessageOnTimeout(numMoves, lastMove, timeMlsec) }, timeMlsec);

@@ -157,7 +157,7 @@ function onclickRed(objName) {
             up3.animate(moveU3U1);
             up3.animate(moveToP1.delay(speed))
             p1 = up3;
-            up1 = null;
+            up3 = null;
             nm++;
             checkPos();
            
@@ -166,7 +166,7 @@ function onclickRed(objName) {
             up3.animate(moveU3U2);
             up3.animate(moveToP1.delay(speed));
             p1 = up3;
-            up1 = null;
+            up3 = null;
             up = null;
             nm++;
             checkPos();
@@ -176,7 +176,7 @@ function onclickRed(objName) {
             up3.animate(moveU3U1);
             up3.animate(moveToP2.delay(speed));
             p2 = up3;
-            up1 = null;
+            up3 = null;
             up = null;
             nm++;
             checkPos();
@@ -186,7 +186,7 @@ function onclickRed(objName) {
             up3.animate(moveU3U2)
             up3.animate(moveToP4.delay(speed));
             p4 = up3;
-            up1 = null;
+            up3 = null;
             nm++;
             checkPos();
         }

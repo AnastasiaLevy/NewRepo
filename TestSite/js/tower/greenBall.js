@@ -161,6 +161,15 @@ function onclickGreen(objName) {
             checkPos();
 
         }
+        else if (green == p3 && p1 == null && p1 == null) {
+            up3.animate(moveU3U1);
+            up3.animate(moveToP2.delay(speed));
+            p2 = up3;
+            up3 = null;
+            nm++;
+            checkPos();
+
+        }
         else if (green == p5 && p4 == null) {
             up3.animate(moveU3U2);
             up3.animate(moveToP4.delay(speed));
