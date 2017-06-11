@@ -347,19 +347,19 @@
                                 <img src="images/cool2.jpeg" alt=""></a>
                         </li>
                         <li data-type="personality" data-id="id-12" class="port3">
-                            <a href="WCSTWrapper.aspx" id="cool3">
+                            <a href="Tests/Personality.aspx" id="cool3">
                                 <img src="images/cool3.jpeg" alt=""></a>
                         </li>
                         <li data-type="personality" data-id="id-9" class="port3">
-                            <a href="Tests/NbackWrapper.aspx" id="cool4">
+                            <a href="Tests/adult_ADHD.aspx" id="cool4">
                                 <img src="images/cool4.jpeg" alt=""></a>
                         </li>
                         <li data-type="personality" data-id="id-10" class="port3">
-                            <a href="LondonWrapper.aspx" id="cool5">
+                            <a href="Tests/Autism.aspx" id="cool5">
                                 <img src="images/cool5.jpg" alt=""></a>
                         </li>
                         <li data-type="personality" data-id="id-11" class="port3">
-                            <a href="Tests/SyllogWrapper.aspx" id="cool6">
+                            <a href="Tests/Horney.aspx" id="cool6">
                                 <img src="images/cool6.jpeg" /></a>
                         </li>
                     </ul>
