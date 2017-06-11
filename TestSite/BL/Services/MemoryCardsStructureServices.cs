@@ -11,7 +11,7 @@ namespace TestSite.BL.Services
     public class MemoryCardsStructureServices
     {
         private const string _procedureName = "AllMemoryCardsStucture";
-        public List<MemoryCardsStructure> GetAllStructures()
+        public List<MemoryCardsStructure> GetAll()
         {
             List<MemoryCardsStructure> structure = new List<MemoryCardsStructure>();
             DataMethods dataMethods = new DataMethods();

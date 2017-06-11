@@ -11,7 +11,7 @@ namespace TestSite.BL.Services
     public class MemoryCardsTextsServices
     {
         private const string _procedureName = "AllMemoryCardsTexts";
-        public List<MemoryCardsTexts> GetAllTexts()
+        public List<MemoryCardsTexts> GetAll()
         {
             List<MemoryCardsTexts> texts = new List<MemoryCardsTexts>();
             DataMethods dataMethods = new DataMethods();

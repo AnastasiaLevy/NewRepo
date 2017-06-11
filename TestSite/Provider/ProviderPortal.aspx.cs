@@ -6,13 +6,27 @@ using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using TestSite.BL.Services;
 using static TestSite.HelpClasses.Enums;
 
 namespace TestSite.Provider
 {
     public partial class ProviderPortal : System.Web.UI.Page
     {
-
+        protected void Page_PreRender(object sender, EventArgs e)
+        {
+            //PRERENDER HERE IS A WORKAROUND. CODE IS TRASH AND CONTAINS TONS OF OVERRIDING IN IT!!!
+            DataTable dt = DAL.DataMethods.GetModifyTestList(Convert.ToInt32(ViewState["providerId"]));
+            if (dt.Rows.Count < 1)
+            {
+                ToL.Style.Add("display", "none");
+            }
+            dt = DAL.DataMethods.GetMemoryCardsTestModify(Convert.ToInt32(ViewState["providerId"]));
+            if (dt.Rows.Count < 1)
+            {
+                MC.Style.Add("display", "none");
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -429,26 +443,28 @@ namespace TestSite.Provider
             ddlModifyTest.Items.Clear();
 
             foreach (DataRow dr in dt.Rows)
-            {
-
-                ddlModifyTest.Items.Add(new ListItem(dr["testName"].ToString(), dr["Id"].ToString()));
+            { 
+                ddlModifyTest.Items.Add(new ListItem(dr["testName"].ToString(), "../Create/LondonModify.aspx?testId="+dr["Id"].ToString()));
             }
+            
             dt = DAL.DataMethods.GetMemoryCardsTestModify(Convert.ToInt32(ViewState["providerId"]));
+            MemoryCardsService _memoryCardsServices = new MemoryCardsService();
             foreach (DataRow dr in dt.Rows)
             {
 
-                ddlModifyTest.Items.Add(new ListItem("Memory Cards", dr["Id"].ToString()));
+                ddlModifyTest.Items.Add(new ListItem(_memoryCardsServices.GetAll().First(x=>x.Id == Int32.Parse(dr["TestId"].ToString())).Name, "~/Create/MemoryCardsCreate.aspx?testId="+dr["Id"].ToString()));
             }
+            
         }
+
+        
 
         protected void btnSelectModify_Click(object sender, EventArgs e)
         {
             Session["providerId"] = Convert.ToInt32(ViewState["providerId"]);
-            if(ddlModifyTest.SelectedItem.Text == "Memory Cards")
-            {
-                Response.Redirect("../Create/MemoryCardsModify.aspx");
-            }
-            Response.Redirect("../Create/LondonModify.aspx?testId=" + ddlModifyTest.SelectedValue);
+            
+            Response.Redirect(ddlModifyTest.SelectedItem.Value);
+            
         }
 
         protected void btnCreateNewTest_Click(object sender, EventArgs e)

@@ -1,7 +1,7 @@
 ﻿-- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
--- Description:	<Get Results Of Test After Completion>
+-- Description:	<Description,,>
 -- =============================================
 CREATE PROCEDURE [dbo].[GetUserLondonTestResults]
 	-- Add the parameters for the stored procedure here

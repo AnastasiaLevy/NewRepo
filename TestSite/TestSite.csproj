@@ -106,6 +106,7 @@
     <Content Include="category\ExecutiveFunction.aspx" />
     <Content Include="category\ProcessingSpeed.aspx" />
     <Content Include="ComingSoon.aspx" />
+    <Content Include="Create\MemoryCardsCreate.aspx" />
     <Content Include="Create\MemoryCardsModify.aspx" />
     <Content Include="Global.asax" />
     <Content Include="category\IntelligenceTest.aspx" />
@@ -408,6 +409,7 @@
     <Content Include="TrailsTestRes.aspx" />
     <Content Include="TrailsWrapper.aspx" />
     <Content Include="UserControls\LondonModifyPanel.ascx" />
+    <Content Include="UserControls\MemoryCardsModifyPanel.ascx" />
     <Content Include="UserProfile.aspx" />
     <Content Include="WCSTPage.aspx" />
     <Content Include="WCSTWrapper.aspx" />
@@ -424,6 +426,16 @@
       <DependentUpon>AdminPortal.aspx</DependentUpon>
     </Compile>
     <Compile Include="BL\Models\LondonResultViewModel.cs" />
+    <Compile Include="BL\Services\MemoryCardsService.cs" />
+    <Compile Include="Create\MemoryCardsCreate.aspx.cs">
+      <DependentUpon>MemoryCardsCreate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Create\MemoryCardsCreate.aspx.designer.cs">
+      <DependentUpon>MemoryCardsCreate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HelpClasses\ControlHelper.cs" />
+    <Compile Include="Models\MemoryCards.cs" />
     <Compile Include="BL\Models\MemoryCardsConfigSaveResult.cs" />
     <Compile Include="BL\Models\MemoryCardsModifyViewModel.cs" />
     <Compile Include="BL\Models\MemoryCardsViewModel.cs" />
@@ -709,6 +721,13 @@
     </Compile>
     <Compile Include="UserControls\LondonModifyPanel.ascx.designer.cs">
       <DependentUpon>LondonModifyPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MemoryCardsModifyPanel.ascx.cs">
+      <DependentUpon>MemoryCardsModifyPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\MemoryCardsModifyPanel.ascx.designer.cs">
+      <DependentUpon>MemoryCardsModifyPanel.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserProfile.aspx.cs">
       <DependentUpon>UserProfile.aspx</DependentUpon>
