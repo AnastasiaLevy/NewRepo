@@ -15,7 +15,8 @@
     <link rel="..//shortcut icon" href="../images/favicon.ico"/>
     <title>ProviderPortal</title>
     <link href="../fonts/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="../css/bootstrap.css" rel="stylesheet" />
+    <%--<link href="../css/bootstrap.css" rel="stylesheet" />--%>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
     <!--[if lt IE 9]>
@@ -27,10 +28,12 @@
      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
     <link href="../cogTest.css" rel="stylesheet" />
     <link href="../css/userProfilecss.css" rel="stylesheet" />
-
+     
 </head>
 
 <body>
+    <!-- Trigger the modal with a button -->
+
     <form runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -66,7 +69,38 @@
                 </div>
             </div>
         </nav>
-  
+
+        <!-- Modal -->
+        <div id="myModal" style="z-index: 1050" class="modal fade" role="dialog">
+          <div class="modal-dialog modal-sm">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title" style="text-align:center">Choose avaliable template</h4>
+              </div>
+              <div class="modal-body">
+                <p id="testButtons" style="display: flex;align-items: center;justify-content: center;">
+                <a href ="../Create/LondonModify.aspx">
+                    
+                    <%--<asp:Button ID ="ToL" CssClass="btn btn-success" Text="Tower of London" runat="server" />--%>
+                    <input type="button" id="ToL" class="btn btn-success" value="Tower of London" runat="server"  />
+                </a>
+                <a href ="../Create/MemoryCardsModify.aspx" >
+                   <%-- <asp:Button ID ="MC" CssClass="btn btn-success" Text="Memory Cards" runat="server" />--%>
+                    <input type="button" id="MC" class="btn btn-success" value="Memory Cards" runat="server" />
+                </a>
+                </p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" style="color:black;" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
         <div class="container">
                   <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
             <ContentTemplate>
@@ -108,6 +142,10 @@
                                     </div>
                                 </div>
 
+
+                                
+
+
                                 <div id="setUpUserCode" class="panel panel-success" runat="server">
                                     <div class="panel-heading">
                                         <h3 class="panel-title">Set Up Code</h3>
@@ -136,7 +174,8 @@
                                                 <asp:Button ID="btnDeleteModify" class="btn btn-labeled btn-success" runat="server" Text="Delete" OnClick="btnDeleteModify_Click" />
                                             </div>
                                             <div class="col-xs-3 col-sm-3 col-md-3">
-                                                <asp:Button ID="btnCreateNewTest" class="btn btn-labeled btn-success" runat="server" Text="Create " OnClick="btnCreateNewTest_Click" />
+                                                <%--<asp:Button ID="btnCreateNewTest" class="btn btn-labeled btn-success" runat="server" Text="Create " OnClick="btnCreateNewTest_Click" />--%>
+                                                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Create</button>
                                             </div>
                                             <div class="col-xs-3 col-sm-3 col-md-3">
                                                 <asp:Button ID="btnCancelModify" runat="server" class="btn btn-labeled btn-info" Text="Close" OnClick="btnCancelModify_Click" />
@@ -634,8 +673,6 @@ data="https://www.youtube.com/embed/0JwN9Np1TmE?fs=0">
         </footer>
 
     </form>
-</body>
-
 </html>
 <%--<script src="../js/jquery.js"></script>  --%>
 
@@ -754,4 +791,10 @@ data="https://www.youtube.com/embed/0JwN9Np1TmE?fs=0">
         }
     });
 
+
+
+
+    $(function () {
+        $("#dialog").dialog();
+    });
 </script>

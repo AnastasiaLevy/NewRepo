@@ -144,7 +144,7 @@
 
         $('#buttons').on('click', 'input.testbutton', function () {
             var testNumber = $(this).attr('id');
-            result.Id = testNumber;
+            result.TrialId = testNumber;
             removeImages();
             setOptions(tests[testNumber-1].Images);
             setTestName(testNumber);
@@ -156,7 +156,7 @@
 
 
         function defaultValues() {
-            result.Id = 1;
+            result.TrialId = tests[0].Id;
             createButtons();
             setOptions(tests[0].Images);
             setTestName(1);
@@ -311,6 +311,7 @@
 
         function saveResult()
         {
+            
             result.TestName = $("#testName").val();
             result.TestText = $("#testText").val();
             result.Overtime = $("#overTime").val();
@@ -329,6 +330,7 @@
                     var message = "Success! The Trial was saved."
                     $("#success").show();
                     $("#success").html(message);
+                    setTimeout("location.reload(true);", 3000);
                 },
                 error: function () {
                     alert("error saving the test; try again later")
@@ -336,9 +338,9 @@
             });
 
             //reload page to update values.
-            setTimeout("location.reload(true);", 3000);
+            
         }
-        var result = { Id:0, TestName:"",TestText:"",Matrix:"",Scheme:"",Overtime:0,ImagesName:""};
+        var result = { TestId:0,TrialId:0, TestName:"",TestText:"",Matrix:"",Scheme:"",Overtime:0,ImagesName:""};
         var testImage = "";
 
    </script>

@@ -30,10 +30,10 @@ namespace TestSite.Tests
             MemoryCardsTextsServices _memoryTextsServices = new MemoryCardsTextsServices();
             MemoryCardsImagesServices _memoryImagesServices = new MemoryCardsImagesServices();
             MemoryCardsTestsServices _memoryTestsServices = new MemoryCardsTestsServices();
-            var structureData = _memoryStructureServices.GetAllStructures();
-            var textsData = _memoryTextsServices.GetAllTexts();
-            var imagesData = _memoryImagesServices.GetAllImages();
-            var testsData = _memoryTestsServices.GetAllTests();
+            var structureData = _memoryStructureServices.GetAll();
+            var textsData = _memoryTextsServices.GetAll();
+            var imagesData = _memoryImagesServices.GetAll();
+            var testsData = _memoryTestsServices.GetAll();
             return new MemoryCardsViewModel
             {
                 Structures = structureData,

@@ -11,7 +11,7 @@ namespace TestSite.BL.Services
     public class MemoryCardsImagesServices
     {
         private const string _procedureName = "AllMemoryCardsImages";
-        public List<MemoryCardsImages> GetAllImages()
+        public List<MemoryCardsImages> GetAll()
         {
             List<MemoryCardsImages> images = new List<MemoryCardsImages>();
             DataMethods dataMethods = new DataMethods();

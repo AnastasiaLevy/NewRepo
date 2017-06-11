@@ -418,5 +418,10 @@
     <Build Include="dbo\Stored Procedures\GetAllMemoryCardsTexts.sql" />
     <Build Include="dbo\Stored Procedures\UpdateMemoryCardsTrial.sql" />
     <Build Include="dbo\Stored Procedures\SelectMemoryCardsTestModify.sql" />
+    <Build Include="dbo\Tables\MemoryCards.sql" />
+    <Build Include="dbo\Stored Procedures\InsertMemoryCardsTrial.sql" />
+    <Build Include="dbo\Stored Procedures\InsertMemoryCardsResult.sql" />
+    <Build Include="dbo\Stored Procedures\InsertMemoryCards.sql" />
+    <Build Include="dbo\Stored Procedures\GetAllMemoryCard.sql" />
   </ItemGroup>
 </Project>

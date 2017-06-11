@@ -2194,20 +2194,78 @@ namespace TestSite.DAL
         }
 
 
-        public static void UpdateMemoryCardsTrial(MemoryCardsConfigSaveResult result)
+        public static void UpdateMemoryCardsTrial(string testName,int testId, MemoryCardsConfigSaveResult result)
         {
             using (SqlConnection sqc = new SqlConnection(connectionSring))
             {
                 using (SqlCommand cmd = new SqlCommand("UpdateMemoryCardsTrial", sqc))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Id", result.Id);
-                    cmd.Parameters.AddWithValue("@TestName", result.TestName);
-                    cmd.Parameters.AddWithValue("@TestText", result.TestText);
+                    cmd.Parameters.AddWithValue("@TestId", testId);
+                    cmd.Parameters.AddWithValue("@TestName", testName);
+                    cmd.Parameters.AddWithValue("@TrialName", result.TrialName);
+                    cmd.Parameters.AddWithValue("@TrialId", result.TrialNameId);
+                    cmd.Parameters.AddWithValue("@TrialText", result.TestText);
                     cmd.Parameters.AddWithValue("@Matrix", result.Matrix);
                     cmd.Parameters.AddWithValue("@Scheme", result.Scheme);
-                    cmd.Parameters.AddWithValue("@OverTime", result.OverTime);
-                    cmd.Parameters.AddWithValue("@ImagesName", result.ImagesName);
+                    cmd.Parameters.AddWithValue("@OverTime", result.Time);
+                    cmd.Parameters.AddWithValue("@ImagesName", result.Image);
+
+                    try
+                    {
+                        sqc.Open();
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+
+                        throw new Exception("Execption Inserting exeption..." + ex.Message);
+                    }
+                }
+
+            }
+        }
+
+
+        public static void CreateMemoryCards(string testName, int testId)
+        {
+            using (SqlConnection sqc = new SqlConnection(connectionSring))
+            {
+                using (SqlCommand cmd = new SqlCommand("InsertMemoryCards", sqc))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Id", testId);
+                    cmd.Parameters.AddWithValue("@Name", testName);
+
+                    try
+                    {
+                        sqc.Open();
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+
+                        throw new Exception("Execption Inserting exeption..." + ex.Message);
+                    }
+                }
+
+            }
+        }
+
+        public static void InsertMemoryCardsTrial(int testId, MemoryCardsConfigSaveResult result)
+        {
+            using (SqlConnection sqc = new SqlConnection(connectionSring))
+            {
+                using (SqlCommand cmd = new SqlCommand("InsertMemoryCardsTrial", sqc))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@TestId", testId);
+                    cmd.Parameters.AddWithValue("@TrialName", result.TrialName);
+                    cmd.Parameters.AddWithValue("@TrialText", result.TestText);
+                    cmd.Parameters.AddWithValue("@Matrix", result.Matrix);
+                    cmd.Parameters.AddWithValue("@Scheme", result.Scheme);
+                    cmd.Parameters.AddWithValue("@OverTime", Int32.Parse(result.Time));
+                    cmd.Parameters.AddWithValue("@ImagesName", result.Image);
 
                     try
                     {
