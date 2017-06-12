@@ -321,6 +321,13 @@
     <Content Include="HTTPHandlers\SessionHandler.ashx" />
     <None Include="Properties\PublishProfiles\testPub.pubxml" />
     <Content Include="Provider\ProviderPortal.aspx" />
+    <Content Include="ReportsSamples\CASS_Sample.html" />
+    <Content Include="ReportsSamples\CATI_Sample.html" />
+    <Content Include="ReportsSamples\CCI_Sample.html" />
+    <Content Include="ReportsSamples\CPNI_Sample %281%29.html" />
+    <Content Include="ReportsSamples\CPNI_Sample.html" />
+    <Content Include="ReportsSamples\HCTI_Sample.html" />
+    <Content Include="ReportsSamples\SCATI_Sample.html" />
     <Content Include="ResultsPage.aspx" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="robots.txt" />

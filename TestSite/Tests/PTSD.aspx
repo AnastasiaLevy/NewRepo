@@ -46,8 +46,10 @@
 
 <p>Coolidge, F. L. & Anderson, L. W. (2002). Personality profiles of women in multiple abusive relationships. Journal of Family Violence, 17, 117-131. [click here for PDF copy]</p>
 </asp:Content>
-<asp:Content ID="Content9" ContentPlaceHolderID="price" runat="server">
-</asp:Content>
+
 <asp:Content ID="Content10" ContentPlaceHolderID="sampleReport" runat="server">
-   <h3> Sample Report:</h3>
+  <p class="report"> <asp:LinkButton ID="report" runat="server"
+       OnClick="report_Click">Sample report</asp:LinkButton></p>
+</asp:Content>
+<asp:Content ID="Content9" ContentPlaceHolderID="price" runat="server">
 </asp:Content>

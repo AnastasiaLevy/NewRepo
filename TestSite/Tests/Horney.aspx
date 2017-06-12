@@ -27,7 +27,8 @@ REFERENCES
 <p>Coolidge, F. L., Moor, C. J., Yamazaki, T. G., Stewart, S. E., & Segal, D. L. (2001). On the relationship between Karen Horney's tripartite theory and personality disorder features. Personality and Individual Differences, 30, 1387-1400. [click here for PDF copy]</p>
 </asp:Content>
 <asp:Content ID="Content9" ContentPlaceHolderID="sampleReport" runat="server">
-    <h3>Sample Report</h3>
+     <p class="report"> <asp:LinkButton ID="report" runat="server"
+       OnClick="report_Click">Sample report</asp:LinkButton></p>
 </asp:Content>
 <asp:Content ID="Content10" ContentPlaceHolderID="price" runat="server">
 </asp:Content>

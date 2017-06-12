@@ -13,5 +13,9 @@ namespace TestSite.Tests
         {
 
         }
+        protected void report_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../ReportsSamples/CASS_Sample.html");
+        }
     }
 }

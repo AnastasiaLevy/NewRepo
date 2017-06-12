@@ -36,7 +36,7 @@
     <p>Coolidge, F. L., & Segal, D. L. (2007). Is Saddam Hussein like Adolf Hitler? A personality disorder investigation. Military Psychology, 19, 1-11. [click here for PDF copy]</p>
 </asp:Content>
 <asp:Content ID="Content9" ContentPlaceHolderID="sampleReport" runat="server">
-    <h3>Sample Report:</h3>
+   <p class="report"> <asp:LinkButton ID="report" runat="server" OnClick="report_Click">Sample report</asp:LinkButton></p>
 </asp:Content>
 <asp:Content ID="Content10" ContentPlaceHolderID="price" runat="server">
 </asp:Content>

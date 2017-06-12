@@ -21,7 +21,8 @@
 <asp:Content ID="Content8" ContentPlaceHolderID="contentResearch" runat="server">
 </asp:Content>
 <asp:Content ID="Content9" ContentPlaceHolderID="sampleReport" runat="server">
-    <h3>Sample Report</h3>
+   <p class="report"> <asp:LinkButton ID="report" runat="server"
+       OnClick="report_Click">Sample report</asp:LinkButton></p>
 </asp:Content>
 <asp:Content ID="Content10" ContentPlaceHolderID="price" runat="server">
 </asp:Content>
