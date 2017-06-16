@@ -106,6 +106,7 @@
     <Content Include="category\ExecutiveFunction.aspx" />
     <Content Include="category\ProcessingSpeed.aspx" />
     <Content Include="ComingSoon.aspx" />
+    <Content Include="Create\LondonCreate.aspx" />
     <Content Include="Create\MemoryCardsCreate.aspx" />
     <Content Include="Create\MemoryCardsModify.aspx" />
     <Content Include="Global.asax" />
@@ -434,6 +435,13 @@
     </Compile>
     <Compile Include="BL\Models\LondonResultViewModel.cs" />
     <Compile Include="BL\Services\MemoryCardsService.cs" />
+    <Compile Include="Create\LondonCreate.aspx.cs">
+      <DependentUpon>LondonCreate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Create\LondonCreate.aspx.designer.cs">
+      <DependentUpon>LondonCreate.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Create\MemoryCardsCreate.aspx.cs">
       <DependentUpon>MemoryCardsCreate.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

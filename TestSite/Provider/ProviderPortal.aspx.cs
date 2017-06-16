@@ -24,7 +24,7 @@ namespace TestSite.Provider
             dt = DAL.DataMethods.GetMemoryCardsTestModify(Convert.ToInt32(ViewState["providerId"]));
             if (dt.Rows.Count < 1)
             {
-                MC.Style.Add("display", "none");
+               // MC.Style.Add("display", "none");
             }
         }
         protected void Page_Load(object sender, EventArgs e)
@@ -452,7 +452,7 @@ namespace TestSite.Provider
             foreach (DataRow dr in dt.Rows)
             {
 
-                ddlModifyTest.Items.Add(new ListItem(_memoryCardsServices.GetAll().First(x=>x.Id == Int32.Parse(dr["TestId"].ToString())).Name, "~/Create/MemoryCardsCreate.aspx?testId="+dr["Id"].ToString()));
+               // ddlModifyTest.Items.Add(new ListItem(_memoryCardsServices.GetAll().First(x=>x.Id == Int32.Parse(dr["TestId"].ToString())).Name, "~/Create/MemoryCardsCreate.aspx?testId="+dr["Id"].ToString()));
             }
             
         }
