@@ -366,12 +366,15 @@ namespace TestSite
             gv.ShowFooter = true;
             gv.FooterRow.Visible = true;
             gv.FooterStyle.BackColor = Color.AliceBlue;
-            gv.FooterRow.Font.Size = 16;
+            gv.FooterRow.Font.Size = 13;
             dt = ds.Tables[2];
             gv.FooterRow.Cells[0].Text = "Total:";
-            gv.FooterRow.Cells[4].Text = dt.Rows[0]["NumberMoves"].ToString();
-            gv.FooterRow.Cells[6].Text = dt.Rows[0]["Excess"].ToString();
-            gv.FooterRow.Cells[7].Text = dt.Rows[0]["wrong"].ToString();
+            gv.FooterRow.Cells[2].Text = dt.Rows[0]["totalInitThinkTime"].ToString();
+            gv.FooterRow.Cells[3].Text = dt.Rows[0]["totalTime"].ToString();
+            gv.FooterRow.Cells[4].Text = dt.Rows[0]["totalNumberMoves"].ToString();
+            gv.FooterRow.Cells[5].Text = dt.Rows[0]["totalMinMoves"].ToString();
+            gv.FooterRow.Cells[6].Text = dt.Rows[0]["toalExcess"].ToString();
+            gv.FooterRow.Cells[7].Text = dt.Rows[0]["totalWrong"].ToString();
         }
 
         protected int CalculateResults(decimal? score, decimal? mean, decimal? stdDev)
@@ -427,6 +430,7 @@ namespace TestSite
             gv.GridLines = GridLines.None;
             //TODO:style class from css
             gv.CellPadding = 4;
+            gv.Font.Size = 12;
             gv.ForeColor = Color.Ivory;
             gv.HeaderStyle.BackColor = Color.DarkGreen;
             gv.HeaderStyle.ForeColor = Color.White;

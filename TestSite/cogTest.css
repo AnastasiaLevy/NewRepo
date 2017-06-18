@@ -3109,6 +3109,7 @@ label {
 
 #pop {
     position: fixed;
+    height:600px;
     top: 20%;
     left: 10%;
     /*margin-top: -50px;
@@ -3210,7 +3211,7 @@ label {
 
 #roundValue {
     color: blueviolet;
-    font-size: large;
+    font-size: larger;
     background-color: aliceblue;
 }
 

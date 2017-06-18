@@ -65,9 +65,10 @@ namespace TestSite.HTTPHandlers
             session.Clear();
             string baseUrl = context.Request.Url.Scheme + "://" + context.Request.Url.Authority +
                     context.Request.ApplicationPath.TrimEnd('/') + "/";
+            FormsAuthentication.SignOut();
             return baseUrl + "MainPage.aspx";
 
-            FormsAuthentication.SignOut();
+            
         }
 
         public bool IsReusable

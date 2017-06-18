@@ -1,23 +1,5 @@
-﻿//var text = ["See these two boards? They are both alike. This board on the left is the one you will use and you will make it look like the one on the right. Your task is to make this arrangement on the left look like the one on the right in as few moves as possible. There are two rules you must follow when you are arranging the beads. The first rule is that you are not allowed to place more beads on the peg that it can hold. The second rule is that you can only move one bead at a time. You cannot move two beads off the pegs at the same time. Do you have any questions? Now, arrange the beads on the left so they look like the arrangement on the right. You have two minutes to do each problem. Also, you need to coplete the problem in 20 moves or fewer. If you are not finished within two minutes or in less than 20 moves, the trial ends and the new problem is presented.", " Click here to start 123."].join('');
-//var text = [" See these two boards? They are both alike.",
-//    "This board on the left is the one you will use and",
-//    "you will make it look like the one on the right. Your ",
-//    "task is to make this arrangement on the left look like ",
-//    "the one on the right in as few moves as possible. There ",
-//    "are two rules you must follow when you are arranging the beads.",
-//    "The first rule is that you are not allowed to place more beads ",
-//    "on the peg that it can hold. The second rule is that you can only ",
-//    "move one bead at a time. You cannot move two beads off the pegs ",
-//    "at the same time. Now, arrange ",
-//    "the beads on the left so they look like the arrangement on the right.",
-//    "You have two minutes to do each problem. Also, you need to ",
-//    "coplete the problem in 20 moves or fewer. If you are not ",
-//    "finished within two minutes or in less than 20 moves,",
-//    "the trial ends and the new problem is presented. Click here to start."].join("");
-
-
-
-function startGame(gameNum) { //change back w/o s to use
+﻿
+function startGame(gameNum) {
     var ur = localStorage.getItem("tId");
     var state = localStorage.getItem("finished");
 
@@ -61,8 +43,9 @@ function countdown() {
     window.clearTimeout(gameTimer);
     var timeMlsec = gameSettings.TimeOut * 1000
     numMoves = JSON.parse(gameData[game - 1].NumberOfMoves);
+    gameTimer = null;
     gameTimer = setTimeout(function () { displayFinalMessageOnTimeout(numMoves, lastMove, timeMlsec) }, timeMlsec);
-    
+
 }
 
 function hideFinalMessage() {
@@ -81,13 +64,13 @@ function displayTestFinishedMessage() {
 }
 
 function displayFinalMessageOnTimeout(numMoves, lastMove, timeMlsec) {
-    //var text = gameSettings.InstructionsTimeOut;
+
+    canMove = false;
     var text = gameSettings.TextOverTime;
     var finalMessage = document.getElementById("finalMessage");
     finalMessage.style.display = '';
-    finalMessage.innerHTML = text;//"You've exceeded time for trial #" + game;
-   // if (game != lastMove)
-        //finalMessage.innerHTML += ". The new trial will start soon.";
+    finalMessage.innerHTML = text;
+
     setTimeout(hideFinalMessage, 2000);
     if (game == lastMove) {
         updateTestFinished();
@@ -101,6 +84,7 @@ function displayFinalMessageOnTimeout(numMoves, lastMove, timeMlsec) {
 }
 
 function displayFinalMessage20move(game) {
+    canMove = false;
     var text = gameSettings.TextOverMoves; //TODO
     lastMove = parseInt(gameSettings.PrctRounds) + parseInt(gameSettings.TestRounds)
     over = new Date() - time;
@@ -135,16 +119,6 @@ function displayFinalMessage(needMoves, madeMoves) {
 
     var finalMessage = document.getElementById("finalMessage");
     finalMessage.style.display = '';
-    //if (madeMoves > 1)
-    //    dMadeMoves = " moves";
-    //else
-    //    dMadeMoves = " move";
-
-    //if (needMoves > 1)
-    //    dNeedMoves = " moves.";
-    //else
-    //    dNeedMoves = " move.";
-    //finalMessage.innerHTML = "You made " + madeMoves + dMadeMoves + ". The goal was " + needMoves + dNeedMoves;
 
     finalMessage.innerHTML = text;
     setTimeout(hideFinalMessage, 2000);
@@ -167,7 +141,7 @@ function displayInstructions(text) {
 }
 
 function startCountDownTimer(game) {
-
+    canMove = false;
     var timeleft = parseInt(gameSettings.CountDownFrom);
     if (gameSettings.ShowFeedback == "True")
         timeleft += 1;
@@ -175,13 +149,12 @@ function startCountDownTimer(game) {
 
     if (text.indexOf("[cd]") != -1) {
         var res = text.split("[cd]");
-        text = res[0] + "<span id='countdowntimer'>"  +(timeleft)  + "</span>" + res[1];
+        text = res[0] + "<span id='countdowntimer'>" + (timeleft) + "</span>" + res[1];
     }
 
-    canMove = false;
+    
     var field = document.getElementById("countdown");
     field.style.display = '';
-
     field.innerHTML = text;//"Please wait <span id='countdowntimer'>" + (timeleft+ 2) + " </span> seconds";
     var div = document.getElementById("countdowntimer");
     var downloadTimer = setInterval(function () {
@@ -191,7 +164,7 @@ function startCountDownTimer(game) {
 
             clearInterval(downloadTimer);
             //field.textContent = "Click to Start";
-            canMove = true;
+            //canMove = true;
             //gameStarted = true;
             cleanDivs();
             field.style.display = 'none';
@@ -199,24 +172,17 @@ function startCountDownTimer(game) {
         }
 
     }, 1000);
-
-    //field.onclick = function run() {
-    //    canMove = true;
-    //    //gameStarted = true;
-    //    cleanDivs();
-    //    field.style.display = 'none';
-    //    startGame(game)
-    //}
 }
 
 function finishGame(needMoves) {
+    canMove = false;
     lastMove = parseInt(gameSettings.PrctRounds) + parseInt(gameSettings.TestRounds)
     window.clearTimeout(gameTimer);
     over = new Date() - time;
     gameFinished = true;
 
     passResultsForGame(game, initTTime, over, nm, nmWr, false, false, needMoves);
-    canMove = false;
+   
     if (gameSettings.ShowFeedback == "True")
         setTimeout(function () { displayFinalMessage(needMoves, nm); }, 1200)
 
@@ -277,14 +243,18 @@ function getMatchPos(pos, color) {
 }
 
 function checkPos(out) {
+    canMove = false;
     finishPos = JSON.parse(gameData[game - 1].RoundFinish);
     numMoves = JSON.parse(gameData[game - 1].NumberOfMoves);
 
     if (nm == gameSettings.MaxMoves) {
-        displayFinalMessage20move(game)
+        
+        displayFinalMessage20move(game);
+        return;
     }
-    canMove = false;
-    setTimeout(function () { canMove = true }, 300);
+   
+   
+
     //
     if (1 == 1) {
         if (nm == 0) {
@@ -302,6 +272,9 @@ function checkPos(out) {
         &&
         getMatchPos(finishPos.green, "green")) {
         finishGame(numMoves);
+    }
+    else {
+        setTimeout(function () { canMove = true }, 300);
     }
 };
 
@@ -346,7 +319,7 @@ function passResultsForGame(game, initThinkTime, totalTime, nm, nmWrong, overTim
 
         },
         error: function () {
-     
+
             save = true;
         }
     });
@@ -354,13 +327,12 @@ function passResultsForGame(game, initThinkTime, totalTime, nm, nmWrong, overTim
 
 
 function updateTestFinished() {
-    if (save == true)
-    {
+    if (save == true) {
         saveTextAsFile();
     }
     localStorage.setItem("tId", document.getElementById("tId").value);
     localStorage.setItem("finished", true);
- 
+
     jQuery.ajax({
         contentType: "application/json; charset=utf-8",
         dataType: "json",
@@ -389,7 +361,7 @@ $('body').on('click', '#finishIt', function () {
     //else
     //    window.location.href = "UserProfile.aspx";
     goToPage();
-   
+
 });
 
 function goToPage() {
@@ -406,14 +378,14 @@ function saveTextAsFile() {
     var user = document.getElementById("userId").value;
     var tId = document.getElementById("tId").value;
     var text = "UserId: " + user + ".\r\n" +
-               "TestId: " +  tId +   ".\r\n" 
+               "TestId: " + tId + ".\r\n"
     arrData.forEach(function (element) {
         text += JSON.stringify(element) + ".\r\n";
     });
-    var textToSave = text; 
+    var textToSave = text;
     var textToSaveAsBlob = new Blob([textToSave], { type: "text/plain" });
     var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
-    var fileNameToSaveAs = 'Tower' + tId +(new Date()).toISOString().substring(0, 10);//document.getElementById("inputFileNameToSaveAs").value;
+    var fileNameToSaveAs = 'Tower' + tId + (new Date()).toISOString().substring(0, 10);//document.getElementById("inputFileNameToSaveAs").value;
 
     var downloadLink = document.createElement("a");
     downloadLink.download = fileNameToSaveAs;
@@ -433,43 +405,42 @@ function destroyClickedElement(event) {
 function onClickPlay() {
 
     speechSynthesis.cancel();
-  
-   // var text = "Видишь эти две доски? Они оба одинаковы.";
+
+    // var text = "Видишь эти две доски? Они оба одинаковы.";
     var text = gameSettings.Instructions;
-  
+
 
     sentences = text.split(".")
     for (i = 0; i < sentences.length; i++) {
         sentence = sentences[i];
-      
+
         var synth = speechSynthesis;
         var language = gameSettings.Language;
         var utterance = new SpeechSynthesisUtterance();
         utterance.volume = 1;
         // audio = new SpeechSynthesisUtterance(sentence)
-            
-     
+
+
         utterance.text = sentence;
-       // window.speechSynthesis.speak(audio)
+        // window.speechSynthesis.speak(audio)
         synth.speak(utterance);
     }
 
-   
-   
-   // utterance.voice = synth.getVoices()[0];
-    if (language != "")
-    {
+
+
+    // utterance.voice = synth.getVoices()[0];
+    if (language != "") {
         //utterance.lang = 'ru-RU';
     }
-   
+
     //utterance.text = text;
     //utterance.onend = function () {
     //    synth.speak = false;
     //       };
 
- 
-   
-    
+
+
+
 }
 
 

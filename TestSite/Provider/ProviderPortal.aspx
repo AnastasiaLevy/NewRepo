@@ -60,7 +60,7 @@
                         <%--    <li><a href="#reports">Results</a></li>--%>
                         <li id="login" runat="server"><a href="Login.aspx">Login</a></li>
                         <li>
-                            <asp:LinkButton ID="Logout" CssClass="btn button" type="submit" runat="server" OnClick="logOut_Click">Log Out</asp:LinkButton>
+                            <asp:LinkButton ID="Logout" CssClass="" type="submit" runat="server" OnClick="logOut_Click">Log Out</asp:LinkButton>
                         </li>
                     </ul>
                 </div>
@@ -282,7 +282,7 @@
                                         <asp:TemplateField HeaderText="Remove" HeaderStyle-Width="10%" ItemStyle-Width="10%"
                                             FooterStyle-Width="10%">
                                             <ItemTemplate>
-                                                <asp:LinkButton runat="server" Text="" CausesValidation="false" ID="lbRemoveTestFromUserList" OnClick="lbRemoveTestFromUserList_Click"><i class="fa fa-minus-square-o  fa-2x" aria-hidden="true"></i></asp:LinkButton>
+                                                <asp:LinkButton runat="server" Text="" CausesValidation="false" ID="lbRemoveTestFromUserList" OnClientClick="return confirm('Are you sure?')" OnClick="lbRemoveTestFromUserList_Click"><i class="fa fa-minus-square-o  fa-2x" aria-hidden="true"></i></asp:LinkButton>
                                             </ItemTemplate>
 
                                             <FooterStyle Width="10%"></FooterStyle>

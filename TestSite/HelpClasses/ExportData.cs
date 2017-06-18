@@ -14,7 +14,7 @@ namespace TestSite.HelpClasses
 {
     public static class ExportData
     {
-        public static void ExportSingle(string userId, int tId, string userName, string testType )
+        public static void ExportSingle(string userId, int tId, string userName, string testType)
         {
             DataSet ds = GetExportData(userId, tId, testType);
 
@@ -26,7 +26,7 @@ namespace TestSite.HelpClasses
                 string fileName = name + "_" + DateTime.Now.ToShortDateString() + "_" + tId + ".csv";
                 string filePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
                 //File.WriteAllText(filePath + "\\" + fileName, myfile);
-                string attachment = "attachment; filename="+ fileName;
+                string attachment = "attachment; filename=" + fileName;
                 HttpContext.Current.Response.Clear();
                 HttpContext.Current.Response.ClearHeaders();
                 HttpContext.Current.Response.ClearContent();
@@ -71,14 +71,14 @@ namespace TestSite.HelpClasses
             }
             else if (testType == Enums.TestId.WisconsinCardSort)//pass
             {
-               ds = DataMethods.GetTestResultsCardSort(userId, tId, true);
+                ds = DataMethods.GetTestResultsCardSort(userId, tId, true);
             }
             else if (testType == Enums.TestId.Trails)
             {
                 ds = DataMethods.GetTestResultsTrails(userId, tId);
             }
             ds.Tables.Add(name);
-        
+
 
             return ds;
 
@@ -108,6 +108,19 @@ namespace TestSite.HelpClasses
                     sb.Append(',');
                 }
             }
+            if (ds.Tables[2] != null)
+            {
+                for (int i = 0; i < ds.Tables[2].Rows.Count; i++)
+                {
+
+                    for (int j = 0; j < ds.Tables[2].Columns.Count; j++)
+                    {
+                        sb.Append(ds.Tables[2].Columns[j].ColumnName);
+                        sb.Append(',');
+                    }
+                }
+            }
+
             sb.AppendLine();
             for (int i = 0; i < ds.Tables[1].Rows.Count; i++)
             {
@@ -128,7 +141,16 @@ namespace TestSite.HelpClasses
                     sb.Append(',');
                 }
             }
-            //File.WriteAllText(@"C:\LondonResults\test.csv", sb.ToString());
+            if (ds.Tables[2] != null)
+            for (int i = 0; i < ds.Tables[2].Rows.Count; i++)
+            {
+                for (int j = 0; j < ds.Tables[2].Columns.Count; j++)
+                {
+                    sb.Append(ds.Tables[2].Rows[i][ds.Tables[2].Columns[j].ColumnName]);
+                    sb.Append(',');
+                }
+            }
+
             return sb.ToString();
         }
 
@@ -138,10 +160,11 @@ namespace TestSite.HelpClasses
             string name = GetPartName(userId);
 
 
-            string myFile = ExportNormalCSV(ds.Tables[0]);
+            string myFile = ExportNormalCSV(ds);
+          
             try
             {
-                string fileName = name + "_" + DateTime.Now.ToShortDateString() +"_normal.csv";
+                string fileName = name + "_" + DateTime.Now.ToShortDateString() + "_normal.csv";
                 string filePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
                 //File.WriteAllText(filePath + "\\" + fileName, myFile);
                 // @"C:\LondonResults\" + userName + "_" + DateTime.Now.ToShortDateString() + ".xlsx");
@@ -160,11 +183,13 @@ namespace TestSite.HelpClasses
             catch (Exception ex)
             {
 
-            } 
+            }
         }
 
-        private static string ExportNormalCSV(DataTable datatable)
+        private static string ExportNormalCSV(DataSet ds)
         {
+            DataTable datatable = ds.Tables[0];
+            DataTable total = ds.Tables[2];
             StringBuilder sb = new StringBuilder();
 
             for (int i = 0; i < datatable.Columns.Count; i++)
@@ -175,6 +200,18 @@ namespace TestSite.HelpClasses
             }
             sb.AppendLine();
             foreach (DataRow dr in datatable.Rows)
+            {
+                for (int i = 0; i < datatable.Columns.Count; i++)
+                {
+                    sb.Append(dr[i].ToString());
+
+                    if (i < datatable.Columns.Count - 1)
+                        sb.Append(',');
+                }
+                sb.AppendLine();
+            }
+
+            foreach (DataRow dr in total.Rows)
             {
                 for (int i = 0; i < datatable.Columns.Count; i++)
                 {

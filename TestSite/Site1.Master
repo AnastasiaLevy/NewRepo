@@ -16,8 +16,8 @@
     <script src="https://use.fontawesome.com/0138464303.js"></script>
     <link href="cogTest.css" rel="stylesheet" />
     <link href="css/userProfilecss.css" rel="stylesheet" />
-     <script src="js/jquery.js"></script>
-    <script src="js/sessionManager.js"></script>
+     <script src="../js/jquery.js"></script>
+    <script src="../js/sessionManager.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -44,7 +44,7 @@
 
                         <li>
 
-                            <asp:LinkButton ID="logOut" class="btn button" type="submit" runat="server" OnClick="logOut_Click">Log Out</asp:LinkButton>
+                            <asp:LinkButton ID="logOut" class="" type="submit" runat="server" OnClick="logOut_Click">Log Out</asp:LinkButton>
                         </li>
                         <!-- 	<li><a href="blog.html">Blog</a></li>
                         <li><a href="single-post.html">Single</a></li> -->

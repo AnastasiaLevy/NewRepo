@@ -10,6 +10,7 @@ using TestSite.HelpClasses;
 using System.IO;
 using System.Web.Script.Serialization;
 using System.Globalization;
+using System.Data;
 
 namespace TestSite
 {
@@ -89,7 +90,9 @@ namespace TestSite
         private void LoadPaidTests()
         {
 
-            gvAvailableTests.DataSource = DAL.DataMethods.GetAllUserTests(Membership.GetUser(User.Identity.Name).ProviderUserKey.ToString());
+          
+            DataTable dt = DAL.DataMethods.GetAllUserTests(Membership.GetUser(User.Identity.Name).ProviderUserKey.ToString());
+            gvAvailableTests.DataSource = dt;
             gvAvailableTests.Columns[3].Visible = true;
             gvAvailableTests.Columns[4].Visible = true;
             gvAvailableTests.Columns[5].Visible = true;

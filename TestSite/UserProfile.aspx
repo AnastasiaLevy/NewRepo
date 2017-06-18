@@ -63,7 +63,7 @@
                     <%--    <li><a href="#reports">Results</a></li>--%>
                         <li id="login" runat="server"><a href="Login.aspx">Login</a></li>
                         <li>
-                            <asp:LinkButton ID="Logout" cssclass="btn button" type="submit" runat="server" OnClick="logOut_Click">Log Out</asp:LinkButton>
+                            <asp:LinkButton ID="Logout" cssclass="" type="submit" runat="server" OnClick="logOut_Click">Log Out</asp:LinkButton>
                         </li>
                     </ul>
                 </div>

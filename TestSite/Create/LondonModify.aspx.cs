@@ -58,7 +58,7 @@ namespace TestSite.Create
             ddlConuntFromRound.SelectedValue = dt.Rows[0]["calcResFrom"].ToString();
             timeOutAfter.Text = dt.Rows[0]["timeOut"].ToString();
             maxMovesLimit.Text = dt.Rows[0]["maxMoves"].ToString();
-            showFeedback.Checked = Convert.ToBoolean(dt.Rows[0]["txtToSpeech"]);
+            showFeedback.Checked = Convert.ToBoolean(dt.Rows[0]["showFeedBack"]);
             displayResultPage.Checked = Convert.ToBoolean(dt.Rows[0]["displayResult"]);
             countDown.Text = dt.Rows[0]["countDownFrom"].ToString();
             movesText.Value = GetLondonMoves(ds.Tables[0]);
