@@ -199,7 +199,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-3">
-                            <div class="circle c1 img-circle"  id="singlePr" runat="server">
+                            <div class="circle c1 img-circle" id="singlePr" runat="server">
                                 <h4 class="blue">Single Test</h4>
                                 <span class="icon blue"><i class="fa fa-usd"></i></span>
                                 <span class="price-large blue">5</span>
