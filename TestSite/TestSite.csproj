@@ -43,6 +43,9 @@
       <HintPath>..\packages\AjaxControlToolkit.16.1.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="App_Web_site1.master.cdcab7d2.mna-ns6a">
+      <HintPath>..\..\..\..\AppData\Local\Temp\Temporary ASP.NET Files\root\967de44f\_shadow\df1c476d\10944\App_Web_site1.master.cdcab7d2.mna-ns6a.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -350,6 +353,7 @@
     <Content Include="Style\timelify.scss" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Scripts\jquery.popit.min.js.map" />
+    <Content Include="Tests\ADHD_Page.aspx" />
     <Content Include="Tests\adult_ADHD.aspx" />
     <Content Include="Tests\Autism.aspx" />
     <Content Include="Tests\Horney.aspx" />
@@ -453,6 +457,7 @@
     <Compile Include="Create\MemoryCardsCreate.aspx.designer.cs">
       <DependentUpon>MemoryCardsCreate.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DAL\APICalls.cs" />
     <Compile Include="HelpClasses\ControlHelper.cs" />
     <Compile Include="Models\MemoryCards.cs" />
     <Compile Include="BL\Models\MemoryCardsConfigSaveResult.cs" />
@@ -607,6 +612,13 @@
     </Compile>
     <Compile Include="TestPage.Master.designer.cs">
       <DependentUpon>TestPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\ADHD_Page.aspx.cs">
+      <DependentUpon>ADHD_Page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\ADHD_Page.aspx.designer.cs">
+      <DependentUpon>ADHD_Page.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tests\adult_ADHD.aspx.cs">
       <DependentUpon>adult_ADHD.aspx</DependentUpon>

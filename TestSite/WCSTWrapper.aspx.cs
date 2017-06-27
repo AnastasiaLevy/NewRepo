@@ -18,6 +18,7 @@ namespace TestSite
         protected bool _isProfilefilled;
         protected string _testId = Enums.TestId.WisconsinCardSort;
         protected static int _userTestId;
+        protected int? _providerId;
 
         protected void Page_Load(object sender, EventArgs e)
         {

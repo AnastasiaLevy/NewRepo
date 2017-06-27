@@ -978,7 +978,7 @@ namespace TestSite.DAL
 
         }
 
-        internal static int? GetProviderId(string userId)
+        internal static int GetProviderId(string userId)
         {
 
             object id = null;

@@ -10,7 +10,7 @@
 namespace TestSite.Tests {
     
     
-    public partial class PTSD {
+    public partial class ADHD {
         
         /// <summary>
         /// report control.
