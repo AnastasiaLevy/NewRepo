@@ -1,19 +1,39 @@
-﻿using RestSharp;
+﻿using ASP;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using TestSite;
+using TestSite.DAL;
+using TestSite.HelpClasses;
 
 namespace TestSite.Tests
 {
-    public partial class PTSD : System.Web.UI.Page
+    public partial class ADHD : System.Web.UI.Page
     {
-        public string _providerId = "2";
+        public int _providerId;
+        protected string _testId = Enums.TestId.CPNI;
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            if(1==1)
+            {
+
+                if (Session["providerId"] != null)
+                {
+                    _providerId = (int)Session["providerId"];
+                }
+           
+                if (!String.IsNullOrEmpty(Request.QueryString["st"]) && Request.QueryString["st"] == "Completed")
+                {
+                  int amount =Convert.ToInt32(Request.QueryString["item_name"].Remove(0,5));
+                    DataMethods.InsertProviderTest(_providerId, _testId, 1, amount);
+                    APICalls.BuyTest(_providerId.ToString(), "CPNI", amount);
+                }
+            }
         }
 
         protected void report_Click(object sender, EventArgs e)
@@ -23,15 +43,9 @@ namespace TestSite.Tests
 
         protected void single_Click(object sender, EventArgs e)
         {
-            var client = new RestClient("http://178.62.94.173/api/");
-            var request = new RestRequest("", Method.POST);
-           
-            request.AddParameter("controller", "Listoftestsapi");
-            request.AddParameter("action", "buy");
-            request.AddParameter("api_CASS_buy", "1");
-            request.AddParameter(" api_provider_ext_id", _providerId);
-           
-            var response = client.Execute(request);
+            Site2 MyMasterPage = (Site2)Page.Master;
+
+            MyMasterPage.PostPaypal(0.01, "ADHD_1", "/Tests/ADHD.aspx", 1);
 
         }
 

@@ -101,6 +101,8 @@ namespace TestSite.HelpClasses
                     return @"Tests\SyllogWrapper.aspx";
                 case "6":
                     return @"Tests\StroopPage.aspx";
+                case "9":
+                    return @"Tests\ADHD_Page.aspx";
                 default:
                     return @"\MainPage.aspx";
             }
