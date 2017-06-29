@@ -11,9 +11,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="google-site-verification" content="GMj8owmZtkuKU0Fa_4Zg82VbKsQPO8VkZD_pHsRghA4" />
-    
+
     <link rel="..//shortcut icon" href="../images/favicon.ico"/>
     <title>ProviderPortal</title>
+    <%--<link rel="stylesheet" href="../css/jquery-ui.min.css">--%>
     <link href="../fonts/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <%--<link href="../css/bootstrap.css" rel="stylesheet" />--%>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -28,7 +29,7 @@
      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
     <link href="../cogTest.css" rel="stylesheet" />
     <link href="../css/userProfilecss.css" rel="stylesheet" />
-     
+
 </head>
 
 <body>
@@ -82,7 +83,7 @@
               <div class="modal-body">
                 <p id="testButtons" style="display: flex;align-items: center;justify-content: center;">
                 <a href ="../Create/LondonModify.aspx">
-                    
+
                     <%--<asp:Button ID ="ToL" CssClass="btn btn-success" Text="Tower of London" runat="server" />--%>
                     <input type="button" id="ToL" class="btn btn-success" value="Tower of London" runat="server"  />
                 </a>
@@ -114,12 +115,21 @@
                             </h2>
                             <hr>
                         </div>
-                        <div class="col-lg-3">
-                            <asp:Button ID="btnUpdateProfile" runat="server" Text="Set Provider Code" class="btn btn-labeled btn-info" Width=" 100%" OnClick="btnUpdateProfile_Click" />
+                        <div class="col-lg-4">
+                            <div class="btn-group-vertical pp-menu" role="group" aria-label="">
+                                                <asp:Button ID="btnUpdateProfile" runat="server" Text="Set Provider Code" class="btn btn-info pp-menu-item" Width=" 100%" OnClick="btnUpdateProfile_Click" />
+                                                <asp:Button ID="btnAddNewPart" runat="server" Text="Add New Participant" OnClick="btnAddNewPart_Click" class="btn btn-info pp-menu-item" Width="100%" />
+                                                <asp:Button ID="btnAddUserTest" runat="server" Text="Assign Participant Test" OnClick="btnAddUserTest_Click" class="btn btn-info pp-menu-item" Width="100%" />
+                                                <asp:Button ID="btnModifyTest" runat="server" Text="Modify Test" OnClick="btnModifyTest_Click" class="btn btn-info pp-menu-item" Width="100%" />
+                                                <asp:Button ID="btnResetPassword" runat="server" Text="Reset Password" OnClick="btnResetPassword_Click" class="btn btn-info pp-menu-item" Width="100%" />
+                                                <asp:Button ID="btnExportTestResults" runat="server" Text="Export Test Results" OnClick="btnExportTestResults_Click" class="btn btn-info pp-menu-item" Width="100%" />
+                            </div>
+                            <%--<asp:Button ID="btnUpdateProfile" runat="server" Text="Set Provider Code" class="btn btn-labeled btn-info" Width=" 100%" OnClick="btnUpdateProfile_Click" />
                             <asp:Button ID="btnAddNewPart" runat="server" Text="Add New Participant" OnClick="btnAddNewPart_Click" class="btn btn-labeled btn-info" Width="100%" />
                             <asp:Button ID="btnAddUserTest" runat="server" Text="Assign Participant Test" OnClick="btnAddUserTest_Click" class="btn btn-labeled btn-info" Width="100%" />
                             <asp:Button ID="btnModifyTest" runat="server" Text="Modify Test" OnClick="btnModifyTest_Click" class="btn btn-labeled btn-info" Width="100%" />
                             <asp:Button ID="btnResetPassword" runat="server" Text="Reset Password" OnClick="btnResetPassword_Click" class="btn btn-labeled btn-info" Width="100%" />
+                            <asp:Button ID="btnExportTestResults" runat="server" Text="Export Test Results" OnClick="btnExportTestResults_Click" class="btn btn-labeled btn-info" Width="100%" />--%>
                         </div>
                         <div class="col-lg-8">
                             <asp:Panel ID="pProviderTools" runat="server">
@@ -143,7 +153,7 @@
                                 </div>
 
 
-                                
+
 
 
                                 <div id="setUpUserCode" class="panel panel-success" runat="server">
@@ -206,7 +216,7 @@
                                                 <asp:Label ID="Label2" cssClass ="labelBold" runat="server" Text="Password"></asp:Label>
                                                 <asp:TextBox ID="txtPassword" runat="server" CssClass="createUser" Width="100%"></asp:TextBox>
 
-                                                <asp:CheckBox ID="cbAllowUserViewResults" runat="server" Text="Allow User View Results" TextAlign="Left" />                                              
+                                                <asp:CheckBox ID="cbAllowUserViewResults" runat="server" Text="Allow User View Results" TextAlign="Left" />
                                             </div>
                                         </div>
                                     </div>
@@ -240,6 +250,37 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div id="exportTestResults" class="panel panel-success" runat="server">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Export test results</h3>
+                                    </div>
+                                    <div class="panel-body ">
+                                        <div class ="row">
+                                            <div class="col-md-5">
+                                                <label>Choose test type:</label>
+                                                <asp:DropDownList class="dropDown" ID="TestTemplatesForExportResults" runat="server" Width="100%" AppendDataBoundItems="true" AutoPostBack="True"></asp:DropDownList>
+                                            </div>
+                                            <div class="col-md-1">
+                                                </div>
+                                            <div class="col-md-3">
+                                                <label>From</label>
+                                                <asp:TextBox class="dropDown" ID="fromDate" runat="server" Width="100%"></asp:TextBox>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label>To</label>
+                                                <asp:TextBox class="dropDown" ID="toDate" runat="server" Width="100%"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown">
+                                            <button class="btn btn-success dropdown-toggle" id="ExportDropdown" type="button" data-toggle="dropdown">Export
+                                            <span class="caret"></span></button>
+                                            <ul class="dropdown-menu">
+                                                <li><asp:Button ID="btnExportTestResultsInOneRow" class="selectBtn" runat="server" Text="Export to Excel One Line" OnClick="btnExportTestResultsInOneRow_Click" PostBackUrl="ProviderPortal.aspx" /></li>
+                                                <li><asp:Button ID="btnExportTestResultsInManyRows" class="selectBtn" runat="server" Text="Export to Excel Traditional" OnClick="btnExportTestResultsInManyRows_Click" PostBackUrl="ProviderPortal.aspx"/></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
                             </asp:Panel>
                             <asp:Panel ID="pProviderInfo" runat="server">
                             </asp:Panel>
@@ -251,7 +292,7 @@
             </section>
             </ContentTemplate>
         </asp:UpdatePanel>
-         
+
             <asp:UpdatePanel runat="server" UpdateMode="Conditional">
                 <ContentTemplate>
      <section id="participantData">
@@ -259,7 +300,7 @@
                     <div class="box">
                         <div class="col-lg-12">
                             <hr>
-                            <h2 class="intro-text text-center">Participant 
+                            <h2 class="intro-text text-center">Participant
                         <strong>Data</strong>
                             </h2>
                             <hr>
@@ -270,9 +311,9 @@
                         </div>
 
                         	<div class="row">
-    
+
             </div>
-   
+
 
 
                         <div class="col-lg-6 row">
@@ -361,7 +402,7 @@
                                     </asp:TemplateField>
 
                                     <asp:BoundField DataField="userId" />
-                             
+
                                 </Columns>
                                 <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                                 <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
@@ -381,13 +422,13 @@
 
                 </ContentTemplate>
             </asp:UpdatePanel>
-       
+
             <section id="purchachedTests">
                 <div class="row">
                     <div class="box">
                         <div class="col-lg-12">
                             <hr>
-                            <h2 class="intro-text text-center">Your 
+                            <h2 class="intro-text text-center">Your
                         <strong>Tests</strong>
                             </h2>
                             <hr>
@@ -431,7 +472,7 @@
                 <div class="box">
                     <div class="col-lg-12">
                         <hr>
-                        <h2 class="intro-text text-center">Available 
+                        <h2 class="intro-text text-center">Available
                             <strong>Test</strong>
                         </h2>
                         <hr>
@@ -440,7 +481,7 @@
                         <a href="../WCSTWrapper.aspx" id="wcst">
                             <img class="img-responsive" src="../images/cardSort.png" alt=""></a>
                         <h3>Card Sort
-                       
+
                             <small></small>
                         </h3>
                     </div>
@@ -503,20 +544,20 @@
                     </div>
                     <div class="col-sm-2 text-center">
                           <asp:Button ID="drChild" runat="server" Text="TOL Drexel Child"  class="btn btn-labeled btn-info"  onClick="drChild_Click"/>
-                     
+
                     </div>
                     <div class="col-sm-2 text-center">
                     <asp:Button ID="CST" runat="server" Text="Card Sort Test"  class="btn btn-labeled btn-info"  onClick="CST_Click"/>
                     </div>
                     <div class="col-sm-2 text-center">
                      <asp:Button ID="Nback" runat="server" Text="N-back"  class="btn btn-labeled btn-info"  onClick="Nback_Click"/>
-         
+
                     </div>
                     <div class="col-sm-2 text-center">
-                   
+
                     </div>
                     <div class="col-sm-2 text-center">
-                
+
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -538,10 +579,10 @@
                        <iframe src="https://www.youtube.com/embed/-SPAjSEuBNA?" frameborder="0" allowfullscreen></iframe>
 
                     </div>
-                    <div class="col-sm-4 text-center"> 
+                    <div class="col-sm-4 text-center">
                     Provider Dash Part 2
                         <iframe src="https://www.youtube.com/embed/k_aoilEl8h8?" frameborder="0" allowfullscreen></iframe>
-<%--                        <object 
+<%--                        <object
 data="https://www.youtube.com/embed/k_aoilEl8h8?fs=0">
 </object>--%>
                     </div>
@@ -551,16 +592,16 @@ data="https://www.youtube.com/embed/k_aoilEl8h8?fs=0">
                     <div class="col-sm-2 text-center">
                          Provider Dash Part 3
                         <iframe src="https://www.youtube.com/embed/0JwN9Np1TmE" frameborder="0" allowfullscreen></iframe>
-<%--                        <object 
+<%--                        <object
 data="https://www.youtube.com/embed/0JwN9Np1TmE?fs=0">
 </object>--%>
-         
+
                     </div>
                     <div class="col-sm-2 text-center">
-                   
+
                     </div>
                     <div class="col-sm-2 text-center">
-                
+
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -572,7 +613,7 @@ data="https://www.youtube.com/embed/0JwN9Np1TmE?fs=0">
                         <div class="col-lg-12">
                             <hr>
                             <h2 class="intro-text text-center">Test
-                       
+
                         <strong>Categories</strong>
                             </h2>
                             <hr>
@@ -653,9 +694,9 @@ data="https://www.youtube.com/embed/0JwN9Np1TmE?fs=0">
                     </div>
                     <div class="col-lg-12 text-center">
                         <p>Copyright &copy; CogQuiz 2016</p>
-                          <p>+1(719)888 9121</p> 
+                          <p>+1(719)888 9121</p>
                     </div>
-                     
+
                 </div>
             </div>
                     <script>
@@ -663,13 +704,13 @@ data="https://www.youtube.com/embed/0JwN9Np1TmE?fs=0">
                             i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
                                 (i[r].q = i[r].q || []).push(arguments)
                             }, i[r].l = 1 * new Date(); a = s.createElement(o),
-                            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+                                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
                         })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
                         ga('create', 'UA-89149772-1', 'auto');
                         ga('send', 'pageview');
 
-</script>
+                    </script>
         </footer>
 
     </form>
@@ -679,6 +720,52 @@ data="https://www.youtube.com/embed/0JwN9Np1TmE?fs=0">
 <script src="../js/jquery-responsiveTables.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <script>
+
+    var interval = setInterval(function () {
+        if ($('#exportTestResults').is(':visible')) {
+            initDatePickers();
+            clearInterval(interval);
+        }
+    }, 200);
+
+    var prm = Sys.WebForms.PageRequestManager.getInstance();
+
+    prm.add_endRequest(function () {
+        initDatePickers();
+    });
+
+    function initDatePickers() {
+        var dateFormat = "mm/dd/yy",
+            from = $("#fromDate")
+                .datepicker({
+                    defaultDate: "+1w",
+                    changeMonth: true,
+                    numberOfMonths: 1
+                })
+                .on("change", function () {
+                    to.datepicker("option", "minDate", getDate(this));
+                }),
+            to = $("#toDate").datepicker({
+                defaultDate: "+1w",
+                changeMonth: true,
+                numberOfMonths: 1
+            })
+                .on("change", function () {
+                    from.datepicker("option", "maxDate", getDate(this));
+                });
+
+        function getDate(element) {
+            var date;
+            try {
+                date = $.datepicker.parseDate(dateFormat, element.value);
+            } catch (error) {
+                date = null;
+            }
+
+            return date;
+        }
+    }
+
     $('.custom-menu a[href^="#"], .intro-scroller .inner-link').on('click', function (e) {
         e.preventDefault();
 
@@ -790,8 +877,6 @@ data="https://www.youtube.com/embed/0JwN9Np1TmE?fs=0">
             document.location.href = "mailto:" + email + "?subject=Login Info From CogQuiz&body=" + encodeURIComponent(body);
         }
     });
-
-
 
 
     $(function () {
