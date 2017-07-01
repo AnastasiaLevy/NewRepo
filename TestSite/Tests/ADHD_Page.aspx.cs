@@ -38,18 +38,29 @@ namespace TestSite.Tests
             JavaScriptSerializer serializer = new JavaScriptSerializer();
             dynamic item = serializer.Deserialize<object>(result);
             var name = item["data"];
-           var param = item["params"];
+            var param = item["params"];
             questHtml.Text = name[0].ToString();
         }
 
         [WebMethod]
         public static void GetParams (string paramString, string api_transaction_id, string api_patient_id)
         {
-             
+  
 
         }
-
+        [WebMethod]
+        public static string Call1()
+        {
+            return APICalls.GetTest(3, "685", 4, "self");
+           
+        //JavaScriptSerializer serializer = new JavaScriptSerializer();
+        //dynamic item = serializer.Deserialize<object>(result);
+        //var name = item["data"];
+        //var param = item["params"];
+        //questHtml.Text = name[0].ToString();
     }
+
+}
 
     
 }

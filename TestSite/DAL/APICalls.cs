@@ -52,9 +52,9 @@ namespace TestSite.DAL
             request.AddParameter("controller", "Testapi");
             request.AddParameter("action", "read");
             request.AddParameter("testValue", TestValue);
-            request.AddParameter(" api_provider_id", ProviderId);
+            request.AddParameter("api_provider_id", ProviderId);
             //request.AddParameter(" api_researcher_id", api_researcher_id);
-            request.AddParameter(" api_test_id", test_id);
+            request.AddParameter("api_test_id", test_id);
             //request.AddParameter(" api_fname", fname);
             //request.AddParameter(" api_lname", lname);
             //request.AddParameter(" api_month", month);
@@ -63,11 +63,11 @@ namespace TestSite.DAL
             //request.AddParameter(" gender", gender);
             //request.AddParameter(" cotwin", cotwin);
             //request.AddParameter(" api_twin_id", api_twin_id);
-            request.AddParameter(" api_relationship", relationship);
+            request.AddParameter("api_relationship", relationship);
             //request.AddParameter(" api_q_str", q_str);
             //request.AddParameter(" api_sequence", sequence);
-            request.AddParameter(" api_transaction_id", api_transaction_id);
-            request.AddParameter(" api_patient_id", api_patient_id);
+            request.AddParameter("api_transaction_id", api_transaction_id);
+            request.AddParameter("api_patient_id", api_patient_id);
             //request.AddParameter(" api_status", api_status);
 
             var response = client.Execute(request);
