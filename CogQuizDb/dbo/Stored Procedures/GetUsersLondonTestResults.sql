@@ -1,7 +1,7 @@
 ﻿
+
 CREATE PROCEDURE [dbo].[GetUsersLondonTestResults]
 	-- Add the parameters for the stored procedure here
-	@testId int,
 	@from datetime2 = null,
 	@to datetime2 = null
 AS
@@ -21,15 +21,15 @@ BEGIN
 	 lur.overMove as 'Over Moves Limit',
 	 r.firstNAme as 'FirstNAme',
 	 r.lastName as 'LastName',
-	 ut.finishedDate as 'Finished Date'
+	 ut.finishedDate as 'Finished Date',
+	 lur.tId as 'tId'
 	 	 
 	 from LondonUserResults lur
 	 
 	 join User_Test ut on lur.tId = ut.tId and lur.userId = ut.userId
 	 join LondonModified lm on lm.id = ut.modifyId
 	 join Registration r on r.userId = lur.userId
-	 where lur.testId = @testId and
-		   (@from is not null and @to is not null and ut.finishedDate BETWEEN @from And @to) or
+	 where (@from is not null and @to is not null and ut.finishedDate BETWEEN @from And @to) or
 		   (@from is not null and @to is null and ut.finishedDate > @from) or
 		   (@to is not null and @from is null and ut.finishedDate < @to) or
 		   (@to is null and @from is null)

@@ -123,22 +123,22 @@ namespace TestSite.HelpClasses
             {
                 ds = DataMethods.GetTestResultsLondon(testId, from, to);
             }
-            //else if (testId.ToString() == Enums.TestId.Nback) //pass
-            //{
-            //    ds = DataMethods.GetNbackUserResults(userId, tId);
-            //}
-            //else if (testId.ToString() == Enums.TestId.Syllogisms)
-            //{
-            //    ds = DataMethods.GetSyllogismsUserResults(tId);
-            //}
-            //else if (testId.ToString() == Enums.TestId.WisconsinCardSort)//pass
-            //{
-            //    ds = DataMethods.GetTestResultsCardSort(userId, tId, true);
-            //}
-            //else if (testId.ToString() == Enums.TestId.Trails)
-            //{
-            //    ds = DataMethods.GetTestResultsTrails(userId, tId);
-            //}
+            else if (testId.ToString() == Enums.TestId.Nback) //pass
+            {
+                ds = DataMethods.GetTestResultsNback(testId, from, to);
+            }
+            else if (testId.ToString() == Enums.TestId.Syllogisms)
+            {
+                ds = DataMethods.GetTestResultsSyllogisms(testId, from, to);
+            }
+            else if (testId.ToString() == Enums.TestId.WisconsinCardSort)//pass
+            {
+                ds = DataMethods.GetTestResultsCardSort(testId, from, to);
+            }
+            else if (testId.ToString() == Enums.TestId.Trails)
+            {
+                ds = DataMethods.GetTestResultsTrails(testId, from, to);
+            }
 
             return ds;
         }

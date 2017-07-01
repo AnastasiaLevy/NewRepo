@@ -436,5 +436,8 @@
     <Build Include="dbo\Stored Procedures\GetLondonTestResults.sql" />
     <Build Include="dbo\User Defined Types\listUserId.sql" />
     <Build Include="dbo\User Defined Types\list.sql" />
+    <Build Include="dbo\Stored Procedures\GetUsersTrailsTestResults.sql" />
+    <Build Include="dbo\Stored Procedures\GetUsersNbackTestResults.sql" />
+    <Build Include="dbo\Stored Procedures\GetUsersCardSortTestResults.sql" />
   </ItemGroup>
 </Project>
