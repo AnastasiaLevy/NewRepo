@@ -14,50 +14,22 @@ namespace TestSite.Tests
 {
     public partial class ADHD_Page : System.Web.UI.Page
     {
-        string _test = "t";
+      
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                PopulateDropDown();
-            }
-        }
-
-        private void PopulateDropDown()
-        {
-            ddlRelationships.Items.Clear();
-            ddlRelationships.Items.Add( new ListItem("0", "self"));
-            ddlRelationships.Items.Add(new ListItem("1", "Mother"));
-            ddlRelationships.Items.Add(new ListItem("2", "Father"));
-        }
-
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            
-            var result = APICalls.GetTest(3, "685", 4, "self");
-            JavaScriptSerializer serializer = new JavaScriptSerializer();
-            dynamic item = serializer.Deserialize<object>(result);
-            var name = item["data"];
-            var param = item["params"];
-            questHtml.Text = name[0].ToString();
+          
         }
 
         [WebMethod]
-        public static void GetParams (string paramString, string api_transaction_id, string api_patient_id)
+        public static string GetParams (string testVal, string paramString, string api_transaction_id, string api_patient_id, string sequence)
         {
-  
+            return APICalls.GetTest(Convert.ToInt32(testVal), "685", 4, "self", Convert.ToInt32(api_transaction_id) ,Convert.ToInt32(api_patient_id), paramString, Convert.ToInt32(sequence));
 
         }
         [WebMethod]
-        public static string Call1()
+        public static string StartTest()
         {
             return APICalls.GetTest(3, "685", 4, "self");
-           
-        //JavaScriptSerializer serializer = new JavaScriptSerializer();
-        //dynamic item = serializer.Deserialize<object>(result);
-        //var name = item["data"];
-        //var param = item["params"];
-        //questHtml.Text = name[0].ToString();
     }
 
 }
