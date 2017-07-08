@@ -12,14 +12,15 @@
             <br />
             <input id="Button1" type="button" value="Start the test" />
         </div>
-     
+
         <div id="testText"></div>
-    
+
     <input id="finishTest" type="button" value="Submit" />
 
 
 <script src="../js/jquery.js"></script>
 <script>
+
     $("#finishTest").hide();
     var num = 0;
     $('#Button1').on('click', function (e) {
@@ -44,6 +45,7 @@
                 var test = jQuery.parseJSON(resp.d);
                 res.data = test.data[0];
                 $("#testText").html(res.data);
+                addValidation();
                 $("#finishTest").show();
                 $("#start").hide();
             },
@@ -136,7 +138,7 @@
                 paramString: data,
                 api_transaction_id: $('input[name="api_transaction_id"]').val(),
                 api_patient_id: $('input[name="api_patient_id"]').val(),
-                sequence: $('input[name="sequence"]').val(),
+                sequence: $('input[name="sequence"]').val()
             }),
             type: 'POST',
             success: function (resp) {
@@ -192,8 +194,8 @@
             }
         }
         return clean;
-
-
     }
+
+    function addValidation(){
 
 </script>

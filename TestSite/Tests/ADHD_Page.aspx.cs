@@ -14,26 +14,24 @@ namespace TestSite.Tests
 {
     public partial class ADHD_Page : System.Web.UI.Page
     {
-      
+        private static string _providerId;
         protected void Page_Load(object sender, EventArgs e)
         {
-          //TODO: get providerId
-          //Change Enum
+            //TODO: get providerId
+            _providerId = Session["providerId"].ToString();
+            //Change Enum
         }
 
         [WebMethod]
-        public static string GetParams (string testVal, string paramString, string api_transaction_id, string api_patient_id, string sequence)
+        public static string GetParams(string testVal, string paramString, string api_transaction_id, string api_patient_id, string sequence)
         {
-            return APICalls.GetTest(Convert.ToInt32(testVal), "685", 4, "self", Convert.ToInt32(api_transaction_id) ,Convert.ToInt32(api_patient_id), paramString, Convert.ToInt32(sequence));
-
+            return APICalls.GetTest(Convert.ToInt32(testVal), _providerId, 9, "self", Convert.ToInt32(api_transaction_id), Convert.ToInt32(api_patient_id), paramString, Convert.ToInt32(sequence));
         }
+
         [WebMethod]
         public static string StartTest()
         {
-            return APICalls.GetTest(3, "685", 4, "self");
+            return APICalls.GetTest(3, _providerId, 9, "self");
+        }
     }
-
-}
-
-    
 }
