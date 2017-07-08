@@ -64,6 +64,7 @@
     <Folder Include="dbo\Views\" />
     <Folder Include="Security\" />
     <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="dbo\User Defined Types\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Participant.sql" />
@@ -423,5 +424,20 @@
     <Build Include="dbo\Stored Procedures\InsertMemoryCardsResult.sql" />
     <Build Include="dbo\Stored Procedures\InsertMemoryCards.sql" />
     <Build Include="dbo\Stored Procedures\GetAllMemoryCard.sql" />
+    <Build Include="dbo\Stored Procedures\GetTestByTestId.sql" />
+    <Build Include="dbo\Stored Procedures\usp_test2.sql" />
+    <Build Include="dbo\Stored Procedures\SelectLondonResultsUsers.sql" />
+    <Build Include="dbo\Stored Procedures\GetUsersLondonTestResults.sql" />
+    <Build Include="dbo\Stored Procedures\GetLondonTestResults.sql" />
+    <Build Include="dbo\Stored Procedures\GetAvailableTestByProviderId.sql" />
+    <Build Include="dbo\User Defined Types\listUserId.sql" />
+    <Build Include="dbo\User Defined Types\list.sql" />
+    <Build Include="dbo\Stored Procedures\usp_test2.sql" />
+    <Build Include="dbo\Stored Procedures\GetLondonTestResults.sql" />
+    <Build Include="dbo\User Defined Types\listUserId.sql" />
+    <Build Include="dbo\User Defined Types\list.sql" />
+    <Build Include="dbo\Stored Procedures\GetUsersTrailsTestResults.sql" />
+    <Build Include="dbo\Stored Procedures\GetUsersNbackTestResults.sql" />
+    <Build Include="dbo\Stored Procedures\GetUsersCardSortTestResults.sql" />
   </ItemGroup>
 </Project>

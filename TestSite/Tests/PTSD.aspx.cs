@@ -8,7 +8,7 @@ using TestSite.DAL;
 
 namespace TestSite.Tests
 {
-    public partial class ADHD : System.Web.UI.Page
+    public partial class PTSD : System.Web.UI.Page
     {
         public static string ProviderId = "2";
 

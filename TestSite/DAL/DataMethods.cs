@@ -137,7 +137,7 @@ namespace TestSite.DAL
             catch (Exception ex)
             {
                 InsertErrorMessage(ex.ToString(), null, null, "GetAllUsers");
-               
+
             }
 
             return ds;
@@ -181,7 +181,7 @@ namespace TestSite.DAL
             SqlConnection conn = new SqlConnection(connectionSring);
             SqlCommand cmd = new SqlCommand("GetLondonFixedTests", conn);
             cmd.CommandType = CommandType.StoredProcedure;
-          
+
             try
             {
                 SqlDataAdapter adp = new SqlDataAdapter(cmd);
@@ -378,8 +378,8 @@ namespace TestSite.DAL
             return ds;
         }
 
-        internal static void SaveUserNbackResults(int hits, int miss, 
-            int corRej, int falseAlarm, int omitTarget, int omitNoTarget, 
+        internal static void SaveUserNbackResults(int hits, int miss,
+            int corRej, int falseAlarm, int omitTarget, int omitNoTarget,
             decimal percentScore, int round, string userId, int tId)
         {
             SqlConnection conn = new SqlConnection(connectionSring);
@@ -420,7 +420,7 @@ namespace TestSite.DAL
             SqlCommand cmd = new SqlCommand("GetLondonNorms", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@ageGroup", ageGroup);
-           
+
 
             try
             {
@@ -509,7 +509,7 @@ namespace TestSite.DAL
             SqlConnection conn = new SqlConnection(connectionSring);
             SqlCommand cmd = new SqlCommand("GetModifiedTest", conn);
             cmd.CommandType = CommandType.StoredProcedure;
-       
+
             cmd.Parameters.AddWithValue("@providerTestId", providerTestId);
             cmd.Parameters.AddWithValue("@providerId", providerId);
 
@@ -533,7 +533,7 @@ namespace TestSite.DAL
             SqlCommand cmd = new SqlCommand("DeleteModifiedTest", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@modTestId", modTestId);
-          
+
 
             try
             {
@@ -979,7 +979,7 @@ namespace TestSite.DAL
 
         }
 
-        internal static int? GetProviderId(string userId)
+        internal static int GetProviderId(string userId)
         {
 
             object id = null;
@@ -1842,7 +1842,7 @@ namespace TestSite.DAL
                         InsertErrorMessage(ex.ToString(), null, null, "UpdateLondonUserResults");
                     }
                 }
-                
+
             }
         }
 
@@ -2083,7 +2083,7 @@ namespace TestSite.DAL
             {
                 InsertErrorMessage(ex.ToString(), null, null, "pdateTestFinished");
                 throw new Exception("Execption in isTestPaid: " + ex.Message);
-               
+
             }
             finally
             {
@@ -2091,7 +2091,7 @@ namespace TestSite.DAL
             }
         }
 
-        internal static void InsertErrorMessage(string exeptionMessage, string userId = null, 
+        internal static void InsertErrorMessage(string exeptionMessage, string userId = null,
             string pageName = null, string procName = null)
         {
             SqlConnection conn = new SqlConnection(connectionSring);
@@ -2120,7 +2120,7 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
-         
+
                 throw new Exception("Execption Inserting exeption..." + ex.Message);
             }
             finally
@@ -2156,11 +2156,11 @@ namespace TestSite.DAL
                         throw new Exception("Execption getting result from Get " +procedureName +".\n" + ex.Message);
                     }
                     return dt;
-                    
+
                 }
             }
-            
-            
+
+
         }
 
         //todo make more abstract through reflections
@@ -2190,7 +2190,7 @@ namespace TestSite.DAL
                         throw new Exception("Execption Inserting exeption..." + ex.Message);
                     }
                 }
-                
+
             }
         }
 
@@ -2279,10 +2279,159 @@ namespace TestSite.DAL
                         throw new Exception("Execption Inserting exeption..." + ex.Message);
                     }
                 }
-
             }
         }
 
+        public static DataSet GetTestByTestId(int testId)
+        {
+            DataSet ds = new DataSet();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("GetTestByTestId", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@TestId", testId);
 
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                adp.Fill(ds);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption getting London Moves. " + ex.Message);
+            }
+
+            return ds;
+        }
+
+        public static DataSet GetTestResultsLondon(int testId, DateTime? from, DateTime? to)
+        {
+            DataSet ds = new DataSet();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("GetUsersLondonTestResults", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@from", from);
+            cmd.Parameters.AddWithValue("@to", to);
+
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                adp.Fill(ds);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption getting test results. " + ex.Message);
+            }
+
+            return ds;
+        }
+
+        public static DataSet GetTestResultsTrails(int testId, DateTime? from, DateTime? to)
+        {
+            DataSet ds = new DataSet();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("GetUsersTrailsTestResults", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@from", from);
+            cmd.Parameters.AddWithValue("@to", to);
+
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                adp.Fill(ds);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption getting test results. " + ex.Message);
+            }
+
+            return ds;
+        }
+
+        public static DataSet GetTestResultsSyllogisms(int testId, DateTime? from, DateTime? to)
+        {
+            DataSet ds = new DataSet();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("GetUsersSyllogismsTestResults", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@from", from);
+            cmd.Parameters.AddWithValue("@to", to);
+
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                adp.Fill(ds);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption getting test results. " + ex.Message);
+            }
+
+            return ds;
+        }
+
+        internal static DataSet GetTestResultsCardSort(int testId, DateTime? from, DateTime? to)
+        {
+            DataSet ds = new DataSet();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("GetUsersCardSortTestResults", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@from", from);
+            cmd.Parameters.AddWithValue("@to", to);
+
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                adp.Fill(ds);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption getting test results. " + ex.Message);
+            }
+
+            return ds;
+        }
+
+        internal static DataSet GetTestResultsNback(int testId, DateTime? from, DateTime? to)
+        {
+            DataSet ds = new DataSet();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("GetUsersNbackTestResults", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@from", from);
+            cmd.Parameters.AddWithValue("@to", to);
+
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                adp.Fill(ds);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption getting test results. " + ex.Message);
+            }
+
+            return ds;
+        }
+
+        public static DataSet GetAvailableTestByProviderId(int providerId)
+        {
+            DataSet ds = new DataSet();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("GetAvailableTestByProviderId", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@providerId", providerId);
+
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                adp.Fill(ds);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption getting tests by providerId. " + ex.Message);
+            }
+
+            return ds;
+        }
     }
 }

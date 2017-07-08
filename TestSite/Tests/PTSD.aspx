@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/TestPage.Master" AutoEventWireup="true" CodeBehind="PTSD.aspx.cs" Inherits="TestSite.Tests.ADHD" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/TestPage.Master" AutoEventWireup="true" CodeBehind="PTSD.aspx.cs" Inherits="TestSite.Tests.PTSD" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="tags" runat="server">
 </asp:Content>
