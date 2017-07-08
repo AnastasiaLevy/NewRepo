@@ -1,6 +1,43 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ADHD_Page.aspx.cs" Inherits="TestSite.Tests.ADHD_Page" %>
+<!DOCTYPE html>
 
-<link href="../cogTest.css" rel="stylesheet" />
+<%--<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>--%>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Coolidge Tests  |  Online Psychological Assessments</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../web/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../web/js/slidedeck.jquery.lite.js"></script>
+    <script src="../web/js/jquery.validationEngine-en.js" type="text/javascript"></script>
+    <script src="../web/js/jquery.validationEngine.js" type="text/javascript"></script>
+    <script src="../web/js/jquery.featureList.js" type="text/javascript"></script>
+    <script src="../web/js/jquery.autotab.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="../web/css/slidedeck.skin.css" type="text/css" media="screen">
+
+    <link href='http://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../web/css/validationEngine.jquery.css" type="text/css" media="screen" charset="utf-8" />
+    <link rel="stylesheet" href="../web/css/fredcool/jquery-ui-1.8.4.custom.css" type="text/css"/>
+    <link rel="stylesheet" href="../web/css/reset.css" type="text/css">
+    <link rel="stylesheet" href="../web/css/960_12_10_10.css" type="text/css">
+    <link rel="stylesheet" href="../web/css/style.css" type="text/css">
+    <link href="../cogTest.css" rel="stylesheet" />
+</head>
+<body>
+     <div class="wrapper">
+            <div class="headcontainer">
+                <div class="container_12">
+                    <div class="grid_3 ">Test name</div>
+                </div>
+            </div>
+
+
         <div id="start">
             Please select who do you fill the test out for:
             <br />
@@ -15,7 +52,16 @@
 
         <div id="testText"></div>
 
-    <input id="finishTest" type="button" value="Submit" />
+        <input id="finishTest" type="button" value="Submit" />
+
+		<div class="push">&nbsp;</div>
+	</div>
+
+	<div class="footer">
+
+	</div>
+</body>
+</html>
 
 
 <script src="../js/jquery.js"></script>
