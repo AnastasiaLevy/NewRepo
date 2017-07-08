@@ -40,11 +40,11 @@
 </asp:Content>
 <asp:Content ID="Content8" ContentPlaceHolderID="contentResearch" runat="server">
 
-    <p>Coolidge, F. L., DenBoer, J. W., & Segal, D. L. (2004). Personality and neuropsychological correlates of bullying behavior: An empirical investigation. Personality and Individual Differences, 36, 1559-1569. [click here for PDF copy]</p>
+    <p>Coolidge, F. L., DenBoer, J. W., & Segal, D. L. (2004). Personality and neuropsychological correlates of bullying behavior: An empirical investigation. Personality and Individual Differences, 36, 1559-1569. [click <a target="_blank" href="/content/CPNI/PAID Bullying 2004.pdf">here</a> for PDF copy]</p>
 
-    <p>Coolidge, F. L., Thede, L. L. & Young, S. E. (2002). The heritability of gender identity disorder in a child and adolescent twin sample. Behavior Genetics, 32, 251-257. [click here for PDF copy]</p>
+    <p>Coolidge, F. L., Thede, L. L. & Young, S. E. (2002). The heritability of gender identity disorder in a child and adolescent twin sample. Behavior Genetics, 32, 251-257. [click <a target="_blank" href="/content/CPNI/Coolidge et al 2002-Heritability of gender identity disorder.pdf">here</a> for PDF copy]</p>
 
-    <p>Coolidge, F. L., Thede, L. L., Stewart, S. E., & Segal, D. L. (2002). The Coolidge Personality and Neuropsychological Inventory for Children (CPNI): Preliminary psychometric characteristics. Behavior Modification, 26, 550-566. [click here for PDF copy]</p>
+    <p>Coolidge, F. L., Thede, L. L., Stewart, S. E., & Segal, D. L. (2002). The Coolidge Personality and Neuropsychological Inventory for Children (CPNI): Preliminary psychometric characteristics. Behavior Modification, 26, 550-566. [click <a target="_blank" href="/content/CPNI/CPNI Beh Mod 2002.pdf">here</a> for PDF copy]</p>
 </asp:Content>
 <asp:Content ID="Content9" ContentPlaceHolderID="sampleReport" runat="server">
    <p class="report"> <asp:LinkButton ID="report" runat="server" OnClick="report_Click">Sample report</asp:LinkButton></p>
@@ -74,7 +74,7 @@
                                 <span class="price-large yellow">40</span>
                                 <span class="price-small">.00</span>
                                 <p>Small Project</p>
-                                <asp:Button ID="ten" class="btn btn-warning" runat="server" OnClick="ten_Click" Text="Call Us" />
+                                <asp:Button ID="ten" class="btn btn-warning" runat="server" OnClick="ten_Click" Text="Buy Now" />
                             </div>
                         </div>
                         <!-- .Col-md-3 ends here -->
@@ -86,7 +86,7 @@
                                 <span class="price-large green">80</span>
                                 <span class="price-small">.00</span>
                                 <p>Medium Size Project</p>
-                                <asp:Button ID="hundred" class="btn btn-success" runat="server" OnClick="hundred_Click" Text="Call Us" />
+                                <asp:Button ID="hundred" class="btn btn-success" runat="server" OnClick="hundred_Click" Text="Buy Now" />
                             </div>
                         </div>
                         <!-- .Col-md-3 ends here -->
@@ -102,7 +102,7 @@
                                 <p>
 
 
-                                    <asp:Button ID="unlim" class="btn btn-danger" runat="server" OnClick="unlim_Click" Text="Call Us" />
+                                    <asp:Button ID="unlim" class="btn btn-danger" runat="server" OnClick="unlim_Click" Text="Buy Now" />
                             </div>
                         </div>
                         <!-- .Col-md-3 ends here -->

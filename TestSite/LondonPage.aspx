@@ -69,6 +69,9 @@
     var gameTimer;
     var speed = 200;
     var gameData;
+    var HideMessageTime = 2000;
+    var CountDownTime = 2000;
+    var FinishedMessageTime = 3200;
 </script>
 <script src="js/tower/londonInit.js"></script>
 <script src="js/tower/moves.js"></script>

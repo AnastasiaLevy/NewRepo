@@ -12,6 +12,7 @@ namespace TestSite.DAL
 {
     public class DataMethods
     {
+        //static string connectionSring = ConfigurationManager.ConnectionStrings["TestApp"].ToString();
         static string connectionSring = ConfigurationManager.ConnectionStrings["AnaLocal"].ToString();
         public static DataTable GetEvents()
         {
