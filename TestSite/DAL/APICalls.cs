@@ -39,7 +39,7 @@ namespace TestSite.DAL
         /// <param name="api_patient_id"></param>
         /// <returns></returns>
         public static string GetTest(int TestValue, string ProviderId, int test_id, string relationship,
-            int? api_transaction_id = null, int? api_patient_id=null)
+            int? api_transaction_id = null, int? api_patient_id=null, string q_str = null, int? sequence=null)
         {
             //var client = new RestClient("http://test4.loc/api/");
             var client = new RestClient("http://178.62.94.173/api/");
@@ -64,8 +64,8 @@ namespace TestSite.DAL
             //request.AddParameter(" cotwin", cotwin);
             //request.AddParameter(" api_twin_id", api_twin_id);
             request.AddParameter("api_relationship", relationship);
-            //request.AddParameter(" api_q_str", q_str);
-            //request.AddParameter(" api_sequence", sequence);
+            request.AddParameter("api_q_str", q_str);
+            request.AddParameter("api_sequence", sequence);
             request.AddParameter("api_transaction_id", api_transaction_id);
             request.AddParameter("api_patient_id", api_patient_id);
             //request.AddParameter(" api_status", api_status);

@@ -68,6 +68,7 @@
     var initTTime;
     var gameTimer;
     var speed = 200;
+
     var gameData;
     var HideMessageTime = 2000;
     var CountDownTime = 2000;

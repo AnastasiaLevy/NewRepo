@@ -150,6 +150,7 @@
         <div class="container">
             <asp:ContentPlaceHolder runat="server" ID="sampleReport"></asp:ContentPlaceHolder>
             <asp:ContentPlaceHolder runat="server" ID="price"></asp:ContentPlaceHolder>
+             <asp:ContentPlaceHolder runat="server" ID="testContent"></asp:ContentPlaceHolder>
         </div>
         <section id="follow-us">
             <div class="container">
