@@ -7,8 +7,8 @@
 </head>
 <body>--%>
 
-<html> 
-<head>  
+<html>
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Coolidge Tests  |  Online Psychological Assessments</title>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="../web/css/960_12_10_10.css" type="text/css">
     <link rel="stylesheet" href="../web/css/style.css" type="text/css">
     <link href="../cogTest.css" rel="stylesheet" />
-</head> 
+</head>
 <body>
      <div class="wrapper">
             <div class="headcontainer">
@@ -49,9 +49,9 @@
             <br />
             <input id="Button1" type="button" value="Start the test" />
         </div>
-     
+
         <div id="testText"></div>
-    
+
         <input id="finishTest" type="button" value="Submit" />
 
 		<div class="push">&nbsp;</div>
@@ -66,6 +66,7 @@
 
 <script src="../js/jquery.js"></script>
 <script>
+
     $("#finishTest").hide();
     var num = 0;
     $('#Button1').on('click', function (e) {
@@ -90,6 +91,7 @@
                 var test = jQuery.parseJSON(resp.d);
                 res.data = test.data[0];
                 $("#testText").html(res.data);
+                addValidation();
                 $("#finishTest").show();
                 $("#start").hide();
             },
@@ -182,7 +184,7 @@
                 paramString: data,
                 api_transaction_id: $('input[name="api_transaction_id"]').val(),
                 api_patient_id: $('input[name="api_patient_id"]').val(),
-                sequence: $('input[name="sequence"]').val(),
+                sequence: $('input[name="sequence"]').val()
             }),
             type: 'POST',
             success: function (resp) {
@@ -238,8 +240,8 @@
             }
         }
         return clean;
-
-
     }
+
+    function addValidation(){
 
 </script>
