@@ -91,7 +91,7 @@
                 var test = jQuery.parseJSON(resp.d);
                 res.data = test.data[0];
                 $("#testText").html(res.data);
-                addValidation();
+                //addValidation();
                 $("#finishTest").show();
                 $("#start").hide();
             },
@@ -242,6 +242,6 @@
         return clean;
     }
 
-    function addValidation(){
+   // function addValidation(){
 
 </script>

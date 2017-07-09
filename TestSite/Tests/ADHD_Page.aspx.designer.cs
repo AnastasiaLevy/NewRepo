@@ -2,14 +2,14 @@
 // <автоматически создаваемое>
 //     Этот код создан программой.
 //
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
+//     Изменения в этом файле могут привести к неправильной работе и будут потеряны в случае
+//     повторной генерации кода. 
+// </автоматически создаваемое>
 //------------------------------------------------------------------------------
 
 namespace TestSite.Tests {
-
-
+    
+    
     public partial class ADHD_Page {
     }
 }
