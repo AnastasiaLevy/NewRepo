@@ -569,7 +569,7 @@
     <Compile Include="Create\MemoryCardsCreate.aspx.designer.cs">
       <DependentUpon>MemoryCardsCreate.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DAL\ApiCalls.cs" />
+    <Compile Include="DAL\APICalls.cs" />
     <Compile Include="HelpClasses\ControlHelper.cs" />
     <Compile Include="Models\MemoryCards.cs" />
     <Compile Include="BL\Models\MemoryCardsConfigSaveResult.cs" />

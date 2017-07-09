@@ -52,7 +52,7 @@ namespace TestSite.DAL
             request.AddParameter("controller", "Testapi");
             request.AddParameter("action", "read");
             request.AddParameter("testValue", TestValue);
-            request.AddParameter("api_provider_id", ProviderId);
+            request.AddParameter("api_provider_ext_id", ProviderId);
             //request.AddParameter(" api_researcher_id", api_researcher_id);
             request.AddParameter("api_test_id", test_id);
             //request.AddParameter(" api_fname", fname);

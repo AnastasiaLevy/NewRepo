@@ -24,13 +24,13 @@ namespace TestSite.Tests
         [WebMethod]
         public static string GetParams (string testVal, string paramString, string api_transaction_id, string api_patient_id, string sequence)
         {
-            return APICalls.GetTest(Convert.ToInt32(testVal), "685", 9, "self", Convert.ToInt32(api_transaction_id) ,Convert.ToInt32(api_patient_id), paramString, Convert.ToInt32(sequence));
+            return APICalls.GetTest(Convert.ToInt32(testVal), "2", 9, "self", Convert.ToInt32(api_transaction_id) ,Convert.ToInt32(api_patient_id), paramString, Convert.ToInt32(sequence));
 
         }
         [WebMethod]
         public static string StartTest()
         {
-            return APICalls.GetTest(3, "685", 9, "self");
+            return APICalls.GetTest(3, "2", 9, "self");
     }
 
 }
