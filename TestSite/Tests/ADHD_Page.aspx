@@ -33,7 +33,7 @@
      <div class="wrapper">
             <div class="headcontainer">
                 <div class="container_12">
-                    <div class="grid_3 ">Test name</div>
+                    <div class="grid_3 ">CPNI test</div>
                 </div>
             </div>
 
@@ -41,11 +41,25 @@
         <div id="start">
             Please select who do you fill the test out for:
             <br />
-          <select>
-              <option>Self</option>
-              <option>Option 1</option>
-              <option>Option 2</option>
-          </select>
+            Insert patient ext id:
+            <input type = "text" name = "api_patient_ext_id"><br>
+<%--            Insert test id:
+            <input type = "text" name = "api_test_id"><br>--%>
+            Insert First name:
+            <input type = "text" name = "fname"><br>
+            Insert last name:
+            <input type = "text" name = "lname"><br>
+            Select gender:
+		    <select name = "gender">
+			    <option value = "M">M</option>
+			    <option value = "F">F</option>
+		    </select><br>
+		    Select relationship:
+		    <select name  = "relationship">
+			    <option value = "self">self</option>
+			    <option value = "mother">mother</option>
+			    <option value = "father">father</option>
+		    </select>
             <br />
             <input id="Button1" type="button" value="Start the test" />
         </div>
@@ -76,14 +90,21 @@
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             url: 'ADHD_Page.aspx/StartTest',
-            //data : {
-            //    "controller":"Testapi",
+            data: JSON.stringify({
+                api_patient_ext_id: $('input[name="api_patient_ext_id"]').val(),
+                //test_id: $('input[name="api_test_id"]').val();
+                fname: $('input[name="fname"]').val(),
+                lname: $('input[name="lname"]').val(),
+                relationship: $('select[name="relationship"]').val(),
+                gender: $('select[name="gender"]').val()
+
+
             //    "action": "read",
             //    "testValue": "3",
-            //    "api_provider_id": "685",
-            //    "api_test_id": "4",
+            //    "api_provider_id": "2",
+            //    "api_test_id": "9",
             //    " api_relationship":"self"
-            //},
+            }),
 
             type: 'POST',
             success: function (resp) {
@@ -112,20 +133,24 @@
         else {
             if (num == 0) {
                 var i = 1;
-                var max = 10;
+                var max = 51;
             }
             else if (num == 1) {
                 var i = 51;
-                var max = 100;
+                var max = 101;
             }
             else if (num == 2) {
                 var i = 101;
-                var max = 150;
+                var max = 151;
             }
             else if (num == 3) {
                 var i = 151;
-                var max = 251;
+                var max = 201;
             }
+            else if (num == 4) {
+                var i = 201;
+                var max = 251;
+            }            
 
             for (i ; i < max; i++) {
                 var name = "q" + i;
@@ -183,8 +208,13 @@
                 testVal: "4",
                 paramString: data,
                 api_transaction_id: $('input[name="api_transaction_id"]').val(),
+                api_patient_ext_id: $('input[name="api_patient_ext_id"]').val(),
                 api_patient_id: $('input[name="api_patient_id"]').val(),
-                sequence: $('input[name="sequence"]').val()
+                sequence: $('input[name="sequence"]').val(),
+                fname: $('input[name="fname"]').val(),
+                lname: $('input[name="lname"]').val(),
+                relationship: $('select[name="relationship"]').val(),
+                gender: $('select[name="gender"]').val()
             }),
             type: 'POST',
             success: function (resp) {
@@ -219,7 +249,7 @@
         var clean = true;
         if (num == 0) {
             var i = 1;
-            var max = 10;
+            var max = 51;
         }
         else if (num == 1) {
             var i = 51;

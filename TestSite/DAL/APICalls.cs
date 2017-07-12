@@ -37,12 +37,13 @@ namespace TestSite.DAL
         /// <param name="relationship"></param>
         /// <param name="api_transaction_id">Connection between test, provider, and user</param>
         /// <param name="api_patient_id"></param>
+        /// <param name="api_patient_ext_id"></param>
         /// <returns></returns>
-        public static string GetTest(int TestValue, string ProviderId, int test_id, string relationship,
-            int? api_transaction_id = null, int? api_patient_id=null, string q_str = null, int? sequence=null)
+        public static string GetTest(int TestValue, string ProviderId, string api_patient_ext_id, string fname, string lname, int test_id, string relationship,
+           string gender, int? api_transaction_id = null, int? api_patient_id=null, string q_str = null, int? sequence=null)
         {
-            //var client = new RestClient("http://test4.loc/api/");
-            var client = new RestClient("http://178.62.94.173/api/");
+            var client = new RestClient("http://test4.loc/api/");
+            //var client = new RestClient("http://178.62.94.173/api/");
 
             //private string q_str = '';
 
@@ -55,12 +56,12 @@ namespace TestSite.DAL
             request.AddParameter("api_provider_ext_id", ProviderId);
             //request.AddParameter(" api_researcher_id", api_researcher_id);
             request.AddParameter("api_test_id", test_id);
-            //request.AddParameter(" api_fname", fname);
-            //request.AddParameter(" api_lname", lname);
+            request.AddParameter(" api_fname", fname);
+            request.AddParameter(" api_lname", lname);
             //request.AddParameter(" api_month", month);
             //request.AddParameter(" api_day", day);
             //request.AddParameter(" year", year);
-            //request.AddParameter(" gender", gender);
+            request.AddParameter(" api_gender", gender);
             //request.AddParameter(" cotwin", cotwin);
             //request.AddParameter(" api_twin_id", api_twin_id);
             request.AddParameter("api_relationship", relationship);
@@ -69,6 +70,7 @@ namespace TestSite.DAL
             request.AddParameter("api_transaction_id", api_transaction_id);
             request.AddParameter("api_patient_id", api_patient_id);
             //request.AddParameter(" api_status", api_status);
+            request.AddParameter("api_patient_ext_id", api_patient_ext_id);
 
             var response = client.Execute(request);
 
