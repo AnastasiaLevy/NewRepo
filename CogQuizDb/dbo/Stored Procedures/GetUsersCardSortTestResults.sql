@@ -1,5 +1,6 @@
 ﻿
 
+
 -- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
@@ -41,4 +42,5 @@ BEGIN
 		     (@from is not null and @to is null and ut.finishedDate > @from) or
 		     (@to is not null and @from is null and ut.finishedDate < @to) or
 		     (@to is null and @from is null)
+		order by csur.tId;
 END

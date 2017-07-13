@@ -601,7 +601,28 @@ namespace TestSite.Provider
         {
             MakePanelsInvisible();
             SetUpExportTestResults();
+            TestsForExportResults.Visible = false;
             exportTestResults.Visible = true;
+        }
+
+        protected void TestTemplatesForExportResults_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TestsForExportResults.Visible = false;
+            TestsForExportResults.Items.Clear();
+            DataTable dt = DAL.DataMethods.GetModfiedTest(TestTemplatesForExportResults.SelectedValue, Convert.ToInt32(ViewState["providerId"]));
+            if (dt.Rows.Count > 0)
+            {
+                TestsForExportResults.Visible = true;
+                foreach (DataRow dr in dt.Rows)
+                {
+                    TestsForExportResults.Items.Add(new ListItem(dr["testName"].ToString(), dr["Id"].ToString()));
+                }
+            }
+            else
+            {
+                TestsForExportResults.Items.Clear();
+                TestsForExportResults.Visible = false;
+            }
         }
 
         private void SetUpExportTestResults()
@@ -614,7 +635,6 @@ namespace TestSite.Provider
                 string display = dr["Name"].ToString();// + (!string.IsNullOrEmpty(dr["Left"].ToString())?"(amount:" + dr["Left"].ToString() + ")":"");
                 TestTemplatesForExportResults.Items.Add(new ListItem(display, dr["Id"].ToString()));
             }
-            //TestTemplatesForExportResults.Items.Insert(0, new ListItem("Select Test", "NA"));
         }
 
         protected void btnExportTestResultsInOneRow_Click(object sender, EventArgs e)
@@ -623,16 +643,28 @@ namespace TestSite.Provider
             DateTime toBuffer;
             var from = DateTime.TryParse(fromDate.Text, out fromBuffer) ? fromBuffer : (DateTime?)null;
             var to = DateTime.TryParse(toDate.Text, out toBuffer) ? toBuffer.AddDays(1) : (DateTime?)null;
-            ExportData.ExportAllInSingleLines(Convert.ToInt32(TestTemplatesForExportResults.SelectedValue), Convert.ToInt32(ViewState["providerId"]), from, to);
+
+            ExportData.ExportAllInSingleLines(Convert.ToInt32(TestTemplatesForExportResults.SelectedValue),
+                Convert.ToInt32(ViewState["providerId"]), from, to);
         }
 
         protected void btnExportTestResultsInManyRows_Click(object sender, EventArgs e)
         {
             DateTime fromBuffer;
             DateTime toBuffer;
-            var from = DateTime.TryParse(fromDate.Text,out fromBuffer) ? fromBuffer : (DateTime?)null;
+            var from = DateTime.TryParse(fromDate.Text, out fromBuffer) ? fromBuffer : (DateTime?)null;
             var to = DateTime.TryParse(toDate.Text, out toBuffer) ? toBuffer.AddDays(1) : (DateTime?)null;
-            ExportData.ExportAllNormal(Convert.ToInt32(TestTemplatesForExportResults.SelectedValue), Convert.ToInt32(ViewState["providerId"]), from, to);
+            if (string.IsNullOrEmpty(TestsForExportResults.SelectedValue))
+            {
+                ExportData.ExportAllNormal(Convert.ToInt32(TestTemplatesForExportResults.SelectedValue),
+                    Convert.ToInt32(ViewState["providerId"]), from, to);
+            }
+            else
+            {
+                ExportData.ExportAllNormalByModifyId(Convert.ToInt32(TestTemplatesForExportResults.SelectedValue),
+                    Convert.ToInt32(TestsForExportResults.SelectedValue),
+                    Convert.ToInt32(ViewState["providerId"]), from, to);
+            }
         }
     }
 }

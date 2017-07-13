@@ -477,7 +477,7 @@ namespace TestSite.DAL
                 InsertErrorMessage(ex.ToString(), null, null, "GetUserProviderCode");
                 throw new Exception("Execption getting All Provider Participants. " + ex.Message);
             };
-            return (dt.Rows.Count > 0 ) ? dt.Rows[0]["code"].ToString() : "";
+            return (dt.Rows.Count > 0) ? dt.Rows[0]["code"].ToString() : "";
 
         }
 
@@ -825,7 +825,7 @@ namespace TestSite.DAL
             cmd.Parameters.AddWithValue("@txtOverTime", overTime);
             cmd.Parameters.AddWithValue("@txtButton", txtButton);
             cmd.Parameters.AddWithValue("@txtFeedBack", txtFeedBack);
-            cmd.Parameters.AddWithValue("@instructionsFinish",instructionsFinish);
+            cmd.Parameters.AddWithValue("@instructionsFinish", instructionsFinish);
             cmd.Parameters.AddWithValue("@displayResult", displayResultPage);
 
             cmd.Parameters.AddWithValue("@prctRounds", prctRounds);
@@ -1142,7 +1142,7 @@ namespace TestSite.DAL
             cmd.Parameters.AddWithValue("@provTestId", provTestId);
             cmd.Parameters.AddWithValue("@userId", userId);
             if (modifiedId == 0)
-            cmd.Parameters.AddWithValue("@modifiedId", DBNull.Value);
+                cmd.Parameters.AddWithValue("@modifiedId", DBNull.Value);
             else
                 cmd.Parameters.AddWithValue("@modifiedId", modifiedId);
             try
@@ -1384,7 +1384,7 @@ namespace TestSite.DAL
             return dt;
         }
 
-        public static DataSet GetSyllogismsUserTable( int tId)
+        public static DataSet GetSyllogismsUserTable(int tId)
         {
             DataSet ds = new DataSet();
             SqlConnection conn = new SqlConnection(connectionSring);
@@ -2008,7 +2008,7 @@ namespace TestSite.DAL
         }
 
         public static void InsertStroopResult(
-            string  userId,
+            string userId,
             int testId,
             string round,
             int correctRespCount,
@@ -2141,7 +2141,7 @@ namespace TestSite.DAL
         {
             using (SqlConnection sqc = new SqlConnection(connectionSring))
             {
-                using (SqlCommand cmd = new SqlCommand("Get" + procedureName,sqc))
+                using (SqlCommand cmd = new SqlCommand("Get" + procedureName, sqc))
                 {
                     DataTable dt = new DataTable();
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -2150,10 +2150,10 @@ namespace TestSite.DAL
                         SqlDataAdapter adp = new SqlDataAdapter(cmd);
                         adp.Fill(dt);
                     }
-                    catch(Exception ex)
+                    catch (Exception ex)
                     {
-                        InsertErrorMessage(ex.ToString(), null, null, "Get"+procedureName);
-                        throw new Exception("Execption getting result from Get " +procedureName +".\n" + ex.Message);
+                        InsertErrorMessage(ex.ToString(), null, null, "Get" + procedureName);
+                        throw new Exception("Execption getting result from Get " + procedureName + ".\n" + ex.Message);
                     }
                     return dt;
 
@@ -2195,7 +2195,7 @@ namespace TestSite.DAL
         }
 
 
-        public static void UpdateMemoryCardsTrial(string testName,int testId, MemoryCardsConfigSaveResult result)
+        public static void UpdateMemoryCardsTrial(string testName, int testId, MemoryCardsConfigSaveResult result)
         {
             using (SqlConnection sqc = new SqlConnection(connectionSring))
             {
@@ -2429,6 +2429,29 @@ namespace TestSite.DAL
             catch (Exception ex)
             {
                 throw new Exception("Execption getting tests by providerId. " + ex.Message);
+            }
+
+            return ds;
+        }
+
+        public static DataSet GetTestResultsLondonByModifyId(int testId, int modifyId, DateTime? @from, DateTime? to)
+        {
+            DataSet ds = new DataSet();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("GetUsersLondonTestResultsByModifyId", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@modifyId", modifyId);
+            cmd.Parameters.AddWithValue("@from", from);
+            cmd.Parameters.AddWithValue("@to", to);
+
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                adp.Fill(ds);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Execption getting test results. " + ex.Message);
             }
 
             return ds;
