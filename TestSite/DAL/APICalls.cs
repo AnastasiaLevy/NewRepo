@@ -39,11 +39,11 @@ namespace TestSite.DAL
         /// <param name="api_patient_id"></param>
         /// <param name="api_patient_ext_id"></param>
         /// <returns></returns>
-        public static string GetTest(int TestValue, string ProviderId, string api_patient_ext_id, string fname, string lname, int test_id, string relationship,
+        public static string GetTest(int TestValue, string ProviderId, string api_patient_ext_id, string fname, string lname, int month, int day, int year, int test_id, string relationship,
            string gender, int? api_transaction_id = null, int? api_patient_id=null, string q_str = null, int? sequence=null)
         {
-            var client = new RestClient("http://test4.loc/api/");
-            //var client = new RestClient("http://178.62.94.173/api/");
+            //var client = new RestClient("http://test4.loc/api/");
+            var client = new RestClient("http://178.62.94.173/api/");
 
             //private string q_str = '';
 
@@ -58,9 +58,9 @@ namespace TestSite.DAL
             request.AddParameter("api_test_id", test_id);
             request.AddParameter(" api_fname", fname);
             request.AddParameter(" api_lname", lname);
-            //request.AddParameter(" api_month", month);
-            //request.AddParameter(" api_day", day);
-            //request.AddParameter(" year", year);
+            request.AddParameter(" api_month", month);
+            request.AddParameter(" api_day", day);
+            request.AddParameter(" api_year", year);
             request.AddParameter(" api_gender", gender);
             //request.AddParameter(" cotwin", cotwin);
             //request.AddParameter(" api_twin_id", api_twin_id);

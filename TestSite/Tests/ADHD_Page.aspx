@@ -49,6 +49,7 @@
             <input type = "text" name = "fname"><br>
             Insert last name:
             <input type = "text" name = "lname"><br>
+
             Select gender:
 		    <select name = "gender">
 			    <option value = "M">M</option>
@@ -56,9 +57,17 @@
 		    </select><br>
 		    Select relationship:
 		    <select name  = "relationship">
-			    <option value = "self">self</option>
-			    <option value = "mother">mother</option>
-			    <option value = "father">father</option>
+                    	<option value="self">Select a relationship</option>
+                        <option value="self">Self</option>
+                        <option value="husband">Husband</option>
+                        <option value="wife">Wife</option>
+                        <option value="father">Father</option>
+                        <option value="mother">Mother</option>
+                        <option value="son">Son</option>
+                        <option value="daughter">Daughter</option>
+                        <option value="friend">Friend</option>
+                        <option value="Twin">Co-Twin</option>
+                        <option value="other">Other</option>
 		    </select>
             <br />
             <input id="Button1" type="button" value="Start the test" />
