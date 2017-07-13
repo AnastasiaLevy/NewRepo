@@ -439,5 +439,6 @@
     <Build Include="dbo\Stored Procedures\GetUsersTrailsTestResults.sql" />
     <Build Include="dbo\Stored Procedures\GetUsersNbackTestResults.sql" />
     <Build Include="dbo\Stored Procedures\GetUsersCardSortTestResults.sql" />
+    <Build Include="dbo\Stored Procedures\GetUsersLondonTestResultsByModifyId.sql" />
   </ItemGroup>
 </Project>
