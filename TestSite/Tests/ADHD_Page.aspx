@@ -100,7 +100,7 @@
             dataType: "json",
             url: 'ADHD_Page.aspx/StartTest',
             data: JSON.stringify({
-                api_patient_ext_id: $('input[name="api_patient_ext_id"]').val(),
+                //api_patient_ext_id: $('input[name="api_patient_ext_id"]').val(),
                 //test_id: $('input[name="api_test_id"]').val();
                 fname: $('input[name="fname"]').val(),
                 lname: $('input[name="lname"]').val(),
@@ -159,7 +159,7 @@
             else if (num == 4) {
                 var i = 201;
                 var max = 251;
-            }            
+            }
 
             for (i ; i < max; i++) {
                 var name = "q" + i;
