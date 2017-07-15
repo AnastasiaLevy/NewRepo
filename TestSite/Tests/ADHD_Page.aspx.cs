@@ -72,5 +72,23 @@ namespace TestSite.Tests
             var paramString = unfinishedTest.Tables[0].Rows[0]["paramString"] != DBNull.Value ? unfinishedTest.Tables[0].Rows[0]["paramString"].ToString() : null;
             return APICalls.GetTest(3, providerId, api_patient_ext_id, fname, lname, month, day, year, 9, relationship, gender, transactionId, null, paramString, sequence);
         }
+
+        [WebMethod(EnableSession = true)]
+        public static string SaveAndClose(string testVal, string providerId, string paramString, string api_transaction_id, string api_patient_id, string sequence, string relationship)
+        {
+            var api_patient_ext_id = HttpContext.Current.Session["userId"].ToString();
+            var registration = DataMethods.GetRegistarionDataByUser(api_patient_ext_id);
+            var gender = registration.Rows[0]["gender"]?.ToString();
+            var year = registration.Rows[0]["birthDate"] != DBNull.Value
+                ? DateTime.Parse(registration.Rows[0]["birthDate"].ToString()).Year : 0;
+            var month = registration.Rows[0]["birthDate"] != DBNull.Value
+                ? DateTime.Parse(registration.Rows[0]["birthDate"].ToString()).Month : 0;
+            var day = registration.Rows[0]["birthDate"] != DBNull.Value
+                ? DateTime.Parse(registration.Rows[0]["birthDate"].ToString()).Day : 0;
+            string fname = registration.Rows[0]["firstNAme"]?.ToString();
+            string lname = registration.Rows[0]["lastName"]?.ToString();
+            DAL.DataMethods.Update3dPartyTest(Convert.ToInt32(api_transaction_id), Convert.ToInt32(sequence), false, paramString, Guid.Parse(api_patient_ext_id));
+            return "Ok";
+        }
     }
 }
