@@ -5,7 +5,10 @@
     [finished]      BIT              NOT NULL,
     [userId]        UNIQUEIDENTIFIER NOT NULL,
     [paramString]   VARCHAR (MAX)    NULL,
+    [relationship]  VARCHAR (50)     NOT NULL,
     CONSTRAINT [PK_3dPartyTests_1] PRIMARY KEY CLUSTERED ([id] ASC),
     CONSTRAINT [FK_3dPartyTests_3dPartyTests] FOREIGN KEY ([id]) REFERENCES [dbo].[3dPartyTests] ([id])
 );
+
+
 
