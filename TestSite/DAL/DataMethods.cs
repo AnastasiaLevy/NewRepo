@@ -2070,7 +2070,8 @@ namespace TestSite.DAL
         public static void Insert3dPartyTest(
             Guid userId,
             int sequence,
-            bool finished
+            bool finished,
+            string relationship
             )
         {
 
@@ -2080,6 +2081,7 @@ namespace TestSite.DAL
             cmd.Parameters.AddWithValue("@userId", userId);
             cmd.Parameters.AddWithValue("@sequence", sequence);
             cmd.Parameters.AddWithValue("@finished", finished);
+            cmd.Parameters.AddWithValue("@relationship", relationship);
 
             try
             {

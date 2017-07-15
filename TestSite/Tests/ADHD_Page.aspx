@@ -38,13 +38,13 @@
             </div>
 
 
-        <div id="start">
+        <div id="start" runat="server">
             Please select who do you fill the test out for:
-            <br />
+<%--            <br />
             Insert patient ext id:
             <input type = "text" name = "api_patient_ext_id"><br>
-<%--            Insert test id:
-            <input type = "text" name = "api_test_id"><br>--%>
+            Insert test id:
+            <input type = "text" name = "api_test_id"><br>
             Insert First name:
             <input type = "text" name = "fname"><br>
             Insert last name:
@@ -54,9 +54,9 @@
 		    <select name = "gender">
 			    <option value = "M">M</option>
 			    <option value = "F">F</option>
-		    </select><br>
+		    </select><br>--%>
 		    Select relationship:
-		    <select name  = "relationship">
+		    <select name  = "relationship" runat="server" ID="relationship">
                     	<option value="self">Select a relationship</option>
                         <option value="self">Self</option>
                         <option value="husband">Husband</option>
@@ -70,7 +70,7 @@
                         <option value="other">Other</option>
 		    </select>
             <br />
-            <input id="Button1" type="button" value="Start the test" />
+            <input id="Button1" runat="server" type="button" value="Start the test" />
         </div>
 
         <div id="testText"></div>
@@ -89,7 +89,8 @@
 
 <script src="../js/jquery.js"></script>
 <script>
-
+    $(document).ready(function() {
+    });
     $("#finishTest").hide();
     var num = 0;
     $('#Button1').on('click', function (e) {
@@ -102,8 +103,8 @@
             data: JSON.stringify({
                 //api_patient_ext_id: $('input[name="api_patient_ext_id"]').val(),
                 //test_id: $('input[name="api_test_id"]').val();
-                fname: $('input[name="fname"]').val(),
-                lname: $('input[name="lname"]').val(),
+                //fname: $('input[name="fname"]').val(),
+                //lname: $('input[name="lname"]').val(),
                 relationship: $('select[name="relationship"]').val(),
                 gender: $('select[name="gender"]').val()
 
@@ -217,13 +218,14 @@
                 testVal: "4",
                 paramString: data,
                 api_transaction_id: $('input[name="api_transaction_id"]').val(),
-                api_patient_ext_id: $('input[name="api_patient_ext_id"]').val(),
+                // api_patient_ext_id: $('input[name="api_patient_ext_id"]').val(),
                 api_patient_id: $('input[name="api_patient_id"]').val(),
+                providerId: $('input[name="api_provider_ext_id"]').val(),
                 sequence: $('input[name="sequence"]').val(),
-                fname: $('input[name="fname"]').val(),
-                lname: $('input[name="lname"]').val(),
+                //fname: $('input[name="fname"]').val(),
+                //lname: $('input[name="lname"]').val(),
                 relationship: $('select[name="relationship"]').val(),
-                gender: $('select[name="gender"]').val()
+                //gender: $('select[name="gender"]').val()
             }),
             type: 'POST',
             success: function (resp) {
@@ -258,7 +260,7 @@
         var clean = true;
         if (num == 0) {
             var i = 1;
-            var max = 51;
+            var max = 2;
         }
         else if (num == 1) {
             var i = 51;

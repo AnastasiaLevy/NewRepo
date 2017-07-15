@@ -122,6 +122,7 @@ namespace TestSite
             string str = row.Cells[3].Text;
             Session["userTestId"] = row.Cells[4].Text;
             Session["providerId"] = DAL.DataMethods.GetUserProviderId(userId).Rows[0][0];
+            Session["userId"] = Membership.GetUser(User.Identity.Name).ProviderUserKey.ToString();
             if (!String.IsNullOrEmpty(row.Cells[5].Text))
             {
                 Session["modifiedId"] = row.Cells[5].Text;
