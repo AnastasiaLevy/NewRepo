@@ -125,6 +125,7 @@
                 //addValidation();
                 $("#finishTest").show();
                 $("#start").hide();
+                num = $('input[name="sequence"]').val();
             },
             error: function (resp) {
                 alert("The results were not saved correctly")
@@ -200,6 +201,8 @@
                 $("#testText").html(res.data);
                 //$("#testText").html(resp.d);
 
+                num = $('input[name="sequence"]').val();
+
             },
             error: function (resp) {
                 alert("The results were not saved correctly");
@@ -234,7 +237,7 @@
                 $("#testText").html(res.data);
 
                 num = $('input[name="sequence"]').val();
-                alert(num);
+             
                 $("#finishTest").show();
 
             },
