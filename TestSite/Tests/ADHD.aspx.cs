@@ -41,22 +41,28 @@ namespace TestSite.Tests
 
             MyMasterPage.PostPaypal(0.01, "ADHD_1", "/Tests/ADHD.aspx", 1);
 
+            string result;
+
+            result = APICalls.BuyTest(_providerId.ToString(), "CPNI", 1);
+
         }
 
         protected void ten_Click(object sender, EventArgs e)
         {
-
-
+            string result;
+            result = APICalls.BuyTest(_providerId.ToString(), "CPNI", 10);
         }
 
         protected void hundred_Click(object sender, EventArgs e)
         {
-
+            string result;
+            result = APICalls.BuyTest(_providerId.ToString(), "CPNI", 100);
         }
 
         protected void unlim_Click(object sender, EventArgs e)
         {
-
+            string result;
+            result = APICalls.BuyTest(_providerId.ToString(), "CPNI", 10000);
         }
 
         protected void runTest_Click(object sender, EventArgs e)

@@ -258,7 +258,8 @@
                                         <div class ="row">
                                             <div class="col-md-5">
                                                 <label>Choose test type:</label>
-                                                <asp:DropDownList class="dropDown" ID="TestTemplatesForExportResults" runat="server" Width="100%" AppendDataBoundItems="true" AutoPostBack="True"></asp:DropDownList>
+                                                <asp:DropDownList class="dropDown" ID="TestTemplatesForExportResults" OnSelectedIndexChanged="TestTemplatesForExportResults_SelectedIndexChanged" runat="server" Width="100%" AppendDataBoundItems="true" AutoPostBack="True"></asp:DropDownList>
+                                                <asp:DropDownList class="dropDown" ID="TestsForExportResults" runat="server" Width="100%" AppendDataBoundItems="true" AutoPostBack="True"></asp:DropDownList>
                                             </div>
                                             <div class="col-md-1">
                                                 </div>

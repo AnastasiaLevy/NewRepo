@@ -439,5 +439,10 @@
     <Build Include="dbo\Stored Procedures\GetUsersTrailsTestResults.sql" />
     <Build Include="dbo\Stored Procedures\GetUsersNbackTestResults.sql" />
     <Build Include="dbo\Stored Procedures\GetUsersCardSortTestResults.sql" />
+    <Build Include="dbo\Stored Procedures\GetUsersLondonTestResultsByModifyId.sql" />
+    <Build Include="dbo\Tables\3dPartyTests.sql" />
+    <Build Include="dbo\Stored Procedures\Update3dPartyTest.sql" />
+    <Build Include="dbo\Stored Procedures\Insert3dPartyTest.sql" />
+    <Build Include="dbo\Stored Procedures\Get3dPartyTest.sql" />
   </ItemGroup>
 </Project>

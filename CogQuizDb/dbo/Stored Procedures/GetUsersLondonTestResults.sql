@@ -1,5 +1,6 @@
 ﻿
 
+
 CREATE PROCEDURE [dbo].[GetUsersLondonTestResults]
 	-- Add the parameters for the stored procedure here
 	@from datetime2 = null,
@@ -33,7 +34,7 @@ BEGIN
 		   (@from is not null and @to is null and ut.finishedDate > @from) or
 		   (@to is not null and @from is null and ut.finishedDate < @to) or
 		   (@to is null and @from is null)
-	 order by lur.Game;
+	 order by lur.tId;
 
 END
 
