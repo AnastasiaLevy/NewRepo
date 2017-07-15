@@ -242,6 +242,6 @@
         return clean;
     }
 
-    function addValidation(){
+    function addValidation() { }
 
 </script>

@@ -25,6 +25,7 @@ namespace TestSite.Tests
                   int amount =Convert.ToInt32(Request.QueryString["item_name"].Remove(0,5));
                     DataMethods.InsertProviderTest(_providerId, _testId, 1, amount);
                     APICalls.BuyTest(_providerId.ToString(), "CPNI", amount);
+
                 }
             }
         }
