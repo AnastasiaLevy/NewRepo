@@ -31,8 +31,6 @@ namespace TestSite
                     Session["providerId"] = _providerId;
                     price.Visible = true;
                 }
-
-
             }
             else
             {

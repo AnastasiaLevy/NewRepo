@@ -72,7 +72,7 @@
                             <div class="circle c3 img-circle">
                                 <h4 class="green">Set of 100</h4>
                                 <span class="icon green"><i class="fa fa-usd "></i></span>
-                                <span class="price-large green">80</span>
+                                <span class="price-large green">400</span>
                                 <span class="price-small">.00</span>
                                 <p>Medium Size Project</p>
                                 <asp:Button ID="hundred" class="btn btn-success" runat="server" OnClick="hundred_Click" Text="Buy Now" />
@@ -82,12 +82,12 @@
 
                         <div class="col-md-3">
                             <div class="circle c4 img-circle">
-                                <h4 class="red">Unlimited Use</h4>
+                                <h4 class="red">Set of 1000</h4>
                                 <span class="icon red"><i class="fa fa-usd "></i></span>
-                                <span class="price-large red">499</span>
-                                <span class="price-small">.00</span>
+                                <span class="price-large red">3000</span>
+                                <span class="price-small"></span>
                                 <p>
-                                    Any Number of Participants
+                                  
                                 <p>
 
 

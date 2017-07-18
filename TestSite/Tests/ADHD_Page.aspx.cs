@@ -16,7 +16,7 @@ namespace TestSite.Tests
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var unfinishedTest = DAL.DataMethods.Get3dPartyTest(false, Guid.Parse(HttpContext.Current.Session["userId"].ToString()));
+            var unfinishedTest = DAL.DataMethods.Get3dPartyTest(false, Guid.Parse(HttpContext.Current.Session["userId"].ToString()), Convert.ToInt32(Session["userTestId"]));
             if (unfinishedTest.Tables[0].Rows.Count > 0)
             {
                 relationship.Disabled = true;
@@ -42,7 +42,7 @@ namespace TestSite.Tests
                 ? DateTime.Parse(registration.Rows[0]["birthDate"].ToString()).Day : 0;
             string fname = registration.Rows[0]["firstNAme"]?.ToString();
             string lname = registration.Rows[0]["lastName"]?.ToString();
-            DAL.DataMethods.Update3dPartyTest(Convert.ToInt32(api_transaction_id), Convert.ToInt32(sequence), false, paramString, Guid.Parse(api_patient_ext_id));
+            DAL.DataMethods.Update3dPartyTest(Convert.ToInt32(api_transaction_id), Convert.ToInt32(sequence), false, paramString, Guid.Parse(api_patient_ext_id), Convert.ToInt32(HttpContext.Current.Session["userTestId"]));
             return APICalls.GetTest(Convert.ToInt32(testVal), providerId, api_patient_ext_id, fname, lname, month, day, year, 9, relationship, gender, Convert.ToInt32(api_transaction_id), Convert.ToInt32(api_patient_id), paramString, Convert.ToInt32(sequence));
         }
 
@@ -61,10 +61,10 @@ namespace TestSite.Tests
                 ? DateTime.Parse(registration.Rows[0]["birthDate"].ToString()).Day : 0;
             string fname = registration.Rows[0]["firstNAme"]?.ToString();
             string lname = registration.Rows[0]["lastName"]?.ToString();
-            var unfinishedTest = DAL.DataMethods.Get3dPartyTest(false, Guid.Parse(api_patient_ext_id));
+            var unfinishedTest = DAL.DataMethods.Get3dPartyTest(false, Guid.Parse(api_patient_ext_id), Convert.ToInt32(HttpContext.Current.Session["userTestId"]));
             if (unfinishedTest.Tables[0].Rows.Count == 0)
             {
-                DAL.DataMethods.Insert3dPartyTest(Guid.Parse(api_patient_ext_id), 0, false, relationship);
+                DAL.DataMethods.Insert3dPartyTest(Guid.Parse(api_patient_ext_id), 0, false, relationship, Convert.ToInt32(HttpContext.Current.Session["userTestId"]));
                 return APICalls.GetTest(3, providerId, api_patient_ext_id, fname, lname, month, day, year, 9, relationship, gender);
             }
             var transactionId = unfinishedTest.Tables[0].Rows[0]["transactionId"] != DBNull.Value ? Convert.ToInt32(unfinishedTest.Tables[0].Rows[0]["transactionId"]) : (int?)null;
@@ -87,7 +87,7 @@ namespace TestSite.Tests
                 ? DateTime.Parse(registration.Rows[0]["birthDate"].ToString()).Day : 0;
             string fname = registration.Rows[0]["firstNAme"]?.ToString();
             string lname = registration.Rows[0]["lastName"]?.ToString();
-            DAL.DataMethods.Update3dPartyTest(Convert.ToInt32(api_transaction_id), Convert.ToInt32(sequence), false, paramString, Guid.Parse(api_patient_ext_id));
+            DAL.DataMethods.Update3dPartyTest(Convert.ToInt32(api_transaction_id), Convert.ToInt32(sequence), false, paramString, Guid.Parse(api_patient_ext_id), Convert.ToInt32(HttpContext.Current.Session["userTestId"]));
             return "Ok";
         }
     }

@@ -11,6 +11,7 @@ CREATE PROCEDURE [dbo].[Get3dPartyTest]
 
            @userId uniqueidentifier = null
           ,@finished bit = 0
+		  ,@tId int
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -21,4 +22,5 @@ Select * from [3dPartyTests]
 
 	where userId = @userId and
 	finished = @finished
+	AND tId = @tId;
 END

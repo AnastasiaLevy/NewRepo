@@ -2044,7 +2044,7 @@ namespace TestSite.DAL
 
         }
 
-        public static DataSet Get3dPartyTest(bool finished, Guid userId)
+        public static DataSet Get3dPartyTest(bool finished, Guid userId, int tId)
         {
             DataSet ds = new DataSet();
             SqlConnection conn = new SqlConnection(connectionSring);
@@ -2052,6 +2052,7 @@ namespace TestSite.DAL
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@finished", finished);
             cmd.Parameters.AddWithValue("@userId", userId);
+            cmd.Parameters.AddWithValue("@tId", tId);
 
             try
             {
@@ -2071,7 +2072,8 @@ namespace TestSite.DAL
             Guid userId,
             int sequence,
             bool finished,
-            string relationship
+            string relationship,
+            int tId
             )
         {
 
@@ -2082,6 +2084,7 @@ namespace TestSite.DAL
             cmd.Parameters.AddWithValue("@sequence", sequence);
             cmd.Parameters.AddWithValue("@finished", finished);
             cmd.Parameters.AddWithValue("@relationship", relationship);
+            cmd.Parameters.AddWithValue("@tId", tId);
 
             try
             {
@@ -2105,7 +2108,8 @@ namespace TestSite.DAL
             int sequence,
             bool finished,
             string paramString,
-            Guid userId
+            Guid userId,
+            int tId
             )
         {
 
@@ -2117,6 +2121,7 @@ namespace TestSite.DAL
             cmd.Parameters.AddWithValue("@finished", finished);
             cmd.Parameters.AddWithValue("@paramString", paramString);
             cmd.Parameters.AddWithValue("@userId", userId);
+            cmd.Parameters.AddWithValue("@tId", tId);
 
             try
             {

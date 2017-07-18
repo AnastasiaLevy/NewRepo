@@ -327,6 +327,7 @@
     <Content Include="Norms\NbackNorms.pdf" />
     <Content Include="HTTPHandlers\SessionHandler.ashx" />
     <Content Include="Tests\ADHD_Page.aspx" />
+    <Content Include="Tests\adult_ADHD_page.aspx" />
     <Content Include="web\css\960_12_10_10.css" />
     <Content Include="web\css\fredcool\images\ui-bg_diagonals-medium_75_f0f0f0_40x40.png" />
     <Content Include="web\css\fredcool\images\ui-bg_diagonals-small_75_f3f2ed_40x40.png" />
@@ -747,6 +748,13 @@
     </Compile>
     <Compile Include="Tests\adult_ADHD.aspx.designer.cs">
       <DependentUpon>adult_ADHD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\adult_ADHD_page.aspx.cs">
+      <DependentUpon>adult_ADHD_page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\adult_ADHD_page.aspx.designer.cs">
+      <DependentUpon>adult_ADHD_page.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tests\Autism.aspx.cs">
       <DependentUpon>Autism.aspx</DependentUpon>

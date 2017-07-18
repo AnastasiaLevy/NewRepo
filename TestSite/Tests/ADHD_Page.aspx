@@ -2,11 +2,7 @@
 
 <!DOCTYPE html>
 
-<%--<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>--%>
+
 
 <html>
 <head>
@@ -42,21 +38,7 @@
 
         <div id="start" runat="server">
             Please select who do you fill the test out for:
-            <%--            <br />
-            Insert patient ext id:
-            <input type = "text" name = "api_patient_ext_id"><br>
-            Insert test id:
-            <input type = "text" name = "api_test_id"><br>
-            Insert First name:
-            <input type = "text" name = "fname"><br>
-            Insert last name:
-            <input type = "text" name = "lname"><br>
-
-            Select gender:
-		    <select name = "gender">
-			    <option value = "M">M</option>
-			    <option value = "F">F</option>
-		    </select><br>--%>
+ 
 		    Select relationship:
 		    <select name="relationship" runat="server" id="relationship">
                 <option value="self">Select a relationship</option>
@@ -109,7 +91,7 @@
                 //lname: $('input[name="lname"]').val(),
                 relationship: $('select[name="relationship"]').val(),
                 gender: $('select[name="gender"]').val()
-
+             
 
                 //    "action": "read",
                 //    "testValue": "3",
@@ -128,6 +110,7 @@
                 $("#finishTest").show();
                 $("#saveAndClose").show();
                 $("#start").hide();
+                num = $('input[name="sequence"]').val();
             },
             error: function (resp) {
                 alert("The results were not saved correctly")
@@ -202,7 +185,7 @@
                 res.data = test.data[0];
                 $("#testText").html(res.data);
                 //$("#testText").html(resp.d);
-
+                num = $('input[name="sequence"]').val();
             },
             error: function (resp) {
                 alert("The results were not saved correctly");
@@ -315,20 +298,12 @@
             });
         }
     });
-    //$(".fg-button").click(function (e) {
-
-    //    for (i= 1; i < 50; i ++)
-    //    {
-    //        var name = "q" + i;
-    //        alert($('input[name="' + name + '"]:checked').val())
-    //        var t= isValidForm();
-    //            e.preventDefault(); //prevent the default action
 
 
-    //    }
 
     function isValidForm() {
         var clean = true;
+        alert(num);
         if (num == 0) {
             var i = 1;
             var max = 2;

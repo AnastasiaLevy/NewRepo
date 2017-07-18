@@ -12,6 +12,8 @@ CREATE PROCEDURE [dbo].[Insert3dPartyTest]
           ,@sequence int = null
           ,@finished bit = 0
 		  ,@relationship varchar(50) = 0
+		  ,@tId int
+
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -22,10 +24,12 @@ INSERT INTO [dbo].[3dPartyTests]
            ([userId]
 			  ,[sequence]
 			  ,[finished]
-			  ,[relationship])
+			  ,[relationship]
+			  ,[tId])
      VALUES
            (@userId 
            ,@sequence
            ,@finished
-		   ,@relationship)
+		   ,@relationship
+		   ,@tId)
 END

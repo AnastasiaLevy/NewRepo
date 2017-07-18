@@ -13,6 +13,7 @@ CREATE PROCEDURE [dbo].[Update3dPartyTest]
           ,@finished bit = 0
 		  ,@paramString varchar(max) = null
 		  ,@userId uniqueidentifier
+		  ,@tId int
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -25,4 +26,5 @@ update [3dPartyTests] set
 	finished = @finished,
 	paramString = @paramString
 	where [userId] = @userId
+	AND tId = @tID
 END
