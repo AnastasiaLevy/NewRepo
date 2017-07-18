@@ -77,5 +77,91 @@ namespace TestSite.DAL
             return response.Content;
 
         }
+        //work with result
+        //TestValue - step in getting results
+        public static string GetClientTests(string ProviderId)
+        {
+            //var client = new RestClient("http://test4.loc/api/");
+            var client = new RestClient("http://178.62.94.173/api/");
+
+            var request = new RestRequest("", Method.POST);
+
+            request.AddParameter("controller", "Resultsapi");
+            request.AddParameter("action", "getclienttests");
+            request.AddParameter("testValue", 1);
+            request.AddParameter("api_provider_ext_id", ProviderId);
+
+            var response = client.Execute(request);
+
+            return response.Content;
+        }
+
+        public static string TestInfo(string api_provider_ext_id, string api_patient_ext_id)
+        {
+            //var client = new RestClient("http://test4.loc/api/");
+            var client = new RestClient("http://178.62.94.173/api/");
+
+            var request = new RestRequest("", Method.POST);
+
+            request.AddParameter("controller", "Resultsapi");
+            request.AddParameter("action", "testinfo");
+            request.AddParameter("testValue", 2);
+            request.AddParameter("api_provider_ext_id", api_provider_ext_id);
+            request.AddParameter("api_patient_ext_id", api_patient_ext_id);
+            var response = client.Execute(request);
+
+            return response.Content;
+        }
+
+        public static string ReadTest(string api_transaction_id, string api_test_id)
+        {
+            //var client = new RestClient("http://test4.loc/api/");
+            var client = new RestClient("http://178.62.94.173/api/");
+
+            var request = new RestRequest("", Method.POST);
+
+            request.AddParameter("controller", "Resultsapi");
+            request.AddParameter("action", "readtest");
+            request.AddParameter("testValue", 3);
+            request.AddParameter("api_transaction_id", api_transaction_id);
+            request.AddParameter("api_test_id", api_test_id);
+            var response = client.Execute(request);
+
+            return response.Content;
+        }
+
+        public static string PrintTest(string api_transaction_id, string api_print_id)
+        {
+            //var client = new RestClient("http://test4.loc/api/");
+            var client = new RestClient("http://178.62.94.173/api/");
+
+            var request = new RestRequest("", Method.POST);
+
+            request.AddParameter("controller", "Resultsapi");
+            request.AddParameter("action", "print_test");
+            request.AddParameter("testValue", 4);
+            request.AddParameter("api_transaction_id", api_transaction_id);
+            request.AddParameter("api_print_id", api_print_id);
+            var response = client.Execute(request);
+
+            return response.Content;
+        }
+        public static string CsvTest(string api_transaction_id, string api_test_id, string patientname)
+        {
+            //var client = new RestClient("http://test4.loc/api/");
+            var client = new RestClient("http://178.62.94.173/api/");
+
+            var request = new RestRequest("", Method.POST);
+
+            request.AddParameter("controller", "Resultsapi");
+            request.AddParameter("action", "csv_test");
+            request.AddParameter("testValue", 4);
+            request.AddParameter("api_transaction_id", api_transaction_id);
+            request.AddParameter("api_test_id", api_test_id);
+            request.AddParameter("patientname", patientname);
+            var response = client.Execute(request);
+
+            return response.Content;
+        }
     }
 }

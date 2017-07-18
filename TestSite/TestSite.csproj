@@ -323,6 +323,7 @@
     <Content Include="Norms\CardSort_norms.pdf" />
     <Content Include="Norms\NbackNorms.pdf" />
     <Content Include="HTTPHandlers\SessionHandler.ashx" />
+    <Content Include="Results\ADHD_Result.aspx" />
     <Content Include="Tests\ADHD_Page.aspx" />
     <Content Include="web\css\960_12_10_10.css" />
     <Content Include="web\css\fredcool\images\ui-bg_diagonals-medium_75_f0f0f0_40x40.png" />
@@ -711,6 +712,13 @@
       <DependentUpon>ResultsPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="BL\Services\MemoryCardsStructureServices.cs" />
+    <Compile Include="Results\ADHD_Result.aspx.cs">
+      <DependentUpon>ADHD_Result.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Results\ADHD_Result.aspx.designer.cs">
+      <DependentUpon>ADHD_Result.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
