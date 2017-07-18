@@ -2044,6 +2044,97 @@ namespace TestSite.DAL
 
         }
 
+        public static DataSet Get3dPartyTest(bool finished, Guid userId)
+        {
+            DataSet ds = new DataSet();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("Get3dPartyTest", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@finished", finished);
+            cmd.Parameters.AddWithValue("@userId", userId);
+
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                adp.Fill(ds);
+            }
+            catch (Exception ex)
+            {
+                InsertErrorMessage(ex.ToString(), null, null, "Get3dPartyTest");
+                throw new Exception("Execption getting 3rd Party Test. " + ex.Message);
+            }
+
+            return ds;
+        }
+
+        public static void Insert3dPartyTest(
+            Guid userId,
+            int sequence,
+            bool finished,
+            string relationship
+            )
+        {
+
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("Insert3dPartyTest", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@userId", userId);
+            cmd.Parameters.AddWithValue("@sequence", sequence);
+            cmd.Parameters.AddWithValue("@finished", finished);
+            cmd.Parameters.AddWithValue("@relationship", relationship);
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                InsertErrorMessage(ex.ToString(), null, null, "Insert3dPartyTestResult");
+                throw new Exception("Execption in Insert3dPartyTestResult: " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+        }
+
+        public static void Update3dPartyTest(
+            int transactionId,
+            int sequence,
+            bool finished,
+            string paramString,
+            Guid userId
+            )
+        {
+
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("Update3dPartyTest", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@transactionId", transactionId);
+            cmd.Parameters.AddWithValue("@sequence", sequence);
+            cmd.Parameters.AddWithValue("@finished", finished);
+            cmd.Parameters.AddWithValue("@paramString", paramString);
+            cmd.Parameters.AddWithValue("@userId", userId);
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                InsertErrorMessage(ex.ToString(), null, null, "Update3dPartyTestResult");
+                throw new Exception("Execption in Update3dPartyTestResult: " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+        }
+
         public static void UpdateTestStart(int userTestId)
         {
             SqlConnection conn = new SqlConnection(connectionSring);

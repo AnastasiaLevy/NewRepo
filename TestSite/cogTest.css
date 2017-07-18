@@ -581,7 +581,7 @@ html, body {
 }
 
 a {
-    color: #4cc6eb	;/*#5bc0de ;*/  /*#3385ff*/ 
+    color: #4cc6eb	;/*#5bc0de ;*/  /*#3385ff*/
     font-weight:bold;
     text-decoration: none;
 }
@@ -2002,7 +2002,7 @@ figure.effect-oscar {
 }
 
 .port3 {
-    
+
     min-width: 180px;
     display: inline-block;
     margin: 0px 0px 7px 0px;
@@ -2011,7 +2011,7 @@ figure.effect-oscar {
 }
 
     .port3 img {
-       
+
         width: 180px;
         max-width: 240px;
         cursor: pointer;
@@ -2184,7 +2184,7 @@ button {
     position: relative;
     width: 100%;
 }
-/* 
+/*
 img.avatar {
     width: 40%;
     border-radius: 50%;
@@ -2309,19 +2309,19 @@ span.psw {
 }
 
 #main_content{
-width: 500px; 
-height: 500px; 
-background: #2185C5; 
-display: table-cell; 
-text-align: center; 
-vertical-align: middle; 
+width: 500px;
+height: 500px;
+background: #2185C5;
+display: table-cell;
+text-align: center;
+vertical-align: middle;
 }
 
 #displayMessage{
-width: auto; 
-height: auto; 
-background: white; 
-display: inline-block; 
+width: auto;
+height: auto;
+background: white;
+display: inline-block;
 padding: 10px;
 }*/
 
@@ -3246,7 +3246,7 @@ label {
    #start {
     width: 300px;
     height: 300px;
-   
+
 
     position: absolute;
     top:0;
@@ -3256,3 +3256,11 @@ label {
 
     margin: auto;
 }
+
+   .adhd-button {
+       margin: 0px;
+   }
+   .adhd-buttons {
+       margin-left: 10px !important;
+       margin-bottom: 10px !important;
+   }
