@@ -42,8 +42,8 @@ namespace TestSite.DAL
         public static string GetTest(int TestValue, string ProviderId, string api_patient_ext_id, string fname, string lname, int month, int day, int year, int test_id, string relationship,
            string gender, int? api_transaction_id = null, int? api_patient_id=null, string q_str = null, int? sequence=null)
         {
-            //var client = new RestClient("http://test4.loc/api/");
-            var client = new RestClient("http://178.62.94.173/api/");
+            var client = new RestClient("http://test4.loc/api/");
+            //var client = new RestClient("http://178.62.94.173/api/");
 
             //private string q_str = '';
 
