@@ -125,6 +125,10 @@
                 res.data = test.data[0];
                 $("#testText").html(res.data);
                 //addValidation();
+                debugger;
+                if (test.params.api_sequence >= 3) {
+                    window.location.href = "/Results/ADHD_Result.aspx?api_transaction_id=" + test.params.api_transaction_id + "&api_test_id=9&showResults=true";
+                }
                 $("#finishTest").show();
                 $("#saveAndClose").show();
                 $("#start").hide();
@@ -237,6 +241,9 @@
                 $("#testText").html(res.data);
 
                 num = $('input[name="sequence"]').val();
+                if (num>=3) {
+                    window.location.href = "/Results/ADHD_Result.aspx?api_transaction_id=" + $('input[name="api_transaction_id"]').val() + "&api_test_id=9&showResults=true";
+                }
                 //alert(num);
                 $("#finishTest").show();
                 $("#saveAndClose").show();
