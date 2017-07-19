@@ -81,21 +81,10 @@
         jQuery.ajax({
             contentType: "application/json; charset=utf-8",
             dataType: "json",
-            url: 'ADHD_Page.aspx/StartTest',
+            url: 'adult_ADHD_Page.aspx/StartTest',
             data: JSON.stringify({
-                //api_patient_ext_id: $('input[name="api_patient_ext_id"]').val(),
-                //test_id: $('input[name="api_test_id"]').val();
-                //fname: $('input[name="fname"]').val(),
-                //lname: $('input[name="lname"]').val(),
                 relationship: $('select[name="relationship"]').val(),
                 gender: $('select[name="gender"]').val()
-             
-
-                //    "action": "read",
-                //    "testValue": "3",
-                //    "api_provider_id": "2",
-                //    "api_test_id": "9",
-                //    " api_relationship":"self"
             }),
 
             type: 'POST',
@@ -105,10 +94,10 @@
                 res.data = test.data[0];
                 $("#testText").html(res.data);
                 //addValidation();
-                debugger;
-                if (test.params.api_sequence >= 3) {
-                    window.location.href = "/Results/ADHD_Result.aspx?api_transaction_id=" + test.params.api_transaction_id + "&api_test_id=9&showResults=true";
-                }
+                //debugger;
+                //if (test.params.api_sequence >= 3) {
+                //    window.location.href = "/Results/adult_ADHD_Result.aspx?api_transaction_id=" + test.params.api_transaction_id + "&api_test_id=9&showResults=true";
+                //}
                 $("#finishTest").show();
                 $("#saveAndClose").show();
                 $("#start").hide();
@@ -170,7 +159,7 @@
         jQuery.ajax({
             contentType: "application/json; charset=utf-8",
             dataType: "json",
-            url: 'ADHD_Page.aspx/Call1',
+            url: 'adult_ADHD_Page.aspx/Call1',
             //data : {
             //    "controller":"Testapi",
             //    "action": "read",
@@ -200,7 +189,7 @@
         jQuery.ajax({
             contentType: "application/json; charset=utf-8",
             dataType: "json",
-            url: 'ADHD_Page.aspx/GetParams',
+            url: 'adult_ADHD_Page.aspx/GetParams',
 
             data: JSON.stringify({
                 testVal: "4",
@@ -222,10 +211,10 @@
                 $("#testText").html(res.data);
 
                 num = $('input[name="sequence"]').val();
-                if (num>=3) {
-                    window.location.href = "/Results/ADHD_Result.aspx?api_transaction_id=" + $('input[name="api_transaction_id"]').val() + "&api_test_id=9&showResults=true";
-                }
-                //alert(num);
+                //if (num>=3) {
+                //    window.location.href = "/Results/adult_ADHD_Result.aspx?api_transaction_id=" + $('input[name="api_transaction_id"]').val() + "&api_test_id=9&showResults=true";
+                //}
+                alert(num);
                 $("#finishTest").show();
                 $("#saveAndClose").show();
 
@@ -276,7 +265,7 @@
             jQuery.ajax({
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
-                url: 'ADHD_Page.aspx/SaveAndClose',
+                url: 'adult_ADHD_Page.aspx/SaveAndClose',
 
                 data: JSON.stringify({
                     testVal: "4",

@@ -75,7 +75,7 @@
         jQuery.ajax({
             contentType: "application/json; charset=utf-8",
             dataType: "json",
-            url: 'ADHD_Result.aspx/GetClientTests',
+            url: 'adult_ADHD_Result.aspx/GetClientTests',
             data: JSON.stringify({
                 api_provider_ext_id: $('input[name="api_provider_ext_id"]').val(),
             }),
@@ -101,7 +101,7 @@
         jQuery.ajax({
             contentType: "application/json; charset=utf-8",
             dataType: "json",
-            url: 'ADHD_Result.aspx/TestInfo',
+            url: 'adult_ADHD_Result.aspx/TestInfo',
             data: JSON.stringify({
                 api_provider_ext_id: $('input[name="api_provider_ext_id"]').val(),
                 api_patient_ext_id: $('input[name="api_patient_ext_id"]').val(),
@@ -128,7 +128,7 @@
         jQuery.ajax({
             contentType: "application/json; charset=utf-8",
             dataType: "json",
-            url: 'ADHD_Result.aspx/ReadTest',
+            url: 'adult_ADHD_Result.aspx/ReadTest',
             data: JSON.stringify({
                 api_transaction_id: $('input[name="api_transaction_id"]').val(),
                 api_test_id: $('input[name="api_test_id"]').val(),
@@ -156,7 +156,7 @@
         jQuery.ajax({
             contentType: "application/json; charset=utf-8",
             dataType: "json",
-            url: 'ADHD_Result.aspx/PrintTest',
+            url: 'adult_ADHD_Result.aspx/PrintTest',
             data: JSON.stringify({
                 api_transaction_id: $('input[name="transaction_id"]').val(),
                 api_test_id: $('input[name="test_id"]').val(),
