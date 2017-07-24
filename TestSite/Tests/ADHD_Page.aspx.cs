@@ -42,6 +42,7 @@ namespace TestSite.Tests
                 ? DateTime.Parse(registration.Rows[0]["birthDate"].ToString()).Day : 0;
             string fname = registration.Rows[0]["firstNAme"]?.ToString();
             string lname = registration.Rows[0]["lastName"]?.ToString();
+            //var paramString = DAL.DataMethods.Get3dPartyTestByTestId(Convert.ToInt32(HttpContext.Current.Session["userTestId"])).Tables[0].Rows[0]["paramString"];
             DAL.DataMethods.Update3dPartyTest(Convert.ToInt32(api_transaction_id), Convert.ToInt32(sequence), false, paramString, Guid.Parse(api_patient_ext_id), Convert.ToInt32(HttpContext.Current.Session["userTestId"]));
             return APICalls.GetTest(Convert.ToInt32(testVal), providerId, api_patient_ext_id, fname, lname, month, day, year, 9, relationship, gender, Convert.ToInt32(api_transaction_id), Convert.ToInt32(api_patient_id), paramString, Convert.ToInt32(sequence));
         }

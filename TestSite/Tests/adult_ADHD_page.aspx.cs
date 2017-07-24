@@ -16,16 +16,19 @@ namespace TestSite.Tests
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var unfinishedTest = DAL.DataMethods.Get3dPartyTest(false, Guid.Parse(HttpContext.Current.Session["userId"].ToString()), Convert.ToInt32(Session["userTestId"]));
-            if (unfinishedTest.Tables[0].Rows.Count > 0)
-            {
-                relationship.Disabled = true;
-                string rel = unfinishedTest.Tables[0].Rows[0]["relationship"].ToString();
-                rel = rel.First().ToString().ToUpper() + rel.Substring(1);
-                relationship.SelectedIndex = relationship.Items.IndexOf(relationship.Items.FindByText(rel));
+            HttpContext.Current.Session["userId"] = "0256C12C-A598-47D5-9CE9-C25E1A5EE3E1";
+            HttpContext.Current.Session["providerId"] = "2";
+            //var unfinishedTest = DAL.DataMethods.Get3dPartyTest(false, Guid.Parse(HttpContext.Current.Session["userId"].ToString()), Convert.ToInt32(Session["userTestId"]));
+            //if (unfinishedTest.Tables[0].Rows.Count > 0)
+            //{
+            //    relationship.Disabled = true;
+            //    string rel = unfinishedTest.Tables[0].Rows[0]["relationship"].ToString();
+            //    rel = rel.First().ToString().ToUpper() + rel.Substring(1);
+            //    relationship.SelectedIndex = relationship.Items.IndexOf(relationship.Items.FindByText(rel));
 
-                Button1.Value = "Continue...";
-            }
+            //    Button1.Value = "Continue...";
+            //}
+
         }
 
         [WebMethod(EnableSession = true)]

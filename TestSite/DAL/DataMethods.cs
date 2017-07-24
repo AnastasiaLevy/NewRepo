@@ -2068,6 +2068,28 @@ namespace TestSite.DAL
             return ds;
         }
 
+        public static DataSet Get3dPartyTestByTestId(int tId)
+        {
+            DataSet ds = new DataSet();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("Get3dPartyTestByTestId", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@tId", tId);
+
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                adp.Fill(ds);
+            }
+            catch (Exception ex)
+            {
+                InsertErrorMessage(ex.ToString(), null, null, "Get3dPartyTest");
+                throw new Exception("Execption getting 3rd Party Test. " + ex.Message);
+            }
+
+            return ds;
+        }
+
         public static void Insert3dPartyTest(
             Guid userId,
             int sequence,

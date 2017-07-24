@@ -6,12 +6,18 @@ using System.Web;
 
 namespace TestSite.DAL
 {
-    public class APICalls
+    public static class APICalls
     {
+        private static RestClient _client;
+
+        static APICalls()
+        {
+            //_client = new RestClient("http://test4.loc/api/");
+            _client = new RestClient("http://178.62.94.173/api/");
+        }
+
         public static string BuyTest(string ProviderId, string test_name, int amnt)
         {
-            //var client = new RestClient("http://test4.loc/api/");
-            var client = new RestClient("http://178.62.94.173/api/");
             var request = new RestRequest("", Method.POST);
 
             string TestNameBuy = "api_" + test_name + "_buy";
@@ -21,7 +27,7 @@ namespace TestSite.DAL
             request.AddParameter(TestNameBuy, amnt);
             request.AddParameter(" api_provider_ext_id", ProviderId);
 
-            var response = client.Execute(request);
+            var response = _client.Execute(request);
 
             return response.ToString();
         }
@@ -29,7 +35,7 @@ namespace TestSite.DAL
         //work with test
         //TestValue- step in getting test
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="TestValue">Step</param>
         /// <param name="ProviderId">Prov_id</param>
@@ -42,8 +48,6 @@ namespace TestSite.DAL
         public static string GetTest(int TestValue, string ProviderId, string api_patient_ext_id, string fname, string lname, int month, int day, int year, int test_id, string relationship,
            string gender, int? api_transaction_id = null, int? api_patient_id=null, string q_str = null, int? sequence=null)
         {
-            var client = new RestClient("http://test4.loc/api/");
-            //var client = new RestClient("http://178.62.94.173/api/");
 
             //private string q_str = '';
 
@@ -72,7 +76,7 @@ namespace TestSite.DAL
             //request.AddParameter(" api_status", api_status);
             request.AddParameter("api_patient_ext_id", api_patient_ext_id);
 
-            var response = client.Execute(request);
+            var response = _client.Execute(request);
 
             return response.Content;
 
@@ -81,8 +85,6 @@ namespace TestSite.DAL
         //TestValue - step in getting results
         public static string GetClientTests(string ProviderId)
         {
-            //var client = new RestClient("http://test4.loc/api/");
-            var client = new RestClient("http://178.62.94.173/api/");
 
             var request = new RestRequest("", Method.POST);
 
@@ -91,15 +93,13 @@ namespace TestSite.DAL
             request.AddParameter("testValue", 1);
             request.AddParameter("api_provider_ext_id", ProviderId);
 
-            var response = client.Execute(request);
+            var response = _client.Execute(request);
 
             return response.Content;
         }
 
         public static string TestInfo(string api_provider_ext_id, string api_patient_ext_id)
         {
-            //var client = new RestClient("http://test4.loc/api/");
-            var client = new RestClient("http://178.62.94.173/api/");
 
             var request = new RestRequest("", Method.POST);
 
@@ -108,15 +108,13 @@ namespace TestSite.DAL
             request.AddParameter("testValue", 2);
             request.AddParameter("api_provider_ext_id", api_provider_ext_id);
             request.AddParameter("api_patient_ext_id", api_patient_ext_id);
-            var response = client.Execute(request);
+            var response = _client.Execute(request);
 
             return response.Content;
         }
 
         public static string ReadTest(string api_transaction_id, string api_test_id)
         {
-            //var client = new RestClient("http://test4.loc/api/");
-            var client = new RestClient("http://178.62.94.173/api/");
 
             var request = new RestRequest("", Method.POST);
 
@@ -125,15 +123,13 @@ namespace TestSite.DAL
             request.AddParameter("testValue", 3);
             request.AddParameter("api_transaction_id", api_transaction_id);
             request.AddParameter("api_test_id", api_test_id);
-            var response = client.Execute(request);
+            var response = _client.Execute(request);
 
             return response.Content;
         }
 
         public static string PrintTest(string api_transaction_id, string api_print_id)
         {
-            //var client = new RestClient("http://test4.loc/api/");
-            var client = new RestClient("http://178.62.94.173/api/");
 
             var request = new RestRequest("", Method.POST);
 
@@ -142,14 +138,12 @@ namespace TestSite.DAL
             request.AddParameter("testValue", 4);
             request.AddParameter("api_transaction_id", api_transaction_id);
             request.AddParameter("api_print_id", api_print_id);
-            var response = client.Execute(request);
+            var response = _client.Execute(request);
 
             return response.Content;
         }
         public static string CsvTest(string api_transaction_id, string api_test_id, string patientname)
         {
-            //var client = new RestClient("http://test4.loc/api/");
-            var client = new RestClient("http://178.62.94.173/api/");
 
             var request = new RestRequest("", Method.POST);
 
@@ -159,7 +153,7 @@ namespace TestSite.DAL
             request.AddParameter("api_transaction_id", api_transaction_id);
             request.AddParameter("api_test_id", api_test_id);
             request.AddParameter("patientname", patientname);
-            var response = client.Execute(request);
+            var response = _client.Execute(request);
 
             return response.Content;
         }

@@ -33,7 +33,7 @@
             </div>
 
 
-        <div id="start">
+<%--        <div id="start">
             Insert provider ext id:
             <input type = "text" name = "api_provider_ext_id"><br>
 
@@ -48,7 +48,7 @@
             <input type = "text" name = "api_test_id"><br>
             <input id="Button3" type="button" value="Get results 3" /><br>
 
-        </div>
+        </div>--%>
 
         <div id="testText" runat="server"></div>
 
