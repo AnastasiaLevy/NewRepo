@@ -83,19 +83,8 @@
             dataType: "json",
             url: 'adult_ADHD_Page.aspx/StartTest',
             data: JSON.stringify({
-                //api_patient_ext_id: $('input[name="api_patient_ext_id"]').val(),
-                //test_id: $('input[name="api_test_id"]').val();
-                //fname: $('input[name="fname"]').val(),
-                //lname: $('input[name="lname"]').val(),
                 relationship: $('select[name="relationship"]').val(),
                 gender: $('select[name="gender"]').val()
-
-
-                //    "action": "read",
-                //    "testValue": "3",
-                //    "api_provider_id": "2",
-                //    "api_test_id": "9",
-                //    " api_relationship":"self"
             }),
 
             type: 'POST',
@@ -105,15 +94,11 @@
                 res.data = test.data[0];
                 $("#testText").html(res.data);
                 //addValidation();
-                if (test.params.api_sequence >= 3) {
-                    window.location.href = "/Results/ADHD_Result.aspx?api_transaction_id=" + test.params.api_transaction_id + "&api_test_id=9&showResults=true";
-                }
                 $("#finishTest").show();
                 $("#saveAndClose").show();
                 $("#start").hide();
                 num = $('input[name="sequence"]').val();
-                var isLastPage = $('input[name="last_page"]').val();
-                if ($('input[name="last_page"]').val()) {
+                if (!$('input[name="last_page"]').length) {
                     window.location.href = "/Results/adult_ADHD_Result.aspx?api_transaction_id=" + test.params.api_transaction_id + "&api_test_id=9&showResults=true";
                 }
             },
@@ -223,14 +208,7 @@
                 var test = jQuery.parseJSON(resp.d);
                 res.data = test.data[0];
                 $("#testText").html(res.data);
-
-                //num = $('input[name="sequence"]').val();
-                //if (num>=3) {
-                //    window.location.href = "/Results/ADHD_Result.aspx?api_transaction_id=" + $('input[name="api_transaction_id"]').val() + "&api_test_id=9&showResults=true";
-                //}
-                //alert(num);
-                var isLastPage = $('input[name="last_page"]').val();
-                if ($('input[name="last_page"]').val()) {
+                if (!$('input[name="last_page"]').length) {
                     window.location.href = "/Results/ADHD_Result.aspx?api_transaction_id=" + test.params.api_transaction_id + "&api_test_id=9&showResults=true";
                 }
                 $("#finishTest").show();

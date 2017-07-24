@@ -45,7 +45,7 @@ namespace TestSite.DAL
         /// <param name="api_patient_id"></param>
         /// <param name="api_patient_ext_id"></param>
         /// <returns></returns>
-        public static string GetTest(int TestValue, string ProviderId, string api_patient_ext_id, string fname, string lname, int month, int day, int year, int test_id, string relationship,
+        public static string GetTest(int TestValue, string ProviderId, string api_patient_ext_id, string fname, string lname, int month, int day, int year, int api_age, int test_id, string relationship,
            string gender, int? api_transaction_id = null, int? api_patient_id=null, string q_str = null, int? sequence=null)
         {
 
@@ -75,6 +75,7 @@ namespace TestSite.DAL
             request.AddParameter("api_patient_id", api_patient_id);
             //request.AddParameter(" api_status", api_status);
             request.AddParameter("api_patient_ext_id", api_patient_ext_id);
+            request.AddParameter("api_age", api_age);
 
             var response = _client.Execute(request);
 
