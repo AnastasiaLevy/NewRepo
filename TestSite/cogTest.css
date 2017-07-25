@@ -1139,7 +1139,7 @@ img.displayed {
     .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover {
         border: none;
         color: #126BAD;
-        background-color: #126BAD;
+        background-color: #ffffff;
     }
 
     .navbar-inverse .navbar-nav > li {
