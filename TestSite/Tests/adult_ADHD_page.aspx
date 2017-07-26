@@ -75,6 +75,7 @@
     $("#finishTest").hide();
     $("#saveAndClose").hide();
     var num = 0;
+    var paramString = "";
     $('#Button1').on('click', function (e) {
 
 
@@ -92,25 +93,30 @@
 
                 var test = jQuery.parseJSON(resp.d);
                 res.data = test.data[0];
+                if (test.params.api_q_str) {
+                    paramString = test.params.api_q_str;
+                } else {
+                    paramString = "";
+                }
+                $("#testText").hide();
                 $("#testText").html(res.data);
-                //addValidation();
-                $("#finishTest").show();
-                $("#saveAndClose").show();
-                $("#start").hide();
-                num = $('input[name="sequence"]').val();
                 if (!$('input[name="last_page"]').length) {
                     window.location.href = "/Results/adult_ADHD_Result.aspx?api_transaction_id=" + test.params.api_transaction_id + "&api_test_id=9&showResults=true";
+					return;
                 }
+                $("#testText").show();
+                num = $('input[name="sequence"]').val();
+                $("#start").hide();
+                $("#finishTest").show();
+                $("#saveAndClose").show();
             },
             error: function (resp) {
-                alert("The results were not saved correctly")
+                alert("The results were not saved correctly");
             }
         });
     });
 
     $("#finishTest").on('click', function (e) {
-        var paramString = "";
-
         e.preventDefault();
         if (!isValidForm()) {
             alert("Not all questins were filled.");
@@ -176,6 +182,10 @@
                 $("#testText").html(res.data);
                 //$("#testText").html(resp.d);
                 num = $('input[name="sequence"]').val();
+                if (!$('input[name="last_page"]').length) {
+                    window.location.href = "/Results/adult_ADHD_Result.aspx?api_transaction_id=" + test.params.api_transaction_id + "&api_test_id=11&showResults=true";
+                    return;
+                }
             },
             error: function (resp) {
                 alert("The results were not saved correctly");
@@ -194,23 +204,23 @@
                 testVal: "4",
                 paramString: data,
                 api_transaction_id: $('input[name="api_transaction_id"]').val(),
-                // api_patient_ext_id: $('input[name="api_patient_ext_id"]').val(),
                 api_patient_id: $('input[name="api_patient_id"]').val(),
                 providerId: $('input[name="api_provider_ext_id"]').val(),
                 sequence: $('input[name="sequence"]').val(),
-                //fname: $('input[name="fname"]').val(),
-                //lname: $('input[name="lname"]').val(),
-                relationship: $('select[name="relationship"]').val(),
-                //gender: $('select[name="gender"]').val()
+                relationship: $('select[name="relationship"]').val()
             }),
             type: 'POST',
             success: function (resp) {
                 var test = jQuery.parseJSON(resp.d);
                 res.data = test.data[0];
+                $("#testText").hide();
                 $("#testText").html(res.data);
+                num = $('input[name="sequence"]').val();
                 if (!$('input[name="last_page"]').length) {
-                    window.location.href = "/Results/ADHD_Result.aspx?api_transaction_id=" + test.params.api_transaction_id + "&api_test_id=9&showResults=true";
+                    window.location.href = "/Results/adult_ADHD_Result.aspx?api_transaction_id=" + test.params.api_transaction_id + "&api_test_id=9&showResults=true";
+                    return;
                 }
+                $("#testText").show();
                 $("#finishTest").show();
                 $("#saveAndClose").show();
 
@@ -224,69 +234,66 @@
 
     $("#saveAndClose").on('click', function (e) {
 
-        var paramString = "";
-        if (!isValidForm()) {
-            alert("Not all questins were filled.");
+        //var paramString = "";
+        //if (!isValidForm()) {
+        //    alert("Not all questins were filled.");
 
-        }
-        else {
-            if (num == 0) {
-                var i = 1;
-                var max = 51;
-            }
-            else if (num == 1) {
-                var i = 51;
-                var max = 101;
-            }
-            else if (num == 2) {
-                var i = 101;
-                var max = 151;
-            }
-            else if (num == 3) {
-                var i = 151;
-                var max = 201;
-            }
-            else if (num == 4) {
-                var i = 201;
-                var max = 251;
-            }
+        //}
+        //else {
+        //    if (num == 0) {
+        //        var i = 1;
+        //        var max = 51;
+        //    }
+        //    else if (num == 1) {
+        //        var i = 51;
+        //        var max = 101;
+        //    }
+        //    else if (num == 2) {
+        //        var i = 101;
+        //        var max = 151;
+        //    }
+        //    else if (num == 3) {
+        //        var i = 151;
+        //        var max = 201;
+        //    }
+        //    else if (num == 4) {
+        //        var i = 201;
+        //        var max = 251;
+        //    }
 
-            for (i ; i < max; i++) {
-                var name = "q" + i;
-                var value = $('input[name="' + name + '"]:checked').val();
+        //    for (i ; i < max; i++) {
+        //        var name = "q" + i;
+        //        var value = $('input[name="' + name + '"]:checked').val();
 
-                paramString += name + ':' + value + ';';
-            }
+        //        paramString += name + ':' + value + ';';
+        //    }
 
-            jQuery.ajax({
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                url: 'adult_ADHD_Page.aspx/SaveAndClose',
+        //    jQuery.ajax({
+        //        contentType: "application/json; charset=utf-8",
+        //        dataType: "json",
+        //        url: 'ADHD_Page.aspx/SaveAndClose',
 
-                data: JSON.stringify({
-                    testVal: "4",
-                    paramString: paramString,
-                    api_transaction_id: $('input[name="api_transaction_id"]').val(),
-                    // api_patient_ext_id: $('input[name="api_patient_ext_id"]').val(),
-                    api_patient_id: $('input[name="api_patient_id"]').val(),
-                    providerId: $('input[name="api_provider_ext_id"]').val(),
-                    sequence: $('input[name="sequence"]').val(),
-                    //fname: $('input[name="fname"]').val(),
-                    //lname: $('input[name="lname"]').val(),
-                    relationship: $('select[name="relationship"]').val(),
-                    //gender: $('select[name="gender"]').val()
-                }),
-                type: 'POST',
-                success: function (resp) {
-                    window.location.href = '/UserProfile.aspx';
+        //        data: JSON.stringify({
+        //            testVal: "4",
+        //            paramString: paramString,
+        //            api_transaction_id: $('input[name="api_transaction_id"]').val(),
+        //            api_patient_id: $('input[name="api_patient_id"]').val(),
+        //            providerId: $('input[name="api_provider_ext_id"]').val(),
+        //            sequence: $('input[name="sequence"]').val(),
+        //            relationship: $('select[name="relationship"]').val()
+        //        }),
+        //        type: 'POST',
+        //        success: function (resp) {
+        //            window.location.href = '/UserProfile.aspx';
+        //        },
+        //        error: function (resp) {
+        //            alert("The results were not saved correctly");
 
-                },
-                error: function (resp) {
-                    alert("The results were not saved correctly");
+        //        }
+        //    });
+        //}
 
-                }
-            });
-        }
+        window.location.href = '/UserProfile.aspx';
     });
 
 
