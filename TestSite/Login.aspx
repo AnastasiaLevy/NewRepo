@@ -93,7 +93,7 @@
                                             <input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="userPwLg" required runat="server" >
                                         </div>
                                         <asp:LinkButton class="btn btn-success" type="submit" runat="server" OnClick="clcLogin">Login</asp:LinkButton>
-                                        <%--<button type="submit" class="btn" runat="server" style="display: none" OnClick="clcLogin" >Login</button>--%>
+                                        <button type="submit" class="btn" runat="server" style="display: none" OnClick="javascript:__doPostBack('ctl16','')">Login</button>
                                     </div>
                                        
                                 </div>

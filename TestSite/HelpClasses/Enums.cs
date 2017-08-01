@@ -103,6 +103,8 @@ namespace TestSite.HelpClasses
                     return @"Tests\StroopPage.aspx";
                 case "9":
                     return @"Tests\ADHD_Page.aspx";
+                case "11":
+                    return @"Tests\adult_ADHD_Page.aspx";
                 default:
                     return @"\MainPage.aspx";
             }
