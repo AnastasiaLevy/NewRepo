@@ -53,7 +53,7 @@
                     <li id="profOpt" runat="server"><a href="../UserProfile.aspx">Profile</a></li>
                     <li id="login" runat="server"><a href="../Login.aspx">Login</a></li>
                     <li>
-                        <asp:LinkButton ID="logOut" class="btn button" type="submit" runat="server" OnClick="logOut_Click">Log Out</asp:LinkButton>
+                        <asp:LinkButton ID="logOut" class="" type="submit" runat="server" OnClick="logOut_Click">Log Out</asp:LinkButton>
                     </li>
                 </ul>
             </div>

@@ -6,13 +6,28 @@ using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using TestSite.BL.Services;
+using TestSite.HelpClasses;
 using static TestSite.HelpClasses.Enums;
 
 namespace TestSite.Provider
 {
     public partial class ProviderPortal : System.Web.UI.Page
     {
-
+        protected void Page_PreRender(object sender, EventArgs e)
+        {
+            //PRERENDER HERE IS A WORKAROUND. CODE IS TRASH AND CONTAINS TONS OF OVERRIDING IN IT!!!
+            DataTable dt = DAL.DataMethods.GetModifyTestList(Convert.ToInt32(ViewState["providerId"]));
+            if (dt.Rows.Count < 1)
+            {
+                ToL.Style.Add("display", "none");
+            }
+            dt = DAL.DataMethods.GetMemoryCardsTestModify(Convert.ToInt32(ViewState["providerId"]));
+            if (dt.Rows.Count < 1)
+            {
+                // MC.Style.Add("display", "none");
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -55,6 +70,7 @@ namespace TestSite.Provider
             setUpUserCode.Visible = false;
             editTest.Visible = false;
             resetPw.Visible = false;
+            exportTestResults.Visible = false;
         }
 
         private void SetProviderTestsGrid(int? providerId)
@@ -336,6 +352,7 @@ namespace TestSite.Provider
                     int providerId = Convert.ToInt32(ViewState["providerId"]);
                     SetDllProviderTests(providerId);
                     SetProviderTestsGrid(providerId);
+                    SetParticipantGrid(providerId);
                     //TODO: Display success message;
                     assignTest.Visible = true;
                     ddlModifiedID.Visible = false;
@@ -429,16 +446,27 @@ namespace TestSite.Provider
 
             foreach (DataRow dr in dt.Rows)
             {
-
-                ddlModifyTest.Items.Add(new ListItem(dr["testName"].ToString(), dr["Id"].ToString()));
+                ddlModifyTest.Items.Add(new ListItem(dr["testName"].ToString(), "../Create/LondonModify.aspx?testId=" + dr["Id"].ToString()));
             }
+
+            dt = DAL.DataMethods.GetMemoryCardsTestModify(Convert.ToInt32(ViewState["providerId"]));
+            MemoryCardsService _memoryCardsServices = new MemoryCardsService();
+            foreach (DataRow dr in dt.Rows)
+            {
+
+                // ddlModifyTest.Items.Add(new ListItem(_memoryCardsServices.GetAll().First(x=>x.Id == Int32.Parse(dr["TestId"].ToString())).Name, "~/Create/MemoryCardsCreate.aspx?testId="+dr["Id"].ToString()));
+            }
+
         }
+
+
 
         protected void btnSelectModify_Click(object sender, EventArgs e)
         {
             Session["providerId"] = Convert.ToInt32(ViewState["providerId"]);
 
-            Response.Redirect("../Create/LondonModify.aspx?testId=" + ddlModifyTest.SelectedValue);
+            Response.Redirect(ddlModifyTest.SelectedItem.Value);
+
         }
 
         protected void btnCreateNewTest_Click(object sender, EventArgs e)
@@ -567,6 +595,76 @@ namespace TestSite.Provider
         protected void Nback_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Norms/NbackNorms.pdf");
+        }
+
+        protected void btnExportTestResults_Click(object sender, EventArgs e)
+        {
+            MakePanelsInvisible();
+            SetUpExportTestResults();
+            TestsForExportResults.Visible = false;
+            exportTestResults.Visible = true;
+        }
+
+        protected void TestTemplatesForExportResults_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TestsForExportResults.Visible = false;
+            TestsForExportResults.Items.Clear();
+            DataTable dt = DAL.DataMethods.GetModfiedTest(TestTemplatesForExportResults.SelectedValue, Convert.ToInt32(ViewState["providerId"]));
+            if (dt.Rows.Count > 0)
+            {
+                TestsForExportResults.Visible = true;
+                foreach (DataRow dr in dt.Rows)
+                {
+                    TestsForExportResults.Items.Add(new ListItem(dr["testName"].ToString(), dr["Id"].ToString()));
+                }
+            }
+            else
+            {
+                TestsForExportResults.Items.Clear();
+                TestsForExportResults.Visible = false;
+            }
+        }
+
+        private void SetUpExportTestResults()
+        {
+            TestTemplatesForExportResults.Items.Clear();
+
+            DataSet dt = DAL.DataMethods.GetAvailableTestByProviderId(Convert.ToInt32(ViewState["providerId"]));
+            foreach (DataRow dr in dt.Tables[0].Rows)
+            {
+                string display = dr["Name"].ToString();// + (!string.IsNullOrEmpty(dr["Left"].ToString())?"(amount:" + dr["Left"].ToString() + ")":"");
+                TestTemplatesForExportResults.Items.Add(new ListItem(display, dr["Id"].ToString()));
+            }
+        }
+
+        protected void btnExportTestResultsInOneRow_Click(object sender, EventArgs e)
+        {
+            DateTime fromBuffer;
+            DateTime toBuffer;
+            var from = DateTime.TryParse(fromDate.Text, out fromBuffer) ? fromBuffer : (DateTime?)null;
+            var to = DateTime.TryParse(toDate.Text, out toBuffer) ? toBuffer.AddDays(1) : (DateTime?)null;
+
+            ExportData.ExportAllInSingleLines(Convert.ToInt32(TestTemplatesForExportResults.SelectedValue),
+                Convert.ToInt32(ViewState["providerId"]), from, to);
+        }
+
+        protected void btnExportTestResultsInManyRows_Click(object sender, EventArgs e)
+        {
+            DateTime fromBuffer;
+            DateTime toBuffer;
+            var from = DateTime.TryParse(fromDate.Text, out fromBuffer) ? fromBuffer : (DateTime?)null;
+            var to = DateTime.TryParse(toDate.Text, out toBuffer) ? toBuffer.AddDays(1) : (DateTime?)null;
+            if (string.IsNullOrEmpty(TestsForExportResults.SelectedValue))
+            {
+                ExportData.ExportAllNormal(Convert.ToInt32(TestTemplatesForExportResults.SelectedValue),
+                    Convert.ToInt32(ViewState["providerId"]), from, to);
+            }
+            else
+            {
+                ExportData.ExportAllNormalByModifyId(Convert.ToInt32(TestTemplatesForExportResults.SelectedValue),
+                    Convert.ToInt32(TestsForExportResults.SelectedValue),
+                    Convert.ToInt32(ViewState["providerId"]), from, to);
+            }
         }
     }
 }

@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="assets/css/form-elements.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
+
+    <link href="cogTest.css" rel="stylesheet" />
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -35,6 +38,30 @@
 
 </head>
 <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                      <a class="navbar-brand" href="MainPage.aspx">
+                     <i class="fa fa-cogs" aria-hidden="true">Quiz</i>
+                      </a> 
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right custom-menu">
+                        <li class="active"><a href="MainPage.aspx">Home</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
     <form id="form1" runat="server">
         <div class="top-content">
 
@@ -54,6 +81,7 @@
                                     </div>
                                 </div>
                                 <div class="form-bottom">
+                                    
                                     <div role="form" class="login-form">
                                         <asp:Label ID="wrongLogin" class="errorMessage" runat="server" Text=""></asp:Label>
                                         <div class="form-group">
@@ -62,11 +90,12 @@
                                         </div>
                                         <div class="form-group">
                                             <label class="sr-only" for="form-password">Password</label>
-                                            <input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="userPwLg" required runat="server">
+                                            <input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="userPwLg" required runat="server" >
                                         </div>
                                         <asp:LinkButton class="btn btn-success" type="submit" runat="server" OnClick="clcLogin">Login</asp:LinkButton>
-                                        <%--<button type="submit" class="btn">Login</button>--%>
+                                        <button type="submit" class="btn" runat="server" style="display: none" OnClick="javascript:__doPostBack('ctl16','')">Login</button>
                                     </div>
+                                       
                                 </div>
                             </div>
 
@@ -129,7 +158,7 @@
 
         </div>
     </form>
-    <footer>
+    <footer hidden>
         <div class="container">
             <div class="row">
 
@@ -141,15 +170,15 @@
             </div>
         </div>
                 <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date(); a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+                    (function (i, s, o, g, r, a, m) {
+                        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                            (i[r].q = i[r].q || []).push(arguments)
+                        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+                    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-        ga('create', 'UA-89149772-1', 'auto');
-        ga('send', 'pageview');
+                    ga('create', 'UA-89149772-1', 'auto');
+                    ga('send', 'pageview');
 
 </script>
     </footer>
@@ -162,69 +191,69 @@
 <script src="assets/js/jquery.backstretch.min.js"></script>
 <script src="assets/js/scripts.js"></script>
 <script>  
-    
 
-    var eHasErrors = false;
-    var pwHasErrors = false;
 
-    $("#single_email").mouseout(function () {
+        var eHasErrors = false;
+        var pwHasErrors = false;
 
-        var text = $("#single_email").val();
-        if (!validateEmail(text)) {
-            $("#wrong").text("Please enter a valid email *")
-            $("#regSingle").hide();
-            eHasErrors = true;
-        }
+        $("#single_email").mouseout(function () {
 
-        else {
-            if (pwHasErrors == false) {
-                        
-                $("#regSingle").show();
-                       
+            var text = $("#single_email").val();
+            if (!validateEmail(text)) {
+                $("#wrong").text("Please enter a valid email *")
+                $("#regSingle").hide();
+                eHasErrors = true;
             }
-            $("#wrong").text("");
-            eHasErrors = false;
-                    
-                    
-                    
-        }
-    });
 
-    $("#s_confPw").mouseout(function () {
+            else {
+                if (pwHasErrors == false) {
 
-        var text1 = $("#s_confPw").val();
-        var text2 = $("#singlePw").val();
-        if (!comparePWs(text1, text2)) {
-            $("#wrongPw").text("Passwords do not match *")
-            $("#regSingle").hide();
-            pwHasErrors = true;
-        }
+                    $("#regSingle").show();
 
-        else {
-            if (eHasErrors == false) {
-                      
-                $("#regSingle").show();
-                        
+                }
+                $("#wrong").text("");
+                eHasErrors = false;
+
+
+
             }
-            $("#wrongPw").text("")
-            pwHasErrors = false;
-        }
-    });
+        });
+
+        $("#s_confPw").mouseout(function () {
+
+            var text1 = $("#s_confPw").val();
+            var text2 = $("#singlePw").val();
+            if (!comparePWs(text1, text2)) {
+                $("#wrongPw").text("Passwords do not match *")
+                $("#regSingle").hide();
+                pwHasErrors = true;
+            }
+
+            else {
+                if (eHasErrors == false) {
+
+                    $("#regSingle").show();
+
+                }
+                $("#wrongPw").text("")
+                pwHasErrors = false;
+            }
+        });
 
 
-    function validateEmail(text) {
-        var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-        return emailReg.test(text);
-    }
+        function validateEmail(text) {
+            var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+            return emailReg.test(text);
+        }
 
-    function comparePWs(text1, text2) {
-        if (text1 != text2) {
-            return false;
+        function comparePWs(text1, text2) {
+            if (text1 != text2) {
+                return false;
+            }
+            else {
+                return true;
+            }
         }
-        else {
-            return true;
-        }
-    }
     </script>
 <!--[if lt IE 10]>
             <script src="assets/js/placeholder.js"></script>

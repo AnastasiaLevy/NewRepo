@@ -55,7 +55,7 @@
                         <li id="profOpt" runat="server"><a href="UserProfile.aspx">Profile</a></li>
                         <li id="login" runat="server"><a href="../Login.aspx">Login</a></li>
                         <li>
-                            <asp:LinkButton ID="logOut" class="btn button" type="submit" runat="server" OnClick="logOut_Click">Log Out</asp:LinkButton>
+                            <asp:LinkButton ID="logOut" class="" type="submit" runat="server" OnClick="logOut_Click">Log Out</asp:LinkButton>
                         </li>
                     </ul>
                 </div>
@@ -199,7 +199,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-3">
-                            <div class="circle c1 img-circle"  id="singlePr" runat="server">
+                            <div class="circle c1 img-circle" id="singlePr" runat="server">
                                 <h4 class="blue">Single Test</h4>
                                 <span class="icon blue"><i class="fa fa-usd"></i></span>
                                 <span class="price-large blue">5</span>

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using TestSite.HelpClasses;
 
 namespace TestSite
 {
@@ -54,7 +55,7 @@ namespace TestSite
         private bool isUserProvider()
         {
             string userId = Membership.GetUser(userNameLg.Value).ProviderUserKey.ToString();
-            int? providerId = DAL.DataMethods.GetProviderId(userId) != null ? DAL.DataMethods.GetProviderId(userId) : 0;
+            int? providerId = CommonMethods.GetProviderId(userId);
             return providerId > 0 ? true : false;
         }
 

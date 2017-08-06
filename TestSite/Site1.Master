@@ -16,8 +16,10 @@
     <script src="https://use.fontawesome.com/0138464303.js"></script>
     <link href="cogTest.css" rel="stylesheet" />
     <link href="css/userProfilecss.css" rel="stylesheet" />
-     <script src="js/jquery.js"></script>
-    <script src="js/sessionManager.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../js/sessionManager.js"></script>
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -38,13 +40,13 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right custom-menu">
                         <li><a href="../MainPage.aspx">Home</a></li>
-                        <li class="active"><a href="#about">About</a></li>
-                        <li id="profOpt" runat="server"><a href="../UserProfile.aspx">Profile</a></li>
+                        <asp:ContentPlaceHolder runat="server" ID="li">
+                        </asp:ContentPlaceHolder>
                         <li id="login" runat="server"><a href="../Login.aspx">Login</a></li>
 
                         <li>
 
-                            <asp:LinkButton ID="logOut" class="btn button" type="submit" runat="server" OnClick="logOut_Click">Log Out</asp:LinkButton>
+                            <asp:LinkButton ID="logOut" class="" type="submit" runat="server" OnClick="logOut_Click">Log Out</asp:LinkButton>
                         </li>
                         <!-- 	<li><a href="blog.html">Blog</a></li>
                         <li><a href="single-post.html">Single</a></li> -->
@@ -56,14 +58,14 @@
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
-  
 
-    
+
+
         <section id="follow-us">
             <div class="container">
                 <div class="text-center height-contact-element">
                     <h3>Follow Us</h3>
-                         <p>+1(719)888 9121</p> 
+                    <p>+1(719)888 9121</p>
                 </div>
                 <img class="img-responsive displayed" src="../images/line-separator.png" alt="short" />
                 <div class="text-center height-contact-element">
@@ -87,7 +89,6 @@
                     </div>
                 </div>
                 <div class="col-sm-6">
-                    
                 </div>
             </div>
         </div>
@@ -141,25 +142,7 @@
 
     </script>
 
-<%--    <script>
-        function gallery() { };
-
-        var $itemsHolder = $('ul.port2');
-        var $itemsClone = $itemsHolder.clone();
-        var $filterClass = "";
-        $('ul.filter li').click(function (e) {
-            e.preventDefault();
-            $filterClass = $(this).attr('data-value');
-            if ($filterClass == 'all') { var $filters = $itemsClone.find('li'); }
-            else { var $filters = $itemsClone.find('li[data-type=' + $filterClass + ']'); }
-            $itemsHolder.quicksand(
-			  $filters,
-			  { duration: 1000 },
-			  gallery
-			  );
-        });
-
-        $(document).ready(gallery);
-    </script>--%>
 </body>
 </html>
+
+<script src="../assets/bootstrap/js/bootstrap.min.js"></script>

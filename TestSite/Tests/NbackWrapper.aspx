@@ -43,7 +43,7 @@
                         <li id="profOpt" runat="server"><a href="../UserProfile.aspx">Profile</a></li>
                         <li id="login" runat="server"><a href="../Login.aspx">Login</a></li>
                         <li>
-                            <asp:LinkButton ID="logOut" class="btn button" type="submit" runat="server" OnClick="logOut_Click">Log Out</asp:LinkButton>
+                            <asp:LinkButton ID="logOut" class="" type="submit" runat="server" OnClick="logOut_Click">Log Out</asp:LinkButton>
                         </li>
                     </ul>
                 </div>
@@ -64,7 +64,7 @@
                      The n-back was introduced by Wayne Kirchner in 1958.
                 </p>
                 <div class="panel-group testDescription " id="accordion" role="tablist" aria-multiselectable="true">
-             
+
                     <div class="col-md-6 visible">
                         <p>
                             <button data-parent="#accordion" class="btn btn-primary btn-lg btn-block" type="button"
@@ -87,10 +87,10 @@
                             </button>
                         </p>
                     </div>
-                           <div class="col-md-6 visible">
+                    <div class="col-md-6 visible">
                         <p>
                             <button data-parent="#accordion" class="btn btn-primary btn-lg btn-block" type="button"
-                                 data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
                                 Research
                             </button>
                         </p>
@@ -107,14 +107,16 @@
 
                         <div id="collapse2" class=" collapse col-md-12">
                             <h3>Measure:</h3>
-                            A more critical explanation is 
+                            <p>
+                                A more critical explanation is 
                     that rather than primarily assessing working memory, performance on the n-back task depends on 
                     "familiarity- and recognition-based discrimination processes," whereas valid assessments of 
                     working memory demand "active recall."
+                            </p>
                         </div>
                     </div>
                     <div class="panel">
-                      <div id="collapse3" class="collapse col-md-12">
+                        <div id="collapse3" class="collapse col-md-12">
                             <h3>Details:</h3>
                             <p>
                                 The test consists of two boards with pegs and several beads with different colors. The examiner (usually a clinical psychologist or a neuropsychologist) uses the beads and
@@ -150,7 +152,7 @@
         </section>
 
 
-            <section>
+        <section>
             <div class="container right">
 
                 <asp:LinkButton ID="runTest" runat="server" class="signup-btn" OnClick="runTest_Click">Run Test</asp:LinkButton>
@@ -166,12 +168,12 @@
             </div>
         </section>
 
-                <section id="price" runat="server">
+        <section id="price" runat="server">
             <div id="wrapper">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-3">
-                            <div class="circle c1 img-circle"  id="singlePr" runat="server">
+                            <div class="circle c1 img-circle" id="singlePr" runat="server">
                                 <h4 class="blue">Single Test</h4>
                                 <span class="icon blue"><i class="fa fa-usd"></i></span>
                                 <span class="price-large blue">5</span>
@@ -189,7 +191,7 @@
                                 <span class="price-large yellow">40</span>
                                 <span class="price-small">.00</span>
                                 <p>Small Project</p>
-                                <asp:Button ID="ten" class="btn btn-warning" runat="server"  Text="Call Us" />
+                                <asp:Button ID="ten" class="btn btn-warning" runat="server" Text="Call Us" />
                             </div>
                         </div>
                         <!-- .Col-md-3 ends here -->
@@ -216,7 +218,7 @@
                                     Any Number of Participants
                                 <p>
 
-                                    <asp:Button ID="unlim" class="btn btn-danger" runat="server"  Text="Call Us" />
+                                    <asp:Button ID="unlim" class="btn btn-danger" runat="server" Text="Call Us" />
                             </div>
                         </div>
                         <!-- .Col-md-3 ends here -->
@@ -225,13 +227,13 @@
                 </div>
                 <!-- .Row ends here -->
             </div>
-    </section>
+        </section>
 
         <section id="follow-us">
             <div class="container">
                 <div class="text-center height-contact-element">
                     <h3>Follow Us</h3>
-                         <p>+1(719)888 9121</p> 
+                    <p>+1(719)888 9121</p>
                 </div>
                 <img class="img-responsive displayed" src="../images/line-separator.png" alt="short" />
                 <div class="text-center height-contact-element">
@@ -260,25 +262,24 @@
                     </div>
                 </div>
                 <div class="col-sm-6">
-                    
                 </div>
             </div>
         </div>
-            <script src="https://use.fontawesome.com/0138464303.js"></script>
+        <script src="https://use.fontawesome.com/0138464303.js"></script>
         <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date(); a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-        ga('create', 'UA-89149772-1', 'auto');
-        ga('send', 'pageview');
+            ga('create', 'UA-89149772-1', 'auto');
+            ga('send', 'pageview');
 
-</script>
+        </script>
     </footer>
-        <script src="../js/jquery.js"></script>
+    <script src="../js/jquery.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="../js/bootstrap.min.js"></script>
     <script>

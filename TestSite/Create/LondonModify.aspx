@@ -140,6 +140,7 @@
                 <div class="col-lg-4 font-larger">
                     <asp:Label ID="Label4" runat="server" Text="Use Text-To-Speech"></asp:Label>
                     <asp:CheckBox ID="cbTextSpeech" runat="server" Text="" />
+                    <%--<asp:DropDownList ID="ContentPlaceHolder1_select" runat="server"></asp:DropDownList>--%>
                     <select id="select" runat="server"> </select>
                 </div>
 
@@ -241,11 +242,69 @@
             });
 
         });
-
-        window.speechSynthesis.onvoiceschanged = function () {
+        //window.speechSynthesis.onvoiceschanged = function () {
             var voiceSelect = $("#<%=select.ClientID %>");
-            var synth = speechSynthesis;
-            var voices = synth.getVoices();
+            //var synth = speechSynthesis;
+            //var voices = synth.getVoices();
+
+            var voices = [{
+                    lang: "de-DE",
+                    name: "Google Deutsch"
+                },{
+                    lang: "en-US",
+                    name: "Google US English"
+                },{
+                    lang: "en-GB",
+                    name: "Google UK English Female"
+                },{
+                    lang: "en-GB",
+                    name: "Google UK English Male"
+                },{
+                    lang: "es-ES",
+                    name: "Google español"
+                },{
+                    lang: "es-US",
+                    name: "Google español de Estados Unidos"
+                },{
+                    lang: "fr-FR",
+                    name: "Google français"
+                },{
+                    lang: "hi-IN",
+                    name: "Google हिन्दी"
+                }, {
+                    lang: "id-ID",
+                    name: "Google Bahasa Indonesia"
+                }, {
+                    lang: "it-IT",
+                    name: "Google italiano"
+                }, {
+                    lang: "ja-JP",
+                    name: "Google 日本語"
+                }, {
+                    lang: "ko-KR",
+                    name: "Google 한국의"
+                }, {
+                    lang: "nl-NL",
+                    name: "Google Nederlands"
+                }, {
+                    lang: "pl-PL",
+                    name: "Google polski"
+                }, {
+                    lang: "pt-BR",
+                    name: "Google português do Brasil"
+                }, {
+                    lang: "ru-RU",
+                    name: "Google русский"
+                }, {
+                    lang: "zh-CN",
+                    name: "Google 普通话（中国大陆）"
+                }, {
+                    lang: "zh-HK",
+                    name: "Google 粤語（香港）"
+                }, {
+                    lang: "zh-TW",
+                    name: "Google 國語（臺灣）"
+                }];
 
             for (i = 0; i < voices.length ; i++) {
                 var option = document.createElement('option');
@@ -254,7 +313,7 @@
                 option.setAttribute('data-name', voices[i].name);
                 voiceSelect.append(option);
             }
-        };
+       // };
 
         superObj = {
             arrStart: "",

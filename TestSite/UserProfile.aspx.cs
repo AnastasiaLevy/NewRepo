@@ -16,13 +16,13 @@ namespace TestSite
     public partial class UserProfile : System.Web.UI.Page
     {
 
-       
-        
+
+
         public string ageValue;
         private string userId;
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+
 
             Session["asd"] = "asd";
             if (!IsPostBack)
@@ -30,12 +30,12 @@ namespace TestSite
                 HidePanels();
             }
             userId = Membership.GetUser(User.Identity.Name).ProviderUserKey.ToString();
-         
-          
+
+
                 if (CommonMethods.UserIsProvider(userId))
                     Response.Redirect("~/Provider/ProviderPortal.aspx");
 
-            
+
 
             if (User.Identity.IsAuthenticated)
             {
@@ -50,7 +50,7 @@ namespace TestSite
                 //bday.Text = GetUserBithdate();
                 LoadPaidTests();
                 LoadFinishedTests();
-                
+
             }
             else
             {
@@ -58,9 +58,9 @@ namespace TestSite
                 login.Visible = true;
                 Logout.Visible = false;
             }
-     
-        }     
-       
+
+        }
+
         private void HidePanels()
         {
             resetPw.Visible = false;
@@ -83,7 +83,7 @@ namespace TestSite
             gvFinishedTests.DataBind();
             gvFinishedTests.Columns[3].Visible = false;
             gvFinishedTests.Columns[4].Visible = false;
-            
+
         }
 
         private void LoadPaidTests()
@@ -121,6 +121,8 @@ namespace TestSite
             GridViewRow row = (GridViewRow)btn.NamingContainer;
             string str = row.Cells[3].Text;
             Session["userTestId"] = row.Cells[4].Text;
+            Session["providerId"] = DAL.DataMethods.GetUserProviderId(userId).Rows[0][0];
+            Session["userId"] = Membership.GetUser(User.Identity.Name).ProviderUserKey.ToString();
             if (!String.IsNullOrEmpty(row.Cells[5].Text))
             {
                 Session["modifiedId"] = row.Cells[5].Text;
@@ -132,7 +134,7 @@ namespace TestSite
 
         private void OpenTestPage(string str)
         {
-         
+
             string location = Enums.TestsMap(str);
             Response.Redirect(location);
 
@@ -146,7 +148,7 @@ namespace TestSite
             string userId = Membership.GetUser(User.Identity.Name).ProviderUserKey.ToString();
             string test = row.Cells[3].Text;
             string url = "ResultsPage.aspx?userId=" + userId + "&tid=" + tId + "&test="+ test + "&age=" + ageValue;
-          
+
             Response.Redirect(url);
         }
 
@@ -248,7 +250,7 @@ namespace TestSite
                     DataMethods.InsertErrorMessage(ex.ToString(), userId, "UserProfile");
                     lblError.Text = "There was an error adding a provider.";
                 }
-               
+
             }
             else
                 lblError.Text = "User Code is not valid";
@@ -274,7 +276,7 @@ namespace TestSite
 
             try
             {
-           
+
                 if (u.ChangePassword(txtOldPw.Text, txtNewPw.Text))
                 {
                    errorPW.Text = "Password changed.";

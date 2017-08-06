@@ -18,7 +18,16 @@ namespace TestSite.HelpClasses
             public const string Syllogisms = "5";
             public const string Stroop = "6";
             public const string Quest = "7";
-            // public TestId();
+            public const string CATI = "8";
+            public const string CPNI = "9";
+            public const string SCATI = "10";
+            public const string CCI = "11";
+            public const string CASS_T = "12";
+            public const string CASS = "13";
+            public const string HCTI = "14";
+            public const string MemoryCards = "15";
+
+            // public TestId(); 
         }
 
         public static int GetAgeGroup(int age)
@@ -92,6 +101,10 @@ namespace TestSite.HelpClasses
                     return @"Tests\SyllogWrapper.aspx";
                 case "6":
                     return @"Tests\StroopPage.aspx";
+                case "9":
+                    return @"Tests\ADHD_Page.aspx";
+                case "11":
+                    return @"Tests\adult_ADHD_Page.aspx";
                 default:
                     return @"\MainPage.aspx";
             }
