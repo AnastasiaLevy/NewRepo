@@ -46,24 +46,24 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="../MainPage.aspx">
+                    <a class="navbar-brand" href="../MainPage.aspx" style="margin-left: -35px; padding: 15px 0px;">
                         <i class="fa fa-cogs" aria-hidden="true">Quiz</i>
                     </a>
 
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-right custom-menu">
-                        <li class="active"><a href="../MainPage.aspx">Home</a></li>
-                        <li><a href="#userInfo">Dashboard</a></li>
-                        <li><a href="#participantData">Participant Data</a></li>
-                        <li><a href="#purchachedTests">Provider Tests</a></li>
-                        <li><a href="#testList">Available Tests</a></li>
-                        <li><a href="#NormsList">Norms</a></li>
-                         <li><a href="#videos">Instruntions</a></li>
-                        <li><a href="#testCategories">Test Categories</a></li>
+                    <ul class="nav navbar-nav navbar-right custom-menu" style="margin-left:0px">
+                        <li class="active" style="margin-left:0px"><a href="../MainPage.aspx">Home</a></li>
+                        <li style="margin-left:0px"><a href="#userInfo">Dashboard</a></li>
+                        <li style="margin-left:0px"><a href="#participantData">Participant Data</a></li>
+                        <li style="margin-left:0px"><a href="#purchachedTests">Provider Tests</a></li>
+                        <li style="margin-left:0px"><a href="#testList">Available Tests</a></li>
+                        <li style="margin-left:0px"><a href="#NormsList">Norms</a></li>
+                         <li style="margin-left:0px"><a href="#videos">Instruntions</a></li>
+                        <li style="margin-left:0px"><a href="#testCategories">Test Categories</a></li>
                         <%--    <li><a href="#reports">Results</a></li>--%>
-                        <li id="login" runat="server"><a href="Login.aspx">Login</a></li>
-                        <li>
+                        <li id="login" runat="server" style="margin-left:0px"><a href="Login.aspx">Login</a></li>
+                        <li style="margin-left:0px">
                             <asp:LinkButton ID="Logout" CssClass="" type="submit" runat="server" OnClick="logOut_Click">Log Out</asp:LinkButton>
                         </li>
                     </ul>

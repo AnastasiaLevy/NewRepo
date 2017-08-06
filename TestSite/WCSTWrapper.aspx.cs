@@ -230,5 +230,44 @@ namespace TestSite
                 requestToReg.Visible = true;
             }
         }
+
+        protected void ten_Click(object sender, EventArgs e)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+
+                PostPaypal(50);
+            }
+            else
+            {
+                requestToReg.Visible = true;
+            }
+        }
+
+        protected void hundred_Click(object sender, EventArgs e)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+
+                PostPaypal(450);
+            }
+            else
+            {
+                requestToReg.Visible = true;
+            }
+        }
+
+        protected void unlimited_Click(object sender, EventArgs e)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+
+                PostPaypal(600);
+            }
+            else
+            {
+                requestToReg.Visible = true;
+            }
+        }
     }
 }
