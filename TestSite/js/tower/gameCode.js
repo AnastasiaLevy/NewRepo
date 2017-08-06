@@ -72,10 +72,11 @@ function hideFinalMessage() {
 
 function displayTestFinishedMessage() {
 
-    $('#testArea').empty();
-    var str = gameSettings.InstructionsFinish;
-    var btn = gameSettings.TxtButton;
-    $("#testArea").append("<div id = 'finishesTest' class='center finishesTest '><p>" + str + " <br/></p><input type='button' id='finishIt'class='signup-btn' value='" + btn + "'></div>");
+    goToPage();
+    //$('#testArea').empty();
+    //var str = gameSettings.InstructionsFinish;
+    //var btn = gameSettings.TxtButton;
+    //$("#testArea").append("<div id = 'finishesTest' class='center finishesTest '><p>" + str + " <br/></p><input type='button' id='finishIt'class='signup-btn' value='" + btn + "'></div>");
 
 }
 
@@ -144,8 +145,19 @@ function displayFinalMessage(needMoves, madeMoves) {
     //else
     //    dNeedMoves = " move.";
     //finalMessage.innerHTML = "You made " + madeMoves + dMadeMoves + ". The goal was " + needMoves + dNeedMoves;
-
+    speechSynthesis.cancel();
     finalMessage.innerHTML = text;
+
+
+    var synth = speechSynthesis;
+    var language = gameSettings.Language;
+    var utterance = new SpeechSynthesisUtterance();
+    utterance.volume = 1;
+    utterance.text = text;
+    synth.speak(utterance);
+
+
+
     setTimeout(hideFinalMessage, 2000);
 }
 
@@ -182,9 +194,11 @@ function startCountDownTimer(game) {
     field.style.display = '';
 
     field.innerHTML = text;//"Please wait <span id='countdowntimer'>" + (timeleft+ 2) + " </span> seconds";
-    var div = document.getElementById("countdowntimer");
+    //var div = document.getElementById("countdowntimer");
+    var div = document.getElementById("countdown");
     var downloadTimer = setInterval(function () {
         timeleft--;
+        //div.textContent = timeleft;
         div.textContent = timeleft;
         if (timeleft <= 0) {
 
