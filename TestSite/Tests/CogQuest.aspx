@@ -63,8 +63,10 @@
                 <p>
                  CogQuest Quesionnaire desktop tool allows to create a series of questions to gather any needed inforamtion from/about participants.
                  It has 7 types of questions, including Date and Dropdown.
-                    CogQuest allows storing data in text file for printing or Excel Document for easy export to SPSS.
+                    CogQuest allows storing data in text file for printing or Excel Document for easy export to SPSS.</p>
                     
+                     <p> You can create multiple choice questions, Likert scale questions, long open-ended questions, short answer questions, etc. This is ideal for research labs. You can email a demographic questionnaire to a scheduled participant and have it emailed back and thereby avoid loss of valuable laboratory testing time. A patient/client can fill out a questionnaire in the waiting room or mail it in prior to an appointment.
+               
                 </p>
                 <div class="panel-group testDescription " id="accordion" role="tablist" aria-multiselectable="true">
              

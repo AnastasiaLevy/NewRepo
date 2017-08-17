@@ -55,8 +55,8 @@ var rectangleMessageTest2 = [250, 250, 510, 200]; //left, top, width, height
 // Test 3 STR1
 
 //var taskTest3 = ["Green", "Blue", "Red", "Green", "Red", "Green", "Blue", "Red", "Green", "Red", "Green", "Blue", "Red", "Green", "Red", "Green", "Blue", "Red", "Red", "Blue"];
-var taskTest3 = ["Green"];
-var taskColor3 = ["R"];
+//var taskTest3 = ["Green"];
+//var taskColor3 = ["R"];
 //var taskColor3 = ["R", "B", "R", "G", "B", "R", "G", "R", "G", "B", "R", "G", "R", "G", "B", "R", "G", "B", "G", "R"];
                   
 

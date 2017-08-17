@@ -103,6 +103,10 @@
     <Content Include="assets\js\placeholder.js" />
     <Content Include="assets\js\scripts.js" />
     <Content Include="audio\FeedbackIncorrect.mp3" />
+    <Content Include="Blog\assets\style.css" />
+    <Content Include="Blog\dist\jquery.paroller.js" />
+    <Content Include="Blog\dist\jquery.paroller.min.js" />
+    <Content Include="Blog\index.html" />
     <Content Include="category\ExecutiveFunction.aspx" />
     <Content Include="category\ProcessingSpeed.aspx" />
     <Content Include="ComingSoon.aspx" />
@@ -165,6 +169,7 @@
     <Content Include="images\brain.jpg" />
     <Content Include="images\abstract.jpg" />
     <Content Include="images\brainUser.jpg" />
+    <Content Include="images\buttonAll.png" />
     <Content Include="images\Capture.PNG" />
     <Content Include="images\cardSort.PNG" />
     <Content Include="images\cell.jpg" />

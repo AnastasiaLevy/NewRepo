@@ -34,9 +34,12 @@ namespace TestSite
                 logOut.Visible = true;
                 login.Visible = false;
 
-                if (Session["modifiedId"] != null)
+                if (Session["modifiedId"] != null && Session["userTestId"] !=null)
                 {
                     test = Session["modifiedId"].ToString();
+                    _userTestId =Convert.ToInt32(Session["userTestId"]);
+
+
                 }
                
             }
@@ -136,7 +139,8 @@ namespace TestSite
 
         private bool hasPaidTest(string _userId)
         {
-
+            if (_userTestId > 0)
+                return true;
             int id = DataMethods.HasPaidTest(_userId, _testId);
             if (id > 1)
             {
@@ -227,9 +231,9 @@ namespace TestSite
         private void PostPaypal()
         {
         
-            string business = "L3SCKTNV3EWA4";// "analescheok@gmail.com"
+            string business = "HQS7UWQMRHDTQ";// "analescheok@gmail.com"
             string itemName = "Tower of London Test";
-            double itemAmount = 0.01;
+            double itemAmount = 5.00;
             string currencyCode = "USD";
 
             StringBuilder ppHref = new StringBuilder();

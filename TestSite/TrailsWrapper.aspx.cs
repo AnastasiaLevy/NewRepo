@@ -205,9 +205,9 @@ namespace TestSite
 
         private void PostPaypal()
         {
-            string business = "L3SCKTNV3EWA4";// "analescheok@gmail.com"
+            string business = "HQS7UWQMRHDTQ";// "analescheok@gmail.com"
             string itemName = "Trails Test";
-            double itemAmount = 0.01;
+            double itemAmount = 5.00;
             string currencyCode = "USD";
 
             StringBuilder ppHref = new StringBuilder();

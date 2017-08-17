@@ -244,7 +244,7 @@ namespace TestSite
                 {
                     decimal mean = Convert.ToDecimal(dtr.Rows[0]["mean"]);
                     decimal std = Convert.ToDecimal(dtr.Rows[0]["stdDeviation"]);
-                    int totalM = Convert.ToInt32(dt.Rows[0]["Excess"]);//dt.AsEnumerable().Where(row => row.Field<int>("game") > 3).Sum(r => r.Field<int>("Exess Moves"));
+                    int totalM = Convert.ToInt32(dt.Rows[0]["toalExcess"]);//dt.AsEnumerable().Where(row => row.Field<int>("game") > 3).Sum(r => r.Field<int>("Exess Moves"));
                     int numberMoves = Convert.ToInt32(dt.Rows[0]["NumberMoves"]);
                     factor = CalculateResults(totalM, mean, std);
 
@@ -375,6 +375,7 @@ namespace TestSite
             gv.FooterRow.Cells[5].Text = dt.Rows[0]["totalMinMoves"].ToString();
             gv.FooterRow.Cells[6].Text = dt.Rows[0]["toalExcess"].ToString();
             gv.FooterRow.Cells[7].Text = dt.Rows[0]["totalWrong"].ToString();
+            //dt = ds.Tables[0];
         }
 
         protected int CalculateResults(decimal? score, decimal? mean, decimal? stdDev)
