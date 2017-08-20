@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/form-elements.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="Style/style.css">
 
 
     <link href="cogTest.css" rel="stylesheet" />
@@ -38,7 +39,6 @@
 
 </head>
 <body>
-
     <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
 
@@ -61,6 +61,12 @@
                 </div>
             </div>
         </nav>
+
+
+
+    
+
+
 
     <form id="form1" runat="server">
         <div class="top-content">
@@ -145,6 +151,11 @@
                                         <label class="sr-only" for="s_confPw"">Confirm Password</label>
                                             <asp:TextBox ID="s_confPw" name="s_confPw" runat="server" TextMode="Password" placeholder="confirm password" class="form-email form-control"></asp:TextBox>
                                         </div>
+                                        <div class="form-group">
+                                        <label class="form-check-label" for="form-checkbox" style="display:inline-flex; color:white; padding-left:0px">
+                                            <input type="checkbox" name="form-checkbox" placeholder="User" class="form-first-name form-control form-check-input" id="checkboxProvider" runat="server" style="margin-right: 10px; ">Provider</label>
+                                        </div>
+                                        </div>
                                        <asp:LinkButton ID="regSingle" runat="server" class="btn btn-success" OnClick="Register_Single">REGISTER</asp:LinkButton>
                                     </div>
                                 </div>
@@ -158,6 +169,15 @@
 
         </div>
     </form>
+
+    <div>
+        <div class="b-popup" id="popup1">
+        <div class="b-popup-content" style="position: relative;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec accumsan eros, non semper orci. Curabitur convallis in nulla commodo interdum. Proin tincidunt vulputate arcu sed bibendum. Etiam accumsan eleifend pharetra. Praesent vehicula mi consequat, scelerisque tellus quis, laoreet metus. Nam eget tristique mi, at bibendum neque. Curabitur aliquam vel neque blandit dignissim. Phasellus sed eros id purus consequat pulvinar. Proin tristique, mi et pulvinar sodales, turpis urna dignissim tellus, et dapibus sapien lectus et neque. Quisque nulla ante, fringilla id mattis aliquet, feugiat a augue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut aliquam enim id augue volutpat, et fringilla elit tristique.</a>
+            <button class="btn btn-success" style="position:absolute; bottom:10px; display:block" OnClick="PopUpHide()">Close</button>
+        </div>
+        </div>
+    </div>
+
     <footer hidden>
         <div class="container">
             <div class="row">
@@ -183,6 +203,26 @@
 </script>
     </footer>
 
+    <!=============================================================>
+    
+ 
+    <script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
+<script>
+                    $(document).ready(function () {
+                        //Скрыть PopUp при загрузке страницы    
+                        PopUpHide();
+                    });
+                    //Функция отображения PopUp
+                    function PopUpShow() {
+                        $("#popup1").show();
+                    }
+                    //Функция скрытия PopUp
+                    function PopUpHide() {
+                        $("#popup1").hide();
+                    }
+</script>
+    <!=============================================================>
+
 </body>
 </html>
 <!-- Javascript -->
@@ -193,68 +233,86 @@
 <script>  
 
 
-        var eHasErrors = false;
-        var pwHasErrors = false;
+                    var eHasErrors = false;
+                    var pwHasErrors = false;
 
-        $("#single_email").mouseout(function () {
+                    $("#single_email").mouseout(function () {
 
-            var text = $("#single_email").val();
-            if (!validateEmail(text)) {
-                $("#wrong").text("Please enter a valid email *")
-                $("#regSingle").hide();
-                eHasErrors = true;
-            }
+                        var text = $("#single_email").val();
+                        if (!validateEmail(text)) {
+                            $("#wrong").text("Please enter a valid email *")
+                            $("#regSingle").hide();
+                            eHasErrors = true;
+                        }
 
-            else {
-                if (pwHasErrors == false) {
+                        else {
+                            if (pwHasErrors == false) {
 
-                    $("#regSingle").show();
+                                $("#regSingle").show();
 
-                }
-                $("#wrong").text("");
-                eHasErrors = false;
-
-
-
-            }
-        });
-
-        $("#s_confPw").mouseout(function () {
-
-            var text1 = $("#s_confPw").val();
-            var text2 = $("#singlePw").val();
-            if (!comparePWs(text1, text2)) {
-                $("#wrongPw").text("Passwords do not match *")
-                $("#regSingle").hide();
-                pwHasErrors = true;
-            }
-
-            else {
-                if (eHasErrors == false) {
-
-                    $("#regSingle").show();
-
-                }
-                $("#wrongPw").text("")
-                pwHasErrors = false;
-            }
-        });
+                            }
+                            $("#wrong").text("");
+                            eHasErrors = false;
 
 
-        function validateEmail(text) {
-            var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-            return emailReg.test(text);
-        }
 
-        function comparePWs(text1, text2) {
-            if (text1 != text2) {
-                return false;
-            }
-            else {
-                return true;
-            }
-        }
+                        }
+                    });
+
+                    $("#s_confPw").mouseout(function () {
+
+                        var text1 = $("#s_confPw").val();
+                        var text2 = $("#singlePw").val();
+                        if (!comparePWs(text1, text2)) {
+                            $("#wrongPw").text("Passwords do not match *")
+                            $("#regSingle").hide();
+                            pwHasErrors = true;
+                        }
+
+                        else {
+                            if (eHasErrors == false) {
+
+                                $("#regSingle").show();
+
+                            }
+                            $("#wrongPw").text("")
+                            pwHasErrors = false;
+                        }
+                    });
+
+
+                    function validateEmail(text) {
+                        var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+                        return emailReg.test(text);
+                    }
+
+                    function comparePWs(text1, text2) {
+                        if (text1 != text2) {
+                            return false;
+                        }
+                        else {
+                            return true;
+                        }
+                    }
     </script>
+<script>
+        function showPopup() {
+
+        }
+</script>
+<script type="text/javascript" language="javascript">
+        var numOfClick = 0;
+        $(document).ready(function () {
+            $('#checkboxProvider').click(function () {
+                numOfClick = numOfClick + 1;
+
+                if (checkboxProvider.checked == true) {
+                    
+                    PopUpShow();
+                }
+            });
+        });
+</script>
 <!--[if lt IE 10]>
             <script src="assets/js/placeholder.js"></script>
         <![endif]-->
