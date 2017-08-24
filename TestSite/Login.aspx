@@ -152,7 +152,7 @@
                                             <asp:TextBox ID="s_confPw" name="s_confPw" runat="server" TextMode="Password" placeholder="confirm password" class="form-email form-control"></asp:TextBox>
                                         </div>
                                         <div class="form-group">
-                                        <label class="form-check-label" for="form-checkbox" style="display:inline-flex; color:white; padding-left:0px">
+                                        <label class="form-check-label" for="singleIsProvider" style="display:inline-flex; color:white; padding-left:0px">
                                             <input type="checkbox" name="form-checkbox" placeholder="User" class="form-first-name form-control form-check-input" id="checkboxProvider" runat="server" style="margin-right: 10px; ">Provider</label>
                                         </div>
                                         </div>
