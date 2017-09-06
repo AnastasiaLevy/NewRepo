@@ -36,7 +36,7 @@ function RunDemoTest() {
         var correct = "";
         var start = paper.text(571, 378, "Start")
         .attr({ "font-size": 20, "font-family": "Arial, Helvetica, sans-serif" });
-        var finish = paper.text(313, 290, "Finish")//200, 512//312, 250
+        var finish = paper.text(550, 610, "Finish")//200, 512//312, 250//3313, 290
         .attr({ "font-size": 20, "font-family": "Arial, Helvetica, sans-serif" });
 
 
@@ -127,7 +127,7 @@ function RunDemoTest() {
         var c5 = new makeMyObj(5, 300, 387, 30, "5", "M 476 300  L 300 387");
         var c6 = new makeMyObj(6, 200, 512, 30, "6", "M 301 387  L 200 512");
         var c7 = new makeMyObj(7, 375, 450, 30, "7", "M 200, 512  L 375, 450");
-        var c8 = new makeMyObj(8, 312, 600, 30, "8", "M 376 450  L 312, 600", true);
+        var c8 = new makeMyObj(8, 550, 560, 30, "8", "M 376 450  L 550, 560", true);
         //var c8 = new makeMyObj(8, 312, 250, 30, "8", "M 376 450  L 312, 250", true);
 
         function makeMyObj(id, x, y, rad, text, path, last) {
