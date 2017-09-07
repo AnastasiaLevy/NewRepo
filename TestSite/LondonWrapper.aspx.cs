@@ -34,11 +34,14 @@ namespace TestSite
                 logOut.Visible = true;
                 login.Visible = false;
 
-                if (Session["modifiedId"] != null)
+                if (Session["modifiedId"] != null && Session["userTestId"] != null)
                 {
                     test = Session["modifiedId"].ToString();
+                    _userTestId = Convert.ToInt32(Session["userTestId"]);
+
+
                 }
-               
+
             }
             else
             {
@@ -102,7 +105,7 @@ namespace TestSite
         {
             DataTable dt = DataMethods.GetLondonFixedTests();
 
-            foreach(DataRow dr in dt.Rows)
+            foreach (DataRow dr in dt.Rows)
             {
                 ListItem lblItem = new ListItem(dr["testName"].ToString(), dr["id"].ToString());
                 rbList.Items.Add(lblItem);
@@ -136,7 +139,8 @@ namespace TestSite
 
         private bool hasPaidTest(string _userId)
         {
-
+            if (_userTestId > 0)
+                return true;
             int id = DataMethods.HasPaidTest(_userId, _testId);
             if (id > 1)
             {
@@ -154,14 +158,14 @@ namespace TestSite
             try
             {
                 modTestId = rbList.SelectedValue;
-              
+
                 DataMethods.InsertTestPaid(userId, _testId, modTestId);
                 return true;
             }
             catch (Exception ex)
             {
                 DataMethods.InsertErrorMessage(ex.ToString(), userId, "LondonWrapper", null);
-                return false; 
+                return false;
             }
         }
 
@@ -186,7 +190,7 @@ namespace TestSite
                 {
                     requestToReg.Visible = false;
                     runTest.Visible = true;
-                 
+
 
                 }
                 else
@@ -224,12 +228,12 @@ namespace TestSite
 
         }
 
-        private void PostPaypal(double itemAmount)
+        private void PostPaypal()
         {
-        
+
             string business = "HQS7UWQMRHDTQ";// "analescheok@gmail.com"
             string itemName = "Tower of London Test";
-            //double itemAmount = 0.01;
+            double itemAmount = 5.00;
             string currencyCode = "USD";
 
             StringBuilder ppHref = new StringBuilder();
@@ -250,7 +254,7 @@ namespace TestSite
         {
             if (User.Identity.IsAuthenticated)
             {
-                PostPaypal(5);
+                PostPaypal();
             }
             else
             {
@@ -276,7 +280,7 @@ namespace TestSite
 
         protected void rbList_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+
         }
     }
 }

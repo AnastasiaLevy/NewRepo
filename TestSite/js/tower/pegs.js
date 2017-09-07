@@ -2,7 +2,7 @@
 function onclickPeg(objName) {
     if (canMove) {
         if (objName.id == "peg1" || objName.id == "a1" || objName.id == "b1") {
-           
+
             if (up1 != null) {
                 if (p3 == null && p2 == null && p1 == null) {
                     up1.animate(moveToP3);

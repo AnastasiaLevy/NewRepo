@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TestSite {
-    
-    
-    public partial class LondonWrapper {
-        
+namespace TestSite
+{
+
+
+    public partial class LondonWrapper
+    {
+
         /// <summary>
         /// profOpt control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace TestSite {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl profOpt;
-        
+
         /// <summary>
         /// login control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace TestSite {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl login;
-        
+
         /// <summary>
         /// logOut control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace TestSite {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton logOut;
-        
+
         /// <summary>
         /// pSelect control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace TestSite {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pSelect;
-        
+
         /// <summary>
         /// rbList control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace TestSite {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList rbList;
-        
+
         /// <summary>
         /// runTest control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace TestSite {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton runTest;
-        
+
         /// <summary>
         /// requestToReg control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace TestSite {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl requestToReg;
-        
+
         /// <summary>
         /// price control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace TestSite {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl price;
-        
+
         /// <summary>
         /// singlePr control.
         /// </summary>
@@ -92,7 +94,7 @@ namespace TestSite {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl singlePr;
-        
+
         /// <summary>
         /// single control.
         /// </summary>
@@ -101,7 +103,7 @@ namespace TestSite {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button single;
-        
+
         /// <summary>
         /// ten control.
         /// </summary>
@@ -110,7 +112,7 @@ namespace TestSite {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button ten;
-        
+
         /// <summary>
         /// hundred control.
         /// </summary>
@@ -119,7 +121,7 @@ namespace TestSite {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button hundred;
-        
+
         /// <summary>
         /// unlim control.
         /// </summary>

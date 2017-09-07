@@ -37,7 +37,7 @@ function showImage(currentGame, gameData) {
     var blueL = makeBlue(imageplace, p.x, p.y, r, "blue");
     p = getPosition(round.green);
     var greenL = makeGreen(imageplace, p.x, p.y, r, "green");
-//==========================================================================
+    //==========================================================================
 
     game = currentGame;
     return 0;
@@ -62,7 +62,7 @@ function showImage(currentGame, gameData) {
                         x: pos1x,
                         y: pos1y - r
 
-                       
+
                     }
                 }
             case "p4":
@@ -78,7 +78,7 @@ function showImage(currentGame, gameData) {
                         x: pos2x,
                         y: pos2y - r
 
-                     
+
                     }
 
                 }

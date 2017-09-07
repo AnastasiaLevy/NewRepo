@@ -22,7 +22,7 @@ var moveFromP2 = Raphael.animation({
 
 var moveFromP1 = Raphael.animation({
     transform: 't0 ' + (-270)
-   
+
 }, speed)
 
 

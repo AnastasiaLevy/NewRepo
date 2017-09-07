@@ -12,8 +12,6 @@ using System.Web.UI.WebControls;
 using TestSite.DAL;
 using TestSite.HelpClasses;
 using System.Globalization;
-using TestSite.BL.Models;
-using TestSite.BL.Services;
 
 namespace TestSite
 {
@@ -39,20 +37,18 @@ namespace TestSite
 
         }
 
-       
-
         [WebMethod]
-        public static void SaveResults(List<LondonResultViewModel> result)
+        public static void SaveResults(string game,
+            string initThinkTime, string timeTotal,
+            string numberOfMoves, string numberOfWrongMoves,
+            string overTime, string overMoves, string minMoves)
         {
-
-            LondonResultServices resultService = new LondonResultServices();
-            foreach(var r in result)
-            {
-                resultService.InsertRow(r, _userId, _userTestId);
-            }
-            
+            string testId = Enums.TestId.TowerOfLondon;
+            DataMethods.UpdateLondonUserResults(_userId, _userTestId, testId, Convert.ToInt32(game),
+            System.Convert.ToDecimal(initThinkTime, new CultureInfo("en-US")), System.Convert.ToDecimal(timeTotal, new CultureInfo("en-US")),
+            Convert.ToInt32(numberOfMoves), Convert.ToInt32(numberOfWrongMoves),
+            Convert.ToBoolean(overTime), Convert.ToBoolean(overMoves), Convert.ToInt32(minMoves));
         }
-        
 
 
         [WebMethod]
@@ -118,7 +114,7 @@ namespace TestSite
 
         private static List<LondonMoves> GetLondonMoves(DataTable dt)
         {
-          
+
             LondonMoves lm = new LondonMoves();
             var oSerializer = new System.Web.Script.Serialization.JavaScriptSerializer();
             List<LondonMoves> listMoves = new List<LondonMoves>();
@@ -138,8 +134,8 @@ namespace TestSite
         }
     }
 
-   
-    
+
+
 
     public class LondonMoves
     {
@@ -166,7 +162,7 @@ namespace TestSite
         public string TextOverMoves { get; set; }
         public string TextOverTime { get; set; }
         public string DisplayResults { get; set; }
-         
+
         public string TxtToSpeech { get; set; }
         public string PrctRounds { get; set; }
         public string TestRounds { get; set; }

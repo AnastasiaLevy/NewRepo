@@ -45,34 +45,30 @@
 
 </html>
       <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date(); a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+          (function (i, s, o, g, r, a, m) {
+              i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                  (i[r].q = i[r].q || []).push(arguments)
+              }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                  m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+          })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-        ga('create', 'UA-89149772-1', 'auto');
-        ga('send', 'pageview');
+          ga('create', 'UA-89149772-1', 'auto');
+          ga('send', 'pageview');
 
 </script>
 <script>
 
 
-    var game = 0;
-    var canMove = false;
-    var nm = 0;
-    var nmWr = 0;
-    var time;
-    var totalTime;
-    var initTTime;
-    var gameTimer;
-    var speed = 200;
-
-    var gameData;
-    var HideMessageTime = 2000;
-    var CountDownTime = 2000;
-    var FinishedMessageTime = 3200;
+        var game = 0;
+        var canMove = false;
+        var nm = 0;
+        var nmWr = 0;
+        var time;
+        var totalTime;
+        var initTTime;
+        var gameTimer;
+        var speed = 200;
+        var gameData;
 </script>
 <script src="js/tower/londonInit.js"></script>
 <script src="js/tower/moves.js"></script>
@@ -96,7 +92,7 @@
         contentType: "application/json; charset=utf-8",
         url: 'LondonPage.aspx/GetLondonValues',
         dataType: 'json',
-      
+
         type: 'GET',
         success: function (resp) {
 
