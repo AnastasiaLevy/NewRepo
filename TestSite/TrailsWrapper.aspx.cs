@@ -74,8 +74,8 @@ namespace TestSite
                             runTest.Visible = false;
                             price.Visible = true;
                         }
-                        if (CommonMethods.UserIsProvider(_userId))
-                            singlePr.Visible = false;
+                        //if (CommonMethods.UserIsProvider(_userId))
+                        //    singlePr.Visible = false;
                     }
                     else
                     {
@@ -237,17 +237,38 @@ namespace TestSite
 
         protected void ten_Click(object sender, EventArgs e)
         {
-
+            if (User.Identity.IsAuthenticated)
+            {
+                PostPaypal(40);
+            }
+            else
+            {
+                requestToReg.Visible = true;
+            }
         }
 
         protected void hundred_Click(object sender, EventArgs e)
         {
-
+            if (User.Identity.IsAuthenticated)
+            {
+                PostPaypal(80);
+            }
+            else
+            {
+                requestToReg.Visible = true;
+            }
         }
 
         protected void unlim_Click(object sender, EventArgs e)
         {
-
+            if (User.Identity.IsAuthenticated)
+            {
+                PostPaypal(499);
+            }
+            else
+            {
+                requestToReg.Visible = true;
+            }
         }
     }
 }

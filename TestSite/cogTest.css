@@ -3243,7 +3243,7 @@ label {
         width:150px;
     }
 
-   #start {
+   /*#start {
     width: 300px;
     height: 300px;
 
@@ -3255,7 +3255,7 @@ label {
     right: 0;
 
     margin: auto;
-}
+}*/
 
    .adhd-button {
        margin: 0px;
