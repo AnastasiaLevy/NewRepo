@@ -71,8 +71,8 @@ namespace TestSite.Tests
                             requestToReg.Visible = false;
                             runTest.Visible = false;
                         }
-                        if (CommonMethods.UserIsProvider(_userId))
-                            singlePr.Visible = false;
+                        //if (CommonMethods.UserIsProvider(_userId))
+                            //singlePr.Visible = false;
                         price.Visible = true;
                     }
                     else
@@ -232,17 +232,38 @@ namespace TestSite.Tests
 
         protected void ten_Click(object sender, EventArgs e)
         {
-
+            if (User.Identity.IsAuthenticated)
+            {
+                PostPaypal(40);
+            }
+            else
+            {
+                requestToReg.Visible = true;
+            }
         }
 
         protected void hundred_Click(object sender, EventArgs e)
         {
-
+            if (User.Identity.IsAuthenticated)
+            {
+                PostPaypal(250);
+            }
+            else
+            {
+                requestToReg.Visible = true;
+            }
         }
 
         protected void unlim_Click(object sender, EventArgs e)
         {
-
+            if (User.Identity.IsAuthenticated)
+            {
+                PostPaypal(500);
+            }
+            else
+            {
+                requestToReg.Visible = true;
+            }
         }
     }
 }

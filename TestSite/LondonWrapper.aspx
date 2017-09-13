@@ -199,7 +199,7 @@
                                 <span class="price-large yellow">50</span>
                                 <span class="price-small">.00</span>
                                 <p>Small Project</p>
-                                <asp:Button ID="ten" class="btn btn-warning" runat="server" OnClick="ten_Click" Text="Call Us" />
+                                <asp:Button ID="ten" class="btn btn-warning" runat="server" OnClick="ten_Click" Text="Buy Now" />
                             </div>
                         </div>
                         <!-- .Col-md-3 ends here -->
@@ -211,7 +211,7 @@
                                 <span class="price-large green">300</span>
                                 <span class="price-small">.00</span>
                                 <p>Medium Size Project</p>
-                                <asp:Button ID="hundred" class="btn btn-success" runat="server" OnClick="hundred_Click" Text="Call Us" />
+                                <asp:Button ID="hundred" class="btn btn-success" runat="server" OnClick="hundred_Click" Text="Buy Now" />
                             </div>
                         </div>
                         <!-- .Col-md-3 ends here -->
@@ -226,7 +226,7 @@
                                    Large Project
                                 <p>
 
-                                    <asp:Button ID="unlim" class="btn btn-danger" runat="server" OnClick="unlim_Click" Text="Call Us" />
+                                    <asp:Button ID="unlim" class="btn btn-danger" runat="server" OnClick="unlim_Click" Text="Buy Now" />
                             </div>
                         </div>
                         <!-- .Col-md-3 ends here -->

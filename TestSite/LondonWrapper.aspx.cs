@@ -85,8 +85,8 @@ namespace TestSite
                             runTest.Visible = false;
                             FillOutSelection();
                         }
-                        if (CommonMethods.UserIsProvider(_userId))
-                            singlePr.Visible = false;
+                        //if (CommonMethods.UserIsProvider(_userId))
+                            //singlePr.Visible = false;
                         price.Visible = true;
                     }
                     else
@@ -228,12 +228,12 @@ namespace TestSite
 
         }
 
-        private void PostPaypal()
+        private void PostPaypal(double itemAmount)
         {
 
             string business = "HQS7UWQMRHDTQ";// "analescheok@gmail.com"
             string itemName = "Tower of London Test";
-            double itemAmount = 5.00;
+            //double itemAmount = 5.00;
             string currencyCode = "USD";
 
             StringBuilder ppHref = new StringBuilder();
@@ -254,7 +254,7 @@ namespace TestSite
         {
             if (User.Identity.IsAuthenticated)
             {
-                PostPaypal();
+                PostPaypal(5);
             }
             else
             {
@@ -265,22 +265,50 @@ namespace TestSite
 
         protected void ten_Click(object sender, EventArgs e)
         {
-
+            if (User.Identity.IsAuthenticated)
+            {
+                PostPaypal(50);
+            }
+            else
+            {
+                requestToReg.Visible = true;
+            }
         }
 
         protected void hundred_Click(object sender, EventArgs e)
         {
-
+            if (User.Identity.IsAuthenticated)
+            {
+                PostPaypal(300);
+            }
+            else
+            {
+                requestToReg.Visible = true;
+            }
         }
 
         protected void unlim_Click(object sender, EventArgs e)
         {
-
+            if (User.Identity.IsAuthenticated)
+            {
+                PostPaypal(1000);
+            }
+            else
+            {
+                requestToReg.Visible = true;
+            }
         }
 
         protected void rbList_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (User.Identity.IsAuthenticated)
+            {
+                //PostPaypal();
+            }
+            else
+            {
+                requestToReg.Visible = true;
+            }
         }
     }
 }

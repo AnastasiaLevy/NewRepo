@@ -59,8 +59,8 @@
                         <li style="margin-left:0px"><a href="#purchachedTests">Provider Tests</a></li>
                         <li style="margin-left:0px"><a href="#testList">Available Tests</a></li>
                         <li style="margin-left:0px"><a href="#NormsList">Norms</a></li>
-                         <li style="margin-left:0px"><a href="#videos">Instruntions</a></li>
-                        <li style="margin-left:0px"><a href="#testCategories">Test Categories</a></li>
+                         <li style="margin-left:0px"><a href="#videos">Instructions</a></li>
+                        <%--<li style="margin-left:0px"><a href="#testCategories">Test Categories</a></li>--%>
                         <%--    <li><a href="#reports">Results</a></li>--%>
                         <li id="login" runat="server" style="margin-left:0px"><a href="Login.aspx">Login</a></li>
                         <li style="margin-left:0px">
@@ -88,8 +88,8 @@
                     <input type="button" id="ToL" class="btn btn-success" value="Tower of London" runat="server"  />
                 </a>
                 <a href ="../Create/MemoryCardsModify.aspx" >
-                   <%-- <asp:Button ID ="MC" CssClass="btn btn-success" Text="Memory Cards" runat="server" />--%>
-                    <input type="button" id="MC" class="btn btn-success" value="Memory Cards" runat="server" />
+                   <%-- <asp:Button ID ="MC" CssClass="btn btn-success" Text="Memory Cards" runat="server" />
+                    <input type="button" id="MC" class="btn btn-success" value="Memory Cards" runat="server" />--%>
                 </a>
                 </p>
               </div>
