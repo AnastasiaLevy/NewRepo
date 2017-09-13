@@ -233,9 +233,8 @@ namespace TestSite
                 btnExportLine.Visible = true;
                 btnExportNorm.Visible = true;
                 chartTitle.Text = "Results for Tower of London Test for participant " + userName + ".";
-                GridView gv;
+                GridView gv = new GridView();
                 SetUpUserResultGrid(userId, tId, out dt, out gv);
-
 
 
                 DataTable dtr = DataMethods.GetLondonNorms(ageGroup, tId);
@@ -254,6 +253,7 @@ namespace TestSite
 
                 }
                 pResultPanel.Controls.Add(gv);
+                //pResultPanel.Controls.Add(gvToL);
                 pResultPanel.Controls.Add(descr);
 
 
@@ -297,7 +297,6 @@ namespace TestSite
 
         private int GerPercentCorrect(DataTable dt, int v)
         {
-
             DataRow[] dr = dt.Select("Trial = " + v.ToString());
             int percentCorrrect = Convert.ToInt32(dr[0]["Score"]);
             return percentCorrrect;
@@ -361,17 +360,25 @@ namespace TestSite
             dt = ds.Tables[0];
             gv = new GridView();
             SetGvProperties(gv);
-            gv.DataSource = ds.Tables[0];
+            gv.DataSource = dt;
             gv.DataBind();
             gv.ShowFooter = true;
+            gv.ShowHeader = true;
+
             gv.FooterRow.Visible = true;
             gv.FooterStyle.BackColor = Color.AliceBlue;
-            gv.FooterRow.Font.Size = 16;
+            gv.FooterRow.Font.Size = 13;
             dt = ds.Tables[2];
             gv.FooterRow.Cells[0].Text = "Total:";
-            gv.FooterRow.Cells[4].Text = dt.Rows[0]["NumberMoves"].ToString();
-            gv.FooterRow.Cells[6].Text = dt.Rows[0]["Excess"].ToString();
-            gv.FooterRow.Cells[7].Text = dt.Rows[0]["wrong"].ToString();
+            gv.FooterRow.Cells[2].Text = dt.Rows[0]["totalInitThinkTime"].ToString();
+            gv.FooterRow.Cells[3].Text = dt.Rows[0]["totalTime"].ToString();
+            gv.FooterRow.Cells[4].Text = dt.Rows[0]["totalNumberMoves"].ToString();
+            gv.FooterRow.Cells[5].Text = dt.Rows[0]["totalMinMoves"].ToString();
+            gv.FooterRow.Cells[6].Text = dt.Rows[0]["toalExcess"].ToString();
+            gv.FooterRow.Cells[7].Text = dt.Rows[0]["totalWrong"].ToString();
+
+
+
         }
 
         protected int CalculateResults(decimal? score, decimal? mean, decimal? stdDev)

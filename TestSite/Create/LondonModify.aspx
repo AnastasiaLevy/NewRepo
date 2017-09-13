@@ -140,7 +140,6 @@
                 <div class="col-lg-4 font-larger">
                     <asp:Label ID="Label4" runat="server" Text="Use Text-To-Speech"></asp:Label>
                     <asp:CheckBox ID="cbTextSpeech" runat="server" Text="" />
-                    <%--<asp:DropDownList ID="ContentPlaceHolder1_select" runat="server"></asp:DropDownList>--%>
                     <select id="select" runat="server"> </select>
                 </div>
 
@@ -225,7 +224,7 @@
         $(document).ready(function () {
             $('#viewTest').hide();
             $('#<%=movesText.ClientID%>').hide();
-              var value = $('#<%=movesText.ClientID%>').val();
+            var value = $('#<%=movesText.ClientID%>').val();
             if (value.length > 0) {
                 $('#SetupUpdate').hide();
                 setUpdateValues(value);
@@ -242,78 +241,20 @@
             });
 
         });
-        //window.speechSynthesis.onvoiceschanged = function () {
+
+        window.speechSynthesis.onvoiceschanged = function () {
             var voiceSelect = $("#<%=select.ClientID %>");
-            //var synth = speechSynthesis;
-            //var voices = synth.getVoices();
+            var synth = speechSynthesis;
+            var voices = synth.getVoices();
 
-            var voices = [{
-                    lang: "de-DE",
-                    name: "Google Deutsch"
-                },{
-                    lang: "en-US",
-                    name: "Google US English"
-                },{
-                    lang: "en-GB",
-                    name: "Google UK English Female"
-                },{
-                    lang: "en-GB",
-                    name: "Google UK English Male"
-                },{
-                    lang: "es-ES",
-                    name: "Google español"
-                },{
-                    lang: "es-US",
-                    name: "Google español de Estados Unidos"
-                },{
-                    lang: "fr-FR",
-                    name: "Google français"
-                },{
-                    lang: "hi-IN",
-                    name: "Google हिन्दी"
-                }, {
-                    lang: "id-ID",
-                    name: "Google Bahasa Indonesia"
-                }, {
-                    lang: "it-IT",
-                    name: "Google italiano"
-                }, {
-                    lang: "ja-JP",
-                    name: "Google 日本語"
-                }, {
-                    lang: "ko-KR",
-                    name: "Google 한국의"
-                }, {
-                    lang: "nl-NL",
-                    name: "Google Nederlands"
-                }, {
-                    lang: "pl-PL",
-                    name: "Google polski"
-                }, {
-                    lang: "pt-BR",
-                    name: "Google português do Brasil"
-                }, {
-                    lang: "ru-RU",
-                    name: "Google русский"
-                }, {
-                    lang: "zh-CN",
-                    name: "Google 普通话（中国大陆）"
-                }, {
-                    lang: "zh-HK",
-                    name: "Google 粤語（香港）"
-                }, {
-                    lang: "zh-TW",
-                    name: "Google 國語（臺灣）"
-                }];
-
-            for (i = 0; i < voices.length ; i++) {
+            for (i = 0; i < voices.length; i++) {
                 var option = document.createElement('option');
                 option.textContent = voices[i].name + ' (' + voices[i].lang + ')';
                 option.setAttribute('data-lang', voices[i].lang);
                 option.setAttribute('data-name', voices[i].name);
                 voiceSelect.append(option);
             }
-       // };
+        };
 
         superObj = {
             arrStart: "",
@@ -410,10 +351,9 @@
             prct = parseInt($('#<%=ddlPractice.ClientID %> option:selected').text());
             trl = parseInt($('#<%=ddlNumberGames.ClientID %> option:selected').text());
         }
-     
 
-        function setUpdateValues(value)
-        {
+
+        function setUpdateValues(value) {
             moves = JSON.parse(value);
 
             update = true;
@@ -440,8 +380,8 @@
                 idItems[(moves[index].GameRound)] = (moves[index].GameRound);
             });
 
-        
-  
+
+
         }
 
         $('#SetupUpdate').click(function () {
@@ -470,7 +410,7 @@
                     idItems[i] = i;
                     $('#pageNums').append('<input type="button" value=' + i + ' id=' + i + ' class="edit prct"/>');
                 }
-                for (i = (prct + 1) ; i <= (trl + prct) ; i++) {
+                for (i = (prct + 1); i <= (trl + prct); i++) {
 
                     $('#pageNums').append('<input type="button" value=' + i + ' id=' + i + ' class="edit trl"/>');
                     moves[i - 1] = i;
@@ -480,7 +420,7 @@
             }
             else {
                 setUpdateValues(value);
-          
+
             }
 
             $('.edit').bind("click", function () {
@@ -523,20 +463,18 @@
             //checkIfEmpty(string, dataName, error)
             //checkIfEmpty(string, dataName, error)
             //checkIfEmpty(string, dataName, error)
-           
-            if (error != "")
-            {
+
+            if (error != "") {
                 $('#MovesError').show();
                 $('#MovesError').html(error);
             }
-            else
-            {
+            else {
                 $('#MovesError').html("");
                 $('#MovesError').hide();
-            
-          
-            sendData = {
-                testName: $('#<%=testName.ClientID%>').val(),
+
+
+                sendData = {
+                    testName: $('#<%=testName.ClientID%>').val(),
                 instructions: $('#<%=instructions.ClientID%>').val(),
                 overMoves: $('#<%=overMoves.ClientID%>').val(),
                 overTime: $('#<%=overTime.ClientID%>').val(),
@@ -553,38 +491,36 @@
                 maxMoves: $('#<%=maxMovesLimit.ClientID%>').val(),
                 showFeedback: $('#<%=showFeedback.ClientID %>').is(':checked'),
                 movesData: JSON.stringify(superArr),
-                language:$("#<%=select.ClientID%>").val(),
+                language: $("#<%=select.ClientID%>").val(),
                 workTag: $("#<%=workArea.ClientID%>").val(),
                 goalTag: $("#<%=endArea.ClientID%>").val(),
                 countDownText: $("#<%=countDownText.ClientID%>").val()
 
-            }
-            //alert(JSON.stringify(sendData))
-            jQuery.ajax({
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                url: 'LondonModify.aspx/SaveResults',
-                dataType: 'json',
-                data: JSON.stringify(sendData),
-                type: 'POST',
-                success: function (resp) {
-
-                    //request sent and response received.
-                    var message = "Success! The test was saved."
-                    $("#success").show();
-                    $("#success").html(message);
-                },
-                error: function () {
-                    alert("error saving the test; try again later")
                 }
-            });
-          }
+                //alert(JSON.stringify(sendData))
+                jQuery.ajax({
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    url: 'LondonModify.aspx/SaveResults',
+                    dataType: 'json',
+                    data: JSON.stringify(sendData),
+                    type: 'POST',
+                    success: function (resp) {
+
+                        //request sent and response received.
+                        var message = "Success! The test was saved."
+                        $("#success").show();
+                        $("#success").html(message);
+                    },
+                    error: function () {
+                        alert("error saving the test; try again later")
+                    }
+                });
+            }
         });
 
-       function checkIfEmpty(string, dataName, error)
-        {
-            if (string == "")
-            {
+        function checkIfEmpty(string, dataName, error) {
+            if (string == "") {
                 error += "Please fill out " + dataName + "\n\r";
             }
             return error;
@@ -616,7 +552,7 @@
 
             else {
                 $('#MovesError').hide();
-               // checkForChange();
+                // checkForChange();
                 superObj = {
                     arrStart: (JSON.stringify(array)),
                     arrFinish: (JSON.stringify(arrayR)),
@@ -647,7 +583,7 @@
 
                     }
                     superArr[num] = superObj;
-                
+
 
                     if (!$('#' + num + '').length) {
                         if (num <= prct) {
@@ -669,7 +605,7 @@
                 $("#success").show();
                 var message = "Success! The round was saved."
                 $("#success").html(message);
-             
+
                 checkForChange();
             }
 
@@ -695,20 +631,20 @@
 
                 roundCount -= 1;
                 if (update)
-                   // alert(moves.length);
-                checkForChange();
-                
+                    // alert(moves.length);
+                    checkForChange();
+
                 $('.edit').bind("click", function () {
                     round = this.value;
                     test(superArr, round);
                     $("#success").hide();
                 });
-                
+
             }
             else {
-               // alert(roundCount)
+                // alert(roundCount)
             }
-          
+
         });
 
         function updateEditRow(arr) {
@@ -783,7 +719,7 @@
             $('#numberOfMoves').val("");
             $('#save').show();
             updateValues();
-        
+
             if (idItems.length >= prct + trl)
                 $('#makeAnother').hide();
             roundCount++;

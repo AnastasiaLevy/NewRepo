@@ -608,7 +608,7 @@ namespace TestSite.DAL
             SqlCommand cmd = new SqlCommand("InsertUserProviderId", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@userId", userId);
-            cmd.Parameters.AddWithValue("@code", code);
+            cmd.Parameters.AddWithValue("@code", "code");
 
             try
             {

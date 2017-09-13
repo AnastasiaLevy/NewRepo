@@ -1,8 +1,7 @@
 ﻿var prevPos;
 function onclickRed(objName) {
-    if (canMove)
-    {
-        if ( up1 == null && up2 == null && up3 == null) {
+    if (canMove) {
+        if (up1 == null && up2 == null && up3 == null) {
             if (p6 == red) {
                 objName.animate(moveFromP6);
                 up3 = red
@@ -52,7 +51,7 @@ function onclickRed(objName) {
                 up1 = null;
                 nm++;
                 checkPos();
-               
+
 
             }
             else if (p3 == red && p2 == !null && p1 == null) {
@@ -61,7 +60,7 @@ function onclickRed(objName) {
                 up1 = null;
                 nm++;
                 checkPos();
-              
+
             }
             else if (p3 == red && p2 == null && p1 == null) {
                 up1.animate(moveToP2);
@@ -80,8 +79,7 @@ function onclickRed(objName) {
                 checkPos();
 
             }
-            else if (p4 !== null && p5 !== null )
-            {
+            else if (p4 !== null && p5 !== null) {
                 nmWr++;
                 nm++;
 
@@ -89,8 +87,7 @@ function onclickRed(objName) {
                 up2 = up1;
                 up1 = null;
             }
-            else if (p6 != null)
-            {
+            else if (p6 != null) {
                 up1.animate(moveU1U3);
                 up3 = up1;
                 up1 = null;
@@ -100,7 +97,7 @@ function onclickRed(objName) {
             }
 
             else {
-              
+
                 checkPos();
             }
         }
@@ -128,8 +125,8 @@ function onclickRed(objName) {
                 up2 = null;
                 nm++;
                 checkPos();
-              
-          
+
+
 
             }
             else if (p5 == red && p4 == null) {
@@ -141,7 +138,7 @@ function onclickRed(objName) {
 
 
             }
-          
+
             else if (p6 != null) {
                 up2.animate(moveU2U3);
                 up3 = up2;
@@ -152,58 +149,58 @@ function onclickRed(objName) {
             }
 
         }
-    if (up3 != null && up3 !==red) {
-        if (p2 == red && p1 == null) {
-            up3.animate(moveU3U1);
-            up3.animate(moveToP1.delay(speed))
-            p1 = up3;
-            up1 = null;
-            nm++;
-            checkPos();
-           
-        }
-        else if (p3 == red && p2 == !null && p1 == null) {
-            up3.animate(moveU3U2);
-            up3.animate(moveToP1.delay(speed));
-            p1 = up3;
-            up1 = null;
-            up = null;
-            nm++;
-            checkPos();
-          
-        }
-        else if (p3 == red && p2 == null && p1 == null) {
-            up3.animate(moveU3U1);
-            up3.animate(moveToP2.delay(speed));
-            p2 = up3;
-            up1 = null;
-            up = null;
-            nm++;
-            checkPos();
-           
-        }
-        else if (p5 == red && p4 == null) {
-            up3.animate(moveU3U2)
-            up3.animate(moveToP4.delay(speed));
-            p4 = up3;
-            up1 = null;
-            nm++;
-            checkPos();
-        }
-        else if (p4 !== null && p5 !== null) {
-            up3.animate(moveU3U2);
-            up2 = up3;
-            up3 = null;
-            nmWr++;
-            nm++;
+        if (up3 != null && up3 !== red) {
+            if (p2 == red && p1 == null) {
+                up3.animate(moveU3U1);
+                up3.animate(moveToP1.delay(speed))
+                p1 = up3;
+                up3 = null;
+                nm++;
+                checkPos();
 
+            }
+            else if (p3 == red && p2 == !null && p1 == null) {
+                up3.animate(moveU3U2);
+                up3.animate(moveToP1.delay(speed));
+                p1 = up3;
+                up3 = null;
+                up = null;
+                nm++;
+                checkPos();
+
+            }
+            else if (p3 == red && p2 == null && p1 == null) {
+                up3.animate(moveU3U1);
+                up3.animate(moveToP2.delay(speed));
+                p2 = up3;
+                up3 = null;
+                up = null;
+                nm++;
+                checkPos();
+
+            }
+            else if (p5 == red && p4 == null) {
+                up3.animate(moveU3U2)
+                up3.animate(moveToP4.delay(speed));
+                p4 = up3;
+                up3 = null;
+                nm++;
+                checkPos();
+            }
+            else if (p4 !== null && p5 !== null) {
+                up3.animate(moveU3U2);
+                up2 = up3;
+                up3 = null;
+                nmWr++;
+                nm++;
+
+            }
+            else {
+                checkPos();
+            }
         }
         else {
             checkPos();
         }
     }
-    else {
-        checkPos();
-    }
-  }
 }

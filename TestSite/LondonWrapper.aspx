@@ -23,7 +23,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
     <script src="https://use.fontawesome.com/0138464303.js"></script>
-    <!-- jQuery -->
+        <!-- jQuery -->
     <script src="js/jquery.js"></script>
     <script src="js/sessionManager.js"></script>
 
@@ -77,16 +77,16 @@
                 <div class="panel-group testDescription " id="accordion" role="tablist" aria-multiselectable="true">
                     <div class="col-md-6 visible">
                         <p>
-                            <button data-parent="#accordion" class="btn btn-primary btn-lg btn-block" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse4">
-                                About
+                            <button data-parent="#accordion" class="btn btn-primary btn-lg btn-block" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                Research
                             </button>
                         </p>
                     </div>
                     <div class="col-md-6 visible">
                         <p>
                             <button data-parent="#accordion" class="btn btn-primary btn-lg btn-block" type="button"
-                                data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse1">
-                                Details
+                                data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                                About
                             </button>
                         </p>
                     </div>
@@ -99,8 +99,8 @@
                     </div>
                     <div class="col-md-6 visible">
                         <p>
-                            <button data-parent="#accordion" class="btn btn-primary btn-lg btn-block" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse3">
-                                Research
+                            <button data-parent="#accordion" class="btn btn-primary btn-lg btn-block" type="button" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                Details
                             </button>
                         </p>
                     </div>
@@ -115,12 +115,7 @@
 
                         <div id="collapse2" class=" collapse col-md-12">
                             <h3>Measure:</h3>
-                            <p>
-                                One common use is for diagnosis of executive impairment.
-                     The performance of the examinee is compared to representative samples of 
-                    individuals of the same age to derive hypotheses about the person's executive 
-                    cognitive ability, especially as it may relate to brain damage.
-                            </p>
+
                         </div>
                     </div>
                     <div class="panel">
@@ -138,6 +133,11 @@
                         <div id="collapse4" class="collapse col-md-12">
                             <h3>Research:</h3>
                             <p>
+                                One common use is for diagnosis of executive impairment.
+                     The performance of the examinee is compared to representative samples of 
+                    individuals of the same age to derive hypotheses about the person's executive 
+                    cognitive ability, especially as it may relate to brain damage.
+               
                             </p>
                         </div>
                     </div>
@@ -145,7 +145,7 @@
                 </div>
             </div>
             <section class="container">
-                <p>Select Version:</p>
+               <p>Select Version:</p> 
                 <asp:Panel ID="pSelect" runat="server"></asp:Panel>
                 <asp:RadioButtonList ID="rbList" runat="server" OnSelectedIndexChanged="rbList_SelectedIndexChanged"></asp:RadioButtonList>
             </section>
@@ -181,7 +181,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-3">
-                            <div class="circle c1 img-circle" id="singlePr" runat="server">
+                            <div class="circle c1 img-circle"  id="singlePr" runat="server">
                                 <h4 class="blue">Single Test</h4>
                                 <span class="icon blue"><i class="fa fa-usd"></i></span>
                                 <span class="price-large blue">5</span>
@@ -223,7 +223,7 @@
                                 <span class="price-large red">1000</span>
                                 <span class="price-small"></span>
                                 <p>
-                                    Large Project
+                                   Large Project
                                 <p>
 
                                     <asp:Button ID="unlim" class="btn btn-danger" runat="server" OnClick="unlim_Click" Text="Buy Now" />
@@ -241,7 +241,7 @@
             <div class="container">
                 <div class="text-center height-contact-element">
                     <h3>Follow Us</h3>
-                    <p>+1(719)888 9121</p>
+                         <p>+1(719)888 9121</p> 
                 </div>
                 <img class="img-responsive displayed" src="../images/line-separator.png" alt="short" />
                 <div class="text-center height-contact-element">
@@ -252,7 +252,7 @@
                         <li><a href="https://www.linkedin.com/company-beta/13213074/"><i class="fa fa-linkedin social-icons"></i></a></li>
                     </ul>
                 </div>
-
+             
             </div>
         </section>
     </form>
@@ -265,21 +265,22 @@
                     </div>
                 </div>
                 <div class="col-sm-6">
+                    
                 </div>
             </div>
         </div>
-        <script>
-            (function (i, s, o, g, r, a, m) {
-                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date(); a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+                <script>
+                    (function (i, s, o, g, r, a, m) {
+                        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                            (i[r].q = i[r].q || []).push(arguments)
+                        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+                    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-            ga('create', 'UA-89149772-1', 'auto');
-            ga('send', 'pageview');
+                    ga('create', 'UA-89149772-1', 'auto');
+                    ga('send', 'pageview');
 
-        </script>
+</script>
     </footer>
 
     <!-- Bootstrap Core JavaScript -->

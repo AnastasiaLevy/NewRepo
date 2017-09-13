@@ -81,7 +81,10 @@ namespace TestSite
                 {
                     DAL.DataMethods.InsertErrorMessage(ex.Message, singleName.Value, "Login");
                 }
-
+                if(checkboxProvider.Checked == true)
+                {
+                    DAL.DataMethods.AddUserToProvider(user.ProviderUserKey.ToString(),"");
+                }
                 if (user != null)
                 {
 
