@@ -18,7 +18,7 @@ namespace TestSite.HelpClasses
         {
             DataSet ds = GetExportData(userId, tId, testType);
 
-            string myfile = ExportOneLineCSV(ds);
+            string myfile = ExportOneLineCSV(ds, testType);
             string name = GetPartName(userId);
 
             try
@@ -183,7 +183,7 @@ namespace TestSite.HelpClasses
                 }
             }
 
-            for (int i = 0; i < longestRow+1; i++)
+            for (int i = 0; i < longestRow + 1; i++)
             {
                 for (int j = 0; j < ds.Tables[0].Columns.Count; j++)
                 {
@@ -219,7 +219,7 @@ namespace TestSite.HelpClasses
             return sb.ToString();
         }
 
-        private static string ExportOneLineCSV(DataSet ds)
+        private static string ExportOneLineCSV(DataSet ds, string testType)
         {
 
             StringBuilder sb = new StringBuilder();
@@ -243,6 +243,27 @@ namespace TestSite.HelpClasses
                     sb.Append(',');
                 }
             }
+            //==============TOTAL=TITLE====================
+            switch (testType)
+            {
+                case "2":
+                    for (int i = 0; i < ds.Tables[2].Rows.Count; i++)
+                    {
+
+                        for (int j = 0; j < ds.Tables[2].Columns.Count; j++)
+                        {
+                            sb.Append(ds.Tables[2].Columns[j].ColumnName);
+                            sb.Append(',');
+                        }
+                    }
+                    break;
+                case "3":
+
+                    break;
+                default:
+                    break;
+            }
+            //========================================
             sb.AppendLine();
             for (int i = 0; i < ds.Tables[1].Rows.Count; i++)
             {
@@ -263,6 +284,23 @@ namespace TestSite.HelpClasses
                     sb.Append(',');
                 }
             }
+            //================TOTAL=VALUE===================
+            switch (testType)
+            {
+                case "2":
+                    for (int i = 0; i < ds.Tables[2].Rows.Count; i++)
+                    {
+                        for (int j = 0; j < ds.Tables[2].Columns.Count; j++)
+                        {
+                            sb.Append(ds.Tables[2].Rows[i][ds.Tables[2].Columns[j].ColumnName]);
+                            sb.Append(',');
+                        }
+                    }
+                    break;
+                case "3":
+                    break;
+            }
+            //==================================================
             //File.WriteAllText(@"C:\LondonResults\test.csv", sb.ToString());
             return sb.ToString();
         }
@@ -335,8 +373,13 @@ namespace TestSite.HelpClasses
             DataSet ds = GetExportData(userId, tId, testType);// DataSet ds = DataMethods.GetTestResultsLondon(userId, tId);
             string name = GetPartName(userId);
 
-
+            
             string myFile = ExportNormalCSV(ds.Tables[0]);
+            if (testType == "2")
+            {
+                myFile += ExportTotalNormalCSV(ds.Tables[2]);
+            } 
+
             try
             {
                 string fileName = name + "_" + DateTime.Now.ToShortDateString() + "_normal.csv";
@@ -383,6 +426,49 @@ namespace TestSite.HelpClasses
                 }
                 sb.AppendLine();
             }
+
+
+            return sb.ToString();
+            //File.WriteAllText(@"C:\LondonResults\test.csv", sb.ToString());
+        }
+
+        private static string ExportTotalNormalCSV(DataTable datatable)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            foreach (DataRow dr in datatable.Rows)
+            {
+                for (int i = 0; i < datatable.Columns.Count; i++)
+                {
+                    sb.Append(dr[i].ToString());
+
+                    if (i < datatable.Columns.Count - 1)
+                        sb.Append(',');
+                }
+                sb.AppendLine();
+            }
+
+
+            return sb.ToString();
+            //File.WriteAllText(@"C:\LondonResults\test.csv", sb.ToString());
+        }
+        private static string ExportTotalRowsNormalCSV(DataTable datatable)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            foreach (DataRow dr in datatable.Rows)
+            {
+                for (int i = 0; i < datatable.Columns.Count; i++)
+                {
+                    sb.Append(dr[i].ToString());
+
+                    if (i < datatable.Columns.Count - 1)
+                        sb.Append(',');
+                }
+                sb.AppendLine();
+            }
+
+
             return sb.ToString();
             //File.WriteAllText(@"C:\LondonResults\test.csv", sb.ToString());
         }

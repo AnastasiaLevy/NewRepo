@@ -232,7 +232,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12 homeservices1 blueFont">
-                            <div class="col-md-3 portfolio-item">
+                            <div class="col-md-4 portfolio-item">
                                 <div class="text-center">
                                     <a href="javascript:void(0);">
                                         <a href="category/Memory.aspx"><span class="fa-stack fa-lg">
@@ -247,7 +247,7 @@
                                     </p>
                                 </div>
                             </div>
-                            <div class="col-md-3 portfolio-item">
+                            <div class="col-md-4 portfolio-item">
                                 <div class="text-center">
                                     <a href="javascript:void(0);">
                                         <a href="category/ExecutiveFunction.aspx"><span class="fa-stack fa-lg">
@@ -260,7 +260,7 @@
                                     <p>Are you concerned with your Attention span, your ability to switch between tasks effectively or your speed of processing? Executive function tests help you determine if you have alfflictions like ADHD or NNNN</p>
                                 </div>
                             </div>
-                            <div class="col-md-3 portfolio-item">
+                            <div class="col-md-4 portfolio-item">
                                 <div class="text-center">
                                     <a href="javascript:void(0);">
                                         <a href="category/ProcessingSpeed.aspx"><span class="fa-stack fa-lg">
@@ -273,7 +273,7 @@
                                     <p>Speed of processing has been a major explantory varialbe for enhanced cognitive performace during development.</p>
                                 </div>
                             </div>
-                            <div class="col-md-3 portfolio-item">
+                            <%--<div class="col-md-3 portfolio-item">
                                 <div class="text-center">
                                     <a href="javascript:void(0);">
                                         <a href="category/IntelligenceTest.aspx"><span class="fa-stack fa-lg">
@@ -285,7 +285,7 @@
                                     <h3><a href="category/IntelligenceTest.aspx">Intelligence</a></h3>
                                     <p>Learn about human intelligence</p>
                                 </div>
-                            </div>
+                            </div>--%>
                         </div>
                     </div>
                 </div>
@@ -338,7 +338,7 @@
                                 <img src="images/sillog.png" /></a>
                         </li>
                    
-                        <li data-type="personality" data-id="id-7" class="port3">
+                        <%--<li data-type="personality" data-id="id-7" class="port3">
                             <a href="Tests/PTSD.aspx" id="cool1">
                                 <img src="images/cool1.jpg" alt=""></a>
                         </li>
@@ -361,7 +361,7 @@
                         <li data-type="personality" data-id="id-11" class="port3">
                             <a href="Tests/Horney.aspx" id="cool6">
                                 <img src="images/cool6.jpeg" /></a>
-                        </li>
+                        </li>--%>
                     </ul>
                 </div>
             </div>

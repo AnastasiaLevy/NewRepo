@@ -127,7 +127,7 @@
                     </div>
                     <div class="row" >
                         <div class="col-md-12 homeservices1 blueFont row-centered">
-                       <div class="col-md-3 portfolio-item col-centered"">
+                       <div class="col-md-6 portfolio-item col-centered"">
                                 <div class="text-center">
                                     <a href="javascript:void(0);">
                                         <a href="Memory.aspx"><span class="fa-stack fa-lg">
@@ -139,7 +139,7 @@
                                  
                                 </div>
                             </div>
-                            <div class="col-md-3 portfolio-item col-centered">
+                            <div class="col-md-6 portfolio-item col-centered">
                                 <div class="text-center">
                                     <a href="javascript:void(0);">
                                         <a href="ProcessingSpeed.aspx"><span class="fa-stack fa-lg">
@@ -151,7 +151,7 @@
                                     <h3><a href="ProcessingSpeed.aspx">Processing Speed</a></h3>
                                 </div>
                             </div>
-                            <div class="col-md-3 portfolio-item col-centered">
+                            <%--<div class="col-md-3 portfolio-item col-centered">
                                 <div class="text-center">
                                     <a href="javascript:void(0);">
                                         <a href="IntelligenceTest.aspx"><span class="fa-stack fa-lg">
@@ -162,7 +162,7 @@
                                     </a>
                                     <h3><a href="IntelligenceTest.aspx">Intelligence</a></h3>
                                 </div>
-                            </div>
+                            </div>--%>
                         </div>
                     </div>
                 </div>
