@@ -527,6 +527,29 @@ namespace TestSite.DAL
             return ds;
         }
 
+        internal static string GetLondonModifiedNameById(int londonModifiedId)
+        {
+            DataTable ds = new DataTable();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("GetLondonModifiedNameById", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@id", londonModifiedId);
+
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                adp.Fill(ds);
+            }
+            catch (Exception ex)
+            {
+                InsertErrorMessage(ex.ToString(), null, null, "GetLondonModifiedNameById");
+                throw new Exception("Execption getting london modified name. " + ex.Message);
+            }
+
+            return ds.Rows[0].ItemArray[0].ToString();
+        }
+
         internal static void DeleteModifiedTest(string modTestId)
         {
             SqlConnection conn = new SqlConnection(connectionSring);

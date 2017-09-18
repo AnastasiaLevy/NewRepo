@@ -88,13 +88,27 @@ namespace TestSite
 
         private void LoadPaidTests()
         {
-
+            string name = DAL.DataMethods.GetLondonModifiedNameById(3022);
             gvAvailableTests.DataSource = DAL.DataMethods.GetAllUserTests(Membership.GetUser(User.Identity.Name).ProviderUserKey.ToString());
+            //if((gvAvailableTests.DataSource != null) && (gvAvailableTests.DataSource))
             gvAvailableTests.Columns[3].Visible = true;
+            //if ((gvAvailableTests.DataSource != null) && (gvAvailableTests.))
+            //{
+
+            //}
             gvAvailableTests.Columns[4].Visible = true;
             gvAvailableTests.Columns[5].Visible = true;
             gvAvailableTests.DataBind();
             gvAvailableTests.Columns[3].Visible = false;
+            for(int i = 0; i < gvAvailableTests.Rows.Count; i++)
+            {
+                if (gvAvailableTests.Rows[i].Cells[0].Text == "Tower Of London")
+                {
+                    string nameOfModified = DAL.DataMethods.GetLondonModifiedNameById(Convert.ToInt32(gvAvailableTests.Rows[i].Cells[5].Text));
+                    gvAvailableTests.Rows[i].Cells[0].Text += " (" + nameOfModified + ")";
+                }
+            }
+            
             gvAvailableTests.Columns[4].Visible = false;
             gvAvailableTests.Columns[5].Visible = false;
 
