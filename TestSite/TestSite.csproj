@@ -507,7 +507,6 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-    <Content Include="_PartialView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="cogTest.css" />

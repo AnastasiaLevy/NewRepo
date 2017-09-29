@@ -22,15 +22,16 @@ function startGame(gameNum) {
     initTTime = 0;
     totalTime;
 
-    time = getTime();
+    //time = getTime();
     if (gameNum == 1) {
         displayInstructions(text);
         var field = document.getElementById("countdown");
         field.style.display = 'none';
-        totalTime = getTime();
+        //totalTime = getTime();
     }
     else {
         countdown()
+        time = getTime();
     }
 
     initField(gameNum, gameData);
@@ -136,7 +137,8 @@ function displayInstructions(text) {
         canMove = true;
         field.style.display = 'none';
         $("#play").hide();
-
+        totalTime = getTime();
+        time = getTime();
     }
 }
 
