@@ -13,8 +13,8 @@ BEGIN
 	--Table [0]
 	Select lur.Game, 
 	Case When (lur.Game < lm.calcResFrom ) then 'Practice' else 'Trial' End As 'Type', 
-	 lur.initThinkTime as 'Initial Think Time',
-     lur.totalTime as 'Game Time', 
+	 ('"' + CAST ( lur.initThinkTime AS VARCHAR(10) ) + '"') as 'Initial Think Time',
+     ('"' + CAST ( lur.totalTime AS VARCHAR(10) ) + '"') as 'Game Time', 
 	 lur.numberMoves as 'Number of Moves',
 	 lur.minMoves as 'Minimum Moves',
 	 (lur.numberMoves - lur.minMoves) as 'Excess Moves',

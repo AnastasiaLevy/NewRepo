@@ -24,7 +24,7 @@ CREATE PROCEDURE [dbo].[UpdatetLondonModified]
             @showFeedback bit,
 		    @workTag varchar(50),
 		    @goalTag varchar(50),
-		    @language varchar(50),
+		    @language varchar(50) = null,
 		    @countDownText varchar(500)
 
 AS

@@ -1,9 +1,10 @@
-﻿-- =============================================
+﻿
+-- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-CREATE PROCEDURE SelectFinishedUserTests
+CREATE PROCEDURE [dbo].[SelectFinishedUserTests]
 	-- Add the parameters for the stored procedure here
 @userId uniqueidentifier
 AS
@@ -14,5 +15,5 @@ JOIN AvailableTest av on av.testId = u.testId
 where userId = @userId
 
 and isFinished = 1
-order by paidDate desc
+order by finishedDate desc
 END

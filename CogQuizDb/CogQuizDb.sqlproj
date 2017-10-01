@@ -444,5 +444,6 @@
     <Build Include="dbo\Stored Procedures\Update3dPartyTest.sql" />
     <Build Include="dbo\Stored Procedures\Insert3dPartyTest.sql" />
     <Build Include="dbo\Stored Procedures\Get3dPartyTest.sql" />
+    <Build Include="dbo\Stored Procedures\GetLondonModifiedNameById.sql" />
   </ItemGroup>
 </Project>

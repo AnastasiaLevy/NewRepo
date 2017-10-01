@@ -78,7 +78,8 @@ function displayFinalMessageOnTimeout(numMoves, lastMove, timeMlsec) {
         displayTestFinishedMessage();
     }
 
-    passResultsForGame(game, timeMlsec, timeMlsec, gameSettings.MaxMoves, nmWr, true, false, numMoves);
+    //passResultsForGame(game, timeMlsec, timeMlsec, gameSettings.MaxMoves, nmWr, true, false, numMoves);
+    passResultsForGame(game, timeMlsec, timeMlsec, numMoves, nmWr, true, false, numMoves);
     setTimeout(function () {
         startCountDownTimer(game + 1);
     }, 2000);
