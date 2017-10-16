@@ -425,12 +425,24 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12 homeport1">
-                        <div class="col-md-4 col-sm-12 col-xs-12 col-md-offset-4 portfolio-item">
+                        <%--<div class="col-md-4 col-sm-12 col-xs-12 col-md-offset-4 portfolio-item">--%>
+                        <div class="col-md-6 col-sm-12 col-xs-12">
                             <figure class="effect-oscar">
                                 <img src="images/CogQuestPick.jpg"" alt="" class="img-responsive" />
                                 <figcaption>
                                     <h2>CogQuest</h2>
                                     <a href="\Tests\CogQuest.aspx">View more</a>
+                                </figcaption>
+                            </figure>
+                            <p class="text-center"> A  tool to create questionnaires for collecting participant information.</p>
+               
+                        </div>
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <figure class="effect-oscar">
+                                <img src="images/DesktopTests4.png"" alt="" class="img-responsive" />
+                                <figcaption>
+                                    <h2>DesktopTests</h2>
+                                    <a href="\Tests\DesktopTests.aspx">View more</a>
                                 </figcaption>
                             </figure>
                             <p class="text-center"> A  tool to create questionnaires for collecting participant information.</p>
