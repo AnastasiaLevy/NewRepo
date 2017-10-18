@@ -65,7 +65,7 @@ namespace TestSite.Create
             workArea.Value = dt.Rows[0]["workTag"].ToString();
             endArea.Value = dt.Rows[0]["goalTag"].ToString();
             countDownText.Text = dt.Rows[0]["countDownText"].ToString();
-          
+
 
         }
 
@@ -141,28 +141,28 @@ namespace TestSite.Create
             string countDownText
             )
         {
-            
+
             if (testId == null)
             {
                 int? modifidId = null;
 
                 try
                 {
-                   
-                        int time = Convert.ToInt32(timeOut);
-                        int numMoves = Convert.ToInt32(maxMoves);
-                        bool feedBack = Convert.ToBoolean(showFeedback);
-                        int resFrom = Convert.ToInt32(calcResFrom);
-                        int count = Convert.ToInt32(countDownFrom);
-                        int prct = Convert.ToInt32(prctRounds);
-                        int testRnd = Convert.ToInt32(testRounds);
-                        bool txtSpch = Convert.ToBoolean(txtToSpeech);
-                        bool resPage = Convert.ToBoolean(displayResultPage);
-        
-                        modifidId = DAL.DataMethods.InsertLondonTestModify(testName, instructions, overMoves, overTime, txtButton, txtFeedback, instructionsFinish, Convert.ToBoolean(txtToSpeech), Convert.ToBoolean(displayResultPage),
-                           Convert.ToInt32(prctRounds), Convert.ToInt32(testRounds), Convert.ToInt32(calcResFrom), Convert.ToInt32(countDownFrom),
-                           Convert.ToInt32(timeOut), Convert.ToInt32(maxMoves), Convert.ToBoolean(showFeedback), providerId, language, workTag, goalTag, countDownText); //TODO: pass ProviderId
-                    
+
+                    int time = Convert.ToInt32(timeOut);
+                    int numMoves = Convert.ToInt32(maxMoves);
+                    bool feedBack = Convert.ToBoolean(showFeedback);
+                    int resFrom = Convert.ToInt32(calcResFrom);
+                    int count = Convert.ToInt32(countDownFrom);
+                    int prct = Convert.ToInt32(prctRounds);
+                    int testRnd = Convert.ToInt32(testRounds);
+                    bool txtSpch = Convert.ToBoolean(txtToSpeech);
+                    bool resPage = Convert.ToBoolean(displayResultPage);
+
+                    modifidId = DAL.DataMethods.InsertLondonTestModify(testName, instructions, overMoves, overTime, txtButton, txtFeedback, instructionsFinish, Convert.ToBoolean(txtToSpeech), Convert.ToBoolean(displayResultPage),
+                       Convert.ToInt32(prctRounds), Convert.ToInt32(testRounds), Convert.ToInt32(calcResFrom), Convert.ToInt32(countDownFrom),
+                       Convert.ToInt32(timeOut), Convert.ToInt32(maxMoves), Convert.ToBoolean(showFeedback), providerId, language, workTag, goalTag, countDownText); //TODO: pass ProviderId
+
                 }
                 catch (Exception ex)
                 {
@@ -179,7 +179,7 @@ namespace TestSite.Create
             {
                 DAL.DataMethods.UpdateLondonTestModify(testId, testName, instructions, overMoves, overTime, txtButton, txtFeedback, instructionsFinish, Convert.ToBoolean(txtToSpeech), Convert.ToBoolean(displayResultPage),
                            Convert.ToInt32(prctRounds), Convert.ToInt32(testRounds), Convert.ToInt32(calcResFrom), Convert.ToInt32(countDownFrom),
-                           Convert.ToInt32(timeOut), Convert.ToInt32(maxMoves), Convert.ToBoolean(showFeedback), providerId, language,workTag, goalTag, countDownText); //TODO: pass ProviderId
+                           Convert.ToInt32(timeOut), Convert.ToInt32(maxMoves), Convert.ToBoolean(showFeedback), providerId, language, workTag, goalTag, countDownText); //TODO: pass ProviderId
 
                 UpdateMoves(testName, movesData, Convert.ToInt32(testId));
 

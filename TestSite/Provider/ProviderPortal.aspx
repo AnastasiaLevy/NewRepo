@@ -9,13 +9,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="AnaLevy">
+    <meta name="author" content="">
     <meta name="google-site-verification" content="GMj8owmZtkuKU0Fa_4Zg82VbKsQPO8VkZD_pHsRghA4" />
-    
+
     <link rel="..//shortcut icon" href="../images/favicon.ico"/>
     <title>ProviderPortal</title>
+    <%--<link rel="stylesheet" href="../css/jquery-ui.min.css">--%>
     <link href="../fonts/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="../css/bootstrap.css" rel="stylesheet" />
+    <%--<link href="../css/bootstrap.css" rel="stylesheet" />--%>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
     <!--[if lt IE 9]>
@@ -31,10 +33,12 @@
 </head>
 
 <body>
+    <!-- Trigger the modal with a button -->
+
     <form runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
-
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                         <span class="sr-only">Toggle navigation</span>
@@ -42,24 +46,24 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="../MainPage.aspx">
+                    <a class="navbar-brand" href="../MainPage.aspx" style="margin-left: -35px; padding: 15px 0px;">
                         <i class="fa fa-cogs" aria-hidden="true">Quiz</i>
                     </a>
 
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-right custom-menu">
-                        <li class="active"><a href="../MainPage.aspx">Home</a></li>
-                        <li><a href="#userInfo">Dashboard</a></li>
-                        <li><a href="#participantData">Participant Data</a></li>
-                        <li><a href="#purchachedTests">Provider Tests</a></li>
-                        <li><a href="#testList">Available Tests</a></li>
-                        <li><a href="#NormsList">Norms</a></li>
-                         <li><a href="#videos">Instruntions</a></li>
-                        <li><a href="#testCategories">Test Categories</a></li>
+                    <ul class="nav navbar-nav navbar-right custom-menu" style="margin-left:0px">
+                        <li class="active" style="margin-left:0px"><a href="../MainPage.aspx">Home</a></li>
+                        <li style="margin-left:0px"><a href="#userInfo">Dashboard</a></li>
+                        <li style="margin-left:0px"><a href="#participantData">Participant Data</a></li>
+                        <li style="margin-left:0px"><a href="#purchachedTests">Provider Tests</a></li>
+                        <li style="margin-left:0px"><a href="#testList">Available Tests</a></li>
+                        <li style="margin-left:0px"><a href="#NormsList">Norms</a></li>
+                         <li style="margin-left:0px"><a href="#videos">Instructions</a></li>
+                        <li style="margin-left:0px"><a href="#testCategories">Test Categories</a></li>
                         <%--    <li><a href="#reports">Results</a></li>--%>
-                        <li id="login" runat="server"><a href="Login.aspx">Login</a></li>
-                        <li>
+                        <li id="login" runat="server" style="margin-left:0px"><a href="Login.aspx">Login</a></li>
+                        <li style="margin-left:0px">
                             <asp:LinkButton ID="Logout" CssClass="" type="submit" runat="server" OnClick="logOut_Click">Log Out</asp:LinkButton>
                         </li>
                     </ul>
@@ -67,8 +71,40 @@
             </div>
         </nav>
 
+        <!-- Modal -->
+        <div id="myModal" style="z-index: 1050" class="modal fade" role="dialog">
+          <div class="modal-dialog modal-sm">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title" style="text-align:center">Choose avaliable template</h4>
+              </div>
+              <div class="modal-body">
+                <p id="testButtons" style="display: flex;align-items: center;justify-content: center;">
+                <a href ="../Create/LondonModify.aspx">
+                    <%--<asp:Button ID ="ToL" CssClass="btn btn-success" Text="Tower of London" runat="server" />--%>
+                    <input type="button" id="ToL" class="btn btn-success" value="Tower of London" runat="server"  />
+                </a>
+                <%--<a href ="../Create/MemoryCardsModify.aspx" >
+                   <%-- <asp:Button ID ="MC" CssClass="btn btn-success" Text="Memory Cards" runat="server" />
+                    <input type="button" id="MC" class="btn btn-success" value="Memory Cards" runat="server" />
+                </a>--%>
+                </p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" style="color:black;" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
         <div class="container">
-            <section id="userInfo">
+                  <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+            <ContentTemplate>
+                   <section id="userInfo">
                 <div class="row">
                     <div class="box box1">
                         <div class="col-lg-12">
@@ -78,18 +114,21 @@
                             </h2>
                             <hr>
                         </div>
-
-                        <%--  <div class="col-md-2">
-                            <img class="img-responsive img-border-left" src="../images/mind.jpg" alt="">
-                        </div>--%>
-                        <div class="col-lg-3">
-
-
-                            <asp:Button ID="btnUpdateProfile" runat="server" Text="Set Provider Code" class="btn btn-labeled btn-info" Width=" 100%" OnClick="btnUpdateProfile_Click" />
+                        <div class="col-lg-4">
+                            <div class="btn-group-vertical pp-menu" role="group" aria-label="">
+                                                <asp:Button ID="btnUpdateProfile" runat="server" Text="Set Provider Code" class="btn btn-info pp-menu-item" Width=" 100%" OnClick="btnUpdateProfile_Click" />
+                                                <asp:Button ID="btnAddNewPart" runat="server" Text="Add New Participant" OnClick="btnAddNewPart_Click" class="btn btn-info pp-menu-item" Width="100%" />
+                                                <asp:Button ID="btnAddUserTest" runat="server" Text="Assign Participant Test" OnClick="btnAddUserTest_Click" class="btn btn-info pp-menu-item" Width="100%" />
+                                                <asp:Button ID="btnModifyTest" runat="server" Text="Modify Test" OnClick="btnModifyTest_Click" class="btn btn-info pp-menu-item" Width="100%" />
+                                                <asp:Button ID="btnResetPassword" runat="server" Text="Reset Password" OnClick="btnResetPassword_Click" class="btn btn-info pp-menu-item" Width="100%" />
+                                                <asp:Button ID="btnExportTestResults" runat="server" Text="Export Test Results" OnClick="btnExportTestResults_Click" class="btn btn-info pp-menu-item" Width="100%" />
+                            </div>
+                            <%--<asp:Button ID="btnUpdateProfile" runat="server" Text="Set Provider Code" class="btn btn-labeled btn-info" Width=" 100%" OnClick="btnUpdateProfile_Click" />
                             <asp:Button ID="btnAddNewPart" runat="server" Text="Add New Participant" OnClick="btnAddNewPart_Click" class="btn btn-labeled btn-info" Width="100%" />
                             <asp:Button ID="btnAddUserTest" runat="server" Text="Assign Participant Test" OnClick="btnAddUserTest_Click" class="btn btn-labeled btn-info" Width="100%" />
                             <asp:Button ID="btnModifyTest" runat="server" Text="Modify Test" OnClick="btnModifyTest_Click" class="btn btn-labeled btn-info" Width="100%" />
                             <asp:Button ID="btnResetPassword" runat="server" Text="Reset Password" OnClick="btnResetPassword_Click" class="btn btn-labeled btn-info" Width="100%" />
+                            <asp:Button ID="btnExportTestResults" runat="server" Text="Export Test Results" OnClick="btnExportTestResults_Click" class="btn btn-labeled btn-info" Width="100%" />--%>
                         </div>
                         <div class="col-lg-8">
                             <asp:Panel ID="pProviderTools" runat="server">
@@ -111,6 +150,10 @@
                                         <asp:Button ID="btnClosePw" class="btn btn-labeled btn-info" runat="server" Text="Close" OnClick="btnClosePw_Click" />
                                     </div>
                                 </div>
+
+
+
+
 
                                 <div id="setUpUserCode" class="panel panel-success" runat="server">
                                     <div class="panel-heading">
@@ -140,7 +183,8 @@
                                                 <asp:Button ID="btnDeleteModify" class="btn btn-labeled btn-success" runat="server" Text="Delete" OnClick="btnDeleteModify_Click" />
                                             </div>
                                             <div class="col-xs-3 col-sm-3 col-md-3">
-                                                <asp:Button ID="btnCreateNewTest" class="btn btn-labeled btn-success" runat="server" Text="Create " OnClick="btnCreateNewTest_Click" />
+                                                <%--<asp:Button ID="btnCreateNewTest" class="btn btn-labeled btn-success" runat="server" Text="Create " OnClick="btnCreateNewTest_Click" />--%>
+                                                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Create</button>
                                             </div>
                                             <div class="col-xs-3 col-sm-3 col-md-3">
                                                 <asp:Button ID="btnCancelModify" runat="server" class="btn btn-labeled btn-info" Text="Close" OnClick="btnCancelModify_Click" />
@@ -152,19 +196,7 @@
 
                                 </div>
 
-<%--<div id="myModal" class="modal fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <!-- dialog body -->
-      <div class="modal-body">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        Hello world!
-      </div>
-      <!-- dialog buttons -->
-      <div class="modal-footer"><button type="button" class="btn btn-primary">OK</button></div>
-    </div>
-  </div>
-</div>--%>
+
                                 <div id="createUser" class="panel panel-success" runat="server">
                                     <div class="panel-heading">
                                         <h3 class="panel-title">Create New User:</h3>
@@ -183,7 +215,7 @@
                                                 <asp:Label ID="Label2" cssClass ="labelBold" runat="server" Text="Password"></asp:Label>
                                                 <asp:TextBox ID="txtPassword" runat="server" CssClass="createUser" Width="100%"></asp:TextBox>
 
-                                                <asp:CheckBox ID="cbAllowUserViewResults" runat="server" Text="Allow User View Results" TextAlign="Left" />                                              
+                                                <asp:CheckBox ID="cbAllowUserViewResults" runat="server" Text="Allow User View Results" TextAlign="Left" />
                                             </div>
                                         </div>
                                     </div>
@@ -217,6 +249,38 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div id="exportTestResults" class="panel panel-success" runat="server">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Export test results</h3>
+                                    </div>
+                                    <div class="panel-body ">
+                                        <div class ="row">
+                                            <div class="col-md-5">
+                                                <label>Choose test type:</label>
+                                                <asp:DropDownList class="dropDown" ID="TestTemplatesForExportResults" OnSelectedIndexChanged="TestTemplatesForExportResults_SelectedIndexChanged" runat="server" Width="100%" AppendDataBoundItems="true" AutoPostBack="True"></asp:DropDownList>
+                                                <asp:DropDownList class="dropDown" ID="TestsForExportResults" runat="server" Width="100%" AppendDataBoundItems="true" AutoPostBack="True"></asp:DropDownList>
+                                            </div>
+                                            <div class="col-md-1">
+                                                </div>
+                                            <div class="col-md-3">
+                                                <label>From</label>
+                                                <asp:TextBox class="dropDown" ID="fromDate" runat="server" Width="100%"></asp:TextBox>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label>To</label>
+                                                <asp:TextBox class="dropDown" ID="toDate" runat="server" Width="100%"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown">
+                                            <button class="btn btn-success dropdown-toggle" id="ExportDropdown" type="button" data-toggle="dropdown">Export
+                                            <span class="caret"></span></button>
+                                            <ul class="dropdown-menu">
+                                                <li><asp:Button ID="btnExportTestResultsInOneRow" class="selectBtn" runat="server" Text="Export to Excel One Line" OnClick="btnExportTestResultsInOneRow_Click" PostBackUrl="ProviderPortal.aspx" /></li>
+                                                <li><asp:Button ID="btnExportTestResultsInManyRows" class="selectBtn" runat="server" Text="Export to Excel Traditional" OnClick="btnExportTestResultsInManyRows_Click" PostBackUrl="ProviderPortal.aspx"/></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
                             </asp:Panel>
                             <asp:Panel ID="pProviderInfo" runat="server">
                             </asp:Panel>
@@ -226,13 +290,17 @@
                     </div>
                 </div>
             </section>
+            </ContentTemplate>
+        </asp:UpdatePanel>
 
-            <section id="participantData">
+            <asp:UpdatePanel runat="server" UpdateMode="Conditional">
+                <ContentTemplate>
+     <section id="participantData">
                 <div class="row">
                     <div class="box">
                         <div class="col-lg-12">
                             <hr>
-                            <h2 class="intro-text text-center">Participant 
+                            <h2 class="intro-text text-center">Participant
                         <strong>Data</strong>
                             </h2>
                             <hr>
@@ -243,17 +311,9 @@
                         </div>
 
                         	<div class="row">
-    
-         <%--       <div class="input-group stylish-input-group">
-                    <input type="text" class="form-control"  placeholder="Search" >
-                    <span class="input-group-addon">
-       
-                            <asp:Button ID="Button1" runat="server" Text="Button"  OnClick="Button1_Click1"/>
-                    
-                    </span>
-                </div>--%>
+
             </div>
-   
+
 
 
                         <div class="col-lg-6 row">
@@ -282,7 +342,7 @@
                                         <asp:TemplateField HeaderText="Remove" HeaderStyle-Width="10%" ItemStyle-Width="10%"
                                             FooterStyle-Width="10%">
                                             <ItemTemplate>
-                                                <asp:LinkButton runat="server" Text="" CausesValidation="false" ID="lbRemoveTestFromUserList" OnClientClick="return confirm('Are you sure?')" OnClick="lbRemoveTestFromUserList_Click"><i class="fa fa-minus-square-o  fa-2x" aria-hidden="true"></i></asp:LinkButton>
+                                                <asp:LinkButton runat="server" Text="" CausesValidation="false" ID="lbRemoveTestFromUserList" OnClick="lbRemoveTestFromUserList_Click" OnClientClick="return confirm('Are you sure?')"><i class="fa fa-minus-square-o  fa-2x" aria-hidden="true"></i></asp:LinkButton>
                                             </ItemTemplate>
 
                                             <FooterStyle Width="10%"></FooterStyle>
@@ -342,11 +402,7 @@
                                     </asp:TemplateField>
 
                                     <asp:BoundField DataField="userId" />
-                                    <%--                                        <asp:TemplateField HeaderText="Allow View" HeaderStyle-Width="10%" ItemStyle-Width="10%">
-                                             <ItemTemplate>
-                                                 <asp:CheckBox ID="SelectCheckBox" runat="server" OnCheckedChanged="SelectCheckBox_CheckedChanged" Checked ="true" />
-                                             </ItemTemplate>
-                                         </asp:TemplateField>--%>
+
                                 </Columns>
                                 <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                                 <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
@@ -364,12 +420,15 @@
                 </div>
             </section>
 
+                </ContentTemplate>
+            </asp:UpdatePanel>
+
             <section id="purchachedTests">
                 <div class="row">
                     <div class="box">
                         <div class="col-lg-12">
                             <hr>
-                            <h2 class="intro-text text-center">Your 
+                            <h2 class="intro-text text-center">Your
                         <strong>Tests</strong>
                             </h2>
                             <hr>
@@ -413,7 +472,7 @@
                 <div class="box">
                     <div class="col-lg-12">
                         <hr>
-                        <h2 class="intro-text text-center">Available 
+                        <h2 class="intro-text text-center">Available
                             <strong>Test</strong>
                         </h2>
                         <hr>
@@ -422,7 +481,7 @@
                         <a href="../WCSTWrapper.aspx" id="wcst">
                             <img class="img-responsive" src="../images/cardSort.png" alt=""></a>
                         <h3>Card Sort
-                       
+
                             <small></small>
                         </h3>
                     </div>
@@ -485,20 +544,20 @@
                     </div>
                     <div class="col-sm-2 text-center">
                           <asp:Button ID="drChild" runat="server" Text="TOL Drexel Child"  class="btn btn-labeled btn-info"  onClick="drChild_Click"/>
-                     
+
                     </div>
                     <div class="col-sm-2 text-center">
                     <asp:Button ID="CST" runat="server" Text="Card Sort Test"  class="btn btn-labeled btn-info"  onClick="CST_Click"/>
                     </div>
                     <div class="col-sm-2 text-center">
                      <asp:Button ID="Nback" runat="server" Text="N-back"  class="btn btn-labeled btn-info"  onClick="Nback_Click"/>
-         
+
                     </div>
                     <div class="col-sm-2 text-center">
-                   
+
                     </div>
                     <div class="col-sm-2 text-center">
-                
+
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -520,10 +579,10 @@
                        <iframe src="https://www.youtube.com/embed/-SPAjSEuBNA?" frameborder="0" allowfullscreen></iframe>
 
                     </div>
-                    <div class="col-sm-4 text-center"> 
+                    <div class="col-sm-4 text-center">
                     Provider Dash Part 2
                         <iframe src="https://www.youtube.com/embed/k_aoilEl8h8?" frameborder="0" allowfullscreen></iframe>
-<%--                        <object 
+<%--                        <object
 data="https://www.youtube.com/embed/k_aoilEl8h8?fs=0">
 </object>--%>
                     </div>
@@ -533,16 +592,16 @@ data="https://www.youtube.com/embed/k_aoilEl8h8?fs=0">
                     <div class="col-sm-2 text-center">
                          Provider Dash Part 3
                         <iframe src="https://www.youtube.com/embed/0JwN9Np1TmE" frameborder="0" allowfullscreen></iframe>
-<%--                        <object 
+<%--                        <object
 data="https://www.youtube.com/embed/0JwN9Np1TmE?fs=0">
 </object>--%>
-         
+
                     </div>
                     <div class="col-sm-2 text-center">
-                   
+
                     </div>
                     <div class="col-sm-2 text-center">
-                
+
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -554,12 +613,12 @@ data="https://www.youtube.com/embed/0JwN9Np1TmE?fs=0">
                         <div class="col-lg-12">
                             <hr>
                             <h2 class="intro-text text-center">Test
-                       
+
                         <strong>Categories</strong>
                             </h2>
                             <hr>
                         </div>
-                        <div class="col-md-3 portfolio-item">
+                        <div class="col-md-4 portfolio-item">
                             <div class="text-center">
                                 <a href="javascript:void(0);">
                                     <a href="../category/Memory.aspx"><span class="fa-stack fa-lg">
@@ -572,7 +631,7 @@ data="https://www.youtube.com/embed/0JwN9Np1TmE?fs=0">
                             </div>
                         </div>
 
-                        <div class="col-md-3 portfolio-item">
+                        <div class="col-md-4 portfolio-item">
                             <div class="text-center">
                                 <a href="javascript:void(0);">
                                     <a href="../category/ExecutiveFunction.aspx"><span class="fa-stack fa-lg">
@@ -585,7 +644,7 @@ data="https://www.youtube.com/embed/0JwN9Np1TmE?fs=0">
 
                             </div>
                         </div>
-                        <div class="col-md-3 portfolio-item">
+                        <div class="col-md-4 portfolio-item">
                             <div class="text-center">
                                 <a href="javascript:void(0);">
                                     <a href="../category/ProcessingSpeed.aspx"><span class="fa-stack fa-lg">
@@ -597,7 +656,7 @@ data="https://www.youtube.com/embed/0JwN9Np1TmE?fs=0">
                                 <h4><a href="../category/ProcessingSpeed.aspx">Processing Speed</a></h4>
                             </div>
                         </div>
-                        <div class="col-md-3 portfolio-item">
+                        <%--<div class="col-md-3 portfolio-item">
                             <div class="text-center">
                                 <a href="javascript:void(0);">
                                     <a href="../category/IntelligenceTest.aspx"><span class="fa-stack fa-lg">
@@ -609,7 +668,7 @@ data="https://www.youtube.com/embed/0JwN9Np1TmE?fs=0">
                                 <h4><a href="../category/IntelligenceTest.aspx">Intelligence</a></h4>
 
                             </div>
-                        </div>
+                        </div>--%>
                         <div class="clearfix"></div>
                     </div>
                 </div>
@@ -635,9 +694,9 @@ data="https://www.youtube.com/embed/0JwN9Np1TmE?fs=0">
                     </div>
                     <div class="col-lg-12 text-center">
                         <p>Copyright &copy; CogQuiz 2016</p>
-                          <p>+1(719)888 9121</p> 
+                          <p>+1(719)888 9121</p>
                     </div>
-                     
+
                 </div>
             </div>
                     <script>
@@ -645,24 +704,68 @@ data="https://www.youtube.com/embed/0JwN9Np1TmE?fs=0">
                             i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
                                 (i[r].q = i[r].q || []).push(arguments)
                             }, i[r].l = 1 * new Date(); a = s.createElement(o),
-                            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+                                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
                         })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
                         ga('create', 'UA-89149772-1', 'auto');
                         ga('send', 'pageview');
 
-</script>
+                    </script>
         </footer>
 
     </form>
-</body>
-
 </html>
 <%--<script src="../js/jquery.js"></script>  --%>
 
 <script src="../js/jquery-responsiveTables.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <script>
+
+    var interval = setInterval(function () {
+        if ($('#exportTestResults').is(':visible')) {
+            initDatePickers();
+            clearInterval(interval);
+        }
+    }, 200);
+
+    var prm = Sys.WebForms.PageRequestManager.getInstance();
+
+    prm.add_endRequest(function () {
+        initDatePickers();
+    });
+
+    function initDatePickers() {
+        var dateFormat = "mm/dd/yy",
+            from = $("#fromDate")
+                .datepicker({
+                    defaultDate: "+1w",
+                    changeMonth: true,
+                    numberOfMonths: 1
+                })
+                .on("change", function () {
+                    to.datepicker("option", "minDate", getDate(this));
+                }),
+            to = $("#toDate").datepicker({
+                defaultDate: "+1w",
+                changeMonth: true,
+                numberOfMonths: 1
+            })
+                .on("change", function () {
+                    from.datepicker("option", "maxDate", getDate(this));
+                });
+
+        function getDate(element) {
+            var date;
+            try {
+                date = $.datepicker.parseDate(dateFormat, element.value);
+            } catch (error) {
+                date = null;
+            }
+
+            return date;
+        }
+    }
+
     $('.custom-menu a[href^="#"], .intro-scroller .inner-link').on('click', function (e) {
         e.preventDefault();
 
@@ -775,4 +878,8 @@ data="https://www.youtube.com/embed/0JwN9Np1TmE?fs=0">
         }
     });
 
+
+    $(function () {
+        $("#dialog").dialog();
+    });
 </script>

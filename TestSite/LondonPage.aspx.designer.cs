@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TestSite {
-    
-    
-    public partial class TowerOfLondon {
-        
+namespace TestSite
+{
+
+
+    public partial class TowerOfLondon
+    {
+
         /// <summary>
         /// userId control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace TestSite {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox userId;
-        
+
         /// <summary>
         /// tId control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace TestSite {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tId;
-        
+
         /// <summary>
         /// modifiedId control.
         /// </summary>

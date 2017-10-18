@@ -79,6 +79,7 @@
     <script src="../js/memoryCards/game.js"></script>
     <script src="../js/memoryCards/hitsscheme.js"></script>
     <script src="../js/memoryCards/score.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
 </head>
 
 
@@ -96,7 +97,24 @@
     <script src="../js/memoryCards/hitsscheme.js"></script>
     <script src="../js/memoryCards/cardsimages.js"></script>
     <script src="../js/memoryCards/game.js"></script>
-   
+   <script>
+       jQuery.ajax({
+           contentType: "application/json; charset=utf-8",
+           url: 'MemoryCardsPage.aspx/GetMemCardsValues',
+           dataType: 'json',
+
+           type: 'GET',
+           success: function (resp) {
+               FillStructureConfig(resp.d.Structures);
+               FillTextConfig(resp.d.Texts);
+               FillImagesConfig(resp.d.Images, resp.d.Tests);
+
+           },
+           error: function (resp) {
+               alert("Could not load the correct test. Please try again later.");
+           }
+       });
+   </script>
 </body>
 
 </html>

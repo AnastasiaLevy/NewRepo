@@ -114,7 +114,7 @@ namespace TestSite
 
         private static List<LondonMoves> GetLondonMoves(DataTable dt)
         {
-          
+
             LondonMoves lm = new LondonMoves();
             var oSerializer = new System.Web.Script.Serialization.JavaScriptSerializer();
             List<LondonMoves> listMoves = new List<LondonMoves>();
@@ -134,8 +134,8 @@ namespace TestSite
         }
     }
 
-   
-    
+
+
 
     public class LondonMoves
     {
@@ -162,7 +162,7 @@ namespace TestSite
         public string TextOverMoves { get; set; }
         public string TextOverTime { get; set; }
         public string DisplayResults { get; set; }
-         
+
         public string TxtToSpeech { get; set; }
         public string PrctRounds { get; set; }
         public string TestRounds { get; set; }

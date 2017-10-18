@@ -127,7 +127,8 @@ function RunDemoTest() {
         var c5 = new makeMyObj(5, 300, 387, 30, "5", "M 476 300  L 300 387");
         var c6 = new makeMyObj(6, 200, 512, 30, "6", "M 301 387  L 200 512");
         var c7 = new makeMyObj(7, 375, 450, 30, "7", "M 200, 512  L 375, 450");
-        var c8 = new makeMyObj(8, 312, 250, 30, "8", "M 376 450  L 312, 250", true);
+        var c8 = new makeMyObj(8, 312, 600, 30, "8", "M 376 450  L 312, 600", true);
+        //var c8 = new makeMyObj(8, 312, 250, 30, "8", "M 376 450  L 312, 250", true);
 
         function makeMyObj(id, x, y, rad, text, path, last) {
 

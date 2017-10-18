@@ -71,8 +71,8 @@ namespace TestSite.Tests
                             requestToReg.Visible = false;
                             runTest.Visible = false;
                         }
-                        if (CommonMethods.UserIsProvider(_userId))
-                            singlePr.Visible = false;
+                        //if (CommonMethods.UserIsProvider(_userId))
+                        //    singlePr.Visible = false;
                         price.Visible = true;
                     }
                     else
@@ -196,11 +196,11 @@ namespace TestSite.Tests
 
         }
 
-        private void PostPaypal()
+        private void PostPaypal(double itemAmount)
         {
             string business = "HQS7UWQMRHDTQ";// "analescheok@gmail.com"
-            string itemName = "sillogisms";
-            double itemAmount = 4.00;
+            string itemName = "nback Test";
+            //double itemAmount = 4.00;
             string currencyCode = "USD";
 
             StringBuilder ppHref = new StringBuilder();
@@ -219,24 +219,45 @@ namespace TestSite.Tests
 
         protected void ten_Click(object sender, EventArgs e)
         {
-
+            if (User.Identity.IsAuthenticated)
+            {
+                PostPaypal(30);
+            }
+            else
+            {
+                requestToReg.Visible = true;
+            }
         }
 
         protected void hundred_Click(object sender, EventArgs e)
         {
-
+            if (User.Identity.IsAuthenticated)
+            {
+                PostPaypal(200);
+            }
+            else
+            {
+                requestToReg.Visible = true;
+            }
         }
 
         protected void unlim_Click(object sender, EventArgs e)
         {
-
+            if (User.Identity.IsAuthenticated)
+            {
+                PostPaypal(300);
+            }
+            else
+            {
+                requestToReg.Visible = true;
+            }
         }
 
         protected void single_Click1(object sender, EventArgs e)
         {
             if (User.Identity.IsAuthenticated)
             {
-                PostPaypal();
+                PostPaypal(4);
             }
             else
             {

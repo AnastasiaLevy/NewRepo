@@ -47,7 +47,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h4>Test of attention or memory at home with instant feedback.</h4>
+                        <h4>Afraid your child might have ADHD, find out in the privacy of your home for a fraction of the cost of a psychological assetssment in a doctor's office.</h4>
                     </div>
                 </li>
                 <li>
@@ -60,7 +60,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h4>Neuropsychological tests of executive funtion, memory, and problem solving.</h4><%-- Make sure they all on the same line--%>
+                        <h4>Fun brain games for the public in a private setting.</h4><%-- Make sure they all on the same line--%>
                     </div>
                 </li>
                 <li>
@@ -73,7 +73,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h4>Have them take a test of executive funtion and reasoning, or an apptitude test.</h4> 
+                        <h4>Have them take one of attenion and speed of processing tests. Find out if they can really do the job.</h4>
                     </div>
                 </li>
                 <li>
@@ -86,8 +86,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h4>Are you aging gracefully, or concerned about your memory?</h4>
-                        <h4>Compare your scores with others your age.</h4>
+                        <h4>Find out if you are aging gracefully, like others in your age bracket or, if there's cause for concern.</h4>
                     </div>
                 </li>
                 <li>
@@ -96,11 +95,11 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="text-center">
-                                    <h3>COMPARE YOUR SCORE AGAINST THOUSANDS OF PEOPLE</h3>
+                                    <h3>COMPARE YOUR SCORE AGAINS THOUSANDS OF PEOPLE</h3>
                                 </div>
                             </div>
                         </div>
-                        <h4>Cogquiz's tests have large norm bases. Compare your results with others your age.</h4>
+                        <h4>With the most norms available, no other test can definitevly tell you about your results like CogQuiz can.</h4>
                     </div>
                 </li>
                 <li>
@@ -181,12 +180,11 @@
                                 <h5 class="aboutHeader">The CogQuiz General Philosophy</h5>
                                 <div class="col-md-12">
                                     <p>
-                                 CogQuiz is a company committed to the development of powerful computer-based tools for cognitive and neuropsychological research and evaluation. 
-                                 Our goal is to design computerized neuropsychological and cognitive tests that are affordable for assessment of medical and/or mental health status in consultation with licensed professionals. 
-                                 We have strived to make easy to use, affordably priced tests usable by the public.
-                                 As a consumer, you have the opportunity to take a test that  provides age-based norms with feedback.
-                                 You may print out a report that you can take to a licensed professional for an evaluation beyond the report we provide. 
-                                 We believe that an informed individual is their own best advocate.
+                                        CogQuiz is a company committed to the development of powerful computer-based tools for cognitive and neuropsychological research and evaluation. 
+                                      Our goal is to design computerized neuropsychological and cognitive tests that are affordable for assessment of medical and/or a mental health status.
+                                      We have strived, and think we are successful, in making an easy to use, affordably priced tests usable by the general public.
+                                      As a consumer, you will take a test that is the equal of any test in terms of norms and receive feedback at a fraction of the cost of seeing a licensed professional. 
+                                      You may print out a report that you can take to a professional for an evaluation beyond the report we provide. We believe that an informed individual is their own best advocate. 
                                     </p>
 
                                 </div>
@@ -195,7 +193,9 @@
                                 <h5 class="aboutHeader">History and Validating Data</h5>
                                 <div class="col-md-12">
                                     <p>
-                                 Our products reflect over 50 years of experience in using computers for experimental control, data acquisition, and data analysis in cognitive and behavioral research. Our products have been used as part of a long-term research program in several universities and by licensed practitioners. Many of the tests have extensive sets of age-stratified normative data which are included in each test product's report/manual.
+                                        Our products reflect over 50 years of experience in using computers for experiment control, data acquisition, and data analysis in cognitive and behavioral research. 
+                                      Our products have been used as part of a long-term research program in several universities and by licensed practitioners alike. 
+                                      Many of the tests have extensive sets of age-stratified normative data which are included in each test product's report/manual.
                                     </p>
 
                                 </div>
@@ -204,7 +204,8 @@
                                 <h5 class="aboutHeader">Large Norm Base</h5>
                                 <div class="col-md-12">
                                     <p>
-                                        All CogQuiz products come with preprogrammed tests that were used to collect the normative data provided in the test documentation. There are few commercial products with equivalent norms.
+                                        All CogQuiz products come with preprogrammed tests that were used to collect the normative data provided in the test documentation.
+                                       There are few or no commercial products with equivalent norms, anywhere.
                                     </p>
                                 </div>
                             </div>
@@ -212,9 +213,9 @@
                             <div class="row">
                                 <h5 class="aboutHeader">Centralized Secure Database</h5>
                                 <div class="col-md-12">
-                                    <p>All CogQuiz tests utilize a centralized database. Whether you are using only one of our tests or all of them, collected data is secure. In addition to facilitating the management of all testing data, this approach also ensures heightened security and confidentiality of all participant information.
-
-                                    </p>
+                                    <p>All CogQuiz tests utilize a centralized database. Whether you are using only one of our tests or all of them, 
+                                        collected data is secure. In addition to facilitating the management of all testing data, this approach also ensures heightened security 
+                                        and confidentiality of all participant information. </p>
                                 </div>
                             </div>
                         </div>
@@ -241,7 +242,8 @@
                                     </a>
                                     <h3><a href="category/Memory.aspx">Memory</a></h3>
                                     <p>
-                                        The n-back working memory test with lifespan norms is currently available. Take our current working memory test and find out where you stand in relation to others your age and sex. Working memory shows a positive correlation with intelligence. 
+                                        Short-term and long term-merm memory tests avaialble.
+                                    Take one of our quizes and find out where you stand in relation to others. Are you capable of remembering germane or salient details, or is there cause for concern?
                                     </p>
                                 </div>
                             </div>
@@ -255,7 +257,7 @@
 
                                     </a>
                                     <h3><a href="category/ExecutiveFunction.aspx">Executive function and Planning</a></h3>
-                                    <p>We currently have available several of the most frequently administered type of tests for assessing Executive Function. To go along with our premier flexible Tower of London test, we have available a syllogistic reasoning task, a card sorting task, a trail making task, and the n-back working memory test. All tests have extensive norms for ages 5 to 89 years.</p>
+                                    <p>Are you concerned with your Attention span, your ability to switch between tasks effectively or your speed of processing? Executive function tests help you determine if you have alfflictions like ADHD or NNNN</p>
                                 </div>
                             </div>
                             <div class="col-md-4 portfolio-item">
@@ -268,14 +270,10 @@
 
                                     </a>
                                     <h3><a href="category/ProcessingSpeed.aspx">Processing Speed</a></h3>
-                                    <p>Speed of processing is a major explanatory variable for 
-                                        cognitive performance during development, adulthood, and aging.
-                                         The Trail Making Test is a measure of speed of processing. 
-                                        Given the importance of this variable, we measure the time taken on various performance components on several of our current tasks.
-                                         We plan to have available a battery of speed of processing tasks in 2018. </p>
+                                    <p>Speed of processing has been a major explantory varialbe for enhanced cognitive performace during development.</p>
                                 </div>
                             </div>
-                 <%--           <div class="col-md-3 portfolio-item">
+                            <%--<div class="col-md-3 portfolio-item">
                                 <div class="text-center">
                                     <a href="javascript:void(0);">
                                         <a href="category/IntelligenceTest.aspx"><span class="fa-stack fa-lg">
@@ -311,6 +309,7 @@
                         <li data-value="memory"><a href="#">Memory</a></li>
                         <li data-value="executive"><a href="#">Executive Function</a></li>
                         <li data-value="mobileapps"><a href="#">Processing Speed</a></li>
+                        <li data-value="personality"><a href="#">Personality</a></li>
                     </ul>
 
                     <ul class="port2">
@@ -338,6 +337,31 @@
                             <a href="Tests/SyllogWrapper.aspx" id="mobileapps2">
                                 <img src="images/sillog.png" /></a>
                         </li>
+                   
+                        <%--<li data-type="personality" data-id="id-7" class="port3">
+                            <a href="Tests/PTSD.aspx" id="cool1">
+                                <img src="images/cool1.jpg" alt=""></a>
+                        </li>
+                        <li data-type="personality" data-id="id-8" class="port3">
+                            <a href="Tests/ADHD.aspx" id="cool2">
+                                <img src="images/cool2.jpeg" alt=""></a>
+                        </li>
+                        <li data-type="personality" data-id="id-12" class="port3">
+                            <a href="Tests/Personality.aspx" id="cool3">
+                                <img src="images/cool3.jpeg" alt=""></a>
+                        </li>
+                        <li data-type="personality" data-id="id-9" class="port3">
+                            <a href="Tests/adult_ADHD.aspx" id="cool4">
+                                <img src="images/cool4.jpeg" alt=""></a>
+                        </li>
+                        <li data-type="personality" data-id="id-10" class="port3">
+                            <a href="Tests/Autism.aspx" id="cool5">
+                                <img src="images/cool5.jpg" alt=""></a>
+                        </li>
+                        <li data-type="personality" data-id="id-11" class="port3">
+                            <a href="Tests/Horney.aspx" id="cool6">
+                                <img src="images/cool6.jpeg" /></a>
+                        </li>--%>
                     </ul>
                 </div>
             </div>
@@ -401,7 +425,8 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12 homeport1">
-                        <div class="col-md-4 col-sm-12 col-xs-12 col-md-offset-4 portfolio-item">
+                        <%--<div class="col-md-4 col-sm-12 col-xs-12 col-md-offset-4 portfolio-item">--%>
+                        <div class="col-md-6 col-sm-12 col-xs-12">
                             <figure class="effect-oscar">
                                 <img src="images/CogQuestPick.jpg"" alt="" class="img-responsive" />
                                 <figcaption>
@@ -409,10 +434,19 @@
                                     <a href="\Tests\CogQuest.aspx">View more</a>
                                 </figcaption>
                             </figure>
-                            <p class="text-center"> This is a highly flexible, stand-alone, desktop program for researchers and/or practitioners. 
-                                We have created a general-purpose questionnaire construction tool. </p>
-                                
-                              
+                            <p class="text-center"> A  tool to create questionnaires for collecting participant information.</p>
+               
+                        </div>
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <figure class="effect-oscar">
+                                <img src="images/DesktopTests4.png"" alt="" class="img-responsive" />
+                                <figcaption>
+                                    <h2>DesktopTests</h2>
+                                    <a href="\Tests\DesktopTests.aspx">View more</a>
+                                </figcaption>
+                            </figure>
+                            <p class="text-center"> A  tool to create questionnaires for collecting participant information.</p>
+               
                         </div>
               <%--          <div class="col-md-4 col-sm-12 col-xs-12 portfolio-item">
                             <figure class="effect-oscar">

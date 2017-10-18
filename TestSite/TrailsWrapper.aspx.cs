@@ -74,8 +74,8 @@ namespace TestSite
                             runTest.Visible = false;
                             price.Visible = true;
                         }
-                        if (CommonMethods.UserIsProvider(_userId))
-                            singlePr.Visible = false;
+                        //if (CommonMethods.UserIsProvider(_userId))
+                        //    singlePr.Visible = false;
                     }
                     else
                     {
@@ -203,11 +203,11 @@ namespace TestSite
 
         }
 
-        private void PostPaypal()
+        private void PostPaypal(double itemAmount)
         {
             string business = "HQS7UWQMRHDTQ";// "analescheok@gmail.com"
             string itemName = "Trails Test";
-            double itemAmount = 5.00;
+            //double itemAmount = 0.01;
             string currencyCode = "USD";
 
             StringBuilder ppHref = new StringBuilder();
@@ -227,7 +227,7 @@ namespace TestSite
         {
             if (User.Identity.IsAuthenticated)
             {
-                PostPaypal();
+                PostPaypal(5);
             }
             else
             {
@@ -237,17 +237,38 @@ namespace TestSite
 
         protected void ten_Click(object sender, EventArgs e)
         {
-
+            if (User.Identity.IsAuthenticated)
+            {
+                PostPaypal(40);
+            }
+            else
+            {
+                requestToReg.Visible = true;
+            }
         }
 
         protected void hundred_Click(object sender, EventArgs e)
         {
-
+            if (User.Identity.IsAuthenticated)
+            {
+                PostPaypal(80);
+            }
+            else
+            {
+                requestToReg.Visible = true;
+            }
         }
 
         protected void unlim_Click(object sender, EventArgs e)
         {
-
+            if (User.Identity.IsAuthenticated)
+            {
+                PostPaypal(499);
+            }
+            else
+            {
+                requestToReg.Visible = true;
+            }
         }
     }
 }

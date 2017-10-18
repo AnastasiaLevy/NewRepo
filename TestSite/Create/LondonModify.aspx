@@ -224,7 +224,7 @@
         $(document).ready(function () {
             $('#viewTest').hide();
             $('#<%=movesText.ClientID%>').hide();
-              var value = $('#<%=movesText.ClientID%>').val();
+            var value = $('#<%=movesText.ClientID%>').val();
             if (value.length > 0) {
                 $('#SetupUpdate').hide();
                 setUpdateValues(value);
@@ -247,7 +247,7 @@
             var synth = speechSynthesis;
             var voices = synth.getVoices();
 
-            for (i = 0; i < voices.length ; i++) {
+            for (i = 0; i < voices.length; i++) {
                 var option = document.createElement('option');
                 option.textContent = voices[i].name + ' (' + voices[i].lang + ')';
                 option.setAttribute('data-lang', voices[i].lang);
@@ -351,10 +351,9 @@
             prct = parseInt($('#<%=ddlPractice.ClientID %> option:selected').text());
             trl = parseInt($('#<%=ddlNumberGames.ClientID %> option:selected').text());
         }
-     
 
-        function setUpdateValues(value)
-        {
+
+        function setUpdateValues(value) {
             moves = JSON.parse(value);
 
             update = true;
@@ -381,8 +380,8 @@
                 idItems[(moves[index].GameRound)] = (moves[index].GameRound);
             });
 
-        
-  
+
+
         }
 
         $('#SetupUpdate').click(function () {
@@ -411,7 +410,7 @@
                     idItems[i] = i;
                     $('#pageNums').append('<input type="button" value=' + i + ' id=' + i + ' class="edit prct"/>');
                 }
-                for (i = (prct + 1) ; i <= (trl + prct) ; i++) {
+                for (i = (prct + 1); i <= (trl + prct); i++) {
 
                     $('#pageNums').append('<input type="button" value=' + i + ' id=' + i + ' class="edit trl"/>');
                     moves[i - 1] = i;
@@ -421,7 +420,7 @@
             }
             else {
                 setUpdateValues(value);
-          
+
             }
 
             $('.edit').bind("click", function () {
@@ -464,20 +463,18 @@
             //checkIfEmpty(string, dataName, error)
             //checkIfEmpty(string, dataName, error)
             //checkIfEmpty(string, dataName, error)
-           
-            if (error != "")
-            {
+
+            if (error != "") {
                 $('#MovesError').show();
                 $('#MovesError').html(error);
             }
-            else
-            {
+            else {
                 $('#MovesError').html("");
                 $('#MovesError').hide();
-            
-          
-            sendData = {
-                testName: $('#<%=testName.ClientID%>').val(),
+
+
+                sendData = {
+                    testName: $('#<%=testName.ClientID%>').val(),
                 instructions: $('#<%=instructions.ClientID%>').val(),
                 overMoves: $('#<%=overMoves.ClientID%>').val(),
                 overTime: $('#<%=overTime.ClientID%>').val(),
@@ -494,38 +491,36 @@
                 maxMoves: $('#<%=maxMovesLimit.ClientID%>').val(),
                 showFeedback: $('#<%=showFeedback.ClientID %>').is(':checked'),
                 movesData: JSON.stringify(superArr),
-                language:$("#<%=select.ClientID%>").val(),
+                language: $("#<%=select.ClientID%>").val(),
                 workTag: $("#<%=workArea.ClientID%>").val(),
                 goalTag: $("#<%=endArea.ClientID%>").val(),
                 countDownText: $("#<%=countDownText.ClientID%>").val()
 
-            }
-            //alert(JSON.stringify(sendData))
-            jQuery.ajax({
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                url: 'LondonModify.aspx/SaveResults',
-                dataType: 'json',
-                data: JSON.stringify(sendData),
-                type: 'POST',
-                success: function (resp) {
-
-                    //request sent and response received.
-                    var message = "Success! The test was saved."
-                    $("#success").show();
-                    $("#success").html(message);
-                },
-                error: function () {
-                    alert("error saving the test; try again later")
                 }
-            });
-          }
+                //alert(JSON.stringify(sendData))
+                jQuery.ajax({
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    url: 'LondonModify.aspx/SaveResults',
+                    dataType: 'json',
+                    data: JSON.stringify(sendData),
+                    type: 'POST',
+                    success: function (resp) {
+
+                        //request sent and response received.
+                        var message = "Success! The test was saved."
+                        $("#success").show();
+                        $("#success").html(message);
+                    },
+                    error: function () {
+                        alert("error saving the test; try again later")
+                    }
+                });
+            }
         });
 
-       function checkIfEmpty(string, dataName, error)
-        {
-            if (string == "")
-            {
+        function checkIfEmpty(string, dataName, error) {
+            if (string == "") {
                 error += "Please fill out " + dataName + "\n\r";
             }
             return error;
@@ -557,7 +552,7 @@
 
             else {
                 $('#MovesError').hide();
-               // checkForChange();
+                // checkForChange();
                 superObj = {
                     arrStart: (JSON.stringify(array)),
                     arrFinish: (JSON.stringify(arrayR)),
@@ -588,7 +583,7 @@
 
                     }
                     superArr[num] = superObj;
-                
+
 
                     if (!$('#' + num + '').length) {
                         if (num <= prct) {
@@ -610,7 +605,7 @@
                 $("#success").show();
                 var message = "Success! The round was saved."
                 $("#success").html(message);
-             
+
                 checkForChange();
             }
 
@@ -636,20 +631,20 @@
 
                 roundCount -= 1;
                 if (update)
-                   // alert(moves.length);
-                checkForChange();
-                
+                    // alert(moves.length);
+                    checkForChange();
+
                 $('.edit').bind("click", function () {
                     round = this.value;
                     test(superArr, round);
                     $("#success").hide();
                 });
-                
+
             }
             else {
-               // alert(roundCount)
+                // alert(roundCount)
             }
-          
+
         });
 
         function updateEditRow(arr) {
@@ -724,7 +719,7 @@
             $('#numberOfMoves').val("");
             $('#save').show();
             updateValues();
-        
+
             if (idItems.length >= prct + trl)
                 $('#makeAnother').hide();
             roundCount++;

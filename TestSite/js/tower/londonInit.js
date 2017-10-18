@@ -250,7 +250,7 @@ function initField(gameNum, gameData) {
                 }, 0));
                 obj.animate(Raphael.animation({
                     transform: 't0 ' + (0)
-                },0));
+                }, 0));
                 break;
 
 

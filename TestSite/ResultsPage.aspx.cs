@@ -233,9 +233,8 @@ namespace TestSite
                 btnExportLine.Visible = true;
                 btnExportNorm.Visible = true;
                 chartTitle.Text = "Results for Tower of London Test for participant " + userName + ".";
-                GridView gv;
+                GridView gv = new GridView();
                 SetUpUserResultGrid(userId, tId, out dt, out gv);
-
 
 
                 DataTable dtr = DataMethods.GetLondonNorms(ageGroup, tId);
@@ -244,7 +243,7 @@ namespace TestSite
                 {
                     decimal mean = Convert.ToDecimal(dtr.Rows[0]["mean"]);
                     decimal std = Convert.ToDecimal(dtr.Rows[0]["stdDeviation"]);
-                    int totalM = Convert.ToInt32(dt.Rows[0]["toalExcess"]);//dt.AsEnumerable().Where(row => row.Field<int>("game") > 3).Sum(r => r.Field<int>("Exess Moves"));
+                    int totalM = Convert.ToInt32(dt.Rows[0]["Excess"]);//dt.AsEnumerable().Where(row => row.Field<int>("game") > 3).Sum(r => r.Field<int>("Exess Moves"));
                     int numberMoves = Convert.ToInt32(dt.Rows[0]["NumberMoves"]);
                     factor = CalculateResults(totalM, mean, std);
 
@@ -254,6 +253,7 @@ namespace TestSite
 
                 }
                 pResultPanel.Controls.Add(gv);
+                //pResultPanel.Controls.Add(gvToL);
                 pResultPanel.Controls.Add(descr);
 
 
@@ -297,7 +297,6 @@ namespace TestSite
 
         private int GerPercentCorrect(DataTable dt, int v)
         {
-
             DataRow[] dr = dt.Select("Trial = " + v.ToString());
             int percentCorrrect = Convert.ToInt32(dr[0]["Score"]);
             return percentCorrrect;
@@ -361,9 +360,11 @@ namespace TestSite
             dt = ds.Tables[0];
             gv = new GridView();
             SetGvProperties(gv);
-            gv.DataSource = ds.Tables[0];
+            gv.DataSource = dt;
             gv.DataBind();
             gv.ShowFooter = true;
+            gv.ShowHeader = true;
+
             gv.FooterRow.Visible = true;
             gv.FooterStyle.BackColor = Color.AliceBlue;
             gv.FooterRow.Font.Size = 13;
@@ -375,7 +376,9 @@ namespace TestSite
             gv.FooterRow.Cells[5].Text = dt.Rows[0]["totalMinMoves"].ToString();
             gv.FooterRow.Cells[6].Text = dt.Rows[0]["toalExcess"].ToString();
             gv.FooterRow.Cells[7].Text = dt.Rows[0]["totalWrong"].ToString();
-            //dt = ds.Tables[0];
+
+
+
         }
 
         protected int CalculateResults(decimal? score, decimal? mean, decimal? stdDev)
@@ -431,7 +434,6 @@ namespace TestSite
             gv.GridLines = GridLines.None;
             //TODO:style class from css
             gv.CellPadding = 4;
-            gv.Font.Size = 12;
             gv.ForeColor = Color.Ivory;
             gv.HeaderStyle.BackColor = Color.DarkGreen;
             gv.HeaderStyle.ForeColor = Color.White;
@@ -471,7 +473,7 @@ namespace TestSite
             foreach (DataRow r in dt.Rows)
             {
                 iRow++;
-                // add each row's cell data...
+                //add each row's cell data...
                 iCol = 0;
                 foreach (DataColumn c in dt.Columns)
                 {

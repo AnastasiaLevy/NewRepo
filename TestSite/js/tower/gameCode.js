@@ -22,15 +22,16 @@ function startGame(gameNum) {
     initTTime = 0;
     totalTime;
 
-    time = getTime();
+    //time = getTime();
     if (gameNum == 1) {
         displayInstructions(text);
         var field = document.getElementById("countdown");
         field.style.display = 'none';
-        totalTime = getTime();
+        //totalTime = getTime();
     }
     else {
         countdown()
+        time = getTime();
     }
 
     initField(gameNum, gameData);
@@ -77,7 +78,8 @@ function displayFinalMessageOnTimeout(numMoves, lastMove, timeMlsec) {
         displayTestFinishedMessage();
     }
 
-    passResultsForGame(game, timeMlsec, timeMlsec, gameSettings.MaxMoves, nmWr, true, false, numMoves);
+    //passResultsForGame(game, timeMlsec, timeMlsec, gameSettings.MaxMoves, nmWr, true, false, numMoves);
+    passResultsForGame(game, timeMlsec, timeMlsec, numMoves, nmWr, true, false, numMoves);
     setTimeout(function () {
         startCountDownTimer(game + 1);
     }, 2000);
@@ -119,6 +121,16 @@ function displayFinalMessage(needMoves, madeMoves) {
 
     var finalMessage = document.getElementById("finalMessage");
     finalMessage.style.display = '';
+    //if (madeMoves > 1)
+    //    dMadeMoves = " moves";
+    //else
+    //    dMadeMoves = " move";
+
+    //if (needMoves > 1)
+    //    dNeedMoves = " moves.";
+    //else
+    //    dNeedMoves = " move.";
+    //finalMessage.innerHTML = "You made " + madeMoves + dMadeMoves + ". The goal was " + needMoves + dNeedMoves;
 
     finalMessage.innerHTML = text;
     setTimeout(hideFinalMessage, 2000);
@@ -136,7 +148,8 @@ function displayInstructions(text) {
         canMove = true;
         field.style.display = 'none';
         $("#play").hide();
-
+        totalTime = getTime();
+        time = getTime();
     }
 }
 
@@ -152,7 +165,7 @@ function startCountDownTimer(game) {
         text = res[0] + "<span id='countdowntimer'>" + (timeleft) + "</span>" + res[1];
     }
 
-    
+    canMove = false;
     var field = document.getElementById("countdown");
     field.style.display = '';
     field.innerHTML = text;//"Please wait <span id='countdowntimer'>" + (timeleft+ 2) + " </span> seconds";
@@ -182,7 +195,7 @@ function finishGame(needMoves) {
     gameFinished = true;
 
     passResultsForGame(game, initTTime, over, nm, nmWr, false, false, needMoves);
-   
+    canMove = false;
     if (gameSettings.ShowFeedback == "True")
         setTimeout(function () { displayFinalMessage(needMoves, nm); }, 1200)
 
@@ -248,13 +261,10 @@ function checkPos(out) {
     numMoves = JSON.parse(gameData[game - 1].NumberOfMoves);
 
     if (nm == gameSettings.MaxMoves) {
-        
-        displayFinalMessage20move(game);
-        return;
+        displayFinalMessage20move(game)
     }
-   
-   
-
+    canMove = false;
+    setTimeout(function () { canMove = true }, 300);
     //
     if (1 == 1) {
         if (nm == 0) {
@@ -378,7 +388,7 @@ function saveTextAsFile() {
     var user = document.getElementById("userId").value;
     var tId = document.getElementById("tId").value;
     var text = "UserId: " + user + ".\r\n" +
-               "TestId: " + tId + ".\r\n"
+               "TestId: " +  tId +   ".\r\n" 
     arrData.forEach(function (element) {
         text += JSON.stringify(element) + ".\r\n";
     });

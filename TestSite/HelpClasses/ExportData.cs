@@ -18,7 +18,7 @@ namespace TestSite.HelpClasses
         {
             DataSet ds = GetExportData(userId, tId, testType);
 
-            string myfile = ExportOneLineCSV(ds);
+            string myfile = ExportOneLineCSV(ds, testType);
             string name = GetPartName(userId);
 
             try
@@ -50,6 +50,38 @@ namespace TestSite.HelpClasses
             {
 
             }
+        }
+
+        public static void ExportAllInSingleLines(int testId, int providerId, DateTime? from, DateTime? to)
+        {
+            try
+            {
+                DataSet test = DataMethods.GetTestByTestId(testId);
+                string testName = test.Tables[0].Rows[0]["testName"].ToString();
+                DataSet ds = GetExportData(testId, from, to);
+                if (ds == null) return;
+                string myfile = ExportOneLineCSVMany(ds);
+                string fileName = testName + "_" + DateTime.Now.ToShortDateString() + "_" + testId + ".csv";
+                string filePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                //File.WriteAllText(filePath + "\\" + fileName, myfile);
+                string attachment = "attachment; filename=" + fileName;
+                HttpContext.Current.Response.Clear();
+                HttpContext.Current.Response.ClearHeaders();
+                HttpContext.Current.Response.ClearContent();
+                HttpContext.Current.Response.AddHeader("content-disposition", attachment);
+                //HttpContext.Current.Response.ContentType = "text/csv";
+                HttpContext.Current.Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                HttpContext.Current.Response.AddHeader("Pragma", "public");
+                HttpContext.Current.Response.Write(myfile);
+                HttpContext.Current.Response.Flush();
+                HttpContext.Current.Response.SuppressContent = true;
+                HttpContext.Current.Response.End();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
         }
 
         private static DataSet GetExportData(string userId, int tId, string testType)
@@ -84,7 +116,110 @@ namespace TestSite.HelpClasses
 
         }
 
-        private static string ExportOneLineCSV(DataSet ds)
+        private static DataSet GetExportData(int testId, DateTime? from, DateTime? to)
+        {
+            DataSet ds = null;
+            if (testId.ToString() == Enums.TestId.TowerOfLondon) //pass
+            {
+                ds = DataMethods.GetTestResultsLondon(testId, from, to);
+            }
+            else if (testId.ToString() == Enums.TestId.Nback) //pass
+            {
+                ds = DataMethods.GetTestResultsNback(testId, from, to);
+            }
+            else if (testId.ToString() == Enums.TestId.Syllogisms)
+            {
+                ds = DataMethods.GetTestResultsSyllogisms(testId, from, to);
+            }
+            else if (testId.ToString() == Enums.TestId.WisconsinCardSort)//pass
+            {
+                ds = DataMethods.GetTestResultsCardSort(testId, from, to);
+            }
+            else if (testId.ToString() == Enums.TestId.Trails)
+            {
+                ds = DataMethods.GetTestResultsTrails(testId, from, to);
+            }
+
+            return ds;
+        }
+
+        private static DataSet GetExportDataByModifyId(int testId, int modifyId, DateTime? from, DateTime? to)
+        {
+
+            DataSet ds = null;
+            if (testId.ToString() == Enums.TestId.TowerOfLondon) //pass
+            {
+                ds = DataMethods.GetTestResultsLondonByModifyId(testId, modifyId, from, to);
+            }
+
+            return ds;
+        }
+
+        private static string ExportOneLineCSVMany(DataSet ds)
+        {
+            StringBuilder body = new StringBuilder();
+            StringBuilder head = new StringBuilder();
+            int previoustId = 0;
+            int longestRow = 0;
+            int rowsCounter = 0;
+
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+            {
+                if (Convert.ToInt32(ds.Tables[0].Rows[i]["tId"]) != previoustId)
+                {
+                    longestRow = longestRow < rowsCounter ? rowsCounter : longestRow;
+                    rowsCounter = 0;
+                    body.AppendLine();
+                }
+                else
+                {
+                    rowsCounter++;
+                }
+                for (int j = 0; j < ds.Tables[0].Columns.Count; j++)
+                {
+                    body.Append(ds.Tables[0].Rows[i][ds.Tables[0].Columns[j].ColumnName]);
+                    body.Append(',');
+                    previoustId = Convert.ToInt32(ds.Tables[0].Rows[i]["tId"]);
+                }
+            }
+
+            for (int i = 0; i < longestRow + 1; i++)
+            {
+                for (int j = 0; j < ds.Tables[0].Columns.Count; j++)
+                {
+                    head.Append(ds.Tables[0].Columns[j].ColumnName);
+                    head.Append(',');
+                }
+            }
+
+            head.AppendLine();
+            return head + body.ToString();
+        }
+
+        private static string ExportNormalCSVMany(DataSet ds)
+        {
+            StringBuilder sb = new StringBuilder();
+            for (int j = 0; j < ds.Tables[0].Columns.Count; j++)
+            {
+                sb.Append(ds.Tables[0].Columns[j].ColumnName);
+                sb.Append(',');
+            }
+
+            sb.AppendLine();
+
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+            {
+                for (int j = 0; j < ds.Tables[0].Columns.Count; j++)
+                {
+                    sb.Append(ds.Tables[0].Rows[i][ds.Tables[0].Columns[j].ColumnName]);
+                    sb.Append(',');
+                }
+                sb.AppendLine();
+            }
+            return sb.ToString();
+        }
+
+        private static string ExportOneLineCSV(DataSet ds, string testType)
         {
 
             StringBuilder sb = new StringBuilder();
@@ -108,19 +243,6 @@ namespace TestSite.HelpClasses
                     sb.Append(',');
                 }
             }
-            if (ds.Tables[2] != null)
-            {
-                for (int i = 0; i < ds.Tables[2].Rows.Count; i++)
-                {
-
-                    for (int j = 0; j < ds.Tables[2].Columns.Count; j++)
-                    {
-                        sb.Append(ds.Tables[2].Columns[j].ColumnName);
-                        sb.Append(',');
-                    }
-                }
-            }
-
             sb.AppendLine();
             for (int i = 0; i < ds.Tables[1].Rows.Count; i++)
             {
@@ -141,17 +263,71 @@ namespace TestSite.HelpClasses
                     sb.Append(',');
                 }
             }
-            if (ds.Tables[2] != null)
-            for (int i = 0; i < ds.Tables[2].Rows.Count; i++)
-            {
-                for (int j = 0; j < ds.Tables[2].Columns.Count; j++)
-                {
-                    sb.Append(ds.Tables[2].Rows[i][ds.Tables[2].Columns[j].ColumnName]);
-                    sb.Append(',');
-                }
-            }
-
+            //File.WriteAllText(@"C:\LondonResults\test.csv", sb.ToString());
             return sb.ToString();
+        }
+
+        public static void ExportAllNormalByModifyId(int testId, int testModifyId, int provider, DateTime? from, DateTime? to)
+        {
+            try
+            {
+                DataSet test = DataMethods.GetTestByTestId(testId);
+                string testName = test.Tables[0].Rows[0]["testName"].ToString();
+                DataSet ds = GetExportDataByModifyId(testId, testModifyId, from, to);
+                if (ds == null) return;
+                string myfile = ExportNormalCSVMany(ds);
+                string fileName = testName + "_" + DateTime.Now.ToShortDateString() + "_" + testId + ".csv";
+                string filePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                //File.WriteAllText(filePath + "\\" + fileName, myfile);
+                string attachment = "attachment; filename=" + fileName;
+                HttpContext.Current.Response.Clear();
+                HttpContext.Current.Response.ClearHeaders();
+                HttpContext.Current.Response.ClearContent();
+                HttpContext.Current.Response.AddHeader("content-disposition", attachment);
+                //HttpContext.Current.Response.ContentType = "text/csv";
+                HttpContext.Current.Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                HttpContext.Current.Response.AddHeader("Pragma", "public");
+                HttpContext.Current.Response.Write(myfile);
+                HttpContext.Current.Response.Flush();
+                HttpContext.Current.Response.SuppressContent = true;
+                HttpContext.Current.Response.End();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public static void ExportAllNormal(int testId, int providerId, DateTime? from, DateTime? to)
+        {
+            try
+            {
+                DataSet test = DataMethods.GetTestByTestId(testId);
+                string testName = test.Tables[0].Rows[0]["testName"].ToString();
+                DataSet ds = GetExportData(testId, from, to);
+                if (ds == null) return;
+                string myfile = ExportNormalCSVMany(ds);
+                string fileName = testName + "_" + DateTime.Now.ToShortDateString() + "_" + testId + ".csv";
+                string filePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                //File.WriteAllText(filePath + "\\" + fileName, myfile);
+                string attachment = "attachment; filename=" + fileName;
+                HttpContext.Current.Response.Clear();
+                HttpContext.Current.Response.ClearHeaders();
+                HttpContext.Current.Response.ClearContent();
+                HttpContext.Current.Response.AddHeader("content-disposition", attachment);
+                //HttpContext.Current.Response.ContentType = "text/csv";
+                HttpContext.Current.Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                HttpContext.Current.Response.AddHeader("Pragma", "public");
+                HttpContext.Current.Response.Write(myfile);
+                HttpContext.Current.Response.Flush();
+                HttpContext.Current.Response.SuppressContent = true;
+                HttpContext.Current.Response.End();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
 
         public static void ExportNormal(string userId, int tId, string userName, string testType)
@@ -160,8 +336,7 @@ namespace TestSite.HelpClasses
             string name = GetPartName(userId);
 
 
-            string myFile = ExportNormalCSV(ds);
-          
+            string myFile = ExportNormalCSV(ds.Tables[0]);
             try
             {
                 string fileName = name + "_" + DateTime.Now.ToShortDateString() + "_normal.csv";
@@ -200,18 +375,6 @@ namespace TestSite.HelpClasses
             }
             sb.AppendLine();
             foreach (DataRow dr in datatable.Rows)
-            {
-                for (int i = 0; i < datatable.Columns.Count; i++)
-                {
-                    sb.Append(dr[i].ToString());
-
-                    if (i < datatable.Columns.Count - 1)
-                        sb.Append(',');
-                }
-                sb.AppendLine();
-            }
-
-            foreach (DataRow dr in total.Rows)
             {
                 for (int i = 0; i < datatable.Columns.Count; i++)
                 {

@@ -1,0 +1,27 @@
+﻿CREATE TABLE [dbo].[LondonModified] (
+    [id]                 INT             IDENTITY (1, 1) NOT NULL,
+    [testName]           VARCHAR (50)    NULL,
+    [testInstructions]   NVARCHAR (1500) NULL,
+    [txtOverMoves]       VARCHAR (500)   NULL,
+    [txtOverTime]        VARCHAR (500)   NULL,
+    [txtButton]          VARCHAR (50)    NULL,
+    [txtFeedBack]        VARCHAR (500)   NULL,
+    [instructionsFinish] VARCHAR (500)   NULL,
+    [displayResult]      BIT             NULL,
+    [txtToSpeech]        BIT             NULL,
+    [prctRounds]         INT             NULL,
+    [testRounds]         INT             NULL,
+    [calcResFrom]        INT             NULL,
+    [timeOut]            INT             NULL,
+    [countDownFrom]      INT             NULL,
+    [maxMoves]           INT             NULL,
+    [showFeedBack]       BIT             NULL,
+    [language]           VARCHAR (50)    NULL,
+    [workTag]            VARCHAR (50)    NULL,
+    [goalTag]            VARCHAR (50)    NULL,
+    [countDownText]      VARCHAR (500)   NULL,
+    [providerId]         INT             NULL,
+    [canModify]          BIT             NULL,
+    CONSTRAINT [PK_LondonModified] PRIMARY KEY CLUSTERED ([id] ASC)
+);
+

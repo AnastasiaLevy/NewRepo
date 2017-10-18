@@ -304,7 +304,7 @@
                         </h2>
                         <hr>
                     </div>
-                    <div class="col-md-3 portfolio-item">
+                    <div class="col-md-4 portfolio-item">
                         <div class="text-center">
                             <a href="javascript:void(0);">
                                 <a href="category/Memory.aspx"><span class="fa-stack fa-lg">
@@ -317,7 +317,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-3 portfolio-item">
+                    <div class="col-md-4 portfolio-item">
                         <div class="text-center">
                             <a href="javascript:void(0);">
                                 <a href="category/ExecutiveFunction.aspx"><span class="fa-stack fa-lg">
@@ -330,7 +330,7 @@
 
                         </div>
                     </div>
-                    <div class="col-md-3 portfolio-item">
+                    <div class="col-md-4 portfolio-item">
                         <div class="text-center">
                             <a href="javascript:void(0);">
                                 <a href="category/ProcessingSpeed.aspx"><span class="fa-stack fa-lg">
@@ -342,7 +342,7 @@
                             <h4><a href="category/ProcessingSpeed.aspx">Processing Speed</a></h4>
                         </div>
                     </div>
-                    <div class="col-md-3 portfolio-item">
+                    <%--<div class="col-md-3 portfolio-item">
                         <div class="text-center">
                             <a href="javascript:void(0);">
                                 <a href="category/IntelligenceTest.aspx"><span class="fa-stack fa-lg">
@@ -354,7 +354,7 @@
                             <h4><a href="category/IntelligenceTest.aspx">Intelligence</a></h4>
 
                         </div>
-                    </div>
+                    </div>--%>
                     <div class="clearfix"></div>
                 </div>
             </div>

@@ -196,6 +196,7 @@ Feldstein, S. N., Keller, F. R., Portman, R. E., Durham, R. L., Klebe, K. J., Da
                                 <span class="icon blue"><i class="fa fa-usd"></i></span>
                                 <span class="price-large blue">7</span>
                                 <span class="price-small">.00</span>
+                                <p>One Time Run</p>
                                 <asp:Button ID="single" class="btn btn-info" runat="server" OnClick="single_Click" Text="Buy Now" />
                             </div>
                         </div>
@@ -208,7 +209,7 @@ Feldstein, S. N., Keller, F. R., Portman, R. E., Durham, R. L., Klebe, K. J., Da
                                 <span class="price-large yellow">50</span>
                                 <span class="price-small">.00</span>
                                 <p>Small Project</p>
-                                <asp:Button ID="ten" class="btn btn-warning" runat="server"  Text="Call Us" />
+                                <asp:Button ID="ten" class="btn btn-warning" runat="server" OnClick="ten_Click" Text="Buy Now" />
                             </div>
                         </div>
                         <!-- .Col-md-3 ends here -->
@@ -220,7 +221,7 @@ Feldstein, S. N., Keller, F. R., Portman, R. E., Durham, R. L., Klebe, K. J., Da
                                 <span class="price-large green">450</span>
                                 <span class="price-small">.00</span>
                                 <p>Medium Size Project</p>
-                                <asp:Button ID="hundred" class="btn btn-success" runat="server" Text="Call Us" />
+                                <asp:Button ID="hundred" class="btn btn-success" runat="server" OnClick="hundred_Click" Text="Buy Now" />
                             </div>
                         </div>
                         <!-- .Col-md-3 ends here -->
@@ -234,7 +235,7 @@ Feldstein, S. N., Keller, F. R., Portman, R. E., Durham, R. L., Klebe, K. J., Da
                                 <p>
                                     Any Number of Participants
                                 <p>
-                                    <asp:Button ID="unlim" class="btn btn-danger" runat="server"  Text="Call Us" />
+                                    <asp:Button ID="unlim" class="btn btn-danger" runat="server"  OnClick="unlimited_Click" Text="Buy Now" />
                             </div>
                         </div>
                         <!-- .Col-md-3 ends here -->

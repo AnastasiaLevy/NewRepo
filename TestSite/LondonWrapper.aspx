@@ -199,7 +199,7 @@
                                 <span class="price-large yellow">50</span>
                                 <span class="price-small">.00</span>
                                 <p>Small Project</p>
-                                <asp:Button ID="ten" class="btn btn-warning" runat="server" OnClick="ten_Click" Text="Call Us" />
+                                <asp:Button ID="ten" class="btn btn-warning" runat="server" OnClick="ten_Click" Text="Buy Now" />
                             </div>
                         </div>
                         <!-- .Col-md-3 ends here -->
@@ -211,7 +211,7 @@
                                 <span class="price-large green">300</span>
                                 <span class="price-small">.00</span>
                                 <p>Medium Size Project</p>
-                                <asp:Button ID="hundred" class="btn btn-success" runat="server" OnClick="hundred_Click" Text="Call Us" />
+                                <asp:Button ID="hundred" class="btn btn-success" runat="server" OnClick="hundred_Click" Text="Buy Now" />
                             </div>
                         </div>
                         <!-- .Col-md-3 ends here -->
@@ -226,7 +226,7 @@
                                    Large Project
                                 <p>
 
-                                    <asp:Button ID="unlim" class="btn btn-danger" runat="server" OnClick="unlim_Click" Text="Call Us" />
+                                    <asp:Button ID="unlim" class="btn btn-danger" runat="server" OnClick="unlim_Click" Text="Buy Now" />
                             </div>
                         </div>
                         <!-- .Col-md-3 ends here -->
@@ -270,15 +270,15 @@
             </div>
         </div>
                 <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date(); a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+                    (function (i, s, o, g, r, a, m) {
+                        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                            (i[r].q = i[r].q || []).push(arguments)
+                        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+                    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-        ga('create', 'UA-89149772-1', 'auto');
-        ga('send', 'pageview');
+                    ga('create', 'UA-89149772-1', 'auto');
+                    ga('send', 'pageview');
 
 </script>
     </footer>

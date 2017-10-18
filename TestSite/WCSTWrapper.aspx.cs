@@ -18,6 +18,7 @@ namespace TestSite
         protected bool _isProfilefilled;
         protected string _testId = Enums.TestId.WisconsinCardSort;
         protected static int _userTestId;
+        protected int? _providerId;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -70,8 +71,8 @@ namespace TestSite
                             requestToReg.Visible = false;
                             runTest.Visible = false;
                         }
-                        if (CommonMethods.UserIsProvider(_userId))
-                            singlePr.Visible = false;
+                        //if (CommonMethods.UserIsProvider(_userId))
+                        //    singlePr.Visible = false;
                         price.Visible = true;
                     }
                     else
@@ -198,11 +199,11 @@ namespace TestSite
             //}
         }
 
-        private void PostPaypal()
+        private void PostPaypal(double itemAmount)
         {
-            string business = "L3SCKTNV3EWA4";
+            string business = "HQS7UWQMRHDTQ";
             string itemName = "Card Sort Test";
-            double itemAmount = 7.00;
+            //double itemAmount = 0.01;
             string currencyCode = "USD";
 
             StringBuilder ppHref = new StringBuilder();
@@ -222,7 +223,46 @@ namespace TestSite
             if (User.Identity.IsAuthenticated)
             {
             
-                PostPaypal();
+                PostPaypal(7);
+            }
+            else
+            {
+                requestToReg.Visible = true;
+            }
+        }
+
+        protected void ten_Click(object sender, EventArgs e)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+
+                PostPaypal(50);
+            }
+            else
+            {
+                requestToReg.Visible = true;
+            }
+        }
+
+        protected void hundred_Click(object sender, EventArgs e)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+
+                PostPaypal(450);
+            }
+            else
+            {
+                requestToReg.Visible = true;
+            }
+        }
+
+        protected void unlimited_Click(object sender, EventArgs e)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+
+                PostPaypal(600);
             }
             else
             {

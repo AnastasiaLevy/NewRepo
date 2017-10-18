@@ -39,8 +39,7 @@
                 p1 = null;
                 checkPos(true);
             }
-            else
-            {
+            else {
                 checkPos();
             }
 
@@ -79,17 +78,15 @@
                 nm++;
                 checkPos();
             }
-            else if (p4 != null && p5 != null)
-            {
+            else if (p4 != null && p5 != null) {
                 up1.animate(moveU1U2);
                 up2 = up1;
                 up1 = null;
                 nmWr++;
                 nm++;
-          
+
             }
-            else if (p6!= null)
-            {
+            else if (p6 != null) {
                 up1.animate(moveU1U3);
                 up3 = up1;
                 up1 = null;
@@ -136,8 +133,7 @@
                 nm++;
                 checkPos();
             }
-            else if (p6 != null)
-            {
+            else if (p6 != null) {
                 up2.animate(moveU2U3);
                 up3 = up2;
                 up2 = null;
@@ -182,8 +178,7 @@
                 nm++;
                 checkPos();
             }
-            else if (p4 !=null && p5 != null)
-            {
+            else if (p4 != null && p5 != null) {
                 up3.animate(moveU3U2);
                 up2 = up3;
                 up3 = null;
