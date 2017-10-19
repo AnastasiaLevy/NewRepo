@@ -180,7 +180,7 @@ Feldstein, S. N., Keller, F. R., Portman, R. E., Durham, R. L., Klebe, K. J., Da
                     </p>
                     <p>OR</p>
                     <p>
-                        <a href="../MainPage.aspx#register">Register</a>
+                        <a href="../Login.aspx">Register</a>
                     </p>
                 </div>
             </div>

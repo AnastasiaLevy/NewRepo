@@ -243,8 +243,8 @@ namespace TestSite
                 {
                     decimal mean = Convert.ToDecimal(dtr.Rows[0]["mean"]);
                     decimal std = Convert.ToDecimal(dtr.Rows[0]["stdDeviation"]);
-                    int totalM = Convert.ToInt32(dt.Rows[0]["Excess"]);//dt.AsEnumerable().Where(row => row.Field<int>("game") > 3).Sum(r => r.Field<int>("Exess Moves"));
-                    int numberMoves = Convert.ToInt32(dt.Rows[0]["NumberMoves"]);
+                    int totalM = Convert.ToInt32(dt.Rows[0]["toalExcess"]);//dt.AsEnumerable().Where(row => row.Field<int>("game") > 3).Sum(r => r.Field<int>("Exess Moves"));
+                    int numberMoves = Convert.ToInt32(dt.Rows[0]["totalNumberMoves"]);
                     factor = CalculateResults(totalM, mean, std);
 
                     //descr.Text = "You have made " + totalM + Enums.ReturnLondonResultStrings(factor) + "\n\r";
