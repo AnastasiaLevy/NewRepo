@@ -309,7 +309,7 @@
                         <li data-value="memory"><a href="#">Memory</a></li>
                         <li data-value="executive"><a href="#">Executive Function</a></li>
                         <li data-value="mobileapps"><a href="#">Processing Speed</a></li>
-                        <li data-value="personality"><a href="#">Personality</a></li>
+                        <%--<li data-value="personality"><a href="#">Personality</a></li>--%>
                     </ul>
 
                     <ul class="port2">

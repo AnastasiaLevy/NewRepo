@@ -173,7 +173,14 @@
     <div>
         <div class="b-popup" id="popup1">
         <div class="b-popup-content" style="position: relative;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec accumsan eros, non semper orci. Curabitur convallis in nulla commodo interdum. Proin tincidunt vulputate arcu sed bibendum. Etiam accumsan eleifend pharetra. Praesent vehicula mi consequat, scelerisque tellus quis, laoreet metus. Nam eget tristique mi, at bibendum neque. Curabitur aliquam vel neque blandit dignissim. Phasellus sed eros id purus consequat pulvinar. Proin tristique, mi et pulvinar sodales, turpis urna dignissim tellus, et dapibus sapien lectus et neque. Quisque nulla ante, fringilla id mattis aliquet, feugiat a augue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut aliquam enim id augue volutpat, et fringilla elit tristique.</a>
-            <button class="btn btn-success" style="position:absolute; bottom:10px; display:block" OnClick="PopUpHide()">Close</button>
+            <div style="position:absolute; bottom:10px; display:block">
+                <div style="display:flex"> 
+                    <input id="i_agree" type="checkbox"  />
+                    <label>I agree</label>
+                </div>
+                <%--<button class="btn btn-success" style="position:absolute; bottom:10px; display:block" OnClick="PopUpHide()">Close</button>--%>
+                <button class="btn btn-success" OnClick="PopUpHide()">Close</button>
+            </div>
         </div>
         </div>
     </div>
@@ -212,6 +219,13 @@
                     }
                     function PopUpHide() {
                         $("#popup1").hide();
+                        if (i_agree.checked)
+                        {
+                            checkboxProvider.checked = true;
+                        } else
+                        {
+                            checkboxProvider.checked = false;
+                        }
                     }
 </script>
 
@@ -288,9 +302,9 @@
                     }
     </script>
 <script>
-        function showPopup() {
+                    function showPopup() {
 
-        }
+                    }
 </script>
 <script type="text/javascript" language="javascript">
         var numOfClick = 0;
@@ -299,7 +313,7 @@
                 numOfClick = numOfClick + 1;
 
                 if (checkboxProvider.checked == true) {
-                    
+
                     PopUpShow();
                 }
             });
