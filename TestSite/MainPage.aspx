@@ -309,7 +309,7 @@
                         <li data-value="memory"><a href="#">Memory</a></li>
                         <li data-value="executive"><a href="#">Executive Function</a></li>
                         <li data-value="mobileapps"><a href="#">Processing Speed</a></li>
-                        <li data-value="personality"><a href="#">Personality</a></li>
+                        <%--<li data-value="personality"><a href="#">Personality</a></li>--%>
                     </ul>
 
                     <ul class="port2">
@@ -417,6 +417,34 @@
                 </div>
             </div>
         </section>
+
+               <section id="videos">
+            <div class="row">
+                <div class="box">
+                    <div class="col-lg-12">
+                        <hr>
+                        <h2 class="intro-text text-center">Instructional
+                            <strong>Videos</strong>
+                        </h2>
+                        <hr>
+                    </div>
+                    <div class="col-sm-4 text-center" id="vid1">
+                        <label>Provider Dash Part 1</label>
+                       <iframe src="https://www.youtube.com/embed/-SPAjSEuBNA?" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="col-sm-4 text-center">
+                    <label>Provider Dash Part 2</label>
+                        <iframe src="https://www.youtube.com/embed/k_aoilEl8h8?" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="col-sm-2 text-center">
+                         <label>Provider Dash Part 3</label>
+                        <iframe src="https://www.youtube.com/embed/0JwN9Np1TmE" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </section>
+
         <section id="desktopTests">
             <div class="container">
                 <div class="text-center">

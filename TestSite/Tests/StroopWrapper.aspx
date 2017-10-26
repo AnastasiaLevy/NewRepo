@@ -167,11 +167,11 @@
 <%--                <asp:LinkButton ID="runTest" runat="server" class="signup-btn" OnClick="runTest_Click">Run Test</asp:LinkButton>--%>
                 <div id="requestToReg" runat="server" visible="true">
                     <p>
-                        <a href="../Login.aspx">Please Login </a>
+                        <a href="../../Login.aspx">Please Login </a>
                     </p>
                     <p>OR</p>
                     <p>
-                        <a href="../Login.aspx">Register</a>
+                        <a href="../../Login.aspx">Register</a>
                     </p>
                 </div>
             </div>

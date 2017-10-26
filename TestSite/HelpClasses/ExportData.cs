@@ -361,10 +361,10 @@ namespace TestSite.HelpClasses
             }
         }
 
-        private static string ExportNormalCSV(DataSet ds)
+        private static string ExportNormalCSV(DataTable datatable)
         {
-            DataTable datatable = ds.Tables[0];
-            DataTable total = ds.Tables[2];
+            //DataTable datatable = ds.Tables[0];
+            //DataTable total = ds.Tables[2];
             StringBuilder sb = new StringBuilder();
 
             for (int i = 0; i < datatable.Columns.Count; i++)

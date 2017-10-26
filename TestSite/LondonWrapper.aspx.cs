@@ -85,8 +85,8 @@ namespace TestSite
                             runTest.Visible = false;
                             FillOutSelection();
                         }
-                        if (CommonMethods.UserIsProvider(_userId))
-                            singlePr.Visible = false;
+                        //if (CommonMethods.UserIsProvider(_userId))
+                        //    singlePr.Visible = false;
                         price.Visible = true;
                     }
                     else
@@ -123,7 +123,7 @@ namespace TestSite
                 login.Visible = false;
                 price.Visible = false;
             }
-            else if (User.Identity.IsAuthenticated)
+            else if (!User.Identity.IsAuthenticated)
             {
                 string url = HttpContext.Current.Request.Url.AbsoluteUri;
                 Response.Redirect(String.Format("~/Registration.aspx?return={0}", url));
@@ -265,14 +265,21 @@ namespace TestSite
 
         protected void ten_Click(object sender, EventArgs e)
         {
-
+            if (User.Identity.IsAuthenticated)
+            {
+                PostPaypal(5);
+            }
+            else
+            {
+                requestToReg.Visible = true;
+            }
         }
 
         protected void hundred_Click(object sender, EventArgs e)
         {
             if (User.Identity.IsAuthenticated)
             {
-                PostPaypal(300);
+                PostPaypal(50);
             }
             else
             {
