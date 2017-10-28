@@ -67,7 +67,7 @@ namespace TestSite.Tests
                             login.Visible = false;
                             logOut.Visible = true;
 
-                            runTest.Visible = false;
+                            //runTest.Visible = false;
                         }
 
                         price.Visible = true;
@@ -76,7 +76,7 @@ namespace TestSite.Tests
                     {
                         login.Visible = true;
                         logOut.Visible = false;
-                        runTest.Visible = false;
+                        //runTest.Visible = false;
                     }
 
                 }
@@ -157,7 +157,7 @@ namespace TestSite.Tests
             if (File.Exists(shortcutPath))
             {
                 existsMessage.Text = "This application is already installed on your computer.";
-                runTest.Visible = false;
+                //runTest.Visible = false;
             }
             else
                 Response.Redirect("CogQuestTool/CogQuestSetUp.aspx");

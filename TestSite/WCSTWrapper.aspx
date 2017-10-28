@@ -228,12 +228,12 @@ Feldstein, S. N., Keller, F. R., Portman, R. E., Durham, R. L., Klebe, K. J., Da
 
                                    <div class="col-md-3">
                             <div class="circle c4 img-circle">
-                                <h4 class="red">Unlimited Use</h4>
+                                <h4 class="red">Set of 1000</h4>
                                 <span class="icon red"><i class="fa fa-usd "></i></span>
-                                <span class="price-large red">600</span>
-                                <span class="price-small">.00</span>
+                                <span class="price-large red">1000</span>
+                              <%--  <span class="price-small">.00</span>--%>
                                 <p>
-                                    Any Number of Participants
+                                   Large Sample
                                 <p>
                                     <asp:Button ID="unlim" class="btn btn-danger" runat="server"  OnClick="unlimited_Click" Text="Buy Now" />
                             </div>
