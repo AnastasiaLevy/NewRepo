@@ -418,32 +418,6 @@
             </div>
         </section>
 
-               <section id="videos">
-            <div class="row">
-                <div class="box">
-                    <div class="col-lg-12">
-                        <hr>
-                        <h2 class="intro-text text-center">Instructional
-                            <strong>Videos</strong>
-                        </h2>
-                        <hr>
-                    </div>
-                    <div class="col-sm-4 text-center" id="vid1">
-                        <label>Provider Dash Part 1</label>
-                       <iframe src="https://www.youtube.com/embed/-SPAjSEuBNA?" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div class="col-sm-4 text-center">
-                    <label>Provider Dash Part 2</label>
-                        <iframe src="https://www.youtube.com/embed/k_aoilEl8h8?" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div class="col-sm-2 text-center">
-                         <label>Provider Dash Part 3</label>
-                        <iframe src="https://www.youtube.com/embed/0JwN9Np1TmE" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-        </section>
 
         <section id="desktopTests">
             <div class="container">
@@ -518,6 +492,45 @@
                
                 <asp:LinkButton class="bnt btn-sm btn-success" type="submit" runat="server" OnClick="clcSendButton">Send Email</asp:LinkButton>
 
+            </div>
+        </section>
+
+        <section id="videos">
+            <div class="row">
+                <div class="box">
+                    <div class="col-lg-12">
+                     
+                        <h2 class="text-center">Instructional
+                            Videos
+                        </h2>
+                         <img class="img-responsive displayed" src="images/line-separator.png" alt="short">
+                    </div>
+                    <div class="col-sm-3 text-center" id="vid1">
+                        <label>Provider Dash Part 1</label>
+                       <iframe src="https://www.youtube.com/embed/-SPAjSEuBNA?" frameborder="0" allowfullscreen=""></iframe>
+
+                    </div>
+                    <div class="col-sm-3 text-center"> 
+                    <label>Provider Dash Part 2</label>
+                        <iframe src="https://www.youtube.com/embed/k_aoilEl8h8?" frameborder="0" allowfullscreen=""></iframe>
+
+                    </div>
+                 
+                    <div class="col-sm-3 text-center">
+                         <label>Provider Dash Part 3</label>
+                        <iframe src="https://www.youtube.com/embed/0JwN9Np1TmE" frameborder="0" allowfullscreen=""></iframe>
+
+         
+                    </div>
+                    <div class="col-sm-3 text-center">
+                     <label>Tower of London Set Up</label>
+                        <iframe src="https://www.youtube.com/embed/VH4AMss26W0" frameborder="0" allowfullscreen=""></iframe>
+                    </div>
+                    <div class="col-sm-2 text-center">
+                
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
             </div>
         </section>
 
