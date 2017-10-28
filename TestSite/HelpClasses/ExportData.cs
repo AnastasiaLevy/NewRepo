@@ -336,7 +336,7 @@ namespace TestSite.HelpClasses
             string name = GetPartName(userId);
 
 
-            string myFile = ExportNormalCSV(ds);
+            string myFile = ExportNormalCSV(ds.Tables[0]);
             try
             {
                 string fileName = name + "_" + DateTime.Now.ToShortDateString() + "_normal.csv";
