@@ -9,6 +9,7 @@ using TestSite.DAL;
 using Newtonsoft.Json;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Web.Mvc;
 
 namespace TestSite.Results
 {
@@ -79,6 +80,14 @@ namespace TestSite.Results
         public static string CsvTest(string api_transaction_id, string api_test_id, string patientname)
         {
             return APICalls.CsvTest(api_transaction_id, api_test_id, patientname);
+        }
+
+        [WebMethod]
+        [HttpGet]
+        public void TestGet(int id)
+        {
+            int testId = 0;
+            testId = id;
         }
 
         private string CreateCSVString(string responses)
