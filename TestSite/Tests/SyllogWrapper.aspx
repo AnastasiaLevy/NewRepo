@@ -206,7 +206,7 @@
 
                             <div class="col-md-3">
                                 <div class="circle c4 img-circle">
-                                    <h4 class="red">Unlimited Use</h4>
+                                    <h4 class="red">Set of 1000</h4>
                                     <span class="icon red"><i class="fa fa-usd "></i></span>
                                     <span class="price-large red">300</span>
                                     <span class="price-small">.00</span>

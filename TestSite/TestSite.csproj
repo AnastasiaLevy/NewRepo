@@ -20,6 +20,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -138,6 +139,11 @@
     <Content Include="Create\LondonCreate.aspx" />
     <Content Include="Create\MemoryCardsCreate.aspx" />
     <Content Include="Create\MemoryCardsModify.aspx" />
+    <Content Include="css\component.css" />
+    <Content Include="css\default.css" />
+    <Content Include="css\demo.css" />
+    <Content Include="css\elastic_grid.css" />
+    <Content Include="css\elastic_grid.min.css" />
     <Content Include="Global.asax" />
     <Content Include="category\IntelligenceTest.aspx" />
     <Content Include="category\Memory.aspx" />
@@ -203,11 +209,47 @@
     <Content Include="images\cell.jpg" />
     <Content Include="images\CogQuestPick.jpg" />
     <Content Include="images\coming_soon.jpg" />
+    <Content Include="images\dt.png" />
     <Content Include="images\favicon.ico" />
     <Content Include="images\fullscreenoff.png" />
     <Content Include="images\fullscreenon.png" />
     <Content Include="images\giphy.gif" />
     <Content Include="images\icon.ico" />
+    <Content Include="images\large\1 %282%29.png" />
+    <Content Include="images\large\1.png" />
+    <Content Include="images\large\11.png" />
+    <Content Include="images\large\12.png" />
+    <Content Include="images\large\13.png" />
+    <Content Include="images\large\14.png" />
+    <Content Include="images\large\15.png" />
+    <Content Include="images\large\16.png" />
+    <Content Include="images\large\17.png" />
+    <Content Include="images\large\18.png" />
+    <Content Include="images\large\19.png" />
+    <Content Include="images\large\2.png" />
+    <Content Include="images\large\4.png" />
+    <Content Include="images\large\5.png" />
+    <Content Include="images\large\6.png" />
+    <Content Include="images\large\7.png" />
+    <Content Include="images\large\8.png" />
+    <Content Include="images\large\9.png" />
+    <Content Include="images\large\s1.png" />
+    <Content Include="images\large\s12.png" />
+    <Content Include="images\large\s13.png" />
+    <Content Include="images\large\s14.png" />
+    <Content Include="images\large\s15.png" />
+    <Content Include="images\large\s16.png" />
+    <Content Include="images\large\s17.png" />
+    <Content Include="images\large\s18.png" />
+    <Content Include="images\large\s19.png" />
+    <Content Include="images\large\s2.png" />
+    <Content Include="images\large\s3.png" />
+    <Content Include="images\large\s4.png" />
+    <Content Include="images\large\s5.png" />
+    <Content Include="images\large\s6.png" />
+    <Content Include="images\large\s7.png" />
+    <Content Include="images\large\s8.png" />
+    <Content Include="images\large\s9.png" />
     <Content Include="images\mindsm.jpg" />
     <Content Include="images\mind.jpg" />
     <Content Include="images\myImage.png" />
@@ -231,12 +273,17 @@
     <Content Include="images\cool6.jpeg" />
     <Content Include="images\test-point.jpg" />
     <Content Include="images\tower.jpg" />
+    <Content Include="js\classie.js" />
+    <Content Include="js\elastic_grid.js" />
     <Content Include="js\jquery-responsiveTables.js" />
+    <Content Include="js\jquery.elastislide.js" />
+    <Content Include="js\jquery.hoverdir.js" />
     <Content Include="js\memoryCards\cardsimages.js" />
     <Content Include="js\memoryCards\config.js" />
     <Content Include="js\memoryCards\game.js" />
     <Content Include="js\memoryCards\hitsscheme.js" />
     <Content Include="js\memoryCards\score.js" />
+    <Content Include="js\modernizr.custom.js" />
     <Content Include="js\nback\config.js" />
     <Content Include="js\nback\game.js" />
     <Content Include="js\nback\nback.js" />
@@ -472,6 +519,7 @@
     <Content Include="content\SCATI\SCATI-SO-Female.pdf" />
     <Content Include="content\SCATI\SCATI-SO-Male.pdf" />
     <Content Include="content\SCATI\Sinha and Watson 2007 SCATI.pdf" />
+    <Content Include="images\large\Thumbs.db" />
     <None Include="Properties\PublishProfiles\testPub.pubxml" />
     <Content Include="Provider\ProviderPortal.aspx" />
     <Content Include="ReportsSamples\CASS_Sample.html" />
@@ -965,6 +1013,7 @@
     <EmbeddedResource Include="Resources\Text.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Text.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -442,9 +442,9 @@
                         </div>
                         <div class="col-md-6 col-sm-12 col-xs-12">
                             <figure class="effect-oscar">
-                                <img src="images/DesktopTests4.png"" alt="" class="img-responsive" />
+                                <img src="images/dt.png"" alt="" class="img-responsive" />
                                 <figcaption>
-                                    <h2>DesktopTests</h2>
+                                    <h2>Desktop Tests Collection</h2>
                                     <a href="\Tests\DesktopTests.aspx">View more</a>
                                 </figcaption>
                             </figure>

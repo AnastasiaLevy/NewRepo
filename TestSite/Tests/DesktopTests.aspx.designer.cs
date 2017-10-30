@@ -40,15 +40,6 @@ namespace TestSite.Tests {
         protected global::System.Web.UI.WebControls.LinkButton logOut;
         
         /// <summary>
-        /// LinkButton1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
-        
-        /// <summary>
         /// existsMessage control.
         /// </summary>
         /// <remarks>
@@ -56,15 +47,6 @@ namespace TestSite.Tests {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label existsMessage;
-        
-        /// <summary>
-        /// runTest control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton runTest;
         
         /// <summary>
         /// price control.
@@ -76,21 +58,48 @@ namespace TestSite.Tests {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl price;
         
         /// <summary>
-        /// single control.
+        /// Section2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button single;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Section2;
         
         /// <summary>
-        /// hundred control.
+        /// Section3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button hundred;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Section3;
+        
+        /// <summary>
+        /// Section4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Section4;
+        
+        /// <summary>
+        /// Section5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Section5;
+        
+        /// <summary>
+        /// Section1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Section1;
     }
 }
