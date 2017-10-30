@@ -122,6 +122,7 @@
                                                 <asp:Button ID="btnModifyTest" runat="server" Text="Modify Test" OnClick="btnModifyTest_Click" class="btn btn-info pp-menu-item" Width="100%" />
                                                 <asp:Button ID="btnResetPassword" runat="server" Text="Reset Password" OnClick="btnResetPassword_Click" class="btn btn-info pp-menu-item" Width="100%" />
                                                 <asp:Button ID="btnExportTestResults" runat="server" Text="Export Test Results" OnClick="btnExportTestResults_Click" class="btn btn-info pp-menu-item" Width="100%" />
+                                                <%--<asp:Button ID="Button1" runat="server" Text="Test buttons" OnClick="afterBuyTOL" class="btn btn-info pp-menu-item" Width="100%" />--%>
                             </div>
                             <%--<asp:Button ID="btnUpdateProfile" runat="server" Text="Set Provider Code" class="btn btn-labeled btn-info" Width=" 100%" OnClick="btnUpdateProfile_Click" />
                             <asp:Button ID="btnAddNewPart" runat="server" Text="Add New Participant" OnClick="btnAddNewPart_Click" class="btn btn-labeled btn-info" Width="100%" />
@@ -714,11 +715,32 @@ data="https://www.youtube.com/embed/0JwN9Np1TmE?fs=0">
         </footer>
 
     </form>
+
+    <div>
+        <div class="b-popup" id="popupForProvider" runat="server">
+        <div class="b-popup-content" style="position: relative;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec accumsan eros, non semper orci. Curabitur convallis in nulla commodo interdum. Proin tincidunt vulputate arcu sed bibendum. Etiam accumsan eleifend pharetra. Praesent vehicula mi consequat, scelerisque tellus quis, laoreet metus. Nam eget tristique mi, at bibendum neque. Curabitur aliquam vel neque blandit dignissim. Phasellus sed eros id purus consequat pulvinar. Proin tristique, mi et pulvinar sodales, turpis urna dignissim tellus, et dapibus sapien lectus et neque. Quisque nulla ante, fringilla id mattis aliquet, feugiat a augue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut aliquam enim id augue volutpat, et fringilla elit tristique.</a>
+            <div style="position:absolute; bottom:10px; display:block">
+                <%--<button class="btn btn-success" OnClick="PopUpHide()" >Close</button>--%>
+                <a class="btn btn-success" href="/provider/ProviderPortal.aspx">Close</a>
+            </div>
+        </div>
+        </div>
+    </div>
 </html>
 <%--<script src="../js/jquery.js"></script>  --%>
 
 <script src="../js/jquery-responsiveTables.js"></script>
 <script src="../js/bootstrap.min.js"></script>
+<script>
+                        
+                        function PopUpShow() {
+                            $("#popupForProvider").show();
+                        }
+                        function PopUpHide() {
+                            $("#popupForProvider").hide();
+                            
+                        }
+</script>
 <script>
 
     var interval = setInterval(function () {

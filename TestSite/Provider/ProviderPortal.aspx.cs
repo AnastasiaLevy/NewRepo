@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using TestSite.BL.Services;
+using TestSite.DAL;
 using TestSite.HelpClasses;
 using static TestSite.HelpClasses.Enums;
 
@@ -14,6 +16,8 @@ namespace TestSite.Provider
 {
     public partial class ProviderPortal : System.Web.UI.Page
     {
+        protected MembershipUser _user;
+
         protected void Page_PreRender(object sender, EventArgs e)
         {
             //PRERENDER HERE IS A WORKAROUND. CODE IS TRASH AND CONTAINS TONS OF OVERRIDING IN IT!!!
@@ -27,6 +31,92 @@ namespace TestSite.Provider
             {
                 // MC.Style.Add("display", "none");
             }
+            string buyTestTypeString = Request.QueryString["buyTestType"];
+            string buyTestOptionString = Request.QueryString["buyTestOption"];
+            string buyTestNumString = Request.QueryString["buyTestNum"];            
+            if ((buyTestTypeString != null)&&(buyTestOptionString != null)&&(buyTestNumString != null))
+            {
+                int numTests = Convert.ToInt32(buyTestNumString);
+                int option = Convert.ToInt32(buyTestOptionString);
+                string testType = buyTestTypeString;
+                _user = Membership.GetUser(User.Identity.Name);
+                int buyProviderId = DataMethods.GetProviderId(_user.ProviderUserKey.ToString());
+                DataTable providerTests = DataMethods.GetAllProviderTests(buyProviderId);
+                numTests += GetNumberTest(buyTestTypeString,buyTestOptionString,providerTests);
+                DataMethods.InsertProviderTest(buyProviderId, testType, option, numTests);
+                //Session["payTestNum"] = 0;
+            } else
+            {
+                popupForProvider.Visible = false;
+            }
+        }
+        protected int GetNumberTest(string testType, string testOptions, DataTable dt)
+        {
+            int num = 0;
+            switch(testType)
+            {
+                case"1":
+                    {
+                        testType = "Trails";
+                        break;
+                    }
+                case "2":
+                    {
+                        testType = "Tower Of London";
+                        break;
+                    }
+                case "3":
+                    {
+                        testType = "Card Sort";
+                        break;
+                    }
+                case "4":
+                    {
+                        testType = "Nback";
+                        break;
+                    }
+                case "5":
+                    {
+                        testType = "Syllogisms";
+                        break;
+                    }
+            }
+            switch (testOptions)
+            {
+                case "1":
+                    {
+                        testOptions = "10";
+                        break;
+                    }
+                case "2":
+                    {
+                        testOptions = "100";
+                        break;
+                    }
+                case "3":
+                    {
+                        testOptions = "unlimited";
+                        break;
+                    }
+                case "4":
+                    {
+                        testOptions = "1";
+                        break;
+                    }
+                case "5":
+                    {
+                        testOptions = "500";
+                        break;
+                    }
+            }
+            foreach (DataRow table in dt.Rows)
+            {
+                if (table.ItemArray[0].ToString() == testType && table.ItemArray[1].ToString() == testOptions)
+                {
+                    num = Convert.ToInt32(table.ItemArray[2].ToString());
+                }
+            }
+            return num;
         }
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -665,6 +755,21 @@ namespace TestSite.Provider
                     Convert.ToInt32(TestsForExportResults.SelectedValue),
                     Convert.ToInt32(ViewState["providerId"]), from, to);
             }
+        }
+
+        
+        //protected void afterBuyTOL(object sender, EventArgs e)
+        //{
+        //    //Session["payTestNum"] = 5;
+        //    string buyTestTypeString = "4";
+        //    string buyTestOptionString = "1";
+        //    string buyTestNumString = "10";
+        //    Response.Redirect("~/Provider/ProviderPortal.aspx?buyTestType=" + buyTestTypeString + "&buyTestOption=" + buyTestOptionString + "&buyTestNum=" + buyTestNumString);
+        //}
+
+        protected void closePopUp(object sender, EventArgs e)
+        {
+            //popupForProvider.Visible = false;
         }
     }
 }

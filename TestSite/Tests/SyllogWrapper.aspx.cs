@@ -196,7 +196,7 @@ namespace TestSite.Tests
 
         }
 
-        private void PostPaypal(double itemAmount)
+        private void PostPaypal(double itemAmount, int num)
         {
             string business = "HQS7UWQMRHDTQ";// "analescheok@gmail.com"
             string itemName = "nback Test";
@@ -211,8 +211,26 @@ namespace TestSite.Tests
             ppHref.Append("&item_name=" + itemName);
             ppHref.Append("&amount=" + itemAmount.ToString("#.00"));
             ppHref.Append("&currency_code=" + currencyCode);
-            ppHref.Append("&return=" + baseUrl + "/Tests/SyllogWrapper.aspx"); //"http://localhost:52606/Tests/NbackWrapper.aspx"
-
+            //ppHref.Append("&return=" + baseUrl + "/Tests/SyllogWrapper.aspx"); //"http://localhost:52606/Tests/NbackWrapper.aspx"
+            string buyTestTypeString = "5";
+            string buyTestOptionString = null;
+            switch (num)
+            {
+                case 1:
+                    buyTestOptionString = "4";
+                    break;
+                case 10:
+                    buyTestOptionString = "1";
+                    break;
+                case 100:
+                    buyTestOptionString = "2";
+                    break;
+                case 1000:
+                    buyTestOptionString = "3";
+                    break;
+            }
+            string buyTestNumString = num.ToString();
+            ppHref.Append("&return=" + baseUrl + "~/Provider/ProviderPortal.aspx?buyTestType=" + buyTestTypeString + "&buyTestOption=" + buyTestOptionString + "&buyTestNum=" + buyTestNumString);
             Response.Redirect(ppHref.ToString(), true);
         }
 
@@ -221,7 +239,7 @@ namespace TestSite.Tests
         {
             if (User.Identity.IsAuthenticated)
             {
-                PostPaypal(30);
+                PostPaypal(30,10);
             }
             else
             {
@@ -233,7 +251,7 @@ namespace TestSite.Tests
         {
             if (User.Identity.IsAuthenticated)
             {
-                PostPaypal(200);
+                PostPaypal(200,100);
             }
             else
             {
@@ -245,7 +263,7 @@ namespace TestSite.Tests
         {
             if (User.Identity.IsAuthenticated)
             {
-                PostPaypal(300);
+                PostPaypal(300,1000);
             }
             else
             {
@@ -257,7 +275,7 @@ namespace TestSite.Tests
         {
             if (User.Identity.IsAuthenticated)
             {
-                PostPaypal(4);
+                PostPaypal(4,1);
             }
             else
             {

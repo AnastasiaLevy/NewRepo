@@ -143,6 +143,7 @@
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right custom-menu">
+                        <li><a href="Blog/index.html">Trending</a></li>
                         <li class="active"><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#services">Test Categories</a></li>

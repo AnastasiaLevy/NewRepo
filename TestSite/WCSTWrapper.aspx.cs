@@ -199,7 +199,7 @@ namespace TestSite
             //}
         }
 
-        private void PostPaypal(double itemAmount)
+        private void PostPaypal(double itemAmount, int num)
         {
             string business = "HQS7UWQMRHDTQ";
             string itemName = "Card Sort Test";
@@ -213,8 +213,26 @@ namespace TestSite
             ppHref.Append("&item_name=" + itemName);
             ppHref.Append("&amount=" + itemAmount.ToString("#.00"));
             ppHref.Append("&currency_code=" + currencyCode);
-            ppHref.Append("&return=" + baseUrl + "/WCSTWrapper.aspx"); //"http://cogquiz.com/WCSTWrapper.aspx");//h/go?nachatTest");
-
+            //ppHref.Append("&return=" + baseUrl + "/WCSTWrapper.aspx"); //"http://cogquiz.com/WCSTWrapper.aspx");//h/go?nachatTest");
+            string buyTestTypeString = "3";
+            string buyTestOptionString = null;
+            switch (num)
+            {
+                case 1:
+                    buyTestOptionString = "4";
+                    break;
+                case 10:
+                    buyTestOptionString = "1";
+                    break;
+                case 100:
+                    buyTestOptionString = "2";
+                    break;
+                case 1000:
+                    buyTestOptionString = "3";
+                    break;
+            }
+            string buyTestNumString = num.ToString();
+            ppHref.Append("&return=" + baseUrl + "~/Provider/ProviderPortal.aspx?buyTestType=" + buyTestTypeString + "&buyTestOption=" + buyTestOptionString + "&buyTestNum=" + buyTestNumString);
             Response.Redirect(ppHref.ToString(), true);
         }
 
@@ -223,7 +241,7 @@ namespace TestSite
             if (User.Identity.IsAuthenticated)
             {
             
-                PostPaypal(7);
+                PostPaypal(7,1);
             }
             else
             {
@@ -236,7 +254,7 @@ namespace TestSite
             if (User.Identity.IsAuthenticated)
             {
 
-                PostPaypal(50);
+                PostPaypal(50,10);
             }
             else
             {
@@ -249,7 +267,7 @@ namespace TestSite
             if (User.Identity.IsAuthenticated)
             {
 
-                PostPaypal(450);
+                PostPaypal(450,100);
             }
             else
             {
@@ -262,7 +280,7 @@ namespace TestSite
             if (User.Identity.IsAuthenticated)
             {
 
-                PostPaypal(600);
+                PostPaypal(600,1000);
             }
             else
             {
