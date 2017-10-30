@@ -10,10 +10,10 @@
     var elem = $('[data-paroller-factor]');
     var setDirection = {
         bgVertical: function (elem, bgOffset) {
-            return elem.css({ 'background-position': 'center ' + -bgOffset + 'px' });
+            return elem.css({'background-position': 'center ' + -bgOffset + 'px'});
         },
         bgHorizontal: function (elem, bgOffset) {
-            return elem.css({ 'background-position': -bgOffset + 'px' + ' center' });
+            return elem.css({'background-position': -bgOffset + 'px' + ' center'});
         },
         vertical: function (elem, elemOffset) {
             return elem.css({
@@ -31,7 +31,7 @@
         }
     };
 
-    $.fn.paroller = function (options) {
+    $.fn.paroller = function(options) {
         var windowHeight = $(window).height();
         var documentHeight = $(document).height();
 
@@ -42,7 +42,7 @@
             direction: 'vertical' // horizontal
         }, options);
 
-        elem.each(function () {
+        elem.each(function(){
             var $this = $(this);
             var offset = $this.offset().top;
             var height = $this.outerHeight();
@@ -56,41 +56,41 @@
             var bgOffset = Math.round(offset * factor);
             var transform = Math.round((offset - (windowHeight / 2) + height) * factor);
 
-            if (type == 'background') {
-                if (direction == 'vertical') {
+            if(type == 'background') {
+                if(direction == 'vertical') {
                     setDirection.bgVertical($this, bgOffset);
                 }
-                else if (direction == 'horizontal') {
+                else if(direction == 'horizontal') {
                     setDirection.bgHorizontal($this, bgOffset);
                 }
             }
-            else if (type == 'foreground') {
-                if (direction == 'vertical') {
+            else if(type == 'foreground') {
+                if(direction == 'vertical') {
                     setDirection.vertical($this, transform);
                 }
-                else if (direction == 'horizontal') {
+                else if(direction == 'horizontal') {
                     setDirection.horizontal($this, transform);
                 }
             }
 
-            $(window).on('scroll', function () {
+            $(window).on('scroll', function(){
                 var scrolling = $(this).scrollTop();
                 bgOffset = Math.round((offset - scrolling) * factor);
                 transform = Math.round(((offset - (windowHeight / 2) + height) - scrolling) * factor);
 
-                if (type == 'background') {
-                    if (direction == 'vertical') {
+                if(type == 'background') {
+                    if(direction == 'vertical') {
                         setDirection.bgVertical($this, bgOffset);
                     }
-                    else if (direction == 'horizontal') {
+                    else if(direction == 'horizontal') {
                         setDirection.bgHorizontal($this, bgOffset);
                     }
                 }
-                else if ((type == 'foreground') && (scrolling < documentHeight)) {
-                    if (direction == 'vertical') {
+                else if((type == 'foreground') && (scrolling < documentHeight)) {
+                    if(direction == 'vertical') {
                         setDirection.vertical($this, transform);
                     }
-                    else if (direction == 'horizontal') {
+                    else if(direction == 'horizontal') {
                         setDirection.horizontal($this, transform);
                     }
                 }

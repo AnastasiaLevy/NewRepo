@@ -1,20 +1,14 @@
-﻿<!DOCTYPE html>
-<!-- saved from url=(0035)https://cogquiz.com/blog/index.html -->
+﻿<!doctype html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CogQuiz Blog</title>
-    <link rel="stylesheet" href="../css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../fonts/font-awesome-4.6.3/css/font-awesome.css">
-    <link rel="shortcut icon" href="https://cogquiz.com/images/favicon.ico">
-    <link href="./CogQuiz Blog_files/cogTest.css" rel="stylesheet">
-</head>
-<body data-spy="scroll" data-target="#main-navbar" id="grad1">
-    \
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         #grad {
             background: red; /* For browsers that do not support gradients */
@@ -92,26 +86,28 @@
         }
 
         .round-button {
-            display: block;
-            width: 50px;
-            height: 50px;
-            line-height: 50px;
-            border: 2px solid #f5f5f5;
-            color: #f5f5f5;
-            text-align: center;
-            text-decoration: none;
-            background: #464646;
-            box-shadow: 0 0 3px gray;
-            font-size: 20px;
-            font-weight: bold;
-        }
-
-            .round-button:hover {
-                background: #262626;
-            }
+    display:block;
+    width:50px;
+    height:50px;
+    line-height:50px;
+    border: 2px solid #f5f5f5;
+    
+    color:#f5f5f5;
+    text-align:center;
+    text-decoration:none;
+    background: #464646;
+    box-shadow: 0 0 3px gray;
+    font-size:20px;
+    font-weight:bold;
+}
+.round-button:hover {
+    background: #262626;
+}
     </style>
+</head>
 
 
+<body data-spy="scroll" data-target="#main-navbar" id="grad1">
     <script>
         /*
     ------------------------------------------------------------
@@ -119,7 +115,7 @@
     ------------------------------------------------------------
     */
         function open_panel() {
-
+          
             slideIt();
             var a = document.getElementById("sidebar");
             a.setAttribute("id", "sidebar1");
@@ -164,43 +160,39 @@
         }
     </script>
 
+
     <div id="slider" style="right:-300px;">
+
         <div id="sidebar" onclick="open_panel()">
             <a class="round-button">+</a>
         </div>
+
         <div id="header">
             <h4>Go To <span id="closeButton" class="form-slide-close pull-right" onclick="close_panel();  ">X</span></h4>
-            <p><a href="https://cogquiz.com/blog/index.html#intro">About Cognitive Testing</a></p>
+            <p><a href="#intro">About Cognitive Testing</a></p>
             <p>
-                <a href="https://cogquiz.com/blog/index.html#emdr">EMDR and PTSD</a>
+                <a href="#emdr">EMDR and PTSD</a>
             </p>
             <p>
-                <a href="https://cogquiz.com/blog/index.html#man">Man vs Woman</a>
+                <a href="#man">Man vs Woman</a>
             </p>
-            <p><a href="https://cogquiz.com/blog/index.html#diamond">Marian C. Diamond</a></p>
-            <p><a href="https://cogquiz.com/blog/index.html#sonny1">Susceptible versus Resilient</a></p>
-            <p><a href="https://cogquiz.com/blog/index.html#pov">Poverty and Brain Development</a></p>
+            <p><a href="#diamond">Marian C. Diamond</a></p>
 
-        </div>
+</div>
     </div>
 
 
     <div class="container">
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-
-                <ul class="nav navbar-nav navbar-right custom-menu">
-                    <li><a href="https://cogquiz.com/MainPage.aspx">Home</a></li>
-                </ul>
-            </div>
-        </nav>
         <section id="vertical" class="my-5" style="background-color:white; margin:10px; padding:10px; position:absolute; z-index:-1">
             <h2>CogQuiz Blog</h2>
-            <div class="jumbotron text-center bg-faded my-5" style="background: url(&quot;../images/memoryPage1.jpg&quot;) center 70px no-repeat;" data-paroller-factor="-0.35" id="intro">
+            <div class="jumbotron text-center bg-faded my-5"
+                 style="background: url('../images/memoryPage1.jpg') no-repeat center; "
+                 data-paroller-factor="-0.15" id="intro">
                 <h1 class="heading-1 py-5 text-white">About </h1>
                 <p class="text-white">Cognitive Testing</p>
             </div>
             <div>
+
                 <p>The focus of our laboratory is the examination of cognition across the lifespan from 5 to 95 years of age. We recruit participants from the community, college classes, the children or brothers and sisters of students, and we get a number of participants by word of mouth (the snowball method). Participants show up for a variety of reasons and the money and/or extra credit that we give to students for participation is probably only a major reason in the case of students. Older participants frequently express an altruistic motive of helping researchers with their work and wanting to contribute to the research. Often, a secondary motive in the sixty-plus individuals is to find out if a change they are experiencing in their abilities is a normal consequence of getting older. Among our younger participants we get students and /or their younger siblings. Some of these individuals have been diagnosed with an Attention Deficit Hyperactivity Disorder (ADHD). Individuals who have been diagnosed with ADHD are allowed to participate in our research and given all the tests that we typically give to participants. They are simply not included in our database used for examining how cognition changes across the lifespan.</p>
                 <p>One of the tests we give has the generic label of ‘continuous performance test’ (CPT). We have administered several different commercial and noncommercial versions of the CPT but have settled on the Connors-CPT along with a few noncommercial CPTs we have created in the laboratory. The commercially available Connors-CPT that is provided to qualified individuals is frequently used to assess attention. It is akin to the Go/no-Go test used in the 20th century to examine inhibition in laboratory settings. Individuals are shown a series of letters presented in the center of a computer screen and are instructed to press the spacebar to all letters (targets), but to inhibit the spacebar press when the letter X (non-target) appears. There are a number of rather sophisticated measures extracted from an individual’s performance on this test as compared to norms based on individuals without an ADHD diagnosis. Among the most important are errors of ‘omission’. These are failures to spacebar press to target letters. Errors of ‘commission’ are spacebar presses to the letter X. From this information the researcher/clinician gets a score that measures the ability of the participant/client to discriminate between targets and non-targets.  This test is like other neuropsychological tests in that by itself in should not be used to infer a diagnosis. In our experience, we see children that have been diagnosed with ADHD based on subjective observations and/or questionnaires filled out by parents and/or teachers.</p>
                 <p>
@@ -252,9 +244,10 @@
                     </div>
                 </div>
             </div>-->
-
-
-            <div class="jumbotron text-center bg-faded my-5" style="background: url(&quot;../images/network.jpg&quot;) center 185px no-repeat;" data-paroller-factor="-0.15" id="emdr">
+          
+            <div class="jumbotron text-center bg-faded my-5"
+                 style="background: url('../images/network.jpg') no-repeat center; "
+                 data-paroller-factor="-0.15" id="emdr">
                 <h1 class="heading-1 py-5 text-white">EMDR and PTSD</h1>
                 <p class="text-white">August 05 by Dragut Adriana Cristina, MS LCP</p>
             </div>
@@ -270,80 +263,36 @@
                     EMDR doesn’t make you forget any of the events that you’ve been through, it only changes your perception about them. The goal is to be able to remember the traumatic memory without feeling any kind of negative sensation in the body. After the traumatic event has been reprocessed you won’t feel the same distress while remembering it and even some details of that certain memory tend to fade away.  It’s also important to understand that once set in motion, your brain will continue to process the traumatic memory even after the session and you might find yourself having surprising thoughts or dreams during the following days.
                 </p>
             </div>
-            <div class="jumbotron text-center bg-faded my-5" style="background: url(&quot;http://lorempixel.com/1200/600/abstract/8&quot;) -1084px center repeat;" data-paroller-factor="0.5" data-paroller-direction="horizontal" id="man">
+            <div class="jumbotron text-center bg-faded my-5"
+                 style="background: url('http://lorempixel.com/1200/600/abstract/8') no-repeat center;"
+                 data-paroller-factor="0.5"
+                 data-paroller-direction="horizontal" id="man">
                 <h1 class="heading-1 py-5 text-white">Man Vs Woman</h1>
                 <p class="text-white">August 10 2017</p>
             </div>
             <div>
                 <p>
-                    This week the New York Times reported on Google’s firing of an employee for writing a memo and placing it on the companywide email system. The memo was written by James Damore, a software engineer, who was subsequently fired by Sundar Pichai, Google’s CEO. Damore argued that the sex differences in employee coders favoring males (80% male) might be due to biological differences between males and females. Journalists writing in several major newspapers acknowledge that Damore had cited relevant peer reviewed articles supporting his view that biological (genetic) differences in personality and mathematical ability might in part account for the differences in employee sex ratio. In general, his memo was not viewed as a demented rant against women. In fact, David Brooks and Peter Singer in the New York Times and New York Daily News, argue that Pichai should not have fired Mr. Damore. Brooks argues that the thoughtless political correctness demonstrated by Mr. Pichai should results in his resignation.
-                </p>
-                <p> The reactions by commentators on Mr. Damore’s position varied from ‘Hogwash” on one side of a long running scientific debate to the view that there is scientific evidence for substantial brain and behavioral sex differences. When sex or race get attached to debates about the cultural/biological contributions to attributes such as personality or intelligence, sparks tend to fly. My personal view is that virtually no scientist who has considered the nature versus nurture debate, thinks either is solely responsible for these complex attributes.</p>
+                    This week the New York Times reported on Google’s firing of an employee for writing a memo and placing it on the companywide email system. The memo was written by James Damore, a software engineer, who was subsequently fired by Sundar Pichai, Google’s CEO. Damore argued that the sex differences in employee coders favoring males (80% male) might be due to biological differences between males and females. Journalists writing in several major newspapers acknowledge that Damore had cited relevant peer reviewed articles supporting his view that biological (genetic) differences in personality and mathematical ability might in part account for the differences in employee sex ratio. In general, his memo was not viewed as a demented rant against women. In fact, David Brooks and Peter Singer in the New York Times and New York Daily News, argue that Pichai should not have fired Mr. Damore. Brooks argues that the thoughtless political correctness demonstrated by Mr. Pichai should results in his resignation.</p>
+
+                   <p> The reactions by commentators on Mr. Damore’s position varied from ‘Hogwash” on one side of a long running scientific debate to the view that there is scientific evidence for substantial brain and behavioral sex differences. When sex or race get attached to debates about the cultural/biological contributions to attributes such as personality or intelligence, sparks tend to fly. My personal view is that virtually no scientist who has considered the nature versus nurture debate, thinks either is solely responsible for these complex attributes.</p>
+
                 <p> Components of intelligence demonstrate a bell-shaped distribution with most people in the middle and a smaller highly talented group of individuals on the far right tail. Germane to the brouhaha at Google, is an article in the December 2016 issue of the highly regarded scientific journal Intelligence that reports on the mathematical and verbal sex differences over the last 50-20 years. Math scores on the SAT extend back to the early 1960s. In a nutshell, if one examines the far right 5% or .01% females are better than males on tests of verbal ability and this advantage has remained stable over the last 20 or so years. The mathematical advantage for males shown in this far-right tail of the bell curve has shrunk from the early 1960 measurements but has remained stable in favor of males over the last 20 or so years.</p>
-                <p>
-                    So, what are we to make of Mr. Damore’s firing. By my view, he made a reasoned argument based on his reading of the scientific literature. Mr. Pichai fired him not because he was right or wrong, but because in his view this was an abhorrent sexist argument contrary to his views and goals for Google.
+
+                   <p> So, what are we to make of Mr. Damore’s firing. By my view, he made a reasoned argument based on his reading of the scientific literature. Mr. Pichai fired him not because he was right or wrong, but because in his view this was an abhorrent sexist argument contrary to his views and goals for Google.
                 </p>
             </div>
 
-            <div class="jumbotron text-center bg-faded my-5" style="background: url(&quot;../images/unsplash6.jpg&quot;) center -1589px repeat;" data-paroller-factor="0.5" id="diamond">
+
+            <div class="jumbotron text-center bg-faded my-5"
+                 style="background: url('../images/unsplash6.jpg') no-repeat center" ;
+                 data-paroller-factor="0.5" id="diamond">
                 <h1 class="heading-1 py-5 text-white">Marian C. Diamond</h1>
                 <p class="text-white">August 16 2017</p>
             </div>
             <div>
-                <p>I was saddened to receive in my New York Times notificationS on the brain a notice of the death of Marian C. Diamond. I’ve attached the following link to the Science section report of her death: https://www.nytimes.com/2017/08/16/science/marian-c-diamond-90-student-of-the-brain-is-dead.html?emc=edit_tnt_20170816&amp;nlid=36525050&amp;tntemail0=y </p>
-                <p>I was a Psychology graduate student in the laboratory of Mark Rosenzweig (pictured on the left in the linked article) during the 1970s. Most of my work was with Mark Rosenzweig and Edward Bennett on the role of brain protein synthesis in long-term memory formation. Other work pioneered by Rosenzweig, Bennett, and Diamond was on the brain effects induced by the environment. The brain changes induced by differential laboratory environments (enriched, impoverished, and standard) were counter to the dogma of the first half of the 20th century that presented the brain as a fixed structure. I asked to work in this paradigm and was given the assignment of looking at brain changes in young, middle-aged, and old rats placed in differential environments for differing amounts of time. Dr. Diamond provided guidance on what features of the brain I should examine and taught me Golgi staining as well as several other basic techniques I needed for my research. After 18 months of changing the toys and mazes daily in the enrichment cages and daily feeding, watering and cleaning a respiratory virus struck the rat colony and I lost 90% of my animals. I fell back on the protein synthesis studies I had done for my dissertation. I was disappointed and Marian Diamond invited me to dinner at her home with her and her husband. They reminded me how much I’d learned, the wonderful people I’d worked with, the great institution I was at, and that the last 18 months was certainly not a loss. I don’t remember much about neuronal staining techniques, but I do remember that Marian Diamond was an exceptional mentor and teacher.</p>
-            </div>
-            <div class="jumbotron text-center bg-faded my-5" style="background: url(&quot;http://lorempixel.com/1200/1200/abstract/5&quot;) 2201px center repeat;" data-paroller-factor="-0.55" data-paroller-direction="horizontal" id="sonny1">
-                <h1 class="heading-1 py-5 text-white">Susceptible versus Resilient</h1>
-                <p class="text-white">By Clarence A. “Sonny” Williams</p>
-            </div>
-            <div>
-                <p class="">Post-traumatic stress disorder (PTSD) is an example of the brain “gone wrong” after trauma. We once called it “shell shock,” but it afflicts more than just soldiers. Most people experience a traumatic event at some time during their life, an event perceived as life threatening (e.g., witnessing a deadly car crash or seeing a fellow soldier killed in battle). Most people experience temporary distress, like bad dreams or bouts of crying. They eventually “get over it,” and it never impairs their ability to carry on with life. Some, however, experience worse symptoms. We don’t know for sure, but from 8 to 18% of the population have sudden “flashbacks,” dissociating them from whatever is going on now; a car backfires and suddenly scares them; they freeze. They have frequent nightmares, are often moody and “distant,” even from loved ones. They have PTSD…and it can last a lifetime.</p>
-                <p class="">We all respond to trauma in the same way. The brain goes into “alert mode,” our “stress response,” activating the hippocampal-pituitary-adrenal (HPA) axis. The hypothalamus releases corticotropin releasing hormone (CRH) and arginine vasopressin (AVP), which together cause the pituitary to release adrenalin (adrenocorticotropic hormone, ACTH). Having global effects, the hormones reach the amygdala, our “emotional memory center.” Finally (in a matter of seconds), the adrenal cortex releases glucocorticoids, the most common being cortisol. That heightens the sympathetic nervous system, changes the senses needed to respond quickly to perceived threat. We’re ready for “flight or fight.” However, cortisol “loops back” and dampens the release of CRH, eventually returning the stress response system to its normal state (called “negative feedback”)</p>
-                <p class="">The stress response system is adaptive; that is, it evolved via natural selection, is “good for us.” We are resilient to stress. But if it’s good for us, why is bad for some people? That is, why are some people resilient to trauma, while others are susceptible to PTSD</p>
-                <p class="">We don’t have a complete answer, but we can “see” differences in the brains of resilient versus susceptible people (“seeing” means post mortem assays, self-report diaries, brain scans, and animal studies). The HPA axis of PTSD sufferers is dysfunctional, producing too little of the hormones needed for “negative feedback” and a return to normal. Moreover, the amygdala and its memory functions are not normal, are less able to form new memories while being overwhelmed by memories of the trauma</p>
-                <p class="text-white">Going deeper in the brain, we find that most PTSD sufferers have single nucleotide polymorphisms (SNPs) in several genes key to HPA axis function: FKBP5, NR3C1, CRHR1, and CRHR2. Their genes (“alleles”) are different. However, some people have these SNPs but don’t suffer PTSD after trauma. Additionally, many with PTSD experienced childhood abuse. Thus, we have a strong case suggesting that PTSD represents a gene-by-environment (G x E) interaction. Early childhood abuse “triggers” those alleles, altering the HPA axis so it is dysfunctional when experiencing adult trauma.</p>
-            </div>
+                <p>I was saddened to receive in my New York Times notificationS on the brain a notice of the death of Marian C. Diamond. I’ve attached the following link to the Science section report of her death: https://www.nytimes.com/2017/08/16/science/marian-c-diamond-90-student-of-the-brain-is-dead.html?emc=edit_tnt_20170816&nlid=36525050&tntemail0=y </p>
 
-            <div class="row my-5" id="pov">
-                <div class="col col-sm-6" data-paroller-factor="-0.1" data-paroller-type="foreground" data-paroller-direction="horizontal" style="transform: translateX(-546px);">
-                    <div class="card">
-                        <img class="card-img-top" src="./CogQuiz Blog_files/6" alt="Card image cap">
-                        <div class="card-block">
-                            <h3 class="card-title">Poverty and Brain Development</h3>
-                        </div>
-                        <div>
-                            <p>
-                                Poverty (low socioeconomic status; SES) is clearly associated with poor academic and career success as well as higher rates of obesity and anxiety-related behaviors. Poor neighborhoods seem to predispose children to anti-social behavior, with crime correspondingly increasing. Finally, evidence increasingly reveals that the brains of children raised in poverty develop differently, which appears to contribute to the noted associations. However, these are correlations. Doing something about the problem requires causal evidence. Does poverty cause these costly problems?
-                            </p>
-                            <p>
-                                The answer is complicated in that we cannot manipulate growing up in poverty, which is the only way to establish causality. However, the answer, “No, poverty is not causal,” seems obvious. Lowering the poverty level tomorrow is unlikely to do anything to children suddenly finding themselves “technically” above the poverty line. Moreover, many poor children are perfectly fine; low-SES apparently had no effect on their brain development or health, and scores of children in the poorest nations on earth are also fine.
-                            </p>
-                            <p>
-                                Clearly, “something” more closely associated with poverty than wealth is causal. That “something” must be an environmental factor because the brain and body “building block genes” are probably the same among poor and wealthy populations (although research into this morally unappealing possibility continues; it is theoretically possible that genetic variation largely accounts for SES). However, a gene-by-environment (G x E) interaction could be involved. That is, “something” in the environment alters genetic “products” via epigenetic processes, and, perhaps, only some children have those “susceptibility genes.” Diet deficiencies due to food availability or poor choice as well as poor schools are obvious environmental candidates (and easily if not cheaply solved), but is that all?
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-sm-6" data-paroller-factor="-0.1" data-paroller-type="foreground" data-paroller-direction="horizontal" style="transform: translateX(-546px);">
-                    <div class="card">
-                        <img class="card-img-top" src="./CogQuiz Blog_files/7" alt="Card image cap">
-                        <div class="card-block">
-                            <h3 class="card-title">By Clarence A. “Sonny” Williams</h3>
-                        </div>
-                        <div>
-                            <p>
-                                There is growing evidence suggesting that stress is a causal factor in the link between poverty, poor cognitive capabilities, and physical health. We’ve known for years that stress is damaging to brain development and health (see McEwen, 2013), but what’s the source of stress among the impoverished? After all, rich and poor kids face roughly the same kind of stress emanating from their social circles, like bullying, feelings of inadequacy, and other stresses resulting from social status and natural hierarchies. Increased violence is more prevalent in poor communities, but that’s probably because poverty predisposes children to anti-social behavior…which simply brings us back full circle to the problem of poverty and brain development.
-                            </p>
-                            <p>
-                                The most encouraging evidence comes from a growing body of research into stress caused by perceptions of inequality. Poverty is a state of mind. Excellent animal research, which can explore causation, supports the impact of perceived social inequality and the body’s stress response. Even if the poverty line were lowered tomorrow or all poor people were given money, the perception of social inequality would remain. The research linked below makes an outstanding contribution to that research. In their cross-sectional study, Parker and colleagues observed that low SES children had lower cortical thickness, which they further determined was attributable to genes involved in the hypothalamic-pituitary-adrenal (HPA) axis, the brain’s stress response circuit. G x E interactions noted above could account for variations among the poor.
-                            </p>
-                            <p>
-                                Parker, N., Wong, A. P. Y., Leonard, G., Perron, M., Pike, B., Richer, L., ... &amp; Paus, T. (2017). Income inequality, gene expression, and brain maturation during adolescence. Scientific Reports, 7. http://www.nature.com/articles/s41598-017-07735-2
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                <p>I was a Psychology graduate student in the laboratory of Mark Rosenzweig (pictured on the left in the linked article) during the 1970s. Most of my work was with Mark Rosenzweig and Edward Bennett on the role of brain protein synthesis in long-term memory formation. Other work pioneered by Rosenzweig, Bennett, and Diamond was on the brain effects induced by the environment. The brain changes induced by differential laboratory environments (enriched, impoverished, and standard) were counter to the dogma of the first half of the 20th century that presented the brain as a fixed structure. I asked to work in this paradigm and was given the assignment of looking at brain changes in young, middle-aged, and old rats placed in differential environments for differing amounts of time. Dr. Diamond provided guidance on what features of the brain I should examine and taught me Golgi staining as well as several other basic techniques I needed for my research. After 18 months of changing the toys and mazes daily in the enrichment cages and daily feeding, watering and cleaning a respiratory virus struck the rat colony and I lost 90% of my animals. I fell back on the protein synthesis studies I had done for my dissertation. I was disappointed and Marian Diamond invited me to dinner at her home with her and her husband. They reminded me how much I’d learned, the wonderful people I’d worked with, the great institution I was at, and that the last 18 months was certainly not a loss. I don’t remember much about neuronal staining techniques, but I do remember that Marian Diamond was an exceptional mentor and teacher.</p>
             </div>
             <!--<div class="row my-5">
                 <div class="col col-md-4" data-paroller-factor="0.9" data-paroller-type="foreground"
@@ -354,7 +303,7 @@
                             <h4 class="card-title">Marian C. Diamond</h4>
                             <p class="card-text">
                                 Components of intelligence demonstrate a bell-shaped distribution with most people in the middle and a smaller highly talented group of individuals on the far right tail. Germane to the brouhaha at Google, is an article in the December 2016 issue of the highly regarded scientific journal Intelligence that reports on the mathematical and verbal sex differences over the last 50-20 years. Math scores on the SAT extend back to the early 1960s. In a nutshell, if one examines the far right 5% or .01% females are better than males on tests of verbal ability and this advantage has remained stable over the last 20 or so years. The mathematical advantage for males shown in this far-right tail of the bell curve has shrunk from the early 1960 measurements but has remained stable in favor of males over the last 20 or so years.
-
+                              
                             </p>
                             <p>So, what are we to make of Mr. Damore’s firing. By my view, he made a reasoned argument based on his reading of the scientific literature. Mr. Pichai fired him not because he was right or wrong, but because in his view this was an abhorrent sexist argument contrary to his views and goals for Google.</p>
                         </div>
@@ -387,48 +336,50 @@
                 </div>
             </div>-->
             <!--<div class="row my-5">
-                            <div class="col col-sm-6" data-paroller-factor="0.1" data-paroller-type="foreground"
-                                 data-paroller-direction="vertical">
-                                <div class="card">
-                                    <img class="card-img-top" src="http://lorempixel.com/400/200/abstract/6" alt="Card image cap">
-                                    <div class="card-block">
-                                        <h4 class="card-title">Card vertical</h4>
-                                    </div>
-                                    <p>This week the New York Times reported on Google’s firing of an employee for writing a memo and placing it on the companywide email system. The memo was written by James Damore, a software engineer, who was subsequently fired by Sundar Pichai, Google’s CEO. Damore argued that the sex differences in employee coders favoring males (80% male) might be due to biological differences between males and females. Journalists writing in several major newspapers acknowledge that Damore had cited relevant peer reviewed articles supporting his view that biological (genetic) differences in personality and mathematical ability might in part account for the differences in employee sex ratio. In general, his memo was not viewed as a demented rant against women. In fact, David Brooks and Peter Singer in the New York Times and New York Daily News, argue that Pichai should not have fired Mr. Damore. Brooks argues that the thoughtless political correctness demonstrated by Mr. Pichai should results in his resignation.</p>
-                                </div>
-                            </div>
-                            <div class="col col-sm-6" data-paroller-factor="-0.1" data-paroller-type="foreground"
-                                 data-paroller-direction="vertical">
-                                <div class="card">
-                                    <img class="card-img-top" src="http://lorempixel.com/400/200/abstract/7" alt="Card image cap">
-                                    <div class="card-block">
-                                        <h4 class="card-title">Card vertical</h4>
-                                    </div>
-                                    <p>The reactions by commentators on Mr. Damore’s position varied from ‘Hogwash” on one side of a long running scientific debate to the view that there is scientific evidence for substantial brain and behavioral sex differences. When sex or race get attached to debates about the cultural/biological contributions to attributes such as personality or intelligence, sparks tend to fly. My personal view is that virtually no scientist who has considered the nature versus nurture debate, thinks either is solely responsible for these complex attributes.
+                <div class="col col-sm-6" data-paroller-factor="0.1" data-paroller-type="foreground"
+                     data-paroller-direction="vertical">
+                    <div class="card">
+                        <img class="card-img-top" src="http://lorempixel.com/400/200/abstract/6" alt="Card image cap">
+                        <div class="card-block">
+                            <h4 class="card-title">Card vertical</h4>
+                        </div>
+                        <p>This week the New York Times reported on Google’s firing of an employee for writing a memo and placing it on the companywide email system. The memo was written by James Damore, a software engineer, who was subsequently fired by Sundar Pichai, Google’s CEO. Damore argued that the sex differences in employee coders favoring males (80% male) might be due to biological differences between males and females. Journalists writing in several major newspapers acknowledge that Damore had cited relevant peer reviewed articles supporting his view that biological (genetic) differences in personality and mathematical ability might in part account for the differences in employee sex ratio. In general, his memo was not viewed as a demented rant against women. In fact, David Brooks and Peter Singer in the New York Times and New York Daily News, argue that Pichai should not have fired Mr. Damore. Brooks argues that the thoughtless political correctness demonstrated by Mr. Pichai should results in his resignation.</p>
+                    </div>
+                </div>
+                <div class="col col-sm-6" data-paroller-factor="-0.1" data-paroller-type="foreground"
+                     data-paroller-direction="vertical">
+                    <div class="card">
+                        <img class="card-img-top" src="http://lorempixel.com/400/200/abstract/7" alt="Card image cap">
+                        <div class="card-block">
+                            <h4 class="card-title">Card vertical</h4>
+                        </div>
+                        <p>The reactions by commentators on Mr. Damore’s position varied from ‘Hogwash” on one side of a long running scientific debate to the view that there is scientific evidence for substantial brain and behavioral sex differences. When sex or race get attached to debates about the cultural/biological contributions to attributes such as personality or intelligence, sparks tend to fly. My personal view is that virtually no scientist who has considered the nature versus nurture debate, thinks either is solely responsible for these complex attributes.
 
-            Components of intelligence demonstrate a bell-shaped distribution with most people in the middle and a smaller highly talented group of individuals on the far right tail. Germane to the brouhaha at Google, is an article in the December 2016 issue of the highly regarded scientific journal Intelligence that reports on the mathematical and verbal sex differences over the last 50-20 years. Math scores on the SAT extend back to the early 1960s. In a nutshell, if one examines the far right 5% or .01% females are better than males on tests of verbal ability and this advantage has remained stable over the last 20 or so years. The mathematical advantage for males shown in this far-right tail of the bell curve has shrunk from the early 1960 measurements but has remained stable in favor of males over the last 20 or so years.
+Components of intelligence demonstrate a bell-shaped distribution with most people in the middle and a smaller highly talented group of individuals on the far right tail. Germane to the brouhaha at Google, is an article in the December 2016 issue of the highly regarded scientific journal Intelligence that reports on the mathematical and verbal sex differences over the last 50-20 years. Math scores on the SAT extend back to the early 1960s. In a nutshell, if one examines the far right 5% or .01% females are better than males on tests of verbal ability and this advantage has remained stable over the last 20 or so years. The mathematical advantage for males shown in this far-right tail of the bell curve has shrunk from the early 1960 measurements but has remained stable in favor of males over the last 20 or so years.
 
-            So, what are we to make of Mr. Damore’s firing. By my view, he made a reasoned argument based on his reading of the scientific literature. Mr. Pichai fired him not because he was right or wrong, but because in his view this was an abhorrent sexist argument contrary to his views and goals for Google.</p>
-                                </div>
-                            </div>
-                        </div>-->
+So, what are we to make of Mr. Damore’s firing. By my view, he made a reasoned argument based on his reading of the scientific literature. Mr. Pichai fired him not because he was right or wrong, but because in his view this was an abhorrent sexist argument contrary to his views and goals for Google.</p>
+                    </div>
+                </div>
+            </div>-->
+      
         </section>
-        <!--<section id="horizontal" class="my-5">
-             <!--<div class="jumbotron text-center bg-faded my-5"
-                  style="background: url('http://lorempixel.com/1200/600/abstract/8') no-repeat center;"
-                  data-paroller-factor="0.5"
-                  data-paroller-direction="horizontal">
-                 <h1 class="heading-1 py-5 text-white">Hola, horizontal Parallax!</h1>
-                 <p class="text-white">data-paroller-factor="0.5"</p>
-             </div>
-             <div class="jumbotron text-center bg-faded my-5"
-                  style="background: url('http://lorempixel.com/1200/1200/abstract/5') repeat center;"
-                  data-paroller-factor="-0.75"
-                  data-paroller-direction="horizontal">
-                 <h1 class="heading-1 py-5 text-white">Maybe some horizontal scrolling with repeated background?</h1>
-                 <p class="text-white">data-paroller-factor="-0.75"</p>
-             </div>-->
-        <!--<div class="row my-5">
+
+       <!--<section id="horizontal" class="my-5">
+            <!--<div class="jumbotron text-center bg-faded my-5"
+                 style="background: url('http://lorempixel.com/1200/600/abstract/8') no-repeat center;"
+                 data-paroller-factor="0.5"
+                 data-paroller-direction="horizontal">
+                <h1 class="heading-1 py-5 text-white">Hola, horizontal Parallax!</h1>
+                <p class="text-white">data-paroller-factor="0.5"</p>
+            </div>
+            <div class="jumbotron text-center bg-faded my-5"
+                 style="background: url('http://lorempixel.com/1200/1200/abstract/5') repeat center;"
+                 data-paroller-factor="-0.75"
+                 data-paroller-direction="horizontal">
+                <h1 class="heading-1 py-5 text-white">Maybe some horizontal scrolling with repeated background?</h1>
+                <p class="text-white">data-paroller-factor="-0.75"</p>
+            </div>-->
+             <!--<div class="row my-5">
                 <div class="col col-md-4" data-paroller-factor="-0.3" data-paroller-type="foreground"
                      data-paroller-direction="horizontal">
                     <div class="card">
@@ -497,6 +448,7 @@
                 </div>
             </div>
         </section>-->
+
     </div>
     <div class="clearfix"></div>
     <!--<footer class="bg-faded text-muted py-5 mt-5">
@@ -511,15 +463,18 @@
         </div>
     </footer>-->
     <!-- jQuery -->
-    <script src="../js/jquery.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+            integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+            crossorigin="anonymous"></script>
     <!--Paroller-->
-    <script src="../js/jquery.js"></script>
+    <script src="dist/jquery.paroller.js"></script>
+
     <script>
         $(function () {
             $(window).paroller();
 
         });
     </script>
-
 </body>
+
 </html>
