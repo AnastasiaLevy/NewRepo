@@ -35,7 +35,7 @@
 <body>
     <!-- Trigger the modal with a button -->
 
-    <form runat="server">
+    <form runat="server" novalidate>
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
@@ -235,12 +235,12 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div id="assignTest" class="panel panel-success" runat="server">
+                                <div id="assignTest" class="panel panel-success" runat="server" novalidate>
                                     <div class="panel-heading">
                                         <h3 class="panel-title">Assign Test</h3>
                                         <asp:Label ID="lblTestMessage" runat="server" Text=""></asp:Label>
                                     </div>
-                                    <div class="panel-body ">
+                                    <div class="panel-body " novalidate>
                                         <asp:DropDownList class="dropDown" ID="ddlAllParticipants" runat="server" Width="50%" required="true"></asp:DropDownList>
                                         <asp:DropDownList class="dropDown" ID="ddlProvTests" runat="server" Width="50%" OnSelectedIndexChanged="ddlProvTests_SelectedIndexChanged" AppendDataBoundItems="true" AutoPostBack="True"></asp:DropDownList>
                                         <asp:DropDownList class="dropDown" ID="ddlModifiedID" runat="server" Width="40%"></asp:DropDownList>
