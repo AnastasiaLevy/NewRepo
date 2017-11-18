@@ -231,7 +231,7 @@ namespace TestSite.Tests
                     break;
             }
             string buyTestNumString = num.ToString();
-            ppHref.Append("&return=" + baseUrl + "~/Provider/ProviderPortal.aspx?buyTestType=" + buyTestTypeString + "&buyTestOption=" + buyTestOptionString + "&buyTestNum=" + buyTestNumString);
+            ppHref.Append("&return=" + baseUrl + "/Provider/ProviderPortal.aspx?buyTestType=" + buyTestTypeString + "&buyTestOption=" + buyTestOptionString + "&buyTestNum=" + buyTestNumString);
             Response.Redirect(ppHref.ToString(), true);
         }
 
