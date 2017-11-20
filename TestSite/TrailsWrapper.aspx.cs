@@ -22,7 +22,10 @@ namespace TestSite
         protected string _testId = Enums.TestId.Trails;
         protected static int _userTestId;
         protected static bool _isUserProvider;
-     
+        protected string _baseUrl;
+        protected string _itemName = "Trails Test";
+        protected string _page = "/TrailsWrapper.aspx";
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -31,7 +34,8 @@ namespace TestSite
                 _user = Membership.GetUser(User.Identity.Name);
                 _userId = _user.ProviderUserKey.ToString();
                 _isProfilefilled = ProfileIsFilled(_userId);
-                _isUserProvider = false;
+                _isUserProvider = CommonMethods.UserIsProvider(_userId);
+                _baseUrl = Request.Url.GetLeftPart(UriPartial.Authority);
                 logOut.Visible = true;
                 login.Visible = false;
             }
@@ -41,18 +45,29 @@ namespace TestSite
                 profOpt.Visible = false;
 
             }
-            if (!IsPostBack)
+            if (!IsPostBack)//Request.QueryString {amt=0.01&cc=USD&item_name=Trails+Test&st=Completed&tx=40C33493AY740004M}
             {
                 if (!String.IsNullOrEmpty(Request.QueryString["st"]) && Request.QueryString["st"] == "Completed")
                 {
-                    string error = "";
-                    if (UpdateTestPaid(_userId) && hasPaidTest(_userId))
+                    if (!_isUserProvider)
                     {
-                        InitiateTest();
+                        string error = "";
+                        if (UpdateTestPaid(_userId) && hasPaidTest(_userId))
+                        {
+                            InitiateTest();
+                        }
+                        else
+                        {
+                            error = "Cannot process payment. Please contact administrator.";
+                        }
                     }
                     else
                     {
-                        error = "Cannot process payment. Please contact administrator.";
+                        string value = Request.QueryString["item_name"];
+                        string num = value.Split('_')[0];
+                        string option = CommonMethods.GetOption(num);
+
+                        Response.Redirect("~/Provider/ProviderPortal.aspx?buyTestType=" + _testId + "&buyTestOption=" + option + "&buyTestNum="+ num);
                     }
 
                 }
@@ -203,51 +218,29 @@ namespace TestSite
 
         }
 
-        private void PostPaypal(double itemAmount, int num)
-        {
-            string business = "HQS7UWQMRHDTQ";// "analescheok@gmail.com"
-            string itemName = "Trails Test";
-            //double itemAmount = 0.01;
-            string currencyCode = "USD";
+        //private string  PostPaypal(double itemAmount, int num, string baseUrl, string itemName, string pageToReturn)
+        //{
+        //    string business = "HQS7UWQMRHDTQ";
+        //    //double itemAmount = 0.01;
+        //    string currencyCode = "USD";
 
-            StringBuilder ppHref = new StringBuilder();
-            string baseUrl = Request.Url.GetLeftPart(UriPartial.Authority);
+        //    StringBuilder ppHref = new StringBuilder();
+        //    ppHref.Append("https://www.paypal.com/cgi-bin/webscr?cmd=_xclick");//("https://www.paypal.com/cgi-bin/webscr?cmd=_xclick");
+        //    ppHref.Append("&business=" + business);
+        //    ppHref.Append("&item_name=" + num + "_" + itemName);
+        //    ppHref.Append("&amount=" + 0.01);//itemAmount.ToString("#.00")
+        //    ppHref.Append("&currency_code=" + currencyCode);
+        //    ppHref.Append("&return=" + baseUrl + pageToReturn); //"http://localhost:52606/TrailsWrapper.aspx");
+        //    return ppHref.ToString();
+            
+        //}
 
-            ppHref.Append("https://www.paypal.com/cgi-bin/webscr?cmd=_xclick");//("https://www.paypal.com/cgi-bin/webscr?cmd=_xclick");
-            ppHref.Append("&business=" + business);
-            ppHref.Append("&item_name=" + itemName);
-            ppHref.Append("&amount=" + itemAmount.ToString("#.00"));
-            ppHref.Append("&currency_code=" + currencyCode);
-            //ppHref.Append("&return=" + baseUrl + "/TrailsWrapper.aspx"); //"http://localhost:52606/TrailsWrapper.aspx");
-            string buyTestTypeString = "1";
-            string buyTestOptionString = null;
-            switch (num)
-            {
-                case 1:
-                    buyTestOptionString = "4";
-                    break;
-                case 10:
-                    buyTestOptionString = "1";
-                    break;
-                case 100:
-                    buyTestOptionString = "2";
-                    break;
-                case 1000:
-                    buyTestOptionString = "3";
-                    break;
-            }
-
-            string buyTestNumString = num.ToString();
-            ppHref.Append("&return=" + baseUrl + "~/Provider/ProviderPortal.aspx?buyTestType=" + buyTestTypeString + "&buyTestOption=" + buyTestOptionString + "&buyTestNum=" + buyTestNumString);
-
-            Response.Redirect(ppHref.ToString(), true);
-        }
 
         protected void single_Click(object sender, EventArgs e)
         {
             if (User.Identity.IsAuthenticated)
             {
-                PostPaypal(5,1);
+                Response.Redirect(CommonMethods.PostPaypal(5, 1, _baseUrl, _itemName, _page), true);
             }
             else
             {
@@ -259,7 +252,8 @@ namespace TestSite
         {
             if (User.Identity.IsAuthenticated)
             {
-                PostPaypal(40,10);
+                //PostPaypal(40, 10, _baseUrl, _itemName, _page);
+                Response.Redirect(CommonMethods.PostPaypal(40, 10, _baseUrl, _itemName, _page), true);
             }
             else
             {
@@ -271,7 +265,9 @@ namespace TestSite
         {
             if (User.Identity.IsAuthenticated)
             {
-                PostPaypal(80,100);
+                //PostPaypal(80,100, _baseUrl, _itemName, _page);
+                Response.Redirect(CommonMethods.PostPaypal(80, 100, _baseUrl, _itemName, _page), true);
+
             }
             else
             {
@@ -283,7 +279,8 @@ namespace TestSite
         {
             if (User.Identity.IsAuthenticated)
             {
-                PostPaypal(499,1000);
+                //PostPaypal(499, 1000, _baseUrl, _itemName, _page);
+                Response.Redirect(CommonMethods.PostPaypal(499, 500, _baseUrl, _itemName, _page), true);
             }
             else
             {

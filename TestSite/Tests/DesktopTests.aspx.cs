@@ -118,54 +118,29 @@ namespace TestSite.Tests
             }
         }
 
-        protected void single_Click(object sender, EventArgs e)
+        protected void clcSendButton(object sender, EventArgs e)
         {
-            RunPayPal("CogQuest", 45.00);
-        }
-
-        private void RunPayPal(string itemName, double itemAmount)
-        {
-            string business = "HQS7UWQMRHDTQ";//"P6JMSAGR5XCE4";// "analescheok@gmail.com"
-
-
-            string currencyCode = "USD";
-
-            StringBuilder ppHref = new StringBuilder();
-            string baseUrl = Request.Url.GetLeftPart(UriPartial.Authority);
-
-            ppHref.Append("https://www.paypal.com/cgi-bin/webscr?cmd=_xclick");//();//"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_xclick"
-            ppHref.Append("&business=" + business);
-            ppHref.Append("&item_name=" + itemName);
-            ppHref.Append("&amount=" + itemAmount.ToString("#.00"));
-            ppHref.Append("&currency_code=" + currencyCode);
-            ppHref.Append("&return=" + baseUrl + "/Tests/CogQuest.aspx"); //"http://localhost:52606/Tests/NbackWrapper.aspx"
-
-            Response.Redirect(ppHref.ToString(), true);
-        }
-
-        protected void ten_Click(object sender, EventArgs e)
-        {
-            //RunPayPal("CogQuest", 100.00);
-        }
-
-        protected void runTest_Click(object sender, EventArgs e)
-        {
-            string publisherName = "CogQuiz";
-            string applicationName = "CogQuest";
-            string shortcutPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Programs), publisherName);
-            shortcutPath = Path.Combine(shortcutPath, applicationName) + ".appref-ms";
-            if (File.Exists(shortcutPath))
+            string txtNameFrom = emailName.Value;
+            string txtEmailFrom = emailFrom.Value;
+            string txtMessage = emailText.Value;
+            try
             {
-                existsMessage.Text = "This application is already installed on your computer.";
-                //runTest.Visible = false;
+                DAL.DataMethods.SaveUserMessage(txtNameFrom, txtEmailFrom, txtMessage);
+                contactError.InnerText = "Thak you. We will be in touch next business day.";
+
             }
-            else
-                Response.Redirect("CogQuestTool/CogQuestSetUp.aspx");
+            catch (Exception ex)
+            {
+                contactError.InnerText = "There was error sending you message. Please try again later.";
+            }
+            txtEmailFrom = "";
+            txtMessage = "";
+            txtNameFrom = "";
+            contactError.Focus();
+
+    
         }
 
-        protected void LinkButton1_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("CogQuestTool/CogQuestInstructionsPDF.pdf");
-        }
+
     }
 }

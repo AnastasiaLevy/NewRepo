@@ -216,6 +216,17 @@
     <Content Include="images\desktops\lnd_5.png" />
     <Content Include="images\desktops\lnd_6.png" />
     <Content Include="images\desktops\lnd_7.png" />
+    <Content Include="images\desktops\cpt_1.png" />
+    <Content Include="images\desktops\cpt_2.png" />
+    <Content Include="images\desktops\cpt_3.png" />
+    <Content Include="images\desktops\cpt_4.png" />
+    <Content Include="images\desktops\cpt_5.png" />
+    <Content Include="images\desktops\cpt_6.png" />
+    <Content Include="images\desktops\cpt_7.png" />
+    <Content Include="images\desktops\cpt_8.png" />
+    <Content Include="images\desktops\backgr.png" />
+    <Content Include="images\desktops\toh_7.png" />
+    <Content Include="images\desktops\toh_8.png" />
     <Content Include="images\desktops\toh_1.png" />
     <Content Include="images\desktops\toh_2.png" />
     <Content Include="images\desktops\toh_3.png" />
