@@ -18,6 +18,9 @@ namespace TestSite.Tests
         protected bool _isProfilefilled;
         protected string _testId = Enums.TestId.Syllogisms;
         protected static int _userTestId;
+        protected string _baseUrl;
+        protected string _itemName = "Syllogisms Test";
+        protected string _page = "/Tests/SyllogWrapper.aspx";
 
 
         protected void Page_Load(object sender, EventArgs e)
@@ -28,6 +31,7 @@ namespace TestSite.Tests
                 _user = Membership.GetUser(User.Identity.Name);
                 _userId = _user.ProviderUserKey.ToString();
                 _isProfilefilled = ProfileIsFilled(_userId);
+                _baseUrl = Request.Url.GetLeftPart(UriPartial.Authority);
                 logOut.Visible = true;
                 login.Visible = false;
             }
@@ -42,14 +46,25 @@ namespace TestSite.Tests
                 if (!String.IsNullOrEmpty(Request.QueryString["st"]) && Request.QueryString["st"] == "Completed")
                 {
                     string error = "";
-                    if (UpdateTestPaid(_userId) && hasPaidTest(_userId))
+                    if (!(CommonMethods.UserIsProvider(_userId)))
                     {
+                        if (UpdateTestPaid(_userId) && hasPaidTest(_userId))
+                        {
 
-                        InitiateTest();
+                            InitiateTest();
+                        }
+                        else
+                        {
+                            error = "Cannot process payment. Please contact administrator.";
+                        }
                     }
                     else
                     {
-                        error = "Cannot process payment. Please contact administrator.";
+                        string value = Request.QueryString["item_name"];
+                        string num = value.Split('_')[0];
+                        string option = CommonMethods.GetOption(num);
+
+                        Response.Redirect("~/Provider/ProviderPortal.aspx?buyTestType=" + _testId + "&buyTestOption=" + option + "&buyTestNum=" + num);
                     }
 
                 }
@@ -198,40 +213,40 @@ namespace TestSite.Tests
 
         private void PostPaypal(double itemAmount, int num)
         {
-            string business = "HQS7UWQMRHDTQ";// "analescheok@gmail.com"
-            string itemName = "nback Test";
-            //double itemAmount = 4.00;
-            string currencyCode = "USD";
+            //string business = "HQS7UWQMRHDTQ";// "analescheok@gmail.com"
+            //string itemName = "nback Test";
+            ////double itemAmount = 4.00;
+            //string currencyCode = "USD";
 
-            StringBuilder ppHref = new StringBuilder();
-            string baseUrl = Request.Url.GetLeftPart(UriPartial.Authority);
+            //StringBuilder ppHref = new StringBuilder();
+            //string baseUrl = Request.Url.GetLeftPart(UriPartial.Authority);
 
-            ppHref.Append("https://www.paypal.com/cgi-bin/webscr?cmd=_xclick");//("https://www.paypal.com/cgi-bin/webscr?cmd=_xclick");
-            ppHref.Append("&business=" + business);
-            ppHref.Append("&item_name=" + itemName);
-            ppHref.Append("&amount=" + itemAmount.ToString("#.00"));
-            ppHref.Append("&currency_code=" + currencyCode);
-            //ppHref.Append("&return=" + baseUrl + "/Tests/SyllogWrapper.aspx"); //"http://localhost:52606/Tests/NbackWrapper.aspx"
-            string buyTestTypeString = "5";
-            string buyTestOptionString = null;
-            switch (num)
-            {
-                case 1:
-                    buyTestOptionString = "4";
-                    break;
-                case 10:
-                    buyTestOptionString = "1";
-                    break;
-                case 100:
-                    buyTestOptionString = "2";
-                    break;
-                case 1000:
-                    buyTestOptionString = "3";
-                    break;
-            }
-            string buyTestNumString = num.ToString();
-            ppHref.Append("&return=" + baseUrl + "/Provider/ProviderPortal.aspx?buyTestType=" + buyTestTypeString + "&buyTestOption=" + buyTestOptionString + "&buyTestNum=" + buyTestNumString);
-            Response.Redirect(ppHref.ToString(), true);
+            //ppHref.Append("https://www.paypal.com/cgi-bin/webscr?cmd=_xclick");//("https://www.paypal.com/cgi-bin/webscr?cmd=_xclick");
+            //ppHref.Append("&business=" + business);
+            //ppHref.Append("&item_name=" + itemName);
+            //ppHref.Append("&amount=" + itemAmount.ToString("#.00"));
+            //ppHref.Append("&currency_code=" + currencyCode);
+            ////ppHref.Append("&return=" + baseUrl + "/Tests/SyllogWrapper.aspx"); //"http://localhost:52606/Tests/NbackWrapper.aspx"
+            //string buyTestTypeString = "5";
+            //string buyTestOptionString = null;
+            //switch (num)
+            //{
+            //    case 1:
+            //        buyTestOptionString = "4";
+            //        break;
+            //    case 10:
+            //        buyTestOptionString = "1";
+            //        break;
+            //    case 100:
+            //        buyTestOptionString = "2";
+            //        break;
+            //    case 1000:
+            //        buyTestOptionString = "3";
+            //        break;
+            //}
+            //string buyTestNumString = num.ToString();
+            //ppHref.Append("&return=" + baseUrl + "~/Provider/ProviderPortal.aspx?buyTestType=" + buyTestTypeString + "&buyTestOption=" + buyTestOptionString + "&buyTestNum=" + buyTestNumString);
+            //Response.Redirect(ppHref.ToString(), true);
         }
 
 
@@ -239,7 +254,8 @@ namespace TestSite.Tests
         {
             if (User.Identity.IsAuthenticated)
             {
-                PostPaypal(30,10);
+                //PostPaypal(30, 10);
+                Response.Redirect(CommonMethods.PostPaypal(30, 10, _baseUrl, _itemName, _page), true);
             }
             else
             {
@@ -251,7 +267,8 @@ namespace TestSite.Tests
         {
             if (User.Identity.IsAuthenticated)
             {
-                PostPaypal(200,100);
+                //PostPaypal(200, 100);
+                Response.Redirect(CommonMethods.PostPaypal(200, 100, _baseUrl, _itemName, _page), true);
             }
             else
             {
@@ -263,7 +280,8 @@ namespace TestSite.Tests
         {
             if (User.Identity.IsAuthenticated)
             {
-                PostPaypal(300,1000);
+                //PostPaypal(300, 1000);
+                Response.Redirect(CommonMethods.PostPaypal(300, 500, _baseUrl, _itemName, _page), true);
             }
             else
             {
@@ -275,7 +293,7 @@ namespace TestSite.Tests
         {
             if (User.Identity.IsAuthenticated)
             {
-                PostPaypal(4,1);
+                PostPaypal(4, 1);
             }
             else
             {

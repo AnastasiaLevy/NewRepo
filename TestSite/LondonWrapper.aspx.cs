@@ -20,6 +20,9 @@ namespace TestSite
         protected string _testId = Enums.TestId.TowerOfLondon;
         protected static int _userTestId;
         protected static string modTestId;
+        protected string _baseUrl;
+        protected string _itemName = "Tower of London Test";
+        protected string _page = "/LondonWrapper.aspx";
 
 
         protected void Page_Load(object sender, EventArgs e)
@@ -31,6 +34,7 @@ namespace TestSite
                 _user = Membership.GetUser(User.Identity.Name);
                 _userId = _user.ProviderUserKey.ToString();
                 _isProfilefilled = ProfileIsFilled(_userId);
+                _baseUrl = Request.Url.GetLeftPart(UriPartial.Authority);
                 logOut.Visible = true;
                 login.Visible = false;
 
@@ -54,14 +58,25 @@ namespace TestSite
                 if (!String.IsNullOrEmpty(Request.QueryString["st"]) && Request.QueryString["st"] == "Completed")
                 {
                     string error = "";
-                    if (UpdateTestPaid(_userId) && hasPaidTest(_userId))
+                    if (!CommonMethods.UserIsProvider(_userId))
                     {
+                        if (UpdateTestPaid(_userId) && hasPaidTest(_userId))
+                        {
 
-                        InitiateTest();
+                            InitiateTest();
+                        }
+                        else
+                        {
+                            error = "Cannot process payment. Please contact administrator.";
+                        }
                     }
                     else
                     {
-                        error = "Cannot process payment. Please contact administrator.";
+                        string value = Request.QueryString["item_name"];
+                        string num = value.Split('_')[0];
+                        string option = CommonMethods.GetOption(num);
+
+                        Response.Redirect("~/Provider/ProviderPortal.aspx?buyTestType=" + _testId + "&buyTestOption=" + option + "&buyTestNum=" + num);
                     }
 
                 }
@@ -228,52 +243,53 @@ namespace TestSite
 
         }
 
-        private void PostPaypal(double itemAmount, int num)
-        {
+        //private void PostPaypal(double itemAmount, int num)
+        //{
 
-            string business = "HQS7UWQMRHDTQ";// "analescheok@gmail.com"
-            string itemName = "Tower of London Test";
-            //double itemAmount = 5.00;
-            string currencyCode = "USD";
+        //    string business = "HQS7UWQMRHDTQ";// "analescheok@gmail.com"
+        //    string itemName = "Tower of London Test";
+        //    //double itemAmount = 5.00;
+        //    string currencyCode = "USD";
 
-            StringBuilder ppHref = new StringBuilder();
-            string baseUrl = Request.Url.GetLeftPart(UriPartial.Authority);
+        //    StringBuilder ppHref = new StringBuilder();
+        //    string baseUrl = Request.Url.GetLeftPart(UriPartial.Authority);
 
 
-            ppHref.Append("https://www.paypal.com/cgi-bin/webscr?cmd=_xclick");//(");//https://www.paypal.com/cgi-bin/webscr?cmd=_xclick
-            ppHref.Append("&business=" + business);
-            ppHref.Append("&item_name=" + itemName);
-            ppHref.Append("&amount=" + itemAmount.ToString("#.00"));
-            ppHref.Append("&currency_code=" + currencyCode);
-            //ppHref.Append("&return=" + baseUrl + "/LondonWrapper.aspx");//"http://cogquiz.com/LondonWrapper.aspx");
-            string buyTestTypeString = "2";
-            string buyTestOptionString = null;
-            switch (num)
-            {
-                case 1:
-                    buyTestOptionString = "4";
-                    break;
-                case 10:
-                    buyTestOptionString = "1";
-                    break;
-                case 100:
-                    buyTestOptionString = "2";
-                    break;
-                case 500:
-                    buyTestOptionString = "5";
-                    break;
-            }
-            string buyTestNumString = num.ToString();
-            ppHref.Append("&return=" + baseUrl + "/Provider/ProviderPortal.aspx?buyTestType=" + buyTestTypeString + "&buyTestOption=" + buyTestOptionString + "&buyTestNum=" + buyTestNumString);
-            Response.Redirect(ppHref.ToString(), true);
+        //    ppHref.Append("https://www.paypal.com/cgi-bin/webscr?cmd=_xclick");//(");//https://www.paypal.com/cgi-bin/webscr?cmd=_xclick
+        //    ppHref.Append("&business=" + business);
+        //    ppHref.Append("&item_name=" + itemName);
+        //    ppHref.Append("&amount=" + itemAmount.ToString("#.00"));
+        //    ppHref.Append("&currency_code=" + currencyCode);
+        //    //ppHref.Append("&return=" + baseUrl + "/LondonWrapper.aspx");//"http://cogquiz.com/LondonWrapper.aspx");
+        //    string buyTestTypeString = "2";
+        //    string buyTestOptionString = null;
+        //    switch (num)
+        //    {
+        //        case 1:
+        //            buyTestOptionString = "4";
+        //            break;
+        //        case 10:
+        //            buyTestOptionString = "1";
+        //            break;
+        //        case 100:
+        //            buyTestOptionString = "2";
+        //            break;
+        //        case 500:
+        //            buyTestOptionString = "5";
+        //            break;
+        //    }
+        //    string buyTestNumString = num.ToString();
+        //    ppHref.Append("&return=" + baseUrl + "/Provider/ProviderPortal.aspx?buyTestType=" + buyTestTypeString + "&buyTestOption=" + buyTestOptionString + "&buyTestNum=" + buyTestNumString);
+        //    Response.Redirect(ppHref.ToString(), true);
 
-        }
+        //}
 
         protected void single_Click(object sender, EventArgs e)
         {
             if (User.Identity.IsAuthenticated)
             {
-                PostPaypal(5,1);
+                //PostPaypal(5, 1);
+                Response.Redirect(CommonMethods.PostPaypal(5, 1, _baseUrl, _itemName, _page), true);
             }
             else
             {
@@ -286,7 +302,8 @@ namespace TestSite
         {
             if (User.Identity.IsAuthenticated)
             {
-                PostPaypal(50,10);
+                //PostPaypal(50, 10);
+                Response.Redirect(CommonMethods.PostPaypal(50, 10, _baseUrl, _itemName, _page), true);
             }
             else
             {
@@ -298,7 +315,8 @@ namespace TestSite
         {
             if (User.Identity.IsAuthenticated)
             {
-                PostPaypal(50,100);
+                //PostPaypal(50, 100);
+                Response.Redirect(CommonMethods.PostPaypal(300, 100, _baseUrl, _itemName, _page), true);
             }
             else
             {
@@ -310,7 +328,8 @@ namespace TestSite
         {
             if (User.Identity.IsAuthenticated)
             {
-                PostPaypal(1000,500);
+                //PostPaypal(1000, 500);
+                Response.Redirect(CommonMethods.PostPaypal(1000, 1, _baseUrl, _itemName, _page), true);
             }
             else
             {
@@ -320,7 +339,7 @@ namespace TestSite
 
         protected void rbList_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+
         }
     }
 }

@@ -20,7 +20,7 @@ namespace TestSite.Provider
 
         protected void Page_PreRender(object sender, EventArgs e)
         {
-            //PRERENDER HERE IS A WORKAROUND. CODE IS TRASH AND CONTAINS TONS OF OVERRIDING IN IT!!!
+           
             DataTable dt = DAL.DataMethods.GetModifyTestList(Convert.ToInt32(ViewState["providerId"]));
             if (dt.Rows.Count < 1)
             {
