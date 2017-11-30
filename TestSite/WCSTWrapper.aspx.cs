@@ -279,7 +279,7 @@ namespace TestSite
             {
 
                 //PostPaypal(600,1000);
-                Response.Redirect(CommonMethods.PostPaypal(550, 500, _baseUrl, _itemName, _page), true);
+                Response.Redirect(CommonMethods.PostPaypal(1000, 500, _baseUrl, _itemName, _page), true);
             }
             else
             {

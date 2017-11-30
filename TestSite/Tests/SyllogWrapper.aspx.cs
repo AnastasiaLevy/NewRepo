@@ -293,7 +293,8 @@ namespace TestSite.Tests
         {
             if (User.Identity.IsAuthenticated)
             {
-                PostPaypal(4, 1);
+                //PostPaypal(4, 1);
+                Response.Redirect(CommonMethods.PostPaypal(4, 1, _baseUrl, _itemName, _page), true);
             }
             else
             {
