@@ -211,7 +211,7 @@
                                     <span class="price-large red">300</span>
                                     <span class="price-small">.00</span>
                                     <p>
-                                        Any Number of Participants
+                                        Large of Participants
                                 <p>
 
                                     <asp:Button ID="unlim" class="btn btn-danger" runat="server" OnClick="unlim_Click" Text="Buy Now" />

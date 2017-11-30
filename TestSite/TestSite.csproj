@@ -225,6 +225,14 @@
     <Content Include="images\desktops\cpt_7.png" />
     <Content Include="images\desktops\cpt_8.png" />
     <Content Include="images\desktops\backgr.png" />
+    <Content Include="images\desktops\cs_1.png" />
+    <Content Include="images\desktops\cs_2.png" />
+    <Content Include="images\desktops\cs_3.png" />
+    <Content Include="images\desktops\cs_4.png" />
+    <Content Include="images\desktops\cs_5.png" />
+    <Content Include="images\desktops\cs_6.png" />
+    <Content Include="images\desktops\cs_7.png" />
+    <Content Include="images\desktops\cs_8.png" />
     <Content Include="images\desktops\toh_7.png" />
     <Content Include="images\desktops\toh_8.png" />
     <Content Include="images\desktops\toh_1.png" />
