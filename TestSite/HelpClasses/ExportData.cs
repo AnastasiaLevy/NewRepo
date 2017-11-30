@@ -58,7 +58,7 @@ namespace TestSite.HelpClasses
             {
                 DataSet test = DataMethods.GetTestByTestId(testId);
                 string testName = test.Tables[0].Rows[0]["testName"].ToString();
-                DataSet ds = GetExportData(testId, from, to);
+                DataSet ds = GetExportData(testId, providerId, from, to);
                 if (ds == null) return;
                 string myfile = ExportOneLineCSVMany(ds);
                 string fileName = testName + "_" + DateTime.Now.ToShortDateString() + "_" + testId + ".csv";
@@ -116,12 +116,12 @@ namespace TestSite.HelpClasses
 
         }
 
-        private static DataSet GetExportData(int testId, DateTime? from, DateTime? to)
+        private static DataSet GetExportData(int testId, int providerId, DateTime? from, DateTime? to)
         {
             DataSet ds = null;
             if (testId.ToString() == Enums.TestId.TowerOfLondon) //pass
             {
-                ds = DataMethods.GetTestResultsLondon(testId, from, to);
+                ds = DataMethods.GetTestResultsLondon(testId, providerId, from, to);
             }
             else if (testId.ToString() == Enums.TestId.Nback) //pass
             {
@@ -137,7 +137,7 @@ namespace TestSite.HelpClasses
             }
             else if (testId.ToString() == Enums.TestId.Trails)
             {
-                ds = DataMethods.GetTestResultsTrails(testId, from, to);
+                ds = DataMethods.GetTestResultsTrails(testId, providerId, from, to);
             }
 
             return ds;
@@ -305,7 +305,7 @@ namespace TestSite.HelpClasses
             {
                 DataSet test = DataMethods.GetTestByTestId(testId);
                 string testName = test.Tables[0].Rows[0]["testName"].ToString();
-                DataSet ds = GetExportData(testId, from, to);
+                DataSet ds = GetExportData(testId, providerId, from, to);
                 if (ds == null) return;
                 string myfile = ExportNormalCSVMany(ds);
                 string fileName = testName + "_" + DateTime.Now.ToShortDateString() + "_" + testId + ".csv";

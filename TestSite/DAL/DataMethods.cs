@@ -2444,7 +2444,7 @@ namespace TestSite.DAL
             return ds;
         }
 
-        public static DataSet GetTestResultsLondon(int testId, DateTime? from, DateTime? to)
+        public static DataSet GetTestResultsLondon(int testId, int providerId, DateTime? from, DateTime? to)
         {
             DataSet ds = new DataSet();
             SqlConnection conn = new SqlConnection(connectionSring);
@@ -2452,6 +2452,7 @@ namespace TestSite.DAL
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@from", from);
             cmd.Parameters.AddWithValue("@to", to);
+            cmd.Parameters.AddWithValue("@providerId", providerId);
 
             try
             {
@@ -2466,14 +2467,16 @@ namespace TestSite.DAL
             return ds;
         }
 
-        public static DataSet GetTestResultsTrails(int testId, DateTime? from, DateTime? to)
+        public static DataSet GetTestResultsTrails(int testId,int providerId, DateTime? from, DateTime? to)
         {
             DataSet ds = new DataSet();
             SqlConnection conn = new SqlConnection(connectionSring);
             SqlCommand cmd = new SqlCommand("GetUsersTrailsTestResults", conn);
             cmd.CommandType = CommandType.StoredProcedure;
+
             cmd.Parameters.AddWithValue("@from", from);
             cmd.Parameters.AddWithValue("@to", to);
+            cmd.Parameters.AddWithValue("@providerId", providerId);
 
             try
             {
