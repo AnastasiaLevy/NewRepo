@@ -3269,3 +3269,99 @@ label {
        margin-left: 10px !important;
        margin-bottom: 10px !important;
    }
+
+.custom-panel-group img{
+    width: calc(35% - 30px);
+    height: auto;
+    margin: 0;
+    padding: 15px;
+    float: none;
+}
+
+.custom-panel-group iframe{
+    margin-bottom: 30px;
+}
+
+.btn-wrapper .btn {
+    width: 100%;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.clear {
+    clear: both;
+}
+
+.desktop-test-page .g-image {
+    width: calc(33.333% - 20px);
+    height: auto;
+    float: left;
+    margin: 10px;
+    max-height: 202px;
+}
+
+.owl-carousel .owl-nav .owl-next,
+.owl-carousel .owl-nav .owl-prev {
+    position: absolute;
+    width: 45px;
+    height: 37px;
+    text-align: center;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #505050;
+}
+
+.owl-carousel .owl-nav .owl-next:hover,
+.owl-carousel .owl-nav .owl-prev:hover {
+    background-color: #353535;
+}
+
+.owl-carousel .owl-nav .owl-next {
+    right: -65px;
+}
+
+.owl-carousel .owl-nav .owl-prev {
+    left: -65px;
+}
+
+.owl-carousel-videos .owl-nav .owl-next,
+.owl-carousel-videos .owl-nav .owl-prev {
+    top: 40%;
+}
+
+.owl-carousel-photos .owl-nav .owl-next,
+.owl-carousel-photos .owl-nav .owl-prev {
+    top: 25%;
+}
+
+.owl-carousel-photos img {
+    cursor: pointer;
+}
+
+.owl-carousel {
+    width: 88%;
+    margin: 0 auto;
+}
+
+.modal-backdrop {
+    z-index: 9999999;
+}
+
+.modal-content img {
+    width: 100%;
+}
+
+.modal-open .modal {
+    z-index: 99999999;
+}
+
+.modal.in .modal-dialog {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.modal-content {
+    width: 100%;
+    max-width: 100%;
+}

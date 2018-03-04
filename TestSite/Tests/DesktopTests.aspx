@@ -26,7 +26,7 @@
 
 </head>
 
-<body data-spy="scroll" runat="server">
+<body data-spy="scroll" runat="server" class="desktop-test-page">
     <form runat="server">
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -77,7 +77,7 @@
             <div class="container testDescription">
                 <h1>Desktop Tests Collection</h1>
                 <hr />
-                <img src="../images/desktops/backgr.png" />
+                <img src="../images/desktops/backgr.png" style="width: 100%;"/>
 
                 <p>
                     The CogQuiz Test Collection offers flexible tests for your desktop. It offeres one database for all test, Normed data, and the ability to make your own tests. 
@@ -94,7 +94,7 @@
 
                 <section id="deskTopList">
                     <div class="row">
-                        <div class="box">
+                        <div class="box btn-wrapper">
                             <div class="col-lg-12">
                                 <hr />
                                 <h2 class="intro-text text-center">Available
@@ -197,7 +197,7 @@ In addition to Shallice’s (1982) original findings of deficits in individuals 
                                     <span class="icon blue"><i class="fa fa-usd"></i></span>
                                     <span class="price-large blue">499</span>
                                     <span class="price-small">.00</span>
-                                    <p><a href="#contact">Order Now</a></p>
+                                    <p><a href="#contact" class="btn btn-info">Order Now</a></p>
                                     <%--       <asp:Button ID="single" class="btn btn-info" runat="server" OnClick="single_Click" Text="Buy Now" />--%>
                                 </div>
                             </div>
@@ -240,7 +240,7 @@ Tests can be analyzed using any one of three analysis protocols or the test user
                                     <span class="icon blue"><i class="fa fa-usd"></i></span>
                                     <span class="price-large blue">499</span>
                                     <span class="price-small">.00</span>
-                                    <p><a href="#contact">Order Now</a></p>
+                                    <p><a href="#contact" class="btn btn-info">Order Now</a></p>
                                     <%--     <asp:Button ID="Button2" class="btn btn-info" runat="server" OnClick="single_Click" Text="Buy Now" />--%>
                                 </div>
                             </div>
@@ -285,7 +285,7 @@ Tests can be analyzed using any one of three analysis protocols or the test user
                                     <span class="icon blue"><i class="fa fa-usd"></i></span>
                                     <span class="price-large blue">299</span>
                                     <span class="price-small">.00</span>
-                                    <p><a href="#contact">Order Now</a></p>
+                                    <p><a href="#contact" class="btn btn-info">Order Now</a></p>
                                     <%--    <asp:Button ID="Button3" class="btn btn-info" runat="server" OnClick="single_Click" Text="Buy Now" />--%>
                                 </div>
                             </div>
@@ -337,7 +337,7 @@ Standard test anaysis as well as access to the "real time" data record (i.e. , a
                                     <span class="icon blue"><i class="fa fa-usd"></i></span>
                                     <span class="price-large blue">399</span>
                                     <span class="price-small">.00</span>
-                                    <p><a href="#contact">Order Now</a></p>
+                                    <p><a href="#contact" class="btn btn-info">Order Now</a></p>
                                     <%--     <asp:Button ID="Button4" class="btn btn-info" runat="server" OnClick="single_Click" Text="Buy Now" />--%>
                                 </div>
                             </div>
@@ -386,7 +386,7 @@ A “Speak Instructions” option directs the program to speak the instructions 
                                     <span class="icon blue"><i class="fa fa-usd"></i></span>
                                     <span class="price-large blue">99</span>
                                     <span class="price-small">.00</span>
-                                    <p><a href="#contact">Order Now</a></p>
+                                    <p><a href="#contact" class="btn btn-info">Order Now</a></p>
                                     <%--          <asp:Button ID="Button5" class="btn btn-info" runat="server" OnClick="single_Click" Text="Buy Now" />--%>
                                 </div>
                             </div>
@@ -442,7 +442,7 @@ et al., 1999).
                                     <span class="icon blue"><i class="fa fa-usd"></i></span>
                                     <span class="price-large blue">299</span>
                                     <span class="price-small">.00</span>
-                                    <p><a href="#contact">Order Now</a></p>
+                                    <p><a href="#contact" class="btn btn-info">Order Now</a></p>
                                     <%--    <asp:Button ID="Button1" class="btn btn-info" runat="server" OnClick="single_Click" Text="Activate" />--%>
                                 </div>
                             </div>

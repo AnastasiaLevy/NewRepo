@@ -442,6 +442,7 @@
     <Content Include="Results\ADHD_Result.aspx" />
     <Content Include="Tests\ADHD_Page.aspx" />
     <Content Include="Tests\adult_ADHD_page.aspx" />
+    <Content Include="Tests\CogQuizTool\CogQuizSetUp.aspx" />
     <Content Include="Tests\DesktopTests.aspx" />
     <Content Include="web\css\960_12_10_10.css" />
     <Content Include="web\css\fredcool\images\ui-bg_diagonals-medium_75_f0f0f0_40x40.png" />
@@ -892,6 +893,13 @@
     </Compile>
     <Compile Include="Tests\Autism.aspx.designer.cs">
       <DependentUpon>Autism.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\CogQuizTool\CogQuizSetUp.aspx.cs">
+      <DependentUpon>CogQuizSetUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\CogQuizTool\CogQuizSetUp.aspx.designer.cs">
+      <DependentUpon>CogQuizSetUp.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tests\DesktopTests.aspx.cs">
       <DependentUpon>DesktopTests.aspx</DependentUpon>
