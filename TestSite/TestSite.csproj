@@ -597,6 +597,7 @@
     <Content Include="Tests\CogQuestTool\CogQuestInstructionsPDF.pdf" />
     <Content Include="Site1.Master" />
     <Content Include="TestPage.Master" />
+    <Content Include="Tests\CogQuiz-Tower_of_London.msi" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
