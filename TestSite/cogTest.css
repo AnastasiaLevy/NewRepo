@@ -562,7 +562,8 @@ a.inner-link {
 
 body {
     color: #313131;
-    font-family: 'Open Sans';
+    /*font-family: 'Open Sans';*/
+    /*font-family: inherit;*/
 }
 
 ::-moz-selection {
@@ -2457,7 +2458,7 @@ padding: 10px;
 /* start da css for da buttons */
 .btn {
     border-radius: 5px;
-    padding: 10px 20px;
+    padding: 10px 15px;
     font-size: 14px;
     text-decoration: none;
     margin: 20px;
@@ -3356,7 +3357,7 @@ label {
     z-index: 99999999;
 }
 
-.modal.in .modal-dialog {
+.modal .modal-dialog {
     width: 60%;
     margin: 0 auto;
 }
@@ -3365,3 +3366,35 @@ label {
     width: 100%;
     max-width: 100%;
 }
+
+.exapmles-list {
+    margin-top: 20px;
+}
+
+.exapmles-list li {
+    color: #79bc64;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.exapmles-list li span {
+    color: #000;
+}
+    /*.sidebar {
+    position: absolute;
+    top: 20px;
+    left: 113px;
+    box-shadow: 0 0 8px gray;
+}
+
+.sidebar1 {
+    position: absolute;
+    top: 20px;
+    left: 113px;
+    box-shadow: 0 0 8px gray;
+}
+.slider {
+    width: 500px;
+    top: 100px;
+    position: fixed;
+}*/

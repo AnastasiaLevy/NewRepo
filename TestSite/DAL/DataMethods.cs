@@ -2000,6 +2000,71 @@ namespace TestSite.DAL
             return id;
         }
 
+        /// <summary>
+        ///     Get key for app installation.
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <param name="testId"></param>
+        /// <returns></returns>
+        public static string GetTowerOfLondonAppKey(string userId)
+        {
+            string appKey;
+            DataTable ds = new DataTable();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("GetTowerOfLondonAppKey", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("userId", userId);
+            try
+            {
+                conn.Open();
+                appKey = (string)cmd.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                InsertErrorMessage(ex.ToString(), null, null, "GetTowerOfLondonAppKey");
+                throw new Exception("Execption Getting Saved Results. " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return appKey;
+        }
+
+        /// <summary>
+        ///     Setup key for app.
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public static bool SetupTowerOfLondonAppKey(string userId)
+        {
+            DataTable ds = new DataTable();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("SetupTowerOfLondonAppKey", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("UserId", userId);
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                InsertErrorMessage(ex.ToString(), null, null, "SetupTowerOfLondonAppKey");
+                throw new Exception("Execption Getting Saved Results. " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return true;
+        }
+
         public static void InsertTestPaid(string _userId, string _testId, string modTestId = null)
         {
 

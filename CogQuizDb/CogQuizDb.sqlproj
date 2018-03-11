@@ -445,5 +445,8 @@
     <Build Include="dbo\Stored Procedures\Insert3dPartyTest.sql" />
     <Build Include="dbo\Stored Procedures\Get3dPartyTest.sql" />
     <Build Include="dbo\Stored Procedures\GetLondonModifiedNameById.sql" />
+    <Build Include="dbo\Tables\DesktopTowerOfLondonLicenseKeys.sql" />
+    <Build Include="dbo\Stored Procedures\SetupTowerOfLondonAppKey.sql" />
+    <Build Include="dbo\Stored Procedures\GetTowerOfLondonAppKey.sql" />
   </ItemGroup>
 </Project>

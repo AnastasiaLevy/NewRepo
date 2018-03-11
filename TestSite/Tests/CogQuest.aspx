@@ -19,9 +19,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css" rel="stylesheet" />
     <link href="../cogTest.css" rel="stylesheet" />
     <link href="../css/style.css" rel="stylesheet" />
-    <link href="../css/previewer.css" rel="stylesheet" />
+    <%--<link href="../css/previewer.css" rel="stylesheet" />--%>
     <script src="../js/jquery.js"></script>
-    <script src="../js/previewer.js"></script>
+    <%--<script src="../js/previewer.js"></script>--%>
     <script src="https://use.fontawesome.com/0138464303.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
 </head>
@@ -38,7 +38,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="~/MainPage.aspx">
+                    <a class="navbar-brand" href="../MainPage.aspx">
                         <i class="fa fa-cogs" aria-hidden="true">Quiz</i>
                     </a>
 
@@ -69,7 +69,81 @@
                     <div class="col-md-12">
                         <h3>View Examples</h3>
                         <hr />
-                        <div class="owl-carousel owl-carousel-photos owl-theme">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>Lorem ipsum dolor sit amet</h4>
+                                <ul class="exapmles-list">
+                                    <li><span>Sed imperdiet eros nec tellus fringilla, id facilisis ex tempus.</span></li>
+                                    <li><span>Lorem ipsum dolor sit amet</span></li>
+                                    <li><span>Lorem ipsum dolor sit amet</span></li>
+                                    <li><span>Sed imperdiet eros nec tellus fringilla..</span></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <img src="../images/quest1.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-1" class="img-responsive" />
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="../images/quest2.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-2" class="img-responsive" />
+                            </div>
+                            <div class="col-md-6">
+                                <h4>2. Lorem ipsum dolor sit amet</h4>
+                                <p>Sed imperdiet eros nec tellus fringilla, id facilisis ex tempus. Nunc tincidunt, dui id fringilla suscipit, quam urna gravida augue, nec fermentum velit velit et risus. Praesent massa massa, porta vel justo ut, venenatis blandit metus. Fusce nec egestas erat. Etiam auctor neque nec sagittis dignissim. Duis sed sapien luctus orci elementum imperdiet. Duis maximus et lorem nec scelerisque. Vivamus ut elit ante. Proin ut sollicitudin nisl. Donec non enim ipsum.</p>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>3. Lorem ipsum dolor sit amet</h4>
+                                <p>Nullam iaculis ex risus, eu consequat magna venenatis sit amet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam condimentum varius elit non interdum. Nam euismod erat vel elit pretium facilisis eget eget lacus. Phasellus sodales vestibulum neque, quis egestas nisi eleifend non. Mauris id cursus ex. Praesent orci neque, pellentesque vulputate sagittis sed, scelerisque eget purus. Vivamus varius pretium metus eu tempor.</p>
+                            </div>
+                            <div class="col-md-6">
+                                <img src="../images/quest3.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-3" class="img-responsive" />
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="../images/quest4.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-4" class="img-responsive" />
+                            </div>
+                            <div class="col-md-6">
+                                <h4>4. Lorem ipsum dolor sit amet</h4>
+                                <p>Maecenas vel lacus in ligula gravida mollis placerat ut quam. Morbi magna tellus, condimentum nec mi et, pulvinar imperdiet ligula. Morbi maximus mi eget justo tristique feugiat. Suspendisse ultrices dolor in leo congue, faucibus luctus nisi pharetra. Vivamus dapibus pellentesque orci, a rutrum risus sodales a. Nulla tempor nunc et magna egestas fermentum. Nulla magna ante, mattis elementum ipsum et, lobortis luctus lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>5. Lorem ipsum dolor sit amet</h4>
+                                <p>Nulla sagittis metus ac rutrum tempus. Fusce mollis lorem et velit fermentum rhoncus. In vestibulum fringilla odio, vitae tempus diam aliquam et. Nam vitae elementum purus. Nullam erat urna, porttitor ut risus mattis, vehicula tincidunt quam. Aliquam tempus ornare nulla at efficitur. In nec arcu sed nunc rutrum pellentesque. In hac habitasse platea dictumst. Aliquam vel rhoncus urna. Donec in purus ipsum. In non orci faucibus, ullamcorper augue vel, dignissim velit.</p>
+                            </div>
+                            <div class="col-md-6">
+                                <img src="../images/quest5.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-5" class="img-responsive" />
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="../images/quest6.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-6" class="img-responsive" />
+                            </div>
+                            <div class="col-md-6">
+                                <h4>6. Lorem ipsum dolor sit amet</h4>
+                                <p>Maecenas vel lacus in ligula gravida mollis placerat ut quam. Morbi magna tellus, condimentum nec mi et, pulvinar imperdiet ligula. Morbi maximus mi eget justo tristique feugiat. Suspendisse ultrices dolor in leo congue, faucibus luctus nisi pharetra. Vivamus dapibus pellentesque orci, a rutrum risus sodales a. Nulla tempor nunc et magna egestas fermentum. Nulla magna ante, mattis elementum ipsum et, lobortis luctus lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>7. Lorem ipsum dolor sit amet</h4>
+                                <p>Nulla sagittis metus ac rutrum tempus. Fusce mollis lorem et velit fermentum rhoncus. In vestibulum fringilla odio, vitae tempus diam aliquam et. Nam vitae elementum purus. Nullam erat urna, porttitor ut risus mattis, vehicula tincidunt quam. Aliquam tempus ornare nulla at efficitur. In nec arcu sed nunc rutrum pellentesque. In hac habitasse platea dictumst. Aliquam vel rhoncus urna. Donec in purus ipsum. In non orci faucibus, ullamcorper augue vel, dignissim velit.</p>
+                            </div>
+                            <div class="col-md-6">
+                                <img src="../images/quest7.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-7" class="img-responsive" />
+                            </div>
+                        </div>
+                        <!--<div class="owl-carousel owl-carousel-photos owl-theme">
                             <img src="../images/quest1.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-1" class="item" />
                             <img src="../images/quest2.png" alt="psychological questionnaire maker"  data-toggle="modal" data-target=".bs-modal-2" class="item" />
                             <img src="../images/quest3.png" alt="scales questionnaire" data-toggle="modal" data-target=".bs-modal-3" class="item" />
@@ -77,11 +151,11 @@
                             <img src="../images/quest5.png" alt="questionnaire tool" data-toggle="modal" data-target=".bs-modal-5" class="item" />
                             <img src="../images/quest6.png" alt="questionnaire create" data-toggle="modal" data-target=".bs-modal-6" class="item" />
                             <img src="../images/quest7.png" alt="open-ended questions" data-toggle="modal" data-target=".bs-modal-7" class="item" />
-                        </div>
+                        </div>-->
                         <div class="modal fade bs-modal-1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
-                                    <img src="../images/quest1.png" alt="neuropsychological questionnaire" class="item" />
+                                    <img src="../images/quest1.png" alt="neuropsychological questionnaire" class="img-responsive" />
                                 </div>
                             </div>
                         </div>
@@ -131,28 +205,28 @@
                         <hr />
                         <div class="owl-carousel owl-carousel-videos owl-theme">
                             <div class="item">
-                                <iframe width="100%" height="200" src="https://www.youtube.com/embed/vXISacqBKXo?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                <iframe width="100%" height="200" src="https://www.youtube.com/embed/vXISacqBKXo?rel=0" frameborder="0" encrypted-media" allowfullscreen></iframe>
                             </div>
                             <div class="item">
-                                <iframe width="100%" height="200" src="https://www.youtube.com/embed/pxrNcS9oqsw?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                <iframe width="100%" height="200" src="https://www.youtube.com/embed/pxrNcS9oqsw?rel=0" frameborder="0" encrypted-media" allowfullscreen></iframe>
                             </div>
                             <div class="item">
-                                <iframe width="100%" height="200" src="https://www.youtube.com/embed/u25UdJHugK8?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                <iframe width="100%" height="200" src="https://www.youtube.com/embed/u25UdJHugK8?rel=0" frameborder="0" encrypted-media" allowfullscreen></iframe>
                             </div>
                             <div class="item">
-                                <iframe width="100%" height="200" src="https://www.youtube.com/embed/yrzTbu5oLkI?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                <iframe width="100%" height="200" src="https://www.youtube.com/embed/yrzTbu5oLkI?rel=0" frameborder="0" encrypted-media" allowfullscreen></iframe>
                             </div>
                             <div class="item">
-                                <iframe width="100%" height="200" src="https://www.youtube.com/embed/kTOrwuVgIpI?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                <iframe width="100%" height="200" src="https://www.youtube.com/embed/kTOrwuVgIpI?rel=0" frameborder="0" encrypted-media" allowfullscreen></iframe>
                             </div>
                             <div class="item">
-                                <iframe width="100%" height="200" src="https://www.youtube.com/embed/jcmTJY6BSlI?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                <iframe width="100%" height="200" src="https://www.youtube.com/embed/jcmTJY6BSlI?rel=0" frameborder="0" encrypted-media" allowfullscreen></iframe>
                             </div>
                             <div class="item">
-                                <iframe width="100%" height="200" src="https://www.youtube.com/embed/4PfM-GR23Sw?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                <iframe width="100%" height="200" src="https://www.youtube.com/embed/4PfM-GR23Sw?rel=0" frameborder="0" encrypted-media" allowfullscreen></iframe>
                             </div>
                             <div class="item">
-                                <iframe width="100%" height="200" src="https://www.youtube.com/embed/5Y4cT_vzEDg?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                <iframe width="100%" height="200" src="https://www.youtube.com/embed/5Y4cT_vzEDg?rel=0" frameborder="0" encrypted-media" allowfullscreen></iframe>
                             </div>
                         </div>
                     </div>
@@ -304,31 +378,27 @@
         </section>
     </form>
 </body>
-<script>
-
-
-</script>
 <script src="../js/bootstrap.min.js"></script>
 <script>
     $(document).ready(function () {
-        $('.owl-carousel-photos').owlCarousel({
-            loop: true,
-            margin: 10,
-            nav: true,
-            navText: '',
-            mouseDrag: false,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 2
-                },
-                1000: {
-                    items: 3
-                }
-            }
-        });
+        //$('.owl-carousel-photos').owlCarousel({
+        //    loop: true,
+        //    margin: 10,
+        //    nav: true,
+        //    navText: '',
+        //    mouseDrag: false,
+        //    responsive: {
+        //        0: {
+        //            items: 1
+        //        },
+        //        600: {
+        //            items: 2
+        //        },
+        //        1000: {
+        //            items: 3
+        //        }
+        //    }
+        //});
         $('.owl-carousel-videos').owlCarousel({
             loop: true,
             margin: 10,
@@ -349,45 +419,45 @@
         });
         $('.owl-next').addClass("glyphicon glyphicon-chevron-right");
         $('.owl-prev').addClass("glyphicon glyphicon-chevron-left");
-        $('.gallery-wrapper').previewer({});
-        $('.custom-menu a[href^="#"], .intro-scroller .inner-link').on('click', function (e) {
-            e.preventDefault();
+        //$('.gallery-wrapper').previewer({});
+        //$('.custom-menu a[href^="#"], .intro-scroller .inner-link').on('click', function (e) {
+        //    e.preventDefault();
 
-            var target = this.hash;
-            var $target = $(target);
+        //    var target = this.hash;
+        //    var $target = $(target);
 
-            $('html, body').stop().animate({
-                'scrollTop': $target.offset().top
-            }, 900, 'swing', function () {
-                window.location.hash = target;
-            });
-        });
+        //    $('html, body').stop().animate({
+        //        'scrollTop': $target.offset().top
+        //    }, 900, 'swing', function () {
+        //        window.location.hash = target;
+        //    });
+        //});
 
-        $('a.page-scroll').bind('click', function (event) {
-            var $anchor = $(this);
-            $('html, body').stop().animate({
-                scrollTop: $($anchor.attr('href')).offset().top
-            }, 1500, 'easeInOutExpo');
-            event.preventDefault();
-        });
+        //$('a.page-scroll').bind('click', function (event) {
+        //    var $anchor = $(this);
+        //    $('html, body').stop().animate({
+        //        scrollTop: $($anchor.attr('href')).offset().top
+        //    }, 1500, 'easeInOutExpo');
+        //    event.preventDefault();
+        //});
 
         $(".nav a").on("click", function () {
             $(".nav").find(".active").removeClass("active");
             $(this).parent().addClass("active");
         });
 
-        $('body').append('<div id="toTop" class="btn btn-primary color1"><span class="glyphicon glyphicon-chevron-up"></span></div>');
-        $(window).scroll(function () {
-            if ($(this).scrollTop() != 0) {
-                $('#toTop').fadeIn();
-            } else {
-                $('#toTop').fadeOut();
-            }
-        });
-        $('#toTop').click(function () {
-            $("html, body").animate({ scrollTop: 0 }, 700);
-            return false;
-        });
+        //$('body').append('<div id="toTop" class="btn btn-primary color1"><span class="glyphicon glyphicon-chevron-up"></span></div>');
+        //$(window).scroll(function () {
+        //    if ($(this).scrollTop() != 0) {
+        //        $('#toTop').fadeIn();
+        //    } else {
+        //        $('#toTop').fadeOut();
+        //    }
+        //});
+        //$('#toTop').click(function () {
+        //    $("html, body").animate({ scrollTop: 0 }, 700);
+        //    return false;
+        //});
 
     });
 </script>

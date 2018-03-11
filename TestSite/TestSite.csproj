@@ -442,7 +442,7 @@
     <Content Include="Results\ADHD_Result.aspx" />
     <Content Include="Tests\ADHD_Page.aspx" />
     <Content Include="Tests\adult_ADHD_page.aspx" />
-    <Content Include="Tests\CogQuizTool\CogQuizSetUp.aspx" />
+    <Content Include="Tests\DesktopTowerOfLondon.aspx" />
     <Content Include="Tests\DesktopTests.aspx" />
     <Content Include="web\css\960_12_10_10.css" />
     <Content Include="web\css\fredcool\images\ui-bg_diagonals-medium_75_f0f0f0_40x40.png" />
@@ -560,6 +560,7 @@
     <Content Include="content\SCATI\SCATI-SO-Male.pdf" />
     <Content Include="content\SCATI\Sinha and Watson 2007 SCATI.pdf" />
     <Content Include="images\large\Thumbs.db" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\testPub.pubxml" />
     <Content Include="Provider\ProviderPortal.aspx" />
     <Content Include="ReportsSamples\CASS_Sample.html" />
@@ -570,6 +571,7 @@
     <Content Include="ReportsSamples\HCTI_Sample.html" />
     <Content Include="ReportsSamples\SCATI_Sample.html" />
     <Content Include="ResultsPage.aspx" />
+    <Content Include="Resources\LicenseKey.pem" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="robots.txt" />
     <Content Include="Scripts\jquery-1.9.1.js" />
@@ -894,12 +896,12 @@
     <Compile Include="Tests\Autism.aspx.designer.cs">
       <DependentUpon>Autism.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Tests\CogQuizTool\CogQuizSetUp.aspx.cs">
-      <DependentUpon>CogQuizSetUp.aspx</DependentUpon>
+    <Compile Include="Tests\DesktopTowerOfLondon.aspx.cs">
+      <DependentUpon>DesktopTowerOfLondon.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Tests\CogQuizTool\CogQuizSetUp.aspx.designer.cs">
-      <DependentUpon>CogQuizSetUp.aspx</DependentUpon>
+    <Compile Include="Tests\DesktopTowerOfLondon.aspx.designer.cs">
+      <DependentUpon>DesktopTowerOfLondon.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tests\DesktopTests.aspx.cs">
       <DependentUpon>DesktopTests.aspx</DependentUpon>

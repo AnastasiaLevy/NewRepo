@@ -20,13 +20,151 @@
     <link href="../css/style.css" rel="stylesheet" />
     <link href="../css/previewer.css" rel="stylesheet" />
     <script src="../js/jquery.js"></script>
+    <style>
+        #headerSlider {
+            width: 260px;
+            height: auto;
+            position: absolute;
+            right: 0;
+            border: 1px solid #d8d8d8;
+            margin-left: 40px;
+            padding: 20px 40px;
+            border-radius: 3px;
+            box-shadow: 0 0 8px gray;
+            background-color: lavenderblush;
+            z-index: 1000;
+            overflow: hidden;
+        }
 
+        #slider {
+            width: 500px;
+            top: 100px;
+            position: fixed;
+        }
+
+        #sidebar {
+            position: absolute;
+            top: 20px;
+            left: 113px;
+            box-shadow: 0 0 8px gray;
+        }
+
+        #sidebar1 {
+            position: absolute;
+            top: 20px;
+            left: 113px;
+            box-shadow: 0 0 8px gray;
+        }
+
+        .round-button {
+            display: block;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            border: 2px solid #f5f5f5;
+            color: #f5f5f5;
+            text-align: center;
+            text-decoration: none;
+            background: #464646;
+            box-shadow: 0 0 3px gray;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+            .round-button:hover {
+                background: #262626;
+            }
+    </style>
     <script src="../js/previewer.js"></script>
     <script src="https://use.fontawesome.com/0138464303.js"></script>
 
 </head>
 
+
+
 <body data-spy="scroll" runat="server" class="desktop-test-page">
+    <script>
+        /*
+    ------------------------------------------------------------
+    Function to activate form button to open the slider.
+    ------------------------------------------------------------
+    */
+        function open_panel() {
+
+            slideIt();
+            var a = document.getElementById("sidebar");
+            a.setAttribute("id", "sidebar1");
+            a.setAttribute("onclick", "close_panel()");
+        }
+        /*
+        ------------------------------------------------------------
+        Function to slide the sidebar form (open form)
+        ------------------------------------------------------------
+        */
+        function slideIt() {
+            var slidingDiv = document.getElementById("slider");
+            var stopPosition = 0;
+            if (parseInt(slidingDiv.style.right) < stopPosition) {
+                slidingDiv.style.right = parseInt(slidingDiv.style.right) + 2 + "px";
+                setTimeout(slideIt, 1);
+            }
+        }
+        /*
+        ------------------------------------------------------------
+        Function to activate form button to close the slider.
+        ------------------------------------------------------------
+        */
+        function close_panel() {
+            slideIn();
+            a = document.getElementById("sidebar1");
+            a.setAttribute("id", "sidebar");
+            a.setAttribute("onclick", "open_panel()");
+        }
+        /*
+        ------------------------------------------------------------
+        Function to slide the sidebar form (slide in form)
+        ------------------------------------------------------------
+        */
+        function slideIn() {
+            var slidingDiv = document.getElementById("slider");
+            var stopPosition = -300;
+            if (parseInt(slidingDiv.style.right) > stopPosition) {
+                slidingDiv.style.right = parseInt(slidingDiv.style.right) - 2 + "px";
+                setTimeout(slideIn, 1);
+            }
+        }
+    </script>
+
+
+    <div id="slider" style="right: -300px;">
+        <div id="sidebar" onclick="open_panel()">
+            <a class="round-button">+</a>
+        </div>
+        <div id="headerSlider">
+            <h4>Go To <span id="closeButton" class="form-slide-close pull-right" onclick="close_panel();  ">X</span></h4>
+            <%--<p><a href="#intro">About Cognitive Testing</a></p>--%>
+            <p>
+                <li><a href="#london">Tower Of London</a></li>
+            </p>
+            <p>
+                <li class=""><a href="#cardSort">Card Sort</a></li>
+            </p>
+            <p>
+                <li class=""><a href="#CPT">CPT</a></li>
+            </p>
+            <p>
+                <li class=""><a href="#hanoi">Tower of Hanoi</a></li>
+            </p>
+            <p>
+                <li class=""><a href="#reaction">Reaction Time</a></li>
+            </p>
+            <p>
+                <li class=""><a href="#trails">Trails</a></li>
+            </p>
+        </div>
+    </div>
+
+
     <form runat="server">
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -58,7 +196,7 @@
             </div>
         </nav>
 
-        <div class="sidebar-nav" style="position: fixed; margin-top: 10%">
+        <%--<div class="sidebar-nav" style="position: fixed; margin-top: 10%">
             <div class="well" style="width: 120px; padding: 8px 0;">
                 <ul class="nav nav-list">
 
@@ -71,13 +209,13 @@
 
                 </ul>
             </div>
-        </div>
+        </div>--%>
 
         <section id="about">
             <div class="container testDescription">
                 <h1>Desktop Tests Collection</h1>
                 <hr />
-                <img src="../images/desktops/backgr.png" style="width: 100%;"/>
+                <img src="../images/desktops/backgr.png" style="width: 100%;" />
 
                 <p>
                     The CogQuiz Test Collection offers flexible tests for your desktop. It offeres one database for all test, Normed data, and the ability to make your own tests. 
@@ -108,21 +246,9 @@
                                 </a>
                             </div>
                             <div class="col-sm-2 text-center">
-                                <a href="#hanoi" class="btn btn-labeled btn-info">
-                                    <span><strong>Tower of Hanoi</strong></span>
+                                <a href="#cardSort" class="btn btn-labeled btn-info">
+                                    <span><strong>Card Sort Test</strong></span>
                                 </a>
-
-                            </div>
-                            <div class="col-sm-2 text-center">
-                                <a href="#trails" class="btn btn-labeled btn-info">
-                                    <span><strong>Trail Making Test</strong></span>
-                                </a>
-                            </div>
-                            <div class="col-sm-2 text-center">
-                                <a href="#reaction" class="btn btn-labeled btn-info">
-                                    <span><strong>Reaction Time</strong></span>
-                                </a>
-
                             </div>
                             <div class="col-sm-2 text-center">
                                 <a href="#CPT" class="btn btn-labeled btn-info">
@@ -130,8 +256,18 @@
                                 </a>
                             </div>
                             <div class="col-sm-2 text-center">
-                                <a href="#cardSort" class="btn btn-labeled btn-info">
-                                    <span><strong>Card Sort Test</strong></span>
+                                <a href="#hanoi" class="btn btn-labeled btn-info">
+                                    <span><strong>Tower of Hanoi</strong></span>
+                                </a>
+                            </div>
+                            <div class="col-sm-2 text-center">
+                                <a href="#reaction" class="btn btn-labeled btn-info">
+                                    <span><strong>Reaction Time</strong></span>
+                                </a>
+                            </div>
+                            <div class="col-sm-2 text-center">
+                                <a href="#trails" class="btn btn-labeled btn-info">
+                                    <span><strong>Trail Making Test</strong></span>
                                 </a>
                             </div>
                             <div class="clearfix"></div>
@@ -476,48 +612,48 @@ et al., 1999).
 <script src="../js/bootstrap.min.js"></script>
 <script>
 
-    $(document).ready(function () {
-        $('.gallery-wrapper').previewer({});
-        $('.custom-menu a[href^="#"], .intro-scroller .inner-link').on('click', function (e) {
-            e.preventDefault();
+        $(document).ready(function () {
+            $('.gallery-wrapper').previewer({});
+            $('.custom-menu a[href^="#"], .intro-scroller .inner-link').on('click', function (e) {
+                e.preventDefault();
 
-            var target = this.hash;
-            var $target = $(target);
+                var target = this.hash;
+                var $target = $(target);
 
-            $('html, body').stop().animate({
-                'scrollTop': $target.offset().top
-            }, 900, 'swing', function () {
-                window.location.hash = target;
+                $('html, body').stop().animate({
+                    'scrollTop': $target.offset().top
+                }, 900, 'swing', function () {
+                    window.location.hash = target;
+                });
             });
-        });
 
-        $('a.page-scroll').bind('click', function (event) {
-            var $anchor = $(this);
-            $('html, body').stop().animate({
-                scrollTop: $($anchor.attr('href')).offset().top
-            }, 1500, 'easeInOutExpo');
-            event.preventDefault();
-        });
+            $('a.page-scroll').bind('click', function (event) {
+                var $anchor = $(this);
+                $('html, body').stop().animate({
+                    scrollTop: $($anchor.attr('href')).offset().top
+                }, 1500, 'easeInOutExpo');
+                event.preventDefault();
+            });
 
-        $(".nav a").on("click", function () {
-            $(".nav").find(".active").removeClass("active");
-            $(this).parent().addClass("active");
-        });
+            $(".nav a").on("click", function () {
+                $(".nav").find(".active").removeClass("active");
+                $(this).parent().addClass("active");
+            });
 
-        $('body').append('<div id="toTop" class="btn btn-primary color1"><span class="glyphicon glyphicon-chevron-up"></span></div>');
-        $(window).scroll(function () {
-            if ($(this).scrollTop() != 0) {
-                $('#toTop').fadeIn();
-            } else {
-                $('#toTop').fadeOut();
-            }
-        });
-        $('#toTop').click(function () {
-            $("html, body").animate({ scrollTop: 0 }, 700);
-            return false;
-        });
+            $('body').append('<div id="toTop" class="btn btn-primary color1"><span class="glyphicon glyphicon-chevron-up"></span></div>');
+            $(window).scroll(function () {
+                if ($(this).scrollTop() != 0) {
+                    $('#toTop').fadeIn();
+                } else {
+                    $('#toTop').fadeOut();
+                }
+            });
+            $('#toTop').click(function () {
+                $("html, body").animate({ scrollTop: 0 }, 700);
+                return false;
+            });
 
-    });
+        });
 </script>
 
 </html>

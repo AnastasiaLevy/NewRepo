@@ -109,7 +109,7 @@
             </div>
         </div>
     </section>
-        <section id="services">
+        <%--<section id="services">
             <div class="blueback">
                 <div class="container">
                     <div class="text-center homeport2">
@@ -151,6 +151,73 @@
                                     </a>
                                     <h3><a href="IntelligenceTest.aspx">Intelligence</a></h3>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>--%>
+        <section id="services">
+            <div class="blueback">
+                <div class="container">
+                    <div class="text-center homeport2">
+                        <h2>Test Categories</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 homeservices1 blueFont">
+                            <%--<div class="col-md-4 portfolio-item">
+                                <div class="text-center">
+                                    <a href="javascript:void(0);">
+                                        <a href="category/Memory.aspx"><span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa fa-medium fa-stack-1x "></i>
+                                        </span></a>
+                                    </a>
+                                    <h3><a href="category/Memory.aspx">Memory</a></h3>
+                                    <p>
+                                        Short-term and long term-merm memory tests avaialble.
+                                    Take one of our quizes and find out where you stand in relation to others. Are you capable of remembering germane or salient details, or is there cause for concern?
+                                    </p>
+                                </div>
+                            </div>--%>
+                            <div class="col-md-6 portfolio-item">
+                                <div class="text-center">
+                                    <a href="javascript:void(0);">
+                                        <a href="category/ExecutiveFunction.aspx"><span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa fa-book fa-stack-1x"></i>
+                                        </span></a>
+
+                                    </a>
+                                    <h3><a href="category/ExecutiveFunction.aspx">Executive function and Planning</a></h3>
+                                    <p>Are you concerned with your Attention span, your ability to switch between tasks effectively or your speed of processing? Executive function tests help you determine if you have alfflictions like ADHD or NNNN</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 portfolio-item">
+                                <div class="text-center">
+                                    <a href="javascript:void(0);">
+                                        <a href="category/ProcessingSpeed.aspx"><span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa fa-cogs fa-stack-1x"></i>
+                                        </span></a>
+
+                                    </a>
+                                    <h3><a href="category/ProcessingSpeed.aspx">Processing Speed</a></h3>
+                                    <p>Speed of processing has been a major explantory varialbe for enhanced cognitive performace during development.</p>
+                                </div>
+                            </div>
+                            <%--<div class="col-md-3 portfolio-item">
+                                <div class="text-center">
+                                    <a href="javascript:void(0);">
+                                        <a href="category/IntelligenceTest.aspx"><span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa fa-lightbulb-o fa-stack-1x"></i>
+                                        </span></a>
+
+                                    </a>
+                                    <h3><a href="category/IntelligenceTest.aspx">Intelligence</a></h3>
+                                    <p>Learn about human intelligence</p>
+                                </div>
                             </div>--%>
                         </div>
                     </div>
@@ -158,7 +225,7 @@
             </div>
         </section>
 
-    <section id="follow-us">
+    <%--<section id="follow-us">
         <div class="container">
             <div class="text-center height-contact-element">
                 <h3>Follow Us</h3>
@@ -174,7 +241,25 @@
                 </ul>
             </div>
         </div>
-    </section>
+    </section>--%>
+        <section id="follow-us">
+            <div class="container">
+                <div class="text-center height-contact-element">
+                    <h2>FOLLOW US</h2>
+                </div>
+                <img class="img-responsive displayed" src="../images/line-separator.png" alt="short" />
+                <div class="text-center height-contact-element">
+                    <ul class="list-unstyled list-inline list-social-icons">
+                        <li class="active"><a href="https://www.facebook.com/CogQuiz-1644904339158958/"><i class="fa fa-facebook social-icons"></i></a></li>
+                        <li><a href="https://twitter.com/cogquizcom"><i class="fa fa-twitter social-icons"></i></a></li>
+                        <li><a href="https://plus.google.com/u/3/113821050703373361140?hl=en"><i class="fa fa-google-plus social-icons"></i></a></li>
+                        <li><a href="https://www.linkedin.com/company-beta/13213074/"><i class="fa fa-linkedin social-icons"></i></a></li>
+                        <li><a href="mailto:support@cogquiz.com" target="_top"><i class="fa fa-envelope social-icons"></i></a></li>
+                    </ul>
+                   <p>+1(719)888 9121</p> 
+                </div>
+            </div>
+        </section>
 
         <div id="id01" class="modal">
    
