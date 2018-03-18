@@ -53,8 +53,8 @@
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right custom-menu" style="margin-left:0px">
-                        <li class="active" style="margin-left:0px"><a href="../MainPage.aspx">Home</a></li>
-                        <li style="margin-left:0px"><a href="#userInfo">Dashboard</a></li>
+                        <li style="margin-left:0px"><a href="../MainPage.aspx">Home</a></li>
+                        <li class="active" style="margin-left:0px"><a href="#userInfo">Dashboard</a></li>
                         <li style="margin-left:0px"><a href="#participantData">Participant Data</a></li>
                         <li style="margin-left:0px"><a href="#purchachedTests">Provider Tests</a></li>
                         <li style="margin-left:0px"><a href="#testList">Available Tests</a></li>
@@ -681,7 +681,7 @@ data="https://www.youtube.com/embed/0JwN9Np1TmE?fs=0">
                 <div class="row">
                     <div class="container">
                         <div class="text-center height-contact-element">
-                            <h2>FOLLOW US</h2>
+                            <h2 style="color: black">FOLLOW US</h2>
                         </div>
                         <img class="img-responsive displayed" src="../images/line-separator.png" alt="short" />
                         <div class="text-center height-contact-element">

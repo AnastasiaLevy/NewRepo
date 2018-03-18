@@ -133,13 +133,27 @@ namespace TestSite
         {
             LinkButton btn = (LinkButton)sender;
             GridViewRow row = (GridViewRow)btn.NamingContainer;
-            string str = row.Cells[3].Text;
-            Session["userTestId"] = row.Cells[4].Text;
-            Session["providerId"] = DAL.DataMethods.GetUserProviderId(userId).Rows[0][0];
-            Session["userId"] = Membership.GetUser(User.Identity.Name).ProviderUserKey.ToString();
-            if (!String.IsNullOrEmpty(row.Cells[5].Text))
+            string str = row.Cells[3].Text; // 7
+            //Session["userTestId"] = row.Cells[4].Text;
+            //Session["providerId"] = DAL.DataMethods.GetUserProviderId(userId).Rows[0][0];
+            //Session["userId"] = Membership.GetUser(User.Identity.Name).ProviderUserKey.ToString();
+            //if (!String.IsNullOrEmpty(row.Cells[5].Text))
+            //{
+            //    Session["modifiedId"] = row.Cells[5].Text;
+            //}
+            if (str != "7")
             {
-                Session["modifiedId"] = row.Cells[5].Text;
+                Session["userTestId"] = row.Cells[4].Text;
+                Session["providerId"] = DAL.DataMethods.GetUserProviderId(userId).Rows[0][0];
+                Session["userId"] = Membership.GetUser(User.Identity.Name).ProviderUserKey.ToString();
+                if (!String.IsNullOrEmpty(row.Cells[5].Text))
+                {
+                    Session["modifiedId"] = row.Cells[5].Text;
+                }
+            }
+            else
+            {
+
             }
 
             OpenTestPage(str);
@@ -148,9 +162,16 @@ namespace TestSite
 
         private void OpenTestPage(string str)
         {
-
-            string location = Enums.TestsMap(str);
-            Response.Redirect(location);
+            //string location = Enums.TestsMap(str);
+            //Response.Redirect(location);
+            if(str == "7")
+            {
+                Response.Redirect("~/Tests/CogQuest.aspx");
+            } else
+            {
+                string location = Enums.TestsMap(str);
+                Response.Redirect(location);
+            }
 
         }
 

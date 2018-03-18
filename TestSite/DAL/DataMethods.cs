@@ -2033,6 +2033,38 @@ namespace TestSite.DAL
         }
 
         /// <summary>
+        ///     Get key for win form app installation.
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <param name="testId"></param>
+        /// <returns></returns>
+        public static string GetWinFormTOLAppKey(string userId)
+        {
+            string appKey;
+            DataTable ds = new DataTable();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("GetWinFormTOLAppKey", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("userId", userId);
+            try
+            {
+                conn.Open();
+                appKey = (string)cmd.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                InsertErrorMessage(ex.ToString(), null, null, "GetWinFormTOLAppKey");
+                throw new Exception("Execption Getting Saved Results. " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return appKey;
+        }
+
+        /// <summary>
         ///     Setup key for app.
         /// </summary>
         /// <param name="userId"></param>
@@ -2054,6 +2086,39 @@ namespace TestSite.DAL
             catch (Exception ex)
             {
                 InsertErrorMessage(ex.ToString(), null, null, "SetupTowerOfLondonAppKey");
+                throw new Exception("Execption Getting Saved Results. " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        ///     Setup key for win form app.
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public static bool SetupWinFormTOLAppKey(string userId)
+        {
+            DataTable ds = new DataTable();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("SetupWinFormTOLAppKey", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("UserId", userId);
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                InsertErrorMessage(ex.ToString(), null, null, "SetupWinFormTOLAppKey");
                 throw new Exception("Execption Getting Saved Results. " + ex.Message);
                 return false;
             }

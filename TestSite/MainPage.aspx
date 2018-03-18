@@ -154,11 +154,17 @@
                     <%--    <li><a href="#contact">Contact</a></li>--%>
                         <li><a href="#follow-us">Connect</a></li>
 
-                        <li id="profOpt" runat ="server"><a href="UserProfile.aspx">Profile</a></li>
                         <li id="login" runat="server"><a href="Login.aspx">Login</a></li>
-                        <li>
-                            <asp:LinkButton ID="logOut" class="" type="submit" runat="server" OnClick="logOut_Click">Log Out</asp:LinkButton>
+                        <li id="profile" runat ="server" class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile<span class="caret"></span></a>
+                          <ul class="dropdown-menu">
+                            <li id="profOpt" runat ="server"><a href="UserProfile.aspx">Profile</a></li>
+                            <li>
+                                <asp:LinkButton ID="logOut" class="" type="submit" runat="server" OnClick="logOut_Click">Log Out</asp:LinkButton>
+                            </li>
+                          </ul>
                         </li>
+                        
                         <!-- 	<li><a href="blog.html">Blog</a></li>
                         <li><a href="single-post.html">Single</a></li> -->
                     </ul>
@@ -497,40 +503,42 @@
         </section>
 
         <section id="videos">
-            <div class="row">
-                <div class="box">
-                    <div class="col-lg-12">
+            <div class="container">
+                <div class="row">
+                    <div class="box">
+                        <div class="col-lg-12">
                      
-                        <h2 class="text-center">Instructional
-                            Videos
-                        </h2>
-                         <img class="img-responsive displayed" src="images/line-separator.png" alt="short">
-                    </div>
-                    <div class="col-sm-3 text-center" id="vid1">
-                        <label>Provider Dash Part 1</label>
-                       <iframe src="https://www.youtube.com/embed/-SPAjSEuBNA?" frameborder="0" allowfullscreen=""></iframe>
+                            <h2 class="text-center">Instructional
+                                Videos
+                            </h2>
+                             <img class="img-responsive displayed" src="images/line-separator.png" alt="short">
+                        </div>
+                        <div class="col-sm-3 text-center" id="vid1">
+                            <label>Provider Dash Part 1</label>
+                           <iframe src="https://www.youtube.com/embed/-SPAjSEuBNA?" frameborder="0" allowfullscreen=""></iframe>
 
-                    </div>
-                    <div class="col-sm-3 text-center"> 
-                    <label>Provider Dash Part 2</label>
-                        <iframe src="https://www.youtube.com/embed/k_aoilEl8h8?" frameborder="0" allowfullscreen=""></iframe>
+                        </div>
+                        <div class="col-sm-3 text-center"> 
+                        <label>Provider Dash Part 2</label>
+                            <iframe src="https://www.youtube.com/embed/k_aoilEl8h8?" frameborder="0" allowfullscreen=""></iframe>
 
-                    </div>
+                        </div>
                  
-                    <div class="col-sm-3 text-center">
-                         <label>Provider Dash Part 3</label>
-                        <iframe src="https://www.youtube.com/embed/0JwN9Np1TmE" frameborder="0" allowfullscreen=""></iframe>
+                        <div class="col-sm-3 text-center">
+                             <label>Provider Dash Part 3</label>
+                            <iframe src="https://www.youtube.com/embed/0JwN9Np1TmE" frameborder="0" allowfullscreen=""></iframe>
 
          
-                    </div>
-                    <div class="col-sm-3 text-center">
-                     <label>Tower of London Set Up</label>
-                        <iframe src="https://www.youtube.com/embed/VH4AMss26W0" frameborder="0" allowfullscreen=""></iframe>
-                    </div>
-                    <div class="col-sm-2 text-center">
+                        </div>
+                        <div class="col-sm-3 text-center">
+                         <label>Tower of London Set Up</label>
+                            <iframe src="https://www.youtube.com/embed/VH4AMss26W0" frameborder="0" allowfullscreen=""></iframe>
+                        </div>
+                        <div class="col-sm-2 text-center">
                 
+                        </div>
+                        <div class="clearfix"></div>
                     </div>
-                    <div class="clearfix"></div>
                 </div>
             </div>
         </section>

@@ -171,7 +171,7 @@
     </form>
 
     <div>
-        <div class="b-popup" id="popup1">
+        <div class="b-popup" id="popup1" style="display: none;">
         <div class="b-popup-content" style="position: relative;">All software programs on cogquiz.com and the actual website itself are provided for personal entertainment and educational purposes only. They are not intended to provide medical advice and should not be considered as tools for diagnosis or treatment of a mental or physical health problem, or for prescribing medication. While performance on tests are reported for different age groups these data are for informational purposes only. Performance equivalent to, below, or above normed performance should not be taken as indicative of a mental or physical health problem. If you think you have a medical or mental health problem you should contact a licensed physician or mental health professional. This web site assume no responsibility for how the information provided on the cogquiz.com site is used. 
 This web site or their agents make no promises, guarantees, representations, or warranties, expressed or implied, and assume no duty or liability regarding the information contained herein or any associated ways in which it is used therewith. Links to other sites do not constitute endorsement, recommendation, or approval of those sites or any information contained in such sites. This web site bear no responsibility for the accuracy, legality or content of the external sites or for that of subsequent links. Those who visit or use the cogquiz.com web site, links, or any other information assume all risks associated therewith. 
 I accept the conditions described above and signify this by checking the Accept button.

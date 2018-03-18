@@ -19,69 +19,82 @@ namespace TestSite.Tests
         protected bool _isProfilefilled;
         protected string _testId = Enums.TestId.Quest;
         protected static int _userTestId;
+
+        public string Key { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (User.Identity.IsAuthenticated)
             {
                 _user = Membership.GetUser(User.Identity.Name);
                 _userId = _user.ProviderUserKey.ToString();
-          
+                Key = DataMethods.GetWinFormTOLAppKey(_userId);
+
                 logOut.Visible = true;
+                profOpt.Visible = true;
                 login.Visible = false;
             }
             else
             {
                 login.Visible = true;
                 profOpt.Visible = false;
-
+                logOut.Visible = false;
             }
-            if (!IsPostBack)
+
+            //  Catch response from paypal
+            if (IsPostBack)
             {
-                if (!String.IsNullOrEmpty(Request.QueryString["st"]) && Request.QueryString["st"] == "Completed")
+                if (!String.IsNullOrEmpty(Request.QueryString["st"]) && Request.QueryString["st"].Equals("Completed", StringComparison.InvariantCultureIgnoreCase))
                 {
-                    string error = "";
-                    if (UpdateTestPaid(_userId) && hasPaidTest(_userId))
+                    if (!hasPaidTest(_userId) && string.IsNullOrEmpty(Key))
                     {
-
-                       //TODO: display download link
-                    }
-                    else
-                    {
-                        error = "Cannot process payment. Please contact administrator.";
-                    }
-
-                }
-                else
-                {
-
-                    if (User.Identity.IsAuthenticated)
-                    {
-
-                        if (hasPaidTest(_userId))
+                        bool isPaid = UpdateTestPaid(_userId);
+                        bool isKeySetup = SetupKey();
+                        if (isKeySetup)
                         {
-                            price.Attributes.Add("style", "display:none");
-                  
+                            Key = DataMethods.GetWinFormTOLAppKey(_userId);
                         }
-                        else
-                        {
-                            login.Visible = false;
-                            logOut.Visible = true;
-                           
-                            runTest.Visible = false;
-                        }
-
-                        price.Visible = true;
                     }
-                    else
-                    {
-                        login.Visible = true;
-                        logOut.Visible = false;
-                        runTest.Visible = false;
-                    }
-
                 }
             }
 
+            if (User.Identity.IsAuthenticated && hasPaidTest(_userId))
+            {
+                ShowAppData();
+            }
+            else
+            {
+                ShowBuyButton();
+            }
+
+            Page.DataBind();
+        }
+
+        private bool SetupKey()
+        {
+            try
+            {
+                DataMethods.SetupWinFormTOLAppKey(_userId);
+                return true;
+            }
+            catch (Exception exc)
+            {
+                return false;
+            }
+        }
+
+        private void ShowBuyButton()
+        {
+            price.Visible = true;
+            runTest.Visible = false;
+            KeyValue.Visible = false;
+        }
+
+        private void ShowAppData()
+        {
+            price.Visible = false;
+            runTest.Visible = true;
+            KeyValue.Visible = true;
         }
 
         protected void logOut_Click(object sender, EventArgs e)
@@ -126,8 +139,8 @@ namespace TestSite.Tests
         private void RunPayPal(string itemName, double itemAmount)
         {
             string business = "HQS7UWQMRHDTQ";//"P6JMSAGR5XCE4";// "analescheok@gmail.com"
-          
-       
+
+
             string currencyCode = "USD";
 
             StringBuilder ppHref = new StringBuilder();
@@ -160,7 +173,7 @@ namespace TestSite.Tests
                 runTest.Visible = false;
             }
             else
-            Response.Redirect("CogQuestTool/CogQuestSetUp.aspx");
+                Response.Redirect("CogQuestTool/CogQuestSetUp.aspx");
         }
 
         protected void LinkButton1_Click(object sender, EventArgs e)

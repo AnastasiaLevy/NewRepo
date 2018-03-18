@@ -169,7 +169,7 @@ namespace TestSite.Tests
 
         protected string _baseUrl;
         protected string _itemName = "CogQuiz Desktop";
-        protected string _page = "/Tests/CogQuizTool/CogQuizSetUp.aspx?bought";
+        protected string _page = "/Tests/DesktopTowerOfLondon.aspx";
 
         protected string _userId;
         protected MembershipUser _user;
@@ -180,21 +180,25 @@ namespace TestSite.Tests
         protected void Page_Load(object sender, EventArgs e)
         {
             _baseUrl = Request.Url.GetLeftPart(UriPartial.Authority);
+            
+            if (User.Identity.IsAuthenticated)
+            {
+                login.Visible = false;
+                profOpt.Visible = false;
+                logOut.Visible = true;
 
+                _user = Membership.GetUser(User.Identity.Name);
+                _userId = _user.ProviderUserKey.ToString();
+                LicenseEmail = _user.Email;
+                Key = DataMethods.GetTowerOfLondonAppKey(_userId);
+            }
+            else
+            {
+                login.Visible = true;
+                profOpt.Visible = true;
+                logOut.Visible = false;
+            }
 
-
-            _user = Membership.GetUser(User.Identity.Name);
-            _userId = _user.ProviderUserKey.ToString();
-            LicenseEmail = _user.Email;
-            Key = DataMethods.GetTowerOfLondonAppKey(_userId);
-
-            //  IMPORTANT: in production must be: 
-            //      if(IsPostBack...
-            //  NOT if(!IsPostBack... without '!'
-            //
-            //  This is just for test without paypal response
-            //
-            //  To create new key add query parameter ?st=completed
             if (IsPostBack && string.IsNullOrEmpty(Key))
             {
                 //  'st' parameter - added by paypal

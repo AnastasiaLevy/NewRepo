@@ -59,7 +59,7 @@ namespace TestSite.Tests
 
                         if (hasPaidTest(_userId))
                         {
-                            price.Attributes.Add("style", "display:none");
+                            //price.Attributes.Add("style", "display:none");
 
                         }
                         else

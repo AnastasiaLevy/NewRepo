@@ -3358,7 +3358,7 @@ label {
 }
 
 .modal .modal-dialog {
-    width: 60%;
+    width: 70%;
     margin: 0 auto;
 }
 
@@ -3380,6 +3380,27 @@ label {
 .exapmles-list li span {
     color: #000;
 }
+
+.navbar-inverse .navbar-nav > .open > a, 
+.navbar-inverse .navbar-nav > .open > a:focus, 
+.navbar-inverse .navbar-nav > .open > a:hover {
+    border-bottom: 3px solid #FFF;
+    background: unset;
+}
+
+#videos iframe {
+    width: 100%;
+}
+
+.btn-green {
+    background: green;
+}
+
+.cogquest-hr {
+    margin-bottom:50px;
+    margin-top:50px;
+}
+
     /*.sidebar {
     position: absolute;
     top: 20px;

@@ -477,7 +477,7 @@
                                                                     <td width="20">
                                                                         <spacer type="block" width="20" height="1" />
                                                                     </td>
-                                                                    <td><a id="InstallButton" href="CogQuest.exe">Install</a></td>
+                                                                    <td><a id="InstallButton" href="CogQuest.msi">Install</a></td>
                                                                     <td width="20">
                                                                         <spacer type="block" width="20" height="1" />
                                                                     </td>

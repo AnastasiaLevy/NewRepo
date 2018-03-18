@@ -17,14 +17,12 @@ namespace TestSite
             if (User.Identity.IsAuthenticated)
             {
                 login.Visible = false;
-                logOut.Visible = true;
-                profOpt.Visible = true;
+                profile.Visible = true;
             }
             else
             {
                 login.Visible = true;
-                logOut.Visible = false;
-                profOpt.Visible = false;
+                profile.Visible = false;
             }
         }
         protected void Page_Load(object sender, EventArgs e)

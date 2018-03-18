@@ -331,7 +331,7 @@ In addition to Shallice’s (1982) original findings of deficits in individuals 
                                 <div class="circle c1 img-circle">
                                     <h4 class="blue">Install</h4>
                                     <span class="icon blue"><i class="fa fa-usd"></i></span>
-                                    <span class="price-large blue">499</span>
+                                    <span class="price-large blue">5</span>
                                     <span class="price-small">.00</span>
                                     <p><a href="DesktopTowerOfLondon.aspx" class="btn btn-info">Order Now</a></p>
                                     <%--       <asp:Button ID="single" class="btn btn-info" runat="server" OnClick="single_Click" Text="Buy Now" />--%>

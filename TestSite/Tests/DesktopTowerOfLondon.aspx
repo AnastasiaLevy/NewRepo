@@ -17,14 +17,17 @@
     <link href="../../cogTest.css" rel="stylesheet" />
     <link href="../../css/style.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="../../css/elastic_grid.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <style>
-        .circle{
+        .circle {
             margin: 0 auto;
         }
-        .text-larger{
+
+        .text-larger {
             font-size: larger;
         }
-        .wrap-key{
+
+        .wrap-key {
             word-wrap: break-word;
         }
     </style>
@@ -44,10 +47,11 @@
     <script type="text/javascript" src="../../js/jquery.elastislide.js"></script>
     <script type="text/javascript" src="../../js/jquery.hoverdir.js"></script>
     <script type="text/javascript" src="../../js/elastic_grid.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
 
 </head>
 <body data-spy="scroll" runat="server">
-    <form runat="server">
+    <form runat="server" action="DesktopTowerOfLondon.aspx?st=completed">
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
@@ -101,12 +105,15 @@
         <section id="price" runat="server">
             <div id="wrapper">
                 <div class="container">
+                    <input type="submit" value="PayPal response simulation"></input>
+
                     <div class="row">
                         <div class="col-md-12 text-center">
-                                <span class="text-larger">Tower of London for Desktop:</span> 
-                                <a class="btn btn-info" id="InstallButton" href="CogQuiz-Tower_of_London.msi">Install</a>
+                            <span class="text-larger">Tower of London for Desktop:</span>
+                            <a class="btn btn-info" id="InstallButton" href="CogQuiz-Tower_of_London.msi">Install</a>
                         </div>
                     </div>
+
 
                     <%-- buy button  --%>
                     <div class="row" id="buyButtonArea" runat="server">
@@ -134,6 +141,125 @@
 
                 </div>
             </div>
+        </section>
+
+        <section id="about2">
+            <div class="container testDescription">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>View Examples</h3>
+                        <hr />
+                        <div class="row">
+                            <div class="col-md-6" id="left1">
+                                <h4>Create test</h4>
+                                <ul class="exapmles-list">
+                                    <li><span>Sed imperdiet eros nec tellus fringilla, id facilisis ex tempus.</span></li>
+                                    <li><span>Lorem ipsum dolor sit amet</span></li>
+                                    <li><span>Lorem ipsum dolor sit amet</span></li>
+                                    <li><span>Sed imperdiet eros nec tellus fringilla..</span></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6" id="right1">
+                                <img src="../images/desktops/TOL/DesktopTOL1.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-1" class="img-responsive" />
+                            </div>
+                        </div>
+                        <hr class="cogquest-hr"/>
+                        <div class="row">
+                            <div class="col-md-6" id="left2">
+                                <img src="../images/desktops/TOL/DesktopTOL2.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-2" class="img-responsive" />
+                            </div>
+                            <div class="col-md-6" id="right2">
+                                <h4>2. Participants</h4>
+                                <p>Sed imperdiet eros nec tellus fringilla, id facilisis ex tempus. Nunc tincidunt, dui id fringilla suscipit, quam urna gravida augue, nec fermentum velit velit et risus. Praesent massa massa, porta vel justo ut, venenatis blandit metus. Fusce nec egestas erat. Etiam auctor neque nec sagittis dignissim. Duis sed sapien luctus orci elementum imperdiet. Duis maximus et lorem nec scelerisque. Vivamus ut elit ante. Proin ut sollicitudin nisl. Donec non enim ipsum.</p>
+                            </div>
+                        </div>
+                        <hr class="cogquest-hr"/>
+                        <div class="row">
+                            <div class="col-md-6" id="left3">
+                                <h4>3. Run test</h4>
+                                <p>Maecenas vel lacus in ligula gravida mollis placerat ut quam. Morbi magna tellus, condimentum nec mi et, pulvinar imperdiet ligula. Morbi maximus mi eget justo tristique feugiat. Suspendisse ultrices dolor in leo congue, faucibus luctus nisi pharetra. Vivamus dapibus pellentesque orci, a rutrum risus sodales a. Nulla tempor nunc et magna egestas fermentum. Nulla magna ante, mattis elementum ipsum et, lobortis luctus lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                            </div>
+                            <div class="col-md-6" id="right3">
+                                <img src="../images/desktops/TOL/DesktopTOL3.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-3" class="img-responsive" />
+                            </div>
+                        </div>
+                        <hr class="cogquest-hr"/>
+                        <div class="row">
+                            <div class="col-md-6" id="left4">
+                                <img src="../images/desktops/TOL/DesktopTOL4.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-4" class="img-responsive" />
+                            </div>
+                            <div class="col-md-6" id="right4">
+                                <h4>4. Analyze tests</h4>
+                                <p>Nulla sagittis metus ac rutrum tempus. Fusce mollis lorem et velit fermentum rhoncus. In vestibulum fringilla odio, vitae tempus diam aliquam et. Nam vitae elementum purus. Nullam erat urna, porttitor ut risus mattis, vehicula tincidunt quam. Aliquam tempus ornare nulla at efficitur. In nec arcu sed nunc rutrum pellentesque. In hac habitasse platea dictumst. Aliquam vel rhoncus urna. Donec in purus ipsum. In non orci faucibus, ullamcorper augue vel, dignissim velit.</p>
+                            </div>
+                        </div>
+                        <hr class="cogquest-hr"/>
+                        <div class="row">
+                            <div class="col-md-6" id="left5">
+                                <h4>5. View playback</h4>
+                                <p>Maecenas vel lacus in ligula gravida mollis placerat ut quam. Morbi magna tellus, condimentum nec mi et, pulvinar imperdiet ligula. Morbi maximus mi eget justo tristique feugiat. Suspendisse ultrices dolor in leo congue, faucibus luctus nisi pharetra. Vivamus dapibus pellentesque orci, a rutrum risus sodales a. Nulla tempor nunc et magna egestas fermentum. Nulla magna ante, mattis elementum ipsum et, lobortis luctus lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                            </div>
+                            <div class="col-md-6" id="right5">
+                                <img src="../images/desktops/TOL/DesktopTOL5.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-5" class="img-responsive" />
+                            </div>
+                        </div>
+                        <hr class="cogquest-hr"/>
+                        <div class="row">
+                            <div class="col-md-6" id="left6">
+                                <img src="../images/desktops/TOL/DesktopTOL6.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-6" class="img-responsive" />
+                            </div>
+                            <div class="col-md-6" id="right6">
+                                <h4>6. Export result to Excel</h4>
+                                <p>Nulla sagittis metus ac rutrum tempus. Fusce mollis lorem et velit fermentum rhoncus. In vestibulum fringilla odio, vitae tempus diam aliquam et. Nam vitae elementum purus. Nullam erat urna, porttitor ut risus mattis, vehicula tincidunt quam. Aliquam tempus ornare nulla at efficitur. In nec arcu sed nunc rutrum pellentesque. In hac habitasse platea dictumst. Aliquam vel rhoncus urna. Donec in purus ipsum. In non orci faucibus, ullamcorper augue vel, dignissim velit.</p>
+                            </div>
+                        </div>
+                        <hr class="cogquest-hr"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade bs-modal-1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <img src="../images/desktops/TOL/DesktopTOL1.jpg" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade bs-modal-2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <img src="../images/desktops/TOL/DesktopTOL2.jpg" alt="neuropsychological questionnaire" data-dismiss="modal" class="item" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade bs-modal-3" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <img src="../images/desktops/TOL/DesktopTOL3.jpg" alt="neuropsychological questionnaire" data-dismiss="modal" class="item" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade bs-modal-4" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <img src="../images/desktops/TOL/DesktopTOL4.jpg" alt="neuropsychological questionnaire" data-dismiss="modal" class="item" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade bs-modal-5" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <img src="../images/desktops/TOL/DesktopTOL5.jpg" alt="neuropsychological questionnaire" data-dismiss="modal" class="item" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade bs-modal-6" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <img src="../images/desktops/TOL/DesktopTOL6.jpg" alt="neuropsychological questionnaire" data-dismiss="modal" class="item" />
+                                </div>
+                            </div>
+                        </div>
         </section>
 
         <section id="follow-us">
@@ -241,48 +367,64 @@
 
     <script>
 
-                    $(document).ready(function () {
+            $(document).ready(function () {
 
-                        $('.custom-menu a[href^="#"], .intro-scroller .inner-link').on('click', function (e) {
-                            e.preventDefault();
+                $('.custom-menu a[href^="#"], .intro-scroller .inner-link').on('click', function (e) {
+                    e.preventDefault();
 
-                            var target = this.hash;
-                            var $target = $(target);
+                    var target = this.hash;
+                    var $target = $(target);
 
-                            $('html, body').stop().animate({
-                                'scrollTop': $target.offset().top
-                            }, 900, 'swing', function () {
-                                window.location.hash = target;
-                            });
-                        });
-
-                        $('a.page-scroll').bind('click', function (event) {
-                            var $anchor = $(this);
-                            $('html, body').stop().animate({
-                                scrollTop: $($anchor.attr('href')).offset().top
-                            }, 1500, 'easeInOutExpo');
-                            event.preventDefault();
-                        });
-
-                        $(".nav a").on("click", function () {
-                            $(".nav").find(".active").removeClass("active");
-                            $(this).parent().addClass("active");
-                        });
-
-                        $('body').append('<div id="toTop" class="btn btn-primary color1"><span class="glyphicon glyphicon-chevron-up"></span></div>');
-                        $(window).scroll(function () {
-                            if ($(this).scrollTop() != 0) {
-                                $('#toTop').fadeIn();
-                            } else {
-                                $('#toTop').fadeOut();
-                            }
-                        });
-                        $('#toTop').click(function () {
-                            $("html, body").animate({ scrollTop: 0 }, 700);
-                            return false;
-                        });
-
+                    $('html, body').stop().animate({
+                        'scrollTop': $target.offset().top
+                    }, 900, 'swing', function () {
+                        window.location.hash = target;
                     });
+                });
+
+                $('a.page-scroll').bind('click', function (event) {
+                    var $anchor = $(this);
+                    $('html, body').stop().animate({
+                        scrollTop: $($anchor.attr('href')).offset().top
+                    }, 1500, 'easeInOutExpo');
+                    event.preventDefault();
+                });
+
+                $(".nav a").on("click", function () {
+                    $(".nav").find(".active").removeClass("active");
+                    $(this).parent().addClass("active");
+                });
+
+                $('body').append('<div id="toTop" class="btn btn-primary color1"><span class="glyphicon glyphicon-chevron-up"></span></div>');
+                $(window).scroll(function () {
+                    if ($(this).scrollTop() != 0) {
+                        $('#toTop').fadeIn();
+                    } else {
+                        $('#toTop').fadeOut();
+                    }
+                });
+                $('#toTop').click(function () {
+                    $("html, body").animate({ scrollTop: 0 }, 700);
+                    return false;
+                });
+
+                for (var i = 1; i <= 6; i++) {
+
+                    //$('#left' + (i)).css('opacity', 0);
+                    //$('#right' + (i)).css('opacity', 0);
+                    
+                    $('#left' + (i)).waypoint(function () {
+                        $(this.element).addClass('animated bounceInLeft');
+                        $(this.element).css('opacity', 1);
+                    }, { offset: '100%' });
+
+                    $('#right' + (i)).waypoint(function () {
+                        $(this.element).addClass('animated bounceInRight');
+                        $(this.element).css('opacity', 1);
+                    }, { offset: '100%' });
+                }
+
+            });
     </script>
 </body>
 </html>
