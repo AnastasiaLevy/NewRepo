@@ -473,7 +473,7 @@ img.displayed {
     position: absolute;
     left: 0px;
     text-align: center;
-    z-index: 9999;
+    z-index: 950;
     width: 100%;
     bottom: 20px;
 }
@@ -1744,6 +1744,7 @@ img.displayed {
 
 a, a:visited, a:focus, a:active, a:hover {
     outline: 0 none !important;
+    cursor: pointer;
 }
 
 .homeport1 figure {
@@ -2004,6 +2005,7 @@ figure.effect-oscar {
     margin: 0px;
     padding: 0px;
     max-width: 100%;
+    min-height: 140px;
 }
 
 .port3 {
@@ -3419,3 +3421,51 @@ label {
     top: 100px;
     position: fixed;
 }*/
+
+@media screen and (max-width:768px) {
+
+    .owl-carousel .owl-nav .owl-next {
+        right: -30px;
+    }
+
+    .owl-carousel .owl-nav .owl-prev {
+        left: -30px;
+    }
+}
+
+.btn {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+@media screen and (max-width:450px) {
+    .navbar-inverse {
+        opacity: 1;
+    }
+    
+    .modal .modal-dialog {
+        width: 100%;
+    }
+
+    .btn-xs-block {
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    .exapmles-list {
+        padding-left: 15px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .b-popup .b-popup-content {
+        width: 100%;
+    }
+
+    .b-popup .b-popup-text {
+        line-height: 1.1;
+        font-size: 16px;
+        max-height: 270px;
+        overflow: scroll;
+    }
+}

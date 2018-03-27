@@ -376,7 +376,7 @@
                             <asp:GridView ID="gvAllParticipants" runat="server" CellSpacing="10" class="gridview"
                                 GridLines="Horizontal" AutoGenerateColumns="False" BorderColor="#CCCCCC" BorderStyle="None"
                                 BorderWidth="1px" CellPadding="20" ForeColor="Black" Height="100px"
-                                RowStyle-Height="40px" Font-Size="x-Large"
+                                RowStyle-Height="40px"
                                 allowsorting="True" onsorting="gvAllParticipants_Sorting">
                                 <Columns>
                                     <asp:BoundField DataField="First Name" HeaderText="First Name &nbsp;&nbsp;"  sortexpression="First Name"/>
@@ -440,7 +440,7 @@
                         <asp:GridView ID="gvProviderTests" runat="server" RowStyle-Wrap="false" CellSpacing="10" class="gridview"
                             GridLines="Horizontal" AutoGenerateColumns="False" BorderColor="#CCCCCC" BorderStyle="None"
                             BorderWidth="1px" CellPadding="20" ForeColor="Black" Height="100px"
-                            RowStyle-Height="40px" Font-Size="x-Large">
+                            RowStyle-Height="40px">
                             <Columns>
                                 <asp:BoundField DataField="Name" HeaderText="Name" />
                                 <asp:BoundField DataField="Option" HeaderText="Option" />
@@ -540,25 +540,17 @@
                         </h2>
                         <hr>
                     </div>
-                    <div class="col-sm-2 text-center">
-                     <asp:Button ID="drAdult" runat="server" Text="TOL Drexel Adult"  class="btn btn-labeled btn-info"  onClick="drAdult_Click"/>
+                    <div class="col-sm-3 text-center">
+                         <asp:Button ID="drAdult" runat="server" Text="TOL Drexel Adult"  class="btn btn-labeled btn-info"  onClick="drAdult_Click"/>
                     </div>
-                    <div class="col-sm-2 text-center">
+                    <div class="col-sm-3 text-center">
                           <asp:Button ID="drChild" runat="server" Text="TOL Drexel Child"  class="btn btn-labeled btn-info"  onClick="drChild_Click"/>
-
                     </div>
-                    <div class="col-sm-2 text-center">
-                    <asp:Button ID="CST" runat="server" Text="Card Sort Test"  class="btn btn-labeled btn-info"  onClick="CST_Click"/>
+                    <div class="col-sm-3 text-center">
+                        <asp:Button ID="CST" runat="server" Text="Card Sort Test"  class="btn btn-labeled btn-info"  onClick="CST_Click"/>
                     </div>
-                    <div class="col-sm-2 text-center">
-                     <asp:Button ID="Nback" runat="server" Text="N-back"  class="btn btn-labeled btn-info"  onClick="Nback_Click"/>
-
-                    </div>
-                    <div class="col-sm-2 text-center">
-
-                    </div>
-                    <div class="col-sm-2 text-center">
-
+                    <div class="col-sm-3 text-center">
+                        <asp:Button ID="Nback" runat="server" Text="N-back"  class="btn btn-labeled btn-info"  onClick="Nback_Click"/>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -588,9 +580,6 @@ data="https://www.youtube.com/embed/k_aoilEl8h8?fs=0">
 </object>--%>
                     </div>
                     <div class="col-sm-4 text-center">
-
-                    </div>
-                    <div class="col-sm-2 text-center">
                          Provider Dash Part 3
                         <iframe src="https://www.youtube.com/embed/0JwN9Np1TmE" frameborder="0" allowfullscreen></iframe>
 <%--                        <object
@@ -598,12 +587,7 @@ data="https://www.youtube.com/embed/0JwN9Np1TmE?fs=0">
 </object>--%>
 
                     </div>
-                    <div class="col-sm-2 text-center">
-
-                    </div>
-                    <div class="col-sm-2 text-center">
-
-                    </div>
+                    
                     <div class="clearfix"></div>
                 </div>
             </div>

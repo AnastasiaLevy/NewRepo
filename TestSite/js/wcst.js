@@ -17,7 +17,7 @@
 
         if (
             ur == document.getElementById("tId").value && state == "true") {
-            goToPage();
+            //goToPage();
         }
         else {
             localStorage.setItem("tId", document.getElementById("tId").value);
@@ -655,7 +655,7 @@
         //this._SaveCardSortObj(resArray);
 
         table += '</tbody></table>';
-        this._SaveCardSortObj(table);
+        //this._SaveCardSortObj(table);
         //dropPlace.html(table);
 
         var answers = this.$element.find('.' + this.options.answers),
@@ -668,9 +668,62 @@
             completed += '<span class="msg-fail">' + this.options.allSets.substring(this.completedSet.length) + '</span>';
         }
         total['completedSet'] = this.completedSet;
-        this._SendResultRow(total);
+        //this._SendResultRow(total);
+        this._SendResultData(table, total);
         //answers.html('<div class="finished msg-correct">test finished (' + completed + ')</div>');
 
+    };
+
+    WSCT.prototype._SendResultData = function (tableHTML, totalResult) {
+        //========================HTML=====================
+        var htmlData = {
+            html: tableHTML
+        }
+
+        //====================DATA=======================
+        localStorage.setItem("tId", document.getElementById("tId").value);
+        localStorage.setItem("finished", true);
+
+        var resultData = {
+            'category': this._translate(totalResult.strategy, true),
+            'respCount': totalResult.resp_cnt,
+            'resTime': totalResult.resp_cnt != 0 ? Math.trunc(totalResult.resp_time / totalResult.resp_cnt) : '',
+            'correctCnt': totalResult.correct_cnt,
+            'errorCnt': totalResult.error_cnt,
+            'errorTime': totalResult.error_cnt != 0 ? Math.trunc(totalResult.error_time / totalResult.error_cnt) : '',
+            'persevResp': totalResult.persev_resp,
+            'persevTime': totalResult.persev_resp != 0 ? Math.trunc(totalResult.persev_time / totalResult.persev_resp) : '',
+            'persevRespError': totalResult.persev_resp_err,
+            'persevRespErrTime': totalResult.persev_resp_err != 0 ? Math.trunc(totalResult.persev_resp_err_time / totalResult.persev_resp_err) : '',
+            'uniqueErr': totalResult.uniq_err,
+            'uniqErrTime': totalResult.uniq_err != 0 ? Math.trunc(totalResult.uniq_err_time / totalResult.uniq_err) : '',
+            'failureSetCnt': totalResult.failure_set_cnt,
+            'completedSet': totalResult.completedSet,
+            'moves': totalResult.moves,
+            'htmlData': tableHTML
+
+        }
+        jQuery.ajax({
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            url: 'WCSTPage.aspx/Save_Data',
+            dataType: 'json',
+            data: JSON.stringify(resultData),
+            type: 'POST',
+            success: function (resp) {
+                goToPage();
+                //if (data.moves.length > 0) {
+                //    var user = document.getElementById("userId").value;
+                //    var tId = document.getElementById("tId").value;
+                //    window.location.href = "ResultsPage.aspx?userId=" + user + "&tid=" + tId + "&test=3";
+                //    goToPage();
+                //}
+            },
+            error: function (resp) {
+                //alert("The results were not saved correctly");
+                saveTextAsFile(JSON.stringify(resultData));
+            }
+        });
     };
 
     WSCT.prototype._translate = function (str, full) {
@@ -741,12 +794,12 @@
     function saveTextAsFile(text) {
         var user = document.getElementById("userId").value;
         var tId = document.getElementById("tId").value;
-        var text = "UserId: " + user + ".\r\n" +
-                   "TestId: " + tId + ".\r\n"
+        //var text = "UserId: " + user + ".\r\n" +
+        //           "TestId: " + tId + ".\r\n"
        
-            text += JSON.stringify(element) + ".\r\n";
+        //    text += JSON.stringify(element) + ".\r\n";
      
-        var textToSave = text;
+        var textToSave = text.toString();
         var textToSaveAsBlob = new Blob([textToSave], { type: "text/plain" });
         var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
         var fileNameToSaveAs = 'Card Sort' + tId + (new Date()).toISOString().substring(0, 10);//document.getElementById("inputFileNameToSaveAs").value;

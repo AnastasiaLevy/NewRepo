@@ -43,19 +43,36 @@ namespace TestSite
                  string txtNameFrom = emailName.Value;
                  string txtEmailFrom = emailFrom.Value;
                  string txtMessage = emailText.Value;
-            try {
-                DAL.DataMethods.SaveUserMessage(txtNameFrom, txtEmailFrom, txtMessage);
-                contactError.InnerText = "Thak you. We will be in touch next business day.";
-               
-            }catch (Exception ex)
-            {
-                contactError.InnerText = "There was error sending you message. Please try again later.";
-            }
-            txtEmailFrom = "";
-            txtMessage = "";
-            txtNameFrom = "";
-            contactError.Focus();
 
+            if(isValid(txtEmailFrom))
+            {
+                try
+                {
+                    DAL.DataMethods.SaveUserMessage(txtNameFrom, txtEmailFrom, txtMessage);
+                    contactError.InnerText = "Thank you. We will be in touch next business day";
+
+                }
+                catch (Exception ex)
+                {
+                    contactError.InnerText = "There was error sending you message. Please try again later.";
+                }
+                txtEmailFrom = "";
+                txtMessage = "";
+                txtNameFrom = "";
+
+                emailName.Value = "";
+                emailFrom.Value = "";
+                emailText.Value = "";
+            } else
+            {
+                txtEmailFrom = "";
+                txtMessage = "";
+                txtNameFrom = "";
+                contactError.InnerText = "Email address is not valid!";
+            }
+            
+            contactError.Focus();
+            
             //MailMessage mailObj = new MailMessage(
             //     "analescheok@hotmail.com", "analescheok@gmail.com", "hello", "text");
             //SmtpClient SMTPServer = new SmtpClient("smtp.gmail.com");//"207.46.163.170"
@@ -70,6 +87,12 @@ namespace TestSite
             //    mail.Body = "this is my test email body";
             //    client.Send(mail);
             //}
+        }
+        protected bool isValid(string email)
+        {
+            string pattern = "[.\\-_a-z0-9]+@([a-z0-9][\\-a-z0-9]+\\.)+[a-z]{2,6}";
+            System.Text.RegularExpressions.Match isMatch = System.Text.RegularExpressions.Regex.Match(email, pattern, System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+            return isMatch.Success;
         }
     }
 }

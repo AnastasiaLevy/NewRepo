@@ -51,8 +51,8 @@
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right custom-menu">
-                        <li class="active"><a href="../MainPage.aspx">Home</a></li>
-                        <li><a href="#userInfo">Profile</a></li>
+                        <li><a href="../MainPage.aspx">Home</a></li>
+                        <li class="active"><a href="#userInfo">Profile</a></li>
                          <li><a href="#paidTests">User Tests</a></li>
                          <li><a href="#testList">Available Tests</a></li>
                         <li><a href="#testCategories">Test Ctegories</a></li>

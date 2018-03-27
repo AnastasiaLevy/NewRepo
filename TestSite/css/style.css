@@ -13,9 +13,11 @@
 }
 .circle h4{
   margin: 0;
-  padding: 0;
+  padding: 0 35px;
 }
-.circle p{}
+.circle p{
+    margin-bottom: 0;
+}
 .circle span{}
 .circle span.icon{
 }
@@ -71,4 +73,26 @@
 }
 .c4:hover .red{
   color: #ffffff;
+}
+
+@media screen and (max-width:768px) {
+    .circle {
+        float: none !important;
+        margin: 0 auto;
+    }
+
+    .c1 {
+        background: #39b3d7;
+        margin-bottom:30px;
+    }
+
+    .c1 *,
+    .c3 *{
+        color: #fff !important;
+    }
+
+    .c3 {
+        background: #47a447;
+        margin-bottom: 30px;
+    }
 }

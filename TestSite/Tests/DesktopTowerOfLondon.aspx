@@ -51,7 +51,7 @@
 
 </head>
 <body data-spy="scroll" runat="server">
-    <form runat="server" action="DesktopTowerOfLondon.aspx?st=completed">
+    <form runat="server">
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
@@ -89,13 +89,11 @@
             <div class="container testDescription">
                 <h1>Tower of London for desktop</h1>
                 <hr />
-                <span class="text-larger">The Tower of London test is a well-known test used in applied clinical neuropsychology 
+                <p class="text-larger" style="color:#000; font-size: large;">The Tower of London test is a well-known test used in applied clinical neuropsychology 
                     for the assessment of executive functioning specifically to detect deficits in planning, 
                     which may occur due to a variety of medical and neuropsychiatric conditions. 
                     It is related to the classic problem-solving puzzle known as the Tower of Hanoi. 
-                </span>
-                <br />
-                <br />
+                </p>
             </div>
 
         </section>
@@ -105,39 +103,20 @@
         <section id="price" runat="server">
             <div id="wrapper">
                 <div class="container">
-                    <input type="submit" value="PayPal response simulation"></input>
-
                     <div class="row">
-                        <div class="col-md-12 text-center">
-                            <span class="text-larger">Tower of London for Desktop:</span>
-                            <a class="btn btn-info" id="InstallButton" href="CogQuiz-Tower_of_London.msi">Install</a>
-                        </div>
-                    </div>
-
-
-                    <%-- buy button  --%>
-                    <div class="row" id="buyButtonArea" runat="server">
                         <div class="col-md-12">
-                            <div class="circle c1 img-circle" id="singlePr" runat="server">
-                                <h4 class="blue">Buy license</h4>
-                                <span class="icon blue"><i class="fa fa-usd"></i></span>
-                                <span class="price-large blue">5</span>
-                                <span class="price-small">.00</span>
-                                <asp:Button ID="single" class="btn btn-info" runat="server" OnClick="Buy_Click" Text="Buy Now" />
-                            </div>
+                            <a class="btn btn-primary btn-lg btn-xs-block" id="InstallButton" href="/Tests/TowerOfLondon/TOLDesktop.aspx">Download</a>
+                            <asp:LinkButton ID="paypalsimulate" runat="server" OnClick="paypalsimulate_Click" class="btn btn-primary btn-lg btn-xs-block btn-green pull-right">PayPal response simulation</asp:LinkButton>
                         </div>
                     </div>
 
                     <%-- key output --%>
                     <div class="row" id="keyValueArea" runat="server">
-                        <div class="col-md-12 text-center text-larger">
-                            Your key active for email: <span class="text-success wrap-key"><%# LicenseEmail %></span>
-                        </div>
-                        <div class="col-md-12 text-center text-larger">
+                        <div class="col-md-12 text-success">
                             Your key: <span class="text-success wrap-key"><%# Key %></span>
                         </div>
                     </div>
-
+                    <br />
 
                 </div>
             </div>
@@ -261,6 +240,21 @@
                             </div>
                         </div>
         </section>
+        <div class="container">
+                <%-- buy button  --%>
+                <div class="row" id="buyButtonArea" runat="server">
+                    <div class="col-md-12">
+                        <div class="circle c1 img-circle" id="singlePr" runat="server">
+                            <h4 class="blue">Buy license</h4>
+                            <span class="icon blue"><i class="fa fa-usd"></i></span>
+                            <span class="price-large blue">5</span>
+                            <span class="price-small">.00</span>
+                            <br/>
+                            <asp:Button ID="single" class="btn btn-info" runat="server" OnClick="Buy_Click" Text="Buy Now" />
+                        </div>
+                    </div>
+                </div>
+        </div>
 
         <section id="follow-us">
             <div class="container">

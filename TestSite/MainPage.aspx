@@ -319,7 +319,7 @@
                         <%--<li data-value="personality"><a href="#">Personality</a></li>--%>
                     </ul>
 
-                    <ul class="port2">
+                    <ul class="port2" >
                         <li data-type="memory" data-id="id-1" class="port3">
                             <a href="Tests/StroopWrapper.aspx" id="memory1">
                                 <img src="images/Stroop.jpg" alt=""></a>
@@ -495,7 +495,7 @@
                 <asp:Label class="label" ID="Label2" runat="server" Text="Your Email:"></asp:Label>
                 <input id="emailFrom" class="email" type="text" runat="server" />
                 <asp:Label class="label" ID="Label3" runat="server" Text="Message:"></asp:Label>
-                <textarea id="emailText" class="email" cols="20" rows="5" runat="server"></textarea>
+                <textarea style="resize: none;" id="emailText" class="email" cols="20" rows="5" runat="server"></textarea>
                
                 <asp:LinkButton class="bnt btn-sm btn-success" type="submit" runat="server" OnClick="clcSendButton">Send Email</asp:LinkButton>
 

@@ -176,7 +176,16 @@ namespace TestSite
                 else
                 {
                     chartTitle.Text = "Results for Card Sort Test for participant " + userName;
-                    string html = (ds.Tables[1].Rows[0]["textHtml"] == DBNull.Value) ? "" : ds.Tables[1].Rows[0]["textHtml"].ToString();
+
+                    string html = "";
+                    if(ds.Tables[1].Rows.Count > 0)
+                    {
+                        html = (ds.Tables[1].Rows[0]["textHtml"] == DBNull.Value) ? "" : ds.Tables[1].Rows[0]["textHtml"].ToString();
+                    } else
+                    {
+                        html = "";
+                    }
+
                     int respcount = (ds.Tables[0].Rows[0]["Responce Count"] == DBNull.Value) ? 0 : Convert.ToInt32(ds.Tables[0].Rows[0]["Responce Count"]);
                     decimal resptime = (ds.Tables[0].Rows[0]["Responce Time"] == DBNull.Value) ? 0 : Convert.ToDecimal(ds.Tables[0].Rows[0]["Responce Time"]);
                     int correctCount = (ds.Tables[0].Rows[0]["Correct Count"] == DBNull.Value) ? 0 : Convert.ToInt32(ds.Tables[0].Rows[0]["Correct Count"]);

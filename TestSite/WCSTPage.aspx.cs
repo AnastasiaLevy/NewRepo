@@ -44,7 +44,8 @@ namespace TestSite
             string uniqErrTime,
             string failureSetCnt,
             string completedSet,
-            string moves)
+            string moves,
+            string htmlData)
         {
             int respCountVar = Convert.ToInt32(respCount);
             decimal resTimeVar = String.IsNullOrEmpty(resTime) ? -1 : Convert.ToDecimal(resTime);
@@ -77,9 +78,9 @@ namespace TestSite
                 DataMethods.InsertErrorMessage(ex.ToString(), _userId, "WCSTPage");
                 //TODO: Throw exeption
             }
-         
 
-          
+            DataMethods.InsertCardSortTable(htmlData, _userTestId);
+
         }
 
         [WebMethod]

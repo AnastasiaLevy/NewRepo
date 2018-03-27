@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -21,6 +22,14 @@ namespace TestSite.Tests
         protected static int _userTestId;
 
         public string Key { get; set; }
+        public bool PayPalSimulation
+        {
+            get
+            {
+                var paypalTest = Session["PayPalSimulation"];
+                return paypalTest == null ? false: (bool)paypalTest;
+            }
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -42,10 +51,12 @@ namespace TestSite.Tests
             }
 
             //  Catch response from paypal
-            if (IsPostBack)
+            if ((IsPostBack || PayPalSimulation) && User.Identity.IsAuthenticated)
             {
                 if (!String.IsNullOrEmpty(Request.QueryString["st"]) && Request.QueryString["st"].Equals("Completed", StringComparison.InvariantCultureIgnoreCase))
                 {
+                    if (PayPalSimulation) Session["PayPalSimulation"] = false;
+
                     if (!hasPaidTest(_userId) && string.IsNullOrEmpty(Key))
                     {
                         bool isPaid = UpdateTestPaid(_userId);
@@ -133,7 +144,14 @@ namespace TestSite.Tests
 
         protected void single_Click(object sender, EventArgs e)
         {
-            RunPayPal("CogQuest", 45.00);
+            if (User.Identity.IsAuthenticated)
+            {
+                RunPayPal("CogQuest", 45.00);
+            }
+            else
+            {
+                Response.Redirect("~/Login.aspx");
+            }
         }
 
         private void RunPayPal(string itemName, double itemAmount)
@@ -179,6 +197,24 @@ namespace TestSite.Tests
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
             Response.Redirect("CogQuestTool/CogQuestInstructionsPDF.pdf");
+        }
+
+        protected void paypalsimulate_Click(object sender, EventArgs e)
+        {
+            var url = "CogQuest.aspx?st=completed";
+            Session["PayPalSimulation"] = true;
+            Response.Redirect(url);
+            //Response.Clear();
+            //var sb = new System.Text.StringBuilder();
+            //sb.Append("<html>");
+            //sb.AppendFormat("<body runat='server' onload='document.forms[0].submit();'>");
+            //sb.AppendFormat("<form ID='paypalForm' runat='server' action='{0}' method='post'>", url);
+            //sb.AppendFormat("<input type='text' name='st' value='{0}'>", "Completed");
+            //sb.Append("</form>");
+            //sb.Append("</body>");
+            //sb.Append("</html>");
+            //Response.Write(sb.ToString());
+            //Response.End();
         }
     }
 }

@@ -49,6 +49,24 @@ namespace TestSite.Tests {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl price;
         
         /// <summary>
+        /// paypalsimulate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton paypalsimulate;
+        
+        /// <summary>
+        /// keyValueArea control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl keyValueArea;
+        
+        /// <summary>
         /// buyButtonArea control.
         /// </summary>
         /// <remarks>
@@ -74,14 +92,5 @@ namespace TestSite.Tests {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button single;
-        
-        /// <summary>
-        /// keyValueArea control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl keyValueArea;
     }
 }

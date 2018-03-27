@@ -177,6 +177,15 @@ namespace TestSite.Tests
         public string LicenseEmail { get; set; }
         public string Key { get; set; }
 
+        public bool PayPalSimulation
+        {
+            get
+            {
+                var paypalTest = Session["PayPalTOLSimulation"];
+                return paypalTest == null ? false : (bool)paypalTest;
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             _baseUrl = Request.Url.GetLeftPart(UriPartial.Authority);
@@ -184,7 +193,7 @@ namespace TestSite.Tests
             if (User.Identity.IsAuthenticated)
             {
                 login.Visible = false;
-                profOpt.Visible = false;
+                profOpt.Visible = true;
                 logOut.Visible = true;
 
                 _user = Membership.GetUser(User.Identity.Name);
@@ -195,12 +204,14 @@ namespace TestSite.Tests
             else
             {
                 login.Visible = true;
-                profOpt.Visible = true;
+                profOpt.Visible = false;
                 logOut.Visible = false;
             }
 
-            if (IsPostBack && string.IsNullOrEmpty(Key))
+            if ((IsPostBack || PayPalSimulation) && string.IsNullOrEmpty(Key) && User.Identity.IsAuthenticated)
             {
+                if (PayPalSimulation) Session["PayPalTOLSimulation"] = false;
+
                 //  'st' parameter - added by paypal
                 if (!String.IsNullOrEmpty(Request.QueryString["st"]) && Request.QueryString["st"].Equals("Completed", StringComparison.InvariantCultureIgnoreCase))
                 {
@@ -262,6 +273,13 @@ namespace TestSite.Tests
         protected void rbList_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void paypalsimulate_Click(object sender, EventArgs e)
+        {
+            var url = "DesktopTowerOfLondon.aspx?st=completed";
+            Session["PayPalTOLSimulation"] = true;
+            Response.Redirect(url);
         }
     }
 }

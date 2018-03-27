@@ -474,6 +474,7 @@
     <Content Include="Tests\adult_ADHD_page.aspx" />
     <Content Include="Tests\DesktopTowerOfLondon.aspx" />
     <Content Include="Tests\DesktopTests.aspx" />
+    <Content Include="Tests\TowerOfLondon\TOLDesktop.aspx" />
     <Content Include="web\css\960_12_10_10.css" />
     <Content Include="web\css\fredcool\images\ui-bg_diagonals-medium_75_f0f0f0_40x40.png" />
     <Content Include="web\css\fredcool\images\ui-bg_diagonals-small_75_f3f2ed_40x40.png" />
@@ -627,7 +628,7 @@
     <Content Include="Tests\CogQuestTool\CogQuestInstructionsPDF.pdf" />
     <Content Include="Site1.Master" />
     <Content Include="TestPage.Master" />
-    <Content Include="Tests\CogQuiz-Tower_of_London.msi" />
+    <Content Include="Tests\TowerOfLondon\CogQuiz-Tower_of_London.msi" />
     <Content Include="Tests\CogQuestTool\CogQuest.msi">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -1034,6 +1035,13 @@
     </Compile>
     <Compile Include="Tests\SyllogWrapper.aspx.designer.cs">
       <DependentUpon>SyllogWrapper.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\TowerOfLondon\TOLDesktop.aspx.cs">
+      <DependentUpon>TOLDesktop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\TowerOfLondon\TOLDesktop.aspx.designer.cs">
+      <DependentUpon>TOLDesktop.aspx</DependentUpon>
     </Compile>
     <Compile Include="TrailsPage.aspx.cs">
       <DependentUpon>TrailsPage.aspx</DependentUpon>

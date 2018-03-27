@@ -30,7 +30,8 @@
 
 <body data-spy="scroll" runat="server">
     <!-- TODO: remove action attribute on release -->
-    <form runat="server" action="CogQuest.aspx?st=completed">
+    <%--<form runat="server" action="CogQuest.aspx?st=completed">--%>
+    <form runat="server" >
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
@@ -67,154 +68,198 @@
                 <p>CogQuest Quesionnaire desktop tool allows to create a series of questions to gather any needed inforamtion from/about participants. It has 7 types of questions, including Date and Dropdown. CogQuest allows storing data in text file for printing or Excel Document for easy export to SPSS.</p>
                 <p>You can create multiple choice questions, Likert scale questions, long open-ended questions, short answer questions, etc. This is ideal for research labs. You can email a demographic questionnaire to a scheduled participant and have it emailed back and thereby avoid loss of valuable laboratory testing time. A patient/client can fill out a questionnaire in the waiting room or mail it in prior to an appointment.</p>
                 
-                <asp:LinkButton ID="LinkButton1" class="btn btn-primary btn-lg btn-block" OnClick="LinkButton1_Click" runat="server" Style="display: inline-block; margin: 15px 0; width: auto;">View User Manual</asp:LinkButton>
-                <asp:LinkButton ID="runTest" runat="server" class="btn btn-primary btn-lg btn-block" Style="display: inline-block; margin: 15px 0; width: auto;" OnClick="runTest_Click">Download</asp:LinkButton>
+                <asp:LinkButton ID="LinkButton1" class="btn btn-primary btn-lg btn-xs-block" OnClick="LinkButton1_Click" runat="server">View User Manual</asp:LinkButton>
+                <asp:LinkButton ID="runTest" runat="server" class="btn btn-primary btn-lg btn-xs-block" OnClick="runTest_Click">Download</asp:LinkButton>
                 
                 <%--<asp:Label ID="existsMessage" CssClass="errorMessage" runat="server" Text=""></asp:Label>
                 <asp:LinkButton ID="runTest" runat="server" class="signup-btn" OnClick="runTest_Click">Download</asp:LinkButton>--%>
-                <input class="btn btn-primary btn-lg btn-block btn-green pull-right" style="display: inline-block; margin: 15px 0; width: auto;"  type="submit" value="PayPal response simulation"></input>
 
+                <asp:LinkButton ID="paypalsimulate" runat="server" OnClick="paypalsimulate_Click" class="btn btn-primary btn-lg btn-xs-block btn-green pull-right">PayPal response simulation</asp:LinkButton>
+             
                 <div>
-                    <span id="KeyValue" class="text-success" runat="server">Registration Key: <%# Key %></span>
+                    <span id="KeyValue" class="text-success" runat="server" style="word-wrap: break-word;">Registration Key: <%# Key %></span>
                     <asp:Label ID="existsMessage" CssClass="errorMessage" runat="server" Text=""></asp:Label>
                 </div>
 
                 <div class="row">
                     <div class="col-md-12">
                         <h3>View Examples</h3>
-                        <hr />
+                        <%--<hr />
                         <div class="row">
                             <div class="col-md-6" id="left1">
-                                <h4>Lorem ipsum dolor sit amet</h4>
+                                <h4>Make your own questionnaire. As many as you would like</h4>
                                 <ul class="exapmles-list">
-                                    <li><span>Sed imperdiet eros nec tellus fringilla, id facilisis ex tempus.</span></li>
-                                    <li><span>Lorem ipsum dolor sit amet</span></li>
-                                    <li><span>Lorem ipsum dolor sit amet</span></li>
-                                    <li><span>Sed imperdiet eros nec tellus fringilla..</span></li>
+                                    <li><span>Create questionnaire in any language</span></li>
+                                    <li><span>Select from 8 types of questions</span></li>
+                                    <li><span>Update your header color</span></li>
+                                    <li><span>Set fonts</span></li>
+                                    <li><span>Email as an attachment to anybody in the world</span></li>
                                 </ul>
                             </div>
                             <div class="col-md-6" id="right1">
                                 <img src="../images/quest1.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-1" class="img-responsive" />
                             </div>
-                        </div>
+                        </div>--%>
                         <hr class="cogquest-hr"/>
                         <div class="row">
                             <div class="col-md-6" id="left2">
-                                <img src="../images/quest2.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-2" class="img-responsive" />
+                                <h4>Make your own questionnaire. As many as you would like</h4>
+                                <ul class="exapmles-list">
+                                    <li><span>Create questionnaire in any language</span></li>
+                                    <li><span>Select from 8 types of questions</span></li>
+                                    <li><span>Update your header color</span></li>
+                                    <li><span>Set fonts</span></li>
+                                    <li><span>Email as an attachment to anybody in the world</span></li>
+                                </ul>
                             </div>
                             <div class="col-md-6" id="right2">
-                                <h4>2. Lorem ipsum dolor sit amet</h4>
-                                <p>Sed imperdiet eros nec tellus fringilla, id facilisis ex tempus. Nunc tincidunt, dui id fringilla suscipit, quam urna gravida augue, nec fermentum velit velit et risus. Praesent massa massa, porta vel justo ut, venenatis blandit metus. Fusce nec egestas erat. Etiam auctor neque nec sagittis dignissim. Duis sed sapien luctus orci elementum imperdiet. Duis maximus et lorem nec scelerisque. Vivamus ut elit ante. Proin ut sollicitudin nisl. Donec non enim ipsum.</p>
+                                <img src="../images/quest2.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-2" class="img-responsive" />
                             </div>
                         </div>
                         <hr class="cogquest-hr"/>
                         <div class="row">
                             <div class="col-md-6" id="left3">
-                                <h4>3. Lorem ipsum dolor sit amet</h4>
-                                <p>Maecenas vel lacus in ligula gravida mollis placerat ut quam. Morbi magna tellus, condimentum nec mi et, pulvinar imperdiet ligula. Morbi maximus mi eget justo tristique feugiat. Suspendisse ultrices dolor in leo congue, faucibus luctus nisi pharetra. Vivamus dapibus pellentesque orci, a rutrum risus sodales a. Nulla tempor nunc et magna egestas fermentum. Nulla magna ante, mattis elementum ipsum et, lobortis luctus lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                                <img src="../images/quest3.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-3" class="img-responsive" />
                             </div>
                             <div class="col-md-6" id="right3">
-                                <img src="../images/quest3.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-4" class="img-responsive" />
+                                <h4>2. Likert scale question</h4>
+                                   <ul class="exapmles-list">
+                                    <li><span>Create scale of any size</span></li>
+                                    <li><span>Set description text</span></li>
+                                    <li><span>Set font size</span></li>
+                                    <li><span> Support multilane description</span></li>
+                                </ul>
                             </div>
                         </div>
-                        <hr class="cogquest-hr"/>
+                        <%--<hr class="cogquest-hr"/>
                         <div class="row">
                             <div class="col-md-6" id="left4">
-                                <img src="../images/quest4.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-5" class="img-responsive" />
-                            </div>
-                            <div class="col-md-6" id="right4">
-                                <h4>4. Lorem ipsum dolor sit amet</h4>
+                                <h4>3. Lorem ipsum dolor sit amet</h4>
                                 <p>Nulla sagittis metus ac rutrum tempus. Fusce mollis lorem et velit fermentum rhoncus. In vestibulum fringilla odio, vitae tempus diam aliquam et. Nam vitae elementum purus. Nullam erat urna, porttitor ut risus mattis, vehicula tincidunt quam. Aliquam tempus ornare nulla at efficitur. In nec arcu sed nunc rutrum pellentesque. In hac habitasse platea dictumst. Aliquam vel rhoncus urna. Donec in purus ipsum. In non orci faucibus, ullamcorper augue vel, dignissim velit.</p>
                             </div>
-                        </div>
+                            <div class="col-md-6" id="right4">
+                                <img src="../images/quest4.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-4" class="img-responsive" />
+                            </div>
+                        </div>--%>
                         <hr class="cogquest-hr"/>
                         <div class="row">
                             <div class="col-md-6" id="left5">
-                                <h4>5. Lorem ipsum dolor sit amet</h4>
-                                <p>Maecenas vel lacus in ligula gravida mollis placerat ut quam. Morbi magna tellus, condimentum nec mi et, pulvinar imperdiet ligula. Morbi maximus mi eget justo tristique feugiat. Suspendisse ultrices dolor in leo congue, faucibus luctus nisi pharetra. Vivamus dapibus pellentesque orci, a rutrum risus sodales a. Nulla tempor nunc et magna egestas fermentum. Nulla magna ante, mattis elementum ipsum et, lobortis luctus lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                                <h4>3. Date and Combo Box question</h4>
+                                  <ul class="exapmles-list">
+                                    <li><span>Use Date Format Question for birthdates or events</span></li>
+                                    <li><span>Make Combo Box question for multiple choice single option answer</span></li>
+                                    <li><span>Works with words or numbers</span></li>
+                                    <li><span>Set up the fonts size</span></li>
+                                </ul>
                             </div>
                             <div class="col-md-6" id="right5">
-                                <img src="../images/quest5.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-6" class="img-responsive" />
+                                <img src="../images/quest5.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-5" class="img-responsive" />
                             </div>
                         </div>
-                        <hr class="cogquest-hr"/>
+                        <%--<hr class="cogquest-hr"/>
                         <div class="row">
                             <div class="col-md-6" id="left6">
-                                <img src="../images/quest6.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-7" class="img-responsive" />
+                                <img src="../images/quest6.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-6" class="img-responsive" />
                             </div>
                             <div class="col-md-6" id="right6">
                                 <h4>6. Lorem ipsum dolor sit amet</h4>
                                 <p>Nulla sagittis metus ac rutrum tempus. Fusce mollis lorem et velit fermentum rhoncus. In vestibulum fringilla odio, vitae tempus diam aliquam et. Nam vitae elementum purus. Nullam erat urna, porttitor ut risus mattis, vehicula tincidunt quam. Aliquam tempus ornare nulla at efficitur. In nec arcu sed nunc rutrum pellentesque. In hac habitasse platea dictumst. Aliquam vel rhoncus urna. Donec in purus ipsum. In non orci faucibus, ullamcorper augue vel, dignissim velit.</p>
                             </div>
-                        </div>
+                        </div>--%>
                         <hr class="cogquest-hr"/>
                         <div class="row">
                             <div class="col-md-6" id="left7">
-                                <h4>7. Lorem ipsum dolor sit amet</h4>
-                                <p>Maecenas vel lacus in ligula gravida mollis placerat ut quam. Morbi magna tellus, condimentum nec mi et, pulvinar imperdiet ligula. Morbi maximus mi eget justo tristique feugiat. Suspendisse ultrices dolor in leo congue, faucibus luctus nisi pharetra. Vivamus dapibus pellentesque orci, a rutrum risus sodales a. Nulla tempor nunc et magna egestas fermentum. Nulla magna ante, mattis elementum ipsum et, lobortis luctus lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                                <img src="../images/quest7.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-7" class="img-responsive" />
                             </div>
                             <div class="col-md-6" id="right7">
-                                <img src="../images/quest7.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-8" class="img-responsive" />
+                                <h4>4. Radiobutton and CheckBox</h4>
+                                   <ul class="exapmles-list">
+                                    <li><span>Select between Radiobutton and CheckBox type question</span></li>
+                                    <li><span>Set text font</span></li>
+                                    <li><span>Set answers direction</span></li>
+                                </ul>
                             </div>
                         </div>
                         <hr class="cogquest-hr"/>
                         <div class="row">
                             <div class="col-md-6" id="left8">
-                                <img src="../images/quest8.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-9" class="img-responsive" />
+                                <h4>5. Vignette Question</h4>
+                                  <ul class="exapmles-list">
+                                    <li><span>Enter the text for participant to read</span></li>
+                                    <li><span>The text will be hidden after its read</span></li>
+                                    <li><span>Set up any number of any type questions for the participant to answer</span></li>
+                                  </ul>
                             </div>
                             <div class="col-md-6" id="right8">
-                                <h4>8. Lorem ipsum dolor sit amet</h4>
-                                <p>Nulla sagittis metus ac rutrum tempus. Fusce mollis lorem et velit fermentum rhoncus. In vestibulum fringilla odio, vitae tempus diam aliquam et. Nam vitae elementum purus. Nullam erat urna, porttitor ut risus mattis, vehicula tincidunt quam. Aliquam tempus ornare nulla at efficitur. In nec arcu sed nunc rutrum pellentesque. In hac habitasse platea dictumst. Aliquam vel rhoncus urna. Donec in purus ipsum. In non orci faucibus, ullamcorper augue vel, dignissim velit.</p>
+                                <img src="../images/quest8.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-8" class="img-responsive" />
                             </div>
                         </div>
                         <hr class="cogquest-hr"/>
                         <div class="row">
                             <div class="col-md-6" id="left9">
-                                <h4>9. Lorem ipsum dolor sit amet</h4>
-                                <p>Nulla sagittis metus ac rutrum tempus. Fusce mollis lorem et velit fermentum rhoncus. In vestibulum fringilla odio, vitae tempus diam aliquam et. Nam vitae elementum purus. Nullam erat urna, porttitor ut risus mattis, vehicula tincidunt quam. Aliquam tempus ornare nulla at efficitur. In nec arcu sed nunc rutrum pellentesque. In hac habitasse platea dictumst. Aliquam vel rhoncus urna. Donec in purus ipsum. In non orci faucibus, ullamcorper augue vel, dignissim velit.</p>
+                                <img src="../images/quest9.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-9" class="img-responsive" />
                             </div>
                             <div class="col-md-6" id="right9">
-                                <img src="../images/quest9.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-10" class="img-responsive" />
+                                <h4>6. Image Question</h4>
+                                  <ul class="exapmles-list">
+                                    <li><span>Import images as part of the question</span></li>
+                                    <li><span>Import one large image or multiple small ones</span></li>
+                                    <li><span>3 sizes available. </span></li>
+                                    <li><span>Align vertically or horisontally</span></li>
+                                </ul>
                             </div>
                         </div>
-                        <hr class="cogquest-hr"/>
+                        <%--<hr class="cogquest-hr"/>
                         <div class="row">
                             <div class="col-md-6" id="left10">
-                                <img src="../images/quest10.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-11" class="img-responsive" />
+                                <img src="../images/quest10.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-10" class="img-responsive" />
                             </div>
                             <div class="col-md-6" id="right10">
-                                <h4>10. Lorem ipsum dolor sit amet</h4>
+                                <h4>8. Lorem ipsum dolor sit amet</h4>
                                 <p>Maecenas vel lacus in ligula gravida mollis placerat ut quam. Morbi magna tellus, condimentum nec mi et, pulvinar imperdiet ligula. Morbi maximus mi eget justo tristique feugiat. Suspendisse ultrices dolor in leo congue, faucibus luctus nisi pharetra. Vivamus dapibus pellentesque orci, a rutrum risus sodales a. Nulla tempor nunc et magna egestas fermentum. Nulla magna ante, mattis elementum ipsum et, lobortis luctus lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
                             </div>
-                        </div>
+                        </div>--%>
                         <hr class="cogquest-hr"/>
                         <div class="row">
                             <div class="col-md-6" id="left11">
-                                <h4>11. Lorem ipsum dolor sit amet</h4>
-                                <p>Nulla sagittis metus ac rutrum tempus. Fusce mollis lorem et velit fermentum rhoncus. In vestibulum fringilla odio, vitae tempus diam aliquam et. Nam vitae elementum purus. Nullam erat urna, porttitor ut risus mattis, vehicula tincidunt quam. Aliquam tempus ornare nulla at efficitur. In nec arcu sed nunc rutrum pellentesque. In hac habitasse platea dictumst. Aliquam vel rhoncus urna. Donec in purus ipsum. In non orci faucibus, ullamcorper augue vel, dignissim velit.</p>
+                                <h4>7. Save either by question name or variable name</h4>
+                                  <ul class="exapmles-list">
+                                    <li><span>You have ability to save filled out questionnaire using question text or Variable name for easy import to any Database</span></li>
+                                    <li><span>Save as a simple text file to store as a hard copy.</span></li>
+                                    <li><span>The data is not stored on the device to ensure patient's privacy</span></li>
+                                </ul>
                             </div>
                             <div class="col-md-6" id="right11">
-                                <img src="../images/quest11.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-12" class="img-responsive" />
+                                <img src="../images/quest11.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-11" class="img-responsive" />
                             </div>
                         </div>
                         <hr class="cogquest-hr"/>
                         <div class="row">
                             <div class="col-md-6" id="left12">
-                                <img src="../images/quest12.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-13" class="img-responsive" />
+                                <img src="../images/quest12.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-12" class="img-responsive" />
                             </div>
                             <div class="col-md-6" id="right12">
-                                <h4>12. Lorem ipsum dolor sit amet</h4>
-                                <p>Nulla sagittis metus ac rutrum tempus. Fusce mollis lorem et velit fermentum rhoncus. In vestibulum fringilla odio, vitae tempus diam aliquam et. Nam vitae elementum purus. Nullam erat urna, porttitor ut risus mattis, vehicula tincidunt quam. Aliquam tempus ornare nulla at efficitur. In nec arcu sed nunc rutrum pellentesque. In hac habitasse platea dictumst. Aliquam vel rhoncus urna. Donec in purus ipsum. In non orci faucibus, ullamcorper augue vel, dignissim velit.</p>
+                                <h4>8. Score the test</h4>
+                                <ul class="exapmles-list">
+                                    <li><span>You have the ability to enter the correct answer and score the test right after</span></li>
+                                    <li><span>Import one large image or multiple small ones</span></li>
+                                    <li><span>Print out scored results</span></li>
+                                </ul>
                             </div>
                         </div>
                         <hr class="cogquest-hr"/>
                         <div class="row">
                             <div class="col-md-6" id="left13">
-                                <h4>13. Lorem ipsum dolor sit amet</h4>
-                                <p>Nullam iaculis ex risus, eu consequat magna venenatis sit amet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam condimentum varius elit non interdum. Nam euismod erat vel elit pretium facilisis eget eget lacus. Phasellus sodales vestibulum neque, quis egestas nisi eleifend non. Mauris id cursus ex. Praesent orci neque, pellentesque vulputate sagittis sed, scelerisque eget purus. Vivamus varius pretium metus eu tempor.</p>
+                                <h4>9. Export to HTML</h4>
+                                <ul class="exapmles-list">
+                                    <li><span>You have ability to export test to html file</span></li>
+                                    <li><span>Send this file to friends or take it home</span></li>
+                                    <li><span>Add generated test to your site</span></li>
+                                    <li><span>Pass it and print results to excell file</span></li>
+                                </ul>
                             </div>
                             <div class="col-md-6" id="right13">
-                                <img src="../images/quest13.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-3" class="img-responsive" />
+                                <img src="../images/quest13.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-13" class="img-responsive" />
                             </div>
                         </div>
                         <hr class="cogquest-hr"/>
@@ -230,49 +275,49 @@
                         <div class="modal fade bs-modal-1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
-                                    <img src="../images/quest1.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+                                    <img src="../images/quest1.jpg" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
                                 </div>
                             </div>
                         </div>
                         <div class="modal fade bs-modal-2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
-                                    <img src="../images/quest2.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="item" />
+                                    <img src="../images/quest2.jpg" alt="neuropsychological questionnaire" data-dismiss="modal" class="item" />
                                 </div>
                             </div>
                         </div>
                         <div class="modal fade bs-modal-3" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
-                                    <img src="../images/quest3.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="item" />
+                                    <img src="../images/quest3.jpg" alt="neuropsychological questionnaire" data-dismiss="modal" class="item" />
                                 </div>
                             </div>
                         </div>
                         <div class="modal fade bs-modal-4" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
-                                    <img src="../images/quest4.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="item" />
+                                    <img src="../images/quest4.jpg" alt="neuropsychological questionnaire" data-dismiss="modal" class="item" />
                                 </div>
                             </div>
                         </div>
                         <div class="modal fade bs-modal-5" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
-                                    <img src="../images/quest5.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="item" />
+                                    <img src="../images/quest5.jpg" alt="neuropsychological questionnaire" data-dismiss="modal" class="item" />
                                 </div>
                             </div>
                         </div>
                         <div class="modal fade bs-modal-6" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
-                                    <img src="../images/quest6.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="item" />
+                                    <img src="../images/quest6.jpg" alt="neuropsychological questionnaire" data-dismiss="modal" class="item" />
                                 </div>
                             </div>
                         </div>
                         <div class="modal fade bs-modal-7" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
-                                    <img src="../images/quest7.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="item" />
+                                    <img src="../images/quest7.jpg" alt="neuropsychological questionnaire" data-dismiss="modal" class="item" />
                                 </div>
                             </div>
                         </div>
@@ -280,42 +325,42 @@
                         <div class="modal fade bs-modal-8" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
-                                    <img src="../images/quest8.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="item" />
+                                    <img src="../images/quest8.jpg" alt="neuropsychological questionnaire" data-dismiss="modal" class="item" />
                                 </div>
                             </div>
                         </div>
                         <div class="modal fade bs-modal-9" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
-                                    <img src="../images/quest9.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="item" />
+                                    <img src="../images/quest9.jpg" alt="neuropsychological questionnaire" data-dismiss="modal" class="item" />
                                 </div>
                             </div>
                         </div>
                         <div class="modal fade bs-modal-10" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
-                                    <img src="../images/quest10.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="item" />
+                                    <img src="../images/quest10.jpg" alt="neuropsychological questionnaire" data-dismiss="modal" class="item" />
                                 </div>
                             </div>
                         </div>
                         <div class="modal fade bs-modal-11" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
-                                    <img src="../images/quest11.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="item" />
+                                    <img src="../images/quest11.jpg" alt="neuropsychological questionnaire" data-dismiss="modal" class="item" />
                                 </div>
                             </div>
                         </div>
                         <div class="modal fade bs-modal-12" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
-                                    <img src="../images/quest12.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="item" />
+                                    <img src="../images/quest12.jpg" alt="neuropsychological questionnaire" data-dismiss="modal" class="item" />
                                 </div>
                             </div>
                         </div>
                         <div class="modal fade bs-modal-13" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
-                                    <img src="../images/quest13.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="item" />
+                                    <img src="../images/quest13.jpg" alt="neuropsychological questionnaire" data-dismiss="modal" class="item" />
                                 </div>
                             </div>
                         </div>
@@ -489,7 +534,51 @@
                 <!-- .Row ends here -->
             </div>
         </section>
+
+        <section id="follow-us">
+            <div class="container">
+                <div class="text-center height-contact-element">
+                    <h3>Follow Us</h3>
+                    <p>+1(719)888 9121</p>
+                </div>
+                <img class="img-responsive displayed" src="../../images/line-separator.png" alt="short" />
+                <div class="text-center height-contact-element">
+                    <ul class="list-unstyled list-inline list-social-icons">
+                        <li class="active"><a href="https://www.facebook.com/CogQuiz-1644904339158958/"><i class="fa fa-facebook social-icons"></i></a></li>
+                        <li><a href="https://twitter.com/cogquizcom"><i class="fa fa-twitter social-icons"></i></a></li>
+                        <li><a href="https://plus.google.com/u/3/113821050703373361140?hl=en"><i class="fa fa-google-plus social-icons"></i></a></li>
+                        <li><a href="https://www.linkedin.com/company-beta/13213074/"><i class="fa fa-linkedin social-icons"></i></a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
     </form>
+    <footer id="footer">
+        <div class="container">
+            <div class="row myfooter">
+                <div class="col-sm-6">
+                    <div class="pull-left">
+                        © Copyright CogQuiz 2016 
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                </div>
+            </div>
+        </div>
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-89149772-1', 'auto');
+            ga('send', 'pageview');
+
+        </script>
+    </footer>
 </body>
 <script src="../js/bootstrap.min.js"></script>
 <script>
@@ -506,7 +595,7 @@
                     items: 1
                 },
                 600: {
-                    items: 2
+                    items: 1
                 },
                 1000: {
                     items: 3
