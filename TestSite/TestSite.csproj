@@ -336,6 +336,15 @@
     <Content Include="images\Stroop.jpg" />
     <Content Include="images\cool6.jpeg" />
     <Content Include="images\test-point.jpg" />
+    <Content Include="images\TOL\1.png" />
+    <Content Include="images\TOL\2.png" />
+    <Content Include="images\TOL\3.png" />
+    <Content Include="images\TOL\4.png" />
+    <Content Include="images\TOL\5.png" />
+    <Content Include="images\TOL\6.png" />
+    <Content Include="images\TOL\7.png" />
+    <Content Include="images\TOL\8.png" />
+    <Content Include="images\TOL\TOLWinForms.png" />
     <Content Include="images\tower.jpg" />
     <Content Include="images\unsplash4_1.jpg" />
     <Content Include="images\unsplash5_1.jpg" />
@@ -474,6 +483,7 @@
     <Content Include="Tests\adult_ADHD_page.aspx" />
     <Content Include="Tests\DesktopTowerOfLondon.aspx" />
     <Content Include="Tests\DesktopTests.aspx" />
+    <Content Include="Tests\DesktopTowerOfLondonWinForms.aspx" />
     <Content Include="Tests\TowerOfLondon\TOLDesktop.aspx" />
     <Content Include="web\css\960_12_10_10.css" />
     <Content Include="web\css\fredcool\images\ui-bg_diagonals-medium_75_f0f0f0_40x40.png" />
@@ -632,6 +642,7 @@
     <Content Include="Tests\CogQuestTool\CogQuest.msi">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Tests\Tower_of_London_Manual.pdf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -944,6 +955,13 @@
     </Compile>
     <Compile Include="Tests\DesktopTests.aspx.designer.cs">
       <DependentUpon>DesktopTests.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\DesktopTowerOfLondonWinForms.aspx.cs">
+      <DependentUpon>DesktopTowerOfLondonWinForms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\DesktopTowerOfLondonWinForms.aspx.designer.cs">
+      <DependentUpon>DesktopTowerOfLondonWinForms.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tests\Horney.aspx.cs">
       <DependentUpon>Horney.aspx</DependentUpon>

@@ -435,7 +435,7 @@
                 <div class="row">
                     <div class="col-md-12 homeport1">
                         <%--<div class="col-md-4 col-sm-12 col-xs-12 col-md-offset-4 portfolio-item">--%>
-                        <div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="col-md-4 col-sm-12 col-xs-12">
                             <figure class="effect-oscar">
                                 <img src="images/CogQuestPick.jpg"" alt="" class="img-responsive" />
                                 <figcaption>
@@ -446,12 +446,23 @@
                             <p class="text-center"> A  tool to create questionnaires for collecting participant information.</p>
                
                         </div>
-                        <div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="col-md-4 col-sm-12 col-xs-12">
                             <figure class="effect-oscar">
-                                <img src="images/dt.png"" alt="" class="img-responsive" />
+                                <img src="images/dt.png"" alt="" class="img-responsive" style="height: 262px;"/>
                                 <figcaption>
                                     <h2>Desktop Tests Collection</h2>
                                     <a href="\Tests\DesktopTests.aspx">View more</a>
+                                </figcaption>
+                            </figure>
+                            <p class="text-center"> A  tool to create questionnaires for collecting participant information.</p>
+               
+                        </div>
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+                            <figure class="effect-oscar">
+                                <img src="images/TOL/TOLWinForms.png"" alt="" class="img-responsive" style="height: 262px;"/>
+                                <figcaption>
+                                    <h2>Tower of London</h2>
+                                    <a href="\Tests\DesktopTowerOfLondonWinForms.aspx">View more</a>
                                 </figcaption>
                             </figure>
                             <p class="text-center"> A  tool to create questionnaires for collecting participant information.</p>

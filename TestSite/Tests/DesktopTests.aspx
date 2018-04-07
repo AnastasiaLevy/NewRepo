@@ -135,6 +135,14 @@
         }
     </script>
 
+    <%--<div class="fix-left-menu">
+        <a href="#london">Tower Of London</a>
+        <a href="#cardSort">Card Sort</a>
+        <a href="#CPT">CPT</a>
+        <a href="#hanoi">Tower of Hanoi</a>
+        <a href="#reaction">Reaction Time</a>
+        <a href="#trails">Trails</a>
+    </div>--%>
 
     <div id="slider" style="right: -300px;">
         <div id="sidebar" onclick="open_panel()">

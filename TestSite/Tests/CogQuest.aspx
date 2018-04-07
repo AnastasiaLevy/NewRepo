@@ -20,18 +20,133 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link href="../cogTest.css" rel="stylesheet" />
     <link href="../css/style.css" rel="stylesheet" />
+    <%--<link href="../style/style.css" rel="stylesheet" />--%>
     <%--<link href="../css/previewer.css" rel="stylesheet" />--%>
     <script src="../js/jquery.js"></script>
     <%--<script src="../js/previewer.js"></script>--%>
     <script src="https://use.fontawesome.com/0138464303.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+
 </head>
 
 <body data-spy="scroll" runat="server">
     <!-- TODO: remove action attribute on release -->
     <%--<form runat="server" action="CogQuest.aspx?st=completed">--%>
-    <form runat="server" >
+    <div>
+        <div class="v-popup" id="popup1" style="display: none;">
+            <div class="v-popup-content" style="position: relative; height: 383px;">
+                <button class="v-popup-close" onclick="closeVideo1();"><i class="fa fa-close"></i></button>
+                <div id="player"></div>
+                <div style="display: block; margin: 0 auto;">
+                    <div>
+                    </div>
+                    <%--<button class="btn btn-success" style="position:absolute; bottom:10px; display:block" OnClick="PopUpHide()">Close</button>--%>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="v-popup" id="popup2" style="display: none;">
+            <div class="v-popup-content" style="position: relative; height: 383px;">
+                <button class="v-popup-close" onclick="closeVideo2();"><i class="fa fa-close"></i></button>
+                <div id="player2"></div>
+                <div style="display: block; margin: 0 auto;">
+                    <div>
+                    </div>
+                    <%--<button class="btn btn-success" style="position:absolute; bottom:10px; display:block" OnClick="PopUpHide()">Close</button>--%>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="v-popup" id="popup3" style="display: none;">
+            <div class="v-popup-content" style="position: relative; height: 383px;">
+                <button class="v-popup-close" onclick="closeVideo3();"><i class="fa fa-close"></i></button>
+                <div id="player3"></div>
+                <div style="display: block; margin: 0 auto;">
+                    <div>
+                    </div>
+                    <%--<button class="btn btn-success" style="position:absolute; bottom:10px; display:block" OnClick="PopUpHide()">Close</button>--%>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="v-popup" id="popup4" style="display: none;">
+            <div class="v-popup-content" style="position: relative; height: 383px;">
+                <button class="v-popup-close" onclick="closeVideo4();"><i class="fa fa-close"></i></button>
+                <div id="player4"></div>
+                <div style="display: block; margin: 0 auto;">
+                    <div>
+                    </div>
+                    <%--<button class="btn btn-success" style="position:absolute; bottom:10px; display:block" OnClick="PopUpHide()">Close</button>--%>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="v-popup" id="popup5" style="display: none;">
+            <div class="v-popup-content" style="position: relative; height: 383px;">
+                <button class="v-popup-close" onclick="closeVideo5();"><i class="fa fa-close"></i></button>
+                <div id="player5"></div>
+                <div style="display: block; margin: 0 auto;">
+                    <div>
+                    </div>
+                    <%--<button class="btn btn-success" style="position:absolute; bottom:10px; display:block" OnClick="PopUpHide()">Close</button>--%>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="v-popup" id="popup6" style="display: none;">
+            <div class="v-popup-content" style="position: relative; height: 383px;">
+                <button class="v-popup-close" onclick="closeVideo6();"><i class="fa fa-close"></i></button>
+                <div id="player6"></div>
+                <div style="display: block; margin: 0 auto;">
+                    <div>
+                    </div>
+                    <%--<button class="btn btn-success" style="position:absolute; bottom:10px; display:block" OnClick="PopUpHide()">Close</button>--%>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="v-popup" id="popup7" style="display: none;">
+            <div class="v-popup-content" style="position: relative; height: 383px;">
+                <button class="v-popup-close" onclick="closeVideo7();"><i class="fa fa-close"></i></button>
+                <div id="player7"></div>
+                <div style="display: block; margin: 0 auto;">
+                    <div>
+                    </div>
+                    <%--<button class="btn btn-success" style="position:absolute; bottom:10px; display:block" OnClick="PopUpHide()">Close</button>--%>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="v-popup" id="popup8" style="display: none;">
+            <div class="v-popup-content" style="position: relative; height: 383px;">
+                <button class="v-popup-close" onclick="closeVideo8();"><i class="fa fa-close"></i></button>
+                <div id="player8"></div>
+                <div style="display: block; margin: 0 auto;">
+                    <div>
+                    </div>
+                    <%--<button class="btn btn-success" style="position:absolute; bottom:10px; display:block" OnClick="PopUpHide()">Close</button>--%>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <form runat="server">
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
@@ -67,19 +182,23 @@
                 <hr />
                 <p>CogQuest Quesionnaire desktop tool allows to create a series of questions to gather any needed inforamtion from/about participants. It has 7 types of questions, including Date and Dropdown. CogQuest allows storing data in text file for printing or Excel Document for easy export to SPSS.</p>
                 <p>You can create multiple choice questions, Likert scale questions, long open-ended questions, short answer questions, etc. This is ideal for research labs. You can email a demographic questionnaire to a scheduled participant and have it emailed back and thereby avoid loss of valuable laboratory testing time. A patient/client can fill out a questionnaire in the waiting room or mail it in prior to an appointment.</p>
-                
+
                 <asp:LinkButton ID="LinkButton1" class="btn btn-primary btn-lg btn-xs-block" OnClick="LinkButton1_Click" runat="server">View User Manual</asp:LinkButton>
+
+
                 <asp:LinkButton ID="runTest" runat="server" class="btn btn-primary btn-lg btn-xs-block" OnClick="runTest_Click">Download</asp:LinkButton>
-                
+
                 <%--<asp:Label ID="existsMessage" CssClass="errorMessage" runat="server" Text=""></asp:Label>
                 <asp:LinkButton ID="runTest" runat="server" class="signup-btn" OnClick="runTest_Click">Download</asp:LinkButton>--%>
 
-                <asp:LinkButton ID="paypalsimulate" runat="server" OnClick="paypalsimulate_Click" class="btn btn-primary btn-lg btn-xs-block btn-green pull-right">PayPal response simulation</asp:LinkButton>
-             
+                <asp:LinkButton ID="paypalsimulate" runat="server" OnClick="paypalsimulate_Click" class="btn btn-primary btn-lg btn-xs-block btn-green pull-right">Paypal response simulation</asp:LinkButton>
+
                 <div>
-                    <span id="KeyValue" class="text-success" runat="server" style="word-wrap: break-word;">Registration Key: <%# Key %></span>
+                    <span id="KeyValue" class="text-success" runat="server" style="word-wrap: break-word;"><span>Registration Key:</span> <%# Key %></span>
                     <asp:Label ID="existsMessage" CssClass="errorMessage" runat="server" Text=""></asp:Label>
                 </div>
+                <br />
+
 
                 <div class="row">
                     <div class="col-md-12">
@@ -100,7 +219,20 @@
                                 <img src="../images/quest1.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-1" class="img-responsive" />
                             </div>
                         </div>--%>
-                        <hr class="cogquest-hr"/>
+                        <hr />
+
+                        <div class="text-justify video-btns">
+                            <a href="javascript:void(0);" onclick="playVideo1()">DropDown <i class="fa fa-youtube"></i></a>
+                            <a href="javascript:void(0);" onclick="playVideo2()">Likert <i class="fa fa-youtube"></i></a>
+                            <a href="javascript:void(0);" onclick="playVideo3()">Multi answer <i class="fa fa-youtube"></i></a>
+                            <a href="javascript:void(0);" onclick="playVideo4()">Paragraph <i class="fa fa-youtube"></i></a>
+                            <a href="javascript:void(0);" onclick="playVideo5()">Single answer <i class="fa fa-youtube"></i></a>
+                            <a href="javascript:void(0);" onclick="playVideo6()">Text box <i class="fa fa-youtube"></i></a>
+                            <a href="javascript:void(0);" onclick="playVideo7()">TextFormQuest <i class="fa fa-youtube"></i></a>
+                            <a href="javascript:void(0);" onclick="playVideo8()">Block header <i class="fa fa-youtube"></i></a>
+                            <span></span>
+                        </div>
+
                         <div class="row">
                             <div class="col-md-6" id="left2">
                                 <h4>Make your own questionnaire. As many as you would like</h4>
@@ -116,18 +248,18 @@
                                 <img src="../images/quest2.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-2" class="img-responsive" />
                             </div>
                         </div>
-                        <hr class="cogquest-hr"/>
+                        <hr class="cogquest-hr" />
                         <div class="row">
                             <div class="col-md-6" id="left3">
                                 <img src="../images/quest3.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-3" class="img-responsive" />
                             </div>
                             <div class="col-md-6" id="right3">
                                 <h4>2. Likert scale question</h4>
-                                   <ul class="exapmles-list">
+                                <ul class="exapmles-list">
                                     <li><span>Create scale of any size</span></li>
                                     <li><span>Set description text</span></li>
                                     <li><span>Set font size</span></li>
-                                    <li><span> Support multilane description</span></li>
+                                    <li><span>Support multilane description</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -141,11 +273,11 @@
                                 <img src="../images/quest4.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-4" class="img-responsive" />
                             </div>
                         </div>--%>
-                        <hr class="cogquest-hr"/>
+                        <hr class="cogquest-hr" />
                         <div class="row">
                             <div class="col-md-6" id="left5">
                                 <h4>3. Date and Combo Box question</h4>
-                                  <ul class="exapmles-list">
+                                <ul class="exapmles-list">
                                     <li><span>Use Date Format Question for birthdates or events</span></li>
                                     <li><span>Make Combo Box question for multiple choice single option answer</span></li>
                                     <li><span>Works with words or numbers</span></li>
@@ -166,42 +298,42 @@
                                 <p>Nulla sagittis metus ac rutrum tempus. Fusce mollis lorem et velit fermentum rhoncus. In vestibulum fringilla odio, vitae tempus diam aliquam et. Nam vitae elementum purus. Nullam erat urna, porttitor ut risus mattis, vehicula tincidunt quam. Aliquam tempus ornare nulla at efficitur. In nec arcu sed nunc rutrum pellentesque. In hac habitasse platea dictumst. Aliquam vel rhoncus urna. Donec in purus ipsum. In non orci faucibus, ullamcorper augue vel, dignissim velit.</p>
                             </div>
                         </div>--%>
-                        <hr class="cogquest-hr"/>
+                        <hr class="cogquest-hr" />
                         <div class="row">
                             <div class="col-md-6" id="left7">
                                 <img src="../images/quest7.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-7" class="img-responsive" />
                             </div>
                             <div class="col-md-6" id="right7">
                                 <h4>4. Radiobutton and CheckBox</h4>
-                                   <ul class="exapmles-list">
+                                <ul class="exapmles-list">
                                     <li><span>Select between Radiobutton and CheckBox type question</span></li>
                                     <li><span>Set text font</span></li>
                                     <li><span>Set answers direction</span></li>
                                 </ul>
                             </div>
                         </div>
-                        <hr class="cogquest-hr"/>
+                        <hr class="cogquest-hr" />
                         <div class="row">
                             <div class="col-md-6" id="left8">
                                 <h4>5. Vignette Question</h4>
-                                  <ul class="exapmles-list">
+                                <ul class="exapmles-list">
                                     <li><span>Enter the text for participant to read</span></li>
                                     <li><span>The text will be hidden after its read</span></li>
                                     <li><span>Set up any number of any type questions for the participant to answer</span></li>
-                                  </ul>
+                                </ul>
                             </div>
                             <div class="col-md-6" id="right8">
                                 <img src="../images/quest8.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-8" class="img-responsive" />
                             </div>
                         </div>
-                        <hr class="cogquest-hr"/>
+                        <hr class="cogquest-hr" />
                         <div class="row">
                             <div class="col-md-6" id="left9">
                                 <img src="../images/quest9.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-9" class="img-responsive" />
                             </div>
                             <div class="col-md-6" id="right9">
                                 <h4>6. Image Question</h4>
-                                  <ul class="exapmles-list">
+                                <ul class="exapmles-list">
                                     <li><span>Import images as part of the question</span></li>
                                     <li><span>Import one large image or multiple small ones</span></li>
                                     <li><span>3 sizes available. </span></li>
@@ -219,11 +351,11 @@
                                 <p>Maecenas vel lacus in ligula gravida mollis placerat ut quam. Morbi magna tellus, condimentum nec mi et, pulvinar imperdiet ligula. Morbi maximus mi eget justo tristique feugiat. Suspendisse ultrices dolor in leo congue, faucibus luctus nisi pharetra. Vivamus dapibus pellentesque orci, a rutrum risus sodales a. Nulla tempor nunc et magna egestas fermentum. Nulla magna ante, mattis elementum ipsum et, lobortis luctus lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
                             </div>
                         </div>--%>
-                        <hr class="cogquest-hr"/>
+                        <hr class="cogquest-hr" />
                         <div class="row">
                             <div class="col-md-6" id="left11">
                                 <h4>7. Save either by question name or variable name</h4>
-                                  <ul class="exapmles-list">
+                                <ul class="exapmles-list">
                                     <li><span>You have ability to save filled out questionnaire using question text or Variable name for easy import to any Database</span></li>
                                     <li><span>Save as a simple text file to store as a hard copy.</span></li>
                                     <li><span>The data is not stored on the device to ensure patient's privacy</span></li>
@@ -233,7 +365,7 @@
                                 <img src="../images/quest11.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-11" class="img-responsive" />
                             </div>
                         </div>
-                        <hr class="cogquest-hr"/>
+                        <hr class="cogquest-hr" />
                         <div class="row">
                             <div class="col-md-6" id="left12">
                                 <img src="../images/quest12.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-12" class="img-responsive" />
@@ -247,7 +379,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <hr class="cogquest-hr"/>
+                        <hr class="cogquest-hr" />
                         <div class="row">
                             <div class="col-md-6" id="left13">
                                 <h4>9. Export to HTML</h4>
@@ -262,7 +394,7 @@
                                 <img src="../images/quest13.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-13" class="img-responsive" />
                             </div>
                         </div>
-                        <hr class="cogquest-hr"/>
+                        <hr class="cogquest-hr" />
                         <!--<div class="owl-carousel owl-carousel-photos owl-theme">
                             <img src="../images/quest1.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-1" class="item" />
                             <img src="../images/quest2.png" alt="psychological questionnaire maker"  data-toggle="modal" data-target=".bs-modal-2" class="item" />
@@ -321,7 +453,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="modal fade bs-modal-8" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
@@ -366,9 +498,9 @@
                         </div>
 
 
-                        <h3>View video Examples</h3>
+                        <%-- <h3>View video Examples</h3>
                         <hr />
-                        <div class="owl-carousel owl-carousel-videos owl-theme">
+                       <div class="owl-carousel owl-carousel-videos owl-theme">
                             <div class="item">
                                 <iframe width="100%" height="200" src="https://www.youtube.com/embed/vXISacqBKXo?rel=0" frameborder="0" encrypted-media" allowfullscreen></iframe>
                             </div>
@@ -393,7 +525,7 @@
                             <div class="item">
                                 <iframe width="100%" height="200" src="https://www.youtube.com/embed/5Y4cT_vzEDg?rel=0" frameborder="0" encrypted-media" allowfullscreen></iframe>
                             </div>
-                        </div>
+                        </div>--%>
                     </div>
                 </div>
 
@@ -578,54 +710,257 @@
             ga('send', 'pageview');
 
         </script>
+        <script>
+            // 2. This code loads the IFrame Player API code asynchronously.
+            var tag = document.createElement('script');
+
+            tag.src = "https://www.youtube.com/iframe_api";
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+            // 3. This function creates an <iframe> (and YouTube player)
+            //    after the API code downloads.
+            var player;
+            var player2;
+            var player3;
+            var player4;
+            var player5;
+            var player6;
+            var player7;
+            var player8;
+
+
+            function playVideo1() {
+                $("#popup1").show();
+                player.playVideo();
+            }
+
+            function closeVideo1() {
+                $("#popup1").hide();
+                player.stopVideo();
+            }
+
+            function playVideo2() {
+                $("#popup2").show();
+                player2.playVideo();
+            }
+
+            function closeVideo2() {
+                $("#popup2").hide();
+                player2.stopVideo();
+            }
+
+            function playVideo3() {
+                $("#popup3").show();
+                player3.playVideo();
+            }
+
+            function closeVideo3() {
+                $("#popup3").hide();
+                player3.stopVideo();
+            }
+
+            function playVideo4() {
+                $("#popup4").show();
+                player4.playVideo();
+            }
+
+            function closeVideo4() {
+                $("#popup4").hide();
+                player4.stopVideo();
+            }
+
+            function playVideo5() {
+                $("#popup5").show();
+                player5.playVideo();
+            }
+
+            function closeVideo5() {
+                $("#popup5").hide();
+                player5.stopVideo();
+            }
+
+            function playVideo6() {
+                $("#popup6").show();
+                player6.playVideo();
+            }
+
+            function closeVideo6() {
+                $("#popup6").hide();
+                player6.stopVideo();
+            }
+
+            function playVideo7() {
+                $("#popup7").show();
+                player7.playVideo();
+            }
+
+            function closeVideo7() {
+                $("#popup7").hide();
+                player7.stopVideo();
+            }
+
+            function playVideo8() {
+                $("#popup8").show();
+                player8.playVideo();
+            }
+
+            function closeVideo8() {
+                $("#popup8").hide();
+                player8.stopVideo();
+            }
+
+
+            function onYouTubeIframeAPIReady() {
+                player = new YT.Player('player', {
+                    height: '360',
+                    width: '640',
+                    videoId: 'pxrNcS9oqsw',
+                    events: {
+                        'onReady': onPlayerReady,
+                        'onStateChange': onPlayerStateChange
+                    }
+                });
+
+                player2 = new YT.Player('player2', {
+                    height: '360',
+                    width: '640',
+                    videoId: 'u25UdJHugK8',
+                    events: {
+                        'onReady': onPlayerReady,
+                        'onStateChange': onPlayerStateChange
+                    }
+                });
+
+                player3 = new YT.Player('player3', {
+                    height: '360',
+                    width: '640',
+                    videoId: 'yrzTbu5oLkI',
+                    events: {
+                        'onReady': onPlayerReady,
+                        'onStateChange': onPlayerStateChange
+                    }
+                });
+
+                player4 = new YT.Player('player4', {
+                    height: '360',
+                    width: '640',
+                    videoId: 'kTOrwuVgIpI',
+                    events: {
+                        'onReady': onPlayerReady,
+                        'onStateChange': onPlayerStateChange
+                    }
+                });
+
+                player5 = new YT.Player('player5', {
+                    height: '360',
+                    width: '640',
+                    videoId: 'jcmTJY6BSlI',
+                    events: {
+                        'onReady': onPlayerReady,
+                        'onStateChange': onPlayerStateChange
+                    }
+                });
+
+                player6 = new YT.Player('player6', {
+                    height: '360',
+                    width: '640',
+                    videoId: '4PfM-GR23Sw',
+                    events: {
+                        'onReady': onPlayerReady,
+                        'onStateChange': onPlayerStateChange
+                    }
+                });
+
+                player7 = new YT.Player('player7', {
+                    height: '360',
+                    width: '640',
+                    videoId: '5Y4cT_vzEDg',
+                    events: {
+                        'onReady': onPlayerReady,
+                        'onStateChange': onPlayerStateChange
+                    }
+                });
+
+                player8 = new YT.Player('player8', {
+                    height: '360',
+                    width: '640',
+                    videoId: 'vXISacqBKXo',
+                    events: {
+                        'onReady': onPlayerReady,
+                        'onStateChange': onPlayerStateChange
+                    }
+                });
+            }
+
+            // 4. The API will call this function when the video player is ready.
+            function onPlayerReady(event) {
+                //event.target.playVideo();
+            }
+
+            // 5. The API calls this function when the player's state changes.
+            //    The function indicates that when playing a video (state=1),
+            //    the player should play for six seconds and then stop.
+            var done = false;
+            function onPlayerStateChange(event) {
+                //if (event.data == YT.PlayerState.PLAYING && !done) {
+                //    setTimeout(stopVideo, 6000);
+                //    done = true;
+                //}
+            }
+            function stopVideo() {
+                player.stopVideo();
+            }
+        </script>
     </footer>
 </body>
+
 <script src="../js/bootstrap.min.js"></script>
 <script>
-    $(document).ready(function () {
-        var neededDistance = 200;
-        $('.owl-carousel-videos').owlCarousel({
-            loop: true,
-            margin: 10,
-            nav: true,
-            navText: '',
-            mouseDrag: false,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 1
-                },
-                1000: {
-                    items: 3
-                }
-            }
-        });
-        $('.owl-next').addClass("glyphicon glyphicon-chevron-right");
-        $('.owl-prev').addClass("glyphicon glyphicon-chevron-left");
+                    $(document).ready(function () {
+                        var neededDistance = 200;
+                        $('.owl-carousel-videos').owlCarousel({
+                            loop: true,
+                            margin: 10,
+                            nav: true,
+                            navText: '',
+                            mouseDrag: false,
+                            responsive: {
+                                0: {
+                                    items: 1
+                                },
+                                600: {
+                                    items: 1
+                                },
+                                1000: {
+                                    items: 3
+                                }
+                            }
+                        });
+                        $('.owl-next').addClass("glyphicon glyphicon-chevron-right");
+                        $('.owl-prev').addClass("glyphicon glyphicon-chevron-left");
 
-        $(".nav a").on("click", function () {
-            $(".nav").find(".active").removeClass("active");
-            $(this).parent().addClass("active");
-        });
+                        $(".nav a").on("click", function () {
+                            $(".nav").find(".active").removeClass("active");
+                            $(this).parent().addClass("active");
+                        });
 
-        for (var i = 0; i < 12; i++) {
+                        for (var i = 0; i < 12; i++) {
 
-            $('#left' + (i + 2)).css('opacity', 0);
-            $('#right' + (i + 2)).css('opacity', 0);
+                            $('#left' + (i + 2)).css('opacity', 0);
+                            $('#right' + (i + 2)).css('opacity', 0);
 
 
-            $('#left' + (i + 2)).waypoint(function () {
-                $(this.element).addClass('animated bounceInLeft');
-                $(this.element).css('opacity', 1);
-            }, { offset: '100%' });
+                            $('#left' + (i + 2)).waypoint(function () {
+                                $(this.element).addClass('animated bounceInLeft');
+                                $(this.element).css('opacity', 1);
+                            }, { offset: '100%' });
 
-            $('#right' + (i + 2)).waypoint(function () {
-                $(this.element).addClass('animated bounceInRight');
-                $(this.element).css('opacity', 1);
-            }, { offset: '100%' });
-        }
-    });
+                            $('#right' + (i + 2)).waypoint(function () {
+                                $(this.element).addClass('animated bounceInRight');
+                                $(this.element).css('opacity', 1);
+                            }, { offset: '100%' });
+                        }
+                    });
 </script>
 </html>
