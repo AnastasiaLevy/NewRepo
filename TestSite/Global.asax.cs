@@ -24,6 +24,22 @@ namespace TestSite
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
 
+            //TODO: good solution put localization changing here! (maybe...)
+
+            //HttpCookie cookie = null;
+            //string value = Request.QueryString["culture"];
+            //if (value == null)
+            //{
+            //    cookie = Request.Cookies["Culture"];
+            //    if (cookie != null)
+            //    {
+            //        value = cookie.Value;
+            //    }
+            //}
+
+            //System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en");
+            //System.Threading.Thread.CurrentThread.CurrentCulture = culture;
+            //System.Threading.Thread.CurrentThread.CurrentUICulture = culture;
         }
 
         protected void Application_AuthenticateRequest(object sender, EventArgs e)

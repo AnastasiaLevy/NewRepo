@@ -134,55 +134,59 @@ namespace TestSite
 
         private void SetBrainActivity(string message)
         {
-            if (message == lact1.InnerText)
+            if (message == "0-5")
                 act1.Checked = true;
-            else if (message == lact2.InnerText)
+            else if (message == "6-10")
                 act2.Checked = true;
-            else if (message == lact3.InnerText)
+            else if (message == "11-15")
                 act3.Checked = true;
-            else if (message == lact4.InnerText)
+            else if (message == "16-20")
                 act4.Checked = true;
-            else if (message == lact5.InnerText)
+            else if (message == "more than 20")
                 act5.Checked = true;
         }
 
         private void SetExeLevel(string message)
         {
-            if (message == lexe1.InnerText)
+            if (message == "0-1")
                 exe1.Checked = true;
-            else if (message == lexe2.InnerText)
+            else if (message == "2-3")
                 exe2.Checked = true;
-            else if (message == lexe3.InnerText)
+            else if (message == "4-5")
                 exe3.Checked = true;
-            else if (message == lexe4.InnerText)
+            else if (message == "6-7")
                 exe4.Checked = true;
-            else if (message == lexe5.InnerText)
+            else if (message == "8-9")
                 exe5.Checked = true;
         }
 
         private void SetSelfEsteem(string message)
         {
 
-            if (message == lesteem1.InnerText)
+            if (message == "Low")
                 esteem1.Checked = true;
-            else if (message == lesteem2.InnerText)
+            else if (message == "Below Avarage")
                 esteem2.Checked = true;
-            else if (message == lesteem3.InnerText)
+            else if (message == "Average")
                 esteem3.Checked = true;
-            else if (message == lesteem4.InnerText)
+            else if (message == "Above Average")
                 esteem4.Checked = true;
+            else if (message == "High")
+                esteem5.Checked = true;
         }
 
         private void SetHealth(string message)
         {
-            if (message == lhealth1.InnerText)
+            if (message == "Poor")
                 health1.Checked = true;
-            else if (message == lhealth2.InnerText)
+            else if (message == "Below Average")
                 health2.Checked = true;
-            else if (message == lhealth3.InnerText)
+            else if (message == "Average")
                 health3.Checked = true;
-            else if (message == lhealth4.InnerText)
+            else if (message == "Above Average")
                 health4.Checked = true;
+            else if (message == "Excellent")
+                health5.Checked = true;
         }
 
         private bool ProfileIsFilled(string p)

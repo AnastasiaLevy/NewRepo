@@ -1,5 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DesktopTests.aspx.cs" Inherits="TestSite.Tests.DesktopTests" %>
-
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DesktopTests.aspx.cs" Inherits="TestSite.Tests.DesktopTests" 
+    culture="auto" uiculture="auto" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -152,22 +152,22 @@
             <h4>Go To <span id="closeButton" class="form-slide-close pull-right" onclick="close_panel();  ">X</span></h4>
             <%--<p><a href="#intro">About Cognitive Testing</a></p>--%>
             <p>
-                <li><a href="#london">Tower Of London</a></li>
+                <li><a href="#london"><asp:Localize meta:resourcekey="GoToTOL"  runat="server" ID="Localize1" Text="" /></a></li>
             </p>
             <p>
-                <li class=""><a href="#cardSort">Card Sort</a></li>
+                <li class=""><a href="#cardSort"><asp:Localize meta:resourcekey="GoToCS"  runat="server" ID="Localize2" Text="" /></a></li>
             </p>
             <p>
-                <li class=""><a href="#CPT">CPT</a></li>
+                <li class=""><a href="#CPT"><asp:Localize meta:resourcekey="GoToCPT"  runat="server" ID="Localize3" Text="" /></a></li>
             </p>
             <p>
-                <li class=""><a href="#hanoi">Tower of Hanoi</a></li>
+                <li class=""><a href="#hanoi"><asp:Localize meta:resourcekey="GoToTOH"  runat="server" ID="Localize4" Text="" /></a></li>
             </p>
             <p>
-                <li class=""><a href="#reaction">Reaction Time</a></li>
+                <li class=""><a href="#reaction"><asp:Localize meta:resourcekey="GoToRT"  runat="server" ID="Localize5" Text="" /></a></li>
             </p>
             <p>
-                <li class=""><a href="#trails">Trails</a></li>
+                <li class=""><a href="#trails"><asp:Localize meta:resourcekey="GoToTrails"  runat="server" ID="Localize6" Text="" /></a></li>
             </p>
         </div>
     </div>
@@ -191,13 +191,13 @@
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right custom-menu">
-                        <li><a href="../MainPage.aspx">Home</a></li>
-                        <li class="active"><a href="#about">About</a></li>
-                        <li class=""><a href="#contact">Order Form</a></li>
-                        <li id="profOpt" runat="server"><a href="../UserProfile.aspx">Profile</a></li>
-                        <li id="login" runat="server"><a href="../Login.aspx">Login</a></li>
+                        <li><a href="../MainPage.aspx"><asp:Localize meta:resourcekey="navbar_home"  runat="server" ID="Localize45" Text="" /></a></li>
+                        <li class="active"><a href="#about"><asp:Localize meta:resourcekey="navbar_about"  runat="server" ID="Localize46" Text="" /></a></li>
+                        <li class=""><a href="#contact"><asp:Localize meta:resourcekey="navbar_order"  runat="server" ID="Localize47" Text="" /></a></li>
+                        <li id="profOpt" runat="server"><a href="../UserProfile.aspx"><asp:Localize meta:resourcekey="navbar_profile"  runat="server" ID="Localize48" Text="" /></a></li>
+                        <li id="login" runat="server"><a href="../Login.aspx"><asp:Localize meta:resourcekey="navbar_login"  runat="server" ID="Localize49" Text="" /></a></li>
                         <li>
-                            <asp:LinkButton ID="logOut" class="" type="submit" OnClick="logOut_Click" runat="server">Log Out</asp:LinkButton>
+                            <asp:LinkButton ID="logOut" class="" type="submit" OnClick="logOut_Click" runat="server"><asp:Localize meta:resourcekey="navbar_logout"  runat="server" ID="Localize50" Text="" /></asp:LinkButton>
                         </li>
                     </ul>
                 </div>
@@ -221,14 +221,12 @@
 
         <section id="about">
             <div class="container testDescription">
-                <h1>Desktop Tests Collection</h1>
+                <h1><asp:Localize meta:resourcekey="about_title"  runat="server" ID="Localize7" Text="" /></h1>
                 <hr />
                 <img src="../images/desktops/backgr.png" style="width: 100%;" />
 
                 <p>
-                    The CogQuiz Test Collection offers flexible tests for your desktop. It offeres one database for all test, Normed data, and the ability to make your own tests. 
-                    
-                    
+                    <asp:Localize meta:resourcekey="about_paragraph"  runat="server" ID="Localize8" Text="" />
                 </p>
 
             </div>
@@ -243,39 +241,38 @@
                         <div class="box btn-wrapper">
                             <div class="col-lg-12">
                                 <hr />
-                                <h2 class="intro-text text-center">Available
-                            <strong>Tests</strong>
+                                <h2 class="intro-text text-center"><strong><asp:Localize meta:resourcekey="about_deskTopList_title"  runat="server" ID="Localize9" Text="" /></strong>
                                 </h2>
                                 <hr />
                             </div>
                             <div class="col-sm-2 text-center">
                                 <a href="#london" class="btn btn-labeled btn-info">
-                                    <span><strong>Tower of London </strong></span>
+                                    <span><strong><asp:Localize meta:resourcekey="about_deskTopList_buttonTOL"  runat="server" ID="Localize10" Text="" /></strong></span>
                                 </a>
                             </div>
                             <div class="col-sm-2 text-center">
                                 <a href="#cardSort" class="btn btn-labeled btn-info">
-                                    <span><strong>Card Sort Test</strong></span>
+                                    <span><strong><asp:Localize meta:resourcekey="about_deskTopList_buttonCS"  runat="server" ID="Localize11" Text="" /></strong></span>
                                 </a>
                             </div>
                             <div class="col-sm-2 text-center">
                                 <a href="#CPT" class="btn btn-labeled btn-info">
-                                    <span><strong>Continious Performance</strong></span>
+                                    <span><strong><asp:Localize meta:resourcekey="about_deskTopList_buttonCP"  runat="server" ID="Localize12" Text="" /></strong></span>
                                 </a>
                             </div>
                             <div class="col-sm-2 text-center">
                                 <a href="#hanoi" class="btn btn-labeled btn-info">
-                                    <span><strong>Tower of Hanoi</strong></span>
+                                    <span><strong><asp:Localize meta:resourcekey="about_deskTopList_buttonTOH"  runat="server" ID="Localize13" Text="" /></strong></span>
                                 </a>
                             </div>
                             <div class="col-sm-2 text-center">
                                 <a href="#reaction" class="btn btn-labeled btn-info">
-                                    <span><strong>Reaction Time</strong></span>
+                                    <span><strong><asp:Localize meta:resourcekey="about_deskTopList_buttonRT"  runat="server" ID="Localize14" Text="" /></strong></span>
                                 </a>
                             </div>
                             <div class="col-sm-2 text-center">
                                 <a href="#trails" class="btn btn-labeled btn-info">
-                                    <span><strong>Trail Making Test</strong></span>
+                                    <span><strong><asp:Localize meta:resourcekey="about_deskTopList_buttonTrails"  runat="server" ID="Localize15" Text="" /></strong></span>
                                 </a>
                             </div>
                             <div class="clearfix"></div>
@@ -289,7 +286,7 @@
         </section>
 
         <section class="container margin testDescription" id="london">
-            <h1>Tower of London</h1>
+            <h1><asp:Localize meta:resourcekey="london_title"  runat="server" ID="Localize16" Text="" /></h1>
             <hr />
             <div class="gallery-wrapper">
 
@@ -315,19 +312,19 @@ There are many different forms of the TOL and we have followed the suggestions o
 
 
             <p>
-                The most significant improvement in the CogQuiz TOL is the timing and record keep that can be obtained with a computerized test, and most notably, the ability to create a number of tests for varying populations. The relative low cost of the TOL, the ability to reliably collect various test parameters, and standardizing the procedure, researchers are able to investigate the same cognitive processes with different populations, showing how various conditions can differentially affect planning ability.
+                <asp:Localize meta:resourcekey="london_paragraph1"  runat="server" ID="Localize17" Text="" />
             </p>
 
-            <p>While the TOL was developed as a manual test to be implemented using wooden stimulus boards, there is an increasing amount of evidence to support the use of computerized methods of testing. Using computerized testing methods allows for greater standardization of testing procedures and can reduce experimenter biases that may come out during an in person testing session.</p>
-
             <p>
-                Additionally, since the test has been standardized, experimenters do not need to be as highly trained as would be necessary in a traditional testing format (Zygouris & Tsolaki, 2015). Since the experimenters do not need to be trained as thoroughly, overall cost and time of the experiment can be reduced. Research assistants do not need to be trained compensated. As well as ease of administration, computerized testing simplifies the data gathering process and, in many cases, can increase the accuracy of the measurement. Since the administration and data gathering and analysis all take place on the same platform, the data can be stored between tests and changes in performance can be easily tracked over time (Cambridge Cognition, 2012; CNS Vital Signs, 2012; Neurotrax Corporation, 2003;).
+                <asp:Localize meta:resourcekey="london_paragraph2"  runat="server" ID="Localize18" Text="" />
             </p>
-            <p>
-                Since its creation as a means of assessing planning ability, the TOL has been implemented as a tool for measuring various domains of executive functioning (Bottari et al., 2009; Köstering et al., 2015; Owen, 2005) as well as spatial planning (Berg & Byrd, 2005; Berg, Byrd, McNamara, & MacDonald, 2006; Kaller, Unterrainer, & Stahl, 2012; Pulos & Denzine, 2005; Shallice, 1982; Unterrainer & Owen, 2006), working memory (Albert & Steinberg, 2011; Berg & Byrd, 2002; Pulos & Denzine, 2005), inhibition (Albert & Steinberg, 2011; Berg & Byrd, 2002; Shallice, 1982), and task shifting (Pulos & Denzine, 2005).
 
-In addition to Shallice’s (1982) original findings of deficits in individuals with frontal lobe lesions, there have emerged several additional populations that frequently show deficits in their performance on the TOL; those with neurological and psychiatric conditions such as depression or Parkinson’s (Jacobs & Anderson, 2002), individuals who have suffered a traumatic brain injury (TBI), Alzheimer’s and related dementias (Carlin et al., 2000), ADHD (Culbertson & Zillmer, 1998), Autism (Wisley & Howlin, 2009), and schizophrenia (Landua & Morris, 2011)
-                    
+            <p>
+                <asp:Localize meta:resourcekey="london_paragraph3"  runat="server" ID="Localize19" Text="" />
+            </p>
+
+            <p>
+                <asp:Localize meta:resourcekey="london_paragraph4"  runat="server" ID="Localize20" Text="" />  
             </p>
 
 
@@ -337,11 +334,11 @@ In addition to Shallice’s (1982) original findings of deficits in individuals 
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="circle c1 img-circle">
-                                    <h4 class="blue">Install</h4>
+                                    <h4 class="blue"><asp:Localize meta:resourcekey="london_install"  runat="server" ID="Localize39" Text="" /></h4>
                                     <span class="icon blue"><i class="fa fa-usd"></i></span>
                                     <span class="price-large blue">5</span>
                                     <span class="price-small">.00</span>
-                                    <p><a href="DesktopTowerOfLondon.aspx" class="btn btn-info">Order Now</a></p>
+                                    <p><a href="DesktopTowerOfLondon.aspx" class="btn btn-info"><asp:Localize meta:resourcekey="london_orderNow"  runat="server" ID="Localize21" Text="" /> </a></p>
                                     <%--       <asp:Button ID="single" class="btn btn-info" runat="server" OnClick="single_Click" Text="Buy Now" />--%>
                                 </div>
                             </div>
@@ -353,7 +350,7 @@ In addition to Shallice’s (1982) original findings of deficits in individuals 
             <hr />
             <br />
             <section id="cardSort" class="margin testDescription">
-                <h1>Card Sort</h1>
+                <h1><asp:Localize meta:resourcekey="cardSort_title"  runat="server" ID="Localize22" Text="" /> </h1>
                 <hr />
                 <div class="gallery-wrapper">
 
@@ -368,9 +365,7 @@ In addition to Shallice’s (1982) original findings of deficits in individuals 
                     <p class="clear"></p>
                 </div>
                 <p>
-                    Card Sorting task provides considerable flexibility in task definition. The number of stimulus cards can range from two to five and the number of sort dimensions, from two to five. One of the categories can be user defined, allowing for the definition of classes of stimuli. The card definition tool allows test authors to create their own stimulus and response card definitions. Cards can display alpha/numeric characters, any image that can be realized as a “dingbat” or words. Response card decks can be of any size and their presentation can be controlled either by the participant or the computer. Category (stage) shifts can be either signaled or unsignaled. All test messages and instructions can be tailored to meet the needs of the test author. Participant response modalities include “point and click” and touch.
-Tests can be analyzed using any one of three analysis protocols or the test user can print a basic analysis sheet displaying basic participant performance for “hand” analysis. The package comes with normative data collected on 2875 participants grouped in age cohorts from five to nine years, 10 to 14 years, 15 to 19 years and in 10 year groups from the 20 to >80 years on the Canonical 128 Test. As Tien, et al., 1996, Feldstein, et al., 1999, and Steinmetz, 2010 have all shown significant outcome differences between manually administered card sorting tests and tests administered using a computer, this normative data set represents a considerable step forward in computer based card sorting tasks.
-                    
+                    <asp:Localize meta:resourcekey="cardSort_paragraph"  runat="server" ID="Localize23" Text="" />
                 </p>
 
             </section>
@@ -380,11 +375,11 @@ Tests can be analyzed using any one of three analysis protocols or the test user
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="circle c1 img-circle">
-                                    <h4 class="blue">Install</h4>
+                                    <h4 class="blue"><asp:Localize meta:resourcekey="CardSort_install"  runat="server" ID="Localize40" Text="" /></h4>
                                     <span class="icon blue"><i class="fa fa-usd"></i></span>
                                     <span class="price-large blue">499</span>
                                     <span class="price-small">.00</span>
-                                    <p><a href="#contact" class="btn btn-info">Order Now</a></p>
+                                    <p><a href="#contact" class="btn btn-info"><asp:Localize meta:resourcekey="cardSort_orderNow"  runat="server" ID="Localize24" Text="" /></a></p>
                                     <%--     <asp:Button ID="Button2" class="btn btn-info" runat="server" OnClick="single_Click" Text="Buy Now" />--%>
                                 </div>
                             </div>
@@ -396,7 +391,7 @@ Tests can be analyzed using any one of three analysis protocols or the test user
             <hr />
             <br />
             <section id="CPT" class="margin testDescription">
-                <h1>CPT</h1>
+                <h1><asp:Localize meta:resourcekey="CPT_title"  runat="server" ID="Localize25" Text="" /></h1>
                 <hr />
                 <div class="gallery-wrapper">
 
@@ -411,11 +406,7 @@ Tests can be analyzed using any one of three analysis protocols or the test user
                     <p class="clear"></p>
                 </div>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tincidunt, mauris non sodales feugiat, turpis elit accumsan nisi, et commodo metus mi ultrices nunc. 
-                    Duis ac pellentesque tortor. Maecenas feugiat velit erat, ac molestie nisl suscipit eget. Nam ultricies rutrum nibh, sed venenatis tellus tempor in. 
-                    Phasellus rhoncus vel libero nec lacinia. Suspendisse in varius libero. Suspendisse semper turpis ut leo commodo, et pretium mi placerat. Nullam nec sapien dui. 
-                    Nam ac lorem et dui porta facilisis. Quisque ut bibendum magna. Donec orci ex, porta vitae fringilla sed, porta eu elit.
-                    
+                    <asp:Localize meta:resourcekey="CPT_paragraph"  runat="server" ID="Localize26" Text="" />
                 </p>
 
             </section>
@@ -425,11 +416,11 @@ Tests can be analyzed using any one of three analysis protocols or the test user
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="circle c1 img-circle">
-                                    <h4 class="blue">Install</h4>
+                                    <h4 class="blue"><asp:Localize meta:resourcekey="CPT_install"  runat="server" ID="Localize41" Text="" /></h4>
                                     <span class="icon blue"><i class="fa fa-usd"></i></span>
                                     <span class="price-large blue">299</span>
                                     <span class="price-small">.00</span>
-                                    <p><a href="#contact" class="btn btn-info">Order Now</a></p>
+                                    <p><a href="#contact" class="btn btn-info"><asp:Localize meta:resourcekey="CPT_orderNow"  runat="server" ID="Localize27" Text="" /></a></p>
                                     <%--    <asp:Button ID="Button3" class="btn btn-info" runat="server" OnClick="single_Click" Text="Buy Now" />--%>
                                 </div>
                             </div>
@@ -440,7 +431,7 @@ Tests can be analyzed using any one of three analysis protocols or the test user
             <hr />
             <br />
             <section id="hanoi" class="margin testDescription">
-                <h1>Tower of Hanoi</h1>
+                <h1><asp:Localize meta:resourcekey="hanoi_title"  runat="server" ID="Localize28" Text="" /></h1>
                 <hr />
                 <div class="gallery-wrapper">
 
@@ -456,18 +447,7 @@ Tests can be analyzed using any one of three analysis protocols or the test user
                     <p class="clear"></p>
                 </div>
                 <p>
-                    Flexibility in problem design allowing for 3 to 6 rings to be used in the problem with complete control over the starting configuration of the rings and the "goal" peg
-Storage of all participant information in the unified Participant database.
-Extensive age-stratified norms for included tests, broken out in ten year cohorts.
-Trials can be specified as either timed (i.e., the trial is terminated after a predetermined amount of time has elapsed) or untimed
-Trials can be set to terminate after a specified number of moves.
- Playback feature allows the user to view the exact moves of any test taken and facilitates the examination of participant problem solving strategies.
-Response modalities include both touch screen and mouse -- the latter offering either a point and click option or a slide bar option.
-Text-to-speech support for instructions.
-Custom instructions and test captions can be written for each trial (in any language that utilizes the Roman alphabet).
-Variety of in-depth analyses can be performed and data can be exported to external tools (e.g., spreadsheets, statistical package, etc. for custom analysis).
-Standard test anaysis as well as access to the "real time" data record (i.e. , a record of all salient events and their time of occurance in milliseconds including the time between events, total time to complete a trial, and the number of correct and incorrect responses).
-                    
+                    <asp:Localize meta:resourcekey="hanoi_paragraph"  runat="server" ID="Localize29" Text="" />
                 </p>
 
             </section>
@@ -477,11 +457,11 @@ Standard test anaysis as well as access to the "real time" data record (i.e. , a
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="circle c1 img-circle">
-                                    <h4 class="blue">Install</h4>
+                                    <h4 class="blue"><asp:Localize meta:resourcekey="hanoi_install"  runat="server" ID="Localize42" Text="" /></h4>
                                     <span class="icon blue"><i class="fa fa-usd"></i></span>
                                     <span class="price-large blue">399</span>
                                     <span class="price-small">.00</span>
-                                    <p><a href="#contact" class="btn btn-info">Order Now</a></p>
+                                    <p><a href="#contact" class="btn btn-info"><asp:Localize meta:resourcekey="hanoi_orderNow"  runat="server" ID="Localize30" Text="" /></a></p>
                                     <%--     <asp:Button ID="Button4" class="btn btn-info" runat="server" OnClick="single_Click" Text="Buy Now" />--%>
                                 </div>
                             </div>
@@ -493,7 +473,7 @@ Standard test anaysis as well as access to the "real time" data record (i.e. , a
             <hr />
             <br />
             <section id="reaction" class="margin">
-                <h1>Reaction Time</h1>
+                <h1><asp:Localize meta:resourcekey="reaction_title"  runat="server" ID="Localize31" Text="" /></h1>
                 <hr />
                 <div class="gallery-wrapper">
 
@@ -508,15 +488,7 @@ Standard test anaysis as well as access to the "real time" data record (i.e. , a
                     <p class="clear"></p>
                 </div>
                 <p>
-                    Designed to assess subjects’ speed of processing on three relatively simple tasks. which, following Teng (1990), include:  a simple reaction time test; a choice test; and a conditional choice test.  The inclusion of the simple reaction time test allows the investigator to partial out performance variations due to both motor and cognitive components.  
-Participant response can be via the "trigger" on a standard "game pad; a keyboard; or a numeric keypad.   
-In addition to the tasks to be used in the test, the average inter-stimulus interval (a minimum and maximum range), and the number of stimuli presented for each task (as well as the mode of response) can all be set by the investigator. 
-The analysis includes means and standard deviations for response latencies for single sessions, as well as both the participant’s reaction time and the trigger pulled.    
-Analysis also includes a running record of all test events, with a unique timestamp for each event.
-Analyses can be printed or exported to clipboard.
-Unique instructions can be written for each task within a test (in any language utilizing the Roman alphabet), as well as a unique “Thank You” message to be displayed at the end of the test.
-A “Speak Instructions” option directs the program to speak the instructions to the participant while the written instructions are being displayed on the screen
-                    
+                   <asp:Localize meta:resourcekey="reaction_paragraph"  runat="server" ID="Localize32" Text="" />
                 </p>
 
             </section>
@@ -526,11 +498,11 @@ A “Speak Instructions” option directs the program to speak the instructions 
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="circle c1 img-circle">
-                                    <h4 class="blue">Install</h4>
+                                    <h4 class="blue"><asp:Localize meta:resourcekey="reaction_install"  runat="server" ID="Localize43" Text="" /></h4>
                                     <span class="icon blue"><i class="fa fa-usd"></i></span>
                                     <span class="price-large blue">99</span>
                                     <span class="price-small">.00</span>
-                                    <p><a href="#contact" class="btn btn-info">Order Now</a></p>
+                                    <p><a href="#contact" class="btn btn-info"><asp:Localize meta:resourcekey="reaction_orderNow"  runat="server" ID="Localize33" Text="" /></a></p>
                                     <%--          <asp:Button ID="Button5" class="btn btn-info" runat="server" OnClick="single_Click" Text="Buy Now" />--%>
                                 </div>
                             </div>
@@ -542,7 +514,7 @@ A “Speak Instructions” option directs the program to speak the instructions 
             <hr />
             <br />
             <section id="trails" class="margin">
-                <h1>Trails</h1>
+                <h1><asp:Localize meta:resourcekey="trails_title"  runat="server" ID="Localize34" Text="" /></h1>
                 <hr />
                 <div class="gallery-wrapper">
 
@@ -558,21 +530,7 @@ A “Speak Instructions” option directs the program to speak the instructions 
 
                 </div>
                 <p>
-                    The Trail Making Test (TMT) is a widely used neuropsychological assessment (Rabin, Barr, & Burton, 2005) that was originally devised in 1938. The TMT was originally known as the “Partington’s Pathways Test,” or “Divided Attention Test” (Partington & Leiter, 1949) and was initially part of a battery of tests (Army Individual Test Battery) used to assess “a variety of intellectual functions different from those measured by the Wechsler-Bellevue Intelligence Scale.” (Spreen & Strauss, 1998). While the test is most  
-typically administered in its original form, alternative forms have been developed to meet the  
-testing needs of either alternative clinical populations or cognitive science research agendas. The desktop version of the TMT you have purchased will allow you to produce computerized version of virtually all the commercial paper and pencil Trail Making Tests.  
- 
-For example, the Color Trails Test (CTT), was developed as part of a neuropsychological test battery  
-for the World Health Organization’s cross-cultural study of HIV-1 infection (Maj, et al., 1991).  
-The test was subsequently modified for use with children (Williams et al., 1995). In both cases  
-the modifications are presumed to minimize the cultural bias introduced by the use of Roman  
-letters in part B of the more traditional TMT (Maj, et al., 1991). Your CogQuiz desktop version allows you to make a computerized version of the CTT and if you so desired create norms for different populations.  
- 
-Additionally, if you are doing repeated administrations of the TMT you can make inverted, reflected, and inverted/reflected versions that contain the same number of bubbles to be connected with equivalent spacing. This reduces the problem of enhanced performance when the TMT is repeatedly administered. 
- 
-You will find the TMT part A useful if you are attempting to obtain some assessment of attention, visual scanning, speed of eye-hand coordination and information processing. The TMT part B assesses the ability to alternate between stimulus sets and as such is a measure of “executive function” (Mitrushina,  
-et al., 1999). 
-                    
+                    <asp:Localize meta:resourcekey="trails_paragraph"  runat="server" ID="Localize35" Text="" />
                 </p>
 
             </section>
@@ -582,11 +540,11 @@ et al., 1999).
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="circle c1 img-circle">
-                                    <h4 class="blue">Call or Email to activate</h4>
+                                    <h4 class="blue"><asp:Localize meta:resourcekey="trails_install"  runat="server" ID="Localize44" Text="" /></h4>
                                     <span class="icon blue"><i class="fa fa-usd"></i></span>
                                     <span class="price-large blue">299</span>
                                     <span class="price-small">.00</span>
-                                    <p><a href="#contact" class="btn btn-info">Order Now</a></p>
+                                    <p><a href="#contact" class="btn btn-info"><asp:Localize meta:resourcekey="trails_orderNow"  runat="server" ID="Localize36" Text="" /></a></p>
                                     <%--    <asp:Button ID="Button1" class="btn btn-info" runat="server" OnClick="single_Click" Text="Activate" />--%>
                                 </div>
                             </div>
@@ -600,9 +558,10 @@ et al., 1999).
 
         <section id="contact">
             <div class="container" style="height: 300px">
-                <h4>Please fill out the order form:</h4>
+                <h4><asp:Localize meta:resourcekey="contact_title"  runat="server" ID="Localize37" Text="" /></h4>
                 <h4 id="contactError" runat="server"></h4>
-                <asp:Label class="label" ID="name" runat="server" Text="Your Name:"></asp:Label>
+                <%--<asp:Label class="label" ID="name" runat="server" Text="Your Name:"></asp:Label>--%>
+                <asp:Label class="label" ID="name" runat="server" ><asp:Localize meta:resourcekey="contact_emailName"  runat="server" ID="Localize38" Text="" /></asp:Label>
                 <input id="emailName" class="email" type="text" runat="server" />
                 <asp:Label class="label" ID="Label2" runat="server" Text="Your Email:"></asp:Label>
                 <input id="emailFrom" class="email" type="text" runat="server" />

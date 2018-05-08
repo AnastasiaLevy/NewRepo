@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" AutoEventWireup="true" CodeBehind="DesktopTowerOfLondon.aspx.cs" Inherits="TestSite.Tests.DesktopTowerOfLondon" %>
+﻿<%@ Page Title="" Language="C#" AutoEventWireup="true" CodeBehind="DesktopTowerOfLondon.aspx.cs" Inherits="TestSite.Tests.DesktopTowerOfLondon" 
+    culture="auto" uiculture="auto" %>
 
 <!DOCTYPE html>
 
@@ -11,7 +12,7 @@
     <meta name="author" content="CogQuiz">
     <meta name="keywords" content="Tower of London Test Online, Short Term and Long Term Memory Test Online, Working Memory, Capacity Test, CogQuiz" />
     <meta name="google-site-verification" content="GMj8owmZtkuKU0Fa_4Zg82VbKsQPO8VkZD_pHsRghA4" />
-    <title>Tower Of London Test Online – CogQuiz</title>
+    <title><asp:Localize meta:resourcekey="pageTitle"  runat="server" ID="Localize5" Text="" /></title>
     <link rel="shortcut icon" href="../../images/favicon.ico" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="../../cogTest.css" rel="stylesheet" />
@@ -69,12 +70,12 @@
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right custom-menu">
-                        <li><a href="../../MainPage.aspx">Home</a></li>
-                        <li class="active"><a href="#about">About</a></li>
-                        <li id="profOpt" runat="server"><a href="../../UserProfile.aspx">Profile</a></li>
-                        <li id="login" runat="server"><a href="../../Login.aspx">Login</a></li>
+                        <li><a href="../../MainPage.aspx"><asp:Localize meta:resourcekey="navbar_home"  runat="server" ID="Localize48" Text="" /></a></li>
+                        <li class="active"><a href="#about"><asp:Localize meta:resourcekey="navbar_about"  runat="server" ID="Localize1" Text="" /></a></li>
+                        <li id="profOpt" runat="server"><a href="../../UserProfile.aspx"><asp:Localize meta:resourcekey="navbar_profile"  runat="server" ID="Localize2" Text="" /></a></li>
+                        <li id="login" runat="server"><a href="../../Login.aspx"><asp:Localize meta:resourcekey="navbar_login"  runat="server" ID="Localize3" Text="" /></a></li>
                         <li>
-                            <asp:LinkButton ID="logOut" class="" type="submit" runat="server" OnClick="logOut_Click">Log Out</asp:LinkButton>
+                            <asp:LinkButton ID="logOut" class="" type="submit" runat="server" OnClick="logOut_Click"><asp:Localize meta:resourcekey="navbar_logout"  runat="server" ID="Localize4" Text="" /></asp:LinkButton>
                         </li>
                     </ul>
                 </div>
@@ -87,12 +88,10 @@
         <!-- Page Content -->
         <section id="about">
             <div class="container testDescription">
-                <h1>Tower of London for desktop</h1>
+                <h1><asp:Localize meta:resourcekey="about_title"  runat="server" ID="Localize6" Text="" /></h1>
                 <hr />
-                <p class="text-larger" style="color:#000; font-size: large;">The Tower of London test is a well-known test used in applied clinical neuropsychology 
-                    for the assessment of executive functioning specifically to detect deficits in planning, 
-                    which may occur due to a variety of medical and neuropsychiatric conditions. 
-                    It is related to the classic problem-solving puzzle known as the Tower of Hanoi. 
+                <p class="text-larger" style="color:#000; font-size: large;">
+                    <asp:Localize meta:resourcekey="about_paragraph"  runat="server" ID="Localize7" Text="" />
                 </p>
             </div>
 
@@ -105,7 +104,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <a class="btn btn-primary btn-lg btn-xs-block" id="InstallButton" href="/Tests/TowerOfLondon/TOLDesktop.aspx">Download</a>
+                            <a class="btn btn-primary btn-lg btn-xs-block" id="InstallButton" href="/Tests/TowerOfLondon/TOLDesktop.aspx"><asp:Localize meta:resourcekey="price_btn"  runat="server" ID="Localize8" Text="" /></a>
                             <asp:LinkButton ID="paypalsimulate" runat="server" OnClick="paypalsimulate_Click" class="btn btn-primary btn-lg btn-xs-block btn-green pull-right">PayPal response simulation</asp:LinkButton>
                         </div>
                     </div>
@@ -113,7 +112,7 @@
                     <%-- key output --%>
                     <div class="row" id="keyValueArea" runat="server">
                         <div class="col-md-12 text-success">
-                            Your key: <span class="text-success wrap-key"><%# Key %></span>
+                            <asp:Localize meta:resourcekey="price_key"  runat="server" ID="Localize9" Text="" /> <span class="text-success wrap-key"><%# Key %></span>
                         </div>
                     </div>
                     <br />
@@ -126,16 +125,16 @@
             <div class="container testDescription">
                 <div class="row">
                     <div class="col-md-12">
-                        <h3>View Examples</h3>
+                        <h3><asp:Localize meta:resourcekey="testDescription_title"  runat="server" ID="Localize10" Text="" /></h3>
                         <hr />
                         <div class="row">
                             <div class="col-md-6" id="left1">
-                                <h4>Create test</h4>
+                                <h4><asp:Localize meta:resourcekey="testDescription_img1_title"  runat="server" ID="Localize11" Text="" /></h4>
                                 <ul class="exapmles-list">
-                                    <li><span>Sed imperdiet eros nec tellus fringilla, id facilisis ex tempus.</span></li>
-                                    <li><span>Lorem ipsum dolor sit amet</span></li>
-                                    <li><span>Lorem ipsum dolor sit amet</span></li>
-                                    <li><span>Sed imperdiet eros nec tellus fringilla..</span></li>
+                                    <li><span><asp:Localize meta:resourcekey="testDescription_img1_span1"  runat="server" ID="Localize12" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="testDescription_img1_span2"  runat="server" ID="Localize13" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="testDescription_img1_span3"  runat="server" ID="Localize14" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="testDescription_img1_span4"  runat="server" ID="Localize15" Text="" /></span></li>
                                 </ul>
                             </div>
                             <div class="col-md-6" id="right1">
@@ -148,15 +147,15 @@
                                 <img src="../images/desktops/TOL/DesktopTOL2.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-2" class="img-responsive" />
                             </div>
                             <div class="col-md-6" id="right2">
-                                <h4>2. Participants</h4>
-                                <p>Sed imperdiet eros nec tellus fringilla, id facilisis ex tempus. Nunc tincidunt, dui id fringilla suscipit, quam urna gravida augue, nec fermentum velit velit et risus. Praesent massa massa, porta vel justo ut, venenatis blandit metus. Fusce nec egestas erat. Etiam auctor neque nec sagittis dignissim. Duis sed sapien luctus orci elementum imperdiet. Duis maximus et lorem nec scelerisque. Vivamus ut elit ante. Proin ut sollicitudin nisl. Donec non enim ipsum.</p>
+                                <h4><asp:Localize meta:resourcekey="testDescription_img2_title"  runat="server" ID="Localize16" Text="" /></h4>
+                                <p><asp:Localize meta:resourcekey="testDescription_img2_paragraph"  runat="server" ID="Localize17" Text="" /></p>
                             </div>
                         </div>
                         <hr class="cogquest-hr"/>
                         <div class="row">
                             <div class="col-md-6" id="left3">
-                                <h4>3. Run test</h4>
-                                <p>Maecenas vel lacus in ligula gravida mollis placerat ut quam. Morbi magna tellus, condimentum nec mi et, pulvinar imperdiet ligula. Morbi maximus mi eget justo tristique feugiat. Suspendisse ultrices dolor in leo congue, faucibus luctus nisi pharetra. Vivamus dapibus pellentesque orci, a rutrum risus sodales a. Nulla tempor nunc et magna egestas fermentum. Nulla magna ante, mattis elementum ipsum et, lobortis luctus lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                                <h4><asp:Localize meta:resourcekey="testDescription_img3_title"  runat="server" ID="Localize18" Text="" /></h4>
+                                <p><asp:Localize meta:resourcekey="testDescription_img3_paragraph"  runat="server" ID="Localize25" Text="" /></p>
                             </div>
                             <div class="col-md-6" id="right3">
                                 <img src="../images/desktops/TOL/DesktopTOL3.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-3" class="img-responsive" />
@@ -168,15 +167,15 @@
                                 <img src="../images/desktops/TOL/DesktopTOL4.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-4" class="img-responsive" />
                             </div>
                             <div class="col-md-6" id="right4">
-                                <h4>4. Analyze tests</h4>
-                                <p>Nulla sagittis metus ac rutrum tempus. Fusce mollis lorem et velit fermentum rhoncus. In vestibulum fringilla odio, vitae tempus diam aliquam et. Nam vitae elementum purus. Nullam erat urna, porttitor ut risus mattis, vehicula tincidunt quam. Aliquam tempus ornare nulla at efficitur. In nec arcu sed nunc rutrum pellentesque. In hac habitasse platea dictumst. Aliquam vel rhoncus urna. Donec in purus ipsum. In non orci faucibus, ullamcorper augue vel, dignissim velit.</p>
+                                <h4><asp:Localize meta:resourcekey="testDescription_img4_title"  runat="server" ID="Localize19" Text="" /></h4>
+                                <p><asp:Localize meta:resourcekey="testDescription_img4_paragraph"  runat="server" ID="Localize24" Text="" /></p>
                             </div>
                         </div>
                         <hr class="cogquest-hr"/>
                         <div class="row">
                             <div class="col-md-6" id="left5">
-                                <h4>5. View playback</h4>
-                                <p>Maecenas vel lacus in ligula gravida mollis placerat ut quam. Morbi magna tellus, condimentum nec mi et, pulvinar imperdiet ligula. Morbi maximus mi eget justo tristique feugiat. Suspendisse ultrices dolor in leo congue, faucibus luctus nisi pharetra. Vivamus dapibus pellentesque orci, a rutrum risus sodales a. Nulla tempor nunc et magna egestas fermentum. Nulla magna ante, mattis elementum ipsum et, lobortis luctus lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                                <h4><asp:Localize meta:resourcekey="testDescription_img5_title"  runat="server" ID="Localize20" Text="" /></h4>
+                                <p><asp:Localize meta:resourcekey="testDescription_img5_paragraph"  runat="server" ID="Localize23" Text="" /></p>
                             </div>
                             <div class="col-md-6" id="right5">
                                 <img src="../images/desktops/TOL/DesktopTOL5.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-5" class="img-responsive" />
@@ -188,8 +187,8 @@
                                 <img src="../images/desktops/TOL/DesktopTOL6.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-6" class="img-responsive" />
                             </div>
                             <div class="col-md-6" id="right6">
-                                <h4>6. Export result to Excel</h4>
-                                <p>Nulla sagittis metus ac rutrum tempus. Fusce mollis lorem et velit fermentum rhoncus. In vestibulum fringilla odio, vitae tempus diam aliquam et. Nam vitae elementum purus. Nullam erat urna, porttitor ut risus mattis, vehicula tincidunt quam. Aliquam tempus ornare nulla at efficitur. In nec arcu sed nunc rutrum pellentesque. In hac habitasse platea dictumst. Aliquam vel rhoncus urna. Donec in purus ipsum. In non orci faucibus, ullamcorper augue vel, dignissim velit.</p>
+                                <h4><asp:Localize meta:resourcekey="testDescription_img6_title"  runat="server" ID="Localize21" Text="" /></h4>
+                                <p><asp:Localize meta:resourcekey="testDescription_img6_paragraph"  runat="server" ID="Localize22" Text="" /></p>
                             </div>
                         </div>
                         <hr class="cogquest-hr"/>
@@ -245,12 +244,12 @@
                 <div class="row" id="buyButtonArea" runat="server">
                     <div class="col-md-12">
                         <div class="circle c1 img-circle" id="singlePr" runat="server">
-                            <h4 class="blue">Buy license</h4>
+                            <h4 class="blue"><asp:Localize meta:resourcekey="buy_title"  runat="server" ID="Localize26" Text="" /></h4>
                             <span class="icon blue"><i class="fa fa-usd"></i></span>
                             <span class="price-large blue">5</span>
                             <span class="price-small">.00</span>
                             <br/>
-                            <asp:Button ID="single" class="btn btn-info" runat="server" OnClick="Buy_Click" Text="Buy Now" />
+                            <asp:Button ID="single" class="btn btn-info" runat="server" OnClick="Buy_Click" Text="" meta:resourcekey="buy_btn"/>
                         </div>
                     </div>
                 </div>
@@ -259,7 +258,7 @@
         <section id="follow-us">
             <div class="container">
                 <div class="text-center height-contact-element">
-                    <h3>Follow Us</h3>
+                    <h3><asp:Localize meta:resourcekey="follow"  runat="server" ID="Localize27" Text="" /></h3>
                     <p>+1(719)888 9121</p>
                 </div>
                 <img class="img-responsive displayed" src="../../images/line-separator.png" alt="short" />

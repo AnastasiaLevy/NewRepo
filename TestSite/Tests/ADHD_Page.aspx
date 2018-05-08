@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ADHD_Page.aspx.cs" Inherits="TestSite.Tests.ADHD_Page" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ADHD_Page.aspx.cs" Inherits="TestSite.Tests.ADHD_Page" culture="auto" uiculture="auto" %>
 
 <!DOCTYPE html>
 
@@ -7,7 +7,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Coolidge Tests  |  Online Psychological Assessments</title>
+    <title><asp:Localize meta:resourcekey="pagetitle"  runat="server" ID="Localize2" Text="" /></title>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
     <script type="text/javascript" src="../web/js/jquery.dataTables.min.js"></script>
@@ -31,7 +31,7 @@
     <div class="wrapper">
         <div class="headcontainer">
             <div class="container_12">
-                <div class="grid_3 ">CPNI test</div>
+                <div class="grid_3 "><asp:Localize meta:resourcekey="headcontainer"  runat="server" ID="Localize1" Text="" /></div>
             </div>
         </div>
 
@@ -59,8 +59,8 @@
 
         <div id="testText"></div>
         <div class="row adhd-buttons">
-            <input id="saveAndClose" type="button" class="btn btn-success adhd-button" value="Save And Close">
-            <input id="finishTest" type="button" class="btn btn-success adhd-button" value="Submit" />
+            <input id="saveAndClose" type="button" class="btn btn-success adhd-button" value="" meta:resourcekey="saveAndClose"/>
+            <input id="finishTest" type="button" class="btn btn-success adhd-button" value="" meta:resourcekey="finishTest"/>
         </div>
 
         <div class="push">&nbsp;</div>

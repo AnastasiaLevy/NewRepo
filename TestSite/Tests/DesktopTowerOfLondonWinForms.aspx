@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DesktopTowerOfLondonWinForms.aspx.cs" Inherits="TestSite.Tests.DesktopTowerOfLondonWinForms" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DesktopTowerOfLondonWinForms.aspx.cs" Inherits="TestSite.Tests.DesktopTowerOfLondonWinForms" 
+    culture="auto" uiculture="auto" %>
 
 <!DOCTYPE html>
 
@@ -46,12 +47,12 @@
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right custom-menu">
-                        <li><a href="../MainPage.aspx">Home</a></li>
-                        <li class="active"><a href="#about">About</a></li>
-                        <li id="profOpt" runat="server"><a href="../UserProfile.aspx">Profile</a></li>
-                        <li id="login" runat="server"><a href="../Login.aspx">Login</a></li>
+                        <li><a href="../MainPage.aspx"><asp:Localize meta:resourcekey="navbar_home"  runat="server" ID="Localize48" Text="" /></a></li>
+                        <li class="active"><a href="#about"><asp:Localize meta:resourcekey="navbar_about"  runat="server" ID="Localize1" Text="" /></a></li>
+                        <li id="profOpt" runat="server"><a href="../UserProfile.aspx"><asp:Localize meta:resourcekey="navbar_profile"  runat="server" ID="Localize2" Text="" /></a></li>
+                        <li id="login" runat="server"><a href="../Login.aspx"><asp:Localize meta:resourcekey="navbar_login"  runat="server" ID="Localize3" Text="" /></a></li>
                         <li>
-                            <asp:LinkButton ID="logOut" class="" type="submit" OnClick="logOut_Click" runat="server">Log Out</asp:LinkButton>
+                            <asp:LinkButton ID="logOut" class="" type="submit" OnClick="logOut_Click" runat="server"><asp:Localize meta:resourcekey="navbar_logout"  runat="server" ID="Localize4" Text="" /></asp:LinkButton>
                         </li>
                     </ul>
                 </div>
@@ -60,20 +61,16 @@
 
         <section id="about">
             <div class="container testDescription">
-                <h1>Tower of London for desktop</h1>
+                <h1><asp:Localize meta:resourcekey="about_title"  runat="server" ID="Localize5" Text="" /></h1>
                 <hr />
-                <p>The most significant improvement in the CogQuiz TOL is the timing and record keep that can be obtained with a computerized test, and most notably, the ability to create a number of tests for varying populations. The relative low cost of the TOL, the ability to reliably collect various test parameters, and standardizing the procedure, researchers are able to investigate the same cognitive processes with different populations, showing how various conditions can differentially affect planning ability.
+                <p>
+                    <asp:Localize meta:resourcekey="about_paragraph"  runat="server" ID="Localize6" Text="" />
+                </p>
 
-While the TOL was developed as a manual test to be implemented using wooden stimulus boards, there is an increasing amount of evidence to support the use of computerized methods of testing. Using computerized testing methods allows for greater standardization of testing procedures and can reduce experimenter biases that may come out during an in person testing session.
-
-Additionally, since the test has been standardized, experimenters do not need to be as highly trained as would be necessary in a traditional testing format (Zygouris & Tsolaki, 2015). Since the experimenters do not need to be trained as thoroughly, overall cost and time of the experiment can be reduced. Research assistants do not need to be trained compensated. As well as ease of administration, computerized testing simplifies the data gathering process and, in many cases, can increase the accuracy of the measurement. Since the administration and data gathering and analysis all take place on the same platform, the data can be stored between tests and changes in performance can be easily tracked over time (Cambridge Cognition, 2012; CNS Vital Signs, 2012; Neurotrax Corporation, 2003;).
-
-Since its creation as a means of assessing planning ability, the TOL has been implemented as a tool for measuring various domains of executive functioning (Bottari et al., 2009; Köstering et al., 2015; Owen, 2005) as well as spatial planning (Berg & Byrd, 2005; Berg, Byrd, McNamara, & MacDonald, 2006; Kaller, Unterrainer, & Stahl, 2012; Pulos & Denzine, 2005; Shallice, 1982; Unterrainer & Owen, 2006), working memory (Albert & Steinberg, 2011; Berg & Byrd, 2002; Pulos & Denzine, 2005), inhibition (Albert & Steinberg, 2011; Berg & Byrd, 2002; Shallice, 1982), and task shifting (Pulos & Denzine, 2005). In addition to Shallice’s (1982) original findings of deficits in individuals with frontal lobe lesions, there have emerged several additional populations that frequently show deficits in their performance on the TOL; those with neurological and psychiatric conditions such as depression or Parkinson’s (Jacobs & Anderson, 2002), individuals who have suffered a traumatic brain injury (TBI), Alzheimer’s and related dementias (Carlin et al., 2000), ADHD (Culbertson & Zillmer, 1998), Autism (Wisley & Howlin, 2009), and schizophrenia (Landua & Morris, 2011)</p>
-
-                <asp:LinkButton ID="LinkButton1" class="btn btn-primary btn-lg btn-xs-block" OnClick="LinkButton1_Click" runat="server">View User Manual</asp:LinkButton>
+                <asp:LinkButton ID="LinkButton1" class="btn btn-primary btn-lg btn-xs-block" OnClick="LinkButton1_Click" runat="server"><asp:Localize meta:resourcekey="about_manual"  runat="server" ID="Localize7" Text="" /></asp:LinkButton>
 
 
-                <asp:LinkButton ID="runTest" runat="server" class="btn btn-primary btn-lg btn-xs-block" OnClick="runTest_Click">Download</asp:LinkButton>
+                <asp:LinkButton ID="runTest" runat="server" class="btn btn-primary btn-lg btn-xs-block" OnClick="runTest_Click"><asp:Localize meta:resourcekey="about_download"  runat="server" ID="Localize8" Text="" /></asp:LinkButton>
 
                 <asp:LinkButton ID="paypalsimulate" runat="server" OnClick="paypalsimulate_Click" class="btn btn-primary btn-lg btn-xs-block btn-green pull-right">Paypal response simulation</asp:LinkButton>
 
@@ -86,19 +83,19 @@ Since its creation as a means of assessing planning ability, the TOL has been im
 
                 <div class="row">
                     <div class="col-md-12">
-                        <h3>View Examples</h3>
+                        <h3><asp:Localize meta:resourcekey="examples_title"  runat="server" ID="Localize9" Text="" /></h3>
                         
                         <hr />
 
                         <div class="row">
                             <div class="col-md-6" id="left2">
-                                <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
+                                <h4><asp:Localize meta:resourcekey="examples_conteiner1_title"  runat="server" ID="Localize10" Text="" /></h4>
                                 <ul class="exapmles-list">
-                                    <li><span>Donec iaculis erat a lorem sodales tempor.</span></li>
-                                    <li><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></li>
-                                    <li><span>Donec iaculis erat a lorem sodales tempor.</span></li>
-                                    <li><span>Set </span></li>
-                                    <li><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.d</span></li>
+                                    <li><span><asp:Localize meta:resourcekey="examples_conteiner1_span1"  runat="server" ID="Localize11" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="examples_conteiner1_span2"  runat="server" ID="Localize12" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="examples_conteiner1_span3"  runat="server" ID="Localize13" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="examples_conteiner1_span4"  runat="server" ID="Localize14" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="examples_conteiner1_span5"  runat="server" ID="Localize15" Text="" /></span></li>
                                 </ul>
                             </div>
                             <div class="col-md-6" id="right2">
@@ -137,12 +134,13 @@ Since its creation as a means of assessing planning ability, the TOL has been im
                                 </div>
                             </div>
                             <div class="col-md-6" id="right3">
-                                <h4>2. Donec iaculis erat a lorem sodales tempor.</h4>
+                                <h4><asp:Localize meta:resourcekey="examples_conteiner2_title"  runat="server" ID="Localize26" Text="" /></h4>
                                 <ul class="exapmles-list">
-                                    <li><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></li>
-                                    <li><span>Donec iaculis erat a lorem sodales tempor.</span></li>
-                                    <li><span>Donec iaculis erat a lorem</span></li>
-                                    <li><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></li>
+                                    <li><span><asp:Localize meta:resourcekey="examples_conteiner2_span1"  runat="server" ID="Localize16" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="examples_conteiner2_span2"  runat="server" ID="Localize17" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="examples_conteiner2_span3"  runat="server" ID="Localize18" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="examples_conteiner2_span4"  runat="server" ID="Localize19" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="examples_conteiner2_span5"  runat="server" ID="Localize20" Text="" /></span></li>
                                 </ul>
                             </div>
                         </div>
@@ -235,22 +233,22 @@ Since its creation as a means of assessing planning ability, the TOL has been im
                     <div class="row">
                         <div class="col-md-6">
                             <div class="circle c1 img-circle" style="float: right;">
-                                <h4 class="blue">One Install</h4>
+                                <h4 class="blue"><asp:Localize meta:resourcekey="price_single_title"  runat="server" ID="Localize21" Text="" /></h4>
                                 <span class="icon blue"><i class="fa fa-usd"></i></span>
                                 <span class="price-large blue">45</span>
                                 <span class="price-small">.00</span>
-                                <p>Install on 1 computer</p>
-                                <asp:Button ID="single" class="btn btn-info" runat="server" OnClick="single_Click" Text="Buy Now" />
+                                <p><asp:Localize meta:resourcekey="price_single_paragraph"  runat="server" ID="Localize22" Text="" /></p>
+                                <asp:Button ID="single" class="btn btn-info" runat="server" OnClick="single_Click" Text="Buy Now" meta:resourcekey="price_single_buy"/>
                             </div>
                         </div>
 
                         <div class="col-md-6">
                             <div class="circle c3 img-circle">
-                                <h4 class="green">Custom</h4>
+                                <h4 class="green"><asp:Localize meta:resourcekey="price_hundred_title"  runat="server" ID="Localize23" Text="" /></h4>
                                 <span class="price-large green">Call</span>
                                 <span class="price-small">for<span class="icon green"><i class="fa fa-usd "></i></span></span>
-                                <p>Call for custom order</p>
-                                <asp:Button ID="hundred" class="btn btn-success" runat="server" Text="Buy Now" />
+                                <p><asp:Localize meta:resourcekey="price_hundred_paragraph"  runat="server" ID="Localize24" Text="" /></p>
+                                <asp:Button ID="hundred" class="btn btn-success" runat="server" Text="Buy Now" meta:resourcekey="price_hundred_buy"/>
                             </div>
                         </div>
                     </div>
@@ -263,7 +261,7 @@ Since its creation as a means of assessing planning ability, the TOL has been im
         <section id="follow-us">
             <div class="container">
                 <div class="text-center height-contact-element">
-                    <h3>Follow Us</h3>
+                    <h3><asp:Localize meta:resourcekey="follow"  runat="server" ID="Localize25" Text="" /></h3>
                     <p>+1(719)888 9121</p>
                 </div>
                 <img class="img-responsive displayed" src="../../images/line-separator.png" alt="short" />

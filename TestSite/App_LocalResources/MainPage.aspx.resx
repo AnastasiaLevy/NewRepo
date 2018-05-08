@@ -1,0 +1,376 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="about_row1_paragraph.Text" xml:space="preserve">
+    <value>CogQuiz is a company committed to the development of powerful computer-based tools for cognitive and neuropsychological research and evaluation. 
+                                      Our goal is to design computerized neuropsychological and cognitive tests that are affordable for assessment of medical and/or a mental health status.
+                                      We have strived, and think we are successful, in making an easy to use, affordably priced tests usable by the general public.
+                                      As a consumer, you will take a test that is the equal of any test in terms of norms and receive feedback at a fraction of the cost of seeing a licensed professional. 
+                                      You may print out a report that you can take to a professional for an evaluation beyond the report we provide. We believe that an informed individual is their own best advocate.</value>
+  </data>
+  <data name="about_row1_title.Text" xml:space="preserve">
+    <value>The CogQuiz General Philosophy</value>
+  </data>
+  <data name="about_row2_paragraph.Text" xml:space="preserve">
+    <value>Our products reflect over 50 years of experience in using computers for experiment control, data acquisition, and data analysis in cognitive and behavioral research. 
+                                      Our products have been used as part of a long-term research program in several universities and by licensed practitioners alike. 
+                                      Many of the tests have extensive sets of age-stratified normative data which are included in each test product's report/manual.</value>
+  </data>
+  <data name="about_row2_title.Text" xml:space="preserve">
+    <value>History and Validating Data</value>
+  </data>
+  <data name="about_row3_paragraph.Text" xml:space="preserve">
+    <value>All CogQuiz products come with preprogrammed tests that were used to collect the normative data provided in the test documentation.
+                                       There are few or no commercial products with equivalent norms, anywhere.</value>
+  </data>
+  <data name="about_row3_title.Text" xml:space="preserve">
+    <value>Large Norm Base</value>
+  </data>
+  <data name="about_row4_paragraph.Text" xml:space="preserve">
+    <value>All CogQuiz tests utilize a centralized database. Whether you are using only one of our tests or all of them, 
+                                        collected data is secure. In addition to facilitating the management of all testing data, this approach also ensures heightened security 
+                                        and confidentiality of all participant information.</value>
+  </data>
+  <data name="about_row4_title.Text" xml:space="preserve">
+    <value>Centralized Secure Database</value>
+  </data>
+  <data name="about_title.Text" xml:space="preserve">
+    <value>CogQuiz Neuropsychological Tests</value>
+  </data>
+  <data name="available_nav_all.Text" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="available_nav_executive.Text" xml:space="preserve">
+    <value>Executive Function</value>
+  </data>
+  <data name="available_nav_memory.Text" xml:space="preserve">
+    <value>Memory</value>
+  </data>
+  <data name="available_nav_mobileapps.Text" xml:space="preserve">
+    <value>Processing Speed</value>
+  </data>
+  <data name="available_title1.Text" xml:space="preserve">
+    <value>The software for each CogQuiz test has been designed with an emphasis on efficiency and ease of use. 
+                        Each test comes with an easy to use example and a screen feature definition. 
+                        In addition, we offer prompt, courteous customer support via email or Skype. 
+                        CogQuiz tests will run on Microsoft Windows XP SP3®, Vista®, Windows 7® Windows 8®.</value>
+  </data>
+  <data name="available_title2.Text" xml:space="preserve">
+    <value>All Available Tests</value>
+  </data>
+  <data name="carousel_image1_span.Text" xml:space="preserve">
+    <value>image1</value>
+  </data>
+  <data name="carousel_image1_title1.Text" xml:space="preserve">
+    <value>Instant Results</value>
+  </data>
+  <data name="carousel_image1_title2.Text" xml:space="preserve">
+    <value>Afraid your child might have ADHD, find out in the privacy of your home for a fraction of the cost of a psychological assetssment in a doctor's office.</value>
+  </data>
+  <data name="carousel_image2_span.Text" xml:space="preserve">
+    <value>image2</value>
+  </data>
+  <data name="carousel_image2_title1.Text" xml:space="preserve">
+    <value>Neuropsychological test</value>
+  </data>
+  <data name="carousel_image2_title2.Text" xml:space="preserve">
+    <value>Fun brain games for the public in a private setting.</value>
+  </data>
+  <data name="carousel_image3_span.Text" xml:space="preserve">
+    <value>image3</value>
+  </data>
+  <data name="carousel_image3_title1.Text" xml:space="preserve">
+    <value>Looking to hire a candidate?</value>
+  </data>
+  <data name="carousel_image3_title2.Text" xml:space="preserve">
+    <value>Have them take one of attenion and speed of processing tests. Find out if they can really do the job.</value>
+  </data>
+  <data name="carousel_image4_span.Text" xml:space="preserve">
+    <value>Image 04</value>
+  </data>
+  <data name="carousel_image4_title1.Text" xml:space="preserve">
+    <value>Cognitive Aging Concerns?</value>
+  </data>
+  <data name="carousel_image4_title2.Text" xml:space="preserve">
+    <value>Find out if you are aging gracefully, like others in your age bracket or, if there's cause for concern.</value>
+  </data>
+  <data name="carousel_image5_span.Text" xml:space="preserve">
+    <value>Image 05</value>
+  </data>
+  <data name="carousel_image5_title1.Text" xml:space="preserve">
+    <value>COMPARE YOUR SCORE AGAINS THOUSANDS OF PEOPLE</value>
+  </data>
+  <data name="carousel_image5_title2.Text" xml:space="preserve">
+    <value>With the most norms available, no other test can definitevly tell you about your results like CogQuiz can.</value>
+  </data>
+  <data name="carousel_image6_span.Text" xml:space="preserve">
+    <value>Image 06</value>
+  </data>
+  <data name="carousel_image6_title1.Text" xml:space="preserve">
+    <value>Researcher or Medical Practitioner?</value>
+  </data>
+  <data name="carousel_image6_title2.Text" xml:space="preserve">
+    <value>Special pricing is available for researchers and medical practitioners. Contact us for more details.</value>
+  </data>
+  <data name="contact_email.Text" xml:space="preserve">
+    <value>Your Email:</value>
+  </data>
+  <data name="contact_message.Text" xml:space="preserve">
+    <value>Message:</value>
+  </data>
+  <data name="contact_name.Text" xml:space="preserve">
+    <value>Your Name:</value>
+  </data>
+  <data name="contact_send.Text" xml:space="preserve">
+    <value>Send Email</value>
+  </data>
+  <data name="desktop_test1_paragraph.Text" xml:space="preserve">
+    <value>A  tool to create questionnaires for collecting participant information.</value>
+  </data>
+  <data name="desktop_test1_ref.Text" xml:space="preserve">
+    <value>View more</value>
+  </data>
+  <data name="desktop_test1_title.Text" xml:space="preserve">
+    <value>CogQuest</value>
+  </data>
+  <data name="desktop_test2_paragraph.Text" xml:space="preserve">
+    <value>A  tool to create questionnaires for collecting participant information.</value>
+  </data>
+  <data name="desktop_test2_ref.Text" xml:space="preserve">
+    <value>View more</value>
+  </data>
+  <data name="desktop_test2_title.Text" xml:space="preserve">
+    <value>Desktop Tests Collection</value>
+  </data>
+  <data name="desktop_test3_paragraph.Text" xml:space="preserve">
+    <value>A  tool to create questionnaires for collecting participant information.</value>
+  </data>
+  <data name="desktop_test3_ref.Text" xml:space="preserve">
+    <value>View more</value>
+  </data>
+  <data name="desktop_test3_title.Text" xml:space="preserve">
+    <value>Tower of London</value>
+  </data>
+  <data name="desktop_title.Text" xml:space="preserve">
+    <value>DeskTop Tests</value>
+  </data>
+  <data name="follow.Text" xml:space="preserve">
+    <value>FOLLOW US</value>
+  </data>
+  <data name="navbar_about.Text" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="navbar_avalable.Text" xml:space="preserve">
+    <value>Avalable Tests</value>
+  </data>
+  <data name="navbar_categories.Text" xml:space="preserve">
+    <value>Test Categories</value>
+  </data>
+  <data name="navbar_connect.Text" xml:space="preserve">
+    <value>Connect</value>
+  </data>
+  <data name="navbar_custom.Text" xml:space="preserve">
+    <value>Custom Tests</value>
+  </data>
+  <data name="navbar_desktop.Text" xml:space="preserve">
+    <value>DeskTop Tests</value>
+  </data>
+  <data name="navbar_home.Text" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="navbar_login.Text" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="navbar_logout.Text" xml:space="preserve">
+    <value>Log Out</value>
+  </data>
+  <data name="navbar_profile.Text" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="navbar_trending.Text" xml:space="preserve">
+    <value>Trending</value>
+  </data>
+  <data name="order_test1_paragraph.Text" xml:space="preserve">
+    <value>Are you a practitioner, clinition, medical profressional or researcher in need of a specific test?
+                                    We can make it for you within a two weeks, end-2-end.</value>
+  </data>
+  <data name="order_test1_title.Text" xml:space="preserve">
+    <value>Single Test</value>
+  </data>
+  <data name="order_test2_paragraph.Text" xml:space="preserve">
+    <value>We will make software for you based off of your needs. Neuropsychological testing is our specialty.
+                                        If you are looking for custom software that is maluable and configurable for multiple tests, can keep a track of participants, store results, we are your best option.</value>
+  </data>
+  <data name="order_test2_title.Text" xml:space="preserve">
+    <value>Research Environment</value>
+  </data>
+  <data name="order_test3_paragraph.Text" xml:space="preserve">
+    <value>We create the software, and we will host it for you too. 
+                                    We take the worrying out of Hipaa regulations and data integrity. We design and develop Cloud based and Desktop applications.</value>
+  </data>
+  <data name="order_test3_title.Text" xml:space="preserve">
+    <value>Software and Hosting</value>
+  </data>
+  <data name="order_test4_paragraph.Text" xml:space="preserve">
+    <value>With custom software comes custom requests. Do you want your tests to run on Android, Apple, locked applications for tablets, or desktop applications? We can help.</value>
+  </data>
+  <data name="order_test4_title.Text" xml:space="preserve">
+    <value>Platforms</value>
+  </data>
+  <data name="order_title.Text" xml:space="preserve">
+    <value>Tests to Order</value>
+  </data>
+  <data name="service_category1_paragraph.Text" xml:space="preserve">
+    <value>Short-term and long term-merm memory tests avaialble.
+                                    Take one of our quizes and find out where you stand in relation to others. Are you capable of remembering germane or salient details, or is there cause for concern?</value>
+  </data>
+  <data name="service_category1_title.Text" xml:space="preserve">
+    <value>Memory</value>
+  </data>
+  <data name="service_category2_paragraph.Text" xml:space="preserve">
+    <value>Are you concerned with your Attention span, your ability to switch between tasks effectively or your speed of processing? Executive function tests help you determine if you have alfflictions like ADHD or NNNN</value>
+  </data>
+  <data name="service_category2_title.Text" xml:space="preserve">
+    <value>Executive function and Planning</value>
+  </data>
+  <data name="service_category3_paragraph.Text" xml:space="preserve">
+    <value>Speed of processing has been a major explantory varialbe for enhanced cognitive performace during development.</value>
+  </data>
+  <data name="service_category3_title.Text" xml:space="preserve">
+    <value>Processing Speed</value>
+  </data>
+  <data name="service_title.Text" xml:space="preserve">
+    <value>Test Categories</value>
+  </data>
+  <data name="videos_label1.Text" xml:space="preserve">
+    <value>Provider Dash Part 1</value>
+  </data>
+  <data name="videos_label2.Text" xml:space="preserve">
+    <value>Provider Dash Part 2</value>
+  </data>
+  <data name="videos_label3.Text" xml:space="preserve">
+    <value>Provider Dash Part 3</value>
+  </data>
+  <data name="videos_label4.Text" xml:space="preserve">
+    <value>Tower of London Set Up</value>
+  </data>
+  <data name="videos_title.Text" xml:space="preserve">
+    <value>Instructional Videos</value>
+  </data>
+</root>

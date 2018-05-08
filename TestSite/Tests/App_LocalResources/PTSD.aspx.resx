@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Content10_btn.Text" xml:space="preserve">
+    <value>Sample report</value>
+  </data>
+  <data name="Content3.Text" xml:space="preserve">
+    <value>COOLIDGE AXIS II INVENTORY (CATI)</value>
+  </data>
+  <data name="Content4.Text" xml:space="preserve">
+    <value>The CATI is a 250-item psychopathology and neuropsychological inventory for ages 15 and above. There are two forms: self-report and significant-other. The CATI assesses over 40 clinical and neuropsychological disorders including 14 personality disorders, depression, anxiety, schizophrenia, PTSD, adult ADHD, and neurocognitive disorders, and others. The CATI is aligned with the official DSM-5 criteria and has norms on thousands of clinical and nonclinical samples.</value>
+  </data>
+  <data name="Content6_li1.Text" xml:space="preserve">
+    <value>14 personality disorders (10 from DSM-5, 2 from the appendix of DSM-IV-TR and 2 from the appendix of DSM-III-R)</value>
+  </data>
+  <data name="Content6_li10.Text" xml:space="preserve">
+    <value>Critical Items assessing food and body-image problems, sleep problems, and others</value>
+  </data>
+  <data name="Content6_li11.Text" xml:space="preserve">
+    <value>3 validity scales assessing random responding, excessive denial, and malingering</value>
+  </data>
+  <data name="Content6_li2.Text" xml:space="preserve">
+    <value>6 major Clinical Syndromes including Major Depressive Disorder, Generalized Anxiety Disorder, Schizophrenia, Post-Traumatic Stress Disorder, Social Phobia, and Attention- Deficit Disorder</value>
+  </data>
+  <data name="Content6_li3.Text" xml:space="preserve">
+    <value>Neuropsychological Deficit scales including Neurocognitive Disorder (mild to severe), a General Neuropsychological Deficits scale (with 3 subscales assessing Memory, Language, and Neurosomatic problems)</value>
+  </data>
+  <data name="Content6_li4.Text" xml:space="preserve">
+    <value>Executive Dysfunctions of the Frontal Lobe scale (with 3 subscales assessing Decision- Making Difficulties, Poor Planning, and Task Completion Difficulties)</value>
+  </data>
+  <data name="Content6_li5.Text" xml:space="preserve">
+    <value>3 Hostility scales assessing Dangerousness, Anger, and Impulsivity</value>
+  </data>
+  <data name="Content6_li6.Text" xml:space="preserve">
+    <value>Other Clinical scales including early juvenile delinquency, depersonalization, low frustration tolerance, and others</value>
+  </data>
+  <data name="Content6_li7.Text" xml:space="preserve">
+    <value>2 Drug and Alcohol Abuse items</value>
+  </data>
+  <data name="Content6_li8.Text" xml:space="preserve">
+    <value>Suicidal Ideation&lt;</value>
+  </data>
+  <data name="Content6_li9.Text" xml:space="preserve">
+    <value>Extraversion-Introversion scale</value>
+  </data>
+  <data name="Content8_paragraph1.Text" xml:space="preserve">
+    <value>ESSENTIAL REFERENCE</value>
+  </data>
+  <data name="Content8_paragraph2.Text" xml:space="preserve">
+    <value>Coolidge, F. L. &amp; Merwin, M. M. (1992). Reliability and validity of the Coolidge Axis Two Inventory: A new inventory for the assessment of personality disorders. Journal of Personality Assessment, 59, 223-238. [click &lt;a target="_blank" href="/content/CATI/Coolidge and Merwin 1992-Reliability and Validity of CAIII.pdf"&gt;here&lt;/a&gt; for PDF copy]</value>
+  </data>
+  <data name="Content8_paragraph3.Text" xml:space="preserve">
+    <value>OTHER PUBLICATIONS WITH THE CATI</value>
+  </data>
+  <data name="Content8_paragraph4.Text" xml:space="preserve">
+    <value>Coolidge, F. L., Segal, D. L., &amp; Applequist, K. (2009). Working memory deficits in personality disorder traits: A preliminary investigation in a nonclinical sample. Journal of Research in Personality, 43, 355-361. [click &lt;a target="_blank" href="/content/CATI/Coolidge et al 2009-Working memory deficits in personality disorder traits.pdf"&gt;here&lt;/a&gt; for PDF copy]</value>
+  </data>
+  <data name="Content8_paragraph5.Text" xml:space="preserve">
+    <value>Coolidge, F. L., &amp; Segal, D. L. (2009). Is Kim Jong-il like Saddam Hussein and Adolf Hitler? A personality disorder evaluation. Behavioral Sciences of Terrorism and Political Aggression, 1, 195-202. [click &lt;a target="_blank" href="/content/CATI/Coolidge and Segal 2009-Is Kim Jong-il like Saddam Hussein and Adolf Hitler.pdf"&gt;here&lt;/a&gt; for PDF copy]</value>
+  </data>
+  <data name="Content8_paragraph6.Text" xml:space="preserve">
+    <value>Coolidge, F. L., Davis, F. L., &amp; Segal, D. L. (2007). Understanding madmen: A DSM-IV assessment of Adolf Hitler. Individual Differences Research, 5, 30-43. [click &lt;a target="_blank" href="/content/CATI/Coolidge et al 2007-Understanding Madmen.pdf"&gt;here&lt;/a&gt; for PDF copy]</value>
+  </data>
+  <data name="Content8_paragraph7.Text" xml:space="preserve">
+    <value>Coolidge, F. L., &amp; Segal, D. L. (2007). Is Saddam Hussein like Adolf Hitler? A personality disorder investigation. Military Psychology, 19, 1-11. [click &lt;a target="_blank" href="/content/CATI/Coolidge and Segal 2007-Is Saddam Hussein like Adolf Hitler.pdf"&gt;here&lt;/a&gt; for PDF copy]</value>
+  </data>
+  <data name="Content8_paragraph8.Text" xml:space="preserve">
+    <value>Coolidge, F. L. &amp; Anderson, L. W. (2002). Personality profiles of women in multiple abusive relationships. Journal of Family Violence, 17, 117-131. [click &lt;a target="_blank" href="/content/CATI/Coolidge and Anderson 2002-Personality Profiles of Women.pdf"&gt;here&lt;/a&gt; for PDF copy]</value>
+  </data>
+  <data name="price_hundred_brn.Text" xml:space="preserve">
+    <value>Buy Now</value>
+  </data>
+  <data name="price_hundred_paragraph.Text" xml:space="preserve">
+    <value>Medium Size Project</value>
+  </data>
+  <data name="price_hundred_title.Text" xml:space="preserve">
+    <value>Set of 100</value>
+  </data>
+  <data name="price_single_btn.Text" xml:space="preserve">
+    <value>Buy Now</value>
+  </data>
+  <data name="price_single_paragraph.Text" xml:space="preserve">
+    <value>One Time Run</value>
+  </data>
+  <data name="price_single_title.Text" xml:space="preserve">
+    <value>Single Test</value>
+  </data>
+  <data name="price_ten_btn.Text" xml:space="preserve">
+    <value>Buy Now</value>
+  </data>
+  <data name="price_ten_paragraph.Text" xml:space="preserve">
+    <value>Small Project</value>
+  </data>
+  <data name="price_ten_title.Text" xml:space="preserve">
+    <value>Set of 10</value>
+  </data>
+  <data name="price_unlim_btn.Text" xml:space="preserve">
+    <value>Buy Now</value>
+  </data>
+  <data name="price_unlim_paragraph.Text" xml:space="preserve">
+    <value>Any Number of Participants</value>
+  </data>
+  <data name="price_unlim_title.Text" xml:space="preserve">
+    <value>Unlimited Use</value>
+  </data>
+</root>

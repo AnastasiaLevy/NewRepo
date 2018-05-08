@@ -1,7 +1,8 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="MemoryCardsCreate.aspx.cs" Inherits="TestSite.Create.MemoryCardsCreate" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="MemoryCardsCreate.aspx.cs" Inherits="TestSite.Create.MemoryCardsCreate" 
+    culture="auto" uiculture="auto" %>
 <%@ Reference Control="~/UserControls/MemoryCardsModifyPanel.ascx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <title>MemoryCards</title>
+    <title><asp:Localize meta:resourcekey="pagetitle"  runat="server" ID="Localize48" Text="" /></title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.1/raphael.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.1/raphael.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
@@ -29,21 +30,21 @@
         <div class="box box1">
             <div class="col-lg-12">
                 <hr />
-                <h2 class="intro-text text-center">Memory Cards 
-                            <strong>Set Up</strong>
+                <h2 class="intro-text text-center"><asp:Localize meta:resourcekey="box1_title"  runat="server" ID="Localize1" Text="" />
+                            <strong><asp:Localize meta:resourcekey="box1_strong"  runat="server" ID="Localize2" Text="" /></strong>
                 </h2>
                 <hr />
                 <div>
-                    <p class="min"><strong>Enter test name:</strong> </p>
+                    <p class="min"><strong><asp:Localize meta:resourcekey="box1_paragraph1"  runat="server" ID="Localize3" Text="" /></strong> </p>
                     <input type="text" runat="server" id="testNameId" Value="0" style="display:none"/>
                     <input type="text" class="form-group-sm" id="testName" value="" runat="server"/>
                 </div>
                 <asp:
                 <div style="display:inline-block;">
                     <br />
-                    <p class="min" runat="server" id="headParagraph"><strong>Set up number of trials:</strong> </p>
-                    <asp:TextBox ID="txtTrialNumber" runat="server" placeholder="Set Number of Trials"/>
-                    <asp:Button OnClick="addTrial_Click" CssClass="btn btn-facebook" ID="addTrial" runat="server" style="display:block;margin:0 auto;" Text="Add New Trial" />
+                    <p class="min" runat="server" id="headParagraph"><strong><asp:Localize meta:resourcekey="box1_paragraph2"  runat="server" ID="Localize4" Text="" /></strong> </p>
+                    <asp:TextBox ID="txtTrialNumber" runat="server" placeholder="Set Number of Trials" meta:resourcekey="box1_txtTrialNumber"/>
+                    <asp:Button OnClick="addTrial_Click" CssClass="btn btn-facebook" ID="addTrial" runat="server" style="display:block;margin:0 auto;" Text="Add New Trial" meta:resourcekey="box1_addTrial"/>
                          <%--<asp:Button ID="btnManual" runat="server" Text="TOL Set Up Instructions"  class="btn btn-labeled btn-info"  onClick="btnManual_Click"/>--%>
                                  <%--<asp:Button ID="btnVideo" runat="server" Text="Video"  class="btn btn-labeled btn-info"  onClick="btnVideo_Click"/>--%>
 

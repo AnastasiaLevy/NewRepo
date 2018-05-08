@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="LondonCreate.aspx.cs" Inherits="TestSite.Create.LondonCreate" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="LondonCreate.aspx.cs" Inherits="TestSite.Create.LondonCreate" 
+    culture="auto" uiculture="auto" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
         <link href="../assets/bootstrap/css/bootstrap.css" rel="stylesheet" />
@@ -12,8 +13,8 @@
         <div class="box box1">
             <div class="col-lg-12">
                 <hr />
-                <h2 class="intro-text text-center">Tower of London  
-                            <strong>Copy</strong>
+                <h2 class="intro-text text-center"><asp:Localize meta:resourcekey="title"  runat="server" ID="Localize48" Text="" />
+                            <strong><asp:Localize meta:resourcekey="strong"  runat="server" ID="Localize1" Text="" /></strong>
                 </h2>
                 <hr />
                 <asp:CheckBox ID="CheckBox1" runat="server" Text="Copy all" />

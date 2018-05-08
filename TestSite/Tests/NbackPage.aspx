@@ -1,10 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="NbackPage.aspx.cs" Inherits="TestSite.Tests.NbackPage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="NbackPage.aspx.cs" Inherits="TestSite.Tests.NbackPage" 
+    culture="auto" uiculture="auto" %>
 
 <!DOCTYPE html>
 
 <html>
 <head>
-    <title></title>
+    <title><asp:Localize meta:resourcekey="pagetitle"  runat="server" ID="Localize48" Text="" /></title>
     <meta charset="utf-8">
     <meta id="viewport" name='viewport' />
     <meta name="google-site-verification" content="GMj8owmZtkuKU0Fa_4Zg82VbKsQPO8VkZD_pHsRghA4" />
@@ -27,7 +28,7 @@
     </form>
     <div id="game">
         <canvas id='canvas' width="1000px" height="700px"></canvas>
-        <input type="button" id="executeTest" style="z-index: 2; position: absolute;" value="Execute Test" />
+        <input type="button" id="executeTest" style="z-index: 2; position: absolute;" value="" meta:resourcekey="btn_execute" runat="server"/>
         <input type="button" id="fullScreenOn" style="z-index: 2; position: absolute;" />
         <input type="button" id="fullScreenClose" style="z-index: 2; position: absolute;" />
     </div>

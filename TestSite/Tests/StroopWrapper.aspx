@@ -38,12 +38,12 @@
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right custom-menu">
-                        <li><a href="../MainPage.aspx">Home</a></li>
-                        <li class="active"><a href="#about">About</a></li>
-                        <li id="profOpt" runat="server"><a href="../UserProfile.aspx">Profile</a></li>
-                        <li id="login" runat="server"><a href="../Login.aspx">Login</a></li>
+                        <li><a href="../MainPage.aspx"><asp:Localize meta:resourcekey="navbar_home"  runat="server" ID="Localize48" Text="" /></a></li>
+                        <li class="active"><a href="#about"><asp:Localize meta:resourcekey="navbar_about"  runat="server" ID="Localize1" Text="" /></a></li>
+                        <li id="profOpt" runat="server"><a href="../UserProfile.aspx"><asp:Localize meta:resourcekey="navbar_profile"  runat="server" ID="Localize2" Text="" /></a></li>
+                        <li id="login" runat="server"><a href="../Login.aspx"><asp:Localize meta:resourcekey="navbar_login"  runat="server" ID="Localize3" Text="" /></a></li>
                         <li>
-                            <asp:LinkButton ID="logOut" class="" type="submit" runat="server" OnClick="logOut_Click">Log Out</asp:LinkButton>
+                            <asp:LinkButton ID="logOut" class="" type="submit" runat="server" OnClick="logOut_Click"><asp:Localize meta:resourcekey="navbar_logout"  runat="server" ID="Localize4" Text="" /></asp:LinkButton>
                         </li>
                     </ul>
                 </div>
@@ -55,21 +55,10 @@
         <!-- Page Content -->
         <section id="about">
             <div class="container testDescription">
-                <h1>Stroop Effect</h1>
+                <h1><asp:Localize meta:resourcekey="about_title"  runat="server" ID="Localize5" Text="" /></h1>
                 <hr />
                 <p>
-                   In psychology, the Stroop effect is a demonstration of interference in 
-                    the reaction time of a task. When the name of a color 
-                    (e.g., "blue", "green", or "red") is printed in a color that is
-                     not denoted by the name (e.g., the word "red" printed in blue 
-                    ink instead of red ink), naming the color of the word takes longer and is 
-                    more prone to errors than when the color of the ink matches the name of the 
-                    color. The effect is named after John Ridley Stroop, who first published 
-                    the effect in English in 1935. The effect had previously been published 
-                    in Germany in 1929. The original paper has been one of the most 
-                    cited papers in the history of experimental psychology, leading to more than 
-                    701 replications. The effect has been used to create a psychological test 
-                    (Stroop test) that is widely used in clinical practice and investigation.
+                   <asp:Localize meta:resourcekey="about_paragraph"  runat="server" ID="Localize6" Text="" />
                 </p>
         <%--        <div class="panel-group testDescription " id="accordion" role="tablist" aria-multiselectable="true">
              
@@ -147,18 +136,18 @@
         </section>
         <section>
             <div class="specifications container">
-                <h3>Specifications:</h3>
+                <h3><asp:Localize meta:resourcekey="specifications_title"  runat="server" ID="Localize7" Text="" /></h3>
                 <p>
-                    This test will take about 20 minutes to complete. 
+                    <asp:Localize meta:resourcekey="specifications_paragraph1"  runat="server" ID="Localize8" Text="" />
                 </p>
                 <p>
-                    Recommended minimum screen resolution is 1000 x 700. 
+                    <asp:Localize meta:resourcekey="specifications_paragraph2"  runat="server" ID="Localize9" Text="" />
                 </p>
             </div>
                                  
         </section>
         <div class ="container"  style="margin-top: 20px;">
-            <asp:LinkButton ID="runTest" runat="server" class="signup-btn" OnClick="runTest_Click">Run Test</asp:LinkButton>
+            <asp:LinkButton ID="runTest" runat="server" class="signup-btn" OnClick="runTest_Click"><asp:Localize meta:resourcekey="runtest"  runat="server" ID="Localize14" Text="" /></asp:LinkButton>
         </div>
 
             <section>
@@ -167,11 +156,11 @@
 <%--                <asp:LinkButton ID="runTest" runat="server" class="signup-btn" OnClick="runTest_Click">Run Test</asp:LinkButton>--%>
                 <div id="requestToReg" runat="server" visible="true">
                     <p>
-                        <a href="../../Login.aspx">Please Login </a>
+                        <a href="../../Login.aspx"><asp:Localize meta:resourcekey="pleacelogin"  runat="server" ID="Localize10" Text="" /></a>
                     </p>
-                    <p>OR</p>
+                    <p><asp:Localize meta:resourcekey="or"  runat="server" ID="Localize11" Text="" /></p>
                     <p>
-                        <a href="../../Login.aspx">Register</a>
+                        <a href="../../Login.aspx"><asp:Localize meta:resourcekey="register"  runat="server" ID="Localize12" Text="" /></a>
                     </p>
                 </div>
             </div>
@@ -182,7 +171,7 @@
         <section id="follow-us">
             <div class="container">
                 <div class="text-center height-contact-element">
-                    <h3>Follow Us</h3>
+                    <h3><asp:Localize meta:resourcekey="follow"  runat="server" ID="Localize13" Text="" /></h3>
                          <p>+1(719)888 9121</p> 
                 </div>
                 <img class="img-responsive displayed" src="../images/line-separator.png" alt="short" />

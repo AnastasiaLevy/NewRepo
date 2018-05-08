@@ -1,11 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ADHD_Result.aspx.cs" Inherits="TestSite.Results.ADHD_Result" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ADHD_Result.aspx.cs" Inherits="TestSite.Results.ADHD_Result" 
+    culture="auto" uiculture="auto" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Coolidge Tests  |  Online Psychological Assessments</title>
+    <title><asp:Localize meta:resourcekey="pagetitle"  runat="server" ID="Localize48" Text="" /></title>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
     <script type="text/javascript" src="../web/js/jquery.dataTables.min.js"></script>
@@ -28,7 +29,7 @@
      <div class="wrapper">
             <div class="headcontainer">
                 <div class="container_12">
-                    <div class="grid_3 ">CPNI test</div>
+                    <div class="grid_3 "><asp:Localize meta:resourcekey="wrapper_title"  runat="server" ID="Localize1" Text="" /></div>
                 </div>
             </div>
 

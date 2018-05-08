@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SyllogWrapper.aspx.cs" Inherits="TestSite.Tests.Syllog" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SyllogWrapper.aspx.cs" Inherits="TestSite.Tests.Syllog" 
+    culture="auto" uiculture="auto" %>
 
 
 <!DOCTYPE html>
@@ -40,12 +41,12 @@
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right custom-menu">
-                        <li><a href="../MainPage.aspx">Home</a></li>
-                        <li class="active"><a href="#about">About</a></li>
-                        <li id="profOpt" runat="server"><a href="../UserProfile.aspx">Profile</a></li>
-                        <li id="login" runat="server"><a href="../Login.aspx">Login</a></li>
+                        <li><a href="../MainPage.aspx"><asp:Localize meta:resourcekey="navbar_home"  runat="server" ID="Localize48" Text="" /></a></li>
+                        <li class="active"><a href="#about"><asp:Localize meta:resourcekey="navbar_about"  runat="server" ID="Localize1" Text="" /></a></li>
+                        <li id="profOpt" runat="server"><a href="../UserProfile.aspx"><asp:Localize meta:resourcekey="navbar_profile"  runat="server" ID="Localize2" Text="" /></a></li>
+                        <li id="login" runat="server"><a href="../Login.aspx"><asp:Localize meta:resourcekey="navbar_login"  runat="server" ID="Localize3" Text="" /></a></li>
                         <li>
-                            <asp:LinkButton ID="logOut" class="" type="submit" runat="server" OnClick="logOut_Click">Log Out</asp:LinkButton>
+                            <asp:LinkButton ID="logOut" class="" type="submit" runat="server" OnClick="logOut_Click"><asp:Localize meta:resourcekey="navbar_logout"  runat="server" ID="Localize4" Text="" /></asp:LinkButton>
                         </li>
                     </ul>
                 </div>
@@ -58,79 +59,74 @@
         <!-- Page Content -->
         <section id="about">
             <div class="container testDescription">
-                <h1>Syllogisms</h1>
+                <h1><asp:Localize meta:resourcekey="about_title"  runat="server" ID="Localize5" Text="" /></h1>
                 <hr />
                 <p>
-                    Practice syllogisms for psychometric aptitude tests. In general, these tests are also known as deductive reasoning tests and are used in psychometric assessments to determine your logical reasoning ability.
+                    <asp:Localize meta:resourcekey="about_paragraph"  runat="server" ID="Localize6" Text="" />
                 </p>
                 <div class="panel-group testDescription " id="accordion" role="tablist" aria-multiselectable="true">
                     <div class="col-md-6 visible">
                         <p>
                             <button data-parent="#accordion" class="btn btn-primary btn-lg btn-block" type="button"
-                                data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-                                Research
+                                data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                                <asp:Localize meta:resourcekey="accordion_button1"  runat="server" ID="Localize7" Text="" />
                             </button>
                         </p>
                     </div>
                     <div class="col-md-6 visible">
                         <p>
                             <button data-parent="#accordion" class="btn btn-primary btn-lg btn-block" type="button"
-                                data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
-                                About
-                            </button>
-                        </p>
-                    </div>
-                    <div class="col-md-6 visible">
-                        <p>
-                            <button data-parent="#accordion" class="btn btn-primary btn-lg btn-block" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                                Measure
+                                data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                <asp:Localize meta:resourcekey="accordion_button2"  runat="server" ID="Localize8" Text="" />
                             </button>
                         </p>
                     </div>
                     <div class="col-md-6 visible">
                         <p>
                             <button data-parent="#accordion" class="btn btn-primary btn-lg btn-block" type="button" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                                Details
+                                <asp:Localize meta:resourcekey="accordion_button3"  runat="server" ID="Localize9" Text="" />
+                            </button>
+                        </p>
+                    </div>
+                    <div class="col-md-6 visible">
+                        <p>
+                            <button data-parent="#accordion" class="btn btn-primary btn-lg btn-block" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                <asp:Localize meta:resourcekey="accordion_button4"  runat="server" ID="Localize10" Text="" />
                             </button>
                         </p>
                     </div>
 
                     <div class="panel">
                         <div id="collapse1" class=" collapse col-md-12">
-                            <h3>About:</h3>
-                            There are two main hypotheses for this weak correlation between the n-back task and other 
-                    working memory assessments. One proposal is that the n-back task assesses different 
-                    "sub-components" of working memory than do other assessments.
+                            <h3><asp:Localize meta:resourcekey="collapse1_title"  runat="server" ID="Localize11" Text="" /></h3>
+                            <p>
+                                <asp:Localize meta:resourcekey="collapse1_paragraph"  runat="server" ID="Localize12" Text="" />
+                            </p>
                         </div>
                     </div>
                     <div class="panel">
 
                         <div id="collapse2" class=" collapse col-md-12">
-                            <h3>Measure:</h3>
-                            A more critical explanation is 
-                    that rather than primarily assessing working memory, performance on the n-back task depends on 
-                    "familiarity- and recognition-based discrimination processes," whereas valid assessments of 
-                    working memory demand "active recall."
+                            <h3><asp:Localize meta:resourcekey="collapse2_title"  runat="server" ID="Localize13" Text="" /></h3>
+                            <p>
+                                <asp:Localize meta:resourcekey="collapse2_paragraph"  runat="server" ID="Localize14" Text="" />
+                            </p>
                         </div>
                     </div>
                     <div class="panel">
                         <div id="collapse3" class="collapse col-md-12">
-                            <h3>Details:</h3>
+                            <h3><asp:Localize meta:resourcekey="collapse3_title"  runat="server" ID="Localize15" Text="" /></h3>
                             <p>
-                                The test consists of two boards with pegs and several beads with different colors. The examiner (usually a clinical psychologist or a neuropsychologist) uses the beads and
-                                 the boards to present the examinee with problem-solving tasks.
+                                <asp:Localize meta:resourcekey="collapse3_paragraph"  runat="server" ID="Localize16" Text="" />
                             </p>
                         </div>
                     </div>
                     <div class="panel">
 
                         <div id="collapse4" class="collapse col-md-12">
-                            <h3>Research:</h3>
+                            <h3><asp:Localize meta:resourcekey="collapse4_title"  runat="server" ID="Localize17" Text="" /></h3>
                             <p>
-                                Whatever the cause of the performance differences 
-                    between the n-back and other assessments of working memory, some researchers stress the need 
-                    for further exploration of the construct validity of the n-back task.
-               
+                                <asp:Localize meta:resourcekey="collapse4_paragraph"  runat="server" ID="Localize18" Text="" />
                             </p>
                         </div>
                     </div>
@@ -139,12 +135,12 @@
         </section>
         <section>
             <div class="specifications container">
-                <h3>Specifications:</h3>
+                <h3><asp:Localize meta:resourcekey="specifications_title"  runat="server" ID="Localize19" Text="" /></h3>
                 <p>
-                    This test will take about 20 minutes to complete. 
+                    <asp:Localize meta:resourcekey="specifications_paragraph1"  runat="server" ID="Localize20" Text="" />
                 </p>
                 <p>
-                    Recommended minimum screen resolution is 1000 x 700. 
+                    <asp:Localize meta:resourcekey="specifications_paragraph2"  runat="server" ID="Localize21" Text="" />
                 </p>
             </div>
         </section>
@@ -152,14 +148,14 @@
             <div class="container right" style="margin-top: 20px;">
 
 
-                <asp:LinkButton ID="runTest" runat="server" class="signup-btn" OnClick="runTest_Click">Run Test</asp:LinkButton>
+                <asp:LinkButton ID="runTest" runat="server" class="signup-btn" OnClick="runTest_Click"><asp:Localize meta:resourcekey="runtest"  runat="server" ID="Localize22" Text="" /></asp:LinkButton>
                 <div id="requestToReg" runat="server" visible="true">
                     <p>
-                        <a href="../../Login.aspx">Please Login </a>
+                        <a href="../../Login.aspx"><asp:Localize meta:resourcekey="login"  runat="server" ID="Localize23" Text="" /></a>
                     </p>
-                    <p>OR</p>
+                    <p><asp:Localize meta:resourcekey="or"  runat="server" ID="Localize24" Text="" /></p>
                     <p>
-                        <a href="../../Login.aspx">Register</a>
+                        <a href="../../Login.aspx"><asp:Localize meta:resourcekey="register"  runat="server" ID="Localize25" Text="" /></a>
                     </p>
                 </div>
             </div>
@@ -170,51 +166,51 @@
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="circle c1 img-circle"  id="singlePr" runat="server">
-                                    <h4 class="blue">Single Test</h4>
+                                    <h4 class="blue"><asp:Localize meta:resourcekey="price_single_title"  runat="server" ID="Localize26" Text="" /></h4>
                                     <span class="icon blue"><i class="fa fa-usd"></i></span>
                                     <span class="price-large blue">4</span>
                                     <span class="price-small">.00</span>
-                                    <p>One Time Run</p>
-                                    <asp:Button ID="single" class="btn btn-info" runat="server" OnClick="single_Click1" Text="Buy Now" />
+                                    <p><asp:Localize meta:resourcekey="price_single_paragraph"  runat="server" ID="Localize27" Text="" /></p>
+                                    <asp:Button ID="single" class="btn btn-info" runat="server" OnClick="single_Click1" Text="Buy Now" meta:resourcekey="price_single_buy"/>
                                 </div>
                             </div>
                             <!-- .Col-md-3 ends here -->
 
                             <div class="col-md-3">
                                 <div class="circle c2 img-circle">
-                                    <h4 class="yellow">Set of 10</h4>
+                                    <h4 class="yellow"><asp:Localize meta:resourcekey="price_ten_title"  runat="server" ID="Localize28" Text="" /></h4>
                                     <span class="icon yellow"><i class="fa fa-usd"></i></span>
                                     <span class="price-large yellow">30</span>
                                     <span class="price-small">.00</span>
-                                    <p>Small Project</p>
-                                    <asp:Button ID="ten" class="btn btn-warning" runat="server" OnClick="ten_Click" Text="Buy Now" />
+                                    <p><asp:Localize meta:resourcekey="price_ten_paragraph"  runat="server" ID="Localize29" Text="" /></p>
+                                    <asp:Button ID="ten" class="btn btn-warning" runat="server" OnClick="ten_Click" Text="Buy Now" meta:resourcekey="price_uten_buy"/>
                                 </div>
                             </div>
                             <!-- .Col-md-3 ends here -->
 
                             <div class="col-md-3">
                                 <div class="circle c3 img-circle">
-                                    <h4 class="green">Set of 100</h4>
+                                    <h4 class="green"><asp:Localize meta:resourcekey="price_hundred_title"  runat="server" ID="Localize30" Text="" /></h4>
                                     <span class="icon green"><i class="fa fa-usd "></i></span>
                                     <span class="price-large green">200</span>
                                     <span class="price-small">.00</span>
-                                    <p>Medium Size Project</p>
-                                    <asp:Button ID="hundred" class="btn btn-success" runat="server" OnClick="hundred_Click" Text="Buy Now" />
+                                    <p><asp:Localize meta:resourcekey="price_hundred_paragraph"  runat="server" ID="Localize31" Text="" /></p>
+                                    <asp:Button ID="hundred" class="btn btn-success" runat="server" OnClick="hundred_Click" Text="Buy Now" meta:resourcekey="price_ten_buy"/>
                                 </div>
                             </div>
                             <!-- .Col-md-3 ends here -->
 
                             <div class="col-md-3">
                                 <div class="circle c4 img-circle">
-                                    <h4 class="red">Set of 500</h4>
+                                    <h4 class="red"><asp:Localize meta:resourcekey="price_unlim_title"  runat="server" ID="Localize32" Text="" /></h4>
                                     <span class="icon red"><i class="fa fa-usd "></i></span>
                                     <span class="price-large red">300</span>
                                     <span class="price-small">.00</span>
                                     <p>
-                                        Large of Participants
-                                <p>
+                                        <asp:Localize meta:resourcekey="price_unlim_paragraph"  runat="server" ID="Localize33" Text="" />
+                                    </p>
 
-                                    <asp:Button ID="unlim" class="btn btn-danger" runat="server" OnClick="unlim_Click" Text="Buy Now" />
+                                    <asp:Button ID="unlim" class="btn btn-danger" runat="server" OnClick="unlim_Click" Text="Buy Now" meta:resourcekey="price_unlim_buy"/>
                                 </div>
                             </div>
                             <!-- .Col-md-3 ends here -->
@@ -230,7 +226,7 @@
         <section id="follow-us">
             <div class="container">
                 <div class="text-center height-contact-element">
-                    <h3>Follow Us</h3>
+                    <h3><asp:Localize meta:resourcekey="follow"  runat="server" ID="Localize34" Text="" /></h3>
                          <p>+1(719)888 9121</p> 
                 </div>
                 <img class="img-responsive displayed" src="../images/line-separator.png" alt="short" />

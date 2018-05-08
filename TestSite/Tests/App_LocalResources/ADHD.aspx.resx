@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Content3.Text" xml:space="preserve">
+    <value>COOLIDGE PERSONALITY AND NEUROPSYCHOLOGICAL INVENTORY FOR CHILDREN (CPNI)</value>
+  </data>
+  <data name="Content4.Text" xml:space="preserve">
+    <value>The CPNI is designed to assess psychopathology and neuropsychological dysfunction in children and adolescents ages 5 to 17 years old. The CPNI is a 200-item, parent-as-respondent inventory that assesses over 35 clinical and neuropsychological disorders, and it is aligned with the diagnoses in DSM-5, including 10 childhood personality disorders, conduct disorder, ADHD, oppositional defiant disorder, separation anxiety disorder, depression, maturational delay, autism, gender dysphoria, and neurocognitive dysfunction.The CPNI norms are based on 780 children and adolescents (30 boys and 30 girls at each age level from 5 to 17 years old).</value>
+  </data>
+  <data name="Content6_paragraph1.Text" xml:space="preserve">
+    <value>9 childhood personality disorders (and Conduct Disorder) from criteria in DSM-5.</value>
+  </data>
+  <data name="Content6_paragraph2.Text" xml:space="preserve">
+    <value>Major Clinical Syndromes including Major Depressive Disorder, Generalized Anxiety Disorder, Attention-Deficit Hyperactivity Disorder, Oppositional Defiant Disorder, Separation Anxiety Disorder, Gender Dysphoria, Autism, Anorexia, Bulimia, and others.</value>
+  </data>
+  <data name="Content6_paragraph3.Text" xml:space="preserve">
+    <value>A General Neuropsychological Deficits Scale with 8 subscales assessing Learning Difficulties, Memory Problems, and others</value>
+  </data>
+  <data name="Content6_paragraph4.Text" xml:space="preserve">
+    <value>Executive Dysfunctions of the Frontal Lobe scale (with 3 subscales).</value>
+  </data>
+  <data name="Content6_paragraph5.Text" xml:space="preserve">
+    <value>11 Clinical Scales assessing psychotic thinking, aggression, emotional coldness, sleep disturbances, social anxiety, self-esteem, paranoia, apathy, hostility.</value>
+  </data>
+  <data name="Content6_paragraph6.Text" xml:space="preserve">
+    <value>A Validity Scale which assesses excessive denial and malingering.</value>
+  </data>
+  <data name="Content8_paragraph1.Text" xml:space="preserve">
+    <value>Coolidge, F. L., DenBoer, J. W., &amp; Segal, D. L. (2004). Personality and neuropsychological correlates of bullying behavior: An empirical investigation. Personality and Individual Differences, 36, 1559-1569. [click &lt;a target="_blank" href="/content/CPNI/PAID Bullying 2004.pdf"&gt;here&lt;/a&gt; for PDF copy]</value>
+  </data>
+  <data name="Content8_paragraph2.Text" xml:space="preserve">
+    <value>Coolidge, F. L., Thede, L. L. &amp; Young, S. E. (2002). The heritability of gender identity disorder in a child and adolescent twin sample. Behavior Genetics, 32, 251-257. [click &lt;a target="_blank" href="/content/CPNI/Coolidge et al 2002-Heritability of gender identity disorder.pdf"&gt;here&lt;/a&gt; for PDF copy]</value>
+  </data>
+  <data name="Content8_paragraph3.Text" xml:space="preserve">
+    <value>Coolidge, F. L., Thede, L. L., Stewart, S. E., &amp; Segal, D. L. (2002). The Coolidge Personality and Neuropsychological Inventory for Children (CPNI): Preliminary psychometric characteristics. Behavior Modification, 26, 550-566. [click &lt;a target="_blank" href="/content/CPNI/CPNI Beh Mod 2002.pdf"&gt;here&lt;/a&gt; for PDF copy]</value>
+  </data>
+  <data name="Content9_linkButton.Text" xml:space="preserve">
+    <value>Sample report</value>
+  </data>
+  <data name="price_hundred_btn.Text" xml:space="preserve">
+    <value>Buy Now</value>
+  </data>
+  <data name="price_hundred_paragraph.Text" xml:space="preserve">
+    <value>Medium Size Project</value>
+  </data>
+  <data name="price_hundred_title.Text" xml:space="preserve">
+    <value>Set of 100</value>
+  </data>
+  <data name="price_single_btn.Text" xml:space="preserve">
+    <value>Buy Now</value>
+  </data>
+  <data name="price_single_paragraph.Text" xml:space="preserve">
+    <value>One Time Run</value>
+  </data>
+  <data name="price_single_title.Text" xml:space="preserve">
+    <value>Single Test</value>
+  </data>
+  <data name="price_ten_btn.Text" xml:space="preserve">
+    <value>Buy Now</value>
+  </data>
+  <data name="price_ten_paragraph.Text" xml:space="preserve">
+    <value>Small Project</value>
+  </data>
+  <data name="price_ten_title.Text" xml:space="preserve">
+    <value>Set of 10</value>
+  </data>
+  <data name="price_unlim_btn.Text" xml:space="preserve">
+    <value>Buy Now</value>
+  </data>
+  <data name="price_unlim_paragraph.Text" xml:space="preserve">
+    <value>Any Number of Participants</value>
+  </data>
+  <data name="price_unlim_title.Text" xml:space="preserve">
+    <value>Unlimited Use</value>
+  </data>
+</root>

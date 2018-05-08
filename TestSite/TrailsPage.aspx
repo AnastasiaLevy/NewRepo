@@ -1,11 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TrailsPage.aspx.cs" Inherits="TestSite.TrailsPage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TrailsPage.aspx.cs" Inherits="TestSite.TrailsPage" 
+    culture="auto" uiculture="auto" %>
 
 <html>
 <head>
     <meta name="google-site-verification" content="GMj8owmZtkuKU0Fa_4Zg82VbKsQPO8VkZD_pHsRghA4" />
     <link rel="shortcut icon" href="images/favicon.ico" />
     <link href="cogTest.css" rel="stylesheet" />
-    <title>TrailsTest</title>
+    <title><asp:Localize meta:resourcekey="pagetitle"  runat="server" ID="Localize48" Text="" /></title>
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.1/raphael.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.1/raphael.min.js"></script>

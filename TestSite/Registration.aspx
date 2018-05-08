@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="TestSite.Registration" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="TestSite.Registration" 
+    culture="auto" uiculture="auto" %>
 
 <!DOCTYPE html>
 
@@ -44,12 +45,12 @@
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right custom-menu">
-                        <li><a href="MainPage.aspx">Home</a></li>
+                        <li><a href="MainPage.aspx"><asp:Localize meta:resourcekey="navbar_home"  runat="server" ID="Localize48" Text="" /></a></li>
 
-                        <li class="active"><a id="hgoBack" runat="server" href="">Back to Profile
+                        <li class="active"><a id="hgoBack" runat="server" href=""><asp:Localize meta:resourcekey="navbar_goback"  runat="server" ID="Localize1" Text="" />
                         </a></li>
                         <li>
-                            <asp:Button ID="saveTop" runat="server" class="signup-btn" Text="Save" OnClick="submit_Click" />
+                            <asp:Button ID="saveTop" runat="server" class="signup-btn" Text="Save" OnClick="submit_Click" meta:resourcekey="navbar_save"/>
                         </li>
 
                     </ul>
@@ -65,53 +66,42 @@
         <section id="formInstructions">
         </section>
         <div class="alert alert-success" id="fbGood" runat="server">
-            Your profile is saved.
+            <asp:Localize meta:resourcekey="formInstructions_profilesaved"  runat="server" ID="Localize2" Text="" />
         </div>
         <div class="alert alert-danger" id ="fbBad" runat="server">
-            There was an error saving your profile. 
+            <asp:Localize meta:resourcekey="formInstructions_errorsaved"  runat="server" ID="Localize3" Text="" />
         </div>
         <section id="regForm">
             <div class="container" id="center">
                 <div class="box">
-                    <h1>Profile Form</h1>
+                    <h1><asp:Localize meta:resourcekey="regForm_title1"  runat="server" ID="Localize4" Text="" /></h1>
                     <hr />
-                    <p>Please fill out the form to ensure the most accurate scoring results for the test.</p>
-                    <p>Required fields are marked with *</p>
+                    <p><asp:Localize meta:resourcekey="regForm_paragraph1"  runat="server" ID="Localize5" Text="" /></p>
+                    <p><asp:Localize meta:resourcekey="regForm_paragraph2"  runat="server" ID="Localize6" Text="" /></p>
                 </div>
 
                 <div class="box">
-                    <h3>Disclaimer</h3>
+                    <h3><asp:Localize meta:resourcekey="regForm_title2"  runat="server" ID="Localize7" Text="" /></h3>
                     <hr />
                     <p>
-                        To utilize the assessments on this site you need to read and agree to the 
-                     conditions for taking any of the assessments provided by CogQuiz.com. 
-                     The tests on this site are considered and provided solely as experimental
-                      assessments. They are not clinically or medically diagnostic or for use
-                      in treating or preventing clinical of medical conditions. If you have 
-                     questions or concerns about the results or our reporting of your results 
-                     on any assessment taken on this site, you may want to print your results and 
-                     discuss them with a licensed medical of psychological professional. CogQuiz.com,
-                      CogQuiz, LLC, or the owners of this company and/or website are not responsible 
-                     for any errors or misinterpretation of the results by users of this website and
-                      assessments. By checking accept below you are acknowledging that you have read 
-                     and understood the conditions for taking any assessment provided on this website.
+                        <asp:Localize meta:resourcekey="regForm_paragraph3"  runat="server" ID="Localize8" Text="" />
                     </p>
                     <asp:CheckBox ID="cbAgree" runat="server" />
-                    I Have Read and Understood
+                    <asp:Localize meta:resourcekey="regForm_checkBox_agree"  runat="server" ID="Localize9" Text="" />
                     <p>
                         <asp:Label ID="error" CssClass="red" runat="server" Text=""></asp:Label>
                     </p>
                 </div>
                 <div class="box">
                     <div id="name" class="col-xs-6 col-md-6 nopadding">
-                        <asp:Label class="labelForm" ID="lbFistName" runat="server" Text="*First Name:"></asp:Label>
-                        <input type="text" id="txtFirstName" value="" class="form-control input-lg" runat="server" placeholder="First Name" required />
-                        <asp:RequiredFieldValidator class="red" ID="firstNameValid" runat="server" ErrorMessage="Please enter your name" ControlToValidate="txtFirstName"></asp:RequiredFieldValidator>
+                        <asp:Label class="labelForm" ID="lbFistName" runat="server" Text="" meta:resourcekey="regForm_lbFistName"></asp:Label>
+                        <input type="text" id="txtFirstName" value="" class="form-control input-lg" runat="server" placeholder="" meta:resourcekey="regForm_txtFirstName" required />
+                        <asp:RequiredFieldValidator class="red" ID="firstNameValid" runat="server" ErrorMessage="" ControlToValidate="txtFirstName" meta:resourcekey="regForm_firstNameValid"></asp:RequiredFieldValidator>
                     </div>
                     <div class="col-xs-6 col-md-6">
-                        <asp:Label class="labelForm" ID="lbLastName" runat="server" Text="*Last Name:"></asp:Label>
-                        <input type="text" id="txtLastName" value="" class="form-control input-lg" runat="server" placeholder="Last Name" required />
-                        <asp:RequiredFieldValidator class="red" ID="lastNameValid" runat="server" ErrorMessage="Please enter your last name"
+                        <asp:Label class="labelForm" ID="lbLastName" runat="server" Text="" meta:resourcekey="regForm_lbLastName"></asp:Label>
+                        <input type="text" id="txtLastName" value="" class="form-control input-lg" runat="server" placeholder="" meta:resourcekey="regForm_txtLastName" required />
+                        <asp:RequiredFieldValidator class="red" ID="lastNameValid" runat="server" ErrorMessage="" meta:resourcekey="regForm_lastNameValid"
                             ControlToValidate="txtLastName"></asp:RequiredFieldValidator>
                     </div>
 
@@ -119,13 +109,13 @@
                     <hr>
 
                     <div class="col-xs-6 col-md-6  nopadding">
-                        <asp:Label ID="lbBday" class="labelForm" runat="server" Text="*Birth Date:" required="true"></asp:Label>
-                        <asp:TextBox ID="txtBDay" class="form-control input-lg short" runat="server" placeholder="mm/dd/yy"></asp:TextBox>
-                        <asp:RequiredFieldValidator class="red" ID="RequiredFieldValidator1" runat="server" ErrorMessage="Please enter your birthday"
+                        <asp:Label ID="lbBday" class="labelForm" runat="server" Text="" required="true" meta:resourcekey="regForm_lastNameValid"></asp:Label>
+                        <asp:TextBox ID="txtBDay" class="form-control input-lg short" runat="server" placeholder="mm/dd/yy" meta:resourcekey="regForm_txtBDay"></asp:TextBox>
+                        <asp:RequiredFieldValidator class="red" ID="RequiredFieldValidator1" runat="server" ErrorMessage="Please enter your birthday" meta:resourcekey="regForm_RequiredFieldValidator1"
                             ControlToValidate="txtBDay"></asp:RequiredFieldValidator>
                     </div>
                     <div id="education" class="col-xs-6 col-md-6  nopadding">
-                        <asp:Label ID="lbEducation" runat="server" class="labelForm" Text="Education:"></asp:Label>
+                        <asp:Label ID="lbEducation" runat="server" class="labelForm" Text="Education:" meta:resourcekey="regForm_lbEducation"></asp:Label>
                         <asp:DropDownList class="form-control input-lg" ID="ddlEducation" runat="server" AppendDataBoundItems="true">
                             <asp:ListItem Text="<Select Level>" Value="0" />
                         </asp:DropDownList>
@@ -135,48 +125,48 @@
                 </div>
                 <div class="box">
                     <div id="language">
-                        <asp:Label ID="lblLang" runat="server" class="labelForm nopadding" Text="Is English your first language?"></asp:Label>
+                        <asp:Label ID="lblLang" runat="server" class="labelForm nopadding" Text="Is English your first language?" meta:resourcekey="regForm_lblLang"></asp:Label>
                         </br>
                            
-                        <asp:CheckBox ID="cbEnglYes" runat="server" class="" Text="Yes" />
-                        <asp:CheckBox ID="cbEnglNo" runat="server" class="" Text="No" />
+                        <asp:CheckBox ID="cbEnglYes" runat="server" class="" Text="Yes" meta:resourcekey="regForm_cbEnglYes"/>
+                        <asp:CheckBox ID="cbEnglNo" runat="server" class="" Text="No" meta:resourcekey="regForm_cbEnglNo"/>
                         </br>
                            
-                        <asp:Label ID="lblFstLang" runat="server" class="labelForm nopadding" Text="Pleas Enter Your First Language:"></asp:Label>
-                        <asp:TextBox ID="firstLang" class="form-control input-lg" runat="server" placeholder="first language"></asp:TextBox></br>
+                        <asp:Label ID="lblFstLang" runat="server" class="labelForm nopadding" Text="Pleas Enter Your First Language:" meta:resourcekey="regForm_lblFstLang"></asp:Label>
+                        <asp:TextBox ID="firstLang" class="form-control input-lg" runat="server" placeholder="first language" meta:resourcekey="regForm_firstLang"></asp:TextBox></br>
                        
                     </div>
 
                     <hr>
 
                     <div id="gender" class="">
-                        <asp:Label ID="lbGender" class="nopadding labelForm" runat="server" Text="Gender"></asp:Label>
+                        <asp:Label ID="lbGender" class="nopadding labelForm" runat="server" Text="Gender" meta:resourcekey="regForm_lbGender"></asp:Label>
                         </br>
                                
-                        <asp:CheckBox ID="cbMale" runat="server" Text="M" />
-                        <asp:CheckBox ID="cbFmale" runat="server" Text="F" />
+                        <asp:CheckBox ID="cbMale" runat="server" Text="M" meta:resourcekey="regForm_cbMale"/>
+                        <asp:CheckBox ID="cbFmale" runat="server" Text="F" meta:resourcekey="regForm_cbFmale"/>
                     </div>
                     <hr>
                     <div id="medications" class="">
-                        <asp:Label ID="lbMeds" class=" labelForm" runat="server" Text="Are you currently taking any medications?"></asp:Label>
+                        <asp:Label ID="lbMeds" class=" labelForm" runat="server" Text="Are you currently taking any medications?" meta:resourcekey="regForm_lbMeds"></asp:Label>
                         </br>
                            
-                        <asp:CheckBox ID="cbMedicationsY" runat="server" class="" Text="Yes" />
-                        <asp:CheckBox ID="cbMedicationsN" runat="server" class="" Text="No" />
-                        <asp:TextBox ID="txtKindMeds" class="form-control input-lg" runat="server" placeholder="medications"></asp:TextBox></br>
+                        <asp:CheckBox ID="cbMedicationsY" runat="server" class="" Text="Yes" meta:resourcekey="regForm_cbMedicationsY"/>
+                        <asp:CheckBox ID="cbMedicationsN" runat="server" class="" Text="No" meta:resourcekey="regForm_cbMedicationsN"/>
+                        <asp:TextBox ID="txtKindMeds" class="form-control input-lg" runat="server" placeholder="medications" meta:resourcekey="regForm_txtKindMeds"></asp:TextBox></br>
 
                        
                     </div>
                     <hr>
                     <div id="headInj" class="">
-                        <asp:Label class="nopadding labelForm" ID="lbHeadInj" runat="server" Text="Have you ever had a head injury?"></asp:Label></br>
+                        <asp:Label class="nopadding labelForm" ID="lbHeadInj" runat="server" Text="Have you ever had a head injury?" meta:resourcekey="regForm_lbHeadInjg"></asp:Label></br>
                            
-                        <asp:CheckBox ID="cbHeadInjY" runat="server" class="" Text="Yes" />
-                        <asp:CheckBox ID="cbHeadInjN" runat="server" class="" Text="No" /></br>
+                        <asp:CheckBox ID="cbHeadInjY" runat="server" class="" Text="Yes" meta:resourcekey="regForm_cbHeadInjY"/>
+                        <asp:CheckBox ID="cbHeadInjN" runat="server" class="" Text="No" meta:resourcekey="regForm_cbHeadInjN"/></br>
                        
                            
 
-                        <asp:Label class="labelForm" ID="lbHeadInjNum" runat="server" Text="How Many?"></asp:Label>
+                        <asp:Label class="labelForm" ID="lbHeadInjNum" runat="server" Text="How Many?" meta:resourcekey="regForm_lbHeadInjNum"></asp:Label>
                         <asp:DropDownList ID="ddlHeadInjNum" class="form-control input-lg short" runat="server" AppendDataBoundItems="true">
                             <asp:ListItem Text="<Select>" Value="0" />
                         </asp:DropDownList>
@@ -187,7 +177,7 @@
                 <div class="box">
 
                     <div id="income">
-                        <asp:Label ID="lbIncome" runat="server" class="labelForm nopadding" Text="Level of Income:"></asp:Label></br>
+                        <asp:Label ID="lbIncome" runat="server" class="labelForm nopadding" Text="Level of Income:" meta:resourcekey="regForm_lbIncome"></asp:Label></br>
                            
                         <asp:DropDownList ID="ddlIncome" class="form-control input-lg short" runat="server" AppendDataBoundItems="true">
                             <asp:ListItem Text="<Select Level>" Value="0" />
@@ -196,14 +186,14 @@
 
                     <hr>
                     <div id="leadingHand">
-                        <asp:Label ID="lbHand" runat="server" class="labelForm nopadding" Text="Dominant Hand"></asp:Label>
+                        <asp:Label ID="lbHand" runat="server" class="labelForm nopadding" Text="Dominant Hand" meta:resourcekey="regForm_lbHand"></asp:Label>
                         <asp:DropDownList class="form-control input-lg short" ID="ddlHand" runat="server" AppendDataBoundItems="true">
                             <asp:ListItem Text="<Select Level>" Value="0" />
                         </asp:DropDownList>
                     </div>
                     <hr />
                     <div id="ethnicity">
-                        <asp:Label ID="lblEthnicity" runat="server" class="labelForm nopadding" Text="Ethnicity"></asp:Label>
+                        <asp:Label ID="lblEthnicity" runat="server" class="labelForm nopadding" Text="Ethnicity" meta:resourcekey="regForm_lblEthnicity"></asp:Label>
                         <asp:DropDownList class="form-control input-lg short" ID="ddlEthnicity" runat="server" AppendDataBoundItems="true">
                             <asp:ListItem Text="<Select Level>" Value="0" />
                         </asp:DropDownList>
@@ -212,105 +202,104 @@
                 <div id="scaleRead" class="box">
 
                     <label class="labelForm nopadding">
-                        How many hours a week do you engage in stimulating activity such as follows: 
-                                         reading, writing, playing cards, intellectual conversations, computer use:</label>
+                        <asp:Localize meta:resourcekey="regForm_scaleRead_label1"  runat="server" ID="Localize10" Text="" /></label>
                     <ul id="brainActivity" class='likert'>
                         <li>
                             <input id="act1" runat="server" type="radio" name="likert">
-                            <label id="lact1" runat="server">0-5</label>
+                            <label id="lact1" runat="server"><asp:Localize meta:resourcekey="regForm_scaleRead_brainActivity_label1"  runat="server" ID="Localize11" Text="" /></label>
                         </li>
                         <li>
                             <input id="act2" runat="server" type="radio" name="likert">
-                            <label id="lact2" runat="server">6-10</label>
+                            <label id="lact2" runat="server"><asp:Localize meta:resourcekey="regForm_scaleRead_brainActivity_label2"  runat="server" ID="Localize12" Text="" /></label>
                         </li>
                         <li>
                             <input id="act3" runat="server" type="radio" name="likert">
-                            <label id="lact3" runat="server">11-15</label>
+                            <label id="lact3" runat="server"><asp:Localize meta:resourcekey="regForm_scaleRead_brainActivity_label3"  runat="server" ID="Localize13" Text="" /></label>
                         </li>
                         <li>
                             <input id="act4" runat="server" type="radio" name="likert">
-                            <label id="lact4" runat="server">16-20</label>
+                            <label id="lact4" runat="server"><asp:Localize meta:resourcekey="regForm_scaleRead_brainActivity_label4"  runat="server" ID="Localize14" Text="" /></label>
                         </li>
                         <li>
                             <input id="act5" runat="server" type="radio" name="likert">
-                            <label id="lact5" runat="server">more than 20</label>
+                            <label id="lact5" runat="server"><asp:Localize meta:resourcekey="regForm_scaleRead_brainActivity_label5"  runat="server" ID="Localize15" Text="" /></label>
                         </li>
                     </ul>
 
-                    <label class="labelForm nopadding">How many hours a week do you exercise?</label>
+                    <label class="labelForm nopadding"><asp:Localize meta:resourcekey="regForm_scaleRead_label2"  runat="server" ID="Localize16" Text="" /></label>
                     <ul id="exercise" class='likert'>
                         <li>
                             <input id="exe1" runat="server" type="radio" name="likert2" value="0-1">
-                            <label id="lexe1" runat="server">0-1</label>
+                            <label id="lexe1" runat="server"><asp:Localize meta:resourcekey="regForm_scaleRead_exercise_label1"  runat="server" ID="Localize17" Text="" /></label>
                         </li>
                         <li>
                             <input id="exe2" runat="server" type="radio" name="likert2" value="2-3">
-                            <label id="lexe2" runat="server">2-3</label>
+                            <label id="lexe2" runat="server"><asp:Localize meta:resourcekey="regForm_scaleRead_exercise_label2"  runat="server" ID="Localize18" Text="" /></label>
                         </li>
                         <li>
                             <input id="exe3" runat="server" type="radio" name="likert2" value="4-5">
-                            <label id="lexe3" runat="server">4-5</label>
+                            <label id="lexe3" runat="server"><asp:Localize meta:resourcekey="regForm_scaleRead_exercise_label3"  runat="server" ID="Localize19" Text="" /></label>
                         </li>
 
                         <li>
                             <input id="exe4" runat="server" type="radio" name="likert2" value="6-7">
-                            <label id="lexe4" runat="server">6-7</label>
+                            <label id="lexe4" runat="server"><asp:Localize meta:resourcekey="regForm_scaleRead_exercise_label4"  runat="server" ID="Localize20" Text="" /></label>
                         </li>
                         <li>
                             <input id="exe5" runat="server" type="radio" name="likert2" value="8-9">
-                            <label id="lexe5" runat="server">8-9</label>
+                            <label id="lexe5" runat="server"><asp:Localize meta:resourcekey="regForm_scaleRead_exercise_label5"  runat="server" ID="Localize21" Text="" /></label>
                         </li>
 
                     </ul>
-                    <label class="labelForm nopadding">How would you rate your self-esteem:</label>
+                    <label class="labelForm nopadding"><asp:Localize meta:resourcekey="regForm_scaleRead_label3"  runat="server" ID="Localize22" Text="" /></label>
                     <ul id="selfEsteem" class='likert'>
                         <li>
                             <input id="esteem1" runat="server" type="radio" name="likert3" value="">
-                            <label id="lesteem1" runat="server">Low</label>
+                            <label id="lesteem1" runat="server"><asp:Localize meta:resourcekey="regForm_scaleRead_selfEsteem_label1"  runat="server" ID="Localize23" Text="" /></label>
                         </li>
                         <li>
                             <input id="esteem2" runat="server" type="radio" name="likert3" value="">
-                            <label id="lesteem2" runat="server">Below Avarage</label>
+                            <label id="lesteem2" runat="server"><asp:Localize meta:resourcekey="regForm_scaleRead_selfEsteem_label2"  runat="server" ID="Localize24" Text="" /></label>
                         </li>
                         <li>
                             <input id="esteem3" runat="server" type="radio" name="likert3" value="">
-                            <label id="lesteem3" runat="server">Average</label>
+                            <label id="lesteem3" runat="server"><asp:Localize meta:resourcekey="regForm_scaleRead_selfEsteem_label3"  runat="server" ID="Localize25" Text="" /></label>
                         </li>
                         <li>
                             <input id="esteem4" runat="server" type="radio" name="likert3" value="">
-                            <label id="lesteem4" runat="server">Above Average</label>
+                            <label id="lesteem4" runat="server"><asp:Localize meta:resourcekey="regForm_scaleRead_selfEsteem_label4"  runat="server" ID="Localize26" Text="" /></label>
                         </li>
                         <li>
                             <input id="esteem5" runat="server" type="radio" name="likert3" value="">
-                            <label id="lesteem5" runat="server">High</label>
+                            <label id="lesteem5" runat="server"><asp:Localize meta:resourcekey="regForm_scaleRead_selfEsteem_label5"  runat="server" ID="Localize27" Text="" /></label>
                         </li>
                     </ul>
-                    <label class="labelForm nopadding">How would you rate your overall health:</label>
+                    <label class="labelForm nopadding"><asp:Localize meta:resourcekey="regForm_scaleRead_label4"  runat="server" ID="Localize28" Text="" /></label>
                     <ul id="selfHealth" class='likert'>
                         <li>
                             <input id="health1" runat="server" type="radio" name="likert4" value="">
-                            <label id="lhealth1" runat="server">Poor</label>
+                            <label id="lhealth1" runat="server"><asp:Localize meta:resourcekey="regForm_scaleRead_selfHealth_label1"  runat="server" ID="Localize29" Text="" /></label>
                         </li>
                         <li>
                             <input id="health2" runat="server" type="radio" name="likert4" value="">
-                            <label id="lhealth2" runat="server">Below Average</label>
+                            <label id="lhealth2" runat="server"><asp:Localize meta:resourcekey="regForm_scaleRead_selfHealth_label2"  runat="server" ID="Localize30" Text="" /></label>
                         </li>
                         <li>
                             <input id="health3" runat="server" type="radio" name="likert4" value="">
-                            <label id="lhealth3" runat="server">Average</label>
+                            <label id="lhealth3" runat="server"><asp:Localize meta:resourcekey="regForm_scaleRead_selfHealth_label3"  runat="server" ID="Localize31" Text="" /></label>
                         </li>
                         <li>
                             <input id="health4" runat="server" type="radio" name="likert4" value="">
-                            <label id="lhealth4" runat="server">Above Average</label>
+                            <label id="lhealth4" runat="server"><asp:Localize meta:resourcekey="regForm_scaleRead_selfHealth_label4"  runat="server" ID="Localize32" Text="" /></label>
                         </li>
                         <li>
                             <input id="health5" runat="server" type="radio" name="likert4" value="">
-                            <label id="lhealth5" runat="server">Excellent</label>
+                            <label id="lhealth5" runat="server"><asp:Localize meta:resourcekey="regForm_scaleRead_selfHealth_label5"  runat="server" ID="Localize33" Text="" /></label>
                         </li>
                     </ul>
                 </div>
                 <p>
-                    <asp:Button ID="submit" class="signup-btn" runat="server" Text="Save" OnClick="submit_Click" />
+                    <asp:Button ID="submit" class="signup-btn" runat="server" Text="Save" OnClick="submit_Click" meta:resourcekey="regForm_btnsave"/>
                 </p>
 
             </div>
@@ -321,7 +310,7 @@
             <div class="row">
                 <div class="container">
                     <div class="text-center height-contact-element">
-                        <h2>FOLLOW US</h2>
+                        <h2><asp:Localize meta:resourcekey="follow"  runat="server" ID="Localize34" Text="" /></h2>
                     </div>
                     <img class="img-responsive displayed" src="images/line-separator.png" alt="short" />
                     <div class="text-center height-contact-element">

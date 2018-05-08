@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProcessingSpeed.aspx.cs" Inherits="TestSite.blogPosts.ProcessingSpeed" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProcessingSpeed.aspx.cs" Inherits="TestSite.blogPosts.ProcessingSpeed" 
+    culture="auto" uiculture="auto" %>
 
 <!DOCTYPE html>
 
@@ -46,16 +47,16 @@
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right custom-menu">
-                    <li><a href="../MainPage.aspx">Home</a></li>
-                    <li class="active"><a href="#about">Executive Function</a></li>
-                    <li id="profOpt" runat="server"><a href="../UserProfile.aspx">Profile</a></li>
-                    <li id="login" runat="server"><a href="../Login.aspx">Login</a></li>
+                    <li><a href="../MainPage.aspx"><asp:Localize meta:resourcekey="navbar_home"  runat="server" ID="Localize48" Text="" /></a></li>
+                    <li class="active"><a href="#about"><asp:Localize meta:resourcekey="navbar_about"  runat="server" ID="Localize1" Text="" /></a></li>
+                    <li id="profOpt" runat="server"><a href="../UserProfile.aspx"><asp:Localize meta:resourcekey="navbar_profile"  runat="server" ID="Localize2" Text="" /></a></li>
+                    <li id="login" runat="server"><a href="../Login.aspx"><asp:Localize meta:resourcekey="navbar_login"  runat="server" ID="Localize3" Text="" /></a></li>
                     <%-- <li>
                         <button id="login" class="btn button" onclick="document.getElementById('id01').style.display='block'" runat="server">Login</button></li>--%>
 
                     <li>
 
-                        <asp:LinkButton ID="logOut" class="" type="submit" runat="server" OnClick="logOut_Click">Log Out</asp:LinkButton>
+                        <asp:LinkButton ID="logOut" class="" type="submit" runat="server" OnClick="logOut_Click"><asp:Localize meta:resourcekey="navbar_logout"  runat="server" ID="Localize4" Text="" /></asp:LinkButton>
                     </li>
                     <!-- 	<li><a href="blog.html">Blog</a></li>
                         <li><a href="single-post.html">Single</a></li> -->
@@ -72,24 +73,19 @@
 
     <section id="ProcessingSpeed">
         <div class="container MemoryBlock">
-            <h1 class="middle">Processing Speed</h1>
+            <h1 class="middle"><asp:Localize meta:resourcekey="ProcessingSpeed_title1"  runat="server" ID="Localize5" Text="" /></h1>
             <img class="img-responsive displayed" src="../images/line-separator.png" alt="short" />
-            <h3>About:</h3>
+            <h3><asp:Localize meta:resourcekey="ProcessingSpeed_title2"  runat="server" ID="Localize6" Text="" /></h3>
             <p>
-                Speed of processing has been a major explantory varialbe for enhanced cognitive performace during development. 
-                Specifically, there is a exponential increase in the speed of processing from early childhood up through the teenage 
-                years. This speed of processing is associated with enhanced cognitive performance. For example, imagine how the
-                number of words in a recall test might increase if increased speed of processing allowed for more word rehersal.
+                <asp:Localize meta:resourcekey="ProcessingSpeed_paragraph1"  runat="server" ID="Localize7" Text="" />
             </p>
             <h3></h3>
               <p>
-                 Speed of processing increases from early childhood up into the twenties and begins to show a significant decline 
-                by the fifties.
+                 <asp:Localize meta:resourcekey="ProcessingSpeed_paragraph2"  runat="server" ID="Localize8" Text="" />
             </p>
                 <h3></h3>
               <p>
-                Similarly, there are reported medium sized correlations between speed of processing and fluid intelligence.
-                Currently, the first part of the Trails test can be considered to provide an assessment of speed of processing.
+                <asp:Localize meta:resourcekey="ProcessingSpeed_paragraph3"  runat="server" ID="Localize9" Text="" />
             </p>
           
         </div>
@@ -99,7 +95,7 @@
         <div class="container">
             <div class="row">
                 <div class="text-center">
-                    <h2>Processing Speed Tests:</h2>
+                    <h2><asp:Localize meta:resourcekey="availableTests_title"  runat="server" ID="Localize10" Text="" /></h2>
                     <img class="img-responsive displayed" src="../images/line-separator.png" alt="about">
                 </div>
                 <ul class="port2">
@@ -209,7 +205,7 @@
             <div class="blueback">
                 <div class="container">
                     <div class="text-center homeport2">
-                        <h2>Test Categories</h2>
+                        <h2><asp:Localize meta:resourcekey="services_title"  runat="server" ID="Localize11" Text="" /></h2>
                     </div>
                     <div class="row">
                         <div class="col-md-12 homeservices1 blueFont">
@@ -221,10 +217,9 @@
                                             <i class="fa fa-medium fa-stack-1x "></i>
                                         </span></a>
                                     </a>
-                                    <h3><a href="category/Memory.aspx">Memory</a></h3>
+                                    <h3><a href="../category/Memory.aspx"><asp:Localize meta:resourcekey="services_category1title"  runat="server" ID="Localize12" Text="" /></a></h3>
                                     <p>
-                                        Short-term and long term-merm memory tests avaialble.
-                                    Take one of our quizes and find out where you stand in relation to others. Are you capable of remembering germane or salient details, or is there cause for concern?
+                                        <asp:Localize meta:resourcekey="services_category1paragraph"  runat="server" ID="Localize14" Text="" />
                                     </p>
                                 </div>
                             </div>
@@ -237,8 +232,8 @@
                                         </span></a>
 
                                     </a>
-                                    <h3><a href="category/ExecutiveFunction.aspx">Executive function and Planning</a></h3>
-                                    <p>Are you concerned with your Attention span, your ability to switch between tasks effectively or your speed of processing? Executive function tests help you determine if you have alfflictions like ADHD or NNNN</p>
+                                    <h3><a href="../category/ExecutiveFunction.aspx"><asp:Localize meta:resourcekey="services_category2title"  runat="server" ID="Localize13" Text="" /></a></h3>
+                                    <p><asp:Localize meta:resourcekey="services_category2paragraph"  runat="server" ID="Localize15" Text="" /></p>
                                 </div>
                             </div>
                             <%--<div class="col-md-4 portfolio-item">
@@ -294,7 +289,7 @@
         <section id="follow-us">
             <div class="container">
                 <div class="text-center height-contact-element">
-                    <h2>FOLLOW US</h2>
+                    <h2><asp:Localize meta:resourcekey="follow"  runat="server" ID="Localize16" Text="" /></h2>
                 </div>
                 <img class="img-responsive displayed" src="../images/line-separator.png" alt="short" />
                 <div class="text-center height-contact-element">

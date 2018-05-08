@@ -1,7 +1,8 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="MemoryCardsModify.aspx.cs" Inherits="TestSite.Create.MemoryCardsModify" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="MemoryCardsModify.aspx.cs" Inherits="TestSite.Create.MemoryCardsModify" 
+    culture="auto" uiculture="auto" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <title>MemoryCards</title>
+    <title><asp:Localize meta:resourcekey="pagetitle"  runat="server" ID="Localize48" Text="" /></title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.1/raphael.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.1/raphael.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
@@ -29,8 +30,8 @@
         <div class="box box1">
             <div class="col-lg-12">
                 <hr />
-                <h2 class="intro-text text-center">Memory Cards 
-                            <strong>Set Up</strong>
+                <h2 class="intro-text text-center"><asp:Localize meta:resourcekey="box1_title"  runat="server" ID="Localize1" Text="" />
+                            <strong><asp:Localize meta:resourcekey="box1_strong"  runat="server" ID="Localize2" Text="" /></strong>
                 </h2>
                 <hr />
                 <div>
@@ -52,18 +53,18 @@
             <div class="box">
                 <div class="col-lg-12">
                     <hr />
-                    <h2 class="intro-text text-center">Set Up
-                            <strong>Trial Instructions For <span id="headName"></span>:</strong>
+                    <h2 class="intro-text text-center"><asp:Localize meta:resourcekey="testInstructions_title"  runat="server" ID="Localize3" Text="" />
+                            <strong><asp:Localize meta:resourcekey="testInstructions_strong"  runat="server" ID="Localize4" Text="" /><span id="headName"></span>:</strong>
                     </h2>
                     <hr />
                 </div>
                 <div class="col-lg-12 font-larger">
-                    <p class="min"><strong>Enter Trial Name:</strong> </p>
+                    <p class="min"><strong><asp:Localize meta:resourcekey="testInstructions_paragraph1"  runat="server" ID="Localize5" Text="" /></strong> </p>
                     <input type="text" id="testName" class="text-capitalize" style="width:60%" />
                 </div>
 
                 <div class="col-lg-12 font-larger">
-                    <p class="min"><strong>Enter Trial Instructions to display in the beginning of the test:</strong> </p>
+                    <p class="min"><strong><asp:Localize meta:resourcekey="testInstructions_paragraph2"  runat="server" ID="Localize6" Text="" /></strong> </p>
                     <textarea id="testText"  rows="5" style="width:60%" ></textarea>
                 </div>
                 <%--<div class="col-lg-12 font-larger">
@@ -71,18 +72,18 @@
                     <textarea id="feedback" style="width: 100%" rows="5" runat="server"></textarea>
                 </div>--%>
                 <div class="col-lg-12 font-larger" id="matrix">
-                    <p class="min"><strong>Game Matrix:</strong> </p>
+                    <p class="min"><strong><asp:Localize meta:resourcekey="testInstructions_paragraph3"  runat="server" ID="Localize7" Text="" /></strong> </p>
                     <input type="button" id="smallMatrix" class="btn btn-default" style="color:dimgray;width:7em;"  value="4x3" />
                     <input type="button" id="mediumMatrix" class="btn btn-default" style="color:dimgray;width:7em;"  value="6x4"/>
                 </div>
                 <div class="col-lg-12 font-larger">
-                    <p class="min"><strong>Enter Over Time Limit:</strong> </p>
+                    <p class="min"><strong><asp:Localize meta:resourcekey="testInstructions_paragraph4"  runat="server" ID="Localize9" Text="" /></strong> </p>
                     <input id="overTime"  />
                 </div>
 
                 
                 <div class="col-lg-7 font-larger" ">
-                    <p class="min"><strong>Choose images for test:</strong> </p>
+                    <p class="min"><strong><asp:Localize meta:resourcekey="testInstructions_paragraph5"  runat="server" ID="Localize8" Text="" /></strong> </p>
                     <div class="" id="imagesDiv" >
                         <select id="imgSelector" class="btn btn-facebook uppercase selector"  >
                         </select>
@@ -91,7 +92,7 @@
                 </div>
                 
                 <div class="clearfix"></div>
-                <button type="button" class="btn btn-danger" id="buttonSave" value="SaveTrial" style="display:block;margin:0 auto;">Save Trial</button>
+                <button type="button" class="btn btn-danger" id="buttonSave" value="SaveTrial" style="display:block;margin:0 auto;"><asp:Localize meta:resourcekey="testInstructions_buttonSave"  runat="server" ID="Localize10" Text="" /></button>
             </div>
             
         </div>

@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CogQuest.aspx.cs" Inherits="TestSite.Tests.CogQuest" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CogQuest.aspx.cs" Inherits="TestSite.Tests.CogQuest"
+    culture="en-US" uiculture="en" %>
 
 <!DOCTYPE html>
 
@@ -164,12 +165,31 @@
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right custom-menu">
-                        <li><a href="../MainPage.aspx">Home</a></li>
-                        <li class="active"><a href="#about">About</a></li>
-                        <li id="profOpt" runat="server"><a href="../UserProfile.aspx">Profile</a></li>
-                        <li id="login" runat="server"><a href="../Login.aspx">Login</a></li>
+                        <li><a href="../MainPage.aspx"><asp:Localize meta:resourcekey="navbar_home"  runat="server" ID="Localize48" Text="" /></a></li>
+                        <li class="active"><a href="#about"><asp:Localize meta:resourcekey="navbar_about"  runat="server" ID="Localize49" Text="" /></a></li>
+                        <li id="profOpt" runat="server"><a href="../UserProfile.aspx"><asp:Localize meta:resourcekey="navbar_profile"  runat="server" ID="Localize50" Text="" /></a></li>
+                        <li id="profile" runat ="server" class="dropdown"> 
+
+                            <%--<asp:DropDownList ID="LanguageList"
+                                AutoPostBack="True"
+                                OnSelectedIndexChanged="LanguageList_SelectedIndexChanged"
+                                runat="server">
+
+                                <asp:ListItem Selected="True" Value="en"> EN </asp:ListItem>
+                                <asp:ListItem Value="ru"> RU </asp:ListItem>
+
+                            </asp:DropDownList>--%>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">language<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><asp:LinkButton ID="LinkButton2" class="" OnClick="Set_En" runat="server">EN</asp:LinkButton></li>
+                                <li><asp:LinkButton ID="LinkButton3" class="" OnClick="Set_Ru" runat="server">RU</asp:LinkButton></li>
+                            </ul>
+
+
+                        </li>
+                        <li id="login" runat="server"><a href="../Login.aspx"><asp:Localize meta:resourcekey="navbar_login"  runat="server" ID="Localize51" Text="" /></a></li>
                         <li>
-                            <asp:LinkButton ID="logOut" class="" type="submit" OnClick="logOut_Click" runat="server">Log Out</asp:LinkButton>
+                            <asp:LinkButton ID="logOut" class="" type="submit" OnClick="logOut_Click" runat="server"><asp:Localize meta:resourcekey="navbar_logOut"  runat="server" ID="Localize52" Text="" /></asp:LinkButton>
                         </li>
                     </ul>
                 </div>
@@ -178,15 +198,15 @@
 
         <section id="about">
             <div class="container testDescription">
-                <h1>CogQuest Simple Questionnaire</h1>
+                <h1><asp:Localize meta:resourcekey="mainTitle"  runat="server" ID="mainTitle" Text="Welcome!" /></h1>
                 <hr />
-                <p>CogQuest Quesionnaire desktop tool allows to create a series of questions to gather any needed inforamtion from/about participants. It has 7 types of questions, including Date and Dropdown. CogQuest allows storing data in text file for printing or Excel Document for easy export to SPSS.</p>
-                <p>You can create multiple choice questions, Likert scale questions, long open-ended questions, short answer questions, etc. This is ideal for research labs. You can email a demographic questionnaire to a scheduled participant and have it emailed back and thereby avoid loss of valuable laboratory testing time. A patient/client can fill out a questionnaire in the waiting room or mail it in prior to an appointment.</p>
+                <p><asp:Localize meta:resourcekey="mainDescription"  runat="server" ID="Localize1" Text="" /></p>
+                
 
-                <asp:LinkButton ID="LinkButton1" class="btn btn-primary btn-lg btn-xs-block" OnClick="LinkButton1_Click" runat="server">View User Manual</asp:LinkButton>
+                <asp:LinkButton ID="LinkButton1" class="btn btn-primary btn-lg btn-xs-block" OnClick="LinkButton1_Click" runat="server"><asp:Localize meta:resourcekey="btnManual"  runat="server" ID="Localize2" Text="" /></asp:LinkButton>
 
 
-                <asp:LinkButton ID="runTest" runat="server" class="btn btn-primary btn-lg btn-xs-block" OnClick="runTest_Click">Download</asp:LinkButton>
+                <asp:LinkButton ID="runTest" runat="server" class="btn btn-primary btn-lg btn-xs-block" OnClick="runTest_Click"><asp:Localize meta:resourcekey="downloadBtn"  runat="server" ID="Localize3" Text="" /></asp:LinkButton>
 
                 <%--<asp:Label ID="existsMessage" CssClass="errorMessage" runat="server" Text=""></asp:Label>
                 <asp:LinkButton ID="runTest" runat="server" class="signup-btn" OnClick="runTest_Click">Download</asp:LinkButton>--%>
@@ -194,7 +214,7 @@
                 <asp:LinkButton ID="paypalsimulate" runat="server" OnClick="paypalsimulate_Click" class="btn btn-primary btn-lg btn-xs-block btn-green pull-right">Paypal response simulation</asp:LinkButton>
 
                 <div>
-                    <span id="KeyValue" class="text-success" runat="server" style="word-wrap: break-word;"><span>Registration Key:</span> <%# Key %></span>
+                    <span id="KeyValue" class="text-success" runat="server" style="word-wrap: break-word;"><span><asp:Localize meta:resourcekey="key"  runat="server" ID="Localize4" Text="" />:</span> <%# Key %></span>
                     <asp:Label ID="existsMessage" CssClass="errorMessage" runat="server" Text=""></asp:Label>
                 </div>
                 <br />
@@ -202,7 +222,7 @@
 
                 <div class="row">
                     <div class="col-md-12">
-                        <h3>View Examples</h3>
+                        <h3><asp:Localize meta:resourcekey="examplesTitle"  runat="server" ID="Localize47" Text="" /></h3>
                         <%--<hr />
                         <div class="row">
                             <div class="col-md-6" id="left1">
@@ -235,13 +255,13 @@
 
                         <div class="row">
                             <div class="col-md-6" id="left2">
-                                <h4>Make your own questionnaire. As many as you would like</h4>
+                                <h4><asp:Localize meta:resourcekey="img1Title"  runat="server" ID="Localize5" Text="" /></h4>
                                 <ul class="exapmles-list">
-                                    <li><span>Create questionnaire in any language</span></li>
-                                    <li><span>Select from 8 types of questions</span></li>
-                                    <li><span>Update your header color</span></li>
-                                    <li><span>Set fonts</span></li>
-                                    <li><span>Email as an attachment to anybody in the world</span></li>
+                                    <li><span><asp:Localize meta:resourcekey="img1DescrSpan1"  runat="server" ID="Localize6" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="img1DescrSpan2"  runat="server" ID="Localize7" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="img1DescrSpan3"  runat="server" ID="Localize8" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="img1DescrSpan4"  runat="server" ID="Localize9" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="img1DescrSpan5"  runat="server" ID="Localize10" Text="" /></span></li>
                                 </ul>
                             </div>
                             <div class="col-md-6" id="right2">
@@ -254,12 +274,12 @@
                                 <img src="../images/quest3.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-3" class="img-responsive" />
                             </div>
                             <div class="col-md-6" id="right3">
-                                <h4>2. Likert scale question</h4>
+                                <h4><asp:Localize meta:resourcekey="img2Title"  runat="server" ID="Localize11" Text="" /></h4>
                                 <ul class="exapmles-list">
-                                    <li><span>Create scale of any size</span></li>
-                                    <li><span>Set description text</span></li>
-                                    <li><span>Set font size</span></li>
-                                    <li><span>Support multilane description</span></li>
+                                    <li><span><asp:Localize meta:resourcekey="img2DescrSpan1"  runat="server" ID="Localize12" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="img2DescrSpan2"  runat="server" ID="Localize13" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="img2DescrSpan3"  runat="server" ID="Localize14" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="img2DescrSpan4"  runat="server" ID="Localize15" Text="" /></span></li>
                                 </ul>
                             </div>
                         </div>
@@ -276,12 +296,12 @@
                         <hr class="cogquest-hr" />
                         <div class="row">
                             <div class="col-md-6" id="left5">
-                                <h4>3. Date and Combo Box question</h4>
+                                <h4><asp:Localize meta:resourcekey="img3Title"  runat="server" ID="Localize16" Text="" /></h4>
                                 <ul class="exapmles-list">
-                                    <li><span>Use Date Format Question for birthdates or events</span></li>
-                                    <li><span>Make Combo Box question for multiple choice single option answer</span></li>
-                                    <li><span>Works with words or numbers</span></li>
-                                    <li><span>Set up the fonts size</span></li>
+                                    <li><span><asp:Localize meta:resourcekey="img3DescrSpan1"  runat="server" ID="Localize17" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="img3DescrSpan2"  runat="server" ID="Localize18" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="img3DescrSpan3"  runat="server" ID="Localize19" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="img3DescrSpan4"  runat="server" ID="Localize20" Text="" /></span></li>
                                 </ul>
                             </div>
                             <div class="col-md-6" id="right5">
@@ -304,22 +324,22 @@
                                 <img src="../images/quest7.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-7" class="img-responsive" />
                             </div>
                             <div class="col-md-6" id="right7">
-                                <h4>4. Radiobutton and CheckBox</h4>
+                                <h4><asp:Localize meta:resourcekey="img4Title"  runat="server" ID="Localize21" Text="" /></h4>
                                 <ul class="exapmles-list">
-                                    <li><span>Select between Radiobutton and CheckBox type question</span></li>
-                                    <li><span>Set text font</span></li>
-                                    <li><span>Set answers direction</span></li>
+                                    <li><span><asp:Localize meta:resourcekey="img4DescrSpan1"  runat="server" ID="Localize22" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="img4DescrSpan2"  runat="server" ID="Localize23" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="img4DescrSpan3"  runat="server" ID="Localize24" Text="" /></span></li>
                                 </ul>
                             </div>
                         </div>
                         <hr class="cogquest-hr" />
                         <div class="row">
                             <div class="col-md-6" id="left8">
-                                <h4>5. Vignette Question</h4>
+                                <h4><asp:Localize meta:resourcekey="img5Title"  runat="server" ID="Localize25" Text="" /></h4>
                                 <ul class="exapmles-list">
-                                    <li><span>Enter the text for participant to read</span></li>
-                                    <li><span>The text will be hidden after its read</span></li>
-                                    <li><span>Set up any number of any type questions for the participant to answer</span></li>
+                                    <li><span><asp:Localize meta:resourcekey="img5DescrSpan1"  runat="server" ID="Localize26" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="img5DescrSpan2"  runat="server" ID="Localize27" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="img5DescrSpan3"  runat="server" ID="Localize28" Text="" /></span></li>
                                 </ul>
                             </div>
                             <div class="col-md-6" id="right8">
@@ -332,12 +352,12 @@
                                 <img src="../images/quest9.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-9" class="img-responsive" />
                             </div>
                             <div class="col-md-6" id="right9">
-                                <h4>6. Image Question</h4>
+                                <h4><asp:Localize meta:resourcekey="img6Title"  runat="server" ID="Localize29" Text="" /></h4>
                                 <ul class="exapmles-list">
-                                    <li><span>Import images as part of the question</span></li>
-                                    <li><span>Import one large image or multiple small ones</span></li>
-                                    <li><span>3 sizes available. </span></li>
-                                    <li><span>Align vertically or horisontally</span></li>
+                                    <li><span><asp:Localize meta:resourcekey="img6DescrSpan1"  runat="server" ID="Localize30" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="img6DescrSpan2"  runat="server" ID="Localize31" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="img6DescrSpan3"  runat="server" ID="Localize32" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="img6DescrSpan4"  runat="server" ID="Localize33" Text="" /></span></li>
                                 </ul>
                             </div>
                         </div>
@@ -354,11 +374,11 @@
                         <hr class="cogquest-hr" />
                         <div class="row">
                             <div class="col-md-6" id="left11">
-                                <h4>7. Save either by question name or variable name</h4>
+                                <h4><asp:Localize meta:resourcekey="img7Title"  runat="server" ID="Localize34" Text="" /></h4>
                                 <ul class="exapmles-list">
-                                    <li><span>You have ability to save filled out questionnaire using question text or Variable name for easy import to any Database</span></li>
-                                    <li><span>Save as a simple text file to store as a hard copy.</span></li>
-                                    <li><span>The data is not stored on the device to ensure patient's privacy</span></li>
+                                    <li><span><asp:Localize meta:resourcekey="img7DescrSpan1"  runat="server" ID="Localize35" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="img7DescrSpan2"  runat="server" ID="Localize36" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="img7DescrSpan3"  runat="server" ID="Localize37" Text="" /></span></li>
                                 </ul>
                             </div>
                             <div class="col-md-6" id="right11">
@@ -371,23 +391,23 @@
                                 <img src="../images/quest12.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-12" class="img-responsive" />
                             </div>
                             <div class="col-md-6" id="right12">
-                                <h4>8. Score the test</h4>
+                                <h4><asp:Localize meta:resourcekey="img8Title"  runat="server" ID="Localize38" Text="" /></h4>
                                 <ul class="exapmles-list">
-                                    <li><span>You have the ability to enter the correct answer and score the test right after</span></li>
-                                    <li><span>Import one large image or multiple small ones</span></li>
-                                    <li><span>Print out scored results</span></li>
+                                    <li><span><asp:Localize meta:resourcekey="img8DescrSpan1"  runat="server" ID="Localize39" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="img8DescrSpan2"  runat="server" ID="Localize40" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="img8DescrSpan3"  runat="server" ID="Localize41" Text="" /></span></li>
                                 </ul>
                             </div>
                         </div>
                         <hr class="cogquest-hr" />
                         <div class="row">
                             <div class="col-md-6" id="left13">
-                                <h4>9. Export to HTML</h4>
+                                <h4><asp:Localize meta:resourcekey="img9Title"  runat="server" ID="Localize42" Text="" /></h4>
                                 <ul class="exapmles-list">
-                                    <li><span>You have ability to export test to html file</span></li>
-                                    <li><span>Send this file to friends or take it home</span></li>
-                                    <li><span>Add generated test to your site</span></li>
-                                    <li><span>Pass it and print results to excell file</span></li>
+                                    <li><span><asp:Localize meta:resourcekey="img9DescrSpan1"  runat="server" ID="Localize43" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="img9DescrSpan2"  runat="server" ID="Localize44" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="img9DescrSpan3"  runat="server" ID="Localize45" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="img9DescrSpan4"  runat="server" ID="Localize46" Text="" /></span></li>
                                 </ul>
                             </div>
                             <div class="col-md-6" id="right13">

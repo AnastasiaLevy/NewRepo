@@ -1,10 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="StroopPage.aspx.cs" Inherits="TestSite.Tests.StroopPage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="StroopPage.aspx.cs" Inherits="TestSite.Tests.StroopPage" 
+    culture="auto" uiculture="auto" %>
 
 <!DOCTYPE html>
 
 <html>
     <head>
-        <title></title>
+        <title><asp:Localize meta:resourcekey="pagetitle"  runat="server" ID="Localize48" Text="" /></title>
     	<meta charset="utf-8">
     	<meta id="viewport" name='viewport' />
     	 <link rel="shortcut icon" href="../images/favicon.ico" />

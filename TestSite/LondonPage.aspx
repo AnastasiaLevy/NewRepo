@@ -1,10 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LondonPage.aspx.cs" Inherits="TestSite.TowerOfLondon" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LondonPage.aspx.cs" Inherits="TestSite.TowerOfLondon" 
+    culture="auto" uiculture="auto" %>
 
 <!DOCTYPE html>
 
 <html>
 <head>
-    <title>Tower of London</title>
+    <title><asp:Localize meta:resourcekey="pageTitle"  runat="server" ID="Localize48" Text="" /></title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.1/raphael.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.1/raphael.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
@@ -15,17 +16,17 @@
   
 </head>
 <body>
-    <button id="play">Play</button>
+    <button id="play"><asp:Localize meta:resourcekey="btn_play"  runat="server" ID="Localize1" Text="" /></button>
     <div id="testArea" class="withBorder center">
         <div id="countdown" class="countdown"></div>
         <div id="finalMessage" class="finalMessage"></div>
-            <h3 class="lefth3" id="workArea">Work Space</h3>
+            <h3 class="lefth3" id="workArea"><asp:Localize meta:resourcekey="workArea"  runat="server" ID="Localize2" Text="" /></h3>
         <div id="work" class="left">
         
         </div>
         <div id="canvas_small" class="left">
         </div>
-              <h3 class="displayh3" id="goalArea">Goal State</h3>
+              <h3 class="displayh3" id="goalArea"><asp:Localize meta:resourcekey="goalArea"  runat="server" ID="Localize3" Text="" /></h3>
             <div id="goal" class="display">
           
         </div>

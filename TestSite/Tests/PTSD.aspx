@@ -1,50 +1,51 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/TestPage.Master" AutoEventWireup="true" CodeBehind="PTSD.aspx.cs" Inherits="TestSite.Tests.PTSD" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/TestPage.Master" AutoEventWireup="true" CodeBehind="PTSD.aspx.cs" Inherits="TestSite.Tests.PTSD"  
+    culture="auto" uiculture="auto" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="tags" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="li" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="testName" runat="server">
-    COOLIDGE AXIS II INVENTORY (CATI)
+    <asp:Localize meta:resourcekey="Content3"  runat="server" ID="Localize48" Text="" />
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="testDescription" runat="server">
-    The CATI is a 250-item psychopathology and neuropsychological inventory for ages 15 and above. There are two forms: self-report and significant-other. The CATI assesses over 40 clinical and neuropsychological disorders including 14 personality disorders, depression, anxiety, schizophrenia, PTSD, adult ADHD, and neurocognitive disorders, and others. The CATI is aligned with the official DSM-5 criteria and has norms on thousands of clinical and nonclinical samples.
+    <asp:Localize meta:resourcekey="Content4"  runat="server" ID="Localize1" Text="" />
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="contentAbout" runat="server">
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="contentMeasure" runat="server">
     <ul>
-        <li><p>14 personality disorders (10 from DSM-5, 2 from the appendix of DSM-IV-TR and 2 from the appendix of DSM-III-R)</p></li>
-        <li><p>6 major Clinical Syndromes including Major Depressive Disorder, Generalized Anxiety Disorder, Schizophrenia, Post-Traumatic Stress Disorder, Social Phobia, and Attention- Deficit Disorder</p></li>
-        <li><p>Neuropsychological Deficit scales including Neurocognitive Disorder (mild to severe), a General Neuropsychological Deficits scale (with 3 subscales assessing Memory, Language, and Neurosomatic problems)</p></li>
-        <li><p>Executive Dysfunctions of the Frontal Lobe scale (with 3 subscales assessing Decision- Making Difficulties, Poor Planning, and Task Completion Difficulties)</p></li>
-        <li><p>3 Hostility scales assessing Dangerousness, Anger, and Impulsivity</p></li>
-        <li><p>Other Clinical scales including early juvenile delinquency, depersonalization, low frustration tolerance, and others</p></li>
-        <li><p>2 Drug and Alcohol Abuse items</p></li>
-        <li><p>Suicidal Ideation</li>
-        <li><p>Extraversion-Introversion scale</p></li>
-        <li><p>Critical Items assessing food and body-image problems, sleep problems, and others</p></li>
-        <li><p>3 validity scales assessing random responding, excessive denial, and malingering</p></li>
+        <li><p><asp:Localize meta:resourcekey="Content6_li1"  runat="server" ID="Localize2" Text="" /></p></li>
+        <li><p><asp:Localize meta:resourcekey="Content6_li2"  runat="server" ID="Localize3" Text="" /></p></li>
+        <li><p><asp:Localize meta:resourcekey="Content6_li3"  runat="server" ID="Localize4" Text="" /></p></li>
+        <li><p><asp:Localize meta:resourcekey="Content6_li4"  runat="server" ID="Localize5" Text="" /></p></li>
+        <li><p><asp:Localize meta:resourcekey="Content6_li5"  runat="server" ID="Localize6" Text="" /></p></li>
+        <li><p><asp:Localize meta:resourcekey="Content6_li6"  runat="server" ID="Localize7" Text="" /></p></li>
+        <li><p><asp:Localize meta:resourcekey="Content6_li7"  runat="server" ID="Localize8" Text="" /></p></li>
+        <li><p><asp:Localize meta:resourcekey="Content6_li8"  runat="server" ID="Localize9" Text="" /></li>
+        <li><p><asp:Localize meta:resourcekey="Content6_li9"  runat="server" ID="Localize10" Text="" /></p></li>
+        <li><p><asp:Localize meta:resourcekey="Content6_li10"  runat="server" ID="Localize11" Text="" /></p></li>
+        <li><p><asp:Localize meta:resourcekey="Content6_li11"  runat="server" ID="Localize12" Text="" /></p></li>
     </ul>
 </asp:Content>
 <asp:Content ID="Content7" ContentPlaceHolderID="contentDetails" runat="server">
 </asp:Content>
 <asp:Content ID="Content8" ContentPlaceHolderID="contentResearch" runat="server">
-    <p>ESSENTIAL REFERENCE</p>
+    <p><asp:Localize meta:resourcekey="Content8_paragraph1"  runat="server" ID="Localize13" Text="" /></p>
 
-    <p>Coolidge, F. L. & Merwin, M. M. (1992). Reliability and validity of the Coolidge Axis Two Inventory: A new inventory for the assessment of personality disorders. Journal of Personality Assessment, 59, 223-238. [click <a target="_blank" href="/content/CATI/Coolidge and Merwin 1992-Reliability and Validity of CAIII.pdf">here</a> for PDF copy]</p>
+    <p><asp:Localize meta:resourcekey="Content8_paragraph2"  runat="server" ID="Localize15" Text="" /></p>
 
-    <p>OTHER PUBLICATIONS WITH THE CATI</p> 
+    <p><asp:Localize meta:resourcekey="Content8_paragraph2"  runat="server" ID="Localize14" Text="" /></p> 
 
-<p>Coolidge, F. L., Segal, D. L., & Applequist, K. (2009). Working memory deficits in personality disorder traits: A preliminary investigation in a nonclinical sample. Journal of Research in Personality, 43, 355-361. [click <a target="_blank" href="/content/CATI/Coolidge et al 2009-Working memory deficits in personality disorder traits.pdf">here</a> for PDF copy]</p>
+<p><asp:Localize meta:resourcekey="Content8_paragraph4"  runat="server" ID="Localize16" Text="" /></p>
 
-<p>Coolidge, F. L., & Segal, D. L. (2009). Is Kim Jong-il like Saddam Hussein and Adolf Hitler? A personality disorder evaluation. Behavioral Sciences of Terrorism and Political Aggression, 1, 195-202. [click <a target="_blank" href="/content/CATI/Coolidge and Segal 2009-Is Kim Jong-il like Saddam Hussein and Adolf Hitler.pdf">here</a> for PDF copy]</p>
+<p><asp:Localize meta:resourcekey="Content8_paragraph5"  runat="server" ID="Localize20" Text="" /></p>
 
-<p>Coolidge, F. L., Davis, F. L., & Segal, D. L. (2007). Understanding madmen: A DSM-IV assessment of Adolf Hitler. Individual Differences Research, 5, 30-43. [click <a target="_blank" href="/content/CATI/Coolidge et al 2007-Understanding Madmen.pdf">here</a> for PDF copy]</p>
+<p><asp:Localize meta:resourcekey="Content8_paragraph6"  runat="server" ID="Localize17" Text="" /></p>
 
-<p>Coolidge, F. L., & Segal, D. L. (2007). Is Saddam Hussein like Adolf Hitler? A personality disorder investigation. Military Psychology, 19, 1-11. [click <a target="_blank" href="/content/CATI/Coolidge and Segal 2007-Is Saddam Hussein like Adolf Hitler.pdf">here</a> for PDF copy]</p>
+<p><asp:Localize meta:resourcekey="Content8_paragraph7"  runat="server" ID="Localize18" Text="" /></p>
 
-<p>Coolidge, F. L. & Anderson, L. W. (2002). Personality profiles of women in multiple abusive relationships. Journal of Family Violence, 17, 117-131. [click <a target="_blank" href="/content/CATI/Coolidge and Anderson 2002-Personality Profiles of Women.pdf">here</a> for PDF copy]</p>
+<p><asp:Localize meta:resourcekey="Content8_paragraph8"  runat="server" ID="Localize19" Text="" /></p>
 </asp:Content>
 
 <asp:Content ID="Content10" ContentPlaceHolderID="sampleReport" runat="server">
@@ -59,52 +60,52 @@
                     <div class="row">
                         <div class="col-md-3">
                             <div class="circle c1 img-circle" id="singlePr" runat="server">
-                                <h4 class="blue">Single Test</h4>
+                                <h4 class="blue"><asp:Localize meta:resourcekey="price_single_title"  runat="server" ID="Localize21" Text="" /></h4>
                                 <span class="icon blue"><i class="fa fa-usd"></i></span>
                                 <span class="price-large blue">5</span>
                                 <span class="price-small">.00</span>
-                                <p>One Time Run</p>
-                                <asp:Button ID="single" class="btn btn-info" runat="server" onClick="single_Click" Text="Buy Now" />
+                                <p><asp:Localize meta:resourcekey="price_single_paragraph"  runat="server" ID="Localize22" Text="" /></p>
+                                <asp:Button ID="single" class="btn btn-info" runat="server" onClick="single_Click" Text="Buy Now" meta:resourcekey="price_single_btn"/>
                             </div>
                         </div>
                         <!-- .Col-md-3 ends here -->
 
                         <div class="col-md-3">
                             <div class="circle c2 img-circle">
-                                <h4 class="yellow">Set of 10</h4>
+                                <h4 class="yellow"><asp:Localize meta:resourcekey="price_ten_title"  runat="server" ID="Localize23" Text="" /></h4>
                                 <span class="icon yellow"><i class="fa fa-usd"></i></span>
                                 <span class="price-large yellow">40</span>
                                 <span class="price-small">.00</span>
-                                <p>Small Project</p>
-                                <asp:Button ID="ten" class="btn btn-warning" runat="server" OnClick="ten_Click" Text="Buy Now" />
+                                <p><asp:Localize meta:resourcekey="price_ten_paragraph"  runat="server" ID="Localize24" Text="" /></p>
+                                <asp:Button ID="ten" class="btn btn-warning" runat="server" OnClick="ten_Click" Text="Buy Now" meta:resourcekey="price_ten_btn"/>
                             </div>
                         </div>
                         <!-- .Col-md-3 ends here -->
 
                         <div class="col-md-3">
                             <div class="circle c3 img-circle">
-                                <h4 class="green">Set of 100</h4>
+                                <h4 class="green"><asp:Localize meta:resourcekey="price_hundred_title"  runat="server" ID="Localize25" Text="" /></h4>
                                 <span class="icon green"><i class="fa fa-usd "></i></span>
                                 <span class="price-large green">80</span>
                                 <span class="price-small">.00</span>
-                                <p>Medium Size Project</p>
-                                <asp:Button ID="hundred" class="btn btn-success" runat="server" OnClick="hundred_Click" Text="Buy Now" />
+                                <p><asp:Localize meta:resourcekey="price_hundred_paragraph"  runat="server" ID="Localize26" Text="" /></p>
+                                <asp:Button ID="hundred" class="btn btn-success" runat="server" OnClick="hundred_Click" Text="Buy Now" meta:resourcekey="price_hundred_btn"/>
                             </div>
                         </div>
                         <!-- .Col-md-3 ends here -->
 
                         <div class="col-md-3">
                             <div class="circle c4 img-circle">
-                                <h4 class="red">Unlimited Use</h4>
+                                <h4 class="red"><asp:Localize meta:resourcekey="price_unlim_title"  runat="server" ID="Localize27" Text="" /></h4>
                                 <span class="icon red"><i class="fa fa-usd "></i></span>
                                 <span class="price-large red">499</span>
                                 <span class="price-small">.00</span>
                                 <p>
-                                    Any Number of Participants
+                                    <asp:Localize meta:resourcekey="price_unlim_paragraph"  runat="server" ID="Localize28" Text="" />
                                 <p>
 
 
-                                    <asp:Button ID="unlim" class="btn btn-danger" runat="server" OnClick="unlim_Click" Text="Buy Now" />
+                                    <asp:Button ID="unlim" class="btn btn-danger" runat="server" OnClick="unlim_Click" Text="Buy Now" meta:resourcekey="price_unlim_btn"/>
                             </div>
                         </div>
                         <!-- .Col-md-3 ends here -->

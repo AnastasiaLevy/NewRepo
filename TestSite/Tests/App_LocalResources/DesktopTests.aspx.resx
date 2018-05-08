@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="about_deskTopList_buttonCP.Text" xml:space="preserve">
+    <value>Continious Performance</value>
+  </data>
+  <data name="about_deskTopList_buttonCS.Text" xml:space="preserve">
+    <value>Card Sort Test</value>
+  </data>
+  <data name="about_deskTopList_buttonRT.Text" xml:space="preserve">
+    <value>Reaction Time</value>
+  </data>
+  <data name="about_deskTopList_buttonTOH.Text" xml:space="preserve">
+    <value>Tower of Hanoi</value>
+  </data>
+  <data name="about_deskTopList_buttonTOL.Text" xml:space="preserve">
+    <value>Tower of London</value>
+  </data>
+  <data name="about_deskTopList_buttonTrails.Text" xml:space="preserve">
+    <value>Trail Making Test</value>
+  </data>
+  <data name="about_deskTopList_title.Text" xml:space="preserve">
+    <value>Available Tests</value>
+  </data>
+  <data name="about_paragraph.Text" xml:space="preserve">
+    <value>The CogQuiz Test Collection offers flexible tests for your desktop. It offeres one database for all test, Normed data, and the ability to make your own tests.</value>
+  </data>
+  <data name="about_title.Text" xml:space="preserve">
+    <value>Desktop Tests Collection</value>
+  </data>
+  <data name="CardSort_install.Text" xml:space="preserve">
+    <value>Install</value>
+  </data>
+  <data name="cardSort_orderNow.Text" xml:space="preserve">
+    <value>Order Now</value>
+  </data>
+  <data name="cardSort_paragraph.Text" xml:space="preserve">
+    <value>Card Sorting task provides considerable flexibility in task definition. The number of stimulus cards can range from two to five and the number of sort dimensions, from two to five. One of the categories can be user defined, allowing for the definition of classes of stimuli. The card definition tool allows test authors to create their own stimulus and response card definitions. Cards can display alpha/numeric characters, any image that can be realized as a “dingbat” or words. Response card decks can be of any size and their presentation can be controlled either by the participant or the computer. Category (stage) shifts can be either signaled or unsignaled. All test messages and instructions can be tailored to meet the needs of the test author. Participant response modalities include “point and click” and touch.
+Tests can be analyzed using any one of three analysis protocols or the test user can print a basic analysis sheet displaying basic participant performance for “hand” analysis. The package comes with normative data collected on 2875 participants grouped in age cohorts from five to nine years, 10 to 14 years, 15 to 19 years and in 10 year groups from the 20 to &gt;80 years on the Canonical 128 Test. As Tien, et al., 1996, Feldstein, et al., 1999, and Steinmetz, 2010 have all shown significant outcome differences between manually administered card sorting tests and tests administered using a computer, this normative data set represents a considerable step forward in computer based card sorting tasks.</value>
+  </data>
+  <data name="cardSort_title.Text" xml:space="preserve">
+    <value>Card Sort</value>
+  </data>
+  <data name="contact_emailFrom.Text" xml:space="preserve">
+    <value>Your Email:</value>
+  </data>
+  <data name="contact_emailName.Text" xml:space="preserve">
+    <value>Your Name:</value>
+  </data>
+  <data name="contact_emailText.Text" xml:space="preserve">
+    <value>Message:</value>
+  </data>
+  <data name="contact_submit.Text" xml:space="preserve">
+    <value>Send Email</value>
+  </data>
+  <data name="contact_title.Text" xml:space="preserve">
+    <value>Please fill out the order form:</value>
+  </data>
+  <data name="CPT_install.Text" xml:space="preserve">
+    <value>Install</value>
+  </data>
+  <data name="CPT_orderNow.Text" xml:space="preserve">
+    <value>Order Now</value>
+  </data>
+  <data name="CPT_paragraph.Text" xml:space="preserve">
+    <value>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tincidunt, mauris non sodales feugiat, turpis elit accumsan nisi, et commodo metus mi ultrices nunc. 
+                    Duis ac pellentesque tortor. Maecenas feugiat velit erat, ac molestie nisl suscipit eget. Nam ultricies rutrum nibh, sed venenatis tellus tempor in. 
+                    Phasellus rhoncus vel libero nec lacinia. Suspendisse in varius libero. Suspendisse semper turpis ut leo commodo, et pretium mi placerat. Nullam nec sapien dui. 
+                    Nam ac lorem et dui porta facilisis. Quisque ut bibendum magna. Donec orci ex, porta vitae fringilla sed, porta eu elit.</value>
+  </data>
+  <data name="CPT_title.Text" xml:space="preserve">
+    <value>CPT</value>
+  </data>
+  <data name="GoToCPT.Text" xml:space="preserve">
+    <value>CPT</value>
+  </data>
+  <data name="GoToCS.Text" xml:space="preserve">
+    <value>Card Sort</value>
+  </data>
+  <data name="GoToRT.Text" xml:space="preserve">
+    <value>Reaction Time</value>
+  </data>
+  <data name="GoToTOH.Text" xml:space="preserve">
+    <value>Tower of Hanoi</value>
+  </data>
+  <data name="GoToTOL.Text" xml:space="preserve">
+    <value>Tower Of London</value>
+  </data>
+  <data name="GoToTrails.Text" xml:space="preserve">
+    <value>Trails</value>
+  </data>
+  <data name="hanoi_install.Text" xml:space="preserve">
+    <value>Install</value>
+  </data>
+  <data name="hanoi_orderNow.Text" xml:space="preserve">
+    <value>Order Now</value>
+  </data>
+  <data name="hanoi_paragraph.Text" xml:space="preserve">
+    <value>Flexibility in problem design allowing for 3 to 6 rings to be used in the problem with complete control over the starting configuration of the rings and the "goal" peg
+Storage of all participant information in the unified Participant database.
+Extensive age-stratified norms for included tests, broken out in ten year cohorts.
+Trials can be specified as either timed (i.e., the trial is terminated after a predetermined amount of time has elapsed) or untimed
+Trials can be set to terminate after a specified number of moves.
+ Playback feature allows the user to view the exact moves of any test taken and facilitates the examination of participant problem solving strategies.
+Response modalities include both touch screen and mouse -- the latter offering either a point and click option or a slide bar option.
+Text-to-speech support for instructions.
+Custom instructions and test captions can be written for each trial (in any language that utilizes the Roman alphabet).
+Variety of in-depth analyses can be performed and data can be exported to external tools (e.g., spreadsheets, statistical package, etc. for custom analysis).
+Standard test anaysis as well as access to the "real time" data record (i.e. , a record of all salient events and their time of occurance in milliseconds including the time between events, total time to complete a trial, and the number of correct and incorrect responses).</value>
+  </data>
+  <data name="hanoi_title.Text" xml:space="preserve">
+    <value>Tower of Hanoi</value>
+  </data>
+  <data name="london_install.Text" xml:space="preserve">
+    <value>Install</value>
+  </data>
+  <data name="london_orderNow.Text" xml:space="preserve">
+    <value>Order Now</value>
+  </data>
+  <data name="london_paragraph1.Text" xml:space="preserve">
+    <value>The most significant improvement in the CogQuiz TOL is the timing and record keep that can be obtained with a computerized test, and most notably, the ability to create a number of tests for varying populations. The relative low cost of the TOL, the ability to reliably collect various test parameters, and standardizing the procedure, researchers are able to investigate the same cognitive processes with different populations, showing how various conditions can differentially affect planning ability.</value>
+  </data>
+  <data name="london_paragraph2.Text" xml:space="preserve">
+    <value>While the TOL was developed as a manual test to be implemented using wooden stimulus boards, there is an increasing amount of evidence to support the use of computerized methods of testing. Using computerized testing methods allows for greater standardization of testing procedures and can reduce experimenter biases that may come out during an in person testing session.</value>
+  </data>
+  <data name="london_paragraph3.Text" xml:space="preserve">
+    <value>Additionally, since the test has been standardized, experimenters do not need to be as highly trained as would be necessary in a traditional testing format (Zygouris &amp; Tsolaki, 2015). Since the experimenters do not need to be trained as thoroughly, overall cost and time of the experiment can be reduced. Research assistants do not need to be trained compensated. As well as ease of administration, computerized testing simplifies the data gathering process and, in many cases, can increase the accuracy of the measurement. Since the administration and data gathering and analysis all take place on the same platform, the data can be stored between tests and changes in performance can be easily tracked over time (Cambridge Cognition, 2012; CNS Vital Signs, 2012; Neurotrax Corporation, 2003;).</value>
+  </data>
+  <data name="london_paragraph4.Text" xml:space="preserve">
+    <value>Since its creation as a means of assessing planning ability, the TOL has been implemented as a tool for measuring various domains of executive functioning (Bottari et al., 2009; Köstering et al., 2015; Owen, 2005) as well as spatial planning (Berg &amp; Byrd, 2005; Berg, Byrd, McNamara, &amp; MacDonald, 2006; Kaller, Unterrainer, &amp; Stahl, 2012; Pulos &amp; Denzine, 2005; Shallice, 1982; Unterrainer &amp; Owen, 2006), working memory (Albert &amp; Steinberg, 2011; Berg &amp; Byrd, 2002; Pulos &amp; Denzine, 2005), inhibition (Albert &amp; Steinberg, 2011; Berg &amp; Byrd, 2002; Shallice, 1982), and task shifting (Pulos &amp; Denzine, 2005).
+
+In addition to Shallice’s (1982) original findings of deficits in individuals with frontal lobe lesions, there have emerged several additional populations that frequently show deficits in their performance on the TOL; those with neurological and psychiatric conditions such as depression or Parkinson’s (Jacobs &amp; Anderson, 2002), individuals who have suffered a traumatic brain injury (TBI), Alzheimer’s and related dementias (Carlin et al., 2000), ADHD (Culbertson &amp; Zillmer, 1998), Autism (Wisley &amp; Howlin, 2009), and schizophrenia (Landua &amp; Morris, 2011).</value>
+  </data>
+  <data name="london_title.Text" xml:space="preserve">
+    <value>Tower of London</value>
+  </data>
+  <data name="navbar_about.Text" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="navbar_home.Text" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="navbar_logIn.Text" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="navbar_logOut.Text" xml:space="preserve">
+    <value>Log out</value>
+  </data>
+  <data name="navBar_order.Text" xml:space="preserve">
+    <value>Order Form</value>
+  </data>
+  <data name="navbar_profile.Text" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="reaction_install.Text" xml:space="preserve">
+    <value>Install</value>
+  </data>
+  <data name="reaction_orderNow.Text" xml:space="preserve">
+    <value>Order Now</value>
+  </data>
+  <data name="reaction_paragraph.Text" xml:space="preserve">
+    <value>Designed to assess subjects’ speed of processing on three relatively simple tasks. which, following Teng (1990), include:  a simple reaction time test; a choice test; and a conditional choice test.  The inclusion of the simple reaction time test allows the investigator to partial out performance variations due to both motor and cognitive components.  
+Participant response can be via the "trigger" on a standard "game pad; a keyboard; or a numeric keypad.   
+In addition to the tasks to be used in the test, the average inter-stimulus interval (a minimum and maximum range), and the number of stimuli presented for each task (as well as the mode of response) can all be set by the investigator. 
+The analysis includes means and standard deviations for response latencies for single sessions, as well as both the participant’s reaction time and the trigger pulled.    
+Analysis also includes a running record of all test events, with a unique timestamp for each event.
+Analyses can be printed or exported to clipboard.
+Unique instructions can be written for each task within a test (in any language utilizing the Roman alphabet), as well as a unique “Thank You” message to be displayed at the end of the test.
+A “Speak Instructions” option directs the program to speak the instructions to the participant while the written instructions are being displayed on the screen</value>
+  </data>
+  <data name="reaction_title.Text" xml:space="preserve">
+    <value>Reaction Time</value>
+  </data>
+  <data name="trails_install.Text" xml:space="preserve">
+    <value>Call or Email to activate</value>
+  </data>
+  <data name="trails_orderNow.Text" xml:space="preserve">
+    <value>Order Now</value>
+  </data>
+  <data name="trails_paragraph.Text" xml:space="preserve">
+    <value>The Trail Making Test (TMT) is a widely used neuropsychological assessment (Rabin, Barr, &amp; Burton, 2005) that was originally devised in 1938. The TMT was originally known as the “Partington’s Pathways Test,” or “Divided Attention Test” (Partington &amp; Leiter, 1949) and was initially part of a battery of tests (Army Individual Test Battery) used to assess “a variety of intellectual functions different from those measured by the Wechsler-Bellevue Intelligence Scale.” (Spreen &amp; Strauss, 1998). While the test is most  
+typically administered in its original form, alternative forms have been developed to meet the  
+testing needs of either alternative clinical populations or cognitive science research agendas. The desktop version of the TMT you have purchased will allow you to produce computerized version of virtually all the commercial paper and pencil Trail Making Tests.  
+ 
+For example, the Color Trails Test (CTT), was developed as part of a neuropsychological test battery  
+for the World Health Organization’s cross-cultural study of HIV-1 infection (Maj, et al., 1991).  
+The test was subsequently modified for use with children (Williams et al., 1995). In both cases  
+the modifications are presumed to minimize the cultural bias introduced by the use of Roman  
+letters in part B of the more traditional TMT (Maj, et al., 1991). Your CogQuiz desktop version allows you to make a computerized version of the CTT and if you so desired create norms for different populations.  
+ 
+Additionally, if you are doing repeated administrations of the TMT you can make inverted, reflected, and inverted/reflected versions that contain the same number of bubbles to be connected with equivalent spacing. This reduces the problem of enhanced performance when the TMT is repeatedly administered. 
+ 
+You will find the TMT part A useful if you are attempting to obtain some assessment of attention, visual scanning, speed of eye-hand coordination and information processing. The TMT part B assesses the ability to alternate between stimulus sets and as such is a measure of “executive function” (Mitrushina,  
+et al., 1999).</value>
+  </data>
+  <data name="trails_title.Text" xml:space="preserve">
+    <value>Trails</value>
+  </data>
+</root>

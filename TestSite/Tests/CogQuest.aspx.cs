@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Web;
 using System.Web.Security;
 using System.Web.UI;
@@ -15,6 +17,9 @@ namespace TestSite.Tests
 {
     public partial class CogQuest : System.Web.UI.Page
     {
+        private const string LangKey = "LANG_KEY";
+        private const string LangDefault = "en";
+
         protected MembershipUser _user;
         protected string _userId;
         protected bool _isProfilefilled;
@@ -27,12 +32,23 @@ namespace TestSite.Tests
             get
             {
                 var paypalTest = Session["PayPalSimulation"];
-                return paypalTest == null ? false: (bool)paypalTest;
+                return paypalTest == null ? false : (bool)paypalTest;
             }
+        }
+
+        protected override void InitializeCulture()
+        {
+            string lang = GetLang();
+
+            String selectedLanguage = lang;
+            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(selectedLanguage);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(selectedLanguage);
+            base.InitializeCulture();
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //mainTitle.InnerText = Resources.localization.Resource.mainTitle;
             if (User.Identity.IsAuthenticated)
             {
                 _user = Membership.GetUser(User.Identity.Name);
@@ -92,6 +108,48 @@ namespace TestSite.Tests
             {
                 return false;
             }
+        }
+
+        protected void LanguageList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //String selectedLanguage = LanguageList.SelectedItem.Value;
+
+            //var langCoockie = HttpContext.Current.Request.Cookies[LangKey];
+
+            //if (langCoockie == null || string.IsNullOrEmpty(langCoockie.Value))
+            //{
+            //    langCoockie = new HttpCookie(LangKey, LangDefault);
+            //    langCoockie.Expires = DateTime.Now.AddHours(10);
+            //    HttpContext.Current.Response.Cookies.Set(langCoockie);
+            //}
+
+            //HttpContext.Current.Request.Cookies[LangKey].Value = selectedLanguage;
+            //Response.Redirect(Request.RawUrl);
+        }
+
+        protected void Set_En(object sender, EventArgs e)
+        {
+            string selectedLanguage = "en";
+            SetLang(selectedLanguage);
+
+            //UICulture = selectedLanguage;
+            //Culture = selectedLanguage;
+            //Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(selectedLanguage);
+            //Thread.CurrentThread.CurrentUICulture = new CultureInfo(selectedLanguage);
+            //this.InitializeCulture();
+
+            // reload page to apply new lang.
+        }
+
+        protected void Set_Ru(object sender, EventArgs e)
+        {
+            string selectedLanguage = "ru";
+            SetLang(selectedLanguage);
+            //UICulture = "ru";
+            //Culture = "ru-RU";
+            //Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(selectedLanguage);
+            //Thread.CurrentThread.CurrentUICulture = new CultureInfo(selectedLanguage);
+            //this.InitializeCulture();
         }
 
         private void ShowBuyButton()
@@ -215,6 +273,29 @@ namespace TestSite.Tests
             //sb.Append("</html>");
             //Response.Write(sb.ToString());
             //Response.End();
+        }
+
+        private void SetLang(string lang)
+        {
+            var langCoockie = new HttpCookie(LangKey, lang);
+            HttpContext.Current.Response.Cookies.Set(langCoockie);
+
+            // reload page to apply new lang.
+            Response.Redirect(Request.RawUrl);
+        }
+
+        private string GetLang()
+        {
+            var langCoockie = HttpContext.Current.Request.Cookies[LangKey];
+
+            if (langCoockie == null || string.IsNullOrEmpty(langCoockie.Value))
+            {
+                langCoockie = new HttpCookie(LangKey, LangDefault);
+                langCoockie.Expires = DateTime.Now.AddHours(10);
+                HttpContext.Current.Response.Cookies.Set(langCoockie);
+            }
+
+            return langCoockie.Value;
         }
     }
 }

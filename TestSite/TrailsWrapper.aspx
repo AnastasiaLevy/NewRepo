@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TrailsWrapper.aspx.cs" Inherits="TestSite.TrailsWrapper" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TrailsWrapper.aspx.cs" Inherits="TestSite.TrailsWrapper" 
+    culture="auto" uiculture="auto" %>
 
 <!DOCTYPE html>
 
@@ -50,12 +51,12 @@
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right custom-menu">
-                        <li><a href="MainPage.aspx">Home</a></li>
-                        <li class="active"><a href="#about">About</a></li>
-                        <li id="profOpt" runat="server"><a href="UserProfile.aspx">Profile</a></li>
-                        <li id="login" runat="server"><a href="../Login.aspx">Login</a></li>
+                        <li><a href="MainPage.aspx"><asp:Localize meta:resourcekey="navbar_home"  runat="server" ID="Localize48" Text="" /></a></li>
+                        <li class="active"><a href="#about"><asp:Localize meta:resourcekey="navbar_about"  runat="server" ID="Localize1" Text="" /></a></li>
+                        <li id="profOpt" runat="server"><a href="UserProfile.aspx"><asp:Localize meta:resourcekey="navbar_profile"  runat="server" ID="Localize2" Text="" /></a></li>
+                        <li id="login" runat="server"><a href="../Login.aspx"><asp:Localize meta:resourcekey="navbar_login"  runat="server" ID="Localize3" Text="" /></a></li>
                         <li>
-                            <asp:LinkButton ID="logOut" class="" type="submit" runat="server" OnClick="logOut_Click">Log Out</asp:LinkButton>
+                            <asp:LinkButton ID="logOut" class="" type="submit" runat="server" OnClick="logOut_Click"><asp:Localize meta:resourcekey="navbar_logout"  runat="server" ID="Localize4" Text="" /></asp:LinkButton>
                         </li>
                     </ul>
                 </div>
@@ -64,18 +65,16 @@
         <!-- Page Content -->
         <section id="about">
             <div class="container testDescription">
-                <h1>Make Trails Test</h1>
+                <h1><asp:Localize meta:resourcekey="about_title"  runat="server" ID="Localize5" Text="" /></h1>
                 <hr />
                 <p>
-                    CogQuiz’s provides norms for children to older adults (age range 5 to 89 and an N = 708). The descriptive statistics 
-        are broken out in five year cohorts for the child to young adult (5 to 19 years of age) and ten year 
-        cohorts for the young adult to elderly.   
+                    <asp:Localize meta:resourcekey="about_paragraph"  runat="server" ID="Localize6" Text="" /> 
                 </p>
                 <div class="panel-group testDescription " id="accordion" role="tablist" aria-multiselectable="true">
                            <div class="col-md-6 visible">
                             <p>
                                 <button data-parent="#accordion" class="btn btn-primary btn-lg btn-block" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-                                 Research
+                                 <asp:Localize meta:resourcekey="accordion_buttonResearch"  runat="server" ID="Localize7" Text="" />
                                 </button>
                             </p>
                         </div>
@@ -83,64 +82,48 @@
                             <p>
                                 <button data-parent="#accordion" class="btn btn-primary btn-lg btn-block" type="button"
                                     data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
-                                    About
+                                    <asp:Localize meta:resourcekey="accordion_buttonAbout"  runat="server" ID="Localize8" Text="" />
                                 </button>
                             </p>
                         </div>
                        <div class="col-md-6 visible">
                             <p>
                                 <button data-parent="#accordion" class="btn btn-primary btn-lg btn-block" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                                    Measure
+                                    <asp:Localize meta:resourcekey="accordion_buttonMeasure"  runat="server" ID="Localize9" Text="" />
                                 </button>
                             </p>
                         </div>
                           <div class="col-md-6 visible">
                             <p>
                                 <button data-parent="#accordion" class="btn btn-primary btn-lg btn-block" type="button" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                                    Details
+                                    <asp:Localize meta:resourcekey="accordion_buttonDetails"  runat="server" ID="Localize10" Text="" />
                                 </button>
                             </p>
                         </div>
                     <div class="panel">
                      
                         <div id="collapse1" class="collapse col-md-12">
-                            <h3>About:</h3>
+                            <h3><asp:Localize meta:resourcekey="collapse1_title"  runat="server" ID="Localize11" Text="" /></h3>
                             <p>
-                                The Trail Making Test (TMT), originally devised in 1938, was known as the “Partington’s 
-            Pathways Test,” or “Divided Attention Test” (Partington & Leiter, 1949). It was initially part of 
-            a battery of tests (Army Individual Test Battery) used to assess “…a variety of intellectual functions 
-            different from those measured by the Wechsler-Bellevue Intelligence Scale.” (Spreen & Strauss, 1998).
-            The test is not typically part of a test battery but administered single in its original paper and pencil
-            form.
+                                <asp:Localize meta:resourcekey="collapse1_paragraph"  runat="server" ID="Localize12" Text="" />
                             </p>
                         </div>
                     </div>
                     <div class="panel">
                      
                         <div id="collapse2" class="collapse col-md-12">
-                            <h3>Measure:</h3>
+                            <h3><asp:Localize meta:resourcekey="collapse2_title"  runat="server" ID="Localize13" Text="" /></h3>
                             <p>
-                                The TMT provides a measure of attention, visual scanning, speed of eye-hand coordination (Part A),
-            and mental flexibility (Strauss, Sherman, & Spreen, 2007). In addition, Part B assesses the ability to 
-            alternate between stimulus sets and as such is a measure of “executive function” (Mitrushina, et al., 1999).
-            Performance on the TMT has been obtained for normal and various clinical populations such as Attention Deficit
-            Disorder ADD), Attention Deficit Hyperactivity Disorder, Alzheimer’s disease, Post Traumatic Stress
-            Disorder to name a few.
+                                <asp:Localize meta:resourcekey="collapse2_paragraph"  runat="server" ID="Localize14" Text="" />
                             </p>
                         </div>
                     </div>
                     <div class="panel">
                   
                         <div id="collapse3" class=" collapse col-md-12">
-                            <h3>Description</h3>
+                            <h3><asp:Localize meta:resourcekey="collapse3_title"  runat="server" ID="Localize15" Text="" /></h3>
                             <p>
-                                The TMT and its several variants require the Participant to, in the correct order, link together an array 
-            of objects that are labeled in a way indicating a specific order (e.g., numerical, alphabetical). Part A of 
-            the TMT contains an array of 25 circles containing the numbers 1 to 25. By clicking the numbered bubbles, 
-            the test-taker creates a line from the circle containing the number 1 to the circle containing the number 
-            2 and then to the circle containing the number 3 and so on until he/she reaches the circle containing the 
-            number 25. In Part B the test-taker is required to alternate between numbers and letters (e.g., the sequence 
-            of 1, A, 2, B, 3, C,…)
+                                <asp:Localize meta:resourcekey="collapse3_paragraph"  runat="server" ID="Localize16" Text="" />
                             </p>
                         </div>
                     </div>
@@ -148,15 +131,9 @@
                          <div class="panel">
                  
                         <div id="collapse4" class=" collapse col-md-12">
-                            <h3>Research</h3>
+                            <h3><asp:Localize meta:resourcekey="collapse4_title"  runat="server" ID="Localize17" Text="" /></h3>
                             <p>
-                                The TMT and its several variants require the Participant to, in the correct order, link together an array 
-            of objects that are labeled in a way indicating a specific order (e.g., numerical, alphabetical). Part A of 
-            the TMT contains an array of 25 circles containing the numbers 1 to 25. By clicking the numbered bubbles, 
-            the test-taker creates a line from the circle containing the number 1 to the circle containing the number 
-            2 and then to the circle containing the number 3 and so on until he/she reaches the circle containing the 
-            number 25. In Part B the test-taker is required to alternate between numbers and letters (e.g., the sequence 
-            of 1, A, 2, B, 3, C,…)
+                                <asp:Localize meta:resourcekey="collapse4_paragraph"  runat="server" ID="Localize18" Text="" />
                             </p>
                         </div>
                     </div>
@@ -169,26 +146,26 @@
 
         <section>
                    <div class="container specifications">
-                    <h3>Specifications:</h3>
+                    <h3><asp:Localize meta:resourcekey="specifications_title"  runat="server" ID="Localize19" Text="" /></h3>
                     <p>
-                        This test will take 3 to 5 minutes to complete. 
+                        <asp:Localize meta:resourcekey="specifications_paragraph1"  runat="server" ID="Localize20" Text="" />
                     </p>
                     <p>
-                        Recommended minimum screen resolution is 1000 x 700. 
+                        <asp:Localize meta:resourcekey="specifications_paragraph2"  runat="server" ID="Localize21" Text="" />
                     </p>
                 </div>
         </section>
         <section>
 
             <div class="container right" style="margin-top: 20px;">
-                <asp:LinkButton ID="runTest" runat="server" class="signup-btn" OnClick="runTest_Click">Run Test</asp:LinkButton>
+                <asp:LinkButton ID="runTest" runat="server" class="signup-btn" OnClick="runTest_Click"><asp:Localize meta:resourcekey="runtest"  runat="server" ID="Localize22" Text="" /></asp:LinkButton>
                 <div id="requestToReg" runat="server" visible="true">
                     <p>
-                        <a href="../Login.aspx">Please Login </a>
+                        <a href="../Login.aspx"><asp:Localize meta:resourcekey="pleaselogin"  runat="server" ID="Localize23" Text="" /></a>
                     </p>
-                    <p>OR</p>
+                    <p><asp:Localize meta:resourcekey="or"  runat="server" ID="Localize24" Text="" /></p>
                     <p>
-                        <a href="../Login.aspx">Register</a>
+                        <a href="../Login.aspx"><asp:Localize meta:resourcekey="register"  runat="server" ID="Localize25" Text="" /></a>
                     </p>
                 </div>
             </div>
@@ -205,7 +182,7 @@
                                 <span class="price-large blue">5</span>
                                 <span class="price-small">.00</span>
                                 <p>One Time Run</p>
-                                <asp:Button ID="single" class="btn btn-info" runat="server" OnClick="single_Click" Text="Buy Now" />
+                                <asp:Button ID="single" class="btn btn-info" runat="server" OnClick="single_Click" Text="Buy Now" meta:resourcekey="price_single_buy"/>
                             </div>
                         </div>
                         <!-- .Col-md-3 ends here -->
@@ -217,7 +194,7 @@
                                 <span class="price-large yellow">40</span>
                                 <span class="price-small">.00</span>
                                 <p>Small Project</p>
-                                <asp:Button ID="ten" class="btn btn-warning" runat="server" OnClick="ten_Click" Text="Buy Now" />
+                                <asp:Button ID="ten" class="btn btn-warning" runat="server" OnClick="ten_Click" Text="Buy Now" meta:resourcekey="price_ten_buy"/>
                             </div>
                         </div>
                         <!-- .Col-md-3 ends here -->
@@ -229,7 +206,7 @@
                                 <span class="price-large green">80</span>
                                 <span class="price-small">.00</span>
                                 <p>Medium Size Project</p>
-                                <asp:Button ID="hundred" class="btn btn-success" runat="server" OnClick="hundred_Click" Text="Buy Now" />
+                                <asp:Button ID="hundred" class="btn btn-success" runat="server" OnClick="hundred_Click" Text="Buy Now" meta:resourcekey="price_hundred_buy"/>
                             </div>
                         </div>
                         <!-- .Col-md-3 ends here -->
@@ -245,7 +222,7 @@
                                 <p>
 
 
-                                    <asp:Button ID="unlim" class="btn btn-danger" runat="server" OnClick="unlim_Click" Text="Buy Now" />
+                                    <asp:Button ID="unlim" class="btn btn-danger" runat="server" OnClick="unlim_Click" Text="Buy Now" meta:resourcekey="price_unlim_buy"/>
                             </div>
                         </div>
                         <!-- .Col-md-3 ends here -->

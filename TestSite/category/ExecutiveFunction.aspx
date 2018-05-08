@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ExecutiveFunction.aspx.cs" Inherits="TestSite.blogPosts.ExecutiveFunction" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ExecutiveFunction.aspx.cs" Inherits="TestSite.blogPosts.ExecutiveFunction" 
+    culture="auto" uiculture="auto" %>
 
 <!DOCTYPE html>
 
@@ -47,14 +48,14 @@
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right custom-menu">
-                    <li><a href="../MainPage.aspx">Home</a></li>
-                    <li class="active"><a href="#about">Executive Function</a></li>
-                    <li id="profOpt" runat="server"><a href="../UserProfile.aspx">Profile</a></li>
-                    <li id="login" runat="server"><a href="..\Login.aspx">Login</a></li>
+                    <li><a href="../MainPage.aspx"><asp:Localize meta:resourcekey="navbar_home"  runat="server" ID="Localize48" Text="" /></a></li>
+                    <li class="active"><a href="#ExecutiveFunction"><asp:Localize meta:resourcekey="navbar_about"  runat="server" ID="Localize1" Text="" /></a></li>
+                    <li id="profOpt" runat="server"><a href="../UserProfile.aspx"><asp:Localize meta:resourcekey="navbar_profile"  runat="server" ID="Localize2" Text="" /></a></li>
+                    <li id="login" runat="server"><a href="..\Login.aspx"><asp:Localize meta:resourcekey="navbar_login"  runat="server" ID="Localize3" Text="" /></a></li>
                     <%--   <li>
                             <button id="login" class="btn button" onclick="document.getElementById('id01').style.display='block'" runat="server">Login</button></li>--%>
                     <li>
-                        <asp:LinkButton ID="logOut" class="" type="submit" runat="server" OnClick="logOut_Click">Log Out</asp:LinkButton>
+                        <asp:LinkButton ID="logOut" class="" type="submit" runat="server" OnClick="logOut_Click"><asp:Localize meta:resourcekey="navbar_logout"  runat="server" ID="Localize4" Text="" /></asp:LinkButton>
                     </li>
                     <!-- 	<li><a href="blog.html">Blog</a></li>
                         <li><a href="single-post.html">Single</a></li> -->
@@ -71,22 +72,19 @@
 
     <section id="ExecutiveFunction">
         <div class="container MemoryBlock">
-            <h2 class="middle">Executive Function</h2>
+            <h2 class="middle"><asp:Localize meta:resourcekey="ExecutiveFunction_title1"  runat="server" ID="Localize5" Text="" /></h2>
             <img class="img-responsive displayed" src="../images/line-separator.png" alt="short" />
-            <h1>Executive Function</h1>
+            <h1><asp:Localize meta:resourcekey="ExecutiveFunction_title2"  runat="server" ID="Localize6" Text="" /></h1>
             <p>
-               Executive functions are a set of cognitive processes that monitor, guide, and control our behavior.  These processes facilitate our successful navigation of the world. There is no agreed concensus on the number and nature of these components. However, there is general agreement that these processes are involved in working memory (actively holding and manipulating several bits of information in conscious awareness), inhibition (witholding a response), shifting strategies, attention, and problem solving. For example, imagine the processes a drone pilot has to engage in when flying.  A future Amazon drone pilot has a number of instruments he must monitor and attend to (working memory and attention), be able to switch back and forth between activates (shifting), not drop a package at the wrong address (inhibition), and plan a route to the correct address (problem solving).
+               <asp:Localize meta:resourcekey="ExecutiveFunction_paragraph1"  runat="server" ID="Localize8" Text="" />
 
             </p>
-            <h3>Tests of Executive Function</h3>
+            <h3><asp:Localize meta:resourcekey="ExecutiveFunction_title3"  runat="server" ID="Localize7" Text="" /></h3>
             <p>
-                The Card Sorting Test available in CogQuiz is thought to measure several different processes of Executive Function. However, it is most prominently associated with an assessment of be able to switch strateges. Secondarly, the Card Sort is associated with working memory where one must hold in awareness the strategy associated with successful performance. The Tower of London is associated primarily with the planning strategy necessary for problem solving. Additionally, working memory will play a role in holding a successful set of moves in conscious awareness when solving a particular problem. The Trails tests has both a speed of processing component and a switching component. The Stroop test has a strong inhibition component. One must overcome the prepotent tendency to read words rather than state their color. 
+                <asp:Localize meta:resourcekey="ExecutiveFunction_paragraph2"  runat="server" ID="Localize9" Text="" />
               
             </p>
-                <h3></h3>
-            <p>
-                
-            </p>
+           
         </div>
     </section>
   
@@ -94,7 +92,7 @@
         <div class="container">
             <div class="row">
                 <div class="text-center">
-                    <h2>Executive Function Tests:</h2>
+                    <h2><asp:Localize meta:resourcekey="availableTests_title"  runat="server" ID="Localize10" Text="" /></h2>
                     <img class="img-responsive displayed" src="../images/line-separator.png" alt="about">
                 </div>
 
@@ -172,7 +170,7 @@
             <div class="blueback">
                 <div class="container">
                     <div class="text-center homeport2">
-                        <h2>Test Categories</h2>
+                        <h2><asp:Localize meta:resourcekey="services_title"  runat="server" ID="Localize11" Text="" /></h2>
                     </div>
                     <div class="row">
                         <div class="col-md-12 homeservices1 blueFont">
@@ -184,10 +182,9 @@
                                             <i class="fa fa-medium fa-stack-1x "></i>
                                         </span></a>
                                     </a>
-                                    <h3><a href="category/Memory.aspx">Memory</a></h3>
+                                    <h3><a href="category/Memory.aspx"><asp:Localize meta:resourcekey="services_category1title"  runat="server" ID="Localize12" Text="" /></a></h3>
                                     <p>
-                                        Short-term and long term-merm memory tests avaialble.
-                                    Take one of our quizes and find out where you stand in relation to others. Are you capable of remembering germane or salient details, or is there cause for concern?
+                                        <asp:Localize meta:resourcekey="services_category1paragraph"  runat="server" ID="Localize13" Text="" />
                                     </p>
                                 </div>
                             </div>
@@ -213,8 +210,8 @@
                                         </span></a>
 
                                     </a>
-                                    <h3><a href="category/ProcessingSpeed.aspx">Processing Speed</a></h3>
-                                    <p>Speed of processing has been a major explantory varialbe for enhanced cognitive performace during development.</p>
+                                    <h3><a href="category/ProcessingSpeed.aspx"><asp:Localize meta:resourcekey="services_category2title"  runat="server" ID="Localize14" Text="" /></a></h3>
+                                    <p><asp:Localize meta:resourcekey="services_category2paragraph"  runat="server" ID="Localize15" Text="" /></p>
                                 </div>
                             </div>
                             <%--<div class="col-md-3 portfolio-item">
@@ -256,7 +253,7 @@
         <section id="follow-us">
             <div class="container">
                 <div class="text-center height-contact-element">
-                    <h2>FOLLOW US</h2>
+                    <h2><asp:Localize meta:resourcekey="follow"  runat="server" ID="Localize16" Text="" /></h2>
                 </div>
                 <img class="img-responsive displayed" src="../images/line-separator.png" alt="short" />
                 <div class="text-center height-contact-element">

@@ -11,7 +11,7 @@
 <body>
     <form id="form1" runat="server">
         <div class="container">
-            <div>Users:</div>
+            <div><asp:Localize meta:resourcekey="container_title1"  runat="server" ID="Localize2" Text="" /></div>
             <div>
                 <asp:GridView ID="gvUsers" runat="server" CellPadding="20" RowStyle-Height="40px" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px"  ForeColor="Black" GridLines="Vertical">
                     <AlternatingRowStyle BackColor="White" />
@@ -26,20 +26,20 @@
                     <SortedDescendingHeaderStyle BackColor="#575357" />
                     <Columns>
 
-                        <asp:TemplateField HeaderText="Make Provider" HeaderStyle-Width="20%" ItemStyle-Width="20%"
+                        <asp:TemplateField HeaderText="Make Provider" HeaderStyle-Width="20%" ItemStyle-Width="20%" meta:resourcekey="container_gvUsers_columns1"
                             FooterStyle-Width="10%">
                             <ItemTemplate>
-                                <asp:LinkButton runat="server" Text="Make Provider" CausesValidation="false" ID="lbRemoveTestFromUserList" OnClick="makeProvider_Click"></asp:LinkButton>
+                                <asp:LinkButton runat="server" Text="Make Provider" CausesValidation="false" ID="lbRemoveTestFromUserList" OnClick="makeProvider_Click" meta:resourcekey="container_gvUsers_LinkBtn1"></asp:LinkButton>
                             </ItemTemplate>
 
                             <FooterStyle Width="10%"></FooterStyle>
                             <HeaderStyle Width="10%"></HeaderStyle>
                             <ItemStyle Width="10%"></ItemStyle>
                         </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Make Provider" HeaderStyle-Width="20%" ItemStyle-Width="20%"
+                            <asp:TemplateField HeaderText="Make Provider" HeaderStyle-Width="20%" ItemStyle-Width="20%" meta:resourcekey="container_gvUsers_TemplateField"
                             FooterStyle-Width="10%">
                             <ItemTemplate>
-                                <asp:LinkButton runat="server" Text="Reset Password" CausesValidation="false" 
+                                <asp:LinkButton runat="server" Text="Reset Password" CausesValidation="false" meta:resourcekey="container_gvUsers_LinkBtn2"
                                     ID="resetPw" OnClick="lbRemoveTestFromUserList_Click"></asp:LinkButton>
                             </ItemTemplate>
 
@@ -52,7 +52,7 @@
                 </asp:GridView>
 
             </div>
-            <div >Provider Tests:
+            <div ><asp:Localize meta:resourcekey="container_title2"  runat="server" ID="Localize1" Text="" />
                 <div>
                     <asp:GridView ID="gvProviderTests" runat="server" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical">
                         <AlternatingRowStyle BackColor="White" />
@@ -69,7 +69,7 @@
                 </div>
 
             </div>
-            <div>Assign Test:</div>
+            <div><asp:Localize meta:resourcekey="container_title3"  runat="server" ID="Localize3" Text="" /></div>
             <div class="row">
                 <asp:DropDownList ID="ddlProviders" runat="server"></asp:DropDownList>
                 <asp:DropDownList ID="ddlTests" runat="server"></asp:DropDownList>
@@ -77,7 +77,7 @@
                 <asp:TextBox ID="txtNumLeft" runat="server"></asp:TextBox>
                 <asp:Button ID="btnAssign" runat="server" Text="Assign" onClick="btnAssign_Click" />
             </div>
-            <div>Messages:</div>
+            <div><asp:Localize meta:resourcekey="container_title4"  runat="server" ID="Localize4" Text="" /></div>
             <div>
                 <asp:GridView ID="gvMessages" runat="server" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical">
                     <AlternatingRowStyle BackColor="White" />
@@ -92,7 +92,7 @@
                     <SortedDescendingHeaderStyle BackColor="#575357" />
                 </asp:GridView>
             </div>
-            <div>Errors:</div>
+            <div><asp:Localize meta:resourcekey="container_title5"  runat="server" ID="Localize5" Text="" /></div>
             <div>
                 <asp:GridView ID="gvErrors" runat="server" OnPageIndexChanging="OnPaging" PageSize="5" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" AllowPaging="True">
                     <AlternatingRowStyle BackColor="White" />

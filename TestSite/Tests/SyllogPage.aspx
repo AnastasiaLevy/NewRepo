@@ -4,7 +4,7 @@
 
 <html>
 <head>
-    <title></title>
+    <title><asp:Localize meta:resourcekey="pagetitle"  runat="server" ID="Localize48" Text="" /></title>
     <script src="../js/syllog/jquery-3.1.1.min.js"></script>
     <script src="../js/syllog/jquery-ui.min.js"></script>
     <script src="../js/syllog/js.js"></script>
@@ -34,13 +34,13 @@
         </div>
     </div>
 
-    <button id="startButton" class="buttonStyle">START TEST</button>
+    <button id="startButton" class="buttonStyle"><asp:Localize meta:resourcekey="btnStart"  runat="server" ID="Localize1" Text="" /></button>
 
     <div id="answerAndDialog">
 
         <div id="answerButtons">
-            <button value="true" class="buttons buttonStyle trueFalseButtons">TRUE</button>
-            <button value="false" class="buttons buttonStyle trueFalseButtons">FALSE</button>
+            <button value="true" class="buttons buttonStyle trueFalseButtons"><asp:Localize meta:resourcekey="btntrue"  runat="server" ID="Localize2" Text="" /></button>
+            <button value="false" class="buttons buttonStyle trueFalseButtons"><asp:Localize meta:resourcekey="btnfalse"  runat="server" ID="Localize3" Text="" /></button>
         </div>
 
         <div id="dialog" style="display: none" title="How sure you are?" class="myDialogClass">
@@ -59,14 +59,14 @@
             <label for="radioBtn5">5</label>
             <input type="radio" id="radioBtn5" name="radioBtns" value="5" />
 
-            <button id="howSureButton" class="buttonStyle">Submit</button>
+            <button id="howSureButton" class="buttonStyle"><asp:Localize meta:resourcekey="btnSubmit"  runat="server" ID="Localize4" Text="" /></button>
         </div>
     </div>
 
     <div id="scorecard" style="height: 0">
     </div>
 
-    <button id="refreshButton" class="buttonStyle" style="display: none">View Results</button>
+    <button id="refreshButton" class="buttonStyle" style="display: none"><asp:Localize meta:resourcekey="btnviewresults"  runat="server" ID="Localize5" Text="" /></button>
 
 </body>
 </html>

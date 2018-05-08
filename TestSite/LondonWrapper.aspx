@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LondonWrapper.aspx.cs" Inherits="TestSite.LondonWrapper" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LondonWrapper.aspx.cs" Inherits="TestSite.LondonWrapper" 
+    culture="auto" uiculture="auto" %>
 
 <!DOCTYPE html>
 
@@ -53,12 +54,12 @@
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right custom-menu">
-                        <li><a href="MainPage.aspx">Home</a></li>
-                        <li class="active"><a href="#about">About</a></li>
-                        <li id="profOpt" runat="server"><a href="UserProfile.aspx">Profile</a></li>
-                        <li id="login" runat="server"><a href="../Login.aspx">Login</a></li>
+                        <li><a href="MainPage.aspx"><asp:Localize meta:resourcekey="navbar_home"  runat="server" ID="Localize48" Text="" /></a></li>
+                        <li class="active"><a href="#about"><asp:Localize meta:resourcekey="navbar_about"  runat="server" ID="Localize1" Text="" /></a></li>
+                        <li id="profOpt" runat="server"><a href="UserProfile.aspx"><asp:Localize meta:resourcekey="navbar_profile"  runat="server" ID="Localize2" Text="" /></a></li>
+                        <li id="login" runat="server"><a href="../Login.aspx"><asp:Localize meta:resourcekey="navbar_login"  runat="server" ID="Localize3" Text="" /></a></li>
                         <li>
-                            <asp:LinkButton ID="logOut" class="" type="submit" runat="server" OnClick="logOut_Click">Log Out</asp:LinkButton>
+                            <asp:LinkButton ID="logOut" class="" type="submit" runat="server" OnClick="logOut_Click"><asp:Localize meta:resourcekey="navbar_logout"  runat="server" ID="Localize4" Text="" /></asp:LinkButton>
                         </li>
                     </ul>
                 </div>
@@ -71,17 +72,14 @@
         <!-- Page Content -->
         <section id="about">
             <div class="container testDescription">
-                <h1>Tower of London</h1>
+                <h1><asp:Localize meta:resourcekey="about_title"  runat="server" ID="Localize5" Text="" /></h1>
                 <hr />
-                <span style="font-size: larger;">The Tower of London test is a well-known test used in applied clinical neuropsychology 
-                    for the assessment of executive functioning specifically to detect deficits in planning, 
-                    which may occur due to a variety of medical and neuropsychiatric conditions. 
-                    It is related to the classic problem-solving puzzle known as the Tower of Hanoi. 
+                <span style="font-size: larger;"><asp:Localize meta:resourcekey="about_paragraph"  runat="server" ID="Localize6" Text="" />
                
                 </span>
                 <br />
                 <br />
-               <span>Read More About:</span>
+               <span><asp:Localize meta:resourcekey="about_more"  runat="server" ID="Localize7" Text="" /></span>
             </div>
 
         </section>
@@ -89,18 +87,18 @@
         <div class="container" id="elastic_grid_demo"></div>
         <section class="container">
 
-            <p style="font-size: larger;">Select Version:</p>
+            <p style="font-size: larger;"><asp:Localize meta:resourcekey="container_paragraph"  runat="server" ID="Localize8" Text="" /></p>
             <asp:Panel ID="pSelect" runat="server"></asp:Panel>
             <asp:RadioButtonList ID="rbList" runat="server" OnSelectedIndexChanged="rbList_SelectedIndexChanged"></asp:RadioButtonList>
         </section>
         <section>
             <div class="specifications container">
-                <h3>Specifications:</h3>
+                <h3><asp:Localize meta:resourcekey="specifications_title"  runat="server" ID="Localize9" Text="" /></h3>
                 <p>
-                    This test will take abiut 20 minutes to complete. 
+                    <asp:Localize meta:resourcekey="specifications_paragraph1"  runat="server" ID="Localize10" Text="" />
                 </p>
                 <p>
-                    Recommended minimum screen resolution is 1000 x 700. 
+                    <asp:Localize meta:resourcekey="specifications_paragraph2"  runat="server" ID="Localize11" Text="" />
                 </p>
             </div>
         </section>
@@ -108,14 +106,14 @@
 
         <section>
             <div class="container right" style="margin-top: 20px;">
-                <asp:LinkButton ID="runTest" runat="server" class="signup-btn" OnClick="runTest_Click">Run Test</asp:LinkButton>
+                <asp:LinkButton ID="runTest" runat="server" class="signup-btn" OnClick="runTest_Click"><asp:Localize meta:resourcekey="runtest"  runat="server" ID="Localize12" Text="" /></asp:LinkButton>
                 <div id="requestToReg" runat="server" visible="true">
                     <p>
-                        <a href="../Login.aspx">Please Login </a>
+                        <a href="../Login.aspx"><asp:Localize meta:resourcekey="login"  runat="server" ID="Localize13" Text="" /></a>
                     </p>
-                    <p>OR</p>
+                    <p><asp:Localize meta:resourcekey="or"  runat="server" ID="Localize14" Text="" /></p>
                     <p>
-                        <a href="../Login.aspx">Register</a>
+                        <a href="../Login.aspx"><asp:Localize meta:resourcekey="register"  runat="server" ID="Localize15" Text="" /></a>
                     </p>
                 </div>
             </div>
@@ -126,51 +124,51 @@
                     <div class="row">
                         <div class="col-md-3">
                             <div class="circle c1 img-circle" id="singlePr" runat="server">
-                                <h4 class="blue">Single Test</h4>
+                                <h4 class="blue"><asp:Localize meta:resourcekey="price_single_title"  runat="server" ID="Localize16" Text="" /></h4>
                                 <span class="icon blue"><i class="fa fa-usd"></i></span>
                                 <span class="price-large blue">5</span>
                                 <span class="price-small">.00</span>
-                                <p>One Time Run</p>
-                                <asp:Button ID="single" class="btn btn-info" runat="server" OnClick="single_Click" Text="Buy Now" />
+                                <p><asp:Localize meta:resourcekey="price_single_paragraph"  runat="server" ID="Localize17" Text="" /></p>
+                                <asp:Button ID="single" class="btn btn-info" runat="server" OnClick="single_Click" Text="Buy Now" meta:resourcekey="price_single_buy"/>
                             </div>
                         </div>
                         <!-- .Col-md-3 ends here -->
 
                         <div class="col-md-3">
                             <div class="circle c2 img-circle">
-                                <h4 class="yellow">Set of 10</h4>
+                                <h4 class="yellow"><asp:Localize meta:resourcekey="price_ten_title"  runat="server" ID="Localize18" Text="" /></h4>
                                 <span class="icon yellow"><i class="fa fa-usd"></i></span>
                                 <span class="price-large yellow">50</span>
                                 <span class="price-small">.00</span>
-                                <p>Small Project</p>
-                                <asp:Button ID="ten" class="btn btn-warning" runat="server" OnClick="ten_Click" Text="Buy Now" />
+                                <p><asp:Localize meta:resourcekey="price_ten_paragraph"  runat="server" ID="Localize19" Text="" /></p>
+                                <asp:Button ID="ten" class="btn btn-warning" runat="server" OnClick="ten_Click" Text="Buy Now" meta:resourcekey="price_ten_buy"/>
                             </div>
                         </div>
                         <!-- .Col-md-3 ends here -->
 
                         <div class="col-md-3">
                             <div class="circle c3 img-circle">
-                                <h4 class="green">Set of 100</h4>
+                                <h4 class="green"><asp:Localize meta:resourcekey="price_hundred_title"  runat="server" ID="Localize20" Text="" /></h4>
                                 <span class="icon green"><i class="fa fa-usd "></i></span>
                                 <span class="price-large green">300</span>
                                 <span class="price-small">.00</span>
-                                <p>Medium Size Project</p>
-                                <asp:Button ID="hundred" class="btn btn-success" runat="server" OnClick="hundred_Click" Text="Buy Now" />
+                                <p><asp:Localize meta:resourcekey="price_hundred_paragraph"  runat="server" ID="Localize21" Text="" /></p>
+                                <asp:Button ID="hundred" class="btn btn-success" runat="server" OnClick="hundred_Click" Text="Buy Now" meta:resourcekey="price_hundred_buy"/>
                             </div>
                         </div>
                         <!-- .Col-md-3 ends here -->
 
                         <div class="col-md-3">
                             <div class="circle c4 img-circle">
-                                <h4 class="red">Set of 500</h4>
+                                <h4 class="red"><asp:Localize meta:resourcekey="price_unlim_title"  runat="server" ID="Localize22" Text="" /></h4>
                                 <span class="icon red"><i class="fa fa-usd "></i></span>
                                 <span class="price-large red">1000</span>
                                 <span class="price-small"></span>
                                 <p>
-                                    Large Project
+                                    <asp:Localize meta:resourcekey="price_unlim_paragraph"  runat="server" ID="Localize23" Text="" />
                                 <p>
 
-                                    <asp:Button ID="unlim" class="btn btn-danger" runat="server" OnClick="unlim_Click" Text="Buy Now" />
+                                    <asp:Button ID="unlim" class="btn btn-danger" runat="server" OnClick="unlim_Click" Text="Buy Now" meta:resourcekey="price_unlim_buy" />
                             </div>
                         </div>
                         <!-- .Col-md-3 ends here -->
@@ -184,7 +182,7 @@
         <section id="follow-us">
             <div class="container">
                 <div class="text-center height-contact-element">
-                    <h3>Follow Us</h3>
+                    <h3><asp:Localize meta:resourcekey="follow"  runat="server" ID="Localize24" Text="" /></h3>
                     <p>+1(719)888 9121</p>
                 </div>
                 <img class="img-responsive displayed" src="../images/line-separator.png" alt="short" />

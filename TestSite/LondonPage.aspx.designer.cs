@@ -7,13 +7,47 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TestSite
-{
-
-
-    public partial class TowerOfLondon
-    {
-
+namespace TestSite {
+    
+    
+    public partial class TowerOfLondon {
+        
+        /// <summary>
+        /// Localize48 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Localize Localize48;
+        
+        /// <summary>
+        /// Localize1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Localize Localize1;
+        
+        /// <summary>
+        /// Localize2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Localize Localize2;
+        
+        /// <summary>
+        /// Localize3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Localize Localize3;
+        
         /// <summary>
         /// userId control.
         /// </summary>
@@ -22,7 +56,7 @@ namespace TestSite
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox userId;
-
+        
         /// <summary>
         /// tId control.
         /// </summary>
@@ -31,7 +65,7 @@ namespace TestSite
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tId;
-
+        
         /// <summary>
         /// modifiedId control.
         /// </summary>

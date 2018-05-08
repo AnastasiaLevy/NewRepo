@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WCSTPage.aspx.cs" Inherits="TestSite.WCSTPage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WCSTPage.aspx.cs" Inherits="TestSite.WCSTPage" 
+    Culture="auto" UICulture="auto" %>
 
 <!DOCTYPE html>
 
@@ -9,7 +10,7 @@
     <link rel="shortcut icon" href="images/favicon.ico" />
     <link href="cogTest.css" rel="stylesheet" />
     <link href="css/wcst.css" rel="stylesheet" />
-    <title>WCST</title>
+    <title><asp:Localize meta:resourcekey="pagetitle"  runat="server" ID="Localize48" Text="" /></title>
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <script src="Scripts/underscore-min.js"></script>
     <script src="js/wcst.js"></script>

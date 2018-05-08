@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="TestSite.Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="TestSite.Login" 
+    culture="auto" uiculture="auto" %>
 
 <!DOCTYPE html>
 
@@ -7,7 +8,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login</title>
+    <title><asp:Localize meta:resourcekey="pageTitle"  runat="server" ID="Localize1" Text="" /></title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
@@ -56,7 +57,7 @@
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right custom-menu">
-                        <li class="active"><a href="MainPage.aspx">Home</a></li>
+                        <li class="active"><a href="MainPage.aspx"><asp:Localize meta:resourcekey="navbar_home"  runat="server" ID="Localize48" Text="" /></a></li>
                     </ul>
                 </div>
             </div>
@@ -79,8 +80,8 @@
                             <div class="form-box">
                                 <div class="form-top">
                                     <div class="form-top-left">
-                                        <h3>Login</h3>
-                                        <p>Enter username and password to log on:</p>
+                                        <h3><asp:Localize meta:resourcekey="loginForm_title"  runat="server" ID="Localize2" Text="" /></h3>
+                                        <p><asp:Localize meta:resourcekey="loginForm_paragraph"  runat="server" ID="Localize3" Text="" /></p>
                                     </div>
                                     <div class="form-top-right">
                                         <i class="fa fa-lock"></i>
@@ -91,15 +92,15 @@
                                     <div role="form" class="login-form">
                                         <asp:Label ID="wrongLogin" class="errorMessage" runat="server" Text=""></asp:Label>
                                         <div class="form-group">
-                                            <label class="sr-only" for="form-username">Username</label>
-                                            <input type="text" name="form-username" placeholder="Username..." class="form-username form-control" id="userNameLg" required runat="server">
+                                            <label class="sr-only" for="form-username"><asp:Localize meta:resourcekey="loginForm_LabelUserName"  runat="server" ID="Localize4" Text="" /></label>
+                                            <input type="text" name="form-username" placeholder="Username..." class="form-username form-control" id="userNameLg" required runat="server" meta:resourcekey="loginForm_inputUserName"/>
                                         </div>
                                         <div class="form-group">
-                                            <label class="sr-only" for="form-password">Password</label>
-                                            <input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="userPwLg" required runat="server" >
+                                            <label class="sr-only" for="form-password"><asp:Localize meta:resourcekey="loginForm_LabelPass"  runat="server" ID="Localize5" Text="" /></label>
+                                            <input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="userPwLg" required runat="server" meta:resourcekey="loginForm_inputPass"/>
                                         </div>
-                                        <asp:LinkButton class="btn btn-success" type="submit" runat="server" OnClick="clcLogin">Login</asp:LinkButton>
-                                        <button type="submit" class="btn" runat="server" style="display: none" OnClick="javascript:__doPostBack('ctl16','')">Login</button>
+                                        <asp:LinkButton class="btn btn-success" type="submit" runat="server" OnClick="clcLogin"><asp:Localize meta:resourcekey="loginForm_LinkButton"  runat="server" ID="Localize6" Text="" /></asp:LinkButton>
+                                        <button type="submit" class="btn" runat="server" style="display: none" OnClick="javascript:__doPostBack('ctl16','')"><asp:Localize meta:resourcekey="loginForm_Button"  runat="server" ID="Localize7" Text="" /></button>
                                     </div>
                                        
                                 </div>
@@ -115,8 +116,8 @@
                             <div class="form-box">
                                 <div class="form-top">
                                     <div class="form-top-left">
-                                        <h3>Sign up now</h3>
-                                        <p>Fill in the form below to get instant access:</p>
+                                        <h3><asp:Localize meta:resourcekey="registerForm_title"  runat="server" ID="Localize8" Text="" /></h3>
+                                        <p><asp:Localize meta:resourcekey="registerForm_paragraph"  runat="server" ID="Localize9" Text="" /></p>
                                     </div>
                                     <div class="form-top-right">
                                         <i class="fa fa-pencil"></i>
@@ -127,12 +128,12 @@
                                         <asp:Label ID="wrong" class="errorMessage" runat="server" Text=""></asp:Label>
                                         <asp:Label ID="wrongPw" class="errorMessage" runat="server" Text=""></asp:Label>
                                         <div class="form-group">
-                                            <label class="sr-only" for="form-email">Email</label>
-                                            <input type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="single_email" runat="server"/>
+                                            <label class="sr-only" for="form-email"><asp:Localize meta:resourcekey="registerForm_labelEmail"  runat="server" ID="Localize10" Text="" /></label>
+                                            <input type="text" name="form-email" placeholder="" class="form-email form-control" id="single_email" runat="server" meta:resourcekey="registerForm_inputEmail"/>
                                         </div>
                                         <div class="form-group">
-                                            <label class="sr-only" for="form-first-name">User name</label>
-                                            <input type="text" name="form-first-name" placeholder="User" class="form-first-name form-control" id="singleName" runat="server">
+                                            <label class="sr-only" for="form-first-name"><asp:Localize meta:resourcekey="registerForm_labelUserName"  runat="server" ID="Localize11" Text="" /></label>
+                                            <input type="text" name="form-first-name" placeholder="" class="form-first-name form-control" id="singleName" runat="server" meta:resourcekey="registerForm_inputUserName"/>
                                         </div>
                                         <%--                       <div class="form-group">
                                             <label class="sr-only" for="form-last-name">Last name</label>
@@ -144,19 +145,19 @@
                                             <input type="text" name="form-email" placeholder="Confirm Email..." class="form-email form-control" id="form-email-confirm">
                                         </div>--%>
                                         <div class="form-group">
-                                            <label class="sr-only" for="singlePw">Password</label>
-                                            <asp:TextBox ID="singlePw" runat="server" TextMode="Password" placeholder="password" class="form-email form-control"></asp:TextBox>
+                                            <label class="sr-only" for="singlePw"><asp:Localize meta:resourcekey="registerForm_LabelPass"  runat="server" ID="Localize12" Text="" /></label>
+                                            <asp:TextBox ID="singlePw" runat="server" TextMode="Password" placeholder="" class="form-email form-control" meta:resourcekey="registerForm_inputPass"></asp:TextBox>
                                         </div>
                                         <div class="form-group">
-                                        <label class="sr-only" for="s_confPw"">Confirm Password</label>
-                                            <asp:TextBox ID="s_confPw" name="s_confPw" runat="server" TextMode="Password" placeholder="confirm password" class="form-email form-control"></asp:TextBox>
+                                        <label class="sr-only" for="s_confPw""><asp:Localize meta:resourcekey="registerForm_LabelConfPass"  runat="server" ID="Localize13" Text="" /></label>
+                                            <asp:TextBox ID="s_confPw" name="s_confPw" runat="server" TextMode="Password" placeholder="" class="form-email form-control" meta:resourcekey="registerForm_inputConfPass"></asp:TextBox>
                                         </div>
                                         <div class="form-group">
                                         <label class="form-check-label" for="singleIsProvider" style="display:inline-flex; color:white; padding-left:0px">
-                                            <input type="checkbox" name="form-checkbox" placeholder="User" class="form-first-name form-control form-check-input" id="checkboxProvider" runat="server" style="margin-right: 10px; ">Provider</label>
+                                            <input type="checkbox" name="form-checkbox" placeholder="" class="form-first-name form-control form-check-input" id="checkboxProvider" runat="server" style="margin-right: 10px; "><asp:Localize meta:resourcekey="registerForm_checkboxProvider"  runat="server" ID="Localize15" Text="" /></label>
                                         </div>
                                         </div>
-                                       <asp:LinkButton ID="regSingle" runat="server" class="btn btn-success" OnClick="Register_Single">REGISTER</asp:LinkButton>
+                                       <asp:LinkButton ID="regSingle" runat="server" class="btn btn-success" OnClick="Register_Single"><asp:Localize meta:resourcekey="registerForm_btnRegister"  runat="server" ID="Localize14" Text="" /></asp:LinkButton>
                                     </div>
                                 </div>
                             </div>
@@ -173,14 +174,14 @@
     <div>
         <div class="b-popup" id="popup1" style="display: none;">
         <div class="b-popup-content" style="position: relative; height: 400px;">
-            <p class="b-popup-text" style="line-height: 1.4;">All software programs on cogquiz.com and the actual website itself are provided for personal entertainment and educational purposes only. They are not intended to provide medical advice and should not be considered as tools for diagnosis or treatment of a mental or physical health problem, or for prescribing medication. While performance on tests are reported for different age groups these data are for informational purposes only. Performance equivalent to, below, or above normed performance should not be taken as indicative of a mental or physical health problem. If you think you have a medical or mental health problem you should contact a licensed physician or mental health professional. This web site assume no responsibility for how the information provided on the cogquiz.com site is used. This web site or their agents make no promises, guarantees, representations, or warranties, expressed or implied, and assume no duty or liability regarding the information contained herein or any associated ways in which it is used therewith. Links to other sites do not constitute endorsement, recommendation, or approval of those sites or any information contained in such sites. This web site bear no responsibility for the accuracy, legality or content of the external sites or for that of subsequent links. Those who visit or use the cogquiz.com web site, links, or any other information assume all risks associated therewith. I accept the conditions described above and signify this by checking the Accept button.</p>
+            <p class="b-popup-text" style="line-height: 1.4;"><asp:Localize meta:resourcekey="popup_paragraph"  runat="server" ID="Localize16" Text="" /></p>
             <div style="display:block; margin: 0 auto;">
                 <div> 
                     <input id="i_agree" type="checkbox" style="margin-left: -50px;"/>
-                    <label style="display: inline-block; position: absolute;">I agree</label>
+                    <label style="display: inline-block; position: absolute;"><asp:Localize meta:resourcekey="popup_agree"  runat="server" ID="Localize17" Text="" /></label>
                 </div>
                 <%--<button class="btn btn-success" style="position:absolute; bottom:10px; display:block" OnClick="PopUpHide()">Close</button>--%>
-                <button class="btn btn-success" OnClick="PopUpHide()">Close</button>
+                <button class="btn btn-success" OnClick="PopUpHide()"><asp:Localize meta:resourcekey="popup_close"  runat="server" ID="Localize18" Text="" /></button>
             </div>
         </div>
         </div>

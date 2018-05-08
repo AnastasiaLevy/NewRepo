@@ -1,0 +1,420 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="container_button_btnAddNewPart.Text" xml:space="preserve">
+    <value>Add New Participant</value>
+  </data>
+  <data name="container_button_btnAddUserTest.Text" xml:space="preserve">
+    <value>Assign Participant Test</value>
+  </data>
+  <data name="container_button_btnExportTestResults.Text" xml:space="preserve">
+    <value>Export Test Results</value>
+  </data>
+  <data name="container_button_btnModifyTest.Text" xml:space="preserve">
+    <value>Modify Test</value>
+  </data>
+  <data name="container_button_btnResetPassword.Text" xml:space="preserve">
+    <value>Reset Password</value>
+  </data>
+  <data name="container_button_btnUpdateProfile.Text" xml:space="preserve">
+    <value>Set Provider Code</value>
+  </data>
+  <data name="container_title1.Text" xml:space="preserve">
+    <value>Provider</value>
+  </data>
+  <data name="container_title2_strong.Text" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="follow.Text" xml:space="preserve">
+    <value>FOLLOW US</value>
+  </data>
+  <data name="myModal_btn.Text" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="MyModal_input.Value" xml:space="preserve">
+    <value>Tower of London</value>
+  </data>
+  <data name="myModal_title.Text" xml:space="preserve">
+    <value>Choose avaliable template</value>
+  </data>
+  <data name="navbar_Available.Text" xml:space="preserve">
+    <value>Available Tests</value>
+  </data>
+  <data name="navbar_categories.Text" xml:space="preserve">
+    <value>Test Categories</value>
+  </data>
+  <data name="navbar_dashboard.Text" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="navbar_home.Text" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="navbar_Instructions.Text" xml:space="preserve">
+    <value>Instructions</value>
+  </data>
+  <data name="navbar_login.Text" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="navbar_logout.Text" xml:space="preserve">
+    <value>Log Out</value>
+  </data>
+  <data name="navbar_Norms.Text" xml:space="preserve">
+    <value>Norms</value>
+  </data>
+  <data name="navbar_participantData.Text" xml:space="preserve">
+    <value>Participant Data</value>
+  </data>
+  <data name="navbar_provider.Text" xml:space="preserve">
+    <value>Provider Tests</value>
+  </data>
+  <data name="NormsList_btn1.Text" xml:space="preserve">
+    <value>TOL Drexel Adult</value>
+  </data>
+  <data name="NormsList_btn2.Text" xml:space="preserve">
+    <value>TOL Drexel Child</value>
+  </data>
+  <data name="NormsList_btn3.Text" xml:space="preserve">
+    <value>Card Sort Test</value>
+  </data>
+  <data name="NormsList_btn4.Text" xml:space="preserve">
+    <value>N-back</value>
+  </data>
+  <data name="NormsList_strong.Text" xml:space="preserve">
+    <value>Tables</value>
+  </data>
+  <data name="NormsList_title.Text" xml:space="preserve">
+    <value>Norms</value>
+  </data>
+  <data name="participantData_gvAllParticipants_btn.Text" xml:space="preserve">
+    <value>open</value>
+  </data>
+  <data name="participantData_gvAllParticipants_colums_Age.HeaderText" xml:space="preserve">
+    <value>Age</value>
+  </data>
+  <data name="participantData_gvAllParticipants_colums_firstname.HeaderText" xml:space="preserve">
+    <value>First Name</value>
+  </data>
+  <data name="participantData_gvAllParticipants_colums_Lastname.HeaderText" xml:space="preserve">
+    <value>Last Name</value>
+  </data>
+  <data name="participantData_gvAllParticipants_colums_Profile.HeaderText" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="participantData_gvAllParticipants_colums_Username.HeaderText" xml:space="preserve">
+    <value>UserName </value>
+  </data>
+  <data name="participantData_pop_btn.Text" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="participantData_pop_columns_Assigned.HeaderText" xml:space="preserve">
+    <value>Assigned Date</value>
+  </data>
+  <data name="participantData_pop_columns_checkBox.Text" xml:space="preserve">
+    <value>Allow Participant to view results</value>
+  </data>
+  <data name="participantData_pop_columns_finished.HeaderText" xml:space="preserve">
+    <value>Finished Date</value>
+  </data>
+  <data name="participantData_pop_columns_finishedRemove.HeaderText" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="participantData_pop_columns_finishedTemplateField.HeaderText" xml:space="preserve">
+    <value>Results</value>
+  </data>
+  <data name="participantData_pop_columns_name.HeaderText" xml:space="preserve">
+    <value>Text Name</value>
+  </data>
+  <data name="participantData_purchachedTests_column_Left.HeaderText" xml:space="preserve">
+    <value>Left</value>
+  </data>
+  <data name="participantData_purchachedTests_column_Name.HeaderText" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="participantData_purchachedTests_column_Option.HeaderText" xml:space="preserve">
+    <value>Option</value>
+  </data>
+  <data name="participantData_purchachedTests_paragraph.Text" xml:space="preserve">
+    <value>Purchased Tests</value>
+  </data>
+  <data name="participantData_purchachedTests_strong.Text" xml:space="preserve">
+    <value>Tests</value>
+  </data>
+  <data name="participantData_purchachedTests_title.Text" xml:space="preserve">
+    <value>Your</value>
+  </data>
+  <data name="participantData_strong1.Text" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="participantData_strong2.Text" xml:space="preserve">
+    <value>Participants Data</value>
+  </data>
+  <data name="participantData_Title.Text" xml:space="preserve">
+    <value>Participant</value>
+  </data>
+  <data name="pProviderTools_assignTest_btn1.Text" xml:space="preserve">
+    <value>Assign</value>
+  </data>
+  <data name="pProviderTools_assignTest_btn2.Text" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="pProviderTools_assignTest_title.Text" xml:space="preserve">
+    <value>Assign Test</value>
+  </data>
+  <data name="pProviderTools_createUser_btn1.Text" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="pProviderTools_createUser_btn2.Text" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="pProviderTools_createUser_checkBox.Text" xml:space="preserve">
+    <value>Allow User View Results</value>
+  </data>
+  <data name="pProviderTools_createUser_input.Value" xml:space="preserve">
+    <value>Send User Credentials</value>
+  </data>
+  <data name="pProviderTools_createUser_label1.Text" xml:space="preserve">
+    <value>User email</value>
+  </data>
+  <data name="pProviderTools_createUser_label2.Text" xml:space="preserve">
+    <value>User Name</value>
+  </data>
+  <data name="pProviderTools_createUser_label3.Text" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="pProviderTools_createUser_title.Text" xml:space="preserve">
+    <value>Create New User:</value>
+  </data>
+  <data name="pProviderTools_editTest_btn1.Text" xml:space="preserve">
+    <value>Modify</value>
+  </data>
+  <data name="pProviderTools_editTest_btn2.Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="pProviderTools_editTest_btn3.Text" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="pProviderTools_editTest_btn4.Text" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="pProviderTools_editTest_title.Text" xml:space="preserve">
+    <value>Modify Test:</value>
+  </data>
+  <data name="pProviderTools_exportTestResults_btn1.Text" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="pProviderTools_exportTestResults_btn2.Text" xml:space="preserve">
+    <value>Export to Excel One Line</value>
+  </data>
+  <data name="pProviderTools_exportTestResults_btn3.Text" xml:space="preserve">
+    <value>Export to Excel Traditional</value>
+  </data>
+  <data name="pProviderTools_exportTestResults_lable1.Text" xml:space="preserve">
+    <value>Choose test type:</value>
+  </data>
+  <data name="pProviderTools_exportTestResults_lable2.Text" xml:space="preserve">
+    <value>From</value>
+  </data>
+  <data name="pProviderTools_exportTestResults_lable3.Text" xml:space="preserve">
+    <value>To</value>
+  </data>
+  <data name="pProviderTools_exportTestResults_title.Text" xml:space="preserve">
+    <value>Export test results</value>
+  </data>
+  <data name="pProviderTools_resetPw_btn1.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="pProviderTools_resetPw_btn2.Text" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="pProviderTools_resetPw_label1.Text" xml:space="preserve">
+    <value>Old Password:</value>
+  </data>
+  <data name="pProviderTools_resetPw_label2.Text" xml:space="preserve">
+    <value>New Password:</value>
+  </data>
+  <data name="pProviderTools_resetPw_title.Text" xml:space="preserve">
+    <value>Reset Password</value>
+  </data>
+  <data name="pProviderTools_setUpUserCode_btn1.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="pProviderTools_setUpUserCode_btn2.Text" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="pProviderTools_setUpUserCode_label.Text" xml:space="preserve">
+    <value>Enter Code:</value>
+  </data>
+  <data name="pProviderTools_setUpUserCode_title.Text" xml:space="preserve">
+    <value>Set Up Code</value>
+  </data>
+  <data name="testCategories_category1.Text" xml:space="preserve">
+    <value>Memory</value>
+  </data>
+  <data name="testCategories_category2.Text" xml:space="preserve">
+    <value>Executive function and Planning</value>
+  </data>
+  <data name="testCategories_category3.Text" xml:space="preserve">
+    <value>Processing Speed</value>
+  </data>
+  <data name="testCategories_strong.Text" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+  <data name="testCategories_title.Text" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="testList_strong.Text" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="testList_test1_title.Text" xml:space="preserve">
+    <value>Card Sort</value>
+  </data>
+  <data name="testList_test2_title.Text" xml:space="preserve">
+    <value>Trails</value>
+  </data>
+  <data name="testList_test3_title.Text" xml:space="preserve">
+    <value>Nback</value>
+  </data>
+  <data name="testList_test4_title.Text" xml:space="preserve">
+    <value>Tower Of London</value>
+  </data>
+  <data name="testList_test5_title.Text" xml:space="preserve">
+    <value>Syllogisms</value>
+  </data>
+  <data name="testList_test6_title.Text" xml:space="preserve">
+    <value>Stroop test</value>
+  </data>
+  <data name="testList_title.Text" xml:space="preserve">
+    <value>Available</value>
+  </data>
+  <data name="videos_descr1.Text" xml:space="preserve">
+    <value>Provider Dash Part 1</value>
+  </data>
+  <data name="videos_descr2.Text" xml:space="preserve">
+    <value>Provider Dash Part 2</value>
+  </data>
+  <data name="videos_descr3.Text" xml:space="preserve">
+    <value>Provider Dash Part 3</value>
+  </data>
+  <data name="videos_strong.Text" xml:space="preserve">
+    <value>Videos</value>
+  </data>
+  <data name="videos_title.Text" xml:space="preserve">
+    <value>Instructional</value>
+  </data>
+</root>

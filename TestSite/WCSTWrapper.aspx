@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WCSTWrapper.aspx.cs" Inherits="TestSite.WCSTWrapper" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WCSTWrapper.aspx.cs" Inherits="TestSite.WCSTWrapper"
+    Culture="auto" UICulture="auto" %>
 
 <!DOCTYPE html>
 
@@ -10,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="We offer the Card Sort Test online. This test assesses abstract thinking and is available for kids and adults.">
     <meta name="author" content="CogQuiz">
-    <meta name ="keywords" content ="Card Sort Test Online, CogQuiz" />
+    <meta name="keywords" content="Card Sort Test Online, CogQuiz" />
     <title>Card Sort Test Online, Card Sorting Test Online – CogQuiz</title>
     <link rel="shortcut icon" href="images/favicon.ico" />
     <!-- Bootstrap Core CSS -->
@@ -26,7 +27,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
-        <!-- jQuery -->
+    <!-- jQuery -->
     <script src="js/jquery.js"></script>
     <script src="js/sessionManager.js"></script>
 </head>
@@ -48,14 +49,19 @@
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right custom-menu">
-                        <li><a href="MainPage.aspx">Home</a></li>
-                        <li class="active"><a href="#about">About</a></li>
-                        <li id="profOpt" runat="server"><a href="UserProfile.aspx">Profile</a></li>
-                        <li id="login" runat="server"><a href="../Login.aspx">Login</a></li>
+                        <li><a href="MainPage.aspx">
+                            <asp:Localize meta:resourcekey="navbar_home" runat="server" ID="Localize48" Text="" /></a></li>
+                        <li class="active"><a href="#about">
+                            <asp:Localize meta:resourcekey="navbar_about" runat="server" ID="Localize1" Text="" /></a></li>
+                        <li id="profOpt" runat="server"><a href="UserProfile.aspx">
+                            <asp:Localize meta:resourcekey="navbar_profile" runat="server" ID="Localize2" Text="" /></a></li>
+                        <li id="login" runat="server"><a href="../Login.aspx">
+                            <asp:Localize meta:resourcekey="navbar_login" runat="server" ID="Localize3" Text="" /></a></li>
 
                         <li>
 
-                            <asp:LinkButton ID="logOut" class="" type="submit" runat="server" OnClick="logOut_Click">Log Out</asp:LinkButton>
+                            <asp:LinkButton ID="logOut" class="" type="submit" runat="server" OnClick="logOut_Click">
+                                <asp:Localize meta:resourcekey="navbar_logout" runat="server" ID="Localize4" Text="" /></asp:LinkButton>
                         </li>
                         <!-- 	<li><a href="blog.html">Blog</a></li>
                         <li><a href="single-post.html">Single</a></li> -->
@@ -67,13 +73,14 @@
         <!-- Page Content -->
         <section id="about">
             <div class="container testDescription">
-                <h1>Card Sort Test</h1>
+                <h1>
+                    <asp:Localize meta:resourcekey="about_title" runat="server" ID="Localize5" Text="" /></h1>
                 <hr />
                 <div class="panel-group testDescription " id="accordion" role="tablist" aria-multiselectable="true">
                     <div class="col-md-6 visible">
                         <p>
                             <button data-parent="#accordion" class="btn btn-primary btn-lg btn-block" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-                                Research
+                                <asp:Localize meta:resourcekey="accordion_button1" runat="server" ID="Localize6" Text="" />
                             </button>
                         </p>
                     </div>
@@ -81,61 +88,55 @@
                         <p>
                             <button data-parent="#accordion" class="btn btn-primary btn-lg btn-block" type="button"
                                 data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
-                                About
+                                <asp:Localize meta:resourcekey="accordion_button2" runat="server" ID="Localize7" Text="" />
                             </button>
                         </p>
                     </div>
                     <div class="col-md-6 visible">
                         <p>
                             <button data-parent="#accordion" class="btn btn-primary btn-lg btn-block" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                                Measure
+                                <asp:Localize meta:resourcekey="accordion_button3" runat="server" ID="Localize8" Text="" />
                             </button>
                         </p>
                     </div>
                     <div class="col-md-6 visible">
                         <p>
                             <button data-parent="#accordion" class="btn btn-primary btn-lg btn-block" type="button" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                                Details
+                                <asp:Localize meta:resourcekey="accordion_button4" runat="server" ID="Localize9" Text="" />
                             </button>
                         </p>
                     </div>
                     <div class="panel">
 
                         <div id="collapse1" class="collapse col-md-12">
-                            <h3>About:</h3>
+                            <h3>
+                                <asp:Localize meta:resourcekey="collapse1_title" runat="server" ID="Localize10" Text="" /></h3>
                             <p>
-                                CogQuiz’s card sorting test like other sorting tests might be administered to individuals
-                                 with brain injury (e.g., TBI, stroke, etc.), neurological/neurodegenerative disorders 
-                                (e.g., Parkinson’s disease, Alzheimer’s disease, etc.), psychological/mental disorders 
-                                (e.g., schizophrenia, depression, etc.), or to assess development in children and decline
-                                 in elderly.
-                            
+                                <asp:Localize meta:resourcekey="collapse1_paragraph" runat="server" ID="Localize11" Text="" />
                             </p>
                         </div>
                     </div>
                     <div class="panel">
 
                         <div id="collapse2" class="collapse col-md-12">
-                            <h3>Measure:</h3>
+                            <h3>
+                                <asp:Localize meta:resourcekey="collapse2_title" runat="server" ID="Localize12" Text="" />
+
+                            </h3>
                             <p>
-                             Card sorting tests measure cognitive flexibility by assessing the test taker’s
-                                 ability to switch a response strategy when the rules for responding along a dimension change
-                                 (e.g., size, location, etc.). These tests allow mental health professionals to assess 
-                                planning strategy, inhibition of responding, shift strategy in response to performance 
-                                feedback, and working memory as reflected by holding task relevant information in conscious
-                                 awareness. 
+                                <asp:Localize meta:resourcekey="collapse2_paragraph" runat="server" ID="Localize13" Text="" />
                             </p>
                         </div>
                     </div>
                     <div class="panel">
 
                         <div id="collapse3" class=" collapse col-md-12">
-                            <h3>Description</h3>
+                            <h3>
+                                <asp:Localize meta:resourcekey="collapse3_title" runat="server" ID="Localize14" Text="" />
+
+                            </h3>
                             <p>
-    In normal individuals, the task is a measure of cognitive flexibility.
-                                 We provide several normed response parameters for individuals from 5 to 89 years of age.
-                                 Results from the CogQuiz card sorting tests administered alone or without input or supervision 
-                                from a licensed mental health specialist are not valid for assessing brain or cognitive function.
+                                <asp:Localize meta:resourcekey="collapse3_paragraph" runat="server" ID="Localize15" Text="" />
                             </p>
                         </div>
                     </div>
@@ -143,12 +144,9 @@
                     <div class="panel">
 
                         <div id="collapse4" class=" collapse col-md-12">
-                            <h3>Research</h3>
+                            <h3><asp:Localize meta:resourcekey="collapse4_title"  runat="server" ID="Localize16" Text="" /></h3>
                             <p>
-                      Berg, E. A. (1948). A simple objective for measuring flexibility in thinking. Journal of General Psychology, 39, 15-22.
-Eling, P., Derckx, K., & Maes, R. (2008). On the historical and conceptual background of the Wisconsin Card Sorting Test. Brain and Cognition, 67, 247-253.
-Flashman, L. A., Horner, M. D., Freides, D. (1991). Note on scoring perseveration on the Wisconsin Card Sorting Test. The Clinical Neurologist, 5, 2, 190-194.
-Feldstein, S. N., Keller, F. R., Portman, R. E., Durham, R. L., Klebe, K. J., Davis, H. P. (1999). A comparison of computerized and standard versions of the Wisconsin Card Sorting Test. The Clinical Neurologist, 13, 3, 303-313
+                               <asp:Localize meta:resourcekey="collapse4_paragraph"  runat="server" ID="Localize17" Text="" />
                             </p>
                         </div>
                     </div>
@@ -157,30 +155,32 @@ Feldstein, S. N., Keller, F. R., Portman, R. E., Durham, R. L., Klebe, K. J., Da
         </section>
         <section>
             <div class="specifications container">
-                <h3>Specifications:</h3>
+                <h3><asp:Localize meta:resourcekey="specifications_title"  runat="server" ID="Localize18" Text="" /></h3>
                 <p>
-                    This test will take about 20 minutes to complete. 
+                    <asp:Localize meta:resourcekey="specifications_paragraph1"  runat="server" ID="Localize19" Text="" />
                 </p>
                 <p>
-                    Recommended minimum screen resolution is 1000 x 700. 
+                    <asp:Localize meta:resourcekey="specifications_paragraph2"  runat="server" ID="Localize20" Text="" />
                 </p>
             </div>
         </section>
         <section>
 
             <div class="container right" style="margin-top: 20px;">
-            
 
-                <asp:LinkButton ID="runTest" runat="server" class="signup-btn" OnClick="runTest_Click">Run Test</asp:LinkButton>
+
+                <asp:LinkButton ID="runTest" runat="server" class="signup-btn" OnClick="runTest_Click"><asp:Localize meta:resourcekey="runtest"  runat="server" ID="Localize21" Text="" /></asp:LinkButton>
                 <div id="requestToReg" runat="server" visible="true">
 
 
                     <p>
-                        <a href="../Login.aspx">Please Login </a>
+                        <a href="../Login.aspx"><asp:Localize meta:resourcekey="pleaselogin"  runat="server" ID="Localize22" Text="" /></a>
                     </p>
-                    <p>OR</p>
                     <p>
-                        <a href="../Login.aspx">Register</a>
+                        <asp:Localize meta:resourcekey="or"  runat="server" ID="Localize23" Text="" />
+                    </p>
+                    <p>
+                        <a href="../Login.aspx"><asp:Localize meta:resourcekey="register"  runat="server" ID="Localize24" Text="" /></a>
                     </p>
                 </div>
             </div>
@@ -192,50 +192,56 @@ Feldstein, S. N., Keller, F. R., Portman, R. E., Durham, R. L., Klebe, K. J., Da
                     <div class="row">
                         <div class="col-md-3">
                             <div class="circle c1 img-circle" id="singlePr" runat="server">
-                                <h4 class="blue">Single Test</h4>
+                                <h4 class="blue"><asp:Localize meta:resourcekey="price_single_title"  runat="server" ID="Localize25" Text="" /></h4>
                                 <span class="icon blue"><i class="fa fa-usd"></i></span>
                                 <span class="price-large blue">7</span>
                                 <span class="price-small">.00</span>
-                                <p>One Time Run</p>
-                                <asp:Button ID="single" class="btn btn-info" runat="server" OnClick="single_Click" Text="Buy Now" />
+                                <p><asp:Localize meta:resourcekey="price_single_paragraph"  runat="server" ID="Localize26" Text="" /></p>
+                                <asp:Button ID="single" class="btn btn-info" runat="server" OnClick="single_Click" text="" meta:resourcekey="price_single_buy"></asp:Button>
                             </div>
                         </div>
                         <!-- .Col-md-3 ends here -->
 
-                           <div class="col-md-3">
+                        <div class="col-md-3">
                             <div class="circle c2 img-circle">
-                                <h4 class="yellow">Set of 10</h4>
+                                <h4 class="yellow"><asp:Localize meta:resourcekey="price_ten_title"  runat="server" ID="Localize28" Text="" /></h4>
                                 <span class="icon yellow"><i class="fa fa-usd"></i></span>
                                 <span class="price-large yellow">50</span>
                                 <span class="price-small">.00</span>
-                                <p>Small Project</p>
-                                <asp:Button ID="ten" class="btn btn-warning" runat="server" OnClick="ten_Click" Text="Buy Now" />
+                                <p>
+                                    <asp:Localize meta:resourcekey="price_ten_paragraph"  runat="server" ID="Localize29" Text="" />
+
+                                </p>
+                                <asp:Button ID="ten" class="btn btn-warning" runat="server" OnClick="ten_Click" Text="Buy Now" meta:resourcekey="price_ten_buy"/>
                             </div>
                         </div>
                         <!-- .Col-md-3 ends here -->
 
-                             <div class="col-md-3">
+                        <div class="col-md-3">
                             <div class="circle c3 img-circle">
-                                <h4 class="green">Set of 100</h4>
+                                <h4 class="green"><asp:Localize meta:resourcekey="price_hundred_title"  runat="server" ID="Localize30" Text="" /></h4>
                                 <span class="icon green"><i class="fa fa-usd "></i></span>
                                 <span class="price-large green">450</span>
                                 <span class="price-small">.00</span>
-                                <p>Medium Size Project</p>
-                                <asp:Button ID="hundred" class="btn btn-success" runat="server" OnClick="hundred_Click" Text="Buy Now" />
+                                <p>
+                                    <asp:Localize meta:resourcekey="price_hundred_paragraph"  runat="server" ID="Localize31" Text="" />
+
+                                </p>
+                                <asp:Button ID="hundred" class="btn btn-success" runat="server" OnClick="hundred_Click" Text="Buy Now" meta:resourcekey="price_hundred_buy"/>
                             </div>
                         </div>
                         <!-- .Col-md-3 ends here -->
 
-                                   <div class="col-md-3">
+                        <div class="col-md-3">
                             <div class="circle c4 img-circle">
-                                <h4 class="red">Set of 500</h4>
+                                <h4 class="red"><asp:Localize meta:resourcekey="price_unlim_title"  runat="server" ID="Localize32" Text="" /></h4>
                                 <span class="icon red"><i class="fa fa-usd "></i></span>
                                 <span class="price-large red">1000</span>
-                              <%--  <span class="price-small">.00</span>--%>
+                                <%--  <span class="price-small">.00</span>--%>
                                 <p>
-                                   Large Sample
-                                <p>
-                                    <asp:Button ID="unlim" class="btn btn-danger" runat="server"  OnClick="unlimited_Click" Text="Buy Now" />
+                                    <asp:Localize meta:resourcekey="price_unlim_paragraph"  runat="server" ID="Localize33" Text="" />
+                                </p>
+                                    <asp:Button ID="unlim" class="btn btn-danger" runat="server" OnClick="unlimited_Click" Text="Buy Now" meta:resourcekey="price_unlim_buy"/>
                             </div>
                         </div>
                         <!-- .Col-md-3 ends here -->
@@ -250,8 +256,8 @@ Feldstein, S. N., Keller, F. R., Portman, R. E., Durham, R. L., Klebe, K. J., Da
         <section id="follow-us">
             <div class="container">
                 <div class="text-center height-contact-element">
-                    <h3>Follow Us</h3>
-                         <p>+1(719)888 9121</p> 
+                    <h3><asp:Localize meta:resourcekey="follow"  runat="server" ID="Localize34" Text="" /></h3>
+                    <p>+1(719)888 9121</p>
                 </div>
                 <img class="img-responsive displayed" src="images/line-separator.png" alt="short" />
                 <div class="text-center height-contact-element">
@@ -274,23 +280,22 @@ Feldstein, S. N., Keller, F. R., Portman, R. E., Durham, R. L., Klebe, K. J., Da
                     </div>
                 </div>
                 <div class="col-sm-6">
-                    
                 </div>
             </div>
         </div>
-            <script src="https://use.fontawesome.com/0138464303.js"></script>
+        <script src="https://use.fontawesome.com/0138464303.js"></script>
         <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date(); a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-        ga('create', 'UA-89149772-1', 'auto');
-        ga('send', 'pageview');
+            ga('create', 'UA-89149772-1', 'auto');
+            ga('send', 'pageview');
 
-</script>
+        </script>
     </footer>
 
 
@@ -356,10 +361,10 @@ Feldstein, S. N., Keller, F. R., Portman, R. E., Durham, R. L., Klebe, K. J., Da
             if ($filterClass == 'all') { var $filters = $itemsClone.find('li'); }
             else { var $filters = $itemsClone.find('li[data-type=' + $filterClass + ']'); }
             $itemsHolder.quicksand(
-			  $filters,
-			  { duration: 1000 },
-			  gallery
-			  );
+                $filters,
+                { duration: 1000 },
+                gallery
+            );
         });
 
         $(document).ready(gallery);

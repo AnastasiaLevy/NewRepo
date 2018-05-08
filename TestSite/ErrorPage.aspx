@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ErrorPage.aspx.cs" Inherits="TestSite.ErrorPage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ErrorPage.aspx.cs" Inherits="TestSite.ErrorPage" 
+    culture="auto" uiculture="auto" %>
 
 
 <!DOCTYPE html>
@@ -13,7 +14,7 @@
     <meta name="description" content="neuropsychological testing error page">
     <meta name="keywords" content="Error page for psychological testing, neuro psych tests error page">
     <meta name="google-site-verification" content="GMj8owmZtkuKU0Fa_4Zg82VbKsQPO8VkZD_pHsRghA4" />
-    <title>Error</title>
+    <title><asp:Localize meta:resourcekey="pagetitle"  runat="server" ID="Localize4" Text="" /></title>
     <link rel="shortcut icon" href="../images/favicon.ico" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="../fonts/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -49,7 +50,7 @@
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right custom-menu">
-                    <li><a href="../MainPage.aspx">Home</a></li>
+                    <li><a href="../MainPage.aspx"><asp:Localize meta:resourcekey="navbar_home"  runat="server" ID="Localize48" Text="" /></a></li>
                 </ul>
             </div>
         </div>
@@ -59,7 +60,7 @@
         <div class="" style="padding-top:40px">
             <img src="images/giphy.gif" height ="300" width = "300"  />
         </div>
-        <div class="center">Opps! Something went wrong. Please try again later. To report the error, call +1(719)888 9121 or email <a href="mailto:support@cogquiz.com" target="_top">support@cogquiz.com</a></div>
+        <div class="center"><asp:Localize meta:resourcekey="error_text"  runat="server" ID="Localize1" Text="" /> <a href="mailto:support@cogquiz.com" target="_top"><asp:Localize meta:resourcekey="error_email"  runat="server" ID="Localize2" Text="" /></a></div>
     </section>
 
     <section id="availableTests">
@@ -68,7 +69,7 @@
     <section id="follow-us">
         <div class="container">
             <div class="text-center height-contact-element">
-                <h3>Follow Us</h3>
+                <h3><asp:Localize meta:resourcekey="follow"  runat="server" ID="Localize3" Text="" /></h3>
                      <p>+1(719)888 9121</p> 
             </div>
             <img class="img-responsive displayed" src="../images/line-separator.png" alt="short" />

@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MainPage.aspx.cs" Inherits="TestSite.MainPage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MainPage.aspx.cs" Inherits="TestSite.MainPage" 
+    culture="auto" uiculture="auto" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -38,81 +39,81 @@
         <header id="home" class="carousel slide">
             <ul class="cb-slideshow">
                 <li>
-                    <span>image1</span>
+                    <span><asp:Localize meta:resourcekey="carousel_image1_span"  runat="server" ID="Localize12" Text="" /></span>
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="text-center">
-                                    <h3>Instant Results</h3><%-- TODO: MAke font bigger--%>
+                                    <h3><asp:Localize meta:resourcekey="carousel_image1_title1"  runat="server" ID="Localize13" Text="" /></h3><%-- TODO: MAke font bigger--%>
                                 </div>
                             </div>
                         </div>
-                        <h4>Afraid your child might have ADHD, find out in the privacy of your home for a fraction of the cost of a psychological assetssment in a doctor's office.</h4>
+                        <h4><asp:Localize meta:resourcekey="carousel_image1_title2"  runat="server" ID="Localize14" Text="" /></h4>
                     </div>
                 </li>
                 <li>
-                    <span>image2</span>
+                    <span><asp:Localize meta:resourcekey="carousel_image2_span"  runat="server" ID="Localize15" Text="" /></span>
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="text-center">
-                                    <h3>Neuropsychological test</h3>
+                                    <h3><asp:Localize meta:resourcekey="carousel_image2_title1"  runat="server" ID="Localize16" Text="" /></h3>
                                 </div>
                             </div>
                         </div>
-                        <h4>Fun brain games for the public in a private setting.</h4><%-- Make sure they all on the same line--%>
+                        <h4><asp:Localize meta:resourcekey="carousel_image2_title2"  runat="server" ID="Localize17" Text="" /></h4><%-- Make sure they all on the same line--%>
                     </div>
                 </li>
                 <li>
-                    <span>image3</span> 
+                    <span><asp:Localize meta:resourcekey="carousel_image3_span"  runat="server" ID="Localize18" Text="" /></span> 
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="text-center">
-                                    <h3>Looking to hire a candidate?</h3>
+                                    <h3><asp:Localize meta:resourcekey="carousel_image3_title1"  runat="server" ID="Localize19" Text="" /></h3>
                                 </div>
                             </div>
                         </div>
-                        <h4>Have them take one of attenion and speed of processing tests. Find out if they can really do the job.</h4>
+                        <h4><asp:Localize meta:resourcekey="carousel_image3_title2"  runat="server" ID="Localize20" Text="" /></h4>
                     </div>
                 </li>
                 <li>
-                    <span>Image 04</span>
+                    <span><asp:Localize meta:resourcekey="carousel_image4_span"  runat="server" ID="Localize21" Text="" /></span>
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="text-center">
-                                    <h3>Cognitive Aging Concerns?</h3>
+                                    <h3><asp:Localize meta:resourcekey="carousel_image4_title1"  runat="server" ID="Localize22" Text="" /></h3>
                                 </div>
                             </div>
                         </div>
-                        <h4>Find out if you are aging gracefully, like others in your age bracket or, if there's cause for concern.</h4>
+                        <h4><asp:Localize meta:resourcekey="carousel_image4_title2"  runat="server" ID="Localize23" Text="" /></h4>
                     </div>
                 </li>
                 <li>
-                    <span>Image 05</span>
+                    <span><asp:Localize meta:resourcekey="carousel_image5_span"  runat="server" ID="Localize24" Text="" /></span>
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="text-center">
-                                    <h3>COMPARE YOUR SCORE AGAINS THOUSANDS OF PEOPLE</h3>
+                                    <h3><asp:Localize meta:resourcekey="carousel_image5_title1"  runat="server" ID="Localize25" Text="" /></h3>
                                 </div>
                             </div>
                         </div>
-                        <h4>With the most norms available, no other test can definitevly tell you about your results like CogQuiz can.</h4>
+                        <h4><asp:Localize meta:resourcekey="carousel_image5_title2"  runat="server" ID="Localize26" Text="" /></h4>
                     </div>
                 </li>
                 <li>
-                    <span>Image 06</span>
+                    <span><asp:Localize meta:resourcekey="carousel_image6_span"  runat="server" ID="Localize27" Text="" /></span>
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="text-center">
-                                    <h3>Researcher or Medical Practitioner?</h3>
+                                    <h3><asp:Localize meta:resourcekey="carousel_image6_title1"  runat="server" ID="Localize28" Text="" /></h3>
                                 </div>
                             </div>
                         </div>
-                        <h4>Special pricing is available for researchers and medical practitioners. Contact us for more details.</h4>
+                        <h4><asp:Localize meta:resourcekey="carousel_image6_title2"  runat="server" ID="Localize29" Text="" /></h4>
                     </div>
                 </li>
             </ul>
@@ -143,24 +144,24 @@
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right custom-menu">
-                        <li><a href="Blog/index.html">Trending</a></li>
-                        <li class="active"><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Test Categories</a></li>
+                        <li><a href="Blog/index.html"><asp:Localize meta:resourcekey="navbar_trending"  runat="server" ID="Localize48" Text="" /></a></li>
+                        <li class="active"><a href="#home"><asp:Localize meta:resourcekey="navbar_home"  runat="server" ID="Localize1" Text="" /></a></li>
+                        <li><a href="#about"><asp:Localize meta:resourcekey="navbar_about"  runat="server" ID="Localize2" Text="" /></a></li>
+                        <li><a href="#services"><asp:Localize meta:resourcekey="navbar_categories"  runat="server" ID="Localize3" Text="" /></a></li>
                         <!-- <li><a href="#meet-team">Team</a></li> -->
-                        <li><a href="#availableTests">Avalable Tests</a></li>
-                        <li><a href="#testsToOrder">Custom Tests</a></li>
-                        <li><a href="#desktopTests">DeskTop Tests</a></li>
+                        <li><a href="#availableTests"><asp:Localize meta:resourcekey="navbar_avalable"  runat="server" ID="Localize4" Text="" /></a></li>
+                        <li><a href="#testsToOrder"><asp:Localize meta:resourcekey="navbar_custom"  runat="server" ID="Localize5" Text="" /></a></li>
+                        <li><a href="#desktopTests"><asp:Localize meta:resourcekey="navbar_desktop"  runat="server" ID="Localize6" Text="" /></a></li>
                     <%--    <li><a href="#contact">Contact</a></li>--%>
-                        <li><a href="#follow-us">Connect</a></li>
+                        <li><a href="#follow-us"><asp:Localize meta:resourcekey="navbar_connect"  runat="server" ID="Localize7" Text="" /></a></li>
 
-                        <li id="login" runat="server"><a href="Login.aspx">Login</a></li>
+                        <li id="login" runat="server"><a href="Login.aspx"><asp:Localize meta:resourcekey="navbar_login"  runat="server" ID="Localize8" Text="" /></a></li>
                         <li id="profile" runat ="server" class="dropdown">
-                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile<span class="caret"></span></a>
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><asp:Localize meta:resourcekey="navbar_profile"  runat="server" ID="Localize9" Text="" /><span class="caret"></span></a>
                           <ul class="dropdown-menu">
-                            <li id="profOpt" runat ="server"><a href="UserProfile.aspx">Profile</a></li>
+                            <li id="profOpt" runat ="server"><a href="UserProfile.aspx"><asp:Localize meta:resourcekey="navbar_profile"  runat="server" ID="Localize10" Text="" /></a></li>
                             <li>
-                                <asp:LinkButton ID="logOut" class="" type="submit" runat="server" OnClick="logOut_Click">Log Out</asp:LinkButton>
+                                <asp:LinkButton ID="logOut" class="" type="submit" runat="server" OnClick="logOut_Click"><asp:Localize meta:resourcekey="navbar_logout"  runat="server" ID="Localize11" Text="" /></asp:LinkButton>
                             </li>
                           </ul>
                         </li>
@@ -178,51 +179,45 @@
         <section id="about">
             <div class="container">
                 <div class="row">
-                    <h1><center>CogQuiz Neuropsychological Tests<center></h1> <%--TODO:CENTER--%>
+                    <h1><center><asp:Localize meta:resourcekey="about_title"  runat="server" ID="Localize30" Text="" /><center></h1> <%--TODO:CENTER--%>
                     <div class="col-md-offset-1 col-md-10">
                         <div class="text-center">
                            
                             <img class="img-responsive displayed" src="images\line-separator.png" alt="Company about" />
                             <div class="row">
-                                <h5 class="aboutHeader">The CogQuiz General Philosophy</h5>
+                                <h5 class="aboutHeader"><asp:Localize meta:resourcekey="about_row1_title"  runat="server" ID="Localize31" Text="" /></h5>
                                 <div class="col-md-12">
                                     <p>
-                                        CogQuiz is a company committed to the development of powerful computer-based tools for cognitive and neuropsychological research and evaluation. 
-                                      Our goal is to design computerized neuropsychological and cognitive tests that are affordable for assessment of medical and/or a mental health status.
-                                      We have strived, and think we are successful, in making an easy to use, affordably priced tests usable by the general public.
-                                      As a consumer, you will take a test that is the equal of any test in terms of norms and receive feedback at a fraction of the cost of seeing a licensed professional. 
-                                      You may print out a report that you can take to a professional for an evaluation beyond the report we provide. We believe that an informed individual is their own best advocate. 
+                                        <asp:Localize meta:resourcekey="about_row1_paragraph"  runat="server" ID="Localize32" Text="" />
                                     </p>
 
                                 </div>
                             </div>
                             <div class="row">
-                                <h5 class="aboutHeader">History and Validating Data</h5>
+                                <h5 class="aboutHeader"><asp:Localize meta:resourcekey="about_row2_title"  runat="server" ID="Localize33" Text="" /></h5>
                                 <div class="col-md-12">
                                     <p>
-                                        Our products reflect over 50 years of experience in using computers for experiment control, data acquisition, and data analysis in cognitive and behavioral research. 
-                                      Our products have been used as part of a long-term research program in several universities and by licensed practitioners alike. 
-                                      Many of the tests have extensive sets of age-stratified normative data which are included in each test product's report/manual.
+                                        <asp:Localize meta:resourcekey="about_row2_paragraph"  runat="server" ID="Localize34" Text="" />
                                     </p>
 
                                 </div>
                             </div>
                             <div class="row">
-                                <h5 class="aboutHeader">Large Norm Base</h5>
+                                <h5 class="aboutHeader"><asp:Localize meta:resourcekey="about_row3_title"  runat="server" ID="Localize35" Text="" /></h5>
                                 <div class="col-md-12">
                                     <p>
-                                        All CogQuiz products come with preprogrammed tests that were used to collect the normative data provided in the test documentation.
-                                       There are few or no commercial products with equivalent norms, anywhere.
+                                        <asp:Localize meta:resourcekey="about_row3_paragraph"  runat="server" ID="Localize36" Text="" />
                                     </p>
                                 </div>
                             </div>
 
                             <div class="row">
-                                <h5 class="aboutHeader">Centralized Secure Database</h5>
+                                <h5 class="aboutHeader"><asp:Localize meta:resourcekey="about_row4_title"  runat="server" ID="Localize37" Text="" /></h5>
                                 <div class="col-md-12">
-                                    <p>All CogQuiz tests utilize a centralized database. Whether you are using only one of our tests or all of them, 
-                                        collected data is secure. In addition to facilitating the management of all testing data, this approach also ensures heightened security 
-                                        and confidentiality of all participant information. </p>
+                                    <p>
+                                        <asp:Localize meta:resourcekey="about_row4_paragraph"  runat="server" ID="Localize38" Text="" />
+
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -235,7 +230,7 @@
             <div class="blueback">
                 <div class="container">
                     <div class="text-center homeport2">
-                        <h2>Test Categories</h2>
+                        <h2><asp:Localize meta:resourcekey="service_title"  runat="server" ID="Localize39" Text="" /></h2>
                     </div>
                     <div class="row">
                         <div class="col-md-12 homeservices1 blueFont">
@@ -247,10 +242,9 @@
                                             <i class="fa fa-medium fa-stack-1x "></i>
                                         </span></a>
                                     </a>
-                                    <h3><a href="category/Memory.aspx">Memory</a></h3>
+                                    <h3><a href="category/Memory.aspx"><asp:Localize meta:resourcekey="service_category1_title"  runat="server" ID="Localize40" Text="" /></a></h3>
                                     <p>
-                                        Short-term and long term-merm memory tests avaialble.
-                                    Take one of our quizes and find out where you stand in relation to others. Are you capable of remembering germane or salient details, or is there cause for concern?
+                                        <asp:Localize meta:resourcekey="service_category1_paragraph"  runat="server" ID="Localize41" Text="" />
                                     </p>
                                 </div>
                             </div>
@@ -263,8 +257,8 @@
                                         </span></a>
 
                                     </a>
-                                    <h3><a href="category/ExecutiveFunction.aspx">Executive function and Planning</a></h3>
-                                    <p>Are you concerned with your Attention span, your ability to switch between tasks effectively or your speed of processing? Executive function tests help you determine if you have alfflictions like ADHD or NNNN</p>
+                                    <h3><a href="category/ExecutiveFunction.aspx"><asp:Localize meta:resourcekey="service_category2_title"  runat="server" ID="Localize42" Text="" /></a></h3>
+                                    <p><asp:Localize meta:resourcekey="service_category2_paragraph"  runat="server" ID="Localize43" Text="" /></p>
                                 </div>
                             </div>
                             <div class="col-md-4 portfolio-item">
@@ -276,8 +270,8 @@
                                         </span></a>
 
                                     </a>
-                                    <h3><a href="category/ProcessingSpeed.aspx">Processing Speed</a></h3>
-                                    <p>Speed of processing has been a major explantory varialbe for enhanced cognitive performace during development.</p>
+                                    <h3><a href="category/ProcessingSpeed.aspx"><asp:Localize meta:resourcekey="service_category3_title"  runat="server" ID="Localize44" Text="" /></a></h3>
+                                    <p><asp:Localize meta:resourcekey="service_category3_paragraph"  runat="server" ID="Localize45" Text="" /></p>
                                 </div>
                             </div>
                             <%--<div class="col-md-3 portfolio-item">
@@ -303,19 +297,16 @@
             <div class="container">
                 <div class="row">
                     <div class="text-center">
-                        <h4>The software for each CogQuiz test has been designed with an emphasis on efficiency and ease of use. 
-                        Each test comes with an easy to use example and a screen feature definition. 
-                        In addition, we offer prompt, courteous customer support via email or Skype. 
-                        CogQuiz tests will run on Microsoft Windows XP SP3®, Vista®, Windows 7® Windows 8®.</h4>
-                        <h2>All Available Tests</h2>
+                        <h4><asp:Localize meta:resourcekey="available_title1"  runat="server" ID="Localize46" Text="" /></h4>
+                        <h2><asp:Localize meta:resourcekey="available_title2"  runat="server" ID="Localize47" Text="" /></h2>
                         <img class="img-responsive displayed" src="images/line-separator.png" alt="about">
                     </div>
 
                     <ul class="filter nav nav-pills">
-                        <li data-value="all"><a class="active" href="#">All</a></li>
-                        <li data-value="memory"><a href="#">Memory</a></li>
-                        <li data-value="executive"><a href="#">Executive Function</a></li>
-                        <li data-value="mobileapps"><a href="#">Processing Speed</a></li>
+                        <li data-value="all"><a class="active" href="#"><asp:Localize meta:resourcekey="available_nav_all"  runat="server" ID="Localize49" Text="" /></a></li>
+                        <li data-value="memory"><a href="#"><asp:Localize meta:resourcekey="available_nav_memory"  runat="server" ID="Localize50" Text="" /></a></li>
+                        <li data-value="executive"><a href="#"><asp:Localize meta:resourcekey="available_nav_executive"  runat="server" ID="Localize51" Text="" /></a></li>
+                        <li data-value="mobileapps"><a href="#"><asp:Localize meta:resourcekey="available_nav_mobileapps"  runat="server" ID="Localize52" Text="" /></a></li>
                         <%--<li data-value="personality"><a href="#">Personality</a></li>--%>
                     </ul>
 
@@ -378,44 +369,41 @@
             <div class="blueback">
                 <div class="container">
                     <div class="text-center homeport2">
-                        <h2>Tests to Order</h2>
+                        <h2><asp:Localize meta:resourcekey="order_title"  runat="server" ID="Localize53" Text="" /></h2>
                     </div>
                     <div class="row">
                         <div class="col-md-12 homeservices1 blueFont">
                             <div class="col-md-6 portfolio-item">
                                 <div class="text-center">
-                                    <h3 class="blueFont1">Single Test</h3>
+                                    <h3 class="blueFont1"><asp:Localize meta:resourcekey="order_test1_title"  runat="server" ID="Localize54" Text="" /></h3>
                                     <p>
-                                        Are you a practitioner, clinition, medical profressional or researcher in need of a specific test?
-                                    We can make it for you within a two weeks, end-2-end. 
+                                        <asp:Localize meta:resourcekey="order_test1_paragraph"  runat="server" ID="Localize55" Text="" />
                                     </p>
                                 </div>
                             </div>
                             <div class="col-md-6 portfolio-item">
                                 <div class="text-center">
-                                    <h3 class="blueFont1">Research Environment</h3>
+                                    <h3 class="blueFont1"><asp:Localize meta:resourcekey="order_test2_title"  runat="server" ID="Localize56" Text="" /></h3>
                                     <p>
-                                        We will make software for you based off of your needs. Neuropsychological testing is our specialty.
-                                        If you are looking for custom software that is maluable and configurable for multiple tests, can keep a track of participants, store results, we are your best option.
+                                        <asp:Localize meta:resourcekey="order_test2_paragraph"  runat="server" ID="Localize57" Text="" />
                                     </p>
                                 </div>
                             </div>
 
                         </div>
-                            <div class="col-md-12 homeservices1 blueFont">
+                        <div class="col-md-12 homeservices1 blueFont">
                             <div class="col-md-6 portfolio-item">
                                 <div class="text-center">
-                                    <h3 class="blueFont1">Software and Hosting</h3>
+                                    <h3 class="blueFont1"><asp:Localize meta:resourcekey="order_test3_title"  runat="server" ID="Localize58" Text="" /></h3>
                                     <p>
-                                    We create the software, and we will host it for you too. 
-                                    We take the worrying out of Hipaa regulations and data integrity. We design and develop Cloud based and Desktop applications.
+                                    <asp:Localize meta:resourcekey="order_test3_paragraph"  runat="server" ID="Localize59" Text="" />
                                     </p>
                                 </div>
                             </div>
                             <div class="col-md-6 ">
                                 <div class="text-center">
-                                    <h3 class="blueFont1">Platforms </h3>
-                                    <p>With custom software comes custom requests. Do you want your tests to run on Android, Apple, locked applications for tablets, or desktop applications? We can help.</p>
+                                    <h3 class="blueFont1"><asp:Localize meta:resourcekey="order_test4_title"  runat="server" ID="Localize60" Text="" /></h3>
+                                    <p><asp:Localize meta:resourcekey="order_test4_paragraph"  runat="server" ID="Localize61" Text="" /></p>
                                 </div>
                             </div>
 
@@ -429,7 +417,7 @@
         <section id="desktopTests">
             <div class="container">
                 <div class="text-center">
-                    <h2>DeskTop Tests</h2>
+                    <h2><asp:Localize meta:resourcekey="desktop_title"  runat="server" ID="Localize62" Text="" /></h2>
                     <img class="img-responsive displayed" src="images/line-separator.png" alt="about">
                 </div>
                 <div class="row">
@@ -439,33 +427,33 @@
                             <figure class="effect-oscar">
                                 <img src="images/CogQuestPick.jpg"" alt="" class="img-responsive" />
                                 <figcaption>
-                                    <h2>CogQuest</h2>
-                                    <a href="\Tests\CogQuest.aspx">View more</a>
+                                    <h2><asp:Localize meta:resourcekey="desktop_test1_title"  runat="server" ID="Localize63" Text="" /></h2>
+                                    <a href="\Tests\CogQuest.aspx"><asp:Localize meta:resourcekey="desktop_test1_ref"  runat="server" ID="Localize64" Text="" /></a>
                                 </figcaption>
                             </figure>
-                            <p class="text-center"> A  tool to create questionnaires for collecting participant information.</p>
+                            <p class="text-center"><asp:Localize meta:resourcekey="desktop_test1_paragraph"  runat="server" ID="Localize65" Text="" /></p>
                
                         </div>
                         <div class="col-md-4 col-sm-12 col-xs-12">
                             <figure class="effect-oscar">
                                 <img src="images/dt.png"" alt="" class="img-responsive" style="height: 262px;"/>
                                 <figcaption>
-                                    <h2>Desktop Tests Collection</h2>
-                                    <a href="\Tests\DesktopTests.aspx">View more</a>
+                                    <h2><asp:Localize meta:resourcekey="desktop_test2_title"  runat="server" ID="Localize66" Text="" /></h2>
+                                    <a href="\Tests\DesktopTests.aspx"><asp:Localize meta:resourcekey="desktop_test2_ref"  runat="server" ID="Localize67" Text="" /></a>
                                 </figcaption>
                             </figure>
-                            <p class="text-center"> A  tool to create questionnaires for collecting participant information.</p>
+                            <p class="text-center"><asp:Localize meta:resourcekey="desktop_test2_paragraph"  runat="server" ID="Localize69" Text="" /></p>
                
                         </div>
                         <div class="col-md-4 col-sm-12 col-xs-12">
                             <figure class="effect-oscar">
                                 <img src="images/TOL/TOLWinForms.png"" alt="" class="img-responsive" style="height: 262px;"/>
                                 <figcaption>
-                                    <h2>Tower of London</h2>
-                                    <a href="\Tests\DesktopTowerOfLondonWinForms.aspx">View more</a>
+                                    <h2><asp:Localize meta:resourcekey="desktop_test3_title"  runat="server" ID="Localize68" Text="" /></h2>
+                                    <a href="\Tests\DesktopTowerOfLondonWinForms.aspx"><asp:Localize meta:resourcekey="desktop_test3_ref"  runat="server" ID="Localize70" Text="" /></a>
                                 </figcaption>
                             </figure>
-                            <p class="text-center"> A  tool to create questionnaires for collecting participant information.</p>
+                            <p class="text-center"><asp:Localize meta:resourcekey="desktop_test3_paragraph"  runat="server" ID="Localize71" Text="" /></p>
                
                         </div>
               <%--          <div class="col-md-4 col-sm-12 col-xs-12 portfolio-item">
@@ -501,14 +489,14 @@
        <section id="contact">
             <div class="container" style ="height:300px">
                 <h4 id ="contactError" runat="server"></h4>
-                <asp:Label class="label" ID="name" runat="server" Text="Your Name:"></asp:Label>
+                <asp:Label class="label" ID="name" runat="server" Text="Your Name:" meta:resourcekey="contact_name"></asp:Label>
                 <input id="emailName" class="email" type="text" runat="server" />
-                <asp:Label class="label" ID="Label2" runat="server" Text="Your Email:"></asp:Label>
+                <asp:Label class="label" ID="Label2" runat="server" Text="Your Email:" meta:resourcekey="contact_email"></asp:Label>
                 <input id="emailFrom" class="email" type="text" runat="server" />
-                <asp:Label class="label" ID="Label3" runat="server" Text="Message:"></asp:Label>
+                <asp:Label class="label" ID="Label3" runat="server" Text="Message:" meta:resourcekey="contack_message"></asp:Label>
                 <textarea style="resize: none;" id="emailText" class="email" cols="20" rows="5" runat="server"></textarea>
                
-                <asp:LinkButton class="bnt btn-sm btn-success" type="submit" runat="server" OnClick="clcSendButton">Send Email</asp:LinkButton>
+                <asp:LinkButton class="bnt btn-sm btn-success" type="submit" runat="server" OnClick="clcSendButton"><asp:Localize meta:resourcekey="contact_send"  runat="server" ID="Localize72" Text="" /></asp:LinkButton>
 
             </div>
         </section>
@@ -519,30 +507,29 @@
                     <div class="box">
                         <div class="col-lg-12">
                      
-                            <h2 class="text-center">Instructional
-                                Videos
-                            </h2>
+                            <h2 class="text-center"><asp:Localize meta:resourcekey="videos_title"  runat="server" ID="Localize73" Text="" /></h2>
+
                              <img class="img-responsive displayed" src="images/line-separator.png" alt="short">
                         </div>
                         <div class="col-sm-3 text-center" id="vid1">
-                            <label>Provider Dash Part 1</label>
+                            <label><asp:Localize meta:resourcekey="videos_label1"  runat="server" ID="Localize74" Text="" /></label>
                            <iframe src="https://www.youtube.com/embed/-SPAjSEuBNA?" frameborder="0" allowfullscreen=""></iframe>
 
                         </div>
                         <div class="col-sm-3 text-center"> 
-                        <label>Provider Dash Part 2</label>
+                        <label><asp:Localize meta:resourcekey="videos_label2"  runat="server" ID="Localize75" Text="" /></label>
                             <iframe src="https://www.youtube.com/embed/k_aoilEl8h8?" frameborder="0" allowfullscreen=""></iframe>
 
                         </div>
                  
                         <div class="col-sm-3 text-center">
-                             <label>Provider Dash Part 3</label>
+                             <label><asp:Localize meta:resourcekey="videos_label3"  runat="server" ID="Localize76" Text="" /></label>
                             <iframe src="https://www.youtube.com/embed/0JwN9Np1TmE" frameborder="0" allowfullscreen=""></iframe>
 
          
                         </div>
                         <div class="col-sm-3 text-center">
-                         <label>Tower of London Set Up</label>
+                         <label><asp:Localize meta:resourcekey="videos_label4"  runat="server" ID="Localize77" Text="" /></label>
                             <iframe src="https://www.youtube.com/embed/VH4AMss26W0" frameborder="0" allowfullscreen=""></iframe>
                         </div>
                         <div class="col-sm-2 text-center">
@@ -629,7 +616,7 @@
         <section id="follow-us">
             <div class="container">
                 <div class="text-center height-contact-element">
-                    <h2>FOLLOW US</h2>
+                    <h2><asp:Localize meta:resourcekey="follow"  runat="server" ID="Localize78" Text="" /></h2>
                 </div>
                 <img class="img-responsive displayed" src="images/line-separator.png" alt="short" />
                 <div class="text-center height-contact-element">

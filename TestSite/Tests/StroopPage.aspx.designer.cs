@@ -13,6 +13,15 @@ namespace TestSite.Tests {
     public partial class StroopPage {
         
         /// <summary>
+        /// Localize48 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Localize Localize48;
+        
+        /// <summary>
         /// userId control.
         /// </summary>
         /// <remarks>
