@@ -174,4 +174,7 @@
   <data name="services_tittle.Text" xml:space="preserve">
     <value>Test Categories</value>
   </data>
+  <data name="pagetitle.title" xml:space="preserve">
+    <value>Processing Speed Test Online – CogQuiz</value>
+  </data>
 </root>

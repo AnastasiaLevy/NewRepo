@@ -144,7 +144,7 @@
   <data name="navbar_Home.Text" xml:space="preserve">
     <value>Home</value>
   </data>
-  <data name="pageTitle.Text" xml:space="preserve">
+  <data name="pageTitle.Title" xml:space="preserve">
     <value>Login</value>
   </data>
   <data name="popup_agree.Text" xml:space="preserve">

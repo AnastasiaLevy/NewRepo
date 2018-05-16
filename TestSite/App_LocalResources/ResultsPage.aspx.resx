@@ -147,7 +147,7 @@
   <data name="navbar_profile.Text" xml:space="preserve">
     <value>Profile</value>
   </data>
-  <data name="pagetitle" xml:space="preserve">
+  <data name="pagetitle.title" xml:space="preserve">
     <value>Test Results</value>
   </data>
 </root>

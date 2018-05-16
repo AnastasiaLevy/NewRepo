@@ -1,17 +1,13 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ResultsPage.aspx.cs" Inherits="TestSite.ResultsPage" 
-    culture="auto" uiculture="auto" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ResultsPage.aspx.cs" Inherits="TestSite.ResultsPage" MasterPageFile="~/Layout.Master"
+    Culture="auto" UICulture="auto"  Title="" meta:resourcekey="pagetitle"%>
 
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
+<asp:Content ContentPlaceHolderID="HeadContent" runat="server">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Tower Of London test">
     <meta name="author" content="AnaLevy">
     <meta name="google-site-verification" content="GMj8owmZtkuKU0Fa_4Zg82VbKsQPO8VkZD_pHsRghA4" />
-    <title>Test Results</title>
     <link rel="shortcut icon" href="images/favicon.ico" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
    <%-- <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">--%>
@@ -28,12 +24,14 @@
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="assets/js/jquery.imgzoom.js"></script>
     <script src="js/sessionManager.js"></script>
+</asp:content>
 
-</head>
-<body data-spy="scroll" runat="server" style="font-size:larger">
-    <form runat="server">
-        <!-- Navigation -->
-        <nav class="navbar navbar-inverse navbar-fixed-top">
+<asp:Content ContentPlaceHolderID="MenuItemLi" runat="server">
+    <li class="active"><a href="#about"><asp:Localize meta:resourcekey="navbar_about"  runat="server" ID="Localize5" Text="" /></a></li>
+    </asp:content>
+
+<asp:Content ContentPlaceHolderID="MainContent" runat="server">
+        <%--<nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -60,7 +58,7 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav>--%>
 
         <header>
         </header>
@@ -102,7 +100,7 @@
         </section>
 
 
-        <section id="follow-us">
+        <%--<section id="follow-us">
             <div class="container">
                 <div class="text-center height-contact-element">
                     <h3>Follow Us</h3>
@@ -118,34 +116,10 @@
                     </ul>
                 </div>
             </div>
-        </section>
-    </form>
-    <footer id="footer">
-        <div class="container">
-            <div class="row myfooter">
-                <div class="col-sm-6">
-                    <div class="pull-left">
-                        © Copyright Cogquiz2016 
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    
-                </div>
-            </div>
-        </div>
-                <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date(); a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        </section>--%>
+</asp:content>
 
-        ga('create', 'UA-89149772-1', 'auto');
-        ga('send', 'pageview');
-
-</script>
-    </footer>
+<asp:Content ContentPlaceHolderID="ScriptsContent" runat="server">
 
     <script type="text/javascript">
         $('.resultImage').imgZoom({
@@ -155,8 +129,4 @@
             origin: 'data-origin'
         });
     </script>
-
-</body>
-</html>
-
-
+</asp:Content>

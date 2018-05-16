@@ -192,6 +192,9 @@ Feldstein, S. N., Keller, F. R., Portman, R. E., Durham, R. L., Klebe, K. J., Da
   <data name="or.Text" xml:space="preserve">
     <value>or</value>
   </data>
+  <data name="pagetitle.title" xml:space="preserve">
+    <value>Card Sort Test Online, Card Sorting Test Online – CogQuiz</value>
+  </data>
   <data name="pleaseLogin.Text" xml:space="preserve">
     <value>Please Login</value>
   </data>

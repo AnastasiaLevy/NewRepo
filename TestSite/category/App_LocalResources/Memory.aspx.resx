@@ -165,6 +165,9 @@
   <data name="navbar_profile.Text" xml:space="preserve">
     <value>Profile</value>
   </data>
+  <data name="pagetitle.title" xml:space="preserve">
+    <value>Cognitive Style Questionnaire, Cognitive Test Online Practice, Cognitive Ability Test Online</value>
+  </data>
   <data name="services_category1Paragraph.Text" xml:space="preserve">
     <value>Are you concerned with your Attention span, your ability to switch between tasks effectively or your speed of processing? Executive function tests help you determine if you have alfflictions like ADHD or NNNN</value>
   </data>

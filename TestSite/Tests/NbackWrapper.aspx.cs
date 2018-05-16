@@ -23,6 +23,12 @@ namespace TestSite.Tests
         protected string _page = "/Tests/NbackWrapper.aspx";
 
 
+        protected override void InitializeCulture()
+        {
+            LanguageManager.ApplyLanguage();
+            base.InitializeCulture();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
            
@@ -32,13 +38,13 @@ namespace TestSite.Tests
                 _userId = _user.ProviderUserKey.ToString();
                 _isProfilefilled = ProfileIsFilled(_userId);
                 _baseUrl = Request.Url.GetLeftPart(UriPartial.Authority);
-                logOut.Visible = true;
-                login.Visible = false;
+                //logOut.Visible = true;
+                //login.Visible = false;
             }
             else
             {
-                login.Visible = true;
-                profOpt.Visible = false;
+                //login.Visible = true;
+                //profOpt.Visible = false;
 
             }
             if (!IsPostBack)
@@ -81,8 +87,8 @@ namespace TestSite.Tests
                         }
                         else
                         {
-                            login.Visible = false;
-                            logOut.Visible = true;
+                            //login.Visible = false;
+                            //logOut.Visible = true;
                             requestToReg.Visible = false;
                             runTest.Visible = false;
                         }
@@ -92,8 +98,8 @@ namespace TestSite.Tests
                     }
                     else
                     {
-                        login.Visible = true;
-                        logOut.Visible = false;
+                        //login.Visible = true;
+                        //logOut.Visible = false;
                         requestToReg.Visible = false;
                         runTest.Visible = false;
                     }
@@ -107,9 +113,9 @@ namespace TestSite.Tests
             if (ProfileIsFilled(_userId))
             {
                 runTest.Visible = true;
-                logOut.Visible = true;
+                //logOut.Visible = true;
                 requestToReg.Visible = false;
-                login.Visible = false;
+                //login.Visible = false;
                 price.Visible = false;
             }
             else if (User.Identity.IsAuthenticated)
@@ -121,8 +127,8 @@ namespace TestSite.Tests
             {
                 runTest.Visible = false;
                 requestToReg.Visible = true;
-                login.Visible = true;
-                logOut.Visible = false;
+                //login.Visible = true;
+                //logOut.Visible = false;
             }
         }
 
@@ -171,7 +177,7 @@ namespace TestSite.Tests
         {
             if (User.Identity.IsAuthenticated)
             {
-                profOpt.Visible = true;
+                //profOpt.Visible = true;
                 if (ProfileIsFilled(_userId))
                 {
                     requestToReg.Visible = false;

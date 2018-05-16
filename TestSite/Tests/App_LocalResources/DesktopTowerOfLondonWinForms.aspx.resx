@@ -192,6 +192,9 @@ Since its creation as a means of assessing planning ability, the TOL has been im
   <data name="navbar_profile.Text" xml:space="preserve">
     <value>Profile</value>
   </data>
+  <data name="pageTitle.title" xml:space="preserve">
+    <value>Psychological Questionnaire, Cognitive Test Online Practice, Cognitive Ability Test Online</value>
+  </data>
   <data name="price_hundred_buy.Text" xml:space="preserve">
     <value>Buy Now</value>
   </data>

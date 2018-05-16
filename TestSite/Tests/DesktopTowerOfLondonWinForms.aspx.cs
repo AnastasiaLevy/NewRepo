@@ -20,8 +20,15 @@ namespace TestSite.Tests
         protected bool _isProfilefilled;
         protected string _testId = Enums.TestId.Quest;
         protected static int _userTestId;
-
         public string Key { get; set; }
+
+        protected override void InitializeCulture()
+        {
+            LanguageManager.ApplyLanguage();
+            base.InitializeCulture();
+        }
+
+        
         public bool PayPalSimulation
         {
             get
@@ -38,15 +45,15 @@ namespace TestSite.Tests
                 _userId = _user.ProviderUserKey.ToString();
                 Key = DataMethods.GetWinFormTOLAppKey(_userId);
 
-                logOut.Visible = true;
-                profOpt.Visible = true;
-                login.Visible = false;
+                //logOut.Visible = true;
+                //profOpt.Visible = true;
+                //login.Visible = false;
             }
             else
             {
-                login.Visible = true;
-                profOpt.Visible = false;
-                logOut.Visible = false;
+                //login.Visible = true;
+                //profOpt.Visible = false;
+                //logOut.Visible = false;
             }
 
             //  Catch response from paypal

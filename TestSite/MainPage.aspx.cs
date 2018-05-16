@@ -7,24 +7,18 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
+using TestSite.HelpClasses;
 
 namespace TestSite
 {
     public partial class MainPage : System.Web.UI.Page
     {
-        protected void Page_Init(object sender, EventArgs e)
+        protected override void InitializeCulture()
         {
-            if (User.Identity.IsAuthenticated)
-            {
-                login.Visible = false;
-                profile.Visible = true;
-            }
-            else
-            {
-                login.Visible = true;
-                profile.Visible = false;
-            }
+            LanguageManager.ApplyLanguage();
+            base.InitializeCulture();
         }
+
         protected void Page_Load(object sender, EventArgs e)
         {
          

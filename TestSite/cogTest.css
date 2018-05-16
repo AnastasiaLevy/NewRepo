@@ -3092,7 +3092,7 @@ form .buttons {
     }
 }
 
-#gvAllParticipants, #gvTestPerUser, #gvProviderTests, #gvFinishedTests, #gvAvailableTests {
+#gvAllParticipants, #gvTestPerUser, #gvProviderTests, #gvFinishedTests, #gvAvailableTests, .provider-table {
     width: 100%;
     word-wrap: break-word;
     table-layout: fixed;
@@ -3554,4 +3554,62 @@ label {
     .fix-left-menu a {
         display: block;
         margin-bottom: 5px;
+    }
+
+.navbar > .container .navbar-brand {
+    padding: 15px 0px;
+    margin-left: -35px;
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 15px;
+}
+
+.custom-pop {
+    position: fixed;
+    height: auto;
+    top: 20%;
+    left: 10%;
+    width: 80%;
+    z-index: 100;
+    background-color: white;
+    border: 2px double;
+    border-bottom-color: darkblue;
+    border-radius: 5px;
+    padding: 10px;
+    padding-top: 0px;
+    overflow-y: auto;
+}
+
+.custom-pop-btnCancel {
+    font-size: x-large;
+    color: white;
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: dodgerblue;
+    position: absolute;
+    right: 0;
+}
+
+.navbar-inverse .navbar-nav.custom-menu li {
+    margin-left: 0;
+}
+
+    .navbar-inverse .navbar-nav.custom-menu li a {
+        padding-bottom: 5px;
+        padding-right: 0;
+        padding-left: 0;
+        margin-left: 18px;
+    }
+
+.follow-us-back {
+    background: rgba(255,255,255,0.9);
+}
+
+.menu-lang-flag {
+    display: inline-block;
+    width: 20px;
+}
+
+    .menu-lang-flag img {
+        width: 100%;
+        margin-top: -3px;
     }

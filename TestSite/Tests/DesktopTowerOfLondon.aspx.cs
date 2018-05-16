@@ -167,6 +167,7 @@ namespace TestSite.Tests
             }
         }
 
+
         protected string _baseUrl;
         protected string _itemName = "CogQuiz Desktop";
         protected string _page = "/Tests/DesktopTowerOfLondon.aspx";
@@ -176,6 +177,12 @@ namespace TestSite.Tests
 
         public string LicenseEmail { get; set; }
         public string Key { get; set; }
+
+        protected override void InitializeCulture()
+        {
+            LanguageManager.ApplyLanguage();
+            base.InitializeCulture();
+        }
 
         public bool PayPalSimulation
         {
@@ -192,9 +199,9 @@ namespace TestSite.Tests
             
             if (User.Identity.IsAuthenticated)
             {
-                login.Visible = false;
-                profOpt.Visible = true;
-                logOut.Visible = true;
+                //login.Visible = false;
+                //profOpt.Visible = true;
+                //logOut.Visible = true;
 
                 _user = Membership.GetUser(User.Identity.Name);
                 _userId = _user.ProviderUserKey.ToString();
@@ -203,9 +210,9 @@ namespace TestSite.Tests
             }
             else
             {
-                login.Visible = true;
-                profOpt.Visible = false;
-                logOut.Visible = false;
+                //login.Visible = true;
+                //profOpt.Visible = false;
+                //logOut.Visible = false;
             }
 
             if ((IsPostBack || PayPalSimulation) && string.IsNullOrEmpty(Key) && User.Identity.IsAuthenticated)

@@ -150,7 +150,7 @@
   <data name="navbar_profile.Text" xml:space="preserve">
     <value>Profile</value>
   </data>
-  <data name="pageTitle.Text" xml:space="preserve">
+  <data name="pageTitle.title" xml:space="preserve">
     <value>Tower Of London Test Online – CogQuiz</value>
   </data>
   <data name="price_btn.Text" xml:space="preserve">

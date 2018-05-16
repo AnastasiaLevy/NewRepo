@@ -1,10 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DesktopTowerOfLondonWinForms.aspx.cs" Inherits="TestSite.Tests.DesktopTowerOfLondonWinForms" 
-    culture="auto" uiculture="auto" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DesktopTowerOfLondonWinForms.aspx.cs" MasterPageFile="~/Layout.Master" Inherits="TestSite.Tests.DesktopTowerOfLondonWinForms" 
+    culture="auto" uiculture="auto" Title="" meta:resourcekey="pagetitle"%>
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
+<asp:Content ContentPlaceHolderID="HeadContent" runat="server">
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -12,7 +10,7 @@
     <meta name="keywords" content="Keywords: Cognitive Style Questionnaire, Cognitive Test Online Practice, Cognitive Ability Test Online" />
     <meta name="author" content="CogQuiz" />
     <meta name="google-site-verification" content="GMj8owmZtkuKU0Fa_4Zg82VbKsQPO8VkZD_pHsRghA4" />
-    <title>Psychological Questionnaire, Cognitive Test Online Practice, Cognitive Ability Test Online</title>
+    <%--<title>Psychological Questionnaire, Cognitive Test Online Practice, Cognitive Ability Test Online</title>--%>
     <link rel="shortcut icon" href="../images/favicon.ico" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css" rel="stylesheet" />
@@ -27,11 +25,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
 
-</head>
-<body>
-    <form id="form1" runat="server">
+</asp:Content>
+
+<asp:Content ContentPlaceHolderID="MenuItemLi" runat="server">
+    <li class="active"><a href="#about"><asp:Localize meta:resourcekey="navbar_about"  runat="server" ID="Localize27" Text="" /></a></li>
+</asp:Content>
+
+<asp:Content ContentPlaceHolderID="MainContent" runat="server">
         <!-- Navigation -->
-        <nav class="navbar navbar-inverse navbar-fixed-top">
+        <%--<nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -57,7 +59,7 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav>--%>
 
         <section id="about">
             <div class="container testDescription">
@@ -258,7 +260,7 @@
             </div>
         </section>
 
-        <section id="follow-us">
+        <%--<section id="follow-us">
             <div class="container">
                 <div class="text-center height-contact-element">
                     <h3><asp:Localize meta:resourcekey="follow"  runat="server" ID="Localize25" Text="" /></h3>
@@ -275,32 +277,10 @@
                 </div>
 
             </div>
-        </section>
-    </form>
-    <footer id="footer">
-        <div class="container">
-            <div class="row myfooter">
-                <div class="col-sm-6">
-                    <div class="pull-left">
-                        © Copyright CogQuiz 2016 
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                </div>
-            </div>
-        </div>
-        <script>
-            (function (i, s, o, g, r, a, m) {
-                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date(); a = s.createElement(o),
-                    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
-            ga('create', 'UA-89149772-1', 'auto');
-            ga('send', 'pageview');
-
-        </script>
+        </section>--%>
+</asp:Content>
+   
+<asp:Content ContentPlaceHolderID="ScriptsContent" runat="server">
         <script>
             $(document).ready(function () {
                 for (var i = 1; i <= 6; i++) {
@@ -320,7 +300,5 @@
                 }
             });
         </script>
-    </footer>
-    <script src="../js/bootstrap.min.js"></script>
-</body>
-</html>
+    <%--<script src="../js/bootstrap.min.js"></script>--%>
+</asp:Content>

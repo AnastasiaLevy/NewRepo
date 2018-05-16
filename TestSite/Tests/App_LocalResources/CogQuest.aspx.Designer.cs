@@ -542,9 +542,9 @@ namespace TestSite.Tests.App_LocalResources {
         /// <summary>
         ///   Looks up a localized string similar to Psychological Questionnaire, Cognitive Test Online Practice, Cognitive Ability Test Online.
         /// </summary>
-        internal static string pageTitle_Text {
+        internal static string pageTitle_Title {
             get {
-                return ResourceManager.GetString("pageTitle.Text", resourceCulture);
+                return ResourceManager.GetString("pageTitle.Title", resourceCulture);
             }
         }
     }

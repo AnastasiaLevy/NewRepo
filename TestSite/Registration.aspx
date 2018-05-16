@@ -1,17 +1,13 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="TestSite.Registration" 
-    culture="auto" uiculture="auto" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="TestSite.Registration"  MasterPageFile="~/Layout.Master"
+    Culture="auto" UICulture="auto"  Title="" meta:resourcekey="pagetitle"%>
 
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
+<asp:Content ContentPlaceHolderID="HeadContent" runat="server">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Trails">
     <meta name="author" content="AnaLevy">
     <meta name="google-site-verification" content="GMj8owmZtkuKU0Fa_4Zg82VbKsQPO8VkZD_pHsRghA4" />
-    <title>Questionary</title>
     <link rel="shortcut icon" href="images/favicon.ico" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -24,13 +20,18 @@
     <script src="js/jquery.js"></script>
     <link href="css/userProfilecss.css" rel="stylesheet" />
     <script src="js/sessionManager.js"></script>
+</asp:content>
 
-</head>
+<%--<asp:Content ContentPlaceHolderID="MenuItemLi" runat="server">
+    <li class="active"><a id="A1" runat="server" ><asp:Localize meta:resourcekey="navbar_goback"  runat="server" ID="Localize35" Text="" />
+                        </a></li>
+                        <li>
+                            <asp:Button ID="Button1" runat="server" class="signup-btn" Text="Save" OnClick="submit_Click" meta:resourcekey="navbar_save"/>
+                        </li>
+</asp:content>--%>
 
-<body data-spy="scroll" runat="server">
-    <form runat="server">
-        <!-- Navigation -->
-        <nav class="navbar navbar-inverse navbar-fixed-top">
+<asp:Content ContentPlaceHolderID="MainContent" runat="server">
+        <%--<nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -56,7 +57,7 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav>--%>
 
         <header id="homeForm">
         </header>
@@ -109,7 +110,7 @@
                     <hr>
 
                     <div class="col-xs-6 col-md-6  nopadding">
-                        <asp:Label ID="lbBday" class="labelForm" runat="server" Text="" required="true" meta:resourcekey="regForm_lastNameValid"></asp:Label>
+                        <asp:Label ID="lbBday" class="labelForm" runat="server" Text="" required="true" meta:resourcekey="regForm_lbBday"></asp:Label>
                         <asp:TextBox ID="txtBDay" class="form-control input-lg short" runat="server" placeholder="mm/dd/yy" meta:resourcekey="regForm_txtBDay"></asp:TextBox>
                         <asp:RequiredFieldValidator class="red" ID="RequiredFieldValidator1" runat="server" ErrorMessage="Please enter your birthday" meta:resourcekey="regForm_RequiredFieldValidator1"
                             ControlToValidate="txtBDay"></asp:RequiredFieldValidator>
@@ -304,8 +305,9 @@
 
             </div>
         </section>
-    </form>
-    <footer>
+
+    </asp:content>
+ <%--   
         <div class="container">
             <div class="row">
                 <div class="container">
@@ -340,13 +342,8 @@
         ga('send', 'pageview');
 
 </script>
-    </footer>
-
-</body>
-</html>
-
-
-<script src="js/bootstrap.min.js"></script>
+    --%>
+    <asp:Content ContentPlaceHolderID="ScriptsContent" runat="server">
 
 <script src="https://code.jquery.com/jquery-3.1.0.js" integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk=" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
@@ -354,8 +351,11 @@
 
 
 <script>
+    var cbEnglYes = document.getElementById('<%= cbEnglYes.ClientID %>');
+    var cbMedicationsY = document.getElementById('<%= cbMedicationsY.ClientID %>');
+    var cbHeadInjY = document.getElementById('<%= cbHeadInjY.ClientID %>');
 
-    $('#txtBDay').datepicker({
+    $('#<%= txtBDay.ClientID %>').datepicker({
         dateFormat: 'mm/dd/yy',
         changeMonth: true,
         changeYear: true,
@@ -363,49 +363,49 @@
     });
 
     if (cbMedicationsY.checked == true) {
-        $('#txtKindMeds').show();
-        $('#cbMedicationsN').prop('checked', false);
+        $('#<%= txtKindMeds.ClientID %>').show();
+        $('#<%= cbMedicationsN.ClientID %>').prop('checked', false);
     }
     else
-        $('#txtKindMeds').hide();
+        $('#<%= txtKindMeds.ClientID %>').hide();
 
 
     if (cbHeadInjY.checked == true) {
-        $('#ddlHeadInjNum').show();
-        $('#lbHeadInjNum').show();
-        $('#cbHeadInjN').prop('checked', false);
+        $('#<%= ddlHeadInjNum.ClientID %>').show();
+        $('#<%= lbHeadInjNum.ClientID %>').show();
+        $('#<%= cbHeadInjN.ClientID %>').prop('checked', false);
     }
     else {
-        $('#ddlHeadInjNum').hide();
-        $('#lbHeadInjNum').hide();
+        $('#<%= ddlHeadInjNum.ClientID %>').hide();
+        $('#<%= lbHeadInjNum.ClientID %>').hide();
     }
 
 
 
-    $('#cbMedicationsY').click(function () {
+    $('#<%= cbMedicationsY.ClientID %>').click(function () {
         if (this.checked == true) {
-            $('#txtKindMeds').show();
-            $('#cbMedicationsN').prop('checked', false);
+            $('#<%= txtKindMeds.ClientID %>').show();
+            $('#<%= cbMedicationsN.ClientID %>').prop('checked', false);
         }
         else
-            $('#txtKindMeds').hide();
+            $('#<%= txtKindMeds.ClientID %>').hide();
     })
 
-    $('#cbMedicationsN').click(function () {
+    $('#<%= cbMedicationsN.ClientID %>').click(function () {
         if (this.checked == true) {
-            $('#txtKindMeds').hide();
-            $('#cbMedicationsY').prop('checked', false);
+            $('#<%= txtKindMeds.ClientID %>').hide();
+            $('#<%= cbMedicationsY.ClientID %>').prop('checked', false);
         }
 
     })
 
 
-    $('#cbMale').click(function () {
-        $('#cbFmale').prop('checked', false);
+    $('#<%= cbMale.ClientID %>').click(function () {
+        $('#<%= cbFmale.ClientID %>').prop('checked', false);
     })
 
-    $('#cbFmale').click(function () {
-        $('#cbMale').prop('checked', false);
+    $('#<%= cbFmale.ClientID %>').click(function () {
+        $('#<%= cbMale.ClientID %>').prop('checked', false);
     })
 
     //$('#cbAgree').click(function () {
@@ -417,79 +417,79 @@
     //})
 
 
-    $('#cbHeadInjY').click(function () {
+    $('#<%= cbHeadInjY.ClientID %>').click(function () {
         if (this.checked == true) {
-            $('#ddlHeadInjNum').show();
-            $('#lbHeadInjNum').show();
-            $('#cbHeadInjN').prop('checked', false);
+            $('#<%= ddlHeadInjNum.ClientID %>').show();
+            $('#<%= lbHeadInjNum.ClientID %>').show();
+            $('#<%= cbHeadInjN.ClientID %>').prop('checked', false);
         }
         else {
-            $('#ddlHeadInjNum').hide();
-            $('#lbHeadInjNum').hide();
+            $('#<%= ddlHeadInjNum.ClientID %>').hide();
+            $('#<%= lbHeadInjNum.ClientID %>').hide();
         }
     })
 
-    $('#cbHeadInjN').click(function () {
+    $('#<%= cbHeadInjN.ClientID %>').click(function () {
         if (this.checked == true) {
-            $('#ddlHeadInjNum').hide();
-            $('#lbHeadInjNum').hide();
-            $('#cbHeadInjY').prop('checked', false);
+            $('#<%= ddlHeadInjNum.ClientID %>').hide();
+            $('#<%= lbHeadInjNum.ClientID %>').hide();
+            $('#<%= cbHeadInjY.ClientID %>').prop('checked', false);
         }
 
     })
 
     if (cbEnglYes.checked == true) {
-        $('#lblFstLang').hide();
-        $('#firstLang').hide();
-        $('#cbEnglNo').prop('checked', false);
+        $('#<%= lblFstLang.ClientID %>').hide();
+        $('#<%= firstLang.ClientID %>').hide();
+        $('#<%= cbEnglNo.ClientID %>').prop('checked', false);
     }
     else {
-        $('#lblFstLang').show();
-        $('#firstLang').show();
-        $('#cbEnglN0').prop('checked', true);
+        $('#<%= lblFstLang.ClientID %>').show();
+        $('#<%= firstLang.ClientID %>').show();
+        $('#<%= cbEnglNo.ClientID %>').prop('checked', true);
 
     }
 
-    $('#cbEnglYes').click(function () {
+    $('#<%= cbEnglYes.ClientID %>').click(function () {
         if (this.checked == true) {
-            $('#lblFstLang').hide();
-            $('#firstLang').hide();
-            $('#cbEnglNo').prop('checked', false);
+            $('#<%= lblFstLang.ClientID %>').hide();
+            $('#<%= firstLang.ClientID %>').hide();
+            $('#<%= cbEnglNo.ClientID %>').prop('checked', false);
         }
         else {
-            $('#lblFstLang').show();
-            $('#firstLang').show();
-            $('#cbEnglN0').prop('checked', true);
+            $('#<%= lblFstLang.ClientID %>').show();
+            $('#<%= firstLang.ClientID %>').show();
+            $('#<%= cbEnglNo.ClientID %>').prop('checked', true);
 
         }
     })
 
-    $('#cbEnglNo').click(function () {
+    $('#<%= cbEnglNo.ClientID %>').click(function () {
         if (this.checked == true) {
-            $('#lblFstLang').show();
-            $('#firstLang').show();
-            $('#cbEnglYes').prop('checked', false);
+            $('#<%= lblFstLang.ClientID %>').show();
+            $('#<%= firstLang.ClientID %>').show();
+            $('#<%= cbEnglYes.ClientID %>').prop('checked', false);
         }
         else {
-            $('#lblFstLang').hide();
-            $('#firstLang').hide();
-            $('#cbEnglYes').prop('checked', true);
+            $('#<%= lblFstLang.ClientID %>').hide();
+            $('#<%= firstLang.ClientID %>').hide();
+            $('#<%= cbEnglYes.ClientID %>').prop('checked', true);
         }
 
     })
 
 
 
-    $('#cbHeadInjN').click(function () {
+    $('#<%= cbHeadInjN.ClientID %>').click(function () {
         if (this.checked == true) {
-            $('#ddlHeadInjNum').hide();
-            $('#lbHeadInjNum').hide();
-            $('#cbHeadInjY').prop('checked', false);
+            $('#<%= ddlHeadInjNum.ClientID %>').hide();
+            $('#<%= lbHeadInjNum.ClientID %>').hide();
+            $('#<%= cbHeadInjY.ClientID %>').prop('checked', false);
         }
 
     })
 
-    $('#submit').click(function () {
+    $('#<%= submit.ClientID %>').click(function () {
 
     });
 
@@ -497,3 +497,4 @@
 
 <script src="js/gallety.js"></script>
 
+        </asp:Content>

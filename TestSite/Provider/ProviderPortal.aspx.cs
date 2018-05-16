@@ -130,16 +130,16 @@ namespace TestSite.Provider
 
                 if (User.Identity.IsAuthenticated)
                 {
-                    login.Visible = false;
-                    Logout.Visible = true;
+                    //login.Visible = false;
+                    //Logout.Visible = true;
                     //user.Text = User.Identity.Name;
                     //email.Text = Membership.GetUser().Email;
                 }
                 else
                 {
                     Response.Redirect("~/ManePage.aspx");
-                    login.Visible = true;
-                    Logout.Visible = false;
+                    //login.Visible = true;
+                    //Logout.Visible = false;
                 }
 
 

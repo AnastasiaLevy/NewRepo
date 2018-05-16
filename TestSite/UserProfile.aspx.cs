@@ -39,8 +39,8 @@ namespace TestSite
 
             if (User.Identity.IsAuthenticated)
             {
-                login.Visible = false;
-                Logout.Visible = true;
+                //login.Visible = false;
+                //Logout.Visible = true;
                 user.Text = User.Identity.Name;
                 email.Text = Membership.GetUser().Email;
                 userId = Membership.GetUser(User.Identity.Name).ProviderUserKey.ToString();
@@ -55,8 +55,8 @@ namespace TestSite
             else
             {
                 Response.Redirect("~/MainPage.aspx");
-                login.Visible = true;
-                Logout.Visible = false;
+                //login.Visible = true;
+                //Logout.Visible = false;
             }
 
         }
@@ -120,7 +120,11 @@ namespace TestSite
             return DAL.DataMethods.GetUserAge(Membership.GetUser(User.Identity.Name).ProviderUserKey.ToString());
         }
 
-
+        protected override void InitializeCulture()
+        {
+            LanguageManager.ApplyLanguage();
+            base.InitializeCulture();
+        }
 
         protected void logOut_Click(object sender, EventArgs e)
         {

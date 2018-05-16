@@ -19,6 +19,13 @@ namespace TestSite.Tests
         protected bool _isProfilefilled;
         protected string _testId = Enums.TestId.Quest;
         protected static int _userTestId;
+
+        protected override void InitializeCulture()
+        {
+            LanguageManager.ApplyLanguage();
+            base.InitializeCulture();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (User.Identity.IsAuthenticated)
@@ -26,13 +33,13 @@ namespace TestSite.Tests
                 _user = Membership.GetUser(User.Identity.Name);
                 _userId = _user.ProviderUserKey.ToString();
 
-                logOut.Visible = true;
-                login.Visible = false;
+                //logOut.Visible = true;
+                //login.Visible = false;
             }
             else
             {
-                login.Visible = true;
-                profOpt.Visible = false;
+                //login.Visible = true;
+                //profOpt.Visible = false;
 
             }
             if (!IsPostBack)
@@ -64,8 +71,8 @@ namespace TestSite.Tests
                         }
                         else
                         {
-                            login.Visible = false;
-                            logOut.Visible = true;
+                            //login.Visible = false;
+                            //logOut.Visible = true;
 
                             //runTest.Visible = false;
                         }
@@ -74,8 +81,8 @@ namespace TestSite.Tests
                     }
                     else
                     {
-                        login.Visible = true;
-                        logOut.Visible = false;
+                        //login.Visible = true;
+                        //logOut.Visible = false;
                         //runTest.Visible = false;
                     }
 

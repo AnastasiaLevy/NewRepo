@@ -23,10 +23,17 @@ namespace TestSite
         DataTable dt;
         string test;
         bool showReport;
+
+        protected override void InitializeCulture()
+        {
+            LanguageManager.ApplyLanguage();
+            base.InitializeCulture();
+        }
+
         protected void Page_Prerender(object sender, EventArgs e)
         {
-            logOut.Visible = true;
-            login.Visible = false;
+            //logOut.Visible = true;
+            //login.Visible = false;
         }
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -156,9 +156,6 @@
   <data name="navbar_profile.Text" xml:space="preserve">
     <value>Profile</value>
   </data>
-  <data name="pagetitle.Text" xml:space="preserve">
-    <value>UserProfile</value>
-  </data>
   <data name="paidTests_columns_btnStart.Text" xml:space="preserve">
     <value>Start</value>
   </data>
@@ -284,5 +281,8 @@
   </data>
   <data name="userInfo_uploadResult.Text" xml:space="preserve">
     <value>Upload results</value>
+  </data>
+  <data name="pagetitle.title" xml:space="preserve">
+    <value>User Profile</value>
   </data>
 </root>

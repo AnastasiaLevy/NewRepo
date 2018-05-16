@@ -1,10 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WCSTWrapper.aspx.cs" Inherits="TestSite.WCSTWrapper"
-    Culture="auto" UICulture="auto" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WCSTWrapper.aspx.cs" Inherits="TestSite.WCSTWrapper" MasterPageFile="~/Layout.Master"
+    Culture="auto" UICulture="auto"  Title="" meta:resourcekey="pagetitle"%>
 
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
+<asp:Content ContentPlaceHolderID="HeadContent" runat="server">
     <meta name="google-site-verification" content="GMj8owmZtkuKU0Fa_4Zg82VbKsQPO8VkZD_pHsRghA4" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +9,6 @@
     <meta name="description" content="We offer the Card Sort Test online. This test assesses abstract thinking and is available for kids and adults.">
     <meta name="author" content="CogQuiz">
     <meta name="keywords" content="Card Sort Test Online, CogQuiz" />
-    <title>Card Sort Test Online, Card Sorting Test Online – CogQuiz</title>
     <link rel="shortcut icon" href="images/favicon.ico" />
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -30,12 +26,11 @@
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
     <script src="js/sessionManager.js"></script>
-</head>
+</asp:content>
 
-<body data-spy="scroll" runat="server">
-    <form runat="server">
+<asp:Content ContentPlaceHolderID="MainContent" runat="server">
         <!-- Navigation -->
-        <nav class="navbar navbar-inverse navbar-fixed-top">
+        <%--<nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -68,7 +63,7 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav>--%>
 
         <!-- Page Content -->
         <section id="about">
@@ -253,7 +248,7 @@
         </section>
 
 
-        <section id="follow-us">
+        <%--<section id="follow-us">
             <div class="container">
                 <div class="text-center height-contact-element">
                     <h3><asp:Localize meta:resourcekey="follow"  runat="server" ID="Localize34" Text="" /></h3>
@@ -269,9 +264,9 @@
                     </ul>
                 </div>
             </div>
-        </section>
-    </form>
-    <footer id="footer">
+        </section>--%>
+</asp:content>
+   <%-- <footer id="footer">
         <div class="container">
             <div class="row myfooter">
                 <div class="col-sm-6">
@@ -296,11 +291,10 @@
             ga('send', 'pageview');
 
         </script>
-    </footer>
+    </footer>--%>
 
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+<asp:Content ContentPlaceHolderID="ScriptsContent" runat="server">
+    <%--<script src="js/bootstrap.min.js"></script>--%>
 
 
     <!--Jquery Smooth Scrolling-->
@@ -369,9 +363,7 @@
 
         $(document).ready(gallery);
     </script>
-
-</body>
-</html>
+</asp:content>
 
 
 

@@ -26,6 +26,12 @@ namespace TestSite
         protected string _itemName = "Trails Test";
         protected string _page = "/TrailsWrapper.aspx";
 
+        protected override void InitializeCulture()
+        {
+            LanguageManager.ApplyLanguage();
+            base.InitializeCulture();
+        }
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -36,13 +42,13 @@ namespace TestSite
                 _isProfilefilled = ProfileIsFilled(_userId);
                 _isUserProvider = CommonMethods.UserIsProvider(_userId);
                 _baseUrl = Request.Url.GetLeftPart(UriPartial.Authority);
-                logOut.Visible = true;
-                login.Visible = false;
+                //logOut.Visible = true;
+                //login.Visible = false;
             }
             else
             {
-                login.Visible = true;
-                profOpt.Visible = false;
+                //login.Visible = true;
+                //profOpt.Visible = false;
 
             }
             if (!IsPostBack)//Request.QueryString {amt=0.01&cc=USD&item_name=Trails+Test&st=Completed&tx=40C33493AY740004M}
@@ -83,8 +89,8 @@ namespace TestSite
                         }
                         else
                         {
-                            login.Visible = false;
-                            logOut.Visible = true;
+                            //login.Visible = false;
+                            //logOut.Visible = true;
                             requestToReg.Visible = false;
                             runTest.Visible = false;
                             price.Visible = true;
@@ -94,8 +100,8 @@ namespace TestSite
                     }
                     else
                     {
-                        login.Visible = true;
-                        logOut.Visible = false;
+                        //login.Visible = true;
+                        //logOut.Visible = false;
                         requestToReg.Visible = false;
                         runTest.Visible = false;
                     }
@@ -108,9 +114,9 @@ namespace TestSite
             if (ProfileIsFilled(_userId))
             {
                 runTest.Visible = true;
-                logOut.Visible = true;
+                //logOut.Visible = true;
                 requestToReg.Visible = false;
-                login.Visible = false;
+                //login.Visible = false;
                 price.Visible = false; 
             }
             else if (User.Identity.IsAuthenticated)
@@ -122,8 +128,8 @@ namespace TestSite
             {
                 runTest.Visible = false;
                 requestToReg.Visible = true;
-                login.Visible = true;
-                logOut.Visible = false;
+                //login.Visible = true;
+                //logOut.Visible = false;
             }
         }
 
@@ -173,7 +179,7 @@ namespace TestSite
         {
             if (User.Identity.IsAuthenticated)
             {
-                    profOpt.Visible = true;
+                    //profOpt.Visible = true;
                     if (ProfileIsFilled(_userId))
                     {
                         requestToReg.Visible = false;

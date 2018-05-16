@@ -14,15 +14,15 @@ namespace TestSite.blogPosts
         {
             if (User.Identity.IsAuthenticated)
             {
-                login.Visible = false;
-                logOut.Visible = true;
-                profOpt.Visible = true;
+                //login.Visible = false;
+                //logOut.Visible = true;
+                //profOpt.Visible = true;
             }
             else
             {
-                login.Visible = true;
-                logOut.Visible = false;
-                profOpt.Visible = false;
+                //login.Visible = true;
+                //logOut.Visible = false;
+                //profOpt.Visible = false;
             }
 
         }

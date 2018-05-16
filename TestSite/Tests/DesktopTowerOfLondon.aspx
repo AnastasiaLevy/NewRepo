@@ -1,10 +1,7 @@
-﻿<%@ Page Title="" Language="C#" AutoEventWireup="true" CodeBehind="DesktopTowerOfLondon.aspx.cs" Inherits="TestSite.Tests.DesktopTowerOfLondon" 
-    culture="auto" uiculture="auto" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DesktopTowerOfLondon.aspx.cs" Inherits="TestSite.Tests.DesktopTowerOfLondon"  MasterPageFile="~/Layout.Master"
+    Culture="auto" UICulture="auto"  Title="" meta:resourcekey="pagetitle"%>
 
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
+<asp:Content ContentPlaceHolderID="HeadContent" runat="server">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,7 +9,6 @@
     <meta name="author" content="CogQuiz">
     <meta name="keywords" content="Tower of London Test Online, Short Term and Long Term Memory Test Online, Working Memory, Capacity Test, CogQuiz" />
     <meta name="google-site-verification" content="GMj8owmZtkuKU0Fa_4Zg82VbKsQPO8VkZD_pHsRghA4" />
-    <title><asp:Localize meta:resourcekey="pageTitle"  runat="server" ID="Localize5" Text="" /></title>
     <link rel="shortcut icon" href="../../images/favicon.ico" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="../../cogTest.css" rel="stylesheet" />
@@ -49,12 +45,14 @@
     <script type="text/javascript" src="../../js/jquery.hoverdir.js"></script>
     <script type="text/javascript" src="../../js/elastic_grid.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+</asp:content>
 
-</head>
-<body data-spy="scroll" runat="server">
-    <form runat="server">
-        <!-- Navigation -->
-        <nav class="navbar navbar-inverse navbar-fixed-top">
+<asp:Content ContentPlaceHolderID="MenuItemLi" runat="server">
+    <li class="active"><a href="#about"><asp:Localize meta:resourcekey="navbar_about"  runat="server" ID="Localize28" Text="" /></a></li>
+    </asp:content>
+
+<asp:Content ContentPlaceHolderID="MainContent" runat="server">
+        <%--<nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -80,10 +78,9 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav>--%>
 
-        <header>
-        </header>
+        
 
         <!-- Page Content -->
         <section id="about">
@@ -255,7 +252,7 @@
                 </div>
         </div>
 
-        <section id="follow-us">
+        <%--<section id="follow-us">
             <div class="container">
                 <div class="text-center height-contact-element">
                     <h3><asp:Localize meta:resourcekey="follow"  runat="server" ID="Localize27" Text="" /></h3>
@@ -272,36 +269,12 @@
                 </div>
 
             </div>
-        </section>
-    </form>
-    <footer id="footer">
-        <div class="container">
-            <div class="row myfooter">
-                <div class="col-sm-6">
-                    <div class="pull-left">
-                        © Copyright CogQuiz 2016 
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                </div>
-            </div>
-        </div>
-        <script>
-            (function (i, s, o, g, r, a, m) {
-                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date(); a = s.createElement(o),
-                    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        </section>--%>
+</asp:content>
 
-            ga('create', 'UA-89149772-1', 'auto');
-            ga('send', 'pageview');
-
-        </script>
-    </footer>
-
+<asp:Content ContentPlaceHolderID="ScriptsContent" runat="server">
     <!-- Bootstrap Core JavaScript -->
-    <script src="../../js/bootstrap.min.js"></script>
+    <%--<script src="../../js/bootstrap.min.js"></script>--%>
 
     <%-- <script type="text/javascript">
             $(function () {
@@ -419,5 +392,4 @@
 
             });
     </script>
-</body>
-</html>
+</asp:content>

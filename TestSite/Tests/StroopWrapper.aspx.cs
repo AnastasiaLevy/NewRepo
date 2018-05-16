@@ -18,6 +18,12 @@ namespace TestSite.Tests
         protected string _testId = Enums.TestId.Stroop;
         protected static int _userTestId;
 
+        protected override void InitializeCulture()
+        {
+            LanguageManager.ApplyLanguage();
+            base.InitializeCulture();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             requestToReg.Visible = false;
@@ -27,15 +33,15 @@ namespace TestSite.Tests
                 _user = Membership.GetUser(User.Identity.Name);
                 _userId = _user.ProviderUserKey.ToString();
                 _isProfilefilled = ProfileIsFilled(_userId);
-                logOut.Visible = true;
-                login.Visible = false;
+                //logOut.Visible = true;
+                //login.Visible = false;
                 
             }
             else
             {
-                login.Visible = true;
-                profOpt.Visible = false;
-                logOut.Visible = false;
+                //login.Visible = true;
+                //profOpt.Visible = false;
+                //logOut.Visible = false;
 
             }
             if (!IsPostBack)
@@ -87,7 +93,7 @@ namespace TestSite.Tests
         {
             if (User.Identity.IsAuthenticated)
             {
-                profOpt.Visible = true;
+                //profOpt.Visible = true;
                 if (ProfileIsFilled(_userId))
                 {
                     requestToReg.Visible = false;
@@ -126,9 +132,9 @@ namespace TestSite.Tests
             if (ProfileIsFilled(_userId))
             {
                 runTest.Visible = true;
-                logOut.Visible = true;
+                //logOut.Visible = true;
                 requestToReg.Visible = false;
-                login.Visible = false;
+                //login.Visible = false;
           
             }
             else if (User.Identity.IsAuthenticated)
@@ -140,8 +146,8 @@ namespace TestSite.Tests
             {
                 runTest.Visible = false;
                 requestToReg.Visible = true;
-                login.Visible = true;
-                logOut.Visible = false;
+                //login.Visible = true;
+                //logOut.Visible = false;
             }
         }
 

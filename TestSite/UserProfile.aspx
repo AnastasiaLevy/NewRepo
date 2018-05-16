@@ -1,11 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserProfile.aspx.cs" Inherits="TestSite.UserProfile" 
-    culture="auto" uiculture="auto" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserProfile.aspx.cs" Inherits="TestSite.UserProfile" MasterPageFile="~/Layout.Master"
+    Culture="auto" UICulture="auto"  Title="" meta:resourcekey="pagetitle"%>
 
-<!DOCTYPE html>
-
-<html lang="en">
-
-<head>
+<asp:Content ContentPlaceHolderID="HeadContent" runat="server">
     
     <meta name="google-site-verification" content="GMj8owmZtkuKU0Fa_4Zg82VbKsQPO8VkZD_pHsRghA4" />
     <meta charset="utf-8">
@@ -14,7 +10,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="images/favicon.ico" />
-    <title>UserProfile</title>
     <link href="fonts/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="css/bootstrap.css" rel="stylesheet" />
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
@@ -24,18 +19,21 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-    <script src="js/bootstrap.min.js"></script>
     <link href="cogTest.css" rel="stylesheet" />
     <link href="css/userProfilecss.css" rel="stylesheet" />   
     <script src="js/jquery.js"></script> 
     <script src="js/sessionManager.js"></script>
-    
-</head>
+</asp:content>
 
-<body>
+<asp:Content ContentPlaceHolderID="MenuItemLi" runat="server">
+    <li class="active"><a href="#userInfo"><asp:Localize meta:resourcekey="navbar_profile"  runat="server" ID="Localize35" Text="" /></a></li>
+    <li><a href="#paidTests"><asp:Localize meta:resourcekey="navbar_paidtests"  runat="server" ID="Localize36" Text="" /></a></li>
+    <li><a href="#testList"><asp:Localize meta:resourcekey="navbar_available"  runat="server" ID="Localize37" Text="" /></a></li>
+    <li><a href="#testCategories"><asp:Localize meta:resourcekey="navbar_categories"  runat="server" ID="Localize38" Text="" /></a></li>
+</asp:content>
 
-    <form runat="server">
-        <nav class="navbar navbar-inverse navbar-fixed-top">
+<asp:Content ContentPlaceHolderID="MainContent" runat="server">
+        <%--<nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
 
                 <div class="navbar-header">
@@ -57,7 +55,7 @@
                          <li><a href="#paidTests"><asp:Localize meta:resourcekey="navbar_paidtests"  runat="server" ID="Localize2" Text="" /></a></li>
                          <li><a href="#testList"><asp:Localize meta:resourcekey="navbar_available"  runat="server" ID="Localize3" Text="" /></a></li>
                         <li><a href="#testCategories"><asp:Localize meta:resourcekey="navbar_categories"  runat="server" ID="Localize4" Text="" /></a></li>
-                    <%--    <li><a href="#reports">Results</a></li>--%>
+                    <%--    <li><a href="#reports">Results</a></li>
                         <li id="login" runat="server"><a href="Login.aspx"><asp:Localize meta:resourcekey="navbar_login"  runat="server" ID="Localize5" Text="" /></a></li>
                         <li>
                             <asp:LinkButton ID="Logout" cssclass="" type="submit" runat="server" OnClick="logOut_Click"><asp:Localize meta:resourcekey="navbar_logout"  runat="server" ID="Localize6" Text="" /></asp:LinkButton>
@@ -65,7 +63,7 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav>--%>
         <div class="container">
         <section id="userInfo">
             <div class="row">
@@ -173,7 +171,7 @@
                     </div>
                     <div class="col-lg-6">
                         <p class="min"><strong><asp:Localize meta:resourcekey="paidTests_strong2"  runat="server" ID="Localize19" Text="" /></strong> </p>
-                        <asp:GridView ID="gvAvailableTests" runat="server" CellSpacing="10" class="gridview"
+                        <asp:GridView ID="gvAvailableTests" runat="server" CellSpacing="10" class="gridview provider-table"
                             GridLines="Horizontal" AutoGenerateColumns="False" BorderColor="#CCCCCC" BorderStyle="None"
                             BorderWidth="1px" CellPadding="20" ForeColor="Black" Height="75px" 
                             RowStyle-Height="40px" Font-Size="Larger">
@@ -202,7 +200,7 @@
                     <div class="col-lg-6">
 
                         <p class="min"><strong><asp:Localize meta:resourcekey="finishedTest_title"  runat="server" ID="Localize20" Text="" /></strong> </p>
-                        <asp:GridView ID="gvFinishedTests" runat="server" CellSpacing="20" class="gridview"
+                        <asp:GridView ID="gvFinishedTests" runat="server" CellSpacing="20" class="gridview provider-table"
                             GridLines="Horizontal" AutoGenerateColumns="False" BorderColor="#CCCCCC" BorderStyle="None"
                             BorderWidth="1px" CellPadding="10" ForeColor="Black" Height="75px" 
                             RowStyle-Height="40px" Font-Size="Larger">
@@ -405,51 +403,10 @@
                 </div>
             </section>--%>
         </div>
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="container">
-                        <div class="text-center height-contact-element">
-                            <h2><asp:Localize meta:resourcekey="follow"  runat="server" ID="Localize34" Text="" /></h2>
-                        </div>
-                        <img class="img-responsive displayed" src="images/line-separator.png" alt="short" />
-                        <div class="text-center height-contact-element">
-                            <ul class="list-unstyled list-inline list-social-icons">
-                                <li class="active"><a href="https://www.facebook.com/CogQuiz-1644904339158958/"><i class="fa fa-facebook social-icons"></i></a></li>
-                                <li><a href="https://twitter.com/cogquizcom"><i class="fa fa-twitter social-icons"></i></a></li>
-                                <li><a href="https://plus.google.com/u/3/113821050703373361140?hl=en"><i class="fa fa-google-plus social-icons"></i></a></li>
-                                <li><a href="https://www.linkedin.com/company-beta/13213074/"><i class="fa fa-linkedin social-icons"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-12 text-center">
-                        <p>Copyright &copy; Cogquiz 2016</p>
-                          <p>+1(719)888 9121</p> 
-                    </div>
-                </div>
-            </div>
-                    <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date(); a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+</asp:content>
 
-        ga('create', 'UA-89149772-1', 'auto');
-        ga('send', 'pageview');
-
-</script>
-        </footer>
-
-    </form>
-</body>
-    
-</html>
+<asp:Content ContentPlaceHolderID="ScriptsContent" runat="server">
 <script>
-
-    
-
 
     $('.custom-menu a[href^="#"], .intro-scroller .inner-link').on('click', function (e) {
         e.preventDefault();
@@ -490,7 +447,5 @@
         return false;
     });
 
-</script>
-
-
-    
+    </script>
+</asp:Content>

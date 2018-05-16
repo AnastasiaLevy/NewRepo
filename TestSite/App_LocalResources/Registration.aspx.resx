@@ -327,4 +327,7 @@
   <data name="regForm_txtLastName.placeholder" xml:space="preserve">
     <value>Last Name</value>
   </data>
+  <data name="pagetitle.title" xml:space="preserve">
+    <value>User data</value>
+  </data>
 </root>

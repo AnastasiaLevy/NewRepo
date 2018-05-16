@@ -7,73 +7,82 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TestSite.blogPosts {
+namespace TestSite {
     
     
-    public partial class Memory {
+    public partial class Layout {
         
         /// <summary>
-        /// Localize19 control.
+        /// HeadMetaContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Localize Localize19;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder HeadMetaContent;
         
         /// <summary>
-        /// Localize5 control.
+        /// HeadContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Localize Localize5;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder HeadContent;
         
         /// <summary>
-        /// Localize9 control.
+        /// BannerContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Localize Localize9;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder BannerContent;
         
         /// <summary>
-        /// Localize6 control.
+        /// Localize1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Localize Localize6;
+        protected global::System.Web.UI.WebControls.Localize Localize1;
         
         /// <summary>
-        /// Localize10 control.
+        /// MenuItemLi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Localize Localize10;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder MenuItemLi;
         
         /// <summary>
-        /// Localize7 control.
+        /// Li1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Localize Localize7;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Li1;
         
         /// <summary>
-        /// Localize11 control.
+        /// languageCatalog control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Localize Localize11;
+        protected global::System.Web.UI.WebControls.Repeater languageCatalog;
+        
+        /// <summary>
+        /// login control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl login;
         
         /// <summary>
         /// Localize8 control.
@@ -85,93 +94,84 @@ namespace TestSite.blogPosts {
         protected global::System.Web.UI.WebControls.Localize Localize8;
         
         /// <summary>
-        /// Localize12 control.
+        /// profile control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Localize Localize12;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl profile;
         
         /// <summary>
-        /// Localize13 control.
+        /// Localize9 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Localize Localize13;
+        protected global::System.Web.UI.WebControls.Localize Localize9;
         
         /// <summary>
-        /// Localize14 control.
+        /// profOpt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Localize Localize14;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl profOpt;
         
         /// <summary>
-        /// Localize15 control.
+        /// Localize10 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Localize Localize15;
+        protected global::System.Web.UI.WebControls.Localize Localize10;
         
         /// <summary>
-        /// Localize16 control.
+        /// logOut control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Localize Localize16;
+        protected global::System.Web.UI.WebControls.LinkButton logOut;
         
         /// <summary>
-        /// Localize17 control.
+        /// Localize11 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Localize Localize17;
+        protected global::System.Web.UI.WebControls.Localize Localize11;
         
         /// <summary>
-        /// Localize18 control.
+        /// MainContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Localize Localize18;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
         
         /// <summary>
-        /// wrongLogin control.
+        /// ModalContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label wrongLogin;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder ModalContent;
         
         /// <summary>
-        /// userNameLg control.
+        /// ScriptsContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText userNameLg;
-        
-        /// <summary>
-        /// userPwLg control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword userPwLg;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder ScriptsContent;
     }
 }

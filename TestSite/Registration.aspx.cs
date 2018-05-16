@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 using TestSite.DAL;
 
 using System.Web.Security;
+using TestSite.HelpClasses;
 
 namespace TestSite
 {
@@ -18,6 +19,13 @@ namespace TestSite
         protected bool _isProfilefilled;
         protected string _redirectTo;
         protected string _userName;
+
+        protected override void InitializeCulture()
+        {
+            LanguageManager.ApplyLanguage();
+            base.InitializeCulture();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             fbBad.Visible = false;
@@ -27,12 +35,12 @@ namespace TestSite
             {
                 _userId = Request.QueryString["userId"];
                _userName = Request.QueryString["userName"];
-                hgoBack.HRef = "~/Provider/ProviderPortal.aspx";
+                //A1.HRef = "~/Provider/ProviderPortal.aspx";
 
             }
             else
             {
-                hgoBack.HRef = "~/UserProfile.aspx";
+                //A1.HRef = "~/UserProfile.aspx";
                 _user = Membership.GetUser(User.Identity.Name);
                 _userName = User.Identity.Name;
                 _userId = _user.ProviderUserKey.ToString();
@@ -337,15 +345,15 @@ namespace TestSite
         private string GetSelfHealth()
         {
             if (health1.Checked)
-                return lhealth1.InnerText;
+                return "Poor";
             else if (health2.Checked)
-                return lhealth2.InnerText;
+                return "Below Average";
             else if (health3.Checked)
-                return lhealth3.InnerText;
+                return "Average";
             else if (health4.Checked)
-                return lhealth4.InnerText;
+                return "Above Average";
             else if (health5.Checked)
-                return lhealth5.InnerText;
+                return "Excellent";
             else
                 return "";
         }
@@ -400,15 +408,15 @@ namespace TestSite
         private string GetExercise()
         {
             if (exe1.Checked)
-                return lexe1.InnerText;
+                return "0-1";
             else if (exe2.Checked)
-                return lexe2.InnerText;
+                return "2-3";
             else if (exe3.Checked)
-                return lexe3.InnerText;
+                return "4-5";
             else if (exe4.Checked)
-                return lexe4.InnerText;
+                return "6-7";
             else if (exe5.Checked)
-                return lexe4.InnerText;
+                return "8-9";
             else
                 return "";
         }
@@ -439,15 +447,15 @@ namespace TestSite
         private string GetBrainActValue()
         {
             if (act1.Checked)
-                return lact1.InnerText;
+                return "0-5";
             else if (act2.Checked)
-                return lact2.InnerText;
+                return "6-10";
             else if (act3.Checked)
-                return lact3.InnerText;
+                return "11-15";
             else if (act4.Checked)
-                return lact4.InnerText;
+                return "16-20";
             else if (act5.Checked)
-                return lact4.InnerText;
+                return "more than 20";
             else
                 return "";
 

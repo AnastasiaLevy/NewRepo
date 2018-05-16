@@ -194,6 +194,9 @@
   <data name="or.Text" xml:space="preserve">
     <value>OR</value>
   </data>
+  <data name="pagetitle.title" xml:space="preserve">
+    <value>Nback Memory Test Online, Working Memory Capacity Test - CogQuiz</value>
+  </data>
   <data name="price_hundred_buy.Text" xml:space="preserve">
     <value>Buy Now</value>
   </data>

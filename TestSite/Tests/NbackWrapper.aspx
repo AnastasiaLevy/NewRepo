@@ -1,10 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="NbackWrapper.aspx.cs" Inherits="TestSite.Tests.NbackWrapper" 
-    culture="auto" uiculture="auto" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="NbackWrapper.aspx.cs" Inherits="TestSite.Tests.NbackWrapper"  MasterPageFile="~/Layout.Master"
+    Culture="auto" UICulture="auto"  Title="" meta:resourcekey="pagetitle"%>
 
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
+<asp:Content ContentPlaceHolderID="HeadContent" runat="server">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,17 +9,14 @@
     <meta name="author" content="CogQuiz">
     <meta name="keywords" content="Nback Memory Test Online, Short Term and Long Term Memory Test Online, Working Memory and Capacity Test, CogQuiz" />
     <meta name="google-site-verification" content="GMj8owmZtkuKU0Fa_4Zg82VbKsQPO8VkZD_pHsRghA4" />
-    <title>Nback Memory Test Online, Working Memory Capacity Test - CogQuiz</title>
     <link rel="shortcut icon" href="../images/favicon.ico" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="../cogTest.css" rel="stylesheet" />
     <link href="../css/style.css" rel="stylesheet" />
+</asp:content>
 
-</head>
-
-<body data-spy="scroll" runat="server">
-    <form runat="server">
-        <!-- Navigation -->
+<asp:Content ContentPlaceHolderID="MainContent" runat="server">
+        <%--<!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -49,7 +43,7 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav>--%>
 
 
 
@@ -220,7 +214,7 @@
             </div>
         </section>
 
-        <section id="follow-us">
+        <%--<section id="follow-us">
             <div class="container">
                 <div class="text-center height-contact-element">
                     <h3><asp:Localize meta:resourcekey="follow"  runat="server" ID="Localize34" Text="" /></h3>
@@ -236,43 +230,14 @@
                     </ul>
                 </div>
             </div>
-        </section>
-
-    </form>
-
+        </section>--%>
+</asp:content>
 
 
 
-
-    <footer id="footer">
-        <div class="container">
-            <div class="row myfooter">
-                <div class="col-sm-6">
-                    <div class="pull-left">
-                        © Copyright Coquiz 2016 
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                </div>
-            </div>
-        </div>
-        <script src="https://use.fontawesome.com/0138464303.js"></script>
-        <script>
-            (function (i, s, o, g, r, a, m) {
-                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date(); a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
-            ga('create', 'UA-89149772-1', 'auto');
-            ga('send', 'pageview');
-
-        </script>
-    </footer>
+<asp:Content ContentPlaceHolderID="ScriptsContent" runat="server">
     <script src="../js/jquery.js"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../js/bootstrap.min.js"></script>
+    <%--<script src="../js/bootstrap.min.js"></script>--%>
     <script>
 
         $(document).ready(function () {
@@ -318,5 +283,4 @@
 
         });
     </script>
-</body>
-</html>
+</asp:content>

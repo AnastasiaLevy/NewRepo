@@ -169,4 +169,7 @@
   <data name="services_title.Text" xml:space="preserve">
     <value>Test Categories</value>
   </data>
+  <data name="pagetitle.title" xml:space="preserve">
+    <value>Tests of Executive Function, Executive Function Test Online – CogQuiz</value>
+  </data>
 </root>

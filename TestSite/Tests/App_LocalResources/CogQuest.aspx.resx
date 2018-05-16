@@ -278,7 +278,7 @@
   <data name="navbar_profile.Text" xml:space="preserve">
     <value>Profile</value>
   </data>
-  <data name="pageTitle.Text" xml:space="preserve">
+  <data name="pageTitle.Title" xml:space="preserve">
     <value>Psychological Questionnaire, Cognitive Test Online Practice, Cognitive Ability Test Online</value>
   </data>
 </root>

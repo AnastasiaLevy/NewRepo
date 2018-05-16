@@ -1,24 +1,17 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProviderPortal.aspx.cs" Inherits="TestSite.Provider.ProviderPortal" MaintainScrollPositionOnPostback="true"  
-    culture="auto" uiculture="auto" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProviderPortal.aspx.cs" Inherits="TestSite.Provider.ProviderPortal" MaintainScrollPositionOnPostback="true"   MasterPageFile="~/Layout.Master"
+    Culture="auto" UICulture="auto"  Title="" meta:resourcekey="pagetitle"%>
 
-<!DOCTYPE html>
-
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<asp:Content ContentPlaceHolderID="HeadMetaContent" runat="server">
     <meta name="description" content="">
     <meta name="author" content="">
-    <meta name="google-site-verification" content="GMj8owmZtkuKU0Fa_4Zg82VbKsQPO8VkZD_pHsRghA4" />
+</asp:Content>
 
+<asp:Content ContentPlaceHolderID="HeadContent" runat="server">
     <link rel="..//shortcut icon" href="../images/favicon.ico"/>
-    <title>ProviderPortal</title>
     <%--<link rel="stylesheet" href="../css/jquery-ui.min.css">--%>
-    <link href="../fonts/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <%--<link href="../fonts/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">--%>
     <%--<link href="../css/bootstrap.css" rel="stylesheet" />--%>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <%--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">--%>
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
     <!--[if lt IE 9]>
@@ -27,18 +20,24 @@
     <![endif]-->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
-    <link href="../cogTest.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+    <%--<link href="../cogTest.css" rel="stylesheet" />--%>
     <link href="../css/userProfilecss.css" rel="stylesheet" />
+</asp:content>
 
-</head>
+<asp:Content ContentPlaceHolderID="MenuItemLi" runat="server">
+    <li class="active" style="margin-left:0px"><a href="#userInfo"><asp:Localize meta:resourcekey="navbar_dashboard"  runat="server" ID="Localize52" Text="" /></a></li>
+    <li style="margin-left:0px"><a href="#participantData"><asp:Localize meta:resourcekey="navbar_participantData"  runat="server" ID="Localize53" Text="" /></a></li>
+    <li style="margin-left:0px"><a href="#purchachedTests"><asp:Localize meta:resourcekey="navbar_provider"  runat="server" ID="Localize54" Text="" /></a></li>
+    <li style="margin-left:0px"><a href="#testList"><asp:Localize meta:resourcekey="navbar_available"  runat="server" ID="Localize55" Text="" /></a></li>
+    <li style="margin-left:0px"><a href="#NormsList"><asp:Localize meta:resourcekey="navbar_norms"  runat="server" ID="Localize56" Text="" /></a></li>
+    <li style="margin-left:0px"><a href="#videos"><asp:Localize meta:resourcekey="navbar_instructions"  runat="server" ID="Localize57" Text="" /></a></li>
+    <li style="margin-left:0px"><a href="#testCategories"><asp:Localize meta:resourcekey="navbar_categories"  runat="server" ID="Localize58" Text="" /></a></li>
+</asp:content>
 
-<body>
-    <!-- Trigger the modal with a button -->
-
-    <form runat="server" novalidate>
+<asp:Content ContentPlaceHolderID="MainContent" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-        <nav class="navbar navbar-inverse navbar-fixed-top">
+        <%--<nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -62,7 +61,7 @@
                         <li style="margin-left:0px"><a href="#NormsList"><asp:Localize meta:resourcekey="navbar_norms"  runat="server" ID="Localize5" Text="" /></a></li>
                          <li style="margin-left:0px"><a href="#videos"><asp:Localize meta:resourcekey="navbar_instructions"  runat="server" ID="Localize6" Text="" /></a></li>
                         <li style="margin-left:0px"><a href="#testCategories"><asp:Localize meta:resourcekey="navbar_categories"  runat="server" ID="Localize7" Text="" /></a></li>
-                        <%--    <li><a href="#reports">Results</a></li>--%>
+                        <%--    <li><a href="#reports">Results</a></li>
                         <li id="login" runat="server" style="margin-left:0px"><a href="Login.aspx"><asp:Localize meta:resourcekey="navbar_login"  runat="server" ID="Localize8" Text="" /></a></li>
                         <li style="margin-left:0px">
                             <asp:LinkButton ID="Logout" CssClass="" type="submit" runat="server" OnClick="logOut_Click"><asp:Localize meta:resourcekey="navbar_logout"  runat="server" ID="Localize9" Text="" /></asp:LinkButton>
@@ -70,7 +69,7 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav>--%>
 
         <!-- Modal -->
         <%--<div id="myModal" style="z-index: 1050" class="modal fade" role="dialog">--%>
@@ -167,7 +166,7 @@
                                         <asp:Label ID="Label5" runat="server" Text="" meta:resourcekey="pProviderTools_setUpUserCode_label"></asp:Label>
                                         <asp:TextBox ID="txtUserCode" runat="server" CssClass="createUser" Width="50%"></asp:TextBox>
                                         <asp:Button ID="btnCodeSave" class="btn btn-labeled btn-success" runat="server" Text="" OnClick="btnCodeSave_Click" meta:resourcekey="pProviderTools_setUpUserCode_btn1"/>
-                                        <asp:Button ID="btnCodeClose" class="btn btn-labeled btn-info" runat="server" Text="" OnClick="btnCodeClose_Click" meta:resourcekey="pProviderTools_setUpUserCode_btn1"/>
+                                        <asp:Button ID="btnCodeClose" class="btn btn-labeled btn-info" runat="server" Text="" OnClick="btnCodeClose_Click" meta:resourcekey="pProviderTools_setUpUserCode_btn2"/>
                                     </div>
                                 </div>
                                 <div id="editTest" class="panel panel-success" runat="server">
@@ -320,10 +319,10 @@
 
 
                         <div class="col-lg-6 row">
-                            <div id="pop" class="" runat="server">
+                            <div id="pop" class="custom-pop" runat="server">
                                 <asp:Label ID="partName" runat="server" Text="" CssClass="col-lg-2"></asp:Label>
-                                <asp:Button ID="btnCancel" runat="server" OnClick="Button1_Click"  Text="X" class="col-md-1 " />
-                                <asp:GridView ID="gvTestPerUser" runat="server" RowStyle-Wrap="true" CellSpacing="10" class="gridview"
+                                <asp:Button ID="btnCancel" runat="server" OnClick="Button1_Click"  Text="X" class="col-md-1 custom-pop-btnCancel" />
+                                <asp:GridView ID="gvTestPerUser" runat="server" RowStyle-Wrap="true" CellSpacing="10" class="gridview provider-table"
                                     GridLines="Horizontal" AutoGenerateColumns="False" BorderColor="#CCCCCC" BorderStyle="None"
                                     BorderWidth="1px" CellPadding="20" ForeColor="Black"
                                     RowStyle-Height="40px" Font-Size="Larger">
@@ -375,7 +374,7 @@
                         </div>
                         <div class="col-lg-12">
 
-                            <asp:GridView ID="gvAllParticipants" runat="server" CellSpacing="10" class="gridview"
+                            <asp:GridView ID="gvAllParticipants" runat="server" CellSpacing="10" class="gridview provider-table"
                                 GridLines="Horizontal" AutoGenerateColumns="False" BorderColor="#CCCCCC" BorderStyle="None"
                                 BorderWidth="1px" CellPadding="20" ForeColor="Black" Height="100px"
                                 RowStyle-Height="40px"
@@ -439,7 +438,7 @@
                         <p class="col-lg-2"><asp:Localize meta:resourcekey="participantData_purchachedTests_paragraph"  runat="server" ID="Localize30" Text="" /></p>
 
 
-                        <asp:GridView ID="gvProviderTests" runat="server" RowStyle-Wrap="false" CellSpacing="10" class="gridview"
+                        <asp:GridView ID="gvProviderTests" runat="server" RowStyle-Wrap="false" CellSpacing="10" class="gridview provider-table"
                             GridLines="Horizontal" AutoGenerateColumns="False" BorderColor="#CCCCCC" BorderStyle="None"
                             BorderWidth="1px" CellPadding="20" ForeColor="Black" Height="100px"
                             RowStyle-Height="40px">
@@ -512,7 +511,8 @@
                     </div>
                     <div class="col-sm-2 text-center">
                         <a href="../Tests/SyllogWrapper.aspx" id="syllog">
-                            <img class="img-responsive" src="../images/sillog.png"" alt=""></a>
+                            <img class="img-responsive" src="../images/sillog.png"" alt="">
+                        </a>
                         <h3><asp:Localize meta:resourcekey="testList_test5_title"  runat="server" ID="Localize37" Text="" />
 
                             <small></small>
@@ -662,46 +662,6 @@ data="https://www.youtube.com/embed/0JwN9Np1TmE?fs=0">
             </section>
         </div>
 
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="container">
-                        <div class="text-center height-contact-element">
-                            <h2 style="color: black"><asp:Localize meta:resourcekey="follow"  runat="server" ID="Localize52" Text="" /></h2>
-                        </div>
-                        <img class="img-responsive displayed" src="../images/line-separator.png" alt="short" />
-                        <div class="text-center height-contact-element">
-                            <ul class="list-unstyled list-inline list-social-icons">
-                                <li class="active"><a href="https://www.facebook.com/CogQuiz-1644904339158958/"><i class="fa fa-facebook social-icons"></i></a></li>
-                                <li><a href="https://twitter.com/cogquizcom"><i class="fa fa-twitter social-icons"></i></a></li>
-                                <li><a href="https://plus.google.com/u/3/113821050703373361140?hl=en"><i class="fa fa-google-plus social-icons"></i></a></li>
-                                <li><a href="https://www.linkedin.com/company-beta/13213074/"><i class="fa fa-linkedin social-icons"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-12 text-center">
-                        <p>Copyright &copy; CogQuiz 2016</p>
-                          <p>+1(719)888 9121</p>
-                    </div>
-
-                </div>
-            </div>
-                    <script>
-                        (function (i, s, o, g, r, a, m) {
-                            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                                (i[r].q = i[r].q || []).push(arguments)
-                            }, i[r].l = 1 * new Date(); a = s.createElement(o),
-                                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-                        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
-                        ga('create', 'UA-89149772-1', 'auto');
-                        ga('send', 'pageview');
-
-                    </script>
-        </footer>
-
-    </form>
-
     <div>
         <div class="b-popup" id="popupForProvider" runat="server">
         <div class="b-popup-content" style="position: relative;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec accumsan eros, non semper orci. Curabitur convallis in nulla commodo interdum. Proin tincidunt vulputate arcu sed bibendum. Etiam accumsan eleifend pharetra. Praesent vehicula mi consequat, scelerisque tellus quis, laoreet metus. Nam eget tristique mi, at bibendum neque. Curabitur aliquam vel neque blandit dignissim. Phasellus sed eros id purus consequat pulvinar. Proin tristique, mi et pulvinar sodales, turpis urna dignissim tellus, et dapibus sapien lectus et neque. Quisque nulla ante, fringilla id mattis aliquet, feugiat a augue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut aliquam enim id augue volutpat, et fringilla elit tristique.</a>
@@ -712,182 +672,185 @@ data="https://www.youtube.com/embed/0JwN9Np1TmE?fs=0">
         </div>
         </div>
     </div>
-</html>
-<%--<script src="../js/jquery.js"></script>  --%>
 
-<script src="../js/jquery-responsiveTables.js"></script>
-<script src="../js/bootstrap.min.js"></script>
-<script>
+</asp:content>
 
-                        function PopUpShow() {
-                            $("#popupForProvider").show();
-                        }
-                        function PopUpHide() {
-                            $("#popupForProvider").hide();
+<asp:Content ContentPlaceHolderID="ScriptsContent" runat="server">
+    <%--<script src="../js/jquery.js"></script>  --%>
+    <script src="../js/jquery-responsiveTables.js"></script>
+    <%--<script src="../js/bootstrap.min.js"></script>--%>
+    <script>
 
-                        }
-</script>
-<script>
+        function PopUpShow() {
+            $("#<%= popupForProvider.ClientID %>").show();
+        }
+        function PopUpHide() {
+            $("#<%= popupForProvider.ClientID %>").hide();
 
-                        var interval = setInterval(function () {
-                            if ($('#exportTestResults').is(':visible')) {
-                                initDatePickers();
-                                clearInterval(interval);
-                            }
-                        }, 200);
+        }
+    </script>
+    <script>
 
-                        var prm = Sys.WebForms.PageRequestManager.getInstance();
+        var interval = setInterval(function () {
+            if ($('#<%=exportTestResults.ClientID%>').is(':visible')) {
+                initDatePickers();
+                clearInterval(interval);
+            }
+        }, 200);
 
-                        prm.add_endRequest(function () {
-                            initDatePickers();
-                        });
+        var prm = Sys.WebForms.PageRequestManager.getInstance();
 
-                        function initDatePickers() {
-                            var dateFormat = "mm/dd/yy",
-                                from = $("#fromDate")
-                                    .datepicker({
+        prm.add_endRequest(function () {
+            initDatePickers();
+        });
+
+        function initDatePickers() {
+            var dateFormat = "mm/dd/yy",
+                from = $("#<%=fromDate.ClientID%>")
+                                        .datepicker({
+                                            defaultDate: "+1w",
+                                            changeMonth: true,
+                                            numberOfMonths: 1
+                                        })
+                                        .on("change", function () {
+                                            to.datepicker("option", "minDate", getDate(this));
+                                        }),
+                                    to = $("#toDate").datepicker({
                                         defaultDate: "+1w",
                                         changeMonth: true,
                                         numberOfMonths: 1
                                     })
-                                    .on("change", function () {
-                                        to.datepicker("option", "minDate", getDate(this));
-                                    }),
-                                to = $("#toDate").datepicker({
-                                    defaultDate: "+1w",
-                                    changeMonth: true,
-                                    numberOfMonths: 1
-                                })
-                                    .on("change", function () {
-                                        from.datepicker("option", "maxDate", getDate(this));
-                                    });
+                                        .on("change", function () {
+                                            from.datepicker("option", "maxDate", getDate(this));
+                                        });
 
-                            function getDate(element) {
-                                var date;
-                                try {
-                                    date = $.datepicker.parseDate(dateFormat, element.value);
-                                } catch (error) {
-                                    date = null;
+                                function getDate(element) {
+                                    var date;
+                                    try {
+                                        date = $.datepicker.parseDate(dateFormat, element.value);
+                                    } catch (error) {
+                                        date = null;
+                                    }
+
+                                    return date;
+                                }
+                            }
+
+                            $('.custom-menu a[href^="#"], .intro-scroller .inner-link').on('click', function (e) {
+                                e.preventDefault();
+
+                                var target = this.hash;
+                                var $target = $(target);
+
+                                $('html, body').stop().animate({
+                                    'scrollTop': $target.offset().top
+                                }, 900, 'swing', function () {
+                                    window.location.hash = target;
+                                });
+                            });
+
+                            $('a.page-scroll').bind('click', function (event) {
+                                var $anchor = $(this);
+                                $('html, body').stop().animate({
+                                    scrollTop: $($anchor.attr('href')).offset().top
+                                }, 1500, 'easeInOutExpo');
+                                event.preventDefault();
+                            });
+
+                            $(".nav a").on("click", function () {
+                                $(".nav").find(".active").removeClass("active");
+                                $(this).parent().addClass("active");
+                            });
+
+                            $('body').append('<div id="toTop" class="btn btn-primary color1">^</div>');
+                            $(window).scroll(function () {
+                                if ($(this).scrollTop() != 0) {
+                                    $('#toTop').fadeIn();
+                                } else {
+                                    $('#toTop').fadeOut();
+                                }
+                            });
+                            $('#toTop').click(function () {
+                                $("html, body").animate({ scrollTop: 0 }, 700);
+                                return false;
+                            });
+
+                            function deselect(e) {
+                                $("#<%=pop.ClientID%>").slideFadeToggle(function () {
+                                    e.removeClass('selected');
+                                });
+                            }
+
+                            function test() {
+
+
+                                if ($(this).hasClass('popped')) {
+                                    deselect($(this));
+                                } else {
+                                    $(this).addClass('popped');
+                                    $('#<%=pop.ClientID%>').slideFadeToggle();
+                                }
+                                return false;
+
+                            }
+
+                            $('.close').on('click', function () {
+
+                                $("#<%=pop.ClientID%>").removeClass("popped");
+                                //deselect($('#contact'));
+                                return false;
+                            });
+
+                            $("#<%=txtUserEmail.ClientID%>").mouseout(function () {
+
+                                var text = $("#<%=txtUserEmail.ClientID%>").val();
+                                if (!validateEmail(text)) {
+                                    $("#<%=emailError.ClientID%>").text("Please enter a valid email *")
                                 }
 
-                                return date;
-                            }
-                        }
+                                else {
 
-                        $('.custom-menu a[href^="#"], .intro-scroller .inner-link').on('click', function (e) {
-                            e.preventDefault();
-
-                            var target = this.hash;
-                            var $target = $(target);
-
-                            $('html, body').stop().animate({
-                                'scrollTop': $target.offset().top
-                            }, 900, 'swing', function () {
-                                window.location.hash = target;
+                                    $("#<%=emailError.ClientID%>").text("");
+                                }
                             });
-                        });
 
-                        $('a.page-scroll').bind('click', function (event) {
-                            var $anchor = $(this);
-                            $('html, body').stop().animate({
-                                scrollTop: $($anchor.attr('href')).offset().top
-                            }, 1500, 'easeInOutExpo');
-                            event.preventDefault();
-                        });
-
-                        $(".nav a").on("click", function () {
-                            $(".nav").find(".active").removeClass("active");
-                            $(this).parent().addClass("active");
-                        });
-
-                        $('body').append('<div id="toTop" class="btn btn-primary color1">^</div>');
-                        $(window).scroll(function () {
-                            if ($(this).scrollTop() != 0) {
-                                $('#toTop').fadeIn();
-                            } else {
-                                $('#toTop').fadeOut();
+                            function validateEmail(text) {
+                                var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+                                return emailReg.test(text);
                             }
-                        });
-                        $('#toTop').click(function () {
-                            $("html, body").animate({ scrollTop: 0 }, 700);
-                            return false;
-                        });
 
-                        function deselect(e) {
-                            $('.pop').slideFadeToggle(function () {
-                                e.removeClass('selected');
+                            $.fn.slideFadeToggle = function (easing, callback) {
+                                return this.animate({ opacity: 'toggle', height: 'toggle' }, 'fast', easing, callback);
+                            };
+                            $("#<%=pop.ClientID%>").draggable().resizable();
+
+
+                            $('#<%= btnDeleteModify.ClientID %>').on("click", function (e) {
+
+                                var r = confirm("Are you sure you want to delete this test?");
+                                if (r !== true) {
+                                    e.preventDefault();
+                                }
                             });
-                        }
 
-                        function test() {
+                            $('#emailUser').on("click", function (e) {
+                                if ($("#<%=lblError.ClientID%>").text() != "New User was created") {
+                alert("The user have not been created yet.");
+            }
 
-
-                            if ($(this).hasClass('popped')) {
-                                deselect($(this));
-                            } else {
-                                $(this).addClass('popped');
-                                $('.pop').slideFadeToggle();
-                            }
-                            return false;
-
-                        }
-
-                        $('.close').on('click', function () {
-
-                            $('#pop').removeClass("popped");
-                            //deselect($('#contact'));
-                            return false;
-                        });
-
-                        $("#<%=txtUserEmail.ClientID%>").mouseout(function () {
-
-        var text = $("#<%=txtUserEmail.ClientID%>").val();
-        if (!validateEmail(text)) {
-            $("#<%=emailError.ClientID%>").text("Please enter a valid email *")
-        }
-
-        else {
-
-            $("#<%=emailError.ClientID%>").text("");
-        }
-    });
-
-    function validateEmail(text) {
-        var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-        return emailReg.test(text);
-    }
-
-    $.fn.slideFadeToggle = function (easing, callback) {
-        return this.animate({ opacity: 'toggle', height: 'toggle' }, 'fast', easing, callback);
-    };
-    $("#pop").draggable().resizable();
+            else {
+                var email = $("#<%=txtUserEmail.ClientID%>").val();
+                var user = $("#<%=txtNewUser.ClientID%>").val();
+                var pass = $("#<%=txtPassword.ClientID%>").val();
+                var body = "Welcome to CogQuiz.com. Use this credentials to login to site: \r\n Login: " + user + "\r\n Password: " + pass
+                //var subject =?subject=
+                document.location.href = "mailto:" + email + "?subject=Login Info From CogQuiz&body=" + encodeURIComponent(body);
+            }
+        });
 
 
-    $('#btnDeleteModify').on("click", function (e) {
-
-        var r = confirm("Are you sure you want to delete this test?");
-        if (r !== true) {
-            e.preventDefault();
-        }
-    });
-
-    $('#emailUser').on("click", function (e) {
-        if ($("#<%=lblError.ClientID%>").text() != "New User was created") {
-            alert("The user have not been created yet.");
-        }
-
-        else {
-            var email = $("#<%=txtUserEmail.ClientID%>").val();
-            var user = $("#<%=txtNewUser.ClientID%>").val();
-            var pass = $("#<%=txtPassword.ClientID%>").val();
-            var body = "Welcome to CogQuiz.com. Use this credentials to login to site: \r\n Login: " + user + "\r\n Password: " + pass
-            //var subject =?subject=
-            document.location.href = "mailto:" + email + "?subject=Login Info From CogQuiz&body=" + encodeURIComponent(body);
-        }
-    });
-
-
-    $(function () {
-        $("#dialog").dialog();
-    });
-</script>
+        $(function () {
+            $("#dialog").dialog();
+        });
+    </script>
+</asp:Content>

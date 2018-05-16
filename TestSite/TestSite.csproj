@@ -119,6 +119,8 @@
     <Content Include="assets\ico\apple-touch-icon-72-precomposed.png" />
     <Content Include="assets\ico\favicon.png" />
     <Content Include="assets\img\backgrounds\1.jpg" />
+    <Content Include="assets\img\russia.png" />
+    <Content Include="assets\img\united-states.png" />
     <Content Include="assets\js\jquery-1.11.1.js" />
     <Content Include="assets\js\jquery-1.11.1.min.js" />
     <Content Include="assets\js\jquery.backstretch.js" />
@@ -611,6 +613,7 @@
     <Content Include="content\SCATI\SCATI-SO-Male.pdf" />
     <Content Include="content\SCATI\Sinha and Watson 2007 SCATI.pdf" />
     <Content Include="images\large\Thumbs.db" />
+    <Content Include="Layout.Master" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\testPub.pubxml" />
     <Content Include="Provider\ProviderPortal.aspx" />
@@ -750,6 +753,15 @@
     </Compile>
     <Compile Include="DAL\APICalls.cs" />
     <Compile Include="HelpClasses\ControlHelper.cs" />
+    <Compile Include="HelpClasses\LanguageManager.cs" />
+    <Compile Include="Layout.Master.cs">
+      <DependentUpon>Layout.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layout.Master.designer.cs">
+      <DependentUpon>Layout.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LanguageModel.cs" />
     <Compile Include="Models\MemoryCards.cs" />
     <Compile Include="BL\Models\MemoryCardsConfigSaveResult.cs" />
     <Compile Include="BL\Models\MemoryCardsModifyViewModel.cs" />
@@ -1161,6 +1173,7 @@
     <Content Include="App_LocalResources\TrailsTestRes.aspx.resx" />
     <Content Include="App_LocalResources\ErrorPage.aspx.resx" />
     <Content Include="Admin\App_LocalResources\AdminPortal.aspx.resx" />
+    <Content Include="App_LocalResources\Login.aspx.ru.resx" />
     <EmbeddedResource Include="Create\App_LocalResources\LondonModify.aspx.resx" />
     <EmbeddedResource Include="Create\App_LocalResources\MemoryCardsCreate.aspx.resx" />
     <Content Include="Create\App_LocalResources\MemoryCardsModify.aspx.resx" />

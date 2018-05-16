@@ -183,6 +183,9 @@
   <data name="or.Text" xml:space="preserve">
     <value>OR</value>
   </data>
+  <data name="pagetitle.title" xml:space="preserve">
+    <value>Online Syllogsim Test, Intellgence Test Online - CogQuiz</value>
+  </data>
   <data name="price_hundred_buy.Text" xml:space="preserve">
     <value>Buy Now</value>
   </data>

@@ -1,17 +1,13 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Memory.aspx.cs" Inherits="TestSite.blogPosts.Memory" 
-    culture="auto" uiculture="auto" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Memory.aspx.cs" Inherits="TestSite.blogPosts.Memory"  MasterPageFile="~/Layout.Master"
+    Culture="auto" UICulture="auto"  Title="" meta:resourcekey="pagetitle"%>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
+<asp:Content ContentPlaceHolderID="HeadContent" runat="server">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Memory Tests: Test yourself and help us learn more about the mind and brain by taking long term memory test online, short term memory test online from CogQuiz. Visit us!">
     <meta name="keywords" content="N Back: Keywords: Long Term Memory Test Online, Short, CogQuiz">
     <meta name="google-site-verification" content="GMj8owmZtkuKU0Fa_4Zg82VbKsQPO8VkZD_pHsRghA4" />
-    <title>Cognitive Style Questionnaire, Cognitive Test Online Practice, Cognitive Ability Test Online</title>
     <link rel="shortcut icon" href="../images/favicon.ico"/>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -23,11 +19,14 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
     <script src="https://use.fontawesome.com/0138464303.js"></script>   
-   
-</head>
-<body data-spy="scroll" runat="server">
-    <form runat="server">
-    <!-- Navigation -->
+</asp:content>
+
+<asp:Content ContentPlaceHolderID="MenuItemLi" runat="server">
+    <li ><a href="#availableTests"><asp:Localize meta:resourcekey="navbar_about"  runat="server" ID="Localize19" Text="" /></a></li>
+</asp:content>
+
+<asp:Content ContentPlaceHolderID="MainContent" runat="server">
+    <%--<!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
           	<div class="navbar-header">
@@ -47,13 +46,13 @@
                     <li id="profOpt" runat="server"><a href="../UserProfile.aspx"><asp:Localize meta:resourcekey="navbar_profile"  runat="server" ID="Localize2" Text="" /></a></li>
                     <li id="login" runat="server"><a href="../Login.aspx"><asp:Localize meta:resourcekey="navbar_login"  runat="server" ID="Localize3" Text="" /></a></li>
                     <li>
-                        <%--<button id="login" class="btn button" onclick="document.getElementById('id01').style.display='block'" runat="server">Login</button></li>--%>
+                        <%--<button id="login" class="btn button" onclick="document.getElementById('id01').style.display='block'" runat="server">Login</button></li>
                         <asp:LinkButton ID="logOut" class="" type="submit" runat="server" OnClick="logOut_Click"><asp:Localize meta:resourcekey="navbar_logout"  runat="server" ID="Localize4" Text="" /></asp:LinkButton>
                     </li>
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav>--%>
 
     <header id="home">
         <div class="Memory">
@@ -182,26 +181,26 @@
                             <div class="col-md-6 portfolio-item">
                                 <div class="text-center">
                                     <a href="javascript:void(0);">
-                                        <a href="category/ExecutiveFunction.aspx"><span class="fa-stack fa-lg">
+                                        <a href="/category/ExecutiveFunction.aspx"><span class="fa-stack fa-lg">
                                             <i class="fa fa-circle fa-stack-2x"></i>
                                             <i class="fa fa-book fa-stack-1x"></i>
                                         </span></a>
 
                                     </a>
-                                    <h3><a href="category/ExecutiveFunction.aspx"><asp:Localize meta:resourcekey="services_category1Title"  runat="server" ID="Localize15" Text="" /></a></h3>
+                                    <h3><a href="/category/ExecutiveFunction.aspx"><asp:Localize meta:resourcekey="services_category1Title"  runat="server" ID="Localize15" Text="" /></a></h3>
                                     <p><asp:Localize meta:resourcekey="services_category1paragraph"  runat="server" ID="Localize16" Text="" /></p>
                                 </div>
                             </div>
                             <div class="col-md-6 portfolio-item">
                                 <div class="text-center">
                                     <a href="javascript:void(0);">
-                                        <a href="category/ProcessingSpeed.aspx"><span class="fa-stack fa-lg">
+                                        <a href="/category/ProcessingSpeed.aspx"><span class="fa-stack fa-lg">
                                             <i class="fa fa-circle fa-stack-2x"></i>
                                             <i class="fa fa-cogs fa-stack-1x"></i>
                                         </span></a>
 
                                     </a>
-                                    <h3><a href="category/ProcessingSpeed.aspx"><asp:Localize meta:resourcekey="services_category1Title"  runat="server" ID="Localize17" Text="" /></a></h3>
+                                    <h3><a href="/category/ProcessingSpeed.aspx"><asp:Localize meta:resourcekey="services_category2Title"  runat="server" ID="Localize17" Text="" /></a></h3>
                                     <p><asp:Localize meta:resourcekey="services_category2paragraph"  runat="server" ID="Localize18" Text="" /></p>
                                 </div>
                             </div>
@@ -241,7 +240,7 @@
             </div>
         </div>
     </section>--%>
-        <section id="follow-us">
+        <%--<section id="follow-us">
             <div class="container">
                 <div class="text-center height-contact-element">
                     <h2><asp:Localize meta:resourcekey="follow"  runat="server" ID="Localize19" Text="" /></h2>
@@ -258,7 +257,7 @@
                    <p>+1(719)888 9121</p> 
                 </div>
             </div>
-        </section>
+        </section>--%>
 
         <div id="id01" class="modal">
    
@@ -288,38 +287,13 @@
         </div>
 </div>
       
-</form>
-    <footer id="footer">
-        <div class="container">
-            <div class="row myfooter">
-                <div class="col-sm-6">
-                    <div class="pull-left">
-                        © Copyright CogQuiz 2016 
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    
-                </div>
-            </div>
-        </div>
-                <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date(); a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+</asp:content>
 
-        ga('create', 'UA-89149772-1', 'auto');
-        ga('send', 'pageview');
-
-</script>
-    </footer>
-
+<asp:Content ContentPlaceHolderID="ScriptsContent" runat="server">
     <!-- jQuery -->
     <script src="../js/jquery.js"></script>
     <!-- Bootstrap Core JavaScript -->
-    <script src="../js/bootstrap.min.js"></script>
+    <%--<script src="../js/bootstrap.min.js"></script>--%>
     <script src="../js/jquery.quicksand.js"></script>
     
         <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
@@ -490,7 +464,4 @@
 
         </script>
 
-</body>
-</html>
-
-
+</asp:Content>

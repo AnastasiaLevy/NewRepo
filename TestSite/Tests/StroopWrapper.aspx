@@ -1,9 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="StroopWrapper.aspx.cs" Inherits="TestSite.Tests.StroopWrapper" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="StroopWrapper.aspx.cs" Inherits="TestSite.Tests.StroopWrapper" MasterPageFile="~/Layout.Master"
+    Culture="auto" UICulture="auto"  Title="" meta:resourcekey="pagetitle"%>
 
-<!DOCTYPE html>
 
-<html lang="en">
-<head>
+<asp:Content ContentPlaceHolderID="HeadContent" runat="server">
     <meta name="google-site-verification" content="GMj8owmZtkuKU0Fa_4Zg82VbKsQPO8VkZD_pHsRghA4" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,18 +10,20 @@
     <meta name="description" content="Stroop test: Check out more about your personality by taking our Psychological Test Online designed by CogQuiz, play the games to help you better understand who you are.">
     <meta name="author" content="CogQuiz">
     <meta name="keywords" content="Stroop Test: Psychological Test Online, CogQuiz">
-    <title> Stroop Test Online, CogQuiz</title>
     <link rel="shortcut icon" href="../images/favicon.ico" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="../cogTest.css" rel="stylesheet" />
     <link href="../css/style.css" rel="stylesheet" />
 
-</head>
+</asp:Content>
 
-<body data-spy="scroll" runat="server">
-    <form runat="server">
+<asp:Content ContentPlaceHolderID="MenuItemLi" runat="server">
+<li class="active"><a href="#about"><asp:Localize meta:resourcekey="navbar_about"  runat="server" ID="Localize15" Text="" /></a></li>
+</asp:Content>
+
+<asp:Content ContentPlaceHolderID="MainContent" runat="server">
         <!-- Navigation -->
-        <nav class="navbar navbar-inverse navbar-fixed-top">
+        <%--<nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -48,7 +49,7 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav>--%>
 
 
 
@@ -168,7 +169,7 @@
    
          
 
-        <section id="follow-us">
+        <%--<section id="follow-us">
             <div class="container">
                 <div class="text-center height-contact-element">
                     <h3><asp:Localize meta:resourcekey="follow"  runat="server" ID="Localize13" Text="" /></h3>
@@ -184,10 +185,10 @@
                     </ul>
                 </div>
             </div>
-        </section>
+        </section>--%>
 
-    </form>
-    <footer id="footer">
+</asp:Content>
+    <%--<footer id="footer">
         <div class="container">
             <div class="row myfooter">
                 <div class="col-sm-6">
@@ -213,10 +214,12 @@
             ga('send', 'pageview');
 
         </script>
-    </footer>
+    </footer>--%>
+
+<asp:Content ContentPlaceHolderID="ScriptsContent" runat="server">
         <script src="../js/jquery.js"></script>
     <!-- Bootstrap Core JavaScript -->
-    <script src="../js/bootstrap.min.js"></script>
+    <%--<script src="../js/bootstrap.min.js"></script>--%>
     <script>
 
         $(document).ready(function () {
@@ -262,6 +265,5 @@
 
         });
     </script>
-</body>
-</html>
+</asp:content>
 

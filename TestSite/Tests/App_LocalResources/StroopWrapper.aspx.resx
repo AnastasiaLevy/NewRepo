@@ -176,4 +176,7 @@
   <data name="specifications_title.Text" xml:space="preserve">
     <value>Specifications:</value>
   </data>
+  <data name="pagetitle.title" xml:space="preserve">
+    <value>Stroop Test Online, CogQuiz</value>
+  </data>
 </root>

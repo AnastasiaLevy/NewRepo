@@ -38,11 +38,7 @@ namespace TestSite.Tests
 
         protected override void InitializeCulture()
         {
-            string lang = GetLang();
-
-            String selectedLanguage = lang;
-            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(selectedLanguage);
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(selectedLanguage);
+            LanguageManager.ApplyLanguage();
             base.InitializeCulture();
         }
 
@@ -55,15 +51,15 @@ namespace TestSite.Tests
                 _userId = _user.ProviderUserKey.ToString();
                 Key = DataMethods.GetWinFormTOLAppKey(_userId);
 
-                logOut.Visible = true;
-                profOpt.Visible = true;
-                login.Visible = false;
+                //logOut.Visible = true;
+                //profOpt.Visible = true;
+                //login.Visible = false;
             }
             else
             {
-                login.Visible = true;
-                profOpt.Visible = false;
-                logOut.Visible = false;
+                //login.Visible = true;
+                //profOpt.Visible = false;
+                //logOut.Visible = false;
             }
 
             //  Catch response from paypal
