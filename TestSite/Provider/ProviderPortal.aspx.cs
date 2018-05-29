@@ -221,13 +221,13 @@ namespace TestSite.Provider
             if (row.Cells[0].Text.Length > 0 && row.Cells[0].Text != ("&nbsp;"))
                 partName.Text = row.Cells[0].Text + " , " + row.Cells[1].Text;
             else
-                partName.Text = "User have not yet filled profile form.\n\r";
+                partName.Text = GetLocalResourceObject("partNameNotYetFilledProfile").ToString();
             string userId = row.Cells[7].Text;
             ViewState["tUserId"] = userId;
             SetUserTestsGrig(userId);
             if (gvTestPerUser.Rows.Count == 0)
             {
-                partName.Text += "No test assigned";
+                partName.Text += GetLocalResourceObject("partNameNoTest").ToString();
             }
             string age = row.Cells[2].Text;
 
@@ -324,7 +324,7 @@ namespace TestSite.Provider
 
                 ViewState.Remove("CreatingUser");
                 createUser.Visible = true;
-                lblError.Text = "New User was created";
+                lblError.Text = GetLocalResourceObject("lblError").ToString();
                 lblError.CssClass = "successMessage";
                 createUser.Visible = true;
                 DAL.DataMethods.InsertProviderToTheUser(user.ProviderUserKey.ToString(), Convert.ToInt32(ViewState["providerId"]), userName);
@@ -446,12 +446,12 @@ namespace TestSite.Provider
                     //TODO: Display success message;
                     assignTest.Visible = true;
                     ddlModifiedID.Visible = false;
-                    lblTestMessage.Text = "Test was successfully assigned";
+                    lblTestMessage.Text = GetLocalResourceObject("lblTestMessage_successfully").ToString();
                     lblTestMessage.CssClass = "successMessage";
                 }
                 catch (Exception ex)
                 {
-                    lblTestMessage.Text = "There was an error assigning test";
+                    lblTestMessage.Text = GetLocalResourceObject("lblTestMessage_error").ToString();
                     lblTestMessage.CssClass = "errorMessage";
                     DAL.DataMethods.InsertErrorMessage(ex.ToString(), Convert.ToString(ViewState["tUserId"]), "ProviderPortal", null);
                 }
@@ -463,14 +463,14 @@ namespace TestSite.Provider
             bool isValid = true;
             if (userId.Length == 0)
             {
-                lblTestMessage.Text = "Select a User";
+                lblTestMessage.Text = GetLocalResourceObject("lblTestMessage_selectUser").ToString();
                 lblTestMessage.CssClass = "errorMessage";
                 isValid = false;
             }
 
             if (provTestId == "NA")
             {
-                lblTestMessage.Text = "Select a Valid Test";
+                lblTestMessage.Text = GetLocalResourceObject("lblTestMessage_selectTest").ToString();
                 lblTestMessage.CssClass = "errorMessage";
                 isValid = false;
             }
@@ -625,16 +625,16 @@ namespace TestSite.Provider
 
                 if (u.ChangePassword(txtOldPw.Text, txtNewPw.Text))
                 {
-                    errorPW.Text = "Password changed.";
+                    errorPW.Text = GetLocalResourceObject("errorPW_changed").ToString();
                 }
                 else
                 {
-                    errorPW.Text = "Password change failed. Please re-enter your values and try again.";
+                    errorPW.Text = GetLocalResourceObject("errorPW_failed").ToString();
                 }
             }
             catch (Exception ex)
             {
-                errorPW.Text = "Please re-enter your values and try again.";
+                errorPW.Text = GetLocalResourceObject("errorPW_re-entered").ToString();
             }
         }
 

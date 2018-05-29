@@ -192,4 +192,10 @@
   <data name="registerForm_title.Text" xml:space="preserve">
     <value>Sign up now</value>
   </data>
+  <data name="enterValidEmail" xml:space="preserve">
+    <value>Пожалуйста, введите действительный адрес электронной почты *</value>
+  </data>
+  <data name="enterValidPass" xml:space="preserve">
+    <value>Пароли не совпадают</value>
+  </data>
 </root>

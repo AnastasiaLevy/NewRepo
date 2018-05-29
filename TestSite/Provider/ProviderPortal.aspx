@@ -258,18 +258,18 @@
                                     <div class="panel-body ">
                                         <div class ="row">
                                             <div class="col-md-5">
-                                                <label><asp:Localize meta:resourcekey="pProviderTools_exportTestResults_label1"  runat="server" ID="Localize21" Text="" /></label>
+                                                <label><asp:Localize meta:resourcekey="pProviderTools_exportTestResults_lable1"  runat="server" ID="Localize21" Text="" /></label>
                                                 <asp:DropDownList class="dropDown" ID="TestTemplatesForExportResults" OnSelectedIndexChanged="TestTemplatesForExportResults_SelectedIndexChanged" runat="server" Width="100%" AppendDataBoundItems="true" AutoPostBack="True"></asp:DropDownList>
                                                 <asp:DropDownList class="dropDown" ID="TestsForExportResults" runat="server" Width="100%" AppendDataBoundItems="true" AutoPostBack="True"></asp:DropDownList>
                                             </div>
                                             <div class="col-md-1">
                                                 </div>
                                             <div class="col-md-3">
-                                                <label><asp:Localize meta:resourcekey="pProviderTools_exportTestResults_label2"  runat="server" ID="Localize22" Text="" /></label>
+                                                <label><asp:Localize meta:resourcekey="pProviderTools_exportTestResults_lable2"  runat="server" ID="Localize22" Text="" /></label>
                                                 <asp:TextBox class="dropDown" ID="fromDate" runat="server" Width="100%"></asp:TextBox>
                                             </div>
                                             <div class="col-md-3">
-                                                <label><asp:Localize meta:resourcekey="pProviderTools_exportTestResults_label3"  runat="server" ID="Localize23" Text="" /></label>
+                                                <label><asp:Localize meta:resourcekey="pProviderTools_exportTestResults_lable3"  runat="server" ID="Localize23" Text="" /></label>
                                                 <asp:TextBox class="dropDown" ID="toDate" runat="server" Width="100%"></asp:TextBox>
                                             </div>
                                         </div>
@@ -319,8 +319,8 @@
 
 
                         <div class="col-lg-6 row">
-                            <div id="pop" class="custom-pop" runat="server">
-                                <asp:Label ID="partName" runat="server" Text="" CssClass="col-lg-2"></asp:Label>
+                            <div id="pop" class="custom-pop user-view-pop" runat="server">
+                                <asp:Label ID="partName" runat="server" Text="" CssClass="col-lg-2 user-view-pop_name"></asp:Label>
                                 <asp:Button ID="btnCancel" runat="server" OnClick="Button1_Click"  Text="X" class="col-md-1 custom-pop-btnCancel" />
                                 <asp:GridView ID="gvTestPerUser" runat="server" RowStyle-Wrap="true" CellSpacing="10" class="gridview provider-table"
                                     GridLines="Horizontal" AutoGenerateColumns="False" BorderColor="#CCCCCC" BorderStyle="None"
@@ -715,7 +715,7 @@ data="https://www.youtube.com/embed/0JwN9Np1TmE?fs=0">
                                         .on("change", function () {
                                             to.datepicker("option", "minDate", getDate(this));
                                         }),
-                                    to = $("#toDate").datepicker({
+                                       to = $("#<%=toDate.ClientID%>").datepicker({
                                         defaultDate: "+1w",
                                         changeMonth: true,
                                         numberOfMonths: 1
@@ -805,7 +805,7 @@ data="https://www.youtube.com/embed/0JwN9Np1TmE?fs=0">
 
                                 var text = $("#<%=txtUserEmail.ClientID%>").val();
                                 if (!validateEmail(text)) {
-                                    $("#<%=emailError.ClientID%>").text("Please enter a valid email *")
+                                    $("#<%=emailError.ClientID%>").text("<%= GetLocalResourceObject("entervalidemail")%>")
                                 }
 
                                 else {
@@ -827,24 +827,24 @@ data="https://www.youtube.com/embed/0JwN9Np1TmE?fs=0">
 
                             $('#<%= btnDeleteModify.ClientID %>').on("click", function (e) {
 
-                                var r = confirm("Are you sure you want to delete this test?");
+                                var r = confirm("<%= GetLocalResourceObject("sureToDelete")%>");
                                 if (r !== true) {
                                     e.preventDefault();
                                 }
                             });
 
                             $('#emailUser').on("click", function (e) {
-                                if ($("#<%=lblError.ClientID%>").text() != "New User was created") {
-                alert("The user have not been created yet.");
+                                if ($("#<%=lblError.ClientID%>").text() != "<%= GetLocalResourceObject("createduser")%>") {
+                                    alert("<%= GetLocalResourceObject("userNotCreated")%>");
             }
 
             else {
                 var email = $("#<%=txtUserEmail.ClientID%>").val();
                 var user = $("#<%=txtNewUser.ClientID%>").val();
                 var pass = $("#<%=txtPassword.ClientID%>").val();
-                var body = "Welcome to CogQuiz.com. Use this credentials to login to site: \r\n Login: " + user + "\r\n Password: " + pass
+                var body = "<%= GetLocalResourceObject("WelcomeToCogQuiz")%>" + " " + user + "<%= GetLocalResourceObject("pass")%>" + " " + pass;
                 //var subject =?subject=
-                document.location.href = "mailto:" + email + "?subject=Login Info From CogQuiz&body=" + encodeURIComponent(body);
+                document.location.href = "<%= GetLocalResourceObject("mailto")%>" + email + "<%= GetLocalResourceObject("mailto2")%>" + encodeURIComponent(body);
             }
         });
 

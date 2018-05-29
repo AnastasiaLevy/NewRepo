@@ -82,6 +82,7 @@
 <script type="text/javascript"></script>
 
 <script>
+    var alertMessage = "<%= GetLocalResourceObject("errorAlert")%>";
     var playEle = document.querySelector('#play');
     playEle.addEventListener('click', onClickPlay);
     $('#play').hide();
@@ -106,7 +107,8 @@
 
         },
         error: function (resp) {
-            alert("Could not load the correct test. Please try again later.");
+            //alert("Could not load the correct test. Please try again later.");
+            alert(alertMessage);
         }
     });
 

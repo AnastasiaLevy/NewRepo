@@ -211,11 +211,11 @@
                             [
 
                                 {
-                                    'title': 'Make Your Own Tests',
-                                    'description': 'Make your own Tower of London Test Problems. You control the number of demo, practice, and scored trials, the number of direct and indirect moves, the total number of moves, the maximum moves per trial, and the time allowed to complete a trial. The figure on the far left shows an in progress construction of a trial. The next two figures show how the text and parameters associated with a test are constructed.',
+                                    'title': '<%= GetLocalResourceObject("popup_item1_title")%>',
+                                    'description': '<%= GetLocalResourceObject("popup_item1_description")%>',
                                     'thumbnail': ['images/large/s16.png', 'images/large/s15.png', 'images/large/s14.png'],
                                     'large': ['images/large/16.png', 'images/large/15.png', 'images/large/14.png'],
-                                    'img_title': ['Add or Edit trials. ', 'Set up instructions or test descriptions in any language. ', 'Set up the number of demo trials, actual trials', 'Set up Feddback test, Wait message, End-of-the-test instructions. ', 'jquery elastic grid 9'],
+                                    'img_title': [<%= GetLocalResourceObject("popup_item1_imgtitle")%>],
                                     'button_list':
                                     [
 
@@ -223,11 +223,11 @@
                                     'tags': ['Set Up']
                                 },
                                 {
-                                    'title': 'Scoring',
-                                    'description': 'Get immediate test results. Figure 1 on the left shows a typical results output for a set of Tower of London Problems.  The column information is the following: column 1 is the trial number, column 2 designates the trial as scored (Trial) or as a Practice trial (setup allows the inclusion or non-inclusion of Practice trials in the scoring); Column labeled Initial Think Time is the time prior to the first move in seconds and milliseconds (It is your initial planning time.); the Game Time column is the total trial time and includes the Initial think time; Number of Moves column is the total number of moves made on a trial (an upper limit can be designated in the setup); the column label Minimum Moves is the number of moves for an optimal solution; the Excess Moves column gives the number of moves above an optimal solution—if the move or time limit is exceeded the score is the move limit minus the optimal solution number of moves;  the Number of Illegal moves is the number of initial attempts to drop a bead on a peg where it would result in stacking above the peg; the Game Timed Out column is checked when the time limit is exceeded; the Over Moves Limit is checked when the number of moves exceeds the upper move limit. The second figure shows a direct transfer to Excel. The third figure shows the trials transferred to Excel as a single line. The third figure will probably be most useful for those individuals who want to analyze their data in SPSS. ',
+                                    'title': '<%= GetLocalResourceObject("popup_item2_title")%>',
+                                    'description': '<%= GetLocalResourceObject("popup_item2_description")%>',
                                     'thumbnail': ['images/large/s3.png', 'images/large/s6.png', 'images/large/s4.png'],
                                     'large': ['images/large/3.png', 'images/large/6.png', 'images/large/4.png'],
-                                    'img_title': ['jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid'],
+                                    'img_title': [<%= GetLocalResourceObject("popup_item2_imgtitle")%>],
                                     'button_list':
                                     [
 
@@ -235,11 +235,11 @@
                                     'tags': ['Scoring']
                                 },
                                 {
-                                    'title': 'Tower of London Test',
-                                    'description': 'Figures 1 and 2 show a problem in the process of being solved. Figure 3 shows a window where you can click on Start on the left hand side to initiate a Tower of London set of problems. The right half of this window shows tests that have been completed. Clicking on the eye allows you to see the results. Figure 4 shows a window where you can either run a test if you have tests or purchase tests if there is not a green button',
+                                    'title': '<%= GetLocalResourceObject("popup_item3_title")%>',
+                                    'description': '<%= GetLocalResourceObject("popup_item3_title")%>',
                                     'thumbnail': ['images/large/s1.png', 'images/large/s2.png', 'images/large/s17.png', 'images/large/s18.png', 'images/large/s19.png'],
                                     'large': ['images/large/1.png', 'images/large/2.png', 'images/large/17.png', 'images/large/18.png', 'images/large/19.png'],
-                                    'img_title': ['jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid'],
+                                    'img_title': [<%= GetLocalResourceObject("popup_item3_imgtitle")%>],
                                     'button_list':
                                     [
 

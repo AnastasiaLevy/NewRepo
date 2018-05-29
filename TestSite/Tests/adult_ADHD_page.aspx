@@ -110,7 +110,7 @@
                 $("#saveAndClose").show();
             },
             error: function (resp) {
-                alert("The results were not saved correctly");
+                alert("<%= GetLocalResourceObject("notSavedCorrectly")%>"); 
             }
         });
     });
@@ -187,7 +187,7 @@
                 }
             },
             error: function (resp) {
-                alert("The results were not saved correctly");
+                alert("<%= GetLocalResourceObject("notSavedCorrectly")%>"); 
 
             }
         });
@@ -225,7 +225,7 @@
 
             },
             error: function (resp) {
-                alert("The results were not saved correctly");
+                alert("<%= GetLocalResourceObject("notSavedCorrectly")%>"); 
 
             }
         });

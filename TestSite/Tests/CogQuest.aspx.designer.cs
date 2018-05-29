@@ -85,6 +85,42 @@ namespace TestSite.Tests {
         protected global::System.Web.UI.WebControls.LinkButton paypalsimulate;
         
         /// <summary>
+        /// IdentifierGroup control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl IdentifierGroup;
+        
+        /// <summary>
+        /// IdentifierInput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText IdentifierInput;
+        
+        /// <summary>
+        /// GenerateLicenseBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton GenerateLicenseBtn;
+        
+        /// <summary>
+        /// Localize48 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Localize Localize48;
+        
+        /// <summary>
         /// KeyValue control.
         /// </summary>
         /// <remarks>

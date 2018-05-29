@@ -112,7 +112,7 @@
 
            },
            error: function (resp) {
-               alert("Could not load the correct test. Please try again later.");
+               alert("<%= GetLocalResourceObject("errorAlert")%>");
            }
        });
    </script>

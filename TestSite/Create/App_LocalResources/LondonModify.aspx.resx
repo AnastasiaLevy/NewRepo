@@ -234,4 +234,85 @@
   <data name="testPositions_viewTest.value" xml:space="preserve">
     <value>View Test</value>
   </data>
+  <data name="errorsaving" xml:space="preserve">
+    <value>error saving the test; try again later</value>
+  </data>
+  <data name="error_array" xml:space="preserve">
+    <value>! You need you set all 3 beads for Start positions. &lt;br /&gt;</value>
+  </data>
+  <data name="error_arrayR" xml:space="preserve">
+    <value>! You need you set all 3 beads for End positions.&lt;br /&gt;</value>
+  </data>
+  <data name="error_countDown" xml:space="preserve">
+    <value>count down time.</value>
+  </data>
+  <data name="error_countDownText" xml:space="preserve">
+    <value>text for coundown message.</value>
+  </data>
+  <data name="error_ddlConuntFromRound" xml:space="preserve">
+    <value>the value to calculate the results from.</value>
+  </data>
+  <data name="error_ddlNumberGames" xml:space="preserve">
+    <value>set the number of the trail rounds.</value>
+  </data>
+  <data name="error_ddlPractice" xml:space="preserve">
+    <value>set the number of the practice rounds.</value>
+  </data>
+  <data name="error_endArea" xml:space="preserve">
+    <value>Goal area title.</value>
+  </data>
+  <data name="error_feedback" xml:space="preserve">
+    <value>feedback text.</value>
+  </data>
+  <data name="error_instructions" xml:space="preserve">
+    <value>instruction field.</value>
+  </data>
+  <data name="error_instructionsFinish" xml:space="preserve">
+    <value>text for the end of the test.</value>
+  </data>
+  <data name="error_maxMovesLimit" xml:space="preserve">
+    <value>Max allowed moves.</value>
+  </data>
+  <data name="error_notAnyMoves" xml:space="preserve">
+    <value>You have not set up any moves.</value>
+  </data>
+  <data name="error_numberOfMoves" xml:space="preserve">
+    <value>! You need you set Number of moves for this round.&lt;br /&gt;</value>
+  </data>
+  <data name="error_overMoves" xml:space="preserve">
+    <value>over moves text.</value>
+  </data>
+  <data name="error_overTime" xml:space="preserve">
+    <value>over time text.</value>
+  </data>
+  <data name="error_testname" xml:space="preserve">
+    <value>the name of the test.</value>
+  </data>
+  <data name="error_timeOutAfter" xml:space="preserve">
+    <value>Max trial time.</value>
+  </data>
+  <data name="error_txtButton" xml:space="preserve">
+    <value>Button for the end of the test.</value>
+  </data>
+  <data name="error_workArea" xml:space="preserve">
+    <value>Work area title.</value>
+  </data>
+  <data name="MovesErrorMeassage" xml:space="preserve">
+    <value>!Please set up the value for number of rounds for this test.</value>
+  </data>
+  <data name="Pleasefillout" xml:space="preserve">
+    <value>Please fill out</value>
+  </data>
+  <data name="SetUpPractice" xml:space="preserve">
+    <value>Set Up Practice Trial #</value>
+  </data>
+  <data name="SetUpTest" xml:space="preserve">
+    <value>Set Up Test Trial #</value>
+  </data>
+  <data name="successsaving" xml:space="preserve">
+    <value>Success! The round was saved.</value>
+  </data>
+  <data name="successTest" xml:space="preserve">
+    <value>Success! The test was saved.</value>
+  </data>
 </root>

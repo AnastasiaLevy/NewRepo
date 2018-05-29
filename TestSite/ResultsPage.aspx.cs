@@ -51,7 +51,7 @@ namespace TestSite
                 int canView = DataMethods.GetUserViewResults(userId);
                 if (canView == 0 && Request.QueryString["provider"] == null)
                 {
-                    textStr.Text = "Provider has restricted  view of the result section.";
+                    textStr.Text = GetLocalResourceObject("textStr_providerRestricted").ToString();
                 }
                 else
                 {
@@ -61,7 +61,7 @@ namespace TestSite
                     int ageGroup = Enums.GetAgeGroup(age);
                     if (ageGroup == 10 || ageGroup == 100)
                     {
-                        chartTitle.Text = "Age Group Error. Please contact administrator."; //TODO: nice wording?
+                        chartTitle.Text = GetLocalResourceObject("chartTitle_ageGroupError").ToString(); //TODO: nice wording?
                 
                     }
                     else
@@ -112,11 +112,11 @@ namespace TestSite
                 dt = ds.Tables[0];
                 if (dt == null)
                 {
-                    chartTitle.Text = "Results for nBack Test for participant cannot be displayed. Please coctact site administrator.";
+                    chartTitle.Text = GetLocalResourceObject("chartTitle_resultsCannotBeDisplayed").ToString();
                 }
                 else
                 {
-                    chartTitle.Text = "Results for nBack Test for participant " + userName;
+                    chartTitle.Text = GetLocalResourceObject("chartTitle_ResultsForNBack").ToString() + " " + userName;
                     GridView gvNbackUserResults = new GridView();
                     gvNbackUserResults.DataSource = dt;
                     gvNbackUserResults.DataBind();
@@ -127,19 +127,19 @@ namespace TestSite
                     GetValues(ds, 0, out mean, out std);
                     percentCorrrect = GerPercentCorrect(dt, 1);
                     factor = CalculateResults(percentCorrrect, mean, std);
-                    textStr.Text += "Result for nBack 1: " + Enums.ReturnNBackResultString(factor) + "<br/>";
+                    textStr.Text += GetLocalResourceObject("chartTitle_ResultsForNBack1").ToString() + Enums.ReturnNBackResultString(factor) + "<br/>";
 
 
                     GetValues(ds, 1, out mean, out std);
                     percentCorrrect = GerPercentCorrect(dt, 3);
                     factor = CalculateResults(percentCorrrect, mean, std);
-                    textStr.Text += "Result for nBack 2: " + Enums.ReturnNBackResultString(factor) + "<br/>";
+                    textStr.Text += GetLocalResourceObject("chartTitle_ResultsForNBack2").ToString() + Enums.ReturnNBackResultString(factor) + "<br/>";
 
 
                     GetValues(ds, 2, out mean, out std);
                     percentCorrrect = GerPercentCorrect(dt, 5);
                     factor = CalculateResults(percentCorrrect, mean, std);
-                    textStr.Text += "Result for nBack 3: " + Enums.ReturnNBackResultString(factor) + "<br/>";
+                    textStr.Text += GetLocalResourceObject("chartTitle_ResultsForNBack3").ToString() + Enums.ReturnNBackResultString(factor) + "<br/>";
                 }
 
             }
@@ -149,11 +149,11 @@ namespace TestSite
                 ds = DataMethods.GetSyllogismsUserTable(tId);
                 dt = ds.Tables[0];
                 if (dt == null)
-                { chartTitle.Text = "There was an error loading results. Please contact the administrator."; }
+                { chartTitle.Text = GetLocalResourceObject("chartTitle_SyllogismsError loadingResults").ToString(); }
                 else
                 {
 
-                    chartTitle.Text = "Results for Syllogisms Test for participant " + userName;
+                    chartTitle.Text = GetLocalResourceObject("chartTitle_SyllogismsResults").ToString() + " " + userName;
                     GridView gvSyllogResTotal = new GridView();
                     DataTable dtRes = DataMethods.GetSyllogismsUserResults(tId).Tables[0];
                     gvSyllogResTotal.DataSource = dtRes;
@@ -171,7 +171,7 @@ namespace TestSite
                     decimal result = Convert.ToDecimal(dtRes.Rows[0]["totalCorrect"]);
                     GetValues(ds, 0, out mean, out std);
                     factor = CalculateResults(result, mean, std);
-                    textStr.Text += "Total Correct Count:" + Enums.ReturnSyllogResultText(factor);
+                    textStr.Text += GetLocalResourceObject("chartTitle_SyllogismsTotal").ToString() + Enums.ReturnSyllogResultText(factor);
                 }
             }
 
@@ -179,10 +179,10 @@ namespace TestSite
             {
                 ds = DataMethods.GetTestResultsCardSort(userId, tId);
                 if (ds == null)
-                { chartTitle.Text = "There was an error loading results. Please contact the administrator."; }
+                { chartTitle.Text = GetLocalResourceObject("chartTitle_CardSortErrorLoading").ToString(); }
                 else
                 {
-                    chartTitle.Text = "Results for Card Sort Test for participant " + userName;
+                    chartTitle.Text = GetLocalResourceObject("chartTitle_CardSortResult").ToString() + " " + userName;
 
                     string html = "";
                     if(ds.Tables[1].Rows.Count > 0)
@@ -219,28 +219,28 @@ namespace TestSite
                     decimal catComplete = cats.Length;
                     GetValues(dsNorms, 0, out mean, out std);
                     factor = CalculateResults(catComplete, mean, std);
-                    textStr.Text = "Total Number Categories Completed: " + Enums.ReturnCardSortCatNumber(factor) + "<br/>";
+                    textStr.Text = GetLocalResourceObject("textStr_CardSortTotal NumberCategoriesCompleted").ToString() + " " + Enums.ReturnCardSortCatNumber(factor) + "<br/>";
 
                     GetValues(dsNorms, 1, out mean, out std);
                     factor = CalculateResults(respcount, mean, std);
-                    textStr.Text += "Total Response Count: " + Enums.ReturnCardSortNormsTotalCorrect(factor) + "<br/>";
+                    textStr.Text += GetLocalResourceObject("textStr_CardSortTotalResponse").ToString() + " " + Enums.ReturnCardSortNormsTotalCorrect(factor) + "<br/>";
 
                     GetValues(dsNorms, 2, out mean, out std);
                     factor = CalculateResults(persevCount, mean, std);
-                    textStr.Text += "Total Perseverative Errors Count: " + Enums.ReturnCardSortPersevErrors(factor) + "<br/>";
+                    textStr.Text += GetLocalResourceObject("textStr_CardSortTotalPerseverative").ToString() + " " + Enums.ReturnCardSortPersevErrors(factor) + "<br/>";
 
                     GetValues(dsNorms, 3, out mean, out std);
                     factor = CalculateResults(correctCount, mean, std);
-                    textStr.Text += "Total Correct Count: " + Enums.ReturnCardSortNormsTotalCorrect(factor) + "<br/>";
+                    textStr.Text += GetLocalResourceObject("textStr_CardSortTotalCorrect").ToString() + " " + Enums.ReturnCardSortNormsTotalCorrect(factor) + "<br/>";
 
 
                     GetValues(dsNorms, 4, out mean, out std);
                     factor = CalculateResults(errorCount, mean, std);
-                    textStr.Text += "Total Error Count:" + Enums.ReturnCardSortNormsTotalErrors(factor) + "<br/>";
+                    textStr.Text += GetLocalResourceObject("textStr_CardSortTotlaError").ToString() + " " + Enums.ReturnCardSortNormsTotalErrors(factor) + "<br/>";
 
                     GetValues(dsNorms, 5, out mean, out std);
                     factor = CalculateResults(uniqueErr, mean, std);
-                    textStr.Text += "Total Unique Error Count: " + Enums.ReturnCardSortNormsUniqueErrors(factor) + "<br/>";
+                    textStr.Text += GetLocalResourceObject("textStr_CardSortTotalUniqueError").ToString() + " " + Enums.ReturnCardSortNormsUniqueErrors(factor) + " <br/>";
                 }
             }
 
@@ -248,7 +248,7 @@ namespace TestSite
             {
                 btnExportLine.Visible = true;
                 btnExportNorm.Visible = true;
-                chartTitle.Text = "Results for Tower of London Test for participant " + userName + ".";
+                chartTitle.Text = GetLocalResourceObject("chartTitle_TOLResult").ToString() + " " + userName + ".";
                 GridView gv = new GridView();
                 SetUpUserResultGrid(userId, tId, out dt, out gv);
 
@@ -277,7 +277,7 @@ namespace TestSite
 
             else if (test == "1" || test == "Trails")
             {
-                chartTitle.Text = "Results for Trails Test";
+                chartTitle.Text = GetLocalResourceObject("chartTitle_TrailsResult").ToString();
                 dt = DataMethods.GetTestResultsTrails(userId, tId).Tables[0];
 
                 TrailsResults tr = new TrailsResults();
@@ -300,12 +300,12 @@ namespace TestSite
                 pResultPanel.Controls.Add(gvA);
                 factor = CalculateResults(tr.PartA, meanA, stdA);
                 Label resA = new Label();
-                resA.Text = "Trails part A: " + Enums.ReturnTrailsResultStrings(factor) + "<br/>";
+                resA.Text = GetLocalResourceObject("resA").ToString() + " " + Enums.ReturnTrailsResultStrings(factor) + "<br/>";
                 pResultPanel.Controls.Add(resA);
 
                 factor = CalculateResults(tr.PartB, meanB, stdB);
                 Label resB = new Label();
-                resB.Text = "Trails part B: " + Enums.ReturnTrailsResultStrings(factor) + "<br/>";
+                resB.Text = GetLocalResourceObject("resB").ToString() + " " + Enums.ReturnTrailsResultStrings(factor) + "<br/>";
 
                 pResultPanel.Controls.Add(resB);
             }

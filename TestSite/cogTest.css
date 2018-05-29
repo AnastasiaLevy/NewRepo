@@ -3613,3 +3613,35 @@ label {
         width: 100%;
         margin-top: -3px;
     }
+
+.footer-master-fix {
+    background: unset;
+    background-color: unset;
+}
+
+.form-control-custom {
+    color: #000;
+}
+
+.btn-inp-group {
+    margin: 0;
+    background-color: #99ddff;
+    border: none;
+    padding: 7px 15px;
+}
+    .btn-inp-group:hover {
+        background-color: #2D2D2D;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+        transition-timing-function: ease;
+        color: #fff;
+    }
+
+.user-view-pop {
+    top: 100px;
+    max-height: 75%;
+}
+
+.user-view-pop_name {
+    min-height: 40px;
+}

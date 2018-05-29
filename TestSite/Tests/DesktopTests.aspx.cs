@@ -54,7 +54,7 @@ namespace TestSite.Tests
                     }
                     else
                     {
-                        error = "Cannot process payment. Please contact administrator.";
+                        error = GetLocalResourceObject("errorPayment").ToString();
                     }
 
                 }
@@ -133,12 +133,12 @@ namespace TestSite.Tests
             try
             {
                 DAL.DataMethods.SaveUserMessage(txtNameFrom, txtEmailFrom, txtMessage);
-                contactError.InnerText = "Thak you. We will be in touch next business day.";
+                contactError.InnerText = GetLocalResourceObject("contactError_true").ToString();
 
             }
             catch (Exception ex)
             {
-                contactError.InnerText = "There was error sending you message. Please try again later.";
+                contactError.InnerText = GetLocalResourceObject("contactError_error").ToString();
             }
             txtEmailFrom = "";
             txtMessage = "";

@@ -34,7 +34,12 @@ namespace TestSite
             userId.Text = _userId.ToString();
             tId.Text = _userTestId.ToString();
             DataMethods.UpdateTestStart(_userTestId);
+        }
 
+        protected override void InitializeCulture()
+        {
+            LanguageManager.ApplyLanguage();
+            base.InitializeCulture();
         }
 
         [WebMethod]

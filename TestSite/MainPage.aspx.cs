@@ -44,12 +44,12 @@ namespace TestSite
                 try
                 {
                     DAL.DataMethods.SaveUserMessage(txtNameFrom, txtEmailFrom, txtMessage);
-                    contactError.InnerText = "Thank you. We will be in touch next business day";
+                    contactError.InnerText = GetLocalResourceObject("contactError_true").ToString();
 
                 }
                 catch (Exception ex)
                 {
-                    contactError.InnerText = "There was error sending you message. Please try again later.";
+                    contactError.InnerText = GetLocalResourceObject("contactError_error").ToString();
                 }
                 txtEmailFrom = "";
                 txtMessage = "";
@@ -63,7 +63,7 @@ namespace TestSite
                 txtEmailFrom = "";
                 txtMessage = "";
                 txtNameFrom = "";
-                contactError.InnerText = "Email address is not valid!";
+                contactError.InnerText = GetLocalResourceObject("contactError_EmailNotValid").ToString();
             }
             
             contactError.Focus();

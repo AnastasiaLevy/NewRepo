@@ -44,6 +44,10 @@
       <HintPath>..\packages\AjaxControlToolkit.16.1.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Licensing, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resources\Licensing.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -391,6 +395,7 @@
     <Content Include="js\tower\moves.js" />
     <Content Include="js\tower\pegs.js" />
     <Content Include="js\tower\redBall.js" />
+    <Content Include="js\trailsA.js" />
     <Content Include="js\usualSlider.js" />
     <Content Include="js\wcst.js" />
     <Content Include="Login.aspx" />
@@ -479,6 +484,7 @@
     <Content Include="Norms\CardSort_norms.pdf" />
     <Content Include="Norms\NbackNorms.pdf" />
     <Content Include="HTTPHandlers\SessionHandler.ashx" />
+    <Content Include="Resources\Licensing.dll" />
     <Content Include="Results\adult_ADHD_Result.aspx" />
     <Content Include="Results\ADHD_Result.aspx" />
     <Content Include="Tests\ADHD_Page.aspx" />
@@ -1163,7 +1169,9 @@
     <Content Include="App_LocalResources\MainPage.aspx.resx" />
     <Content Include="Provider\App_LocalResources\ProviderPortal.aspx.resx" />
     <Content Include="App_LocalResources\Registration.aspx.resx" />
-    <Content Include="App_LocalResources\LondonPage.aspx.resx" />
+    <Content Include="App_LocalResources\LondonPage.aspx.resx">
+      <CustomToolNamespace>PageResources</CustomToolNamespace>
+    </Content>
     <Content Include="App_LocalResources\TrailsPage.aspx.resx" />
     <Content Include="App_LocalResources\WCSTPage.aspx.resx" />
     <Content Include="App_LocalResources\UserProfile.aspx.resx" />
@@ -1174,7 +1182,10 @@
     <Content Include="App_LocalResources\ErrorPage.aspx.resx" />
     <Content Include="Admin\App_LocalResources\AdminPortal.aspx.resx" />
     <Content Include="App_LocalResources\Login.aspx.ru.resx" />
-    <EmbeddedResource Include="Create\App_LocalResources\LondonModify.aspx.resx" />
+    <Content Include="App_LocalResources\LondonPage.aspx.ru.resx" />
+    <Content Include="Create\App_LocalResources\LondonModify.aspx.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="Create\App_LocalResources\MemoryCardsCreate.aspx.resx" />
     <Content Include="Create\App_LocalResources\MemoryCardsModify.aspx.resx" />
     <EmbeddedResource Include="Resources\Text.resx">

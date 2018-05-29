@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Licensing;
+using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Globalization;
@@ -27,6 +28,7 @@ namespace TestSite.Tests
         protected static int _userTestId;
 
         public string Key { get; set; }
+        public string DeviceIdentifier { get; set; }
         public bool PayPalSimulation
         {
             get
@@ -50,16 +52,7 @@ namespace TestSite.Tests
                 _user = Membership.GetUser(User.Identity.Name);
                 _userId = _user.ProviderUserKey.ToString();
                 Key = DataMethods.GetWinFormTOLAppKey(_userId);
-
-                //logOut.Visible = true;
-                //profOpt.Visible = true;
-                //login.Visible = false;
-            }
-            else
-            {
-                //login.Visible = true;
-                //profOpt.Visible = false;
-                //logOut.Visible = false;
+                //DeviceIdentifier = DataMethods.GetWinFormTOLDeviceIdentifier(_userId);
             }
 
             //  Catch response from paypal
@@ -69,16 +62,20 @@ namespace TestSite.Tests
                 {
                     if (PayPalSimulation) Session["PayPalSimulation"] = false;
 
+                    this.IdentifierGroup.Visible = true;
+
                     if (!hasPaidTest(_userId) && string.IsNullOrEmpty(Key))
                     {
                         bool isPaid = UpdateTestPaid(_userId);
-                        bool isKeySetup = SetupKey();
-                        if (isKeySetup)
-                        {
-                            Key = DataMethods.GetWinFormTOLAppKey(_userId);
-                        }
                     }
                 }
+            }
+
+            if (hasPaidTest(_userId) && Key == null)
+            {
+                this.IdentifierGroup.Visible = true;
+                //Key = DataMethods.GetWinFormTOLAppKey(_userId);
+                //DeviceIdentifier = DataMethods.GetWinFormTOLDeviceIdentifier(_userId);
             }
 
             if (User.Identity.IsAuthenticated && hasPaidTest(_userId))
@@ -93,12 +90,12 @@ namespace TestSite.Tests
             Page.DataBind();
         }
 
-        private bool SetupKey()
+        private bool SetupKey(string identifier)
         {
             try
             {
-                DataMethods.SetupWinFormTOLAppKey(_userId);
-                return true;
+                string key = LicenseManager.Instance.GenerateLicenseKey(identifier);
+                return DataMethods.SaveWinFormTOLAppKey(_userId, identifier, key);
             }
             catch (Exception exc)
             {
@@ -241,7 +238,7 @@ namespace TestSite.Tests
             shortcutPath = Path.Combine(shortcutPath, applicationName) + ".appref-ms";
             if (File.Exists(shortcutPath))
             {
-                existsMessage.Text = "This application is already installed on your computer.";
+                existsMessage.Text = GetLocalResourceObject("existsMessage").ToString();
                 runTest.Visible = false;
             }
             else
@@ -292,6 +289,23 @@ namespace TestSite.Tests
             }
 
             return langCoockie.Value;
+        }
+
+        protected void GenerateLicenseBtn_Click(object sender, EventArgs e)
+        {
+            string identifier = IdentifierInput.Value;
+
+            bool isKeySetup = SetupKey(identifier);
+
+            if (isKeySetup)
+            {
+                Key = DataMethods.GetWinFormTOLAppKey(_userId);
+                Response.Redirect(Request.RawUrl);
+
+                //IdentifierGroup.Visible = false;
+                //ShowAppData();
+                //DeviceIdentifier = DataMethods.GetWinFormTOLDeviceIdentifier(_userId);
+            }
         }
     }
 }

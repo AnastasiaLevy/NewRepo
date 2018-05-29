@@ -30,7 +30,6 @@ namespace TestSite.Tests
         public static void SaveHTMLstring(string html)
         {
             DataMethods.InsertSyllogismsTable(html, _userTestId);
-
         }
 
         [WebMethod]

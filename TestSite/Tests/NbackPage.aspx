@@ -29,8 +29,8 @@
     <div id="game">
         <canvas id='canvas' width="1000px" height="700px"></canvas>
         <input type="button" id="executeTest" style="z-index: 2; position: absolute;" value="" meta:resourcekey="btn_execute" runat="server"/>
-        <input type="button" id="fullScreenOn" style="z-index: 2; position: absolute;" />
-        <input type="button" id="fullScreenClose" style="z-index: 2; position: absolute;" />
+        <input type="button" id="fullScreenOn" style="z-index: 2; position: absolute; cursor: pointer;" />
+        <input type="button" id="fullScreenClose" style="z-index: 2; position: absolute; cursor: pointer;" />
     </div>
     <script src="../js/nback/config.js"></script>
     <script src="../js/nback/game.js"></script>

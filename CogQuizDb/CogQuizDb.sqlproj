@@ -448,5 +448,10 @@
     <Build Include="dbo\Tables\DesktopTowerOfLondonLicenseKeys.sql" />
     <Build Include="dbo\Stored Procedures\SetupTowerOfLondonAppKey.sql" />
     <Build Include="dbo\Stored Procedures\GetTowerOfLondonAppKey.sql" />
+    <Build Include="dbo\Tables\LicenseAppKeys.sql" />
+    <Build Include="dbo\Tables\DesktopWinFormTOL.sql" />
+    <Build Include="dbo\Stored Procedures\SetupWinFormTOLAppKey.sql" />
+    <Build Include="dbo\Stored Procedures\SaveWinFormTOLAppKey.sql" />
+    <Build Include="dbo\Stored Procedures\GetWinFormTOLAppKey.sql" />
   </ItemGroup>
 </Project>

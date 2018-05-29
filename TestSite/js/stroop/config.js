@@ -47,6 +47,18 @@ var rectangleMessageTest1 = [250, 250, 510, 200]; //left, top, width, height
 //var taskTest2 = ["R", "B", "R", "G", "B", "R", "G", "R", "G", "B", "R", "G", "R", "G", "B", "R", "G", "B", "G", "R"];
 var taskTest2 = ["R"];
 var taskColor2 = ["R"];
+
+//TODO =============================================
+
+var taskTest3 = ["R"];
+var taskColor3 = ["R"];
+
+var taskTest4 = ["R"];
+var taskColor4 = ["R"];
+
+
+//==================================================
+
                   
 
                     

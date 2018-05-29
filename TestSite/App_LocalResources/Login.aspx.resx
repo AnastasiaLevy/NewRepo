@@ -192,4 +192,19 @@
   <data name="registerForm_title.Text" xml:space="preserve">
     <value>Sign up now</value>
   </data>
+  <data name="enterValidEmail" xml:space="preserve">
+    <value>Please enter a valid email *</value>
+  </data>
+  <data name="enterValidPass" xml:space="preserve">
+    <value>Passwords do not match *</value>
+  </data>
+  <data name="wrong1" xml:space="preserve">
+    <value>This username is already taken.</value>
+  </data>
+  <data name="wrong2" xml:space="preserve">
+    <value>This email is already taken.</value>
+  </data>
+  <data name="wrongLogin" xml:space="preserve">
+    <value>*Username or Password were incorrect</value>
+  </data>
 </root>

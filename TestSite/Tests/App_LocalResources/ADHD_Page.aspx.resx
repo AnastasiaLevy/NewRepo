@@ -123,6 +123,9 @@
   <data name="headcontainer.text" xml:space="preserve">
     <value>CPNI test</value>
   </data>
+  <data name="notSavedCorrectly" xml:space="preserve">
+    <value>The results were not saved correctly</value>
+  </data>
   <data name="pagetitle.text" xml:space="preserve">
     <value>Coolidge Tests  |  Online Psychological Assessments</value>
   </data>

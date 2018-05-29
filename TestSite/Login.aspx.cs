@@ -54,7 +54,7 @@ namespace TestSite
             }
             else
             {
-                wrongLogin.Text = "*Username or Password were incorrect";
+                wrongLogin.Text = GetLocalResourceObject("wrongLogin").ToString();
 
             }
 
@@ -74,11 +74,11 @@ namespace TestSite
             string str = Membership.GetUserNameByEmail(single_email.Value);
             if (user != null)
             {
-                wrong.Text = "This username is already taken.";
+                wrong.Text = GetLocalResourceObject("wrong1").ToString();
             }
             else if (!String.IsNullOrEmpty(str))
             {
-                wrong.Text = "This email is already taken.";
+                wrong.Text = GetLocalResourceObject("wrong2").ToString();
             }
             
             else

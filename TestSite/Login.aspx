@@ -19,7 +19,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-5">
-
+                    
                     <div class="form-box">
                         <div class="form-top">
                             <div class="form-top-left">
@@ -30,7 +30,7 @@
                                 <i class="fa fa-lock"></i>
                             </div>
                         </div>
-                        <div class="form-bottom">
+                        <div id="loginDiv" class="form-bottom">
                                     
                             <div role="form" class="login-form">
                                 <asp:Label ID="wrongLogin" class="errorMessage" runat="server" Text=""></asp:Label>
@@ -42,13 +42,13 @@
                                     <label class="sr-only" for="form-password"><asp:Localize meta:resourcekey="loginForm_LabelPass"  runat="server" ID="Localize5" Text="" /></label>
                                     <input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="userPwLg" required runat="server" meta:resourcekey="loginForm_inputPass"/>
                                 </div>
-                                <asp:LinkButton class="btn btn-success" type="submit" runat="server" OnClick="clcLogin"><asp:Localize meta:resourcekey="loginForm_LinkButton"  runat="server" ID="Localize6" Text="" /></asp:LinkButton>
-                                <button type="submit" class="btn" runat="server" style="display: none" OnClick="javascript:__doPostBack('ctl16','')"><asp:Localize meta:resourcekey="loginForm_Button"  runat="server" ID="Localize7" Text="" /></button>
+                                <asp:LinkButton ID="btnLogin" class="btn btn-success" type="submit" runat="server" OnClick="clcLogin"><asp:Localize meta:resourcekey="loginForm_LinkButton"  runat="server" ID="Localize6" Text="" /></asp:LinkButton>
+                                <%--<button type="submit" class="btn" runat="server" style="display: none" OnClick="javascript:__doPostBack('ctl16','')"><asp:Localize meta:resourcekey="loginForm_Button"  runat="server" ID="Localize7" Text="" /></button>--%>
                             </div>
-                                       
+                                      
                         </div>
                     </div>
-
+                        
                 </div>
 
                 <div class="col-sm-1 middle-border"></div>
@@ -66,7 +66,7 @@
                                 <i class="fa fa-pencil"></i>
                             </div>
                         </div>
-                        <div class="form-bottom">
+                        <div id="registerDiv input" class="form-bottom">
                             <div role="form" class="registration-form">
                                 <asp:Label ID="wrong" class="errorMessage" runat="server" Text=""></asp:Label>
                                 <asp:Label ID="wrongPw" class="errorMessage" runat="server" Text=""></asp:Label>
@@ -134,6 +134,17 @@
 <asp:Content ContentPlaceHolderID="ScriptsContent" runat="server">
 
     <script>
+        var buttonLogin = document.getElementById('<%= btnLogin.ClientID %>');
+        $(function () {
+            $("#loginDiv input").keypress(function (e) {
+                if (e.keyCode == 13) {
+                    buttonLogin.click();
+                }
+            });
+        });
+        </script>
+
+    <script>
         var checkboxProvider = document.getElementById('<%= checkboxProvider.ClientID %>');
 
         $(document).ready(function () {
@@ -163,7 +174,8 @@
             
             var text = $('#<%= single_email.ClientID %>').val();
             if (!validateEmail(text)) {
-                $("#<%= wrong.ClientID %>").text("Please enter a valid email *")
+                <%--$("#<%= wrong.ClientID %>").text("Please enter a valid email *")--%>
+                $("#<%= wrong.ClientID %>").text('<%= GetLocalResourceObject("enterValidEmail")%>');
                 $("#<%= regSingle.ClientID %>").hide();
                 eHasErrors = true;
             }
@@ -185,7 +197,8 @@
             var text1 = $("#<%= s_confPw.ClientID %>").val();
             var text2 = $("#<%= singlePw.ClientID %>").val();
             if (!comparePWs(text1, text2)) {
-                $("#<%= wrongPw.ClientID %>").text("Passwords do not match *")
+                <%--$("#<%= wrongPw.ClientID %>").text("Passwords do not match *")--%>
+                $("#<%= wrongPw.ClientID %>").text("<%= GetLocalResourceObject("enterValidPass")%>");
                 $("#<%= regSingle.ClientID %>").hide();
                 pwHasErrors = true;
             }

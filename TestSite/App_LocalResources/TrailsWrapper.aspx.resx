@@ -183,6 +183,9 @@
   <data name="collapse4_title.Text" xml:space="preserve">
     <value>Research:</value>
   </data>
+  <data name="errorPayment" xml:space="preserve">
+    <value>Cannot process payment. Please contact administrator.</value>
+  </data>
   <data name="follow.Text" xml:space="preserve">
     <value>Follow Us</value>
   </data>

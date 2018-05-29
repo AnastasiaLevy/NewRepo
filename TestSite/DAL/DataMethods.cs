@@ -2103,6 +2103,41 @@ namespace TestSite.DAL
         /// <param name="userId"></param>
         /// <param name="key"></param>
         /// <returns></returns>
+        public static bool SaveWinFormTOLAppKey(string userId, string deviceIdentifier, string key)
+        {
+            DataTable ds = new DataTable();
+            SqlConnection conn = new SqlConnection(connectionSring);
+            SqlCommand cmd = new SqlCommand("SaveWinFormTOLAppKey", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("License", key);
+            cmd.Parameters.AddWithValue("UserId", userId);
+            cmd.Parameters.AddWithValue("DeviceId", deviceIdentifier);
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                InsertErrorMessage(ex.ToString(), null, null, "SaveWinFormTOLAppKey");
+                throw new Exception("Execption Getting Saved Results. " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        ///     Setup key for win form app.
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <param name="key"></param>
+        /// <returns></returns>
         public static bool SetupWinFormTOLAppKey(string userId)
         {
             DataTable ds = new DataTable();

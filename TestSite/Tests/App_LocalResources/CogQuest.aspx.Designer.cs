@@ -88,6 +88,15 @@ namespace TestSite.Tests.App_LocalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This application is already installed on your computer..
+        /// </summary>
+        internal static string existsMessage {
+            get {
+                return ResourceManager.GetString("existsMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Create questionnaire in any language.
         /// </summary>
         internal static string img1DescrSpan1_Text {

@@ -64,7 +64,7 @@ namespace TestSite
                         }
                         else
                         {
-                            error = "Cannot process payment. Please contact administrator.";
+                            error = GetLocalResourceObject("errorPayment").ToString();
                         }
                     }
                     else

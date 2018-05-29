@@ -376,15 +376,15 @@ namespace TestSite
         private string GetSelfEsteem()
         {
             if (esteem1.Checked)
-                return lesteem1.InnerText;
+                return "Low";
             else if (esteem2.Checked)
-                return lesteem2.InnerText;
+                return "Below Avarage";
             else if (esteem3.Checked)
-                return lesteem3.InnerText;
+                return "Average";
             else if (esteem4.Checked)
-                return lesteem4.InnerText;
+                return "Above Average";
             else if (esteem5.Checked)
-                return lesteem5.InnerText;
+                return "High";
             else
                 return "";
         }

@@ -76,6 +76,15 @@ namespace TestSite {
         protected global::System.Web.UI.HtmlControls.HtmlInputPassword userPwLg;
         
         /// <summary>
+        /// btnLogin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnLogin;
+        
+        /// <summary>
         /// Localize6 control.
         /// </summary>
         /// <remarks>
@@ -83,15 +92,6 @@ namespace TestSite {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Localize Localize6;
-        
-        /// <summary>
-        /// Localize7 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Localize Localize7;
         
         /// <summary>
         /// Localize8 control.

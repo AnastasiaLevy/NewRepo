@@ -29,10 +29,10 @@
         </div>
     </section>
   
-
+    
 
     <section id="testInstructions">
-        <div class="row ">
+        
             <div class="box">
                 <div class="col-lg-12">
                     <hr />
@@ -83,11 +83,11 @@
 
                 <div class="clearfix"></div>
             </div>
-        </div>
+        
     </section>
 
     <section id="params">
-        <div class="row">
+        
             <div class="box font-larger">
                 <div class="col-lg-12">
                     <hr />
@@ -146,11 +146,11 @@
 
 
             </div>
-        </div>
+        
     </section>
 
     <section id="testPositions">
-        <div class="row">
+        
             <div class="box">
                 <div class="col-lg-12">
                     <hr />
@@ -216,7 +216,7 @@
                 </div>
             </div>
             <div class="clearfix"></div>
-        </div>
+        
     </section>
 
     <textarea id="movesText" rows="5" runat="server"></textarea>
@@ -395,7 +395,7 @@
                 updateValues();
                 $('#MovesError').hide();
                 if (prct == 0 && trl == 0) {
-                    var error = "!Please set up the value for number of rounds for this test."
+                    var error = "<%= GetLocalResourceObject("MovesErrorMeassage")%>";
                     $('#MovesError').show();
                     $('#MovesError').html(error);
                     $('#SetupUpdate').show();
@@ -442,24 +442,24 @@
 
             error = "";
 
-            error = checkIfEmpty($('#<%=testName.ClientID%>').val(), "the name of the test.", error)
-            error = checkIfEmpty($('#<%=instructions.ClientID%>').val(), "instruction field.", error)
-            error = checkIfEmpty($('#<%=overMoves.ClientID%>').val(), "over moves text.", error)
-            error = checkIfEmpty($('#<%=overTime.ClientID%>').val(), "over time text.", error)
-            error = checkIfEmpty($('#<%=txtButton.ClientID%>').val(), "Button for the end of the test.", error)
-            error = checkIfEmpty($('#<%=feedback.ClientID%>').val(), "feedback text.", error)
-            error = checkIfEmpty($('#<%=instructionsFinish.ClientID%>').val(), "text for the end of the test.", error)
-            error = checkIfEmpty($('#<%=ddlPractice.ClientID %> option:selected').text(), "set the number of the practice rounds.", error)
-            error = checkIfEmpty($('#<%=ddlNumberGames.ClientID %> option:selected').text(), "set the number of the trail rounds.", error)
-            error = checkIfEmpty($('#<%=ddlConuntFromRound.ClientID %> option:selected').text(), "the value to calculate the results from.", error)
-            error = checkIfEmpty($('#<%=countDown.ClientID%>').val(), "count down time.", error)
-            error = checkIfEmpty($('#<%=timeOutAfter.ClientID%>').val(), "Max trial time.", error)
-            error = checkIfEmpty($('#<%=maxMovesLimit.ClientID%>').val(), "Max allowed moves.", error)
-            error = checkIfEmpty($("#<%=workArea.ClientID%>").val(), "Work area title.", error)
-            error = checkIfEmpty($("#<%=endArea.ClientID%>").val(), "Goal area title.", error)
-            error = checkIfEmpty($("#<%=countDownText.ClientID%>").val(), "text for coundown message.", error)
+            error = checkIfEmpty($('#<%=testName.ClientID%>').val(), "<%= GetLocalResourceObject("error_testname")%>", error)
+            error = checkIfEmpty($('#<%=instructions.ClientID%>').val(), "<%= GetLocalResourceObject("error_instructions")%>", error)
+            error = checkIfEmpty($('#<%=overMoves.ClientID%>').val(), "<%= GetLocalResourceObject("error_overMoves")%>", error)
+            error = checkIfEmpty($('#<%=overTime.ClientID%>').val(), "<%= GetLocalResourceObject("error_overTime")%>", error)
+            error = checkIfEmpty($('#<%=txtButton.ClientID%>').val(), "<%= GetLocalResourceObject("error_txtButton")%>", error)
+            error = checkIfEmpty($('#<%=feedback.ClientID%>').val(), "<%= GetLocalResourceObject("error_feedback")%>", error)
+            error = checkIfEmpty($('#<%=instructionsFinish.ClientID%>').val(), "<%= GetLocalResourceObject("error_instructionsFinish")%>", error)
+            error = checkIfEmpty($('#<%=ddlPractice.ClientID %> option:selected').text(), "<%= GetLocalResourceObject("error_ddlPractice")%>", error)
+            error = checkIfEmpty($('#<%=ddlNumberGames.ClientID %> option:selected').text(), "<%= GetLocalResourceObject("error_ddlNumberGames")%>", error)
+            error = checkIfEmpty($('#<%=ddlConuntFromRound.ClientID %> option:selected').text(), "<%= GetLocalResourceObject("error_ddlConuntFromRound")%>", error)
+            error = checkIfEmpty($('#<%=countDown.ClientID%>').val(), "<%= GetLocalResourceObject("error_countDown")%>", error)
+            error = checkIfEmpty($('#<%=timeOutAfter.ClientID%>').val(), "<%= GetLocalResourceObject("error_timeOutAfter")%>", error)
+            error = checkIfEmpty($('#<%=maxMovesLimit.ClientID%>').val(), "<%= GetLocalResourceObject("error_maxMovesLimit")%>", error)
+            error = checkIfEmpty($("#<%=workArea.ClientID%>").val(), "<%= GetLocalResourceObject("error_workArea")%>", error)
+            error = checkIfEmpty($("#<%=endArea.ClientID%>").val(), "<%= GetLocalResourceObject("error_endArea")%>", error)
+            error = checkIfEmpty($("#<%=countDownText.ClientID%>").val(), "<%= GetLocalResourceObject("error_countDownText")%>", error)
             if (superArr.length == 0)
-                error += "You have not set up any moves."
+                error += "<%= GetLocalResourceObject("error_notAnyMoves")%>";
             //checkIfEmpty(string, dataName, error)
             //checkIfEmpty(string, dataName, error)
             //checkIfEmpty(string, dataName, error)
@@ -509,12 +509,12 @@
                     success: function (resp) {
 
                         //request sent and response received.
-                        var message = "Success! The test was saved."
+                        var message = "<%= GetLocalResourceObject("successTest")%>"
                         $("#success").show();
                         $("#success").html(message);
                     },
                     error: function () {
-                        alert("error saving the test; try again later")
+                        alert("<%= GetLocalResourceObject("errorsaving")%>")
                     }
                 });
             }
@@ -522,7 +522,7 @@
 
         function checkIfEmpty(string, dataName, error) {
             if (string == "") {
-                error += "Please fill out " + dataName + "\n\r";
+                error += "<%= GetLocalResourceObject("Pleasefillout")%>" + " " + dataName + "\n\r";
             }
             return error;
         }
@@ -534,14 +534,14 @@
             error = "";
 
             if ($('#numberOfMoves').val().length < 1) {
-                error = "! You need you set Number of moves for this round.<br />"
+                error = "<%= GetLocalResourceObject("error_numberOfMoves")%>"
             }
             if (array.length != 3) {
-                error += "! You need you set all 3 beads for Start positions. <br />"
+                error += "<%= GetLocalResourceObject("error_array")%>"
 
             }
             if (arrayR.length != 3) {
-                error += "! You need you set all 3 beads for End positions.<br />"
+                error += "<%= GetLocalResourceObject("error_arrayR")%>"
 
             }
             //var error = ""; //To Test
@@ -604,7 +604,7 @@
                 }
 
                 $("#success").show();
-                var message = "Success! The round was saved."
+                var message = "<%= GetLocalResourceObject("successsaving")%>"
                 $("#success").html(message);
 
                 checkForChange();
@@ -843,17 +843,17 @@
             showNumGrp();
             if (what == "") {
                 if (round <= prct) {
-                    $('#roundNumber').text('Set Up Practice Trial #');
+                    $('#roundNumber').text('<%= GetLocalResourceObject("SetUpPractice")%>');
                     $('#roundValue').val(round);
                 }
                 else {
 
-                    $('#roundNumber').text('Set Up Test Trial #');
+                    $('#roundNumber').text('<%= GetLocalResourceObject("SetUpTest")%>');
                     $('#roundValue').val((round - prct));
                 }
             }
             else if (what == "prct") {
-                $('#roundNumber').text('Set Up Practice Trial #');
+                $('#roundNumber').text('<%= GetLocalResourceObject("SetUpPractice")%>');
                 updateValues();
                 var total = prct + trl;
 
@@ -864,7 +864,7 @@
                 $('#roundValue').focus();
             }
             else {
-                $('#roundNumber').text('Set Up  Test Trial #');
+                $('#roundNumber').text('<%= GetLocalResourceObject("SetUpTest")%>');
                 $('#roundValue').val(trl);
                 $('#roundValue').focus();
             }

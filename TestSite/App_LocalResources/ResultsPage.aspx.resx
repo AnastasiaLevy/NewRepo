@@ -129,6 +129,45 @@
   <data name="btn_export.Text" xml:space="preserve">
     <value>Export</value>
   </data>
+  <data name="chartTitle_ageGroupError" xml:space="preserve">
+    <value>Age Group Error. Please contact administrator.</value>
+  </data>
+  <data name="chartTitle_CardSortErrorLoading" xml:space="preserve">
+    <value>There was an error loading results. Please contact the administrator.</value>
+  </data>
+  <data name="chartTitle_CardSortResult" xml:space="preserve">
+    <value>Results for Card Sort Test for participant</value>
+  </data>
+  <data name="chartTitle_resultsCannotBeDisplayed" xml:space="preserve">
+    <value>Results for nBack Test for participant cannot be displayed. Please coctact site administrator.</value>
+  </data>
+  <data name="chartTitle_ResultsForNBack" xml:space="preserve">
+    <value>Results for nBack Test for participant</value>
+  </data>
+  <data name="chartTitle_ResultsForNBack1" xml:space="preserve">
+    <value>Result for nBack 1:</value>
+  </data>
+  <data name="chartTitle_ResultsForNBack2" xml:space="preserve">
+    <value>Result for nBack 2:</value>
+  </data>
+  <data name="chartTitle_ResultsForNBack3" xml:space="preserve">
+    <value>Result for nBack 3:</value>
+  </data>
+  <data name="chartTitle_SyllogismsError loadingResults" xml:space="preserve">
+    <value>There was an error loading results. Please contact the administrator.</value>
+  </data>
+  <data name="chartTitle_SyllogismsResults" xml:space="preserve">
+    <value>Results for Syllogisms Test for participant</value>
+  </data>
+  <data name="chartTitle_SyllogismsTotal" xml:space="preserve">
+    <value>Total Correct Count:</value>
+  </data>
+  <data name="chartTitle_TOLResult" xml:space="preserve">
+    <value>Results for Tower of London Test for participant</value>
+  </data>
+  <data name="chartTitle_TrailsResult" xml:space="preserve">
+    <value>Results for Trails Test</value>
+  </data>
   <data name="follow.Text" xml:space="preserve">
     <value>Follow Us</value>
   </data>
@@ -149,5 +188,32 @@
   </data>
   <data name="pagetitle.title" xml:space="preserve">
     <value>Test Results</value>
+  </data>
+  <data name="resA" xml:space="preserve">
+    <value>Trails part A:</value>
+  </data>
+  <data name="resB" xml:space="preserve">
+    <value>Trails part B:</value>
+  </data>
+  <data name="textStr_CardSortTotal NumberCategoriesCompleted" xml:space="preserve">
+    <value>Total Number Categories Completed:</value>
+  </data>
+  <data name="textStr_CardSortTotalCorrect" xml:space="preserve">
+    <value>Total Correct Count:</value>
+  </data>
+  <data name="textStr_CardSortTotalPerseverative" xml:space="preserve">
+    <value>Total Perseverative Errors Count:</value>
+  </data>
+  <data name="textStr_CardSortTotalResponse" xml:space="preserve">
+    <value>Total Response Count:</value>
+  </data>
+  <data name="textStr_CardSortTotalUniqueError" xml:space="preserve">
+    <value>Total Unique Error Count:</value>
+  </data>
+  <data name="textStr_CardSortTotlaError" xml:space="preserve">
+    <value>Total Error Count:</value>
+  </data>
+  <data name="textStr_providerRestricted" xml:space="preserve">
+    <value>Provider has restricted view of the result section.</value>
   </data>
 </root>

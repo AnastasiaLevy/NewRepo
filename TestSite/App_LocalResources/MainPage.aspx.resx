@@ -228,6 +228,15 @@
   <data name="carousel_image6_title2.Text" xml:space="preserve">
     <value>Special pricing is available for researchers and medical practitioners. Contact us for more details.</value>
   </data>
+  <data name="contactError_EmailNotValid" xml:space="preserve">
+    <value>Email address is not valid!</value>
+  </data>
+  <data name="contactError_error" xml:space="preserve">
+    <value>There was error sending you message. Please try again later.</value>
+  </data>
+  <data name="contactError_true" xml:space="preserve">
+    <value>Thank you. We will be in touch next business day</value>
+  </data>
   <data name="contact_email.Text" xml:space="preserve">
     <value>Your Email:</value>
   </data>
@@ -269,6 +278,9 @@
   </data>
   <data name="desktop_title.Text" xml:space="preserve">
     <value>DeskTop Tests</value>
+  </data>
+  <data name="errorPayment" xml:space="preserve">
+    <value>Cannot process payment. Please contact administrator.</value>
   </data>
   <data name="follow.Text" xml:space="preserve">
     <value>FOLLOW US</value>

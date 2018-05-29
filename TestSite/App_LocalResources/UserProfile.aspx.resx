@@ -285,4 +285,28 @@
   <data name="pagetitle.title" xml:space="preserve">
     <value>User Profile</value>
   </data>
+  <data name="ageNotEntered" xml:space="preserve">
+    <value>Not entered</value>
+  </data>
+  <data name="CodeNotValid" xml:space="preserve">
+    <value>User Code is not valid</value>
+  </data>
+  <data name="errorProviderAdding" xml:space="preserve">
+    <value>There was an error adding a provider.</value>
+  </data>
+  <data name="fileWrongFormat" xml:space="preserve">
+    <value>The file is in wrong format</value>
+  </data>
+  <data name="PasswordChanged" xml:space="preserve">
+    <value>Password changed.</value>
+  </data>
+  <data name="PasswordChangeFailed1" xml:space="preserve">
+    <value>Password change failed. Please re-enter your values and try again.</value>
+  </data>
+  <data name="PasswordChangeFailed2" xml:space="preserve">
+    <value>Please re-enter your values and try again.</value>
+  </data>
+  <data name="providerAdded" xml:space="preserve">
+    <value>Provider was added</value>
+  </data>
 </root>

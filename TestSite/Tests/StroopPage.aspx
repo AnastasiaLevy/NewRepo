@@ -26,10 +26,10 @@
           <input type="button" id="fullScreenClose" style="z-index:2; position:absolute;"/>
         </div>
         
-        <script src="../js/stroop/config.js"></script>
-        <script src="../js/stroop/score.js"></script>
-        <script src="../js/stroop/game.js"></script>
-        <script src="../js/jquery.js"></script>
+        <script src="/js/stroop/config.js"></script>
+        <script src="/js/stroop/score.js"></script>
+        <script src="/js/stroop/game.js"></script>
+        <script src="/js/jquery.js"></script>
     </body>
 
 </html>

@@ -315,4 +315,13 @@ et al., 1999).</value>
   <data name="pagetitle.title" xml:space="preserve">
     <value>Desktop Tests</value>
   </data>
+  <data name="contactError_error" xml:space="preserve">
+    <value>There was error sending you message. Please try again later.</value>
+  </data>
+  <data name="contactError_true" xml:space="preserve">
+    <value>Thak you. We will be in touch next business day.</value>
+  </data>
+  <data name="errorPayment" xml:space="preserve">
+    <value>Cannot process payment. Please contact administrator.</value>
+  </data>
 </root>

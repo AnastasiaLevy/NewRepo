@@ -45,7 +45,7 @@ namespace TestSite
                 email.Text = Membership.GetUser().Email;
                 userId = Membership.GetUser(User.Identity.Name).ProviderUserKey.ToString();
                 int uAge = GetUserAge();
-                age.Text = uAge > 0 ? uAge.ToString(): "Not entered";
+                age.Text = uAge > 0 ? uAge.ToString(): GetLocalResourceObject("ageNotEntered").ToString();
                 ageValue = age.Text;
                 //bday.Text = GetUserBithdate();
                 LoadPaidTests();
@@ -234,7 +234,7 @@ namespace TestSite
             }
             catch(Exception ex)
             {
-                errorUpl.Text = "The file is in wrong format";
+                errorUpl.Text = GetLocalResourceObject("fileWrongFormat").ToString();
                 return;
             }
 
@@ -281,18 +281,18 @@ namespace TestSite
                 try
                 {
                     DAL.DataMethods.AddUserToProvider(userId, code);
-                    lblError.Text = "Provider was added";
+                    lblError.Text = GetLocalResourceObject("providerAdded").ToString();
                     setUpUserCode.Visible = true;
                 }
                 catch(Exception ex)
                 {
                     DataMethods.InsertErrorMessage(ex.ToString(), userId, "UserProfile");
-                    lblError.Text = "There was an error adding a provider.";
+                    lblError.Text = GetLocalResourceObject("errorProviderAdding").ToString();
                 }
 
             }
             else
-                lblError.Text = "User Code is not valid";
+                lblError.Text = GetLocalResourceObject("CodeNotValid").ToString();
 
         }
 
@@ -318,16 +318,16 @@ namespace TestSite
 
                 if (u.ChangePassword(txtOldPw.Text, txtNewPw.Text))
                 {
-                   errorPW.Text = "Password changed.";
+                   errorPW.Text = GetLocalResourceObject("PasswordChanged").ToString();
                 }
                 else
                 {
-                   errorPW.Text = "Password change failed. Please re-enter your values and try again.";
+                   errorPW.Text = GetLocalResourceObject("PasswordChangeFailed1").ToString();
                 }
             }
             catch (Exception ex)
             {
-                errorPW.Text ="Please re-enter your values and try again.";
+                errorPW.Text = GetLocalResourceObject("PasswordChangeFailed2").ToString();
             }
         }
 

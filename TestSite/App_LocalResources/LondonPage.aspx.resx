@@ -118,7 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btn_play.text" xml:space="preserve">
-    <value>Play</value>
+    <value>Start</value>
+  </data>
+  <data name="errorAlert" xml:space="preserve">
+    <value>Could not load the correct test. Please try again later.</value>
   </data>
   <data name="goalArea.text" xml:space="preserve">
     <value>Goal State</value>

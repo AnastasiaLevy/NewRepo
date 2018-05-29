@@ -126,6 +126,9 @@
   <data name="examplesTitle.Text" xml:space="preserve">
     <value>View Examples</value>
   </data>
+  <data name="existsMessage" xml:space="preserve">
+    <value>This application is already installed on your computer.</value>
+  </data>
   <data name="img1DescrSpan1.Text" xml:space="preserve">
     <value>Create questionnaire in any language</value>
   </data>
