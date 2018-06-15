@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="about_paragraph.Text" xml:space="preserve">
+    <value>CogQuiz предоставляет нормы от детей до пожилым людям (возрастной диапазон 5-89 и N = 708). Разбивается описательная статистика 
+        в пятилетних группах от ребенка до молодого взрослого (5-19 лет) и десятилетние 
+		группы для молодых взрослых и пожилых людей.</value>
+  </data>
+  <data name="about_title.Text" xml:space="preserve">
+    <value>Создать Trails Test</value>
+  </data>
+  <data name="accordion_buttonAbout.Text" xml:space="preserve">
+    <value>Описание</value>
+  </data>
+  <data name="accordion_buttonDetails.Text" xml:space="preserve">
+    <value>Детали</value>
+  </data>
+  <data name="accordion_buttonMeasure.Text" xml:space="preserve">
+    <value>Мера</value>
+  </data>
+  <data name="accordion_buttonResearch.Text" xml:space="preserve">
+    <value>Исследование</value>
+  </data>
+  <data name="collapse1_paragraph.Text" xml:space="preserve">
+    <value>Trail Making Test (TMT), первоначально разработанный в 1938 году, был известен как “Partington’s 
+            Pathways Test,” или “Divided Attention Test” (Партингтон &amp; Лейтер, 1949). Первоначально он был частью 
+			батареи тестов (Индивидуальная испытательная батарея для армии) используемых для оценки “…различные интеллектуальные функции 
+            отличные от тех, которые измеряются шкалой интеллекта Wechsler-Bellevue.” (Spreen &amp; Strauss, 1998).
+            Тест обычно не является частью тестовой батареи, но вводится один в оригинальной бумажной и карандашной форме.</value>
+  </data>
+  <data name="collapse1_title.Text" xml:space="preserve">
+    <value>Описание:</value>
+  </data>
+  <data name="collapse2_paragraph.Text" xml:space="preserve">
+    <value>TMT обеспечивает меру внимания, визуальное сканирование, скорость координации глазных лучей(Часть A),
+            и умственная гибкость (Strauss, Sherman, &amp; Spreen, 2007). К тому же, Часть B оценивает способность 
+            чередование между наборами стимулов и как таковая является мерой "исполнительная функция" (Mitrushina, et al., 1999).
+            Производительность по ТМТ была получена для нормальных и различных клинических групп населения, таких как дефицит внимания
+            (Disorder ADD), Синдром дефицита внимания и гиперактивности, Болезнь Альцгеймера, Пост травматический стресс.</value>
+  </data>
+  <data name="collapse2_title.Text" xml:space="preserve">
+    <value>Мера:</value>
+  </data>
+  <data name="collapse3_paragraph.Text" xml:space="preserve">
+    <value>TMT и его несколько вариантов требуют от Участника, в правильном порядке, связывать вместе массив 
+            объектов, помеченных таким образом, чтобы указать конкретный порядок (например числовые, алфавитные). Часть A 
+			TMT содержит массив из 25 кругов, содержащий числа от 1 до 25. Нажимая нумерованные пузырьки, 
+            тестировщик создает линию из круга, содержащего номер 1, в круг, содержащий номер 
+            2, а затем в круг содержащий число 3 и т. д., пока он не достигнет круга, содержащего
+            номер 25. В Части B проверяющий должен чередовать числа и буквы (например последовательность из 1, A, 2, B, 3, C,…)</value>
+  </data>
+  <data name="collapse3_title.Text" xml:space="preserve">
+    <value>Детали:</value>
+  </data>
+  <data name="collapse4_paragraph.Text" xml:space="preserve">
+    <value>TMT и его несколько вариантов требуют от Участника, в правильном порядке, связывать вместе массив 
+            объектов, помеченных таким образом, чтобы указать конкретный порядок (например числовые, алфавитные). Часть A 
+			TMT содержит массив из 25 кругов, содержащий числа от 1 до 25. Нажимая нумерованные пузырьки, 
+            тестировщик создает линию из круга, содержащего номер 1, в круг, содержащий номер 
+            2, а затем в круг содержащий число 3 и т. д., пока он не достигнет круга, содержащего
+            номер 25. В Части B проверяющий должен чередовать числа и буквы (например последовательность из 1, A, 2, B, 3, C,…)</value>
+  </data>
+  <data name="collapse4_title.Text" xml:space="preserve">
+    <value>Исследование:</value>
+  </data>
+  <data name="errorPayment" xml:space="preserve">
+    <value>Невозможно обработать платеж. Обратитесь к администратору.</value>
+  </data>
+  <data name="follow.Text" xml:space="preserve">
+    <value>Подписаться</value>
+  </data>
+  <data name="navbar_about.Text" xml:space="preserve">
+    <value>О нас</value>
+  </data>
+  <data name="navbar_home.Text" xml:space="preserve">
+    <value>Главная</value>
+  </data>
+  <data name="navbar_logIn.Text" xml:space="preserve">
+    <value>Войти</value>
+  </data>
+  <data name="navbar_logOut.Text" xml:space="preserve">
+    <value>Выйти</value>
+  </data>
+  <data name="navbar_profile.Text" xml:space="preserve">
+    <value>Профиль</value>
+  </data>
+  <data name="or.Text" xml:space="preserve">
+    <value>или</value>
+  </data>
+  <data name="pagetitle.title" xml:space="preserve">
+    <value>Trails Test Online – CogQuiz</value>
+  </data>
+  <data name="pleaseLogin.Text" xml:space="preserve">
+    <value>Пожалуйста войдите</value>
+  </data>
+  <data name="price_hundred_buy.Text" xml:space="preserve">
+    <value>Купить сейчас</value>
+  </data>
+  <data name="price_hundred_paragraph.Text" xml:space="preserve">
+    <value>Проект среднего размера</value>
+  </data>
+  <data name="price_hundred_title.Text" xml:space="preserve">
+    <value>Набор из 100</value>
+  </data>
+  <data name="price_single_buy.Text" xml:space="preserve">
+    <value>Купить сейчас</value>
+  </data>
+  <data name="price_single_paragraph.Text" xml:space="preserve">
+    <value>Один запуск</value>
+  </data>
+  <data name="price_single_title.Text" xml:space="preserve">
+    <value>Один тест</value>
+  </data>
+  <data name="price_ten_buy.Text" xml:space="preserve">
+    <value>Купить сейчас</value>
+  </data>
+  <data name="price_ten_paragraph.Text" xml:space="preserve">
+    <value>Малый проект</value>
+  </data>
+  <data name="price_ten_title.Text" xml:space="preserve">
+    <value>Набор из 10</value>
+  </data>
+  <data name="price_unlim_buy.Text" xml:space="preserve">
+    <value>Купить сейчас</value>
+  </data>
+  <data name="price_unlim_paragraph.Text" xml:space="preserve">
+    <value>Любое количество участников</value>
+  </data>
+  <data name="price_unlim_title.Text" xml:space="preserve">
+    <value>Набор из 500</value>
+  </data>
+  <data name="register.Text" xml:space="preserve">
+    <value>Регистрация</value>
+  </data>
+  <data name="runtest.Text" xml:space="preserve">
+    <value>Начать тест</value>
+  </data>
+  <data name="specifications_paragraph1.Text" xml:space="preserve">
+    <value>Этот тест займет от 3 до 5 минут.</value>
+  </data>
+  <data name="specifications_paragraph2.Text" xml:space="preserve">
+    <value>Рекомендуемое минимальное разрешение экрана - 1000 x 700.</value>
+  </data>
+  <data name="specifications_title.Text" xml:space="preserve">
+    <value>Характеристики:</value>
+  </data>
+</root>

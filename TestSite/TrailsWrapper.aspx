@@ -177,11 +177,11 @@
                     <div class="row">
                         <div class="col-md-3">
                             <div class="circle c1 img-circle" id="singlePr" runat="server">
-                                <h4 class="blue">Single Test</h4>
+                                <h4 class="blue"><asp:Localize meta:resourcekey="price_single_title"  runat="server" ID="Localize2" Text="" /></h4>
                                 <span class="icon blue"><i class="fa fa-usd"></i></span>
                                 <span class="price-large blue">5</span>
                                 <span class="price-small">.00</span>
-                                <p>One Time Run</p>
+                                <p><asp:Localize meta:resourcekey="price_single_paragraph"  runat="server" ID="Localize3" Text="" /></p>
                                 <asp:Button ID="single" class="btn btn-info" runat="server" OnClick="single_Click" Text="Buy Now" meta:resourcekey="price_single_buy"/>
                             </div>
                         </div>
@@ -189,11 +189,11 @@
 
                         <div class="col-md-3">
                             <div class="circle c2 img-circle">
-                                <h4 class="yellow">Set of 10</h4>
+                                <h4 class="yellow"><asp:Localize meta:resourcekey="price_ten_title"  runat="server" ID="Localize4" Text="" /></h4>
                                 <span class="icon yellow"><i class="fa fa-usd"></i></span>
                                 <span class="price-large yellow">40</span>
                                 <span class="price-small">.00</span>
-                                <p>Small Project</p>
+                                <p><asp:Localize meta:resourcekey="price_ten_paragraph"  runat="server" ID="Localize26" Text="" /></p>
                                 <asp:Button ID="ten" class="btn btn-warning" runat="server" OnClick="ten_Click" Text="Buy Now" meta:resourcekey="price_ten_buy"/>
                             </div>
                         </div>
@@ -201,11 +201,11 @@
 
                         <div class="col-md-3">
                             <div class="circle c3 img-circle">
-                                <h4 class="green">Set of 100</h4>
+                                <h4 class="green"><asp:Localize meta:resourcekey="price_hundred_title"  runat="server" ID="Localize27" Text="" /></h4>
                                 <span class="icon green"><i class="fa fa-usd "></i></span>
                                 <span class="price-large green">80</span>
                                 <span class="price-small">.00</span>
-                                <p>Medium Size Project</p>
+                                <p><asp:Localize meta:resourcekey="price_hundred_paragraph"  runat="server" ID="Localize28" Text="" /></p>
                                 <asp:Button ID="hundred" class="btn btn-success" runat="server" OnClick="hundred_Click" Text="Buy Now" meta:resourcekey="price_hundred_buy"/>
                             </div>
                         </div>
@@ -213,12 +213,12 @@
 
                         <div class="col-md-3">
                             <div class="circle c4 img-circle">
-                                <h4 class="red">Set of 500</h4>
+                                <h4 class="red"><asp:Localize meta:resourcekey="price_unlim_title"  runat="server" ID="Localize30" Text="" /></h4>
                                 <span class="icon red"><i class="fa fa-usd "></i></span>
                                 <span class="price-large red">250</span>
                                 <span class="price-small">.00</span>
                                 <p>
-                                    Any Number of Participants
+                                    <asp:Localize meta:resourcekey="price_unlim_paragraph"  runat="server" ID="Localize29" Text="" />
                                 <p>
 
 

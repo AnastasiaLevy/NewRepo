@@ -29,20 +29,22 @@ namespace TestSite.Tests
         [WebMethod]
         public static void SaveHTMLstring(string html)
         {
-            DataMethods.InsertSyllogismsTable(html, _userTestId);
+            try
+            {
+                DataMethods.InsertSyllogismsTable(html, _userTestId);
+            }
+            catch (Exception ex)
+            {
+                DataMethods.InsertErrorMessage(ex.ToString(), _userId, "SyllogPage", "InsertSyllogismsTable");
+            }
         }
 
         [WebMethod]
-        public static void SaveSyllogUserTotal (string totalCorrect, string totalError, string certAverage, string certRatingCorrect)
+        public static void SaveSyllogUserTotal (int totalCorrect, int totalError, decimal certAverage, decimal certRatingCorrect)
         {
-            int totalCorrectint = Convert.ToInt32(totalCorrect);
-            int totalErrorInt = Convert.ToInt32(totalError);
-            decimal certAverageInt = Convert.ToDecimal(certAverage);
-            decimal certRatingCorrectInt = Convert.ToDecimal(certRatingCorrect);
-
             try
             {
-                DataMethods.InsertSyllogismsTotal(_userTestId, totalCorrectint, totalErrorInt, certAverageInt, certRatingCorrectInt);
+                DataMethods.InsertSyllogismsTotal(_userTestId, totalCorrect, totalError, certAverage, certRatingCorrect);
                 DataMethods.UpdateTestFinished(_userId, _userTestId);
             }
             catch (Exception ex)

@@ -526,6 +526,15 @@ namespace TestSite.Provider {
         protected global::System.Web.UI.WebControls.Button btnCancelUser;
         
         /// <summary>
+        /// emailUser control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputButton emailUser;
+        
+        /// <summary>
         /// assignTest control.
         /// </summary>
         /// <remarks>

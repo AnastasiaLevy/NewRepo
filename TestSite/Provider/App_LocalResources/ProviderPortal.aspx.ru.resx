@@ -1,0 +1,489 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="container_button_btnAddNewPart.Text" xml:space="preserve">
+    <value>Добавить участника</value>
+  </data>
+  <data name="container_button_btnAddUserTest.Text" xml:space="preserve">
+    <value>Присвоить тест участнику</value>
+  </data>
+  <data name="container_button_btnExportTestResults.Text" xml:space="preserve">
+    <value>Экспортировать результаты теста</value>
+  </data>
+  <data name="container_button_btnModifyTest.Text" xml:space="preserve">
+    <value>Модификации тестов</value>
+  </data>
+  <data name="container_button_btnResetPassword.Text" xml:space="preserve">
+    <value>Сбросить пароль</value>
+  </data>
+  <data name="container_button_btnUpdateProfile.Text" xml:space="preserve">
+    <value>Сменить код провайдера</value>
+  </data>
+  <data name="container_title1.Text" xml:space="preserve">
+    <value>Панель</value>
+  </data>
+  <data name="container_title2_strong.Text" xml:space="preserve">
+    <value>провайдера</value>
+  </data>
+  <data name="createduser" xml:space="preserve">
+    <value>Новый учасник создан</value>
+  </data>
+  <data name="entervalidemail" xml:space="preserve">
+    <value>Пожалуйста, введите действительный адрес электронной почты *</value>
+  </data>
+  <data name="errorPW_changed" xml:space="preserve">
+    <value>Пароль изменен.</value>
+  </data>
+  <data name="errorPW_failed" xml:space="preserve">
+    <value>Не удалось сменить пароль. Повторно введите значения и повторите попытку.</value>
+  </data>
+  <data name="errorPW_re-entered" xml:space="preserve">
+    <value>Повторно введите значения и повторите попытку.</value>
+  </data>
+  <data name="follow.Text" xml:space="preserve">
+    <value>FOLLOW US</value>
+  </data>
+  <data name="lblError" xml:space="preserve">
+    <value>Создан новый учасник</value>
+  </data>
+  <data name="lblTestMessage_error" xml:space="preserve">
+    <value>Произошла ошибка при назначении теста</value>
+  </data>
+  <data name="lblTestMessage_selectTest" xml:space="preserve">
+    <value>Выберите действительный тест</value>
+  </data>
+  <data name="lblTestMessage_selectUser" xml:space="preserve">
+    <value>Выберите учасника</value>
+  </data>
+  <data name="lblTestMessage_successfully" xml:space="preserve">
+    <value>Тест был успешно назначен</value>
+  </data>
+  <data name="mailto" xml:space="preserve">
+    <value>mailto:</value>
+  </data>
+  <data name="mailto2" xml:space="preserve">
+    <value>?subject=Login Info From CogQuiz&amp;body=</value>
+  </data>
+  <data name="myModal_btn.Text" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="MyModal_input.Value" xml:space="preserve">
+    <value>Tower of London</value>
+  </data>
+  <data name="myModal_title.Text" xml:space="preserve">
+    <value>Выберите подходящий шаблон</value>
+  </data>
+  <data name="navbar_Available.Text" xml:space="preserve">
+    <value>Доступные тесты</value>
+  </data>
+  <data name="navbar_categories.Text" xml:space="preserve">
+    <value>Категории</value>
+  </data>
+  <data name="navbar_dashboard.Text" xml:space="preserve">
+    <value>Панель</value>
+  </data>
+  <data name="navbar_home.Text" xml:space="preserve">
+    <value>Главная</value>
+  </data>
+  <data name="navbar_Instructions.Text" xml:space="preserve">
+    <value>Инструкции</value>
+  </data>
+  <data name="navbar_login.Text" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="navbar_logout.Text" xml:space="preserve">
+    <value>Log Out</value>
+  </data>
+  <data name="navbar_Norms.Text" xml:space="preserve">
+    <value>Нормы</value>
+  </data>
+  <data name="navbar_participantData.Text" xml:space="preserve">
+    <value>Данные учасников</value>
+  </data>
+  <data name="navbar_provider.Text" xml:space="preserve">
+    <value>Ваши тесты</value>
+  </data>
+  <data name="NormsList_btn1.Text" xml:space="preserve">
+    <value>TOL Drexel Adult</value>
+  </data>
+  <data name="NormsList_btn2.Text" xml:space="preserve">
+    <value>TOL Drexel Child</value>
+  </data>
+  <data name="NormsList_btn3.Text" xml:space="preserve">
+    <value>Тест Card Sort</value>
+  </data>
+  <data name="NormsList_btn4.Text" xml:space="preserve">
+    <value>N-back</value>
+  </data>
+  <data name="NormsList_strong.Text" xml:space="preserve">
+    <value>Таблицы</value>
+  </data>
+  <data name="NormsList_title.Text" xml:space="preserve">
+    <value>Нормы</value>
+  </data>
+  <data name="pagetitle.title" xml:space="preserve">
+    <value>Панель провайдера</value>
+  </data>
+  <data name="participantData_gvAllParticipants_btn.Text" xml:space="preserve">
+    <value>открыть</value>
+  </data>
+  <data name="participantData_gvAllParticipants_colums_Age.HeaderText" xml:space="preserve">
+    <value>Возраст</value>
+  </data>
+  <data name="participantData_gvAllParticipants_colums_Delete.HeaderText" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="participantData_gvAllParticipants_colums_firstname.HeaderText" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="participantData_gvAllParticipants_colums_Lastname.HeaderText" xml:space="preserve">
+    <value>Фамилия</value>
+  </data>
+  <data name="participantData_gvAllParticipants_colums_Profile.HeaderText" xml:space="preserve">
+    <value>Анкета</value>
+  </data>
+  <data name="participantData_gvAllParticipants_colums_Tests.HeaderText" xml:space="preserve">
+    <value>Результаты</value>
+  </data>
+  <data name="participantData_gvAllParticipants_colums_Username.HeaderText" xml:space="preserve">
+    <value>Имя пользователя</value>
+  </data>
+  <data name="participantData_pop_btn.Text" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="participantData_pop_columns_Assigned.HeaderText" xml:space="preserve">
+    <value>Дата назначения</value>
+  </data>
+  <data name="participantData_pop_columns_checkBox.Text" xml:space="preserve">
+    <value>Разрешить участнику просматривать результаты</value>
+  </data>
+  <data name="participantData_pop_columns_finished.HeaderText" xml:space="preserve">
+    <value>Дата прохождения</value>
+  </data>
+  <data name="participantData_pop_columns_finishedRemove.HeaderText" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="participantData_pop_columns_finishedTemplateField.HeaderText" xml:space="preserve">
+    <value>Результаты</value>
+  </data>
+  <data name="participantData_pop_columns_name.HeaderText" xml:space="preserve">
+    <value>Название теста</value>
+  </data>
+  <data name="participantData_purchachedTests_column_Left.HeaderText" xml:space="preserve">
+    <value>Осталось</value>
+  </data>
+  <data name="participantData_purchachedTests_column_Name.HeaderText" xml:space="preserve">
+    <value>Тест</value>
+  </data>
+  <data name="participantData_purchachedTests_column_Option.HeaderText" xml:space="preserve">
+    <value>Вариант</value>
+  </data>
+  <data name="participantData_purchachedTests_paragraph.Text" xml:space="preserve">
+    <value>Приобретенные тесты</value>
+  </data>
+  <data name="participantData_purchachedTests_strong.Text" xml:space="preserve">
+    <value>тесты</value>
+  </data>
+  <data name="participantData_purchachedTests_title.Text" xml:space="preserve">
+    <value>Ваши</value>
+  </data>
+  <data name="participantData_strong1.Text" xml:space="preserve">
+    <value>Учасников</value>
+  </data>
+  <data name="participantData_strong2.Text" xml:space="preserve">
+    <value>Данные участников</value>
+  </data>
+  <data name="participantData_Title.Text" xml:space="preserve">
+    <value>Данные</value>
+  </data>
+  <data name="partNameNoTest" xml:space="preserve">
+    <value>Тест не назначен</value>
+  </data>
+  <data name="partNameNotYetFilledProfile" xml:space="preserve">
+    <value>Пользователь еще не заполнил форму профиля.</value>
+  </data>
+  <data name="pass" xml:space="preserve">
+    <value>\r\n Пароль:</value>
+  </data>
+  <data name="pProviderTools_assignTest_btn1.Text" xml:space="preserve">
+    <value>Назначить</value>
+  </data>
+  <data name="pProviderTools_assignTest_btn2.Text" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="pProviderTools_assignTest_title.Text" xml:space="preserve">
+    <value>Назначить тест</value>
+  </data>
+  <data name="pProviderTools_createUser_btn1.Text" xml:space="preserve">
+    <value>Создать</value>
+  </data>
+  <data name="pProviderTools_createUser_btn2.Text" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="pProviderTools_createUser_checkBox.Text" xml:space="preserve">
+    <value>Разрешить участнику просматривать результаты</value>
+  </data>
+  <data name="pProviderTools_createUser_input.Value" xml:space="preserve">
+    <value>Отправить учетные данные пользователя</value>
+  </data>
+  <data name="pProviderTools_createUser_label1.Text" xml:space="preserve">
+    <value>Email учасника</value>
+  </data>
+  <data name="pProviderTools_createUser_label2.Text" xml:space="preserve">
+    <value>Имя учасника</value>
+  </data>
+  <data name="pProviderTools_createUser_label3.Text" xml:space="preserve">
+    <value>Пароль</value>
+  </data>
+  <data name="pProviderTools_createUser_title.Text" xml:space="preserve">
+    <value>Создать нового учасника</value>
+  </data>
+  <data name="pProviderTools_editTest_btn1.Text" xml:space="preserve">
+    <value>Модификация</value>
+  </data>
+  <data name="pProviderTools_editTest_btn2.Text" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="pProviderTools_editTest_btn3.Text" xml:space="preserve">
+    <value>Создать</value>
+  </data>
+  <data name="pProviderTools_editTest_btn4.Text" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="pProviderTools_editTest_title.Text" xml:space="preserve">
+    <value>Модификация теста</value>
+  </data>
+  <data name="pProviderTools_exportTestResults_btn1.Text" xml:space="preserve">
+    <value>Экспортировать</value>
+  </data>
+  <data name="pProviderTools_exportTestResults_btn2.Text" xml:space="preserve">
+    <value>Экспорт в Excel в одну линию</value>
+  </data>
+  <data name="pProviderTools_exportTestResults_btn3.Text" xml:space="preserve">
+    <value>Экспорт в Excel традиционно</value>
+  </data>
+  <data name="pProviderTools_exportTestResults_lable1.Text" xml:space="preserve">
+    <value>Выберите тип теста:</value>
+  </data>
+  <data name="pProviderTools_exportTestResults_lable2.Text" xml:space="preserve">
+    <value>От</value>
+  </data>
+  <data name="pProviderTools_exportTestResults_lable3.Text" xml:space="preserve">
+    <value>До</value>
+  </data>
+  <data name="pProviderTools_exportTestResults_title.Text" xml:space="preserve">
+    <value>Экспортировать результаты теста</value>
+  </data>
+  <data name="pProviderTools_resetPw_btn1.Text" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="pProviderTools_resetPw_btn2.Text" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="pProviderTools_resetPw_label1.Text" xml:space="preserve">
+    <value>Старый пароль:</value>
+  </data>
+  <data name="pProviderTools_resetPw_label2.Text" xml:space="preserve">
+    <value>Новый пароль:</value>
+  </data>
+  <data name="pProviderTools_resetPw_title.Text" xml:space="preserve">
+    <value>Сбросить пароль</value>
+  </data>
+  <data name="pProviderTools_setUpUserCode_btn1.Text" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="pProviderTools_setUpUserCode_btn2.Text" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="pProviderTools_setUpUserCode_label.Text" xml:space="preserve">
+    <value>Введите код:</value>
+  </data>
+  <data name="pProviderTools_setUpUserCode_title.Text" xml:space="preserve">
+    <value>Настроить код</value>
+  </data>
+  <data name="sureToDelete" xml:space="preserve">
+    <value>Вы действительно хотите удалить этот тест?</value>
+  </data>
+  <data name="testCategories_category1.Text" xml:space="preserve">
+    <value>Паямять</value>
+  </data>
+  <data name="testCategories_category2.Text" xml:space="preserve">
+    <value>Исполнительная функция и планирование</value>
+  </data>
+  <data name="testCategories_category3.Text" xml:space="preserve">
+    <value>Скорость обработки информации</value>
+  </data>
+  <data name="testCategories_strong.Text" xml:space="preserve">
+    <value>тестов</value>
+  </data>
+  <data name="testCategories_title.Text" xml:space="preserve">
+    <value>Категории</value>
+  </data>
+  <data name="testList_strong.Text" xml:space="preserve">
+    <value>тесты</value>
+  </data>
+  <data name="testList_test1_title.Text" xml:space="preserve">
+    <value>Card Sort</value>
+  </data>
+  <data name="testList_test2_title.Text" xml:space="preserve">
+    <value>Trails</value>
+  </data>
+  <data name="testList_test3_title.Text" xml:space="preserve">
+    <value>Nback</value>
+  </data>
+  <data name="testList_test4_title.Text" xml:space="preserve">
+    <value>Tower Of London</value>
+  </data>
+  <data name="testList_test5_title.Text" xml:space="preserve">
+    <value>Syllogisms</value>
+  </data>
+  <data name="testList_test6_title.Text" xml:space="preserve">
+    <value>Stroop test</value>
+  </data>
+  <data name="testList_title.Text" xml:space="preserve">
+    <value>Доступные</value>
+  </data>
+  <data name="userNotCreated" xml:space="preserve">
+    <value>Пользователь еще не создан.</value>
+  </data>
+  <data name="videos_descr1.Text" xml:space="preserve">
+    <value>Панель управления провайдера 1</value>
+  </data>
+  <data name="videos_descr2.Text" xml:space="preserve">
+    <value>Панель управления провайдера 2</value>
+  </data>
+  <data name="videos_descr3.Text" xml:space="preserve">
+    <value>Панель управления провайдера 3</value>
+  </data>
+  <data name="videos_strong.Text" xml:space="preserve">
+    <value>видео</value>
+  </data>
+  <data name="videos_title.Text" xml:space="preserve">
+    <value>Обучающие</value>
+  </data>
+  <data name="WelcomeToCogQuiz" xml:space="preserve">
+    <value>Добро пожаловать в CogQuiz.com. Используйте эти учетные данные для входа на сайт: \r \n Логин:</value>
+  </data>
+  <data name="ddlProvTests_amount" xml:space="preserve">
+    <value>доступно</value>
+  </data>
+  <data name="ddlProvTests_select" xml:space="preserve">
+    <value>Выберите тест</value>
+  </data>
+</root>

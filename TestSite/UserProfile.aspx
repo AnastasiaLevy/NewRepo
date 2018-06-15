@@ -100,7 +100,7 @@
 
                     </div>                    
                     <div class="col-lg-4">
-                        <asp:Button ID="btbAddProviderCode" runat="server" Text="" CssClass="btn btn-primary" OnClick="btbAddProviderCode_Click" width="50%" meta:resourcekey="userInfo_btbAddProviderCode"/>
+                        <asp:Button ID="btbAddProviderCode" runat="server" Text="" CssClass="btn btn-primary" OnClick="btbAddProviderCode_Click" meta:resourcekey="userInfo_btbAddProviderCode"/>
                         <div id="setUpUserCode" class="panel panel-success" runat="server">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><asp:Localize meta:resourcekey="userInfo_providercode_title"  runat="server" ID="Localize14" Text="" /></h3>
@@ -115,7 +115,7 @@
                         </div>
                     </div>
                         <div class="col-lg-4">
-                        <asp:Button ID="Button1" runat="server" Text="Change Password" CssClass="btn btn-primary" OnClick="btnResetPassword_Click" width="50%" meta:resourcekey="userInfo_Button1"/>
+                        <asp:Button ID="Button1" runat="server" Text="Change Password" CssClass="btn btn-primary" OnClick="btnResetPassword_Click" meta:resourcekey="userInfo_Button1"/>
                      
                                   <div id="resetPw" class="panel panel-success" runat="server">
                                     <div class="panel-heading">
@@ -136,7 +136,7 @@
                                 </div>
                     </div>
                     <div class="col-lg-4">
-                        <asp:Button ID="UploadResults" runat="server" Text="" CssClass="btn btn-primary" OnClick="btnUploadResults_Click" width="50%" meta:resourcekey="userInfo_UploadResult"/>
+                        <asp:Button ID="UploadResults" runat="server" Text="" CssClass="btn btn-primary" OnClick="btnUploadResults_Click" meta:resourcekey="userInfo_UploadResult"/>
                                 <div id="uploadRes" class="panel panel-success" runat="server">
                                     <div class="panel-heading">
                                         <h3 class="panel-title"><asp:Localize meta:resourcekey="userInfo_UploadResults"  runat="server" ID="Localize16" Text="" /></h3>
@@ -171,7 +171,7 @@
                     </div>
                     <div class="col-lg-6">
                         <p class="min"><strong><asp:Localize meta:resourcekey="paidTests_strong2"  runat="server" ID="Localize19" Text="" /></strong> </p>
-                        <asp:GridView ID="gvAvailableTests" runat="server" CellSpacing="10" class="gridview provider-table"
+                        <asp:GridView ID="gvAvailableTests" runat="server" CellSpacing="10" class="gridview provider-table prov-table-fix"
                             GridLines="Horizontal" AutoGenerateColumns="False" BorderColor="#CCCCCC" BorderStyle="None"
                             BorderWidth="1px" CellPadding="20" ForeColor="Black" Height="75px" 
                             RowStyle-Height="40px" Font-Size="Larger">
@@ -200,14 +200,14 @@
                     <div class="col-lg-6">
 
                         <p class="min"><strong><asp:Localize meta:resourcekey="finishedTest_title"  runat="server" ID="Localize20" Text="" /></strong> </p>
-                        <asp:GridView ID="gvFinishedTests" runat="server" CellSpacing="20" class="gridview provider-table"
+                        <asp:GridView ID="gvFinishedTests" runat="server" CellSpacing="20" class="gridview provider-table  prov-table-fix"
                             GridLines="Horizontal" AutoGenerateColumns="False" BorderColor="#CCCCCC" BorderStyle="None"
                             BorderWidth="1px" CellPadding="10" ForeColor="Black" Height="75px" 
                             RowStyle-Height="40px" Font-Size="Larger">
                             <Columns>
                                 <asp:BoundField DataField="Name" HeaderText="" meta:resourcekey="finishedTest_Name" runat="server"/>
                                 <asp:BoundField DataField="Finished On" DataFormatString="{0:d}" HeaderText="" meta:resourcekey="finishedTest_FinishedOn" runat="server"/>
-                                <asp:TemplateField HeaderText=""  HeaderStyle-Width="15%" ItemStyle-Width="15%" meta:resourcekey="finishedTest_View" runat="server">
+                                <asp:TemplateField HeaderText=""  meta:resourcekey="finishedTest_View" runat="server">
                                     <ItemTemplate>
                                         <asp:LinkButton ID="showResults" runat="server" CausesValidation="false" OnClick="showResults_Click"><i class="fa fa-eye  fa-2x" aria-hidden="true"></i></asp:LinkButton>
                                     </ItemTemplate>

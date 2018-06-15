@@ -115,7 +115,7 @@
 <asp:Content ContentPlaceHolderID="ModalContent" runat="server">
     <div>
         <div class="b-popup" id="popup1" style="display: none;">
-        <div class="b-popup-content" style="position: relative; height: 400px;">
+        <div class="b-popup-content" style="position: relative; height: 500px;">
             <p class="b-popup-text" style="line-height: 1.4;"><asp:Localize meta:resourcekey="popup_paragraph"  runat="server" ID="Localize16" Text="" /></p>
             <div style="display:block; margin: 0 auto;">
                 <div> 

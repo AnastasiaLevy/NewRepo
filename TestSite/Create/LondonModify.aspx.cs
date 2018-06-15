@@ -9,6 +9,7 @@ using System.Web.Script.Serialization;
 using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using TestSite.HelpClasses;
 
 namespace TestSite.Create
 {
@@ -16,6 +17,13 @@ namespace TestSite.Create
     {
         public static string testId; //modifiedTestId
         private static int providerId;
+
+        protected override void InitializeCulture()
+        {
+            LanguageManager.ApplyLanguage();
+            base.InitializeCulture();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             providerId = Convert.ToInt32(Session["providerId"]);

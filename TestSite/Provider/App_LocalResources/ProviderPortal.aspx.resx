@@ -474,4 +474,16 @@
   <data name="partNameNotYetFilledProfile" xml:space="preserve">
     <value>User have not yet filled profile form.\n\r</value>
   </data>
+  <data name="participantData_gvAllParticipants_colums_Delete.HeaderText" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="participantData_gvAllParticipants_colums_Tests.HeaderText" xml:space="preserve">
+    <value>Tests</value>
+  </data>
+  <data name="ddlProvTests_amount" xml:space="preserve">
+    <value>amount</value>
+  </data>
+  <data name="ddlProvTests_select" xml:space="preserve">
+    <value>Select Test</value>
+  </data>
 </root>

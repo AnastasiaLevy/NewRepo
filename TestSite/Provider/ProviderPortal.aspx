@@ -107,7 +107,7 @@
             <ContentTemplate>
                    <section id="userInfo">
                 <div class="row">
-                    <div class="box box1">
+                    <div class="box box1" style="margin-top: 70px">
                         <div class="col-lg-12">
                             <hr>
                             <h2 class="intro-text text-center"><asp:Localize meta:resourcekey="container_title1"  runat="server" ID="Localize12" Text="" />
@@ -231,7 +231,7 @@
 
                                             </div>
                                                    <div class="col-xs-4 col-sm-6 col-md-4">
-                                               <input id="emailUser" type="button"  class="btn btn-labeled btn-success" value="Send User Credentials" meta:resourcekey="pProviderTools_createUser_input" />
+                                               <input id="emailUser" type="button"  class="btn btn-labeled btn-success" value="Send User Credentials" meta:resourcekey="pProviderTools_createUser_input" runat="server"/>
                                             </div>
                                         </div>
                                     </div>
@@ -242,7 +242,7 @@
                                         <asp:Label ID="lblTestMessage" runat="server" Text=""></asp:Label>
                                     </div>
                                     <div class="panel-body " novalidate>
-                                        <asp:DropDownList class="dropDown" ID="ddlAllParticipants" runat="server" Width="50%" required="true"></asp:DropDownList>
+                                        <asp:DropDownList class="dropDown" ID="ddlAllParticipants" runat="server" Width="50%" ></asp:DropDownList>
                                         <asp:DropDownList class="dropDown" ID="ddlProvTests" runat="server" Width="50%" OnSelectedIndexChanged="ddlProvTests_SelectedIndexChanged" AppendDataBoundItems="true" AutoPostBack="True"></asp:DropDownList>
                                         <asp:DropDownList class="dropDown" ID="ddlModifiedID" runat="server" Width="40%"></asp:DropDownList>
                                         <div>
@@ -390,13 +390,13 @@
                                             <asp:LinkButton ID="view" runat="server" CausesValidation="false" OnClick="view_Click"> <i class="fa fa-pencil-square-o  fa-2x" aria-hidden="true"></i></asp:LinkButton>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Delete" HeaderStyle-Width="10%" ItemStyle-Width="10%"
+                                    <asp:TemplateField HeaderText="Delete" HeaderStyle-Width="10%" ItemStyle-Width="10%" meta:resourcekey="participantData_gvAllParticipants_colums_delete"
                                         FooterStyle-Width="10%">
                                         <ItemTemplate>
                                             <asp:LinkButton ID="delete" runat="server" CausesValidation="false" OnClick="delete_Click" OnClientClick="return confirm('Are you sure?')" Text="X"><i class="fa fa-minus-square-o  fa-2x" aria-hidden="true"></i></asp:LinkButton>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Tests" HeaderStyle-Width="10%" ItemStyle-Width="10%"
+                                    <asp:TemplateField HeaderText="Tests" HeaderStyle-Width="10%" ItemStyle-Width="10%" meta:resourcekey="participantData_gvAllParticipants_colums_tests"
                                         FooterStyle-Width="10%">
                                         <ItemTemplate>
                                             <asp:LinkButton ID="viewTest" runat="server" CausesValidation="false" OnClick="viewTest_Click" Text="open"><i class="fa fa-eye  fa-2x" aria-hidden="true"></i></asp:LinkButton>
@@ -569,19 +569,19 @@
                         </h2>
                         <hr>
                     </div>
-                    <div class="col-sm-4 text-center" id="vid1">
+                    <div class="col-sm-4 text-center iframe-wrapp" id="vid1">
                         <asp:Localize meta:resourcekey="videos_descr1"  runat="server" ID="Localize43" Text="" />
                        <iframe src="https://www.youtube.com/embed/-SPAjSEuBNA?" frameborder="0" allowfullscreen></iframe>
 
                     </div>
-                    <div class="col-sm-4 text-center">
+                    <div class="col-sm-4 text-center iframe-wrapp">
                     <asp:Localize meta:resourcekey="videos_descr2"  runat="server" ID="Localize44" Text="" />
                         <iframe src="https://www.youtube.com/embed/k_aoilEl8h8?" frameborder="0" allowfullscreen></iframe>
 <%--                        <object
 data="https://www.youtube.com/embed/k_aoilEl8h8?fs=0">
 </object>--%>
                     </div>
-                    <div class="col-sm-4 text-center">
+                    <div class="col-sm-4 text-center iframe-wrapp">
                          <asp:Localize meta:resourcekey="videos_descr3"  runat="server" ID="Localize45" Text="" />
                         <iframe src="https://www.youtube.com/embed/0JwN9Np1TmE" frameborder="0" allowfullscreen></iframe>
 <%--                        <object
@@ -762,7 +762,7 @@ data="https://www.youtube.com/embed/0JwN9Np1TmE?fs=0">
                                 $(this).parent().addClass("active");
                             });
 
-                            $('body').append('<div id="toTop" class="btn btn-primary color1">^</div>');
+                            $('body').append('<div id="toTop" class="btn btn-primary color1"><span class="glyphicon glyphicon-chevron-up"></span></div>');
                             $(window).scroll(function () {
                                 if ($(this).scrollTop() != 0) {
                                     $('#toTop').fadeIn();

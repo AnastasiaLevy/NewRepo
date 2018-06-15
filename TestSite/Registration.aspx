@@ -160,7 +160,7 @@
                     </div>
                     <hr>
                     <div id="headInj" class="">
-                        <asp:Label class="nopadding labelForm" ID="lbHeadInj" runat="server" Text="Have you ever had a head injury?" meta:resourcekey="regForm_lbHeadInjg"></asp:Label></br>
+                        <asp:Label class="nopadding labelForm" ID="lbHeadInj" runat="server" Text="Have you ever had a head injury?" meta:resourcekey="regForm_lbHeadInj"></asp:Label></br>
                            
                         <asp:CheckBox ID="cbHeadInjY" runat="server" class="" Text="Yes" meta:resourcekey="regForm_cbHeadInjY"/>
                         <asp:CheckBox ID="cbHeadInjN" runat="server" class="" Text="No" meta:resourcekey="regForm_cbHeadInjN"/></br>

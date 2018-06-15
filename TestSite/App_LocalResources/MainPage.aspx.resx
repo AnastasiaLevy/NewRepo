@@ -169,7 +169,7 @@
     <value>The software for each CogQuiz test has been designed with an emphasis on efficiency and ease of use. 
                         Each test comes with an easy to use example and a screen feature definition. 
                         In addition, we offer prompt, courteous customer support via email or Skype. 
-                        CogQuiz tests will run on Microsoft Windows XP SP3®, Vista®, Windows 7® Windows 8®.</value>
+                        CogQuiz tests will run on Microsoft Windows XP SP3®, Vista®, Windows 7®, Windows 8®, Windows 10®.</value>
   </data>
   <data name="available_title2.Text" xml:space="preserve">
     <value>All Available Tests</value>
@@ -289,7 +289,7 @@
     <value>About</value>
   </data>
   <data name="navbar_avalable.Text" xml:space="preserve">
-    <value>Avalable Tests</value>
+    <value>Online Tests</value>
   </data>
   <data name="navbar_categories.Text" xml:space="preserve">
     <value>Test Categories</value>
@@ -302,6 +302,9 @@
   </data>
   <data name="navbar_desktop.Text" xml:space="preserve">
     <value>DeskTop Tests</value>
+  </data>
+  <data name="navbar_dropdown.text" xml:space="preserve">
+    <value>Tests</value>
   </data>
   <data name="navbar_home.Text" xml:space="preserve">
     <value>Home</value>

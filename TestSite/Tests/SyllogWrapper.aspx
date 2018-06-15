@@ -178,7 +178,7 @@
                                     <span class="price-large yellow">30</span>
                                     <span class="price-small">.00</span>
                                     <p><asp:Localize meta:resourcekey="price_ten_paragraph"  runat="server" ID="Localize29" Text="" /></p>
-                                    <asp:Button ID="ten" class="btn btn-warning" runat="server" OnClick="ten_Click" Text="Buy Now" meta:resourcekey="price_uten_buy"/>
+                                    <asp:Button ID="ten" class="btn btn-warning" runat="server" OnClick="ten_Click" Text="Buy Now" meta:resourcekey="price_ten_buy"/>
                                 </div>
                             </div>
                             <!-- .Col-md-3 ends here -->

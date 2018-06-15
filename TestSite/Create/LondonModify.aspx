@@ -163,7 +163,7 @@
 
                 <div class="alert alert-success" id="success">
                 </div>
-                <input id="SetupUpdate" class="btn  btn-success btn-xs" type="button" value="Set Moves" />
+                <input id="SetupUpdate" class="btn  btn-success btn-xs" type="button" value="Set Moves" meta:resourcekey="setMoves" runat="server"/>
 
 
                 <div class="col-lg-12">
@@ -208,8 +208,8 @@
 
                 </div>
                 <div class="col-lg-4 col-sm-offset-2">
-                    <input class=" btn btn-info btn-xs" id="viewTest" type="button" value="View Test" meta:resourcekey="testPositions_viewTest"/>
-                    <input class=" btn btn-danger btn-xs" id="saveTest" type="button" value="Save Test" meta:resourcekey="testPositions_saveTest"/>
+                    <input class=" btn btn-info btn-xs" id="viewTest" type="button" value="View Test" meta:resourcekey="testPositions_viewTest" runat="server"/>
+                    <input class=" btn btn-danger btn-xs" id="saveTest" type="button" value="Save Test()" meta:resourcekey="testPositions_saveTest" runat="server"/>
 
                 </div>
                 <div class="col-lg-12" id="pageNums">
@@ -227,7 +227,7 @@
             $('#<%=movesText.ClientID%>').hide();
             var value = $('#<%=movesText.ClientID%>').val();
             if (value.length > 0) {
-                $('#SetupUpdate').hide();
+                $('#<%=SetupUpdate.ClientID%>').hide();
                 setUpdateValues(value);
             }
 
@@ -385,8 +385,8 @@
 
         }
 
-        $('#SetupUpdate').click(function () {
-            $('#SetupUpdate').hide();
+        $('#<%=SetupUpdate.ClientID%>').click(function () {
+            $('#<%=SetupUpdate.ClientID%>').hide();
             $('#delete').hide();
 
             var value = $('#<%=movesText.ClientID%>').val();
@@ -435,7 +435,7 @@
 
         });
 
-        $('#saveTest').click(function () {
+        $('#<%=saveTest.ClientID%>').click(function () {
             <%--    var voiceSelect = $("#select option:selected");
             var voiceSelect = $("#<%=select.ClientID%>").val();
             alert(voiceSelect);--%>

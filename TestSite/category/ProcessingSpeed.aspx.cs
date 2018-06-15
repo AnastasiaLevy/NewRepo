@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using TestSite.HelpClasses;
 
 namespace TestSite.blogPosts
 {
@@ -25,6 +26,12 @@ namespace TestSite.blogPosts
                 //profOpt.Visible = false;
             }
 
+        }
+
+        protected override void InitializeCulture()
+        {
+            LanguageManager.ApplyLanguage();
+            base.InitializeCulture();
         }
 
         protected void logOut_Click(object sender, EventArgs e)

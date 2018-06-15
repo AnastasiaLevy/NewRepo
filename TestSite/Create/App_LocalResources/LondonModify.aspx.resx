@@ -315,4 +315,7 @@
   <data name="successTest" xml:space="preserve">
     <value>Success! The test was saved.</value>
   </data>
+  <data name="SetMoves.value" xml:space="preserve">
+    <value>Set Moves</value>
+  </data>
 </root>

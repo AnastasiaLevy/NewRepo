@@ -18,13 +18,19 @@ namespace TestSite.Provider
     {
         protected MembershipUser _user;
 
+        protected override void InitializeCulture()
+        {
+            LanguageManager.ApplyLanguage();
+            base.InitializeCulture();
+        }
+
         protected void Page_PreRender(object sender, EventArgs e)
         {
            
             DataTable dt = DAL.DataMethods.GetModifyTestList(Convert.ToInt32(ViewState["providerId"]));
             if (dt.Rows.Count < 1)
             {
-                ToL.Style.Add("display", "none");
+                //ToL.Style.Add("display", "none");
             }
             dt = DAL.DataMethods.GetMemoryCardsTestModify(Convert.ToInt32(ViewState["providerId"]));
             if (dt.Rows.Count < 1)
@@ -389,10 +395,10 @@ namespace TestSite.Provider
             DataTable dt = DAL.DataMethods.GetAllProviderTests(providerId);//ds.Tables[0];
             foreach (DataRow dr in dt.Rows)
             {
-                string display = dr["Name"].ToString() + "(amount:" + dr["Left"].ToString() + ")";
+                string display = dr["Name"].ToString() + "("+ GetLocalResourceObject("ddlProvTests_amount").ToString() + ":" + dr["Left"].ToString() + ")";
                 ddlProvTests.Items.Add(new ListItem(display, dr["Id"].ToString()));
             }
-            ddlProvTests.Items.Insert(0, new ListItem("Select Test", "NA"));
+            ddlProvTests.Items.Insert(0, new ListItem(GetLocalResourceObject("ddlProvTests_select").ToString(), "NA"));
             //dt = ds.Tables[1];
             //if (dt.Rows.Count > 0)
             //{

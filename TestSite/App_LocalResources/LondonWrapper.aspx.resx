@@ -237,4 +237,16 @@
   <data name="specifications_title.Text" xml:space="preserve">
     <value>Specifications:</value>
   </data>
+  <data name="tab_all" xml:space="preserve">
+    <value>ALL</value>
+  </data>
+  <data name="tab_scoring" xml:space="preserve">
+    <value>SCORING</value>
+  </data>
+  <data name="tab_setup" xml:space="preserve">
+    <value>SET UP</value>
+  </data>
+  <data name="tab_test" xml:space="preserve">
+    <value>TEST</value>
+  </data>
 </root>

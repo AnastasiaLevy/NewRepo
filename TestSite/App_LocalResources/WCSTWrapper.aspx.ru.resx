@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="about_title.Text" xml:space="preserve">
+    <value>Тест Card Sort</value>
+  </data>
+  <data name="accordion_button1.Text" xml:space="preserve">
+    <value>Исследование</value>
+  </data>
+  <data name="accordion_button2.Text" xml:space="preserve">
+    <value>Информация</value>
+  </data>
+  <data name="accordion_button3.Text" xml:space="preserve">
+    <value>Мера</value>
+  </data>
+  <data name="accordion_button4.Text" xml:space="preserve">
+    <value>Детали</value>
+  </data>
+  <data name="collapse1_paragraph.Text" xml:space="preserve">
+    <value>Тест сортировки карт CogQuiz, как и другие сортировочные тесты, может быть предоставлен отдельным лицам
+                                 с травмой головного мозга (например ЧМТ, сотрясение...), неврологические/нейродегенеративные расстройства 
+                                (например Болезнь Паркинсона, Болезнь Альцгеймера...), психологические/психические расстройства 
+                                (например шызофрения, депрессия...), или для оценки развития детей и снижения уровня жизни пожилых людей.</value>
+  </data>
+  <data name="collapse1_title.Text" xml:space="preserve">
+    <value>Информация:</value>
+  </data>
+  <data name="collapse2_paragraph.Text" xml:space="preserve">
+    <value>Тесты Card sorting измеряют познавательную гибкость, оценивая
+                                 способность переключать стратегию ответа, когда правила реагирования полностью изменяються
+                                 (например размер, место нахождения...). Эти тесты позволяют специалистам в области психического здоровья оценивать 
+                                стратегии планирования, подавление ответа, стратегии сдвига в ответ на обратную связь по 
+								эффективности, и рабочей памяти, как это отражено, удерживая заданную релевантную информацию в сознательном осознании.</value>
+  </data>
+  <data name="collapse2_title.Text" xml:space="preserve">
+    <value>Мера:</value>
+  </data>
+  <data name="collapse3_paragraph.Text" xml:space="preserve">
+    <value>У обычных людей эта задача является мерой познавательной гибкости.
+                                 Мы предоставляем несколько нормированных параметров ответа для лиц в возрасте от 5 до 89 лет.
+                                 Результаты тестов сортировки карт CogQuiz, которые проводятся самостоятельно или без ввода или контроля 
+                                от лицензированного специалиста по психическому здоровью недействительны для оценки мозговой или когнитивной функции.</value>
+  </data>
+  <data name="collapse3_title.Text" xml:space="preserve">
+    <value>Детали</value>
+  </data>
+  <data name="collapse4_paragraph.Text" xml:space="preserve">
+    <value>Berg, E. A. (1948). Простая цель измерения гибкости мышления. Журнал общей психологии, 39, 15-22.
+Eling, P., Derckx, K., &amp; Maes, R. (2008). На историческом и концептуальном фоне теста сортировки карт Висконсина. Мозг и познание, 67, 247-253.
+Flashman, L. A., Horner, M. D., Freides, D. (1991). Обратите внимание на то, как персеверация будет проверяться на Тест Сортировки карт Висконсина. Клинический невролог, 5, 2, 190-194.
+Feldstein, S. N., Keller, F. R., Portman, R. E., Durham, R. L., Klebe, K. J., Davis, H. P. (1999). Сравнение компьютеризированных и стандартных версий теста сортировки карт Висконсина. Клинический невролог, 13, 3, 303-313</value>
+  </data>
+  <data name="collapse4_title.Text" xml:space="preserve">
+    <value>Исследование</value>
+  </data>
+  <data name="errorPayment" xml:space="preserve">
+    <value>Невозможно обработать платеж. Обратитесь к администратору.</value>
+  </data>
+  <data name="follow.Text" xml:space="preserve">
+    <value>Подписаться</value>
+  </data>
+  <data name="navbar_about.Text" xml:space="preserve">
+    <value>О нас</value>
+  </data>
+  <data name="navbar_home.Text" xml:space="preserve">
+    <value>Главная</value>
+  </data>
+  <data name="navbar_logIn.Text" xml:space="preserve">
+    <value>Войти</value>
+  </data>
+  <data name="navbar_logOut.Text" xml:space="preserve">
+    <value>Выйти</value>
+  </data>
+  <data name="navbar_profile.Text" xml:space="preserve">
+    <value>Профиль</value>
+  </data>
+  <data name="or.Text" xml:space="preserve">
+    <value>или</value>
+  </data>
+  <data name="pagetitle.title" xml:space="preserve">
+    <value>Card Sort Test Online, Card Sorting Test Online – CogQuiz</value>
+  </data>
+  <data name="pleaseLogin.Text" xml:space="preserve">
+    <value>Пожалуйста войдите</value>
+  </data>
+  <data name="price_hundred_buy.Text" xml:space="preserve">
+    <value>Купить сейчас</value>
+  </data>
+  <data name="price_hundred_paragraph.Text" xml:space="preserve">
+    <value>Проект среднего размера</value>
+  </data>
+  <data name="price_hundred_title.Text" xml:space="preserve">
+    <value>Набор из 100</value>
+  </data>
+  <data name="price_single_buy.Text" xml:space="preserve">
+    <value>Купить сейчас</value>
+  </data>
+  <data name="price_single_paragraph.Text" xml:space="preserve">
+    <value>Одноразовый запуск</value>
+  </data>
+  <data name="price_single_title.Text" xml:space="preserve">
+    <value>Один тест</value>
+  </data>
+  <data name="price_ten_buy.Text" xml:space="preserve">
+    <value>Купить сейчас</value>
+  </data>
+  <data name="price_ten_paragraph.Text" xml:space="preserve">
+    <value>Малый проект</value>
+  </data>
+  <data name="price_ten_title.Text" xml:space="preserve">
+    <value>Один тест</value>
+  </data>
+  <data name="price_unlim_buy.Text" xml:space="preserve">
+    <value>Купить сейчас</value>
+  </data>
+  <data name="price_unlim_paragraph.Text" xml:space="preserve">
+    <value>Большой образец</value>
+  </data>
+  <data name="price_unlim_title.Text" xml:space="preserve">
+    <value>Набор из 500</value>
+  </data>
+  <data name="register.Text" xml:space="preserve">
+    <value>Регистрация</value>
+  </data>
+  <data name="runtest.Text" xml:space="preserve">
+    <value>Начать тест</value>
+  </data>
+  <data name="specifications_paragraph1.Text" xml:space="preserve">
+    <value>Этот тест займет около 20 минут.</value>
+  </data>
+  <data name="specifications_paragraph2.Text" xml:space="preserve">
+    <value>Рекомендуемое минимальное разрешение экрана - 1000 x 700.</value>
+  </data>
+  <data name="specifications_title.Text" xml:space="preserve">
+    <value>Характеристики:</value>
+  </data>
+</root>

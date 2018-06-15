@@ -205,12 +205,12 @@ namespace TestSite
         private void PopulateEethnicity()
         {
             ddlEthnicity.Items.Clear();
-            ddlEthnicity.Items.Add(new ListItem("White/Non-hispanic", "0"));
-            ddlEthnicity.Items.Add(new ListItem("African American/African origin", "1"));
-            ddlEthnicity.Items.Add(new ListItem("Hispanic or Latino", "2"));
-            ddlEthnicity.Items.Add(new ListItem("Asian", "3"));
-            ddlEthnicity.Items.Add(new ListItem("American Indian or Alaskan Native", "4"));
-            ddlEthnicity.Items.Add(new ListItem("Native Hawaiian or Pacific Islander", "5"));
+            ddlEthnicity.Items.Add(new ListItem(GetLocalResourceObject("ddlEthnicity_item1").ToString(), "0"));
+            ddlEthnicity.Items.Add(new ListItem(GetLocalResourceObject("ddlEthnicity_item2").ToString(), "1"));
+            ddlEthnicity.Items.Add(new ListItem(GetLocalResourceObject("ddlEthnicity_item3").ToString(), "2"));
+            ddlEthnicity.Items.Add(new ListItem(GetLocalResourceObject("ddlEthnicity_item4").ToString(), "3"));
+            ddlEthnicity.Items.Add(new ListItem(GetLocalResourceObject("ddlEthnicity_item5").ToString(), "4"));
+            ddlEthnicity.Items.Add(new ListItem(GetLocalResourceObject("ddlEthnicity_item6").ToString(), "5"));
 
 
         }
@@ -218,12 +218,12 @@ namespace TestSite
         private void PopulateEducation()
         {
             ddlEducation.Items.Clear();
-            ddlEducation.Items.Add(new ListItem("Some High School", "0"));
-            ddlEducation.Items.Add(new ListItem("High School Grad", "1"));
-            ddlEducation.Items.Add(new ListItem("Some University", "2"));
-            ddlEducation.Items.Add(new ListItem("Univ Undegraduate", "3"));
-            ddlEducation.Items.Add(new ListItem("Graduate School", "4"));
-            ddlEducation.Items.Add(new ListItem("PhD", "5"));
+            ddlEducation.Items.Add(new ListItem(GetLocalResourceObject("ddlEducation_item1").ToString(), "0"));
+            ddlEducation.Items.Add(new ListItem(GetLocalResourceObject("ddlEducation_item2").ToString(), "1"));
+            ddlEducation.Items.Add(new ListItem(GetLocalResourceObject("ddlEducation_item3").ToString(), "2"));
+            ddlEducation.Items.Add(new ListItem(GetLocalResourceObject("ddlEducation_item4").ToString(), "3"));
+            ddlEducation.Items.Add(new ListItem(GetLocalResourceObject("ddlEducation_item5").ToString(), "4"));
+            ddlEducation.Items.Add(new ListItem(GetLocalResourceObject("ddlEducation_item6").ToString(), "5"));
         }
 
         private void PopulateInj()
@@ -242,19 +242,19 @@ namespace TestSite
         private void PopulateIncome()
         {
             ddlIncome.Items.Clear();
-            ddlIncome.Items.Add(new ListItem("less than 10 000", "0"));
-            ddlIncome.Items.Add(new ListItem("10 001 -- 25 000", "1"));
-            ddlIncome.Items.Add(new ListItem("25 001 -- 50 000", "2"));
-            ddlIncome.Items.Add(new ListItem("50 001 -- 100 000", "3"));
-            ddlIncome.Items.Add(new ListItem("more than 100 000", "4"));
+            ddlIncome.Items.Add(new ListItem(GetLocalResourceObject("ddlIncome_item1").ToString(), "0"));
+            ddlIncome.Items.Add(new ListItem(GetLocalResourceObject("ddlIncome_item2").ToString(), "1"));
+            ddlIncome.Items.Add(new ListItem(GetLocalResourceObject("ddlIncome_item3").ToString(), "2"));
+            ddlIncome.Items.Add(new ListItem(GetLocalResourceObject("ddlIncome_item4").ToString(), "3"));
+            ddlIncome.Items.Add(new ListItem(GetLocalResourceObject("ddlIncome_item5").ToString(), "4"));
 
         }
         private void PopulateHand()
         {
             ddlHand.Items.Clear();
-            ddlHand.Items.Add(new ListItem("left", "0"));
-            ddlHand.Items.Add(new ListItem("right", "1"));
-            ddlHand.Items.Add(new ListItem("ambidextrous", "2"));
+            ddlHand.Items.Add(new ListItem(GetLocalResourceObject("ddlHand_item1").ToString(), "0"));
+            ddlHand.Items.Add(new ListItem(GetLocalResourceObject("ddlHand_item2").ToString(), "1"));
+            ddlHand.Items.Add(new ListItem(GetLocalResourceObject("ddlHand_item3").ToString(), "2"));
 
         }
 

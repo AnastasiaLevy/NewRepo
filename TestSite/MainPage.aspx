@@ -115,9 +115,17 @@
     <li><a href="#about"><asp:Localize meta:resourcekey="navbar_about"  runat="server" ID="Localize2" Text="About" /></a></li>
     <li><a href="#services"><asp:Localize meta:resourcekey="navbar_categories"  runat="server" ID="Localize3" Text="Categories" /></a></li>
     <!-- <li><a href="#meet-team">Team</a></li> -->
-    <li><a href="#availableTests"><asp:Localize meta:resourcekey="navbar_avalable"  runat="server" ID="Localize4" Text="Available Tests" /></a></li>
-    <li><a href="#testsToOrder"><asp:Localize meta:resourcekey="navbar_custom"  runat="server" ID="Localize5" Text="Custom Tests" /></a></li>
-    <li><a href="#desktopTests"><asp:Localize meta:resourcekey="navbar_desktop"  runat="server" ID="Localize6" Text="Desktop Tests" /></a></li>
+        <li id="availableTests" runat="server"><a href="#availableTests"><asp:Localize meta:resourcekey="navbar_avalable"  runat="server" ID="Localize4" Text="Available Tests" /></a></li>
+        <li id="testsToOrder" runat="server"><a href="#testsToOrder"><asp:Localize meta:resourcekey="navbar_custom"  runat="server" ID="Localize5" Text="Custom Tests" /></a></li>
+        <li id="desktopTests" runat="server"><a href="#desktopTests"><asp:Localize meta:resourcekey="navbar_desktop"  runat="server" ID="Localize6" Text="Desktop Tests" /></a></li>
+        <li class="dropdown" id="testDropdown" runat="server">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><asp:Localize meta:resourcekey="navbar_dropdown"  runat="server" ID="Localize10" Text="Desktop Tests" /><span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#availableTests"><asp:Localize meta:resourcekey="navbar_avalable"  runat="server" ID="Localize1" Text="Available Tests" /></a></li>
+            <li><a href="#testsToOrder"><asp:Localize meta:resourcekey="navbar_custom"  runat="server" ID="Localize8" Text="Custom Tests" /></a></li>
+            <li><a href="#desktopTests"><asp:Localize meta:resourcekey="navbar_desktop"  runat="server" ID="Localize9" Text="Desktop Tests" /></a></li>
+          </ul>
+        </li>
     <%--<li><a href="#contact">Contact</a></li>--%>
     <li><a href="#follow-us"><asp:Localize meta:resourcekey="navbar_connect"  runat="server" ID="Localize7" Text="Connect" /></a></li>
 </asp:Content>
@@ -317,7 +325,7 @@
         <section id="testsToOrder">
         <div class="blueback">
             <div class="container">
-                <div class="text-center homeport2">
+                <div class="text-center homeport2" style="color: white">
                     <h2><asp:Localize meta:resourcekey="order_title"  runat="server" ID="Localize53" Text="" /></h2>
                 </div>
                 <div class="row">
@@ -438,11 +446,12 @@
                 <input id="emailName" class="email" type="text" runat="server" />
                 <asp:Label class="label" ID="Label2" runat="server" Text="Your Email:" meta:resourcekey="contact_email"></asp:Label>
                 <input id="emailFrom" class="email" type="text" runat="server" />
-                <asp:Label class="label" ID="Label3" runat="server" Text="Message:" meta:resourcekey="contack_message"></asp:Label>
+                <asp:Label class="label text-area-label" ID="Label3" runat="server" Text="Message:" meta:resourcekey="contact_message"></asp:Label>
                 <textarea style="resize: none;" id="emailText" class="email" cols="20" rows="5" runat="server"></textarea>
-               
-                <asp:LinkButton class="bnt btn-sm btn-success" type="submit" runat="server" OnClick="clcSendButton"><asp:Localize meta:resourcekey="contact_send"  runat="server" ID="Localize72" Text="" /></asp:LinkButton>
-
+                <div class="contact-btn-wrapper">
+                    <asp:LinkButton class="bnt btn-sm btn-success contact-btn" type="submit" runat="server" OnClick="clcSendButton"><asp:Localize meta:resourcekey="contact_send"  runat="server" ID="Localize72" Text="" /></asp:LinkButton>
+                </div>
+                
             </div>
         </section>
 

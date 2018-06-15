@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="content1_btnManual.text" xml:space="preserve">
+    <value>TOL Инструкции по настройке</value>
+  </data>
+  <data name="content1_btnVideo.text" xml:space="preserve">
+    <value>Видео</value>
+  </data>
+  <data name="content1_strong.text" xml:space="preserve">
+    <value>Настройка</value>
+  </data>
+  <data name="content1_title.text" xml:space="preserve">
+    <value>Tower of London</value>
+  </data>
+  <data name="errorsaving" xml:space="preserve">
+    <value>ошибка сохранения теста, попробуйте позже</value>
+  </data>
+  <data name="error_array" xml:space="preserve">
+    <value>! You need you set all 3 beads for Start positions. &lt;br /&gt;! Вам нужно, чтобы вы установили все три бусинки для позиций Start. &lt;br /&gt; &lt;br /&gt;</value>
+  </data>
+  <data name="error_arrayR" xml:space="preserve">
+    <value>! Вам нужно, чтобы вы установили все три бусинки для конечных позиций. &lt;br /&gt;</value>
+  </data>
+  <data name="error_countDown" xml:space="preserve">
+    <value>время обратного отсчета.</value>
+  </data>
+  <data name="error_countDownText" xml:space="preserve">
+    <value>текст для обратного отсчета.</value>
+  </data>
+  <data name="error_ddlConuntFromRound" xml:space="preserve">
+    <value>значение для вычисления результатов.</value>
+  </data>
+  <data name="error_ddlNumberGames" xml:space="preserve">
+    <value>задайте количество раундов триала.</value>
+  </data>
+  <data name="error_ddlPractice" xml:space="preserve">
+    <value>установите количество раундов практики.</value>
+  </data>
+  <data name="error_endArea" xml:space="preserve">
+    <value>Название области цели.</value>
+  </data>
+  <data name="error_feedback" xml:space="preserve">
+    <value>текст обратной связи.</value>
+  </data>
+  <data name="error_instructions" xml:space="preserve">
+    <value>поля инструкций.</value>
+  </data>
+  <data name="error_instructionsFinish" xml:space="preserve">
+    <value>текст при завершении теста.</value>
+  </data>
+  <data name="error_maxMovesLimit" xml:space="preserve">
+    <value>Максимальное количество перемещений.</value>
+  </data>
+  <data name="error_notAnyMoves" xml:space="preserve">
+    <value>Вы не настроили никаких ходов.</value>
+  </data>
+  <data name="error_numberOfMoves" xml:space="preserve">
+    <value>! Вам нужно, чтобы вы установили количество ходов для этого раунда. &lt;br /&gt;</value>
+  </data>
+  <data name="error_overMoves" xml:space="preserve">
+    <value>текст при превышении ходов.</value>
+  </data>
+  <data name="error_overTime" xml:space="preserve">
+    <value>текст при превышении времени.</value>
+  </data>
+  <data name="error_testname" xml:space="preserve">
+    <value>название теста.</value>
+  </data>
+  <data name="error_timeOutAfter" xml:space="preserve">
+    <value>Максимальное время для триала.</value>
+  </data>
+  <data name="error_txtButton" xml:space="preserve">
+    <value>Текст кнопки в конце теста.</value>
+  </data>
+  <data name="error_workArea" xml:space="preserve">
+    <value>Название рабочей области.</value>
+  </data>
+  <data name="MovesErrorMeassage" xml:space="preserve">
+    <value>! Установите значение для количества раундов для этого теста.</value>
+  </data>
+  <data name="pagetitle.text" xml:space="preserve">
+    <value>TowerOfLondon</value>
+  </data>
+  <data name="params_label1.text" xml:space="preserve">
+    <value>Количество раундов для практики:</value>
+  </data>
+  <data name="params_label10.text" xml:space="preserve">
+    <value>Использование воспроизведения текста</value>
+  </data>
+  <data name="params_label2.text" xml:space="preserve">
+    <value>Количество тестовых раундов:</value>
+  </data>
+  <data name="params_label3.text" xml:space="preserve">
+    <value>Вычислить результаты после:</value>
+  </data>
+  <data name="params_label4.text" xml:space="preserve">
+    <value>Тайм-аут после (сек):</value>
+  </data>
+  <data name="params_label5.text" xml:space="preserve">
+    <value>Максимально разрешенное количество ходов:</value>
+  </data>
+  <data name="params_label6.text" xml:space="preserve">
+    <value>Время обратного отсчета (сек)</value>
+  </data>
+  <data name="params_label7.text" xml:space="preserve">
+    <value>Текст при обратнм отсчете:</value>
+  </data>
+  <data name="params_label8.text" xml:space="preserve">
+    <value>Показать отзыв</value>
+  </data>
+  <data name="params_label9.text" xml:space="preserve">
+    <value>Показать страницу результатов</value>
+  </data>
+  <data name="params_strong.text" xml:space="preserve">
+    <value>Параметры тестирования:</value>
+  </data>
+  <data name="params_title.text" xml:space="preserve">
+    <value>Настройка</value>
+  </data>
+  <data name="Pleasefillout" xml:space="preserve">
+    <value>Пожалуйста заполните</value>
+  </data>
+  <data name="SetUpPractice" xml:space="preserve">
+    <value>Настроить пробную практику #</value>
+  </data>
+  <data name="SetUpTest" xml:space="preserve">
+    <value>Настроить тестовое испытание #</value>
+  </data>
+  <data name="successsaving" xml:space="preserve">
+    <value>Выполнено! Круг был сохранен.</value>
+  </data>
+  <data name="successTest" xml:space="preserve">
+    <value>Выполнено! Тест был сохранен.</value>
+  </data>
+  <data name="testInstructions_paragraph1.text" xml:space="preserve">
+    <value>Введите название теста:</value>
+  </data>
+  <data name="testInstructions_paragraph2.text" xml:space="preserve">
+    <value>Введите тестовые инструкции для отображения в начале теста:</value>
+  </data>
+  <data name="testInstructions_paragraph3.text" xml:space="preserve">
+    <value>Введите текст отзыва:</value>
+  </data>
+  <data name="testInstructions_paragraph4.text" xml:space="preserve">
+    <value>Ведите текст при лимите перемещений:</value>
+  </data>
+  <data name="testInstructions_paragraph5.text" xml:space="preserve">
+    <value>Ведите текст при лимите времени:</value>
+  </data>
+  <data name="testInstructions_paragraph6.text" xml:space="preserve">
+    <value>Введите тестовые инструкции для отображения в конце теста:</value>
+  </data>
+  <data name="testInstructions_paragraph7.text" xml:space="preserve">
+    <value>Введите текст кнопки, который будет отображаться в конце теста:</value>
+  </data>
+  <data name="testInstructions_paragraph8.text" xml:space="preserve">
+    <value>Введите метку рабочей области:</value>
+  </data>
+  <data name="testInstructions_paragraph9.text" xml:space="preserve">
+    <value>Введите метку области целевой позиции:</value>
+  </data>
+  <data name="testInstructions_strong.text" xml:space="preserve">
+    <value>Инструкции по тестированию:</value>
+  </data>
+  <data name="testInstructions_title.text" xml:space="preserve">
+    <value>Настройка</value>
+  </data>
+  <data name="testPositions_delete.value" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="testPositions_end.text" xml:space="preserve">
+    <value>Целевая позиция</value>
+  </data>
+  <data name="testPositions_makeAnother.value" xml:space="preserve">
+    <value>Создать</value>
+  </data>
+  <data name="testPositions_numOfMoves.text" xml:space="preserve">
+    <value>Количество перемещений:</value>
+  </data>
+  <data name="testPositions_save.value" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="testPositions_saveTest.value" xml:space="preserve">
+    <value>Сохранить тест</value>
+  </data>
+  <data name="testPositions_SetupUpdate.text" xml:space="preserve">
+    <value>Установить перемещение</value>
+  </data>
+  <data name="testPositions_start.text" xml:space="preserve">
+    <value>Начальная позиция:</value>
+  </data>
+  <data name="testPositions_strong.text" xml:space="preserve">
+    <value>Целевая позиция:</value>
+  </data>
+  <data name="testPositions_title.text" xml:space="preserve">
+    <value>Настройка</value>
+  </data>
+  <data name="testPositions_viewTest.value" xml:space="preserve">
+    <value>Просмотреть тест</value>
+  </data>
+  <data name="SetMoves.value" xml:space="preserve">
+    <value>Установить перемещение</value>
+  </data>
+</root>

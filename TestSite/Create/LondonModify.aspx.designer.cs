@@ -463,6 +463,15 @@ namespace TestSite.Create {
         protected global::System.Web.UI.WebControls.Localize Localize17;
         
         /// <summary>
+        /// SetupUpdate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputButton SetupUpdate;
+        
+        /// <summary>
         /// Localize18 control.
         /// </summary>
         /// <remarks>
@@ -488,6 +497,24 @@ namespace TestSite.Create {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Localize Localize20;
+        
+        /// <summary>
+        /// viewTest control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputButton viewTest;
+        
+        /// <summary>
+        /// saveTest control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputButton saveTest;
         
         /// <summary>
         /// movesText control.

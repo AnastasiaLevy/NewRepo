@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="about_row1_paragraph.Text" xml:space="preserve">
+    <value>CogQuiz - компания, занимающаяся разработкой мощных компьютерных средств для когнитивных и нейропсихологических исследований и оценки. 
+                                      Наша цель - разработать компьютеризированные нейропсихологические и когнитивные тесты, доступные для оценки состояния здоровья и/или психического здоровья.
+                                      Мы стремились и думаем что добились успеха, в создании простых в использовании, доступных по цене тестов, используемых широкой общественностью.
+                                      Как потребитель, вы пройдете тест, который будет равным любому тесту с точки зрения норм и получит обратную связь за небольшую часть стоимости на осмотр лицензированного профессионала. 
+                                      Вы можете распечатать отчет, который вы можете показать профессионалу для оценки за пределами предоставленного нами отчета. Мы считаем, что информированный человек является их лучшим защитником для себя.</value>
+  </data>
+  <data name="about_row1_title.Text" xml:space="preserve">
+    <value>The CogQuiz General Philosophy</value>
+  </data>
+  <data name="about_row2_paragraph.Text" xml:space="preserve">
+    <value>Наши продукты отражают более чем 50-летний опыт использования компьютеров для управления экспериментами, сбора данных и анализа данных в когнитивных и поведенческих исследованиях. 
+                                      Наши продукты использовались в рамках долгосрочной исследовательской программы в нескольких университетах и лицензированных практиков. 
+                                      Многие из тестов имеют обширные наборы устаревших нормативных данных, которые включены в отчет / руководство каждого тестового продукта.</value>
+  </data>
+  <data name="about_row2_title.Text" xml:space="preserve">
+    <value>История и проверка данных</value>
+  </data>
+  <data name="about_row3_paragraph.Text" xml:space="preserve">
+    <value>Все продукты CogQuiz поставляются с предварительно запрограммированными тестами, которые были использованы для сбора нормативных данных, представленных в тестовой документации.
+                                       Есть мало или нет коммерческих продуктов с эквивалентными нормами, в любом месте.</value>
+  </data>
+  <data name="about_row3_title.Text" xml:space="preserve">
+    <value>Большая нормальная база</value>
+  </data>
+  <data name="about_row4_paragraph.Text" xml:space="preserve">
+    <value>Все тесты CogQuiz используют централизованную базу данных. Используете ли вы только один из наших тестов или все из них, 
+                                        собранные данные защищены. В дополнение к облегчению управления всеми данными тестирования этот подход также обеспечивает повышенную безопасность 
+                                        и конфиденциальность всей информации участника.</value>
+  </data>
+  <data name="about_row4_title.Text" xml:space="preserve">
+    <value>Централизованная безопасная база данных</value>
+  </data>
+  <data name="about_title.Text" xml:space="preserve">
+    <value>Нейропсихологический тесты CogQuiz</value>
+  </data>
+  <data name="available_nav_all.Text" xml:space="preserve">
+    <value>Все</value>
+  </data>
+  <data name="available_nav_executive.Text" xml:space="preserve">
+    <value>Исполнительная функция</value>
+  </data>
+  <data name="available_nav_memory.Text" xml:space="preserve">
+    <value>Память</value>
+  </data>
+  <data name="available_nav_mobileapps.Text" xml:space="preserve">
+    <value>Скорость обработки</value>
+  </data>
+  <data name="available_title1.Text" xml:space="preserve">
+    <value>Программное обеспечение для каждого теста CogQuiz было разработано с упором на эффективность и простоту использования. 
+                        Каждый тест поставляется с простым в использовании примером и определением разширением экрана. 
+                        Кроме того, мы предлагаем оперативную, вежливую поддержку клиентов по электронной почте или по Skype. 
+                        Тесты CogQuiz будут работать на операционых системах Microsoft Windows XP SP3®, Vista®, Windows 7® Windows 8®.</value>
+  </data>
+  <data name="available_title2.Text" xml:space="preserve">
+    <value>Все доступные тесты</value>
+  </data>
+  <data name="carousel_image1_span.Text" xml:space="preserve">
+    <value>image1</value>
+  </data>
+  <data name="carousel_image1_title1.Text" xml:space="preserve">
+    <value>Мгновенные результаты</value>
+  </data>
+  <data name="carousel_image1_title2.Text" xml:space="preserve">
+    <value>Боясь, что у вашего ребенка может быть СДВГ, узнайте это не выходя из дому за небольшую часть стоимости психологической оценки в кабинете врача.</value>
+  </data>
+  <data name="carousel_image2_span.Text" xml:space="preserve">
+    <value>image2</value>
+  </data>
+  <data name="carousel_image2_title1.Text" xml:space="preserve">
+    <value>Нейропсихологический тест</value>
+  </data>
+  <data name="carousel_image2_title2.Text" xml:space="preserve">
+    <value>Забавные мозговые игры для публики в частной обстановке.</value>
+  </data>
+  <data name="carousel_image3_span.Text" xml:space="preserve">
+    <value>image3</value>
+  </data>
+  <data name="carousel_image3_title1.Text" xml:space="preserve">
+    <value>Хотите нанять кандидата?</value>
+  </data>
+  <data name="carousel_image3_title2.Text" xml:space="preserve">
+    <value>Попросите их обратить внимание и скорость обработки тестов. Узнайте, действительно ли они могут выполнять эту работу.</value>
+  </data>
+  <data name="carousel_image4_span.Text" xml:space="preserve">
+    <value>Image 04</value>
+  </data>
+  <data name="carousel_image4_title1.Text" xml:space="preserve">
+    <value>Проблемы когнитивного старения?</value>
+  </data>
+  <data name="carousel_image4_title2.Text" xml:space="preserve">
+    <value>Узнайте, стареете ли вы изящно, как и другие в вашей возрастной группе, или, если есть причины для беспокойства.</value>
+  </data>
+  <data name="carousel_image5_span.Text" xml:space="preserve">
+    <value>Image 05</value>
+  </data>
+  <data name="carousel_image5_title1.Text" xml:space="preserve">
+    <value>СРАВНИТЕ СВОЙ СЧЕТ ПРОТИВ ТЫСЯЧ ЛЮДЕЙ</value>
+  </data>
+  <data name="carousel_image5_title2.Text" xml:space="preserve">
+    <value>Имея большинство доступных норм, ни один другой тест не может определенно рассказать вам о ваших результатах, так как может CogQuiz.</value>
+  </data>
+  <data name="carousel_image6_span.Text" xml:space="preserve">
+    <value>Image 06</value>
+  </data>
+  <data name="carousel_image6_title1.Text" xml:space="preserve">
+    <value>Исследователь или врач?</value>
+  </data>
+  <data name="carousel_image6_title2.Text" xml:space="preserve">
+    <value>Специальная цена доступна для исследователей и врачей. Свяжитесь с нами для более подробной информации.</value>
+  </data>
+  <data name="contactError_EmailNotValid" xml:space="preserve">
+    <value>Недействительный адрес электронной почты!</value>
+  </data>
+  <data name="contactError_error" xml:space="preserve">
+    <value>Не удалось отправить сообщение. Пожалуйста, повторите попытку позже.</value>
+  </data>
+  <data name="contactError_true" xml:space="preserve">
+    <value>Спасибо. Мы свяжемся с вами на следующий рабочий день</value>
+  </data>
+  <data name="contact_email.Text" xml:space="preserve">
+    <value>Ваш Email:</value>
+  </data>
+  <data name="contact_message.Text" xml:space="preserve">
+    <value>Сообщение:</value>
+  </data>
+  <data name="contact_name.Text" xml:space="preserve">
+    <value>Ваше имя:</value>
+  </data>
+  <data name="contact_send.Text" xml:space="preserve">
+    <value>Отправить</value>
+  </data>
+  <data name="desktop_test1_paragraph.Text" xml:space="preserve">
+    <value>Инструмент создания вопросников для сбора информации участников.</value>
+  </data>
+  <data name="desktop_test1_ref.Text" xml:space="preserve">
+    <value>Показать еще</value>
+  </data>
+  <data name="desktop_test1_title.Text" xml:space="preserve">
+    <value>CogQuest</value>
+  </data>
+  <data name="desktop_test2_paragraph.Text" xml:space="preserve">
+    <value>Инструмент создания вопросников для сбора информации участников.</value>
+  </data>
+  <data name="desktop_test2_ref.Text" xml:space="preserve">
+    <value>Показать еще</value>
+  </data>
+  <data name="desktop_test2_title.Text" xml:space="preserve">
+    <value>Коллекция тестов для Desktop</value>
+  </data>
+  <data name="desktop_test3_paragraph.Text" xml:space="preserve">
+    <value>Инструмент создания вопросников для сбора информации участников.</value>
+  </data>
+  <data name="desktop_test3_ref.Text" xml:space="preserve">
+    <value>Показать еще</value>
+  </data>
+  <data name="desktop_test3_title.Text" xml:space="preserve">
+    <value>Tower of London</value>
+  </data>
+  <data name="desktop_title.Text" xml:space="preserve">
+    <value>Тесты для Desktop</value>
+  </data>
+  <data name="errorPayment" xml:space="preserve">
+    <value>Невозможно обработать платеж. Обратитесь к администратору.</value>
+  </data>
+  <data name="follow.Text" xml:space="preserve">
+    <value>ПОДПИСАТЬСЯ</value>
+  </data>
+  <data name="navbar_about.Text" xml:space="preserve">
+    <value>О нас</value>
+  </data>
+  <data name="navbar_avalable.Text" xml:space="preserve">
+    <value>Доступные тесты</value>
+  </data>
+  <data name="navbar_categories.Text" xml:space="preserve">
+    <value>Категории тестов</value>
+  </data>
+  <data name="navbar_connect.Text" xml:space="preserve">
+    <value>Связь</value>
+  </data>
+  <data name="navbar_custom.Text" xml:space="preserve">
+    <value>Пользовательские тесты</value>
+  </data>
+  <data name="navbar_desktop.Text" xml:space="preserve">
+    <value>Тесты для Desktop</value>
+  </data>
+  <data name="navbar_dropdown.text" xml:space="preserve">
+    <value>Тесты</value>
+  </data>
+  <data name="navbar_home.Text" xml:space="preserve">
+    <value>Главная</value>
+  </data>
+  <data name="navbar_login.Text" xml:space="preserve">
+    <value>Войти</value>
+  </data>
+  <data name="navbar_logout.Text" xml:space="preserve">
+    <value>Выйти</value>
+  </data>
+  <data name="navbar_profile.Text" xml:space="preserve">
+    <value>Профиль</value>
+  </data>
+  <data name="navbar_trending.Text" xml:space="preserve">
+    <value>Тенденции</value>
+  </data>
+  <data name="order_test1_paragraph.Text" xml:space="preserve">
+    <value>Вы практикующий врач, медицинский работник или исследователь, нуждающийся в конкретном тесте?
+Мы можем сделать это для вас в течение двух недель.</value>
+  </data>
+  <data name="order_test1_title.Text" xml:space="preserve">
+    <value>Единственный тест</value>
+  </data>
+  <data name="order_test2_paragraph.Text" xml:space="preserve">
+    <value>Мы сделаем для вас программное обеспечение исходя из ваших потребностей. 
+Нейропсихологическое тестирование - наша специальность.
+Если вы ищете гибкое специализированное программное обеспечение, которое легко настраивается для множества тестов, может отслеживать участников, сохранять результаты, мы ваш лучший вариант.</value>
+  </data>
+  <data name="order_test2_title.Text" xml:space="preserve">
+    <value>Исследовательская среда</value>
+  </data>
+  <data name="order_test3_paragraph.Text" xml:space="preserve">
+    <value>Мы создаем программное обеспечение, и мы разместим его для вас. 
+Мы берем на себя заботу о правилах Hipaa и целостности данных. 
+Мы разрабатываем и разрабатываем облачные и настольные приложения.</value>
+  </data>
+  <data name="order_test3_title.Text" xml:space="preserve">
+    <value>Программное обеспечение и хостинг</value>
+  </data>
+  <data name="order_test4_paragraph.Text" xml:space="preserve">
+    <value>С пользовательским программным обеспечением поступают пользовательские запросы. Вы хотите, чтобы ваши тесты запускались на Android, Apple, заблокированных приложениях для планшетов или настольных приложений? Мы можем помочь.</value>
+  </data>
+  <data name="order_test4_title.Text" xml:space="preserve">
+    <value>Платформы</value>
+  </data>
+  <data name="order_title.Text" xml:space="preserve">
+    <value>Тесты на заказ</value>
+  </data>
+  <data name="service_category1_paragraph.Text" xml:space="preserve">
+    <value>Доступны тесты  краткосрочной и долгосрочной памяти. Возьмите один из наших викторин и узнайте, где вы стоите по отношению к другим. Можете ли вы вспомнить общие или подробные детали или есть причина для беспокойства?</value>
+  </data>
+  <data name="service_category1_title.Text" xml:space="preserve">
+    <value>Память</value>
+  </data>
+  <data name="service_category2_paragraph.Text" xml:space="preserve">
+    <value>Вы обеспокоены тем, что касается вашего внимания, вашей способности эффективно переключаться между задачами или скорости обработки? Контрольные функциональные тесты помогут вам определить, есть ли у вас такие аффетиции, как ADHD или NNNN</value>
+  </data>
+  <data name="service_category2_title.Text" xml:space="preserve">
+    <value>Исполнительная функция и планирование</value>
+  </data>
+  <data name="service_category3_paragraph.Text" xml:space="preserve">
+    <value>Скорость обработки была основной пояснительной переменной для повышения когнитивной эффективности во время разработки.</value>
+  </data>
+  <data name="service_category3_title.Text" xml:space="preserve">
+    <value>Скорость обработки</value>
+  </data>
+  <data name="service_title.Text" xml:space="preserve">
+    <value>Категории тестов</value>
+  </data>
+  <data name="videos_label1.Text" xml:space="preserve">
+    <value>Provider Dash Part 1</value>
+  </data>
+  <data name="videos_label2.Text" xml:space="preserve">
+    <value>Provider Dash Part 2</value>
+  </data>
+  <data name="videos_label3.Text" xml:space="preserve">
+    <value>Provider Dash Part 3</value>
+  </data>
+  <data name="videos_label4.Text" xml:space="preserve">
+    <value>Установка Tower of London</value>
+  </data>
+  <data name="videos_title.Text" xml:space="preserve">
+    <value>Учебные видеоролики</value>
+  </data>
+</root>

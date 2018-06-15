@@ -58,7 +58,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="MainPage.aspx">
+                    <a class="navbar-brand" href="/MainPage.aspx">
                         <i class="fa fa-cogs" aria-hidden="true"></i>Quiz
                     </a> 
                 </div>
@@ -120,7 +120,7 @@
     <section id="follow-us" class="follow-us-back">
             <div class="container">
                 <div class="text-center height-contact-element">
-                    <h3>FOLLOW US</h3>
+                    <h3><asp:Localize meta:resourcekey="follow"  runat="server" ID="Localize2" Text="Follow us" /></h3>
                     <p>+1(719)888 9121</p>
                 </div>
                 <img class="img-responsive displayed" src="/images/line-separator.png" alt="short" />

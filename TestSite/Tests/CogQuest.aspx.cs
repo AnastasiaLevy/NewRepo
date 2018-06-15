@@ -53,6 +53,12 @@ namespace TestSite.Tests
                 _userId = _user.ProviderUserKey.ToString();
                 Key = DataMethods.GetWinFormTOLAppKey(_userId);
                 //DeviceIdentifier = DataMethods.GetWinFormTOLDeviceIdentifier(_userId);
+                if (hasPaidTest(_userId) && Key == null)
+                {
+                    this.IdentifierGroup.Visible = true;
+                    //Key = DataMethods.GetWinFormTOLAppKey(_userId);
+                    //DeviceIdentifier = DataMethods.GetWinFormTOLDeviceIdentifier(_userId);
+                }
             }
 
             //  Catch response from paypal
@@ -71,12 +77,7 @@ namespace TestSite.Tests
                 }
             }
 
-            if (hasPaidTest(_userId) && Key == null)
-            {
-                this.IdentifierGroup.Visible = true;
-                //Key = DataMethods.GetWinFormTOLAppKey(_userId);
-                //DeviceIdentifier = DataMethods.GetWinFormTOLDeviceIdentifier(_userId);
-            }
+            
 
             if (User.Identity.IsAuthenticated && hasPaidTest(_userId))
             {

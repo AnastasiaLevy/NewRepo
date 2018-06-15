@@ -65,7 +65,7 @@
     <!-- Page Content -->
     <section id="Memory">
         <div class="container MemoryBlock">
-            <h2 class="middle">Memory</h2>
+            <h2 class="middle"><asp:Localize meta:resourcekey="memoryBlock_title"  runat="server" ID="Localize1" Text="" /></h2>
             <img class="img-responsive displayed" src="../images/line-separator.png" alt="short" />
             <h3><asp:Localize meta:resourcekey="memory_title1"  runat="server" ID="Localize5" Text="" /></h3>
             <p>

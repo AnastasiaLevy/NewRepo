@@ -15,8 +15,8 @@
     <script src="js/sessionManager.js"></script>
   
 </head>
-<body>
-    <button id="play"><asp:Localize meta:resourcekey="btn_play"  runat="server" ID="Localize1" Text="" /></button>
+<body style="margin-top: 0px; margin-bottom: 0px;">
+    <button id="play" style="position: fixed"><asp:Localize meta:resourcekey="btn_play"  runat="server" ID="Localize1" Text="" /></button>
     <div id="testArea" class="withBorder center">
         <div id="countdown" class="countdown"></div>
         <div id="finalMessage" class="finalMessage"></div>

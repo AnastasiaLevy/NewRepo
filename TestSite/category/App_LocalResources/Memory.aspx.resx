@@ -123,6 +123,9 @@
   <data name="follow.Text" xml:space="preserve">
     <value>FOLLOW US</value>
   </data>
+  <data name="memoryBlock_title.Text" xml:space="preserve">
+    <value>Memory</value>
+  </data>
   <data name="memory_paragraph1.Text" xml:space="preserve">
     <value>An early theory proposed by Aristotle of memory conceived of it as a single entity and likened it to an impression made in wax. Current theorist have proposed that memory comes in several different varieties. One distinction is between declarative and nondeclarative memory.</value>
   </data>

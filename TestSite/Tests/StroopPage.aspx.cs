@@ -18,7 +18,7 @@ namespace TestSite.Tests
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            _userTestId = (int)Session["userTestId"];
+            _userTestId = Convert.ToInt32(Session["userTestId"]);
             _user = Membership.GetUser(User.Identity.Name);
             _userId = _user.ProviderUserKey.ToString();
             userId.Text = _userId;

@@ -747,6 +747,7 @@ footer {
 
 #contact {
     padding-top: 80px;
+    padding-bottom: 40px;
 }
 
 .homeport1 {
@@ -2533,34 +2534,22 @@ legend {
 
 .signup-btn {
     background: #79bc64;
-    background-image: -webkit-linear-gradient(top, #79bc64, #578843);
-    background-image: -moz-linear-gradient(top, #79bc64, #578843);
-    background-image: -ms-linear-gradient(top, #79bc64, #578843);
-    background-image: -o-linear-gradient(top, #79bc64, #578843);
-    background-image: linear-gradient(to bottom, #79bc64, #578843);
-    -webkit-border-radius: 4;
-    -moz-border-radius: 4;
-    border-radius: 4px;
-    text-shadow: 0px 1px 0px #898a88;
-    -webkit-box-shadow: 0px 0px 0px #a4e388;
-    -moz-box-shadow: 0px 0px 0px #a4e388;
-    box-shadow: 0px 0px 0px #a4e388;
-    font-family: Arial;
-    color: #ffffff;
-    font-size: 20px;
-    padding: 10px 20px 10px 20px;
-    border: solid #3b6e22 1px;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 14px;
     text-decoration: none;
+    margin: 20px auto 0;
+    color: white;
+    position: relative;
+    display: block;
+    max-width: 200px;
+    text-align: center;
 }
 
     .signup-btn:hover {
         background: #79bc64;
-        background-image: -webkit-linear-gradient(top, #79bc64, #5e7056);
-        background-image: -moz-linear-gradient(top, #79bc64, #5e7056);
-        background-image: -ms-linear-gradient(top, #79bc64, #5e7056);
-        background-image: -o-linear-gradient(top, #79bc64, #5e7056);
-        background-image: linear-gradient(to bottom, #79bc64, #5e7056);
-        text-decoration: none;
+        color: white;
+        opacity: 0.8;
     }
 /*.navbar-default .navbar-brand{
 		color:#fff;
@@ -2570,7 +2559,7 @@ legend {
 /*.form .form-control { margin-bottom: 10px; }*/
 @media (min-width:768px) {
     #home {
-        margin-top: 50px;
+        margin-top: 56px;
     }
 
         #home .slogan {
@@ -3598,7 +3587,14 @@ label {
         padding-right: 0;
         padding-left: 0;
         margin-left: 18px;
+        background: unset;
     }
+
+.navbar-inverse .navbar-nav.custom-menu > .active > a,
+.navbar-inverse .navbar-nav.custom-menu > .active > a:focus,
+.navbar-inverse .navbar-nav.custom-menu > .active > a:hover {
+    background: unset;
+}
 
 .follow-us-back {
     background: rgba(255,255,255,0.9);
@@ -3644,4 +3640,34 @@ label {
 
 .user-view-pop_name {
     min-height: 40px;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #fff;
+}
+
+.navbar-inverse .navbar-brand:hover {
+    color: #9d9d9d;
+}
+
+.iframe-wrapp iframe{
+    height: 184px;
+}
+
+.contact-btn-wrapper {
+    text-align: right;
+    padding: 0 223px;
+}
+
+.text-area-label {
+    position: relative;
+    top: -107px;
+}
+
+.intro-scroller a.inner-link:focus {
+    color: #fff;
+}
+.prov-table-fix,
+.prov-table-fix th{
+    text-align: center;
 }

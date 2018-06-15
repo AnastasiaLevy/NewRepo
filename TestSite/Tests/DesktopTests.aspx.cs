@@ -77,7 +77,7 @@ namespace TestSite.Tests
                             //runTest.Visible = false;
                         }
 
-                        price.Visible = true;
+                        //price.Visible = true;
                     }
                     else
                     {

@@ -150,9 +150,8 @@
   <data name="cardSort_orderNow.Text" xml:space="preserve">
     <value>Order Now</value>
   </data>
-  <data name="cardSort_paragraph.Text" xml:space="preserve">
-    <value>Card Sorting task provides considerable flexibility in task definition. The number of stimulus cards can range from two to five and the number of sort dimensions, from two to five. One of the categories can be user defined, allowing for the definition of classes of stimuli. The card definition tool allows test authors to create their own stimulus and response card definitions. Cards can display alpha/numeric characters, any image that can be realized as a “dingbat” or words. Response card decks can be of any size and their presentation can be controlled either by the participant or the computer. Category (stage) shifts can be either signaled or unsignaled. All test messages and instructions can be tailored to meet the needs of the test author. Participant response modalities include “point and click” and touch.
-Tests can be analyzed using any one of three analysis protocols or the test user can print a basic analysis sheet displaying basic participant performance for “hand” analysis. The package comes with normative data collected on 2875 participants grouped in age cohorts from five to nine years, 10 to 14 years, 15 to 19 years and in 10 year groups from the 20 to &gt;80 years on the Canonical 128 Test. As Tien, et al., 1996, Feldstein, et al., 1999, and Steinmetz, 2010 have all shown significant outcome differences between manually administered card sorting tests and tests administered using a computer, this normative data set represents a considerable step forward in computer based card sorting tasks.</value>
+  <data name="cardSort_paragraph1.Text" xml:space="preserve">
+    <value>Card Sorting task provides considerable flexibility in task definition. The number of stimulus cards can range from two to five and the number of sort dimensions, from two to five. One of the categories can be user defined, allowing for the definition of classes of stimuli. The card definition tool allows test authors to create their own stimulus and response card definitions. Cards can display alpha/numeric characters, any image that can be realized as a “dingbat” or words. Response card decks can be of any size and their presentation can be controlled either by the participant or the computer. Category (stage) shifts can be either signaled or unsignaled. All test messages and instructions can be tailored to meet the needs of the test author. Participant response modalities include “point and click” and touch.</value>
   </data>
   <data name="cardSort_title.Text" xml:space="preserve">
     <value>Card Sort</value>
@@ -178,11 +177,8 @@ Tests can be analyzed using any one of three analysis protocols or the test user
   <data name="CPT_orderNow.Text" xml:space="preserve">
     <value>Order Now</value>
   </data>
-  <data name="CPT_paragraph.Text" xml:space="preserve">
-    <value>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tincidunt, mauris non sodales feugiat, turpis elit accumsan nisi, et commodo metus mi ultrices nunc. 
-                    Duis ac pellentesque tortor. Maecenas feugiat velit erat, ac molestie nisl suscipit eget. Nam ultricies rutrum nibh, sed venenatis tellus tempor in. 
-                    Phasellus rhoncus vel libero nec lacinia. Suspendisse in varius libero. Suspendisse semper turpis ut leo commodo, et pretium mi placerat. Nullam nec sapien dui. 
-                    Nam ac lorem et dui porta facilisis. Quisque ut bibendum magna. Donec orci ex, porta vitae fringilla sed, porta eu elit.</value>
+  <data name="CPT_paragraph1.Text" xml:space="preserve">
+    <value>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tincidunt, mauris non sodales feugiat, turpis elit accumsan nisi, et commodo metus mi ultrices nunc. Duis ac pellentesque tortor. Maecenas feugiat velit erat, ac molestie nisl suscipit eget. Nam ultricies rutrum nibh, sed venenatis tellus tempor in.</value>
   </data>
   <data name="CPT_title.Text" xml:space="preserve">
     <value>CPT</value>
@@ -211,18 +207,12 @@ Tests can be analyzed using any one of three analysis protocols or the test user
   <data name="hanoi_orderNow.Text" xml:space="preserve">
     <value>Order Now</value>
   </data>
-  <data name="hanoi_paragraph.Text" xml:space="preserve">
+  <data name="hanoi_paragraph1.Text" xml:space="preserve">
     <value>Flexibility in problem design allowing for 3 to 6 rings to be used in the problem with complete control over the starting configuration of the rings and the "goal" peg
 Storage of all participant information in the unified Participant database.
 Extensive age-stratified norms for included tests, broken out in ten year cohorts.
-Trials can be specified as either timed (i.e., the trial is terminated after a predetermined amount of time has elapsed) or untimed
-Trials can be set to terminate after a specified number of moves.
- Playback feature allows the user to view the exact moves of any test taken and facilitates the examination of participant problem solving strategies.
-Response modalities include both touch screen and mouse -- the latter offering either a point and click option or a slide bar option.
-Text-to-speech support for instructions.
-Custom instructions and test captions can be written for each trial (in any language that utilizes the Roman alphabet).
-Variety of in-depth analyses can be performed and data can be exported to external tools (e.g., spreadsheets, statistical package, etc. for custom analysis).
-Standard test anaysis as well as access to the "real time" data record (i.e. , a record of all salient events and their time of occurance in milliseconds including the time between events, total time to complete a trial, and the number of correct and incorrect responses).</value>
+
+</value>
   </data>
   <data name="hanoi_title.Text" xml:space="preserve">
     <value>Tower of Hanoi</value>
@@ -274,15 +264,10 @@ In addition to Shallice’s (1982) original findings of deficits in individuals 
   <data name="reaction_orderNow.Text" xml:space="preserve">
     <value>Order Now</value>
   </data>
-  <data name="reaction_paragraph.Text" xml:space="preserve">
+  <data name="reaction_paragraph1.Text" xml:space="preserve">
     <value>Designed to assess subjects’ speed of processing on three relatively simple tasks. which, following Teng (1990), include:  a simple reaction time test; a choice test; and a conditional choice test.  The inclusion of the simple reaction time test allows the investigator to partial out performance variations due to both motor and cognitive components.  
 Participant response can be via the "trigger" on a standard "game pad; a keyboard; or a numeric keypad.   
-In addition to the tasks to be used in the test, the average inter-stimulus interval (a minimum and maximum range), and the number of stimuli presented for each task (as well as the mode of response) can all be set by the investigator. 
-The analysis includes means and standard deviations for response latencies for single sessions, as well as both the participant’s reaction time and the trigger pulled.    
-Analysis also includes a running record of all test events, with a unique timestamp for each event.
-Analyses can be printed or exported to clipboard.
-Unique instructions can be written for each task within a test (in any language utilizing the Roman alphabet), as well as a unique “Thank You” message to be displayed at the end of the test.
-A “Speak Instructions” option directs the program to speak the instructions to the participant while the written instructions are being displayed on the screen</value>
+In addition to the tasks to be used in the test, the average inter-stimulus interval (a minimum and maximum range), and the number of stimuli presented for each task (as well as the mode of response) can all be set by the investigator. </value>
   </data>
   <data name="reaction_title.Text" xml:space="preserve">
     <value>Reaction Time</value>
@@ -293,21 +278,10 @@ A “Speak Instructions” option directs the program to speak the instructions 
   <data name="trails_orderNow.Text" xml:space="preserve">
     <value>Order Now</value>
   </data>
-  <data name="trails_paragraph.Text" xml:space="preserve">
+  <data name="trails_paragraph1.Text" xml:space="preserve">
     <value>The Trail Making Test (TMT) is a widely used neuropsychological assessment (Rabin, Barr, &amp; Burton, 2005) that was originally devised in 1938. The TMT was originally known as the “Partington’s Pathways Test,” or “Divided Attention Test” (Partington &amp; Leiter, 1949) and was initially part of a battery of tests (Army Individual Test Battery) used to assess “a variety of intellectual functions different from those measured by the Wechsler-Bellevue Intelligence Scale.” (Spreen &amp; Strauss, 1998). While the test is most  
 typically administered in its original form, alternative forms have been developed to meet the  
-testing needs of either alternative clinical populations or cognitive science research agendas. The desktop version of the TMT you have purchased will allow you to produce computerized version of virtually all the commercial paper and pencil Trail Making Tests.  
- 
-For example, the Color Trails Test (CTT), was developed as part of a neuropsychological test battery  
-for the World Health Organization’s cross-cultural study of HIV-1 infection (Maj, et al., 1991).  
-The test was subsequently modified for use with children (Williams et al., 1995). In both cases  
-the modifications are presumed to minimize the cultural bias introduced by the use of Roman  
-letters in part B of the more traditional TMT (Maj, et al., 1991). Your CogQuiz desktop version allows you to make a computerized version of the CTT and if you so desired create norms for different populations.  
- 
-Additionally, if you are doing repeated administrations of the TMT you can make inverted, reflected, and inverted/reflected versions that contain the same number of bubbles to be connected with equivalent spacing. This reduces the problem of enhanced performance when the TMT is repeatedly administered. 
- 
-You will find the TMT part A useful if you are attempting to obtain some assessment of attention, visual scanning, speed of eye-hand coordination and information processing. The TMT part B assesses the ability to alternate between stimulus sets and as such is a measure of “executive function” (Mitrushina,  
-et al., 1999).</value>
+testing needs of either alternative clinical populations or cognitive science research agendas. The desktop version of the TMT you have purchased will allow you to produce computerized version of virtually all the commercial paper and pencil Trail Making Tests.</value>
   </data>
   <data name="trails_title.Text" xml:space="preserve">
     <value>Trails</value>
@@ -323,5 +297,45 @@ et al., 1999).</value>
   </data>
   <data name="errorPayment" xml:space="preserve">
     <value>Cannot process payment. Please contact administrator.</value>
+  </data>
+  <data name="GoTo.text" xml:space="preserve">
+    <value>Go to</value>
+  </data>
+  <data name="cardSort_paragraph2.Text" xml:space="preserve">
+    <value>Tests can be analyzed using any one of three analysis protocols or the test user can print a basic analysis sheet displaying basic participant performance for “hand” analysis. The package comes with normative data collected on 2875 participants grouped in age cohorts from five to nine years, 10 to 14 years, 15 to 19 years and in 10 year groups from the 20 to &gt;80 years on the Canonical 128 Test. As Tien, et al., 1996, Feldstein, et al., 1999, and Steinmetz, 2010 have all shown significant outcome differences between manually administered card sorting tests and tests administered using a computer, this normative data set represents a considerable step forward in computer based card sorting tasks.</value>
+  </data>
+  <data name="CPT_paragraph2.Text" xml:space="preserve">
+    <value>Phasellus rhoncus vel libero nec lacinia. Suspendisse in varius libero. Suspendisse semper turpis ut leo commodo, et pretium mi placerat. Nullam nec sapien dui. Nam ac lorem et dui porta facilisis. Quisque ut bibendum magna. Donec orci ex, porta vitae fringilla sed, porta eu elit.</value>
+  </data>
+  <data name="hanoi_paragraph2.Text" xml:space="preserve">
+    <value>Trials can be specified as either timed (i.e., the trial is terminated after a predetermined amount of time has elapsed) or untimed. Trials can be set to terminate after a specified number of moves.
+ Playback feature allows the user to view the exact moves of any test taken and facilitates the examination of participant problem solving strategies.
+Response modalities include both touch screen and mouse -- the latter offering either a point and click option or a slide bar option.
+Text-to-speech support for instructions.</value>
+  </data>
+  <data name="hanoi_paragraph3.Text" xml:space="preserve">
+    <value>Custom instructions and test captions can be written for each trial (in any language that utilizes the Roman alphabet).
+Variety of in-depth analyses can be performed and data can be exported to external tools (e.g., spreadsheets, statistical package, etc. for custom analysis).
+Standard test anaysis as well as access to the "real time" data record (i.e. , a record of all salient events and their time of occurance in milliseconds including the time between events, total time to complete a trial, and the number of correct and incorrect responses).</value>
+  </data>
+  <data name="reaction_paragraph2.Text" xml:space="preserve">
+    <value>The analysis includes means and standard deviations for response latencies for single sessions, as well as both the participant’s reaction time and the trigger pulled.    
+Analysis also includes a running record of all test events, with a unique timestamp for each event.
+Analyses can be printed or exported to clipboard.
+Unique instructions can be written for each task within a test (in any language utilizing the Roman alphabet), as well as a unique “Thank You” message to be displayed at the end of the test.
+A “Speak Instructions” option directs the program to speak the instructions to the participant while the written instructions are being displayed on the screen</value>
+  </data>
+  <data name="trails_paragraph2.Text" xml:space="preserve">
+    <value>For example, the Color Trails Test (CTT), was developed as part of a neuropsychological test battery  
+for the World Health Organization’s cross-cultural study of HIV-1 infection (Maj, et al., 1991).  
+The test was subsequently modified for use with children (Williams et al., 1995). In both cases  
+the modifications are presumed to minimize the cultural bias introduced by the use of Roman  
+letters in part B of the more traditional TMT (Maj, et al., 1991). Your CogQuiz desktop version allows you to make a computerized version of the CTT and if you so desired create norms for different populations.</value>
+  </data>
+  <data name="trails_paragraph3.Text" xml:space="preserve">
+    <value>Additionally, if you are doing repeated administrations of the TMT you can make inverted, reflected, and inverted/reflected versions that contain the same number of bubbles to be connected with equivalent spacing. This reduces the problem of enhanced performance when the TMT is repeatedly administered. 
+ 
+You will find the TMT part A useful if you are attempting to obtain some assessment of attention, visual scanning, speed of eye-hand coordination and information processing. The TMT part B assesses the ability to alternate between stimulus sets and as such is a measure of “executive function” (Mitrushina,  
+et al., 1999).</value>
   </data>
 </root>

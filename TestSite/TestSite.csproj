@@ -311,6 +311,9 @@
     <Content Include="images\large\s7.png" />
     <Content Include="images\large\s8.png" />
     <Content Include="images\large\s9.png" />
+    <Content Include="images\ManVsWoman.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="images\mindsm.jpg" />
     <Content Include="images\mind.jpg" />
     <Content Include="images\myImage.png" />
@@ -1167,7 +1170,9 @@
     <Content Include="category\App_LocalResources\IntelligenceTest.aspx.resx" />
     <Content Include="category\App_LocalResources\ProcessingSpeed.aspx.resx" />
     <Content Include="App_LocalResources\MainPage.aspx.resx" />
-    <Content Include="Provider\App_LocalResources\ProviderPortal.aspx.resx" />
+    <Content Include="Provider\App_LocalResources\ProviderPortal.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_LocalResources\Registration.aspx.resx" />
     <Content Include="App_LocalResources\LondonPage.aspx.resx">
       <CustomToolNamespace>PageResources</CustomToolNamespace>
@@ -1186,8 +1191,28 @@
     <Content Include="Create\App_LocalResources\LondonModify.aspx.resx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="App_LocalResources\ErrorPage.aspx.ru.resx" />
+    <Content Include="App_LocalResources\LondonWrapper.aspx.ru.resx" />
+    <Content Include="App_LocalResources\MainPage.aspx.ru.resx" />
+    <Content Include="App_LocalResources\Registration.aspx.ru.resx" />
+    <Content Include="App_LocalResources\ResultsPage.aspx.ru.resx" />
+    <Content Include="App_LocalResources\TrailsWrapper.aspx.ru.resx" />
+    <Content Include="App_LocalResources\UserProfile.aspx.ru.resx" />
+    <Content Include="App_LocalResources\WCSTWrapper.aspx.ru.resx" />
+    <Content Include="Admin\App_LocalResources\AdminPortal.aspx.ru.resx" />
+    <Content Include="category\App_LocalResources\ExecutiveFunction.aspx.ru.resx" />
+    <Content Include="category\App_LocalResources\IntelligenceTest.aspx.ru.resx" />
+    <Content Include="category\App_LocalResources\Memory.aspx.ru.resx" />
+    <Content Include="category\App_LocalResources\ProcessingSpeed.aspx.ru.resx" />
+    <Content Include="App_LocalResources\Layout.Master.resx" />
+    <Content Include="App_LocalResources\Layout.Master.ru.resx" />
+    <Content Include="Create\App_LocalResources\LondonCreate.aspx.ru.resx" />
+    <Content Include="Create\App_LocalResources\LondonModify.aspx.ru.resx" />
     <EmbeddedResource Include="Create\App_LocalResources\MemoryCardsCreate.aspx.resx" />
     <Content Include="Create\App_LocalResources\MemoryCardsModify.aspx.resx" />
+    <Content Include="Provider\App_LocalResources\ProviderPortal.aspx.ru.resx" />
+    <Content Include="Create\App_LocalResources\MemoryCardsCreate.aspx.ru.resx" />
+    <Content Include="Create\App_LocalResources\MemoryCardsModify.aspx.ru.resx" />
     <EmbeddedResource Include="Resources\Text.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Text.Designer.cs</LastGenOutput>
@@ -1200,7 +1225,7 @@
     <Content Include="Tests\App_LocalResources\DesktopTowerOfLondonWinForms.aspx.resx" />
     <Content Include="Tests\App_LocalResources\NbackPage.aspx.resx" />
     <Content Include="Tests\App_LocalResources\SyllogPage.aspx.resx" />
-    <Content Include="Tests\App_LocalResources\DesktopTowerOfLondon.aspx.resx" />
+    <Content Include="Tests\App_LocalResources\DesktopTowerOfLondon.aspx.ru.resx" />
     <Content Include="Results\App_LocalResources\ADHD_Result.aspx.resx" />
     <Content Include="Results\App_LocalResources\adult_ADHD_Result.aspx.resx" />
     <Content Include="UserControls\App_LocalResources\MemoryCardsModifyPanel.ascx.resx" />
@@ -1216,6 +1241,26 @@
     <Content Include="Tests\App_LocalResources\Horney.aspx.resx" />
     <Content Include="Tests\App_LocalResources\adult_ADHD_page.aspx.resx" />
     <Content Include="Tests\App_LocalResources\ADHD_Page.aspx.resx" />
+    <Content Include="Tests\App_LocalResources\ADHD.aspx.ru.resx" />
+    <Content Include="Tests\App_LocalResources\ADHD_Page.aspx.ru.resx" />
+    <Content Include="Tests\App_LocalResources\adult_ADHD.aspx.ru.resx" />
+    <Content Include="Tests\App_LocalResources\Autism.aspx.ru.resx" />
+    <Content Include="Tests\App_LocalResources\adult_ADHD_page.aspx.ru.resx" />
+    <Content Include="Tests\App_LocalResources\DesktopTests.aspx.ru.resx" />
+    <Content Include="Tests\App_LocalResources\DesktopTowerOfLondon.aspx.resx" />
+    <Content Include="Tests\App_LocalResources\DesktopTowerOfLondonWinForms.aspx.ru.resx" />
+    <Content Include="Tests\App_LocalResources\Horney.aspx.ru.resx" />
+    <Content Include="Tests\App_LocalResources\MemoryCardsPage.aspx.ru.resx" />
+    <Content Include="Tests\App_LocalResources\NbackPage.aspx.ru.resx" />
+    <Content Include="Tests\App_LocalResources\NbackWrapper.aspx.ru.resx" />
+    <Content Include="Tests\App_LocalResources\Personality.aspx.ru.resx" />
+    <Content Include="Tests\App_LocalResources\PTSD.aspx.ru.resx" />
+    <Content Include="Tests\App_LocalResources\StroopPage.aspx.ru.resx" />
+    <Content Include="Tests\App_LocalResources\StroopWrapper.aspx.ru.resx" />
+    <Content Include="Tests\App_LocalResources\SyllogPage.aspx.ru.resx" />
+    <Content Include="Tests\App_LocalResources\SyllogWrapper.aspx.ru.resx" />
+    <Content Include="Results\App_LocalResources\ADHD_Result.aspx.ru.resx" />
+    <Content Include="Results\App_LocalResources\adult_ADHD_Result.aspx.ru.resx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="css\images\" />

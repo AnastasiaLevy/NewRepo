@@ -21,9 +21,20 @@ namespace TestSite
 
         protected void Page_Load(object sender, EventArgs e)
         {
-         
-         
-           
+            string lang = LanguageManager.GetLang();
+            if (lang == "ru")
+            {
+                availableTests.Visible = false;
+                testsToOrder.Visible = false;
+                desktopTests.Visible = false;
+                testDropdown.Visible = true;
+            } else
+            {
+                availableTests.Visible = true;
+                testsToOrder.Visible = true;
+                desktopTests.Visible = true;
+                testDropdown.Visible = false;
+            }
         }
         protected void logOut_Click(object sender, EventArgs e)
         {

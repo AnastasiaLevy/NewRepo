@@ -118,79 +118,79 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="loginForm_Button.Text" xml:space="preserve">
-    <value>Login</value>
+    <value>Вход</value>
   </data>
   <data name="loginForm_inputPass.placeholder" xml:space="preserve">
-    <value>Password...</value>
+    <value>Пароль...</value>
   </data>
   <data name="loginForm_inputUserName.placeholder" xml:space="preserve">
-    <value>Username...</value>
+    <value>Имя пользователя...</value>
   </data>
   <data name="loginForm_labelPass.Text" xml:space="preserve">
-    <value>Password</value>
+    <value>Пароль</value>
   </data>
   <data name="loginForm_LabelUserName.Text" xml:space="preserve">
-    <value>Username</value>
+    <value>Имя пользователя</value>
   </data>
   <data name="loginForm_LinkButton.Text" xml:space="preserve">
-    <value>Логин</value>
+    <value>Вход</value>
   </data>
   <data name="loginForm_paragraph.Text" xml:space="preserve">
-    <value>Enter username and password to log on:</value>
+    <value>Введите имя пользователя и пароль для входа:</value>
   </data>
   <data name="loginForm_title.Text" xml:space="preserve">
-    <value>Логин</value>
+    <value>Вход</value>
   </data>
   <data name="navbar_Home.Text" xml:space="preserve">
-    <value>Home</value>
+    <value>Главная</value>
   </data>
   <data name="pageTitle.Title" xml:space="preserve">
-    <value>Логин</value>
+    <value>Вход</value>
   </data>
   <data name="popup_agree.Text" xml:space="preserve">
-    <value>I agree</value>
+    <value>Принять</value>
   </data>
   <data name="popup_Close.Text" xml:space="preserve">
-    <value>Close</value>
+    <value>Закрыть</value>
   </data>
   <data name="popup_paragraph.Text" xml:space="preserve">
-    <value>All software programs on cogquiz.com and the actual website itself are provided for personal entertainment and educational purposes only. They are not intended to provide medical advice and should not be considered as tools for diagnosis or treatment of a mental or physical health problem, or for prescribing medication. While performance on tests are reported for different age groups these data are for informational purposes only. Performance equivalent to, below, or above normed performance should not be taken as indicative of a mental or physical health problem. If you think you have a medical or mental health problem you should contact a licensed physician or mental health professional. This web site assume no responsibility for how the information provided on the cogquiz.com site is used. This web site or their agents make no promises, guarantees, representations, or warranties, expressed or implied, and assume no duty or liability regarding the information contained herein or any associated ways in which it is used therewith. Links to other sites do not constitute endorsement, recommendation, or approval of those sites or any information contained in such sites. This web site bear no responsibility for the accuracy, legality or content of the external sites or for that of subsequent links. Those who visit or use the cogquiz.com web site, links, or any other information assume all risks associated therewith. I accept the conditions described above and signify this by checking the Accept button.</value>
+    <value>Все программы на cogquiz.com и фактический веб-сайт предоставляются только для личных развлечений и образовательных целей. Они не предназначены для предоставления медицинских консультаций и не должны рассматриваться как инструменты для диагностики или лечения психической или физической проблемы со здоровьем или для назначения лекарств. Несмотря на то, что о результатах тестирования сообщается для разных возрастных групп, эти данные предназначены только для информационных целей. Эффективность, эквивалентная, ниже или выше нормированной производительности, не должна восприниматься как показатель психической или физической проблемы со здоровьем. Если вы считаете, что у вас есть проблемы с медицинским или психическим здоровьем, вам следует обратиться к лицензированному врачу или специалисту в области психического здоровья. Этот веб-сайт не несет ответственности за то, как используется информация, представленная на сайте cogquiz.com. Этот веб-сайт или их агенты не дают никаких обещаний, гарантий, заявлений и не берут на себя никакой обязанности или ответственности в отношении информации, содержащейся здесь, или любых связанных с ней способов, которыми она используется. Ссылки на другие сайты не являются поддержкой, рекомендацией или одобрением этих сайтов или любой информации, содержащейся на таких сайтах. Этот веб-сайт не несет ответственности за точность, законность или содержание внешних сайтов или за ссылки на последующие ссылки. Те, кто посещают или используют веб-сайт cogquiz.com, ссылки или любую другую информацию, принимают на себя все риски, связанные с этим. Я принимаю описанные выше условия и подтверждаю это, установив кнопку «Принять».</value>
   </data>
   <data name="registerForm_btnRegister.Text" xml:space="preserve">
-    <value>REGISTER</value>
+    <value>РЕГИСТРАЦИЯ</value>
   </data>
   <data name="registerForm_checkboxProvider.Text" xml:space="preserve">
-    <value>Provider</value>
+    <value>Провайдер</value>
   </data>
   <data name="registerForm_inputConfPass.placeholder" xml:space="preserve">
-    <value>Confirm Password</value>
+    <value>Подтвердите пароль</value>
   </data>
   <data name="registerForm_inputEmail.placeholder" xml:space="preserve">
-    <value>Email...</value>
+    <value>Эл. адрес...</value>
   </data>
   <data name="registerForm_inputPass.placeholder" xml:space="preserve">
-    <value>Password</value>
+    <value>Пароль</value>
   </data>
   <data name="registerForm_inputUserName.placeholder" xml:space="preserve">
-    <value>User</value>
+    <value>Пользователь</value>
   </data>
   <data name="registerForm_LabelConfPass.Text" xml:space="preserve">
-    <value>Confirm Password</value>
+    <value>Подтвердите Пароль</value>
   </data>
   <data name="registerForm_labelEmail.Text" xml:space="preserve">
-    <value>Email</value>
+    <value>Эл. адрес</value>
   </data>
   <data name="registerForm_LabelPass.Text" xml:space="preserve">
-    <value>Password</value>
+    <value>Пароль</value>
   </data>
   <data name="registerForm_LabelUserName.Text" xml:space="preserve">
-    <value>User name</value>
+    <value>Имя пользователя</value>
   </data>
   <data name="registerForm_paragraph.Text" xml:space="preserve">
-    <value>Fill in the form below to get instant access:</value>
+    <value>Заполните форму ниже, чтобы получить мгновенный доступ:</value>
   </data>
   <data name="registerForm_title.Text" xml:space="preserve">
-    <value>Sign up now</value>
+    <value>Зарегистрироваться сейчас</value>
   </data>
   <data name="enterValidEmail" xml:space="preserve">
     <value>Пожалуйста, введите действительный адрес электронной почты *</value>

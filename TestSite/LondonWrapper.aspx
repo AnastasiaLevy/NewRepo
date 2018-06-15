@@ -74,7 +74,7 @@
                 </span>
                 <br />
                 <br />
-               <span><asp:Localize meta:resourcekey="about_more"  runat="server" ID="Localize7" Text="" /></span>
+               <span><h3><asp:Localize meta:resourcekey="about_more"  runat="server" ID="Localize7" Text="" /></h3></span>
             </div>
 
         </section>
@@ -200,7 +200,7 @@
     <script type="text/javascript">
                     $(function () {
                         $("#elastic_grid_demo").elastic_grid({
-                            'showAllText': 'All',
+                            'showAllText': '<%= GetLocalResourceObject("tab_all")%>',
                             'filterEffect': 'popup', // moveup, scaleup, fallperspective, fly, flip, helix , popup
                             'hoverDirection': true,
                             'hoverDelay': 0,
@@ -220,7 +220,7 @@
                                     [
 
                                     ],
-                                    'tags': ['Set Up']
+                                    'tags': ['<%= GetLocalResourceObject("tab_setup")%>']
                                 },
                                 {
                                     'title': '<%= GetLocalResourceObject("popup_item2_title")%>',
@@ -232,7 +232,7 @@
                                     [
 
                                     ],
-                                    'tags': ['Scoring']
+                                    'tags': ['<%= GetLocalResourceObject("tab_scoring")%>']
                                 },
                                 {
                                     'title': '<%= GetLocalResourceObject("popup_item3_title")%>',
@@ -244,7 +244,7 @@
                                     [
 
                                     ],
-                                    'tags': ['Test']
+                                    'tags': ['<%= GetLocalResourceObject("tab_test")%>']
                                 },
 
                             ]

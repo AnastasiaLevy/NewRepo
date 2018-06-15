@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Content3.text" xml:space="preserve">
+    <value>COOLIDGE CORRECTIONAL INVENTORY (CCI)</value>
+  </data>
+  <data name="Content4.text" xml:space="preserve">
+    <value>CCI представляет собой 250 статей, самоотчет, психологическую и нейропсихологическую инвентаризацию на основе текущего Диагностического и статистического руководства по психическим расстройствам (DSM-IV-TR). Предназначен для оценки исправительных заключенных и несовершеннолетних правонарушителей (15 лет и старше). CCI была создана (a) как экономически эффективная мера психологических проблем, (b) быть согласованной с DSM-IV-TR мерой клинических синдромов Axis I и личностных расстройств Axis II, (c) для измерения нейропсихологических симптомов, таких как как проблемы памяти, невнимательность, дисфункция языка и нейросоматические проблемы, а также нейропсихологические синдромы, такие как нейрокогнитивное расстройство, взрослый СДВГ и дефицит исполнительной функции лобных долей, и (d) разрешить дифференциальный диагноз тех заключенных, у которых есть клинически диагностируемые синдромы от тех, кто этого не делает. Каждому из 250 предметов отвечает по 4-балльной шкале типа Ликерта от 1 (точно лож), 2 (больше лож, чем истина), 3 (больше верно, чем лож), до 4 (точно верно). CCI была нормирована и проверена тысячами уголовных преступников. Еще одна уникальная особенность CCI заключается в том, что она имеет надежную и достоверную значимую форму.</value>
+  </data>
+  <data name="Content8_paragraph1.text" xml:space="preserve">
+    <value>Coolidge, F. L., Segal, D. L., Klebe, K. J., Cahill, B. S., &amp; Whitcomb, J. M. (2009). Психометрические свойства Коррекционной инвентаризации Кулиджа в выборке из 3 962 заключенных. Поведенческие науки и Закон, 27, 713-726. [щелкните &lt;a target="_blank" href="/content/CCI/CCI 2009.pdf"&gt; здесь &lt;/a&gt; для просмотра копии в формате PDF]</value>
+  </data>
+  <data name="Content8_paragraph2.text" xml:space="preserve">
+    <value>ДРУГИЕ ИССЛЕДОВАНИЯ И ПУБЛИКАЦИИ CCI</value>
+  </data>
+  <data name="Content8_paragraph3.text" xml:space="preserve">
+    <value>Оценка сексуальных правонарушителей</value>
+  </data>
+  <data name="Content8_paragraph4.text" xml:space="preserve">
+    <value>Francia, C. A., Coolidge, F. L., White, L. A., Segal, D. L., Cahill, B. S., &amp; Estey, A. J. (2010). Профили расстройства личности у заключенных мужских насильников и детей-растлителей. Американский журнал судебной психологии, 28, 1-14. [щелкните &lt;a target="_blank" href="/content/CCI/Francia и Coolidge и др. AJFP 2010.pdf"&gt; здесь &lt;/a&gt; для просмотра копии в формате PDF]</value>
+  </data>
+  <data name="Content8_paragraph5.text" xml:space="preserve">
+    <value>Психологическая оценка диктаторов / безумных лиц</value>
+  </data>
+  <data name="Content8_paragraph6.text" xml:space="preserve">
+    <value>Coolidge, F. L., &amp; Segal, D. L. (2009). Есть ли Ким Чен Ир как Саддам Хусейн и Адольф Гитлер? Оценка расстройства личности. Поведенческие науки о терроризме и политической агрессии, 1, 195-202. [нажмите &lt;a target="_blank" href="/content/CCI/Kim-Jong-il 2009.pdf"&gt; здесь &lt;/a&gt; для промотра копии в формате PDF]</value>
+  </data>
+  <data name="Content8_paragraph7.text" xml:space="preserve">
+    <value>Coolidge, F. L., Дэвис, Ф. Л., и Сигал, Д. Л. (2007). Понимание сумасшедших: оценка DSM-IV Адольфа Гитлера. Исследование индивидуальных различий, 5, 30-43. [щелкните &lt;a target="_blank" href="/content/CCI/Hitler- Final Copy 2007.pdf"&gt; здесь &lt;/a&gt; для просмотра копии в формате PDF]</value>
+  </data>
+  <data name="Content8_paragraph8.text" xml:space="preserve">
+    <value>CooCoolidge, F. L., &amp; Segal, D. L. (2007). Саддам Хусейн, как Адольф Гитлер? Расследование расстройства личности. Военная психология, 19, 1-11. [нажмите &lt;a target="_blank" href="/content/CCI/Hussein и Hitler 2007 Military Psychology.pdf"&gt; здесь &lt;/a&gt; для просмотра копии в формате PDF]</value>
+  </data>
+  <data name="Content8_title.text" xml:space="preserve">
+    <value>ОСНОВНАЯ СПРАВКА</value>
+  </data>
+  <data name="Content9_linkButton.text" xml:space="preserve">
+    <value>Образец отчета</value>
+  </data>
+  <data name="price_hundred_btn.text" xml:space="preserve">
+    <value>Купить сейчас</value>
+  </data>
+  <data name="price_hundred_paragraph.text" xml:space="preserve">
+    <value>Проект среднего размера</value>
+  </data>
+  <data name="price_hundred_title.text" xml:space="preserve">
+    <value>Набор из 100</value>
+  </data>
+  <data name="price_single_btn.text" xml:space="preserve">
+    <value>Купить сейчас</value>
+  </data>
+  <data name="price_single_paragraph.text" xml:space="preserve">
+    <value>Одиночный запуск</value>
+  </data>
+  <data name="price_single_title.text" xml:space="preserve">
+    <value>Один тетс</value>
+  </data>
+  <data name="price_ten_btn.text" xml:space="preserve">
+    <value>Купить сейчас</value>
+  </data>
+  <data name="price_ten_paragraph.text" xml:space="preserve">
+    <value>Малый проект</value>
+  </data>
+  <data name="price_ten_title.text" xml:space="preserve">
+    <value>Набор из 10</value>
+  </data>
+  <data name="price_unlim_btn.text" xml:space="preserve">
+    <value>Купить сейчас</value>
+  </data>
+  <data name="price_unlim_title.text" xml:space="preserve">
+    <value>Набор из 1000</value>
+  </data>
+</root>

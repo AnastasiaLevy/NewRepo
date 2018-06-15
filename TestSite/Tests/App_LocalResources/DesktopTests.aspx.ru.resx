@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="about_deskTopList_buttonCP.Text" xml:space="preserve">
+    <value>Continious Performance</value>
+  </data>
+  <data name="about_deskTopList_buttonCS.Text" xml:space="preserve">
+    <value>Тест Card Sort</value>
+  </data>
+  <data name="about_deskTopList_buttonRT.Text" xml:space="preserve">
+    <value>Reaction Time</value>
+  </data>
+  <data name="about_deskTopList_buttonTOH.Text" xml:space="preserve">
+    <value>Tower of Hanoi</value>
+  </data>
+  <data name="about_deskTopList_buttonTOL.Text" xml:space="preserve">
+    <value>Tower of London</value>
+  </data>
+  <data name="about_deskTopList_buttonTrails.Text" xml:space="preserve">
+    <value>Trail Making Test</value>
+  </data>
+  <data name="about_deskTopList_title.Text" xml:space="preserve">
+    <value>Доступные тесты</value>
+  </data>
+  <data name="about_paragraph.Text" xml:space="preserve">
+    <value>CogQuiz Test Collection предлагает гибкие тесты для вашего настольного компьютера. Он предлагает одну базу данных для всех тестов, нормированных данных и возможность делать собственные тесты.</value>
+  </data>
+  <data name="about_title.Text" xml:space="preserve">
+    <value>Коллекция тестов для компьютера</value>
+  </data>
+  <data name="CardSort_install.Text" xml:space="preserve">
+    <value>Установить</value>
+  </data>
+  <data name="cardSort_orderNow.Text" xml:space="preserve">
+    <value>Заказать сейчас</value>
+  </data>
+  <data name="cardSort_paragraph1.Text" xml:space="preserve">
+    <value>Тест Cart Sort обеспечивает значительную гибкость при определении задачи. Количество карт может варьироваться от двух до пяти и количество размеров сортировки от двух до пяти. Одна из категорий может быть определена пользователем, что позволяет определять классы. Инструмент определения карты позволяет авторам тестов создавать свои собственные определения стимулов и ответов. Карты могут отображать буквенно / числовые символы, любое изображение, которое может быть реализовано как «дингбат» или слова. Пакеты карт могут быть любого размера, и их представление может контролироваться либо участником, либо компьютером. Сдвиги категории (сцены) могут быть либо сигнальными, либо несигнальными. Все тестовые сообщения и инструкции могут быть адаптированы для удовлетворения потребностей автора теста. Методы ответа участников включают «точку и щелчок» и касание.</value>
+  </data>
+  <data name="cardSort_title.Text" xml:space="preserve">
+    <value>Card Sort</value>
+  </data>
+  <data name="contactError_error" xml:space="preserve">
+    <value>Не удалось отправить сообщение. Пожалуйста, повторите попытку позже.</value>
+  </data>
+  <data name="contactError_true" xml:space="preserve">
+    <value>Спасибо. Мы свяжемся с вами в следующий рабочий день.</value>
+  </data>
+  <data name="contact_emailFrom.Text" xml:space="preserve">
+    <value>Ваш адрес электронной почты:</value>
+  </data>
+  <data name="contact_emailName.Text" xml:space="preserve">
+    <value>Ваше имя:</value>
+  </data>
+  <data name="contact_emailText.Text" xml:space="preserve">
+    <value>Сообщение:</value>
+  </data>
+  <data name="contact_submit.Text" xml:space="preserve">
+    <value>Отрправить Email</value>
+  </data>
+  <data name="contact_title.Text" xml:space="preserve">
+    <value>Пожалуйста, заполните форму заказа:</value>
+  </data>
+  <data name="CPT_install.Text" xml:space="preserve">
+    <value>Установить</value>
+  </data>
+  <data name="CPT_orderNow.Text" xml:space="preserve">
+    <value>Заказать сейчас</value>
+  </data>
+  <data name="CPT_paragraph1.Text" xml:space="preserve">
+    <value>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tincidunt, mauris non sodales feugiat, turpis elit accumsan nisi, et commodo metus mi ultrices nunc. Duis ac pellentesque tortor. Maecenas feugiat velit erat, ac molestie nisl suscipit eget. Nam ultricies rutrum nibh, sed venenatis tellus tempor in. </value>
+  </data>
+  <data name="CPT_title.Text" xml:space="preserve">
+    <value>CPT</value>
+  </data>
+  <data name="errorPayment" xml:space="preserve">
+    <value>Невозможно обработать платеж. Обратитесь к администратору.</value>
+  </data>
+  <data name="GoToCPT.Text" xml:space="preserve">
+    <value>CPT</value>
+  </data>
+  <data name="GoToCS.Text" xml:space="preserve">
+    <value>Card Sort</value>
+  </data>
+  <data name="GoToRT.Text" xml:space="preserve">
+    <value>Reaction Time</value>
+  </data>
+  <data name="GoToTOH.Text" xml:space="preserve">
+    <value>Tower of Hanoi</value>
+  </data>
+  <data name="GoToTOL.Text" xml:space="preserve">
+    <value>Tower Of London</value>
+  </data>
+  <data name="GoToTrails.Text" xml:space="preserve">
+    <value>Trails</value>
+  </data>
+  <data name="hanoi_install.Text" xml:space="preserve">
+    <value>Установить</value>
+  </data>
+  <data name="hanoi_orderNow.Text" xml:space="preserve">
+    <value>Заказать сейчас</value>
+  </data>
+  <data name="hanoi_paragraph1.Text" xml:space="preserve">
+    <value>Гибкость в дизайне, позволяющая использовать от 3 до 6 колец в задаче с полным контролем за стартовой конфигурацией колец и привязкой «цель».
+Хранение всей информации об участниках в базе данных единого участника.
+Тест может быть указан как временный (т. е. тест прекращается по истечении заданного промежутка времени) или без ограничения по времени.
+</value>
+  </data>
+  <data name="hanoi_title.Text" xml:space="preserve">
+    <value>Tower of Hanoi</value>
+  </data>
+  <data name="london_install.Text" xml:space="preserve">
+    <value>Установить</value>
+  </data>
+  <data name="london_orderNow.Text" xml:space="preserve">
+    <value>Заказать сейчас</value>
+  </data>
+  <data name="london_paragraph1.Text" xml:space="preserve">
+    <value>Самым значительным преимуществом CogQuiz TOL является синхронизация и запись, которые можно получить с помощью компьютеризированного теста и, самое главное, возможность создания ряда тестов для разных групп населения. Относительная низкая стоимость TOL, способность надежно собирать различные параметры теста и стандартизировать процедуру, исследователи могут исследовать одни и те же когнитивные процессы с разными популяциями, показывая, как различные условия могут дифференциально влиять на способность планирования.</value>
+  </data>
+  <data name="london_paragraph2.Text" xml:space="preserve">
+    <value>В то время как TOL был разработан как ручной тест, который должен быть реализован с использованием деревянных досок для стимулов, все больше доказательств, подтверждающих использование компьютеризированных методов тестирования. Использование компьютеризированных методов тестирования позволяет повысить стандартизацию процедур тестирования и может уменьшить погрешности экспериментатора, которые могут возникнуть во время сеанса индивидуального тестирования.</value>
+  </data>
+  <data name="london_paragraph3.Text" xml:space="preserve">
+    <value>Кроме того, поскольку тест был стандартизирован, экспериментаторы не должны быть такими же подготовленными, как это необходимо в традиционном формате тестирования, поскольку экспериментаторы не нуждаются в тщательном обучении. Общая стоимость и время эксперимента могут быть уменьшены. Исследователям не нужно обучать помошников. Простота администрирования, компьютеризированное тестирование упрощает процесс сбора данных и во многих случаях может повысить точность измерения. Поскольку администрирование и сбор данных и их анализ происходят на одной платформе, данные могут храниться между тестами и изменениями в производительности, которые можно легко отслеживать с течением времени (Cambridge Cognition, 2012; CNS Vital Signs, 2012; Neurotrax Corporation, 2003; ).</value>
+  </data>
+  <data name="london_paragraph4.Text" xml:space="preserve">
+    <value>С момента своего создания в качестве средства оценки возможностей планирования TOL был реализован как инструмент для измерения различных областей исполнительного функционирования (Bottari et al., 2009; Köstering et al., 2015; Owen, 2005), а также пространственное планирование (Berg &amp; Byrd, 2005; Berg, Byrd, McNamara и MacDonald, 2006; Kaller, Unterrainer и Stahl, 2012; Pulos &amp; Denzine, 2005; Shallice, 1982; Unterrainer &amp; Owen, 2006), рабочая память (Albert &amp; Steinberg , 2011, Berg and Byrd, 2002; Pulos &amp; Denzine, 2005), торможение (Albert &amp; Steinberg, 2011; Berg &amp; Byrd, 2002; Shallice, 1982) и переключение задач (Pulos &amp; Denzine, 2005).
+
+В дополнение к оригинальным выводам дефицита у пациентов с лобными долями Shallice (1982) появилось несколько дополнительных популяций, которые часто демонстрируют дефицит в их исполнении на TOL; пациентов с неврологическими и психическими заболеваниями, таких как депрессия или болезнь Паркинсона (Jacobs &amp; Anderson, 2002), людей, перенесших травматическую травму головного мозга (TBI), болезни Альцгеймера и связанных с ними деменций (Carlin et al., 2000), ADHD (Culbertson &amp; Zillmer, 1998), аутизм (Wisley &amp; Howlin, 2009) и шизофрения (Landua &amp; Morris, 2011).</value>
+  </data>
+  <data name="london_title.Text" xml:space="preserve">
+    <value>Tower of London</value>
+  </data>
+  <data name="navbar_about.Text" xml:space="preserve">
+    <value>Описание</value>
+  </data>
+  <data name="navbar_home.Text" xml:space="preserve">
+    <value>Главная</value>
+  </data>
+  <data name="navbar_logIn.Text" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="navbar_logOut.Text" xml:space="preserve">
+    <value>Log out</value>
+  </data>
+  <data name="navBar_order.Text" xml:space="preserve">
+    <value>Заказать</value>
+  </data>
+  <data name="navbar_profile.Text" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="pagetitle.title" xml:space="preserve">
+    <value>Компьютерные тесты</value>
+  </data>
+  <data name="reaction_install.Text" xml:space="preserve">
+    <value>Установить</value>
+  </data>
+  <data name="reaction_orderNow.Text" xml:space="preserve">
+    <value>Заказать сейчас</value>
+  </data>
+  <data name="reaction_paragraph.Text" xml:space="preserve">
+    <value>Предназначен для оценки скорости обработки предметов по трем относительно простым задачам, которые, следуя Дэн (1990), включают в себя: простой тест времени реакции; тест выбора; и тест условного выбора. Включение простого теста времени реакции позволяет исследователю частично исключать изменения производительности из-за как моторных, так и когнитивных компонентов.
+Ответ участника может быть через «триггер» на стандартной «игровой площадке», клавиатуре или цифровой клавиатуре.
+В дополнение к задачам, которые будут использоваться в тесте, средний интервал между циклами (минимальный и максимальный диапазон) и количество циклов, представленных для каждой задачи (а также способ ответа), могут быть установлены.
+Анализ включает средства и стандартные отклонения для латентных ответов для отдельных сеансов, а также время реакции участника и триггер.
+Анализ также включает в себя текущую запись всех тестовых событий с уникальной меткой времени для каждого события.
+Анализы могут быть распечатаны или экспортированы в буфер обмена.
+Уникальные инструкции могут быть написаны для каждой задачи в рамках теста (на любом языке, использующем латинский алфавит), а также уникальное сообщение «Спасибо», которое будет отображаться в конце теста.
+Параметр «Speak Instructions» позволяет программе говорить инструкции участнику, пока на экране отображаются письменные инструкции</value>
+  </data>
+  <data name="reaction_title.Text" xml:space="preserve">
+    <value>Reaction Time</value>
+  </data>
+  <data name="trails_install.Text" xml:space="preserve">
+    <value>Установить</value>
+  </data>
+  <data name="trails_orderNow.Text" xml:space="preserve">
+    <value>Заказать сейчас</value>
+  </data>
+  <data name="trails_paragraph1.Text" xml:space="preserve">
+    <value>Тест Trail Making Test (TMT) - широко используется для нейропсихологической оценки (Rabin, Barr, &amp; Burton, 2005), который был первоначально разработан в 1938 году. TMT изначально был известный как «Тест Pathinton Pathways Test» или «Разделенный тест на внимание» ( Partington &amp; Leiter, 1949) и вначале был частью батареи тестов (Army Individual Test Battery), используемый для оценки «различных интеллектуальных функций, отличных от тех, которые измерялись по шкале интеллекта Wechsler-Bellevue» (Spreen &amp; Strauss, 1998) , Хотя тест больше всего
+обычно вводится в первоначальной форме, были разработаны альтернативные формы для
+испытывая потребности как альтернативных клинических ситуаций, так и программ исследований в области когнитивной науки. В настольной версии TMT, которую вы можете приобрести, вы сможете получить компьютеризированную версию практически всех коммерческих и карандашных тестов для изготовления троек.</value>
+  </data>
+  <data name="trails_title.Text" xml:space="preserve">
+    <value>Trails</value>
+  </data>
+  <data name="GoTo.text" xml:space="preserve">
+    <value>Перейти</value>
+  </data>
+  <data name="cardSort_paragraph2.Text" xml:space="preserve">
+    <value>Тесты могут быть проанализированы с использованием любого из трех протоколов анализа, или тестовый пользователь может распечатать основной лист анализа, отображающий базовую производительность участника для «ручного» анализа. Пакет поставляется с нормативными данными, собранными от 2875 участников, сгруппированных по возрастным группам от пяти до девяти лет, от 10 до 14 лет, от 15 до 19 лет и в 10-летних группах от 20 до 80 лет на каноническом тестировании 128. Как показали Tien, et al., 1996, Feldstein, et al., 1999 и Steinmetz, 2010, были показаны значительные различия в результатах между проверенными вручную сортировочными тестами и испытаниями, проводимыми с использованием компьютера, этот набор нормативных данных представляет собой значительный шаг вперед в задачи сортировки на компьютере.</value>
+  </data>
+  <data name="CPT_paragraph2.Text" xml:space="preserve">
+    <value>Phasellus rhoncus vel libero nec lacinia. Suspendisse in varius libero. Suspendisse semper turpis ut leo commodo, et pretium mi placerat. Nullam nec sapien dui. Nam ac lorem et dui porta facilisis. Quisque ut bibendum magna. Donec orci ex, porta vitae fringilla sed, porta eu elit.</value>
+  </data>
+  <data name="hanoi_paragraph2.Text" xml:space="preserve">
+    <value>Тест может быть настроен на завершения после определенного количества ходов.
+ Функция воспроизведения позволяет пользователю просматривать точные ходы любого проведенного теста и облегчает изучение стратегий решения проблем участниками.
+Способы реагирования включают в себя как сенсорный экран, так и мышь - последний предлагает либо опцию "щелчка", либо вариант слайдовой панели.
+Поддержка воспроизведения текста инструкций.</value>
+  </data>
+  <data name="hanoi_paragraph3.Text" xml:space="preserve">
+    <value>Пользовательские инструкции и тестовые титры могут быть записаны для каждого испытания (на любом языке, который использует латиницу).
+Может быть проведен разнообразный анализ, и данные могут быть экспортированы во внешние инструменты (например, электронные таблицы, статистический пакет и т. д. для пользовательского анализа).
+Стандартный тест anaysis, а также доступ к записи данных в режиме реального времени (т. е. Запись всех значимых событий и времени их появления в миллисекундах, включая время между событиями, общее время завершения пробного периода и количество правильных и неправильных ответов).</value>
+  </data>
+  <data name="trails_paragraph2.Text" xml:space="preserve">
+    <value>Например, тест Color Trails Test (CTT) был разработан как часть нейропсихологической тестовой батареи
+для межкультурного исследования Всемирной организации здравоохранения HIV-1 инфекции (Maj, et al., 1991).
+Затем тест был модифицирован для использования с детьми (Williams et al., 1995). В обоих случаях
+предполагается, что модификации минимизируют культурную предвзятость, введенную использованием римских
+букв в части более традиционного TMT (Maj, et al., 1991). Ваша настольная версия CogQuiz позволяет вам сделать компьютеризированную версию CTT, и если вы хотите создать нормы для разных групп населения.</value>
+  </data>
+  <data name="trails_paragraph3.Text" xml:space="preserve">
+    <value>Кроме того, если вы выполняете повторные администрирования TMT, вы можете создавать инвертированные, отраженные и инвертированные / отраженные версии, которые содержат одинаковое количество пузырьков для подключения к эквивалентным интервалам. Это уменьшает проблему повышенной производительности при многократном вводе TMT.
+ 
+Вы найдете TMT полезной, если вы попытаетесь получить некоторую оценку внимания, визуального сканирования, скорости координации глаз и обработки информации. Часть ВТМ В оценивает способность чередовать набор стимулов и как таковая является мерой «исполнительной функции» (Митрушина,
+et al., 1999).</value>
+  </data>
+</root>

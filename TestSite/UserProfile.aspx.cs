@@ -88,7 +88,7 @@ namespace TestSite
 
         private void LoadPaidTests()
         {
-            string name = DAL.DataMethods.GetLondonModifiedNameById(3022);
+            //string name = DAL.DataMethods.GetLondonModifiedNameById(3022);
             gvAvailableTests.DataSource = DAL.DataMethods.GetAllUserTests(Membership.GetUser(User.Identity.Name).ProviderUserKey.ToString());
             //if((gvAvailableTests.DataSource != null) && (gvAvailableTests.DataSource))
             gvAvailableTests.Columns[3].Visible = true;
