@@ -20,6 +20,7 @@ namespace TestSite.Tests
     {
         private const string LangKey = "LANG_KEY";
         private const string LangDefault = "en";
+        private const string LibraryKey = "87798A2A645DB61A3C91CDA1AF40EB009ADE914B1703C788C379DF5318D43FD8E2322D10493D";
 
         protected MembershipUser _user;
         protected string _userId;
@@ -95,7 +96,7 @@ namespace TestSite.Tests
         {
             try
             {
-                string key = LicenseManager.Instance.GenerateLicenseKey(identifier);
+                string key = LicenseManager.Instance.GenerateLicenseKey(identifier, LibraryKey);
                 return DataMethods.SaveWinFormTOLAppKey(_userId, identifier, key);
             }
             catch (Exception exc)

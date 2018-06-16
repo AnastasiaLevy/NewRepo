@@ -453,5 +453,6 @@
     <Build Include="dbo\Stored Procedures\SetupWinFormTOLAppKey.sql" />
     <Build Include="dbo\Stored Procedures\SaveWinFormTOLAppKey.sql" />
     <Build Include="dbo\Stored Procedures\GetWinFormTOLAppKey.sql" />
+    <Build Include="dbo\Stored Procedures\SaveWpfTOLAppKey.sql" />
   </ItemGroup>
 </Project>

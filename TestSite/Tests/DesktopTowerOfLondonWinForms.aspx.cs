@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Licensing;
+using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
@@ -15,10 +16,12 @@ namespace TestSite.Tests
 {
     public partial class DesktopTowerOfLondonWinForms : System.Web.UI.Page
     {
+        private const string LibraryKey = "82820B44D0B2320F1EE844E7656A11587FCD08C1150CB84703532D37DC4313A0D71F7B57329D";
+
         protected MembershipUser _user;
         protected string _userId;
         protected bool _isProfilefilled;
-        protected string _testId = Enums.TestId.Quest;
+        protected string _testId = Enums.TestId.TowerOfLondon;
         protected static int _userTestId;
         public string Key { get; set; }
 
@@ -37,23 +40,19 @@ namespace TestSite.Tests
                 return paypalTest == null ? false : (bool)paypalTest;
             }
         }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (User.Identity.IsAuthenticated)
             {
                 _user = Membership.GetUser(User.Identity.Name);
                 _userId = _user.ProviderUserKey.ToString();
-                Key = DataMethods.GetWinFormTOLAppKey(_userId);
+                Key = DataMethods.GetTowerOfLondonAppKey(_userId);
 
-                //logOut.Visible = true;
-                //profOpt.Visible = true;
-                //login.Visible = false;
-            }
-            else
-            {
-                //login.Visible = true;
-                //profOpt.Visible = false;
-                //logOut.Visible = false;
+                if (hasPaidTest(_userId) && Key == null)
+                {
+                    this.IdentifierGroup.Visible = true;
+                }
             }
 
             //  Catch response from paypal
@@ -63,35 +62,33 @@ namespace TestSite.Tests
                 {
                     if (PayPalSimulation) Session["PayPalSimulation"] = false;
 
+                    this.IdentifierGroup.Visible = true;
+
                     if (!hasPaidTest(_userId) && string.IsNullOrEmpty(Key))
                     {
                         bool isPaid = UpdateTestPaid(_userId);
-                        bool isKeySetup = SetupKey();
-                        if (isKeySetup)
-                        {
-                            Key = DataMethods.GetWinFormTOLAppKey(_userId);
-                        }
                     }
                 }
             }
 
-            //if (User.Identity.IsAuthenticated && hasPaidTest(_userId))
-            //{
-            //    ShowAppData();
-            //}
-            //else
-            //{
-            //    ShowBuyButton();
-            //}
+            if (User.Identity.IsAuthenticated && hasPaidTest(_userId))
+            {
+                ShowAppData();
+            }
+            else
+            {
+                ShowBuyButton();
+            }
 
             Page.DataBind();
         }
-        private bool SetupKey()
+
+        private bool SetupKey(string identifier)
         {
             try
             {
-                DataMethods.SetupWinFormTOLAppKey(_userId);
-                return true;
+                string key = LicenseManager.Instance.GenerateLicenseKey(identifier, LibraryKey);
+                return DataMethods.SaveWpfTOLAppKey(_userId, identifier, key);
             }
             catch (Exception exc)
             {
@@ -99,19 +96,19 @@ namespace TestSite.Tests
             }
         }
 
-        //private void ShowBuyButton()
-        //{
-        //    price.Visible = true;
-        //    runTest.Visible = false;
-        //    KeyValue.Visible = false;
-        //}
+        private void ShowBuyButton()
+        {
+            price.Visible = true;
+            runTest.Visible = false;
+            KeyValue.Visible = false;
+        }
 
-        //private void ShowAppData()
-        //{
-        //    price.Visible = false;
-        //    runTest.Visible = true;
-        //    KeyValue.Visible = true;
-        //}
+        private void ShowAppData()
+        {
+            price.Visible = false;
+            runTest.Visible = true;
+            KeyValue.Visible = true;
+        }
 
         protected void logOut_Click(object sender, EventArgs e)
         {
@@ -170,16 +167,17 @@ namespace TestSite.Tests
         protected void runTest_Click(object sender, EventArgs e)
         {
             string publisherName = "CogQuiz";
-            string applicationName = "CogQuest";
+            string applicationName = "CogQuiz - Tower of London";
             string shortcutPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Programs), publisherName);
             shortcutPath = Path.Combine(shortcutPath, applicationName) + ".appref-ms";
-            //if (File.Exists(shortcutPath))
-            //{
-            //    existsMessage.Text = "This application is already installed on your computer.";
-            //    runTest.Visible = false;
-            //}
-            //else
-            //    Response.Redirect("CogQuestTool/CogQuestSetUp.aspx");
+
+            if (File.Exists(shortcutPath))
+            {
+                existsMessage.Text = "This application is already installed on your computer.";
+                runTest.Visible = false;
+            }
+            else
+                Response.Redirect("TowerOfLondon/TOLDesktop.aspx");
         }
 
         protected void LinkButton1_Click(object sender, EventArgs e)
@@ -189,7 +187,7 @@ namespace TestSite.Tests
 
         protected void paypalsimulate_Click(object sender, EventArgs e)
         {
-            var url = "CogQuest.aspx?st=completed";
+            var url = "DesktopTowerOfLondonWinForms.aspx?st=completed";
             Session["PayPalSimulation"] = true;
             Response.Redirect(url);
             //Response.Clear();
@@ -214,6 +212,19 @@ namespace TestSite.Tests
             else
             {
                 Response.Redirect("~/Login.aspx");
+            }
+        }
+
+        protected void GenerateLicenseBtn_Click(object sender, EventArgs e)
+        {
+            string identifier = IdentifierInput.Value;
+
+            bool isKeySetup = SetupKey(identifier);
+
+            if (isKeySetup)
+            {
+                Key = DataMethods.GetTowerOfLondonAppKey(_userId);
+                Response.Redirect(Request.RawUrl);
             }
         }
     }

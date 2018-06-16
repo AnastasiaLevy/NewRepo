@@ -76,10 +76,31 @@
 
                 <asp:LinkButton ID="paypalsimulate" runat="server" OnClick="paypalsimulate_Click" class="btn btn-primary btn-lg btn-xs-block btn-green pull-right">Paypal response simulation</asp:LinkButton>
 
-                <%--<div>
-                    <span id="KeyValue" class="text-success" runat="server" style="word-wrap: break-word;"><span>Registration Key:</span> <%# Key %></span>
+
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+
+                        <div class="input-group" ID="IdentifierGroup" Visible="false" runat="server">
+                            <input ID="IdentifierInput" type="text" class="form-control form-control-custom" placeholder="Enter identifier from your desktop application" runat="server"/>
+                            <span class="input-group-btn">
+                            <asp:LinkButton ID="GenerateLicenseBtn" class="btn btn-default btn-inp-group" OnClick="GenerateLicenseBtn_Click" runat="server">
+                                <asp:Localize meta:resourcekey="generateKeyBtn" runat="server" ID="Localize48" Text="Generate license" />
+                            </asp:LinkButton>
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div>
+                    <span id="KeyValue" class="text-success" runat="server" style="word-wrap: break-word;">
+                        <span>
+                            <asp:Localize meta:resourcekey="key" runat="server" ID="Localize4" Text="License Key" />:
+                        </span> <%# Key %>
+                    </span>
                     <asp:Label ID="existsMessage" CssClass="errorMessage" runat="server" Text=""></asp:Label>
-                </div>--%>
+                </div>
                 <br />
 
 
