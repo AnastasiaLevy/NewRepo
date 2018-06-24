@@ -1,5 +1,8 @@
 ﻿CREATE TABLE [dbo].[LicenseAppKeys] (
+    [TowerOfLondonKey] VARCHAR (100)    NOT NULL,
     [UserId]           UNIQUEIDENTIFIER NOT NULL,
-    [TowerOfLondonKey] VARCHAR (50)     NULL
+    [DeviceId]         VARCHAR (50)     NOT NULL
 );
+
+
 
