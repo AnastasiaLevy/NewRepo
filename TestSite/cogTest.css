@@ -3680,3 +3680,18 @@ label {
     .dt-video-btns a {
         margin: 0 5px 15px;
     }
+
+
+.fa-stack.fa-lg {
+    font-size: 70px;
+    min-height: 150px;
+}
+
+    .fa-stack.fa-lg .fa-stack-1x:hover {
+        transition: font-size 0.1s ease;
+        font-size: 80px;
+    }
+
+.port3 img {
+    max-height: 100px;
+}

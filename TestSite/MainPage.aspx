@@ -261,38 +261,82 @@
 
                     <ul class="filter nav nav-pills">
                         <li data-value="all"><a class="active" href="#"><asp:Localize meta:resourcekey="available_nav_all"  runat="server" ID="Localize49" Text="" /></a></li>
-                        <li data-value="memory"><a href="#"><asp:Localize meta:resourcekey="available_nav_memory"  runat="server" ID="Localize50" Text="" /></a></li>
-                        <li data-value="executive"><a href="#"><asp:Localize meta:resourcekey="available_nav_executive"  runat="server" ID="Localize51" Text="" /></a></li>
+                        <li data-value="online"><a href="#"><asp:Localize meta:resourcekey="available_nav_online"  runat="server" ID="Localize50" Text="" /></a></li>
+                        <li data-value="desktop"><a href="#"><asp:Localize meta:resourcekey="available_nav_desktop"  runat="server" ID="Localize51" Text="" /></a></li>
                         <%--<li data-value="mobileapps"><a href="#"><asp:Localize meta:resourcekey="available_nav_mobileapps"  runat="server" ID="Localize52" Text="" /></a></li>--%>
                         <%--<li data-value="personality"><a href="#">Personality</a></li>--%>
                     </ul>
 
                     <ul class="port2" >
-                        <li data-type="memory" data-id="id-1" class="port3">
-                            <a href="Tests/StroopWrapper.aspx" id="memory1">
+                        <li data-type="online" data-id="id-1" class="port3">
+                            <a href="Tests/StroopWrapper.aspx" id="">
                                 <img src="images/Stroop.jpg" alt=""></a>
                         </li>
-                        <li data-type="executive" data-id="id-2" class="port3">
-                            <a href="TrailsWrapper.aspx" id="webdesign1">
+                        <li data-type="online" data-id="id-2" class="port3">
+                            <a href="TrailsWrapper.aspx" id="">
                                 <img src="images/trails.jpg" alt=""></a>
                         </li>
-                        <li data-type="mobileapps" data-id="id-3" class="port3">
-                            <a href="WCSTWrapper.aspx" id="mobileapps1">
+                        <li data-type="online" data-id="id-3" class="port3">
+                            <a href="WCSTWrapper.aspx" id="">
                                 <img src="images/cardSort.png" alt=""></a>
                         </li>
-                        <li data-type="memory" data-id="id-4" class="port3">
-                            <a href="Tests/NbackWrapper.aspx" id="memory2">
+                        <li data-type="online" data-id="id-4" class="port3">
+                            <a href="Tests/NbackWrapper.aspx" id="">
                                 <img src="images/Nback.jpg" alt=""></a>
                         </li>
-                        <li data-type="executive" data-id="id-5" class="port3">
-                            <a href="LondonWrapper.aspx" id="webdesign2">
+                        <li data-type="online" data-id="id-5" class="port3">
+                            <a href="LondonWrapper.aspx" id="">
                                 <img src="images/tower.jpg" alt=""></a>
                         </li>
-                        <li data-type="mobileapps" data-id="id-6" class="port3">
-                            <a href="Tests/SyllogWrapper.aspx" id="mobileapps2">
+                        <li data-type="online" data-id="id-6" class="port3">
+                            <a href="Tests/SyllogWrapper.aspx" id="">
                                 <img src="images/sillog.png" /></a>
                         </li>
+
+                        <!-- Desktop tests -->
                    
+                        <li data-type="desktop" data-id="id-7" class="port3">
+                            <a href="/Tests/DesktopTests.aspx#london" id="">
+                                <img src="/images/desktops/lnd_1.png" alt=""></a>
+                        </li>
+                        <li data-type="desktop" data-id="id-8" class="port3">
+                            <a href="/Tests/DesktopTests.aspx#cardSort" id="">
+                                <img src="/images/desktops/cs_5.png" alt=""></a>
+                        </li>
+                        <li data-type="desktop" data-id="id-9" class="port3">
+                            <a href="/Tests/DesktopTests.aspx#cpt" id="">
+                                <img src="/images/desktops/CPT_1.png" alt=""></a>
+                        </li>
+                        <li data-type="desktop" data-id="id-10" class="port3">
+                            <a href="/Tests/DesktopTests.aspx#hanoi" id="">
+                                <img src="/images/desktops/toh_3.png" alt=""></a>
+                        </li>
+                        <li data-type="desktop" data-id="id-11" class="port3">
+                            <a href="/Tests/DesktopTests.aspx#reaction" id="">
+                                <img src="/images/DesktopTests4.png" /></a>
+                        </li>
+                        <li data-type="desktop" data-id="id-12" class="port3">
+                            <a href="/Tests/DesktopTests.aspx#trails" id="">
+                                <img src="/images/desktops/tnt_2.png" alt=""></a>
+                        </li>
+                        <li data-type="desktop" data-id="id-13" class="port3">
+                            <a href="/Tests/DesktopTests.aspx#nbk" id="">
+                                <img src="/images/desktops/nbk_1.png" alt=""></a>
+                        </li>
+                        <li data-type="desktop" data-id="id-14" class="port3">
+                            <a href="/Tests/DesktopTests.aspx#vrb" id="">
+                                <img src="/images/desktops/vrb_1.png" alt=""></a>
+                        </li>
+                        <li data-type="desktop" data-id="id-15" class="port3">
+                            <a href="/Tests/DesktopTests.aspx#mmc" id="">
+                                <img src="/images/desktops/mmc_2.png" alt=""></a>
+                        </li>
+                        <li data-type="desktop" data-id="id-16" class="port3">
+                            <a href="/Tests/DesktopTests.aspx#spt" id="">
+                                <img src="/images/desktops/spt_2.png" /></a>
+                        </li>
+
+
                         <%--<li data-type="personality" data-id="id-7" class="port3">
                             <a href="Tests/PTSD.aspx" id="cool1">
                                 <img src="images/cool1.jpg" alt=""></a>

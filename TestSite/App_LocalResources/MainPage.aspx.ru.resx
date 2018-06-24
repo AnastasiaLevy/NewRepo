@@ -156,6 +156,9 @@
   <data name="available_nav_all.Text" xml:space="preserve">
     <value>Все</value>
   </data>
+  <data name="available_nav_desktop.Text" xml:space="preserve">
+    <value>Тесты для Desktop</value>
+  </data>
   <data name="available_nav_executive.Text" xml:space="preserve">
     <value>Исполнительная функция</value>
   </data>
@@ -164,6 +167,9 @@
   </data>
   <data name="available_nav_mobileapps.Text" xml:space="preserve">
     <value>Скорость обработки</value>
+  </data>
+  <data name="available_nav_online.Text" xml:space="preserve">
+    <value>Онлайн</value>
   </data>
   <data name="available_title1.Text" xml:space="preserve">
     <value>Программное обеспечение для каждого теста CogQuiz было разработано с упором на эффективность и простоту использования. 

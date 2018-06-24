@@ -156,6 +156,9 @@
   <data name="available_nav_all.Text" xml:space="preserve">
     <value>All</value>
   </data>
+  <data name="available_nav_desktop.Text" xml:space="preserve">
+    <value>Desktop</value>
+  </data>
   <data name="available_nav_executive.Text" xml:space="preserve">
     <value>Executive Function</value>
   </data>
@@ -164,6 +167,9 @@
   </data>
   <data name="available_nav_mobileapps.Text" xml:space="preserve">
     <value>Processing Speed</value>
+  </data>
+  <data name="available_nav_online.Text" xml:space="preserve">
+    <value>Online</value>
   </data>
   <data name="available_title1.Text" xml:space="preserve">
     <value>The software for each CogQuiz test has been designed with an emphasis on efficiency and ease of use. 
