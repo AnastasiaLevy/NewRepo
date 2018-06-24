@@ -143,7 +143,7 @@ namespace TestSite
                 //login.Visible = false;
                 price.Visible = false;
             }
-            else if (!User.Identity.IsAuthenticated)
+            else if (User.Identity.IsAuthenticated)
             {
                 string url = HttpContext.Current.Request.Url.AbsoluteUri;
                 Response.Redirect(String.Format("~/Registration.aspx?return={0}", url));

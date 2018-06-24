@@ -160,16 +160,16 @@
     <value>Your key:</value>
   </data>
   <data name="testDescription_img1_span1.Text" xml:space="preserve">
-    <value>Sed imperdiet eros nec tellus fringilla, id facilisis ex tempus.</value>
+    <value>You can create your own test</value>
   </data>
   <data name="testDescription_img1_span2.Text" xml:space="preserve">
-    <value>Lorem ipsum dolor sit amet</value>
+    <value>Edit existing tests</value>
   </data>
   <data name="testDescription_img1_span3.Text" xml:space="preserve">
-    <value>Lorem ipsum dolor sit amet</value>
+    <value>Make a test run</value>
   </data>
   <data name="testDescription_img1_span4.Text" xml:space="preserve">
-    <value>Sed imperdiet eros nec tellus fringilla..</value>
+    <value>Delete unnecessary tests</value>
   </data>
   <data name="testDescription_img1_title.Text" xml:space="preserve">
     <value>Create test</value>
@@ -206,5 +206,47 @@
   </data>
   <data name="testDescription_title.Text" xml:space="preserve">
     <value>View Examples</value>
+  </data>
+  <data name="testDescription_img2_span1.Text" xml:space="preserve">
+    <value>You can add any number of participants</value>
+  </data>
+  <data name="testDescription_img2_span2.Text" xml:space="preserve">
+    <value>Create member and administrator accounts</value>
+  </data>
+  <data name="testDescription_img2_span3.Text" xml:space="preserve">
+    <value>Fill profiles</value>
+  </data>
+  <data name="testDescription_img3_span1.Text" xml:space="preserve">
+    <value>You can run and pass tests</value>
+  </data>
+  <data name="testDescription_img3_span2.Text" xml:space="preserve">
+    <value>Each movement is recorded for further analysis</value>
+  </data>
+  <data name="testDescription_img4_span1.Text" xml:space="preserve">
+    <value>On analyze tab you can see all results of passed tests</value>
+  </data>
+  <data name="testDescription_img4_span2.Text" xml:space="preserve">
+    <value>See detailed information on the passage of each test</value>
+  </data>
+  <data name="testDescription_img4_span3.Text" xml:space="preserve">
+    <value>See the time of each round</value>
+  </data>
+  <data name="testDescription_img4_span4.Text" xml:space="preserve">
+    <value>Print or export results</value>
+  </data>
+  <data name="testDescription_img5_span1.Text" xml:space="preserve">
+    <value>You can view playback.</value>
+  </data>
+  <data name="testDescription_img5_span2.Text" xml:space="preserve">
+    <value>Through playback you can evaluate the train of thought</value>
+  </data>
+  <data name="testDescription_img5_span3.Text" xml:space="preserve">
+    <value>Select playback speed</value>
+  </data>
+  <data name="testDescription_img6_span1.Text" xml:space="preserve">
+    <value>You can export results to excel file</value>
+  </data>
+  <data name="testDescription_img6_span2.Text" xml:space="preserve">
+    <value>Send results to participants by email</value>
   </data>
 </root>

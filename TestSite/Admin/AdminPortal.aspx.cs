@@ -68,7 +68,7 @@ namespace TestSite.Admin
             string userId = row.Cells[2].Text;
             if (!String.IsNullOrEmpty(userId))
             {
-                DAL.DataMethods.UpdateProviderTable(userId);
+                DAL.DataMethods.CreateProvider(userId);
             }
             DataSet ds = DataMethods.GetAdminData();
             gvUsers.DataSource = ds.Tables[0];

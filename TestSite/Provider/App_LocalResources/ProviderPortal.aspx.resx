@@ -486,4 +486,10 @@
   <data name="ddlProvTests_select" xml:space="preserve">
     <value>Select Test</value>
   </data>
+  <data name="bpopup.text" xml:space="preserve">
+    <value>Thanks for buying our tests!</value>
+  </data>
+  <data name="bpopup_close.text" xml:space="preserve">
+    <value>Close</value>
+  </data>
 </root>

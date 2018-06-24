@@ -58,13 +58,40 @@ namespace TestSite.Tests {
         protected global::System.Web.UI.WebControls.Localize Localize8;
         
         /// <summary>
-        /// paypalsimulate control.
+        /// IdentifierGroup control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton paypalsimulate;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl IdentifierGroup;
+        
+        /// <summary>
+        /// IdentifierInput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText IdentifierInput;
+        
+        /// <summary>
+        /// GenerateLicenseBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton GenerateLicenseBtn;
+        
+        /// <summary>
+        /// Localize48 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Localize Localize48;
         
         /// <summary>
         /// keyValueArea control.
@@ -148,13 +175,31 @@ namespace TestSite.Tests {
         protected global::System.Web.UI.WebControls.Localize Localize16;
         
         /// <summary>
-        /// Localize17 control.
+        /// Localize1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Localize Localize17;
+        protected global::System.Web.UI.WebControls.Localize Localize1;
+        
+        /// <summary>
+        /// Localize2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Localize Localize2;
+        
+        /// <summary>
+        /// Localize3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Localize Localize3;
         
         /// <summary>
         /// Localize18 control.
@@ -166,13 +211,22 @@ namespace TestSite.Tests {
         protected global::System.Web.UI.WebControls.Localize Localize18;
         
         /// <summary>
-        /// Localize25 control.
+        /// Localize5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Localize Localize25;
+        protected global::System.Web.UI.WebControls.Localize Localize5;
+        
+        /// <summary>
+        /// Localize17 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Localize Localize17;
         
         /// <summary>
         /// Localize19 control.
@@ -193,6 +247,33 @@ namespace TestSite.Tests {
         protected global::System.Web.UI.WebControls.Localize Localize24;
         
         /// <summary>
+        /// Localize29 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Localize Localize29;
+        
+        /// <summary>
+        /// Localize30 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Localize Localize30;
+        
+        /// <summary>
+        /// Localize31 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Localize Localize31;
+        
+        /// <summary>
         /// Localize20 control.
         /// </summary>
         /// <remarks>
@@ -211,6 +292,24 @@ namespace TestSite.Tests {
         protected global::System.Web.UI.WebControls.Localize Localize23;
         
         /// <summary>
+        /// Localize32 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Localize Localize32;
+        
+        /// <summary>
+        /// Localize33 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Localize Localize33;
+        
+        /// <summary>
         /// Localize21 control.
         /// </summary>
         /// <remarks>
@@ -227,6 +326,15 @@ namespace TestSite.Tests {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Localize Localize22;
+        
+        /// <summary>
+        /// Localize35 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Localize Localize35;
         
         /// <summary>
         /// buyButtonArea control.

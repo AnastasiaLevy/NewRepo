@@ -3671,3 +3671,12 @@ label {
 .prov-table-fix th{
     text-align: center;
 }
+
+.dt-video-btns {
+    text-align: center;
+    padding: 0 100px;
+}
+
+    .dt-video-btns a {
+        margin: 0 5px 15px;
+    }

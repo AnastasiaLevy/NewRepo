@@ -184,7 +184,7 @@
     <value>Заказать сейчас</value>
   </data>
   <data name="CPT_paragraph1.Text" xml:space="preserve">
-    <value>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tincidunt, mauris non sodales feugiat, turpis elit accumsan nisi, et commodo metus mi ultrices nunc. Duis ac pellentesque tortor. Maecenas feugiat velit erat, ac molestie nisl suscipit eget. Nam ultricies rutrum nibh, sed venenatis tellus tempor in. </value>
+    <value>Непрерывные показатели эффективности (CPT), используемые при диагностике СДВГ, являются вариациями тестов Go / No-Go середины XX века. Тестировщику дается указание нажимать пробел на целевой стимул, такой как любая буква, но ничего не делать, когда появляется определенная обозначенная буква (т. Е. X).</value>
   </data>
   <data name="CPT_title.Text" xml:space="preserve">
     <value>CPT</value>
@@ -309,7 +309,7 @@
     <value>Тесты могут быть проанализированы с использованием любого из трех протоколов анализа, или тестовый пользователь может распечатать основной лист анализа, отображающий базовую производительность участника для «ручного» анализа. Пакет поставляется с нормативными данными, собранными от 2875 участников, сгруппированных по возрастным группам от пяти до девяти лет, от 10 до 14 лет, от 15 до 19 лет и в 10-летних группах от 20 до 80 лет на каноническом тестировании 128. Как показали Tien, et al., 1996, Feldstein, et al., 1999 и Steinmetz, 2010, были показаны значительные различия в результатах между проверенными вручную сортировочными тестами и испытаниями, проводимыми с использованием компьютера, этот набор нормативных данных представляет собой значительный шаг вперед в задачи сортировки на компьютере.</value>
   </data>
   <data name="CPT_paragraph2.Text" xml:space="preserve">
-    <value>Phasellus rhoncus vel libero nec lacinia. Suspendisse in varius libero. Suspendisse semper turpis ut leo commodo, et pretium mi placerat. Nullam nec sapien dui. Nam ac lorem et dui porta facilisis. Quisque ut bibendum magna. Donec orci ex, porta vitae fringilla sed, porta eu elit.</value>
+    <value>Результаты CPT наряду с вопросниками и оценкой лицензированного специалиста в области здравоохранения были использованы при диагностике СДВГ примерно у 6 миллионов детей в возрасте от 4 до 17 лет и еще четверть миллиона детей в возрасте от 2 до 5 лет. В настоящее время это программное обеспечение содержит несколько тестов CPT, которые могут использоваться для сравнения контролей и экспериментальной группы. Нормы для теста Faces будут представлены в конце 2018 года.</value>
   </data>
   <data name="hanoi_paragraph2.Text" xml:space="preserve">
     <value>Тест может быть настроен на завершения после определенного количества ходов.
@@ -334,5 +334,89 @@
  
 Вы найдете TMT полезной, если вы попытаетесь получить некоторую оценку внимания, визуального сканирования, скорости координации глаз и обработки информации. Часть ВТМ В оценивает способность чередовать набор стимулов и как таковая является мерой «исполнительной функции» (Митрушина,
 et al., 1999).</value>
+  </data>
+  <data name="memory_install.text" xml:space="preserve">
+    <value>Установить</value>
+  </data>
+  <data name="memory_ordernow.text" xml:space="preserve">
+    <value>Заказать сейчас</value>
+  </data>
+  <data name="memory_paragrapg2.text" xml:space="preserve">
+    <value>Это программное обеспечение содержит тест с 12 подходящими парами, и вы можете легко построить дополнительные тесты, используя тест 2 на 3 (3 пары соответствия) или формат 6 на 8 (24 пары совпадений) с одним или несколькими испытаниями. Тест на мультфильмы, включенный в ваше программное обеспечение, имеет N &gt; 3500 и нормы для лиц в возрасте от 5 до 89 лет. Вы можете использовать слова, цвета, рисунки или рисунки в качестве стимулов.</value>
+  </data>
+  <data name="memory_paragraph1.text" xml:space="preserve">
+    <value>Тест Memory Cards (MCT) содержит версию игры с картами памяти. Эту игру можно также рассматривать как визуоскопическую задачу. Это программное обеспечение содержит инструмент импорта изображений, который позволяет импортировать визуальные стимулы в различные форматы изображений (например, jpeg, npg и т. Д.).</value>
+  </data>
+  <data name="memory_title.text" xml:space="preserve">
+    <value>Memory Cards</value>
+  </data>
+  <data name="n-back_install.text" xml:space="preserve">
+    <value>Установить</value>
+  </data>
+  <data name="n-back_ordernow.text" xml:space="preserve">
+    <value>Заказать сейчас</value>
+  </data>
+  <data name="n-back_paragraph1.text" xml:space="preserve">
+    <value>Тесты N-back используются для оценки рабочей памяти - формы памяти, которая временно удерживается в сознательном осознании и требует манипулирования информацией. Например, умножение в 16 раз 17 в голове потребует хранения и манипулирования информацией.</value>
+  </data>
+  <data name="n-back_paragraph2.text" xml:space="preserve">
+    <value>Это программное обеспечение содержит несколько тестов N-back, которые являются визуальными, такими как грани (например, текущая грань такая же, как и одна n-обратная, где n может быть 1, 2, 3 и т. Д.). Это программное обеспечение также содержит вербальный и visuospatial n-back тест с нормами для лиц в возрасте от 5 до 89 лет. Он также позволяет создавать двойные тесты n-back (например, точка в одном и том же месте n-back и слуховые стимулы такие же, как и один n-back).</value>
+  </data>
+  <data name="n-back_title.text" xml:space="preserve">
+    <value>n-Back</value>
+  </data>
+  <data name="sopt_install.text" xml:space="preserve">
+    <value>Установить</value>
+  </data>
+  <data name="sopt_ordernow.text" xml:space="preserve">
+    <value>Заказать сейчас</value>
+  </data>
+  <data name="sopt_paragraph1.text" xml:space="preserve">
+    <value>Self Ordered Pointing тест (SOPT) - это тест рабочей памяти, разработанный Петридесом и Милнером. Обычно человек должен указывать или нажимать на небольшое количество стимулов в течение установленного срока (то есть, 10 секунд).</value>
+  </data>
+  <data name="sopt_paragraph2.text" xml:space="preserve">
+    <value>Все раздражители исчезают в течение нескольких секунд, а затем снова появляются в новом расположении. Например, участник может получить 8 попыток щелкнуть по восьми различным стимулам. Участник должен щелкнуть по всем разным стимулам по очереди в соответствии с этой процедурой. Число и характеристики стимулов могут увеличиваться по сравнению с испытаниями.</value>
+  </data>
+  <data name="sopt_title.text" xml:space="preserve">
+    <value>SOPT</value>
+  </data>
+  <data name="Verbal_install.text" xml:space="preserve">
+    <value>Установить</value>
+  </data>
+  <data name="Verbal_ordernow.text" xml:space="preserve">
+    <value>Заказать сейчас</value>
+  </data>
+  <data name="Verbal_paragraph1.text" xml:space="preserve">
+    <value>Вербальный отзыв являются одними из наиболее часто используемых нейропсихологических тестов. Это программное обеспечение позволяет создавать практически любой набор и / или комбинацию процессов отзыва и распознавания. Вы можете собирать информацию о субъективной организации испытуемого, и вы можете создавать категории слов для изучения семантической организации.</value>
+  </data>
+  <data name="Verbal_paragraph2.text" xml:space="preserve">
+    <value>Ваши тесты проводятся с нормами для более 3 тысяч человек в возрасте от 5 до 89 лет для версии Rey Auditory Verbal Learning Test и более тысячи для признания версии Rey Auditory Test. Вы можете создать практически любой отзыв или распознавание слова. Создаваемый вами список может быть любой длины, сложности и задержки может быть срочным или в течение нескольких лет.</value>
+  </data>
+  <data name="Verbal_title.text" xml:space="preserve">
+    <value>Verbal</value>
+  </data>
+  <data name="about_deskTopList_buttonmmc.text" xml:space="preserve">
+    <value>Memory Cards</value>
+  </data>
+  <data name="about_deskTopList_buttonnbk.text" xml:space="preserve">
+    <value>n-Back</value>
+  </data>
+  <data name="about_deskTopList_buttonspt.text" xml:space="preserve">
+    <value>SOPT</value>
+  </data>
+  <data name="about_deskTopList_buttonvrb.text" xml:space="preserve">
+    <value>Verbal</value>
+  </data>
+  <data name="gotommc.text" xml:space="preserve">
+    <value>Memory Cards</value>
+  </data>
+  <data name="gotonbk.text" xml:space="preserve">
+    <value>n-Back</value>
+  </data>
+  <data name="gotospt.text" xml:space="preserve">
+    <value>SOPT</value>
+  </data>
+  <data name="gotovrb.text" xml:space="preserve">
+    <value>Verbal</value>
   </data>
 </root>

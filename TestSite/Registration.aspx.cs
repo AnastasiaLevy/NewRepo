@@ -76,8 +76,17 @@ namespace TestSite
             cbAgree.Enabled = !cbAgree.Checked;
             txtFirstName.Value = data.Rows[0]["firstName"].ToString();
             txtLastName.Value = data.Rows[0]["lastName"].ToString();
-            DateTime date = (DateTime)data.Rows[0]["birthDate"];
-            txtBDay.Text = date.ToString("MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+            //DateTime date = (DateTime)data.Rows[0]["birthDate"];
+            DateTime date;
+            if (data.Rows[0]["birthDate"].ToString() != "")
+            {
+                date = (DateTime)data.Rows[0]["birthDate"];
+                txtBDay.Text = date.ToString("MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+            } else
+            {
+                txtBDay.Text = null;
+            }
+            
             ddlEducation.SelectedIndex = data.Rows[0]["education"] != null ? Convert.ToInt32(data.Rows[0]["education"]) : ddlEducation.SelectedIndex;
 
             if (data.Rows[0]["medications"] != null)
@@ -289,8 +298,9 @@ namespace TestSite
                 error.Text = "";
 
 
-               
-                birthDate = (txtBDay.Text != null && txtBDay.Text != "") ? DateTime.ParseExact(txtBDay.Text, "MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture) : DateTime.Today;
+
+                //birthDate = (txtBDay.Text != null && txtBDay.Text != "") ? DateTime.ParseExact(txtBDay.Text, "MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture) : DateTime.Today;
+                birthDate = (txtBDay.Text != null && txtBDay.Text != "") ? DateTime.ParseExact(txtBDay.Text, "MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture) : DateTime.MinValue;
 
                 exercise = GetExercise();
                 firstName = txtFirstName.Value;

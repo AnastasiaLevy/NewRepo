@@ -102,7 +102,23 @@
                     <div class="row">
                         <div class="col-md-12">
                             <a class="btn btn-primary btn-lg btn-xs-block" id="InstallButton" href="/Tests/TowerOfLondon/TOLDesktop.aspx"><asp:Localize meta:resourcekey="price_btn"  runat="server" ID="Localize8" Text="" /></a>
-                            <asp:LinkButton ID="paypalsimulate" runat="server" OnClick="paypalsimulate_Click" class="btn btn-primary btn-lg btn-xs-block btn-green pull-right">PayPal response simulation</asp:LinkButton>
+                            
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+
+                            <div class="input-group" ID="IdentifierGroup" Visible="false" runat="server">
+                                <input ID="IdentifierInput" type="text" class="form-control form-control-custom" placeholder="Enter identifier from your desktop application" runat="server"/>
+                                <span class="input-group-btn">
+                                <asp:LinkButton ID="GenerateLicenseBtn" class="btn btn-default btn-inp-group" OnClick="GenerateLicenseBtn_Click" runat="server">
+                                    <asp:Localize meta:resourcekey="generateKeyBtn" runat="server" ID="Localize48" Text="Generate license" />
+                                </asp:LinkButton>
+                                </span>
+                            </div>
+
                         </div>
                     </div>
 
@@ -145,14 +161,21 @@
                             </div>
                             <div class="col-md-6" id="right2">
                                 <h4><asp:Localize meta:resourcekey="testDescription_img2_title"  runat="server" ID="Localize16" Text="" /></h4>
-                                <p><asp:Localize meta:resourcekey="testDescription_img2_paragraph"  runat="server" ID="Localize17" Text="" /></p>
+                                <ul class="exapmles-list">
+                                    <li><span><asp:Localize meta:resourcekey="testDescription_img2_span1"  runat="server" ID="Localize1" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="testDescription_img2_span2"  runat="server" ID="Localize2" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="testDescription_img2_span3"  runat="server" ID="Localize3" Text="" /></span></li>
+                                </ul>
                             </div>
                         </div>
                         <hr class="cogquest-hr"/>
                         <div class="row">
                             <div class="col-md-6" id="left3">
                                 <h4><asp:Localize meta:resourcekey="testDescription_img3_title"  runat="server" ID="Localize18" Text="" /></h4>
-                                <p><asp:Localize meta:resourcekey="testDescription_img3_paragraph"  runat="server" ID="Localize25" Text="" /></p>
+                                <ul class="exapmles-list">
+                                    <li><span><asp:Localize meta:resourcekey="testDescription_img3_span1"  runat="server" ID="Localize5" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="testDescription_img3_span2"  runat="server" ID="Localize17" Text="" /></span></li>
+                                </ul>
                             </div>
                             <div class="col-md-6" id="right3">
                                 <img src="../images/desktops/TOL/DesktopTOL3.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-3" class="img-responsive" />
@@ -165,14 +188,23 @@
                             </div>
                             <div class="col-md-6" id="right4">
                                 <h4><asp:Localize meta:resourcekey="testDescription_img4_title"  runat="server" ID="Localize19" Text="" /></h4>
-                                <p><asp:Localize meta:resourcekey="testDescription_img4_paragraph"  runat="server" ID="Localize24" Text="" /></p>
+                                <ul class="exapmles-list">
+                                    <li><span><asp:Localize meta:resourcekey="testDescription_img4_span1"  runat="server" ID="Localize24" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="testDescription_img4_span2"  runat="server" ID="Localize29" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="testDescription_img4_span3"  runat="server" ID="Localize30" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="testDescription_img4_span4"  runat="server" ID="Localize31" Text="" /></span></li>
+                                </ul>
                             </div>
                         </div>
                         <hr class="cogquest-hr"/>
                         <div class="row">
                             <div class="col-md-6" id="left5">
                                 <h4><asp:Localize meta:resourcekey="testDescription_img5_title"  runat="server" ID="Localize20" Text="" /></h4>
-                                <p><asp:Localize meta:resourcekey="testDescription_img5_paragraph"  runat="server" ID="Localize23" Text="" /></p>
+                                <ul class="exapmles-list">
+                                    <li><span><asp:Localize meta:resourcekey="testDescription_img5_span1"  runat="server" ID="Localize23" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="testDescription_img5_span2"  runat="server" ID="Localize32" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="testDescription_img5_span3"  runat="server" ID="Localize33" Text="" /></span></li>
+                                </ul>
                             </div>
                             <div class="col-md-6" id="right5">
                                 <img src="../images/desktops/TOL/DesktopTOL5.jpg" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-5" class="img-responsive" />
@@ -185,7 +217,10 @@
                             </div>
                             <div class="col-md-6" id="right6">
                                 <h4><asp:Localize meta:resourcekey="testDescription_img6_title"  runat="server" ID="Localize21" Text="" /></h4>
-                                <p><asp:Localize meta:resourcekey="testDescription_img6_paragraph"  runat="server" ID="Localize22" Text="" /></p>
+                                <ul class="exapmles-list">
+                                    <li><span><asp:Localize meta:resourcekey="testDescription_img6_span1"  runat="server" ID="Localize22" Text="" /></span></li>
+                                    <li><span><asp:Localize meta:resourcekey="testDescription_img6_span2"  runat="server" ID="Localize35" Text="" /></span></li>
+                                </ul>
                             </div>
                         </div>
                         <hr class="cogquest-hr"/>
@@ -243,7 +278,7 @@
                         <div class="circle c1 img-circle" id="singlePr" runat="server">
                             <h4 class="blue"><asp:Localize meta:resourcekey="buy_title"  runat="server" ID="Localize26" Text="" /></h4>
                             <span class="icon blue"><i class="fa fa-usd"></i></span>
-                            <span class="price-large blue">5</span>
+                            <span class="price-large blue">499</span>
                             <span class="price-small">.00</span>
                             <br/>
                             <asp:Button ID="single" class="btn btn-info" runat="server" OnClick="Buy_Click" Text="" meta:resourcekey="buy_btn"/>

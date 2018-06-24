@@ -246,8 +246,8 @@
                                         <asp:DropDownList class="dropDown" ID="ddlProvTests" runat="server" Width="50%" OnSelectedIndexChanged="ddlProvTests_SelectedIndexChanged" AppendDataBoundItems="true" AutoPostBack="True"></asp:DropDownList>
                                         <asp:DropDownList class="dropDown" ID="ddlModifiedID" runat="server" Width="40%"></asp:DropDownList>
                                         <div>
-                                            <asp:Button ID="btnPartAddTest" class="btn btn-labeled btn-success" runat="server" Text="" OnClick="btnPartAddTest_Click1" meta:resourcekey="pProviderTools_createUser_btn1" />
-                                            <asp:Button ID="btnCloseAddTest" class="btn btn-labeled btn-info" runat="server" Text="" OnClick="btnCloseAddTest_Click" meta:resourcekey="pProviderTools_createUser_btn2" />
+                                            <asp:Button ID="btnPartAddTest" class="btn btn-labeled btn-success" runat="server" Text="" OnClick="btnPartAddTest_Click1" meta:resourcekey="pProviderTools_assignTest_btn1" />
+                                            <asp:Button ID="btnCloseAddTest" class="btn btn-labeled btn-info" runat="server" Text="" OnClick="btnCloseAddTest_Click" meta:resourcekey="pProviderTools_assignTest_btn2" />
                                         </div>
                                     </div>
                                 </div>
@@ -664,10 +664,10 @@ data="https://www.youtube.com/embed/0JwN9Np1TmE?fs=0">
 
     <div>
         <div class="b-popup" id="popupForProvider" runat="server">
-        <div class="b-popup-content" style="position: relative;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec accumsan eros, non semper orci. Curabitur convallis in nulla commodo interdum. Proin tincidunt vulputate arcu sed bibendum. Etiam accumsan eleifend pharetra. Praesent vehicula mi consequat, scelerisque tellus quis, laoreet metus. Nam eget tristique mi, at bibendum neque. Curabitur aliquam vel neque blandit dignissim. Phasellus sed eros id purus consequat pulvinar. Proin tristique, mi et pulvinar sodales, turpis urna dignissim tellus, et dapibus sapien lectus et neque. Quisque nulla ante, fringilla id mattis aliquet, feugiat a augue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut aliquam enim id augue volutpat, et fringilla elit tristique.</a>
+        <div class="b-popup-content" style="position: relative;"><asp:Localize meta:resourcekey="bpopup"  runat="server" ID="Localize1" Text="" /></a>
             <div style="position:absolute; bottom:10px; display:block">
                 <%--<button class="btn btn-success" OnClick="PopUpHide()" >Close</button>--%>
-                <a class="btn btn-success" href="/provider/ProviderPortal.aspx">Close</a>
+                <a class="btn btn-success" href="/provider/ProviderPortal.aspx"><asp:Localize meta:resourcekey="bpopup_close"  runat="server" ID="Localize2" Text="" /></a>
             </div>
         </div>
         </div>

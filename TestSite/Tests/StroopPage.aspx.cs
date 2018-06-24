@@ -35,6 +35,11 @@ namespace TestSite.Tests
             string avgRespTime
             )
         {
+            var c = System.Threading.Thread.CurrentThread.CurrentCulture;
+            var s = c.NumberFormat.CurrencyDecimalSeparator;
+
+            avgRespTime = avgRespTime.Replace(",", s);
+            avgRespTime = avgRespTime.Replace(".", s);
             DataMethods.InsertStroopResult(_userId, _userTestId, round, Convert.ToInt32(correctRespCount), Convert.ToInt32(incorrectRespCount), Convert.ToDecimal(avgRespTime));
             if (round == "3")
             {

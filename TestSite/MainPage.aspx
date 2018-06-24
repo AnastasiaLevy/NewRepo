@@ -263,7 +263,7 @@
                         <li data-value="all"><a class="active" href="#"><asp:Localize meta:resourcekey="available_nav_all"  runat="server" ID="Localize49" Text="" /></a></li>
                         <li data-value="memory"><a href="#"><asp:Localize meta:resourcekey="available_nav_memory"  runat="server" ID="Localize50" Text="" /></a></li>
                         <li data-value="executive"><a href="#"><asp:Localize meta:resourcekey="available_nav_executive"  runat="server" ID="Localize51" Text="" /></a></li>
-                        <li data-value="mobileapps"><a href="#"><asp:Localize meta:resourcekey="available_nav_mobileapps"  runat="server" ID="Localize52" Text="" /></a></li>
+                        <%--<li data-value="mobileapps"><a href="#"><asp:Localize meta:resourcekey="available_nav_mobileapps"  runat="server" ID="Localize52" Text="" /></a></li>--%>
                         <%--<li data-value="personality"><a href="#">Personality</a></li>--%>
                     </ul>
 
@@ -403,10 +403,10 @@
                         </div>
                         <div class="col-md-4 col-sm-12 col-xs-12">
                             <figure class="effect-oscar">
-                                <img src="images/TOL/TOLWinForms.png"" alt="" class="img-responsive" style="height: 262px;"/>
+                                <img src="images/Desktops/TOL/DesktopTOL1.jpg"" alt="" class="img-responsive" style="height: 262px;"/>
                                 <figcaption>
                                     <h2><asp:Localize meta:resourcekey="desktop_test3_title"  runat="server" ID="Localize68" Text="" /></h2>
-                                    <a href="\Tests\DesktopTowerOfLondonWinForms.aspx"><asp:Localize meta:resourcekey="desktop_test3_ref"  runat="server" ID="Localize70" Text="" /></a>
+                                    <a href="\Tests\DesktopTowerOfLondon.aspx"><asp:Localize meta:resourcekey="desktop_test3_ref"  runat="server" ID="Localize70" Text="" /></a>
                                 </figcaption>
                             </figure>
                             <p class="text-center"><asp:Localize meta:resourcekey="desktop_test3_paragraph"  runat="server" ID="Localize71" Text="" /></p>

@@ -631,7 +631,7 @@ namespace TestSite.DAL
             SqlCommand cmd = new SqlCommand("InsertUserProviderId", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@userId", userId);
-            cmd.Parameters.AddWithValue("@code", "code");
+            cmd.Parameters.AddWithValue("@code", code);
 
             try
             {
@@ -1055,7 +1055,7 @@ namespace TestSite.DAL
             }
         }
 
-        internal static void UpdateProviderTable(string userId)
+        internal static void CreateProvider(string userId)
         {
 
             SqlConnection conn = new SqlConnection(connectionSring);
@@ -1070,8 +1070,8 @@ namespace TestSite.DAL
             }
             catch (Exception ex)
             {
-                InsertErrorMessage(ex.ToString(), null, null, "UpdateProviderTable");
-                throw new Exception("Execption saving Provider " + ex.Message);
+                InsertErrorMessage(ex.ToString(), null, null, "CreateProvider");
+                throw new Exception("Execption creating Provider " + ex.Message);
             }
             finally
             {
@@ -1614,7 +1614,7 @@ namespace TestSite.DAL
                      string exercise,
                      string userName,
                      string health,
-                     DateTime birthDate,
+                     DateTime? birthDate,
                      bool isOnmeds,
                      bool isInj,
                      bool isFilled,
@@ -1625,12 +1625,23 @@ namespace TestSite.DAL
                     )
         {
             int id;
+            if(birthDate == DateTime.MinValue)
+            {
+                birthDate = null;
+            }
             SqlConnection conn = new SqlConnection(connectionSring);
             SqlCommand cmd = new SqlCommand("UpdateRegistrationProfile", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@firstName", firstName);
             cmd.Parameters.AddWithValue("@lastName", lastName);
-            cmd.Parameters.AddWithValue("@birthDate", birthDate);
+            //cmd.Parameters.AddWithValue("@birthDate", birthDate);
+            if(birthDate == null)
+            {
+                cmd.Parameters.AddWithValue("@birthDate", DBNull.Value);
+            }else
+            {
+                cmd.Parameters.AddWithValue("@birthDate", birthDate);
+            }
             cmd.Parameters.AddWithValue("@education", education);
             cmd.Parameters.AddWithValue("@medications", isOnmeds == true ? "1" : "0");
             cmd.Parameters.AddWithValue("@medName", medications);

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Licensing;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -167,15 +168,17 @@ namespace TestSite.Tests
             }
         }
 
+        private const string LibraryKey = "82820B44D0B2320F1EE844E7656A11587FCD08C1150CB84703532D37DC4313A0D71F7B57329D";
 
         protected string _baseUrl;
         protected string _itemName = "CogQuiz Desktop";
         protected string _page = "/Tests/DesktopTowerOfLondon.aspx";
+        protected string _testId = Enums.TestId.TowerOfLondon;
+        protected static int _userTestId;
 
         protected string _userId;
         protected MembershipUser _user;
 
-        public string LicenseEmail { get; set; }
         public string Key { get; set; }
 
         protected override void InitializeCulture()
@@ -199,49 +202,39 @@ namespace TestSite.Tests
             
             if (User.Identity.IsAuthenticated)
             {
-                //login.Visible = false;
-                //profOpt.Visible = true;
-                //logOut.Visible = true;
-
                 _user = Membership.GetUser(User.Identity.Name);
                 _userId = _user.ProviderUserKey.ToString();
-                LicenseEmail = _user.Email;
                 Key = DataMethods.GetTowerOfLondonAppKey(_userId);
-            }
-            else
-            {
-                //login.Visible = true;
-                //profOpt.Visible = false;
-                //logOut.Visible = false;
+
+                if (hasPaidTest(_userId) && Key == null)
+                {
+                    this.IdentifierGroup.Visible = true;
+                }
             }
 
-            if ((IsPostBack || PayPalSimulation) && string.IsNullOrEmpty(Key) && User.Identity.IsAuthenticated)
+            //  Catch response from paypal
+            if ((IsPostBack || PayPalSimulation) && User.Identity.IsAuthenticated)
             {
-                if (PayPalSimulation) Session["PayPalTOLSimulation"] = false;
-
-                //  'st' parameter - added by paypal
                 if (!String.IsNullOrEmpty(Request.QueryString["st"]) && Request.QueryString["st"].Equals("Completed", StringComparison.InvariantCultureIgnoreCase))
                 {
-                    bool success = DataMethods.SetupTowerOfLondonAppKey(_userId);
-                    Key = DataMethods.GetTowerOfLondonAppKey(_userId);
-                    ShowAppKey();
+                    if (PayPalSimulation) Session["PayPalSimulation"] = false;
+
+                    this.IdentifierGroup.Visible = true;
+
+                    if (!hasPaidTest(_userId) && string.IsNullOrEmpty(Key))
+                    {
+                        bool isPaid = UpdateTestPaid(_userId);
+                    }
                 }
-                else
-                {
-                    //TODO: need to show error - paid failed
-                    ShowBuyButton();
-                }
+            }
+
+            if (User.Identity.IsAuthenticated && hasPaidTest(_userId))
+            {
+                ShowAppKey();
             }
             else
             {
-                if (string.IsNullOrEmpty(Key))
-                {
-                    ShowBuyButton();
-                }
-                else
-                {
-                    ShowAppKey();
-                }
+                ShowBuyButton();
             }
 
             Page.DataBind();
@@ -287,6 +280,59 @@ namespace TestSite.Tests
             var url = "DesktopTowerOfLondon.aspx?st=completed";
             Session["PayPalTOLSimulation"] = true;
             Response.Redirect(url);
+        }
+
+        private bool hasPaidTest(string _userId)
+        {
+            int id = DataMethods.HasPaidTest(_userId, _testId);
+            if (id > 1)
+            {
+                _userTestId = id;
+                return true;
+
+            }
+            else
+                return false;
+        }
+
+        private bool UpdateTestPaid(string _userId)
+        {
+            try
+            {
+                DataMethods.InsertTestPaid(_userId, _testId);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                DAL.DataMethods.InsertErrorMessage(ex.ToString(), _userId, "CogQuest");
+                return false;
+            }
+        }
+
+        protected void GenerateLicenseBtn_Click(object sender, EventArgs e)
+        {
+            string identifier = IdentifierInput.Value;
+
+            bool isKeySetup = SetupKey(identifier);
+
+            if (isKeySetup)
+            {
+                Key = DataMethods.GetTowerOfLondonAppKey(_userId);
+                Response.Redirect(Request.RawUrl);
+            }
+        }
+
+        private bool SetupKey(string identifier)
+        {
+            try
+            {
+                string key = LicenseManager.Instance.GenerateLicenseKey(identifier, LibraryKey);
+                return DataMethods.SaveWpfTOLAppKey(_userId, identifier, key);
+            }
+            catch (Exception exc)
+            {
+                return false;
+            }
         }
     }
 }

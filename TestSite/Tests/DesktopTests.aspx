@@ -1,5 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DesktopTests.aspx.cs" MasterPageFile="~/Layout.Master" Inherits="TestSite.Tests.DesktopTests" 
-    culture="auto" uiculture="auto" Title="" meta:resourcekey="pagetitle"%>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DesktopTests.aspx.cs" MasterPageFile="~/Layout.Master" Inherits="TestSite.Tests.DesktopTests"
+    Culture="auto" UICulture="auto" Title="" meta:resourcekey="pagetitle" %>
 
 <asp:Content ContentPlaceHolderID="HeadContent" runat="server">
     <meta charset="utf-8" />
@@ -21,7 +21,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
-    
+
     <style>
         #headerSlider {
             width: 260px;
@@ -83,14 +83,15 @@
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="MenuItemLi" runat="server">
-    <li class=""><a href="#contact"><asp:Localize meta:resourcekey="navbar_order"  runat="server" ID="Localize51" Text="" /></a></li>
+    <li class=""><a href="#contact">
+        <asp:Localize meta:resourcekey="navbar_order" runat="server" ID="Localize51" Text="" /></a></li>
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="MainContent" runat="server">
     <script>
-        
-            $(document).ready(function () {
-                for (var i = 1; i <= 6; i++) {
+
+        $(document).ready(function () {
+            for (var i = 1; i <= 6; i++) {
 
                 //$('#left' + (i)).css('opacity', 0);
                 //$('#right' + (i)).css('opacity', 0);
@@ -100,13 +101,13 @@
                     $(this.element).css('opacity', 1);
                 }, { offset: '100%' });
 
-            $('#right' + (i)).waypoint(function () {
-                $(this.element).addClass('animated bounceInRight');
-            $(this.element).css('opacity', 1);
-                    }, {offset: '100%' });
-                }
-            });
-        
+                $('#right' + (i)).waypoint(function () {
+                    $(this.element).addClass('animated bounceInRight');
+                    $(this.element).css('opacity', 1);
+                }, { offset: '100%' });
+            }
+        });
+
         /*
     ------------------------------------------------------------
     Function to activate form button to open the slider.
@@ -172,33 +173,56 @@
             <a class="round-button">+</a>
         </div>
         <div id="headerSlider">
-            <h4><asp:Localize meta:resourcekey="GoTo"  runat="server" ID="Localize46" Text="" /><span id="closeButton" class="form-slide-close pull-right" onclick="close_panel();  ">X</span></h4>
+            <h4>
+                <asp:Localize meta:resourcekey="GoTo" runat="server" ID="Localize46" Text="" /><span id="closeButton" class="form-slide-close pull-right" onclick="close_panel();  ">X</span></h4>
             <%--<p><a href="#intro">About Cognitive Testing</a></p>--%>
             <p>
-                <li><a href="#london"><asp:Localize meta:resourcekey="GoToTOL"  runat="server" ID="Localize1" Text="" /></a></li>
+                <li><a href="#london">
+                    <asp:Localize meta:resourcekey="GoToTOL" runat="server" ID="Localize1" Text="" /></a></li>
             </p>
             <p>
-                <li class=""><a href="#cardSort"><asp:Localize meta:resourcekey="GoToCS"  runat="server" ID="Localize2" Text="" /></a></li>
+                <li class=""><a href="#cardSort">
+                    <asp:Localize meta:resourcekey="GoToCS" runat="server" ID="Localize2" Text="" /></a></li>
             </p>
             <p>
-                <li class=""><a href="#CPT"><asp:Localize meta:resourcekey="GoToCPT"  runat="server" ID="Localize3" Text="" /></a></li>
+                <li class=""><a href="#cpt">
+                    <asp:Localize meta:resourcekey="GoToCPT" runat="server" ID="Localize3" Text="" /></a></li>
             </p>
             <p>
-                <li class=""><a href="#hanoi"><asp:Localize meta:resourcekey="GoToTOH"  runat="server" ID="Localize4" Text="" /></a></li>
+                <li class=""><a href="#hanoi">
+                    <asp:Localize meta:resourcekey="GoToTOH" runat="server" ID="Localize4" Text="" /></a></li>
             </p>
             <p>
-                <li class=""><a href="#reaction"><asp:Localize meta:resourcekey="GoToRT"  runat="server" ID="Localize5" Text="" /></a></li>
+                <li class=""><a href="#reaction">
+                    <asp:Localize meta:resourcekey="GoToRT" runat="server" ID="Localize5" Text="" /></a></li>
             </p>
             <p>
-                <li class=""><a href="#trails"><asp:Localize meta:resourcekey="GoToTrails"  runat="server" ID="Localize6" Text="" /></a></li>
+                <li class=""><a href="#trails">
+                    <asp:Localize meta:resourcekey="GoToTrails" runat="server" ID="Localize6" Text="" /></a></li>
+            </p>
+            <p>
+                <li class=""><a href="#nbk">
+                    <asp:Localize meta:resourcekey="GoTonbk" runat="server" ID="Localize79" Text="" /></a></li>
+            </p>
+            <p>
+                <li class=""><a href="#vrb">
+                    <asp:Localize meta:resourcekey="GoTovrb" runat="server" ID="Localize80" Text="" /></a></li>
+            </p>
+            <p>
+                <li class=""><a href="#mmc">
+                    <asp:Localize meta:resourcekey="GoTommc" runat="server" ID="Localize81" Text="" /></a></li>
+            </p>
+            <p>
+                <li class=""><a href="#spt">
+                    <asp:Localize meta:resourcekey="GoTospt" runat="server" ID="Localize82" Text="" /></a></li>
             </p>
         </div>
     </div>
 
 
     <%--<form runat="server">--%>
-        <!-- Navigation -->
-        <%--<nav class="navbar navbar-inverse navbar-fixed-top">
+    <!-- Navigation -->
+    <%--<nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -227,7 +251,7 @@
             </div>
         </nav>--%>
 
-        <%--<div class="sidebar-nav" style="position: fixed; margin-top: 10%">
+    <%--<div class="sidebar-nav" style="position: fixed; margin-top: 10%">
             <div class="well" style="width: 120px; padding: 8px 0;">
                 <ul class="nav nav-list">
 
@@ -242,858 +266,1463 @@
             </div>
         </div>--%>
 
-        <section id="about">
-            <div class="container testDescription">
-                <h1><asp:Localize meta:resourcekey="about_title"  runat="server" ID="Localize7" Text="" /></h1>
-                <hr />
-                <img src="../images/desktops/backgr.png" style="width: 100%;" />
+    <section id="about">
+        <div class="container testDescription">
+            <h1>
+                <asp:Localize meta:resourcekey="about_title" runat="server" ID="Localize7" Text="" /></h1>
+            <hr />
+            <img src="../images/desktops/backgr.png" style="width: 100%;" />
 
+            <p>
+                <asp:Localize meta:resourcekey="about_paragraph" runat="server" ID="Localize8" Text="" />
+            </p>
+
+        </div>
+
+        <div class="container">
+            <asp:Label ID="existsMessage" CssClass="errorMessage" runat="server" Text=""></asp:Label>
+
+            <%--   <asp:LinkButton ID="runTest" runat="server" class="signup-btn" OnClick="runTest_Click">Download</asp:LinkButton>--%>
+
+            <section id="deskTopList">
+                <div class="row">
+                    <div class="box btn-wrapper">
+                        <div class="col-lg-12">
+                            <hr />
+                            <h2 class="intro-text text-center"><strong>
+                                <asp:Localize meta:resourcekey="about_deskTopList_title" runat="server" ID="Localize9" Text="" /></strong>
+                            </h2>
+                            <hr />
+                        </div>
+                        <div class="video-btns dt-video-btns">
+                            <a href="#london" >
+                                <span><strong>
+                                    <asp:Localize meta:resourcekey="about_deskTopList_buttonTOL" runat="server" ID="Localize10" Text="" /></strong></span>
+                            </a>
+                            <a href="#cardSort" >
+                                <span><strong>
+                                    <asp:Localize meta:resourcekey="about_deskTopList_buttonCS" runat="server" ID="Localize11" Text="" /></strong></span>
+                            </a>
+                            <a href="#cpt" >
+                                <span><strong>
+                                    <asp:Localize meta:resourcekey="about_deskTopList_buttonCP" runat="server" ID="Localize12" Text="" /></strong></span>
+                            </a>
+                            <a href="#hanoi" >
+                                <span><strong>
+                                    <asp:Localize meta:resourcekey="about_deskTopList_buttonTOH" runat="server" ID="Localize13" Text="" /></strong></span>
+                            </a>
+                            <a href="#reaction" >
+                                <span><strong>
+                                    <asp:Localize meta:resourcekey="about_deskTopList_buttonRT" runat="server" ID="Localize14" Text="" /></strong></span>
+                            </a>
+                            <a href="#trails" >
+                                <span><strong>
+                                    <asp:Localize meta:resourcekey="about_deskTopList_buttonTrails" runat="server" ID="Localize15" Text="" /></strong></span>
+                            </a>
+                            <a href="#nbk" >
+                                <span><strong>
+                                    <asp:Localize meta:resourcekey="about_deskTopList_buttonnbk" runat="server" ID="Localize83" Text="" /></strong></span>
+                            </a>
+                            <a href="#vrb" >
+                                <span><strong>
+                                    <asp:Localize meta:resourcekey="about_deskTopList_buttonvrb" runat="server" ID="Localize84" Text="" /></strong></span>
+                            </a>
+                            <a href="#mmc" >
+                                <span><strong>
+                                    <asp:Localize meta:resourcekey="about_deskTopList_buttonmmc" runat="server" ID="Localize85" Text="" /></strong></span>
+                            </a>
+                            <a href="#spt" >
+                                <span><strong>
+                                    <asp:Localize meta:resourcekey="about_deskTopList_buttonspt" runat="server" ID="Localize86" Text="" /></strong></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+
+
+
+            </section>
+
+        </div>
+
+    </section>
+
+    <section class="container testDescription" id="london">
+        <%--=======================LONDON===========================--%>
+        <h1>
+            <asp:Localize meta:resourcekey="london_title" runat="server" ID="Localize50" Text="" /></h1>
+        <hr />
+        <div class="row">
+            <div class="col-md-6" id="left1">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="../images/desktops/lnd_1.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-1" class="img-responsive"  />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/lnd_2.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-2" class="img-responsive" style="margin-bottom: 30px;" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/lnd_3.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-3" class="img-responsive" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/lnd_4.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-4" class="img-responsive" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6" id="right1">
                 <p>
-                    <asp:Localize meta:resourcekey="about_paragraph"  runat="server" ID="Localize8" Text="" />
+                    <asp:Localize meta:resourcekey="london_paragraph1" runat="server" ID="Localize48" Text="" />
                 </p>
 
+                <p>
+                    <asp:Localize meta:resourcekey="london_paragraph2" runat="server" ID="Localize49" Text="" />
+                </p>
             </div>
-
-            <div class="container">
-                <asp:Label ID="existsMessage" CssClass="errorMessage" runat="server" Text=""></asp:Label>
-
-                <%--   <asp:LinkButton ID="runTest" runat="server" class="signup-btn" OnClick="runTest_Click">Download</asp:LinkButton>--%>
-
-                <section id="deskTopList">
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6" id="left2">
+                <p>
+                    <asp:Localize meta:resourcekey="london_paragraph3" runat="server" ID="Localize55" Text="" />
+                </p>
+            </div>
+            <div class="col-md-6" id="right2">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="../images/desktops/lnd_5.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-5" class="img-responsive" style="margin-bottom: 10px;" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/lnd_6.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-6" class="img-responsive" style="margin-bottom: 40px;" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/lnd_7.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-7" class="img-responsive" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/lnd_1.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-1" class="img-responsive" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <p>
+            <asp:Localize meta:resourcekey="london_paragraph4" runat="server" ID="Localize52" Text="" />
+        </p>
+        <section id="Section6" runat="server">
+            <div>
+                <div class="container">
                     <div class="row">
-                        <div class="box btn-wrapper">
-                            <div class="col-lg-12">
-                                <hr />
-                                <h2 class="intro-text text-center"><strong><asp:Localize meta:resourcekey="about_deskTopList_title"  runat="server" ID="Localize9" Text="" /></strong>
-                                </h2>
-                                <hr />
-                            </div>
-                            <div class="col-sm-2 text-center">
-                                <a href="#london" class="btn btn-labeled btn-info">
-                                    <span><strong><asp:Localize meta:resourcekey="about_deskTopList_buttonTOL"  runat="server" ID="Localize10" Text="" /></strong></span>
-                                </a>
-                            </div>
-                            <div class="col-sm-2 text-center">
-                                <a href="#cardSort" class="btn btn-labeled btn-info">
-                                    <span><strong><asp:Localize meta:resourcekey="about_deskTopList_buttonCS"  runat="server" ID="Localize11" Text="" /></strong></span>
-                                </a>
-                            </div>
-                            <div class="col-sm-2 text-center">
-                                <a href="#CPT" class="btn btn-labeled btn-info">
-                                    <span><strong><asp:Localize meta:resourcekey="about_deskTopList_buttonCP"  runat="server" ID="Localize12" Text="" /></strong></span>
-                                </a>
-                            </div>
-                            <div class="col-sm-2 text-center">
-                                <a href="#hanoi" class="btn btn-labeled btn-info">
-                                    <span><strong><asp:Localize meta:resourcekey="about_deskTopList_buttonTOH"  runat="server" ID="Localize13" Text="" /></strong></span>
-                                </a>
-                            </div>
-                            <div class="col-sm-2 text-center">
-                                <a href="#reaction" class="btn btn-labeled btn-info">
-                                    <span><strong><asp:Localize meta:resourcekey="about_deskTopList_buttonRT"  runat="server" ID="Localize14" Text="" /></strong></span>
-                                </a>
-                            </div>
-                            <div class="col-sm-2 text-center">
-                                <a href="#trails" class="btn btn-labeled btn-info">
-                                    <span><strong><asp:Localize meta:resourcekey="about_deskTopList_buttonTrails"  runat="server" ID="Localize15" Text="" /></strong></span>
-                                </a>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-
-                </section>
-
-            </div>
-
-        </section>
-
-        <section class="container margin testDescription" id="london">
-            <%--=======================LONDON===========================--%>
-            <h1><asp:Localize meta:resourcekey="london_title"  runat="server" ID="Localize50" Text="" /></h1>
-            <hr />
-            <div class="row">
-                            <div class="col-md-6" id="left1">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <img src="../images/desktops/lnd_1.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-1" class="img-responsive" style="margin-bottom: 30px;"/>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="../images/desktops/lnd_2.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-2" class="img-responsive" style="margin-bottom: 30px;"/>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="../images/desktops/lnd_3.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-3" class="img-responsive" />
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="../images/desktops/lnd_4.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-4" class="img-responsive" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6" id="right1">
-                                <ul class="exapmles-list">
-                                    <p>
-                                        <asp:Localize meta:resourcekey="london_paragraph1"  runat="server" ID="Localize48" Text="" />
-                                    </p>
-
-                                    <p>
-                                        <asp:Localize meta:resourcekey="london_paragraph2"  runat="server" ID="Localize49" Text="" />
-                                    </p>
-                                </ul>
-                            </div>
-            </div>
-            <div class="row">
-                            <div class="col-md-6" id="left2">
-                                <ul class="exapmles-list">
-
-                                    <p>
-                                        <asp:Localize meta:resourcekey="london_paragraph3"  runat="server" ID="Localize55" Text="" />
-                                    </p>
-                                </ul>
-                            </div>
-                            <div class="col-md-6" id="right2">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <img src="../images/desktops/lnd_5.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-5" class="img-responsive" style="margin-bottom: 30px;"/>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="../images/desktops/lnd_6.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-6" class="img-responsive" style="margin-bottom: 30px;"/>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="../images/desktops/lnd_7.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-7" class="img-responsive" />
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="../images/desktops/lnd_1.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-1" class="img-responsive" />
-                                    </div>
-                                </div>
-                            </div>
-            </div>
-            <p>
-                <asp:Localize meta:resourcekey="london_paragraph4"  runat="server" ID="Localize52" Text="" />  
-            </p>
-            <section id="Section6" runat="server">
-                <div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="circle c1 img-circle">
-                                    <h4 class="blue"><asp:Localize meta:resourcekey="london_install"  runat="server" ID="Localize54" Text="" /></h4>
-                                    <span class="icon blue"><i class="fa fa-usd"></i></span>
-                                    <span class="price-large blue">5</span>
-                                    <span class="price-small">.00</span>
-                                    <p><a href="DesktopTowerOfLondon.aspx" class="btn btn-info"><asp:Localize meta:resourcekey="london_orderNow"  runat="server" ID="Localize56" Text="" /> </a></p>
-                                    <%--       <asp:Button ID="single" class="btn btn-info" runat="server" OnClick="single_Click" Text="Buy Now" />--%>
-                                </div>
+                        <div class="col-md-4">
+                            <div class="circle c1 img-circle">
+                                <h4 class="blue">
+                                    <asp:Localize meta:resourcekey="london_install" runat="server" ID="Localize54" Text="" /></h4>
+                                <span class="icon blue"><i class="fa fa-usd"></i></span>
+                                <span class="price-large blue">499</span>
+                                <span class="price-small">.00</span>
+                                <p>
+                                    <a href="DesktopTowerOfLondon.aspx" class="btn btn-info">
+                                        <asp:Localize meta:resourcekey="london_orderNow" runat="server" ID="Localize56" Text="" />
+                                    </a>
+                                </p>
+                                <%--       <asp:Button ID="single" class="btn btn-info" runat="server" OnClick="single_Click" Text="Buy Now" />--%>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-            <%--==================================================--%>
-
-            <%--=======================cardSort===========================--%>
-            <h1><asp:Localize meta:resourcekey="cardSort_title"  runat="server" ID="Localize57" Text="" /></h1>
-            <hr />
-            <div class="row">
-                            <div class="col-md-6" id="left3">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <img src="../images/desktops/cs_1.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-8" class="img-responsive" style="margin-bottom: 30px;"/>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="../images/desktops/cs_2.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-9" class="img-responsive" style="margin-bottom: 30px;"/>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="../images/desktops/cs_3.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-10" class="img-responsive" />
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="../images/desktops/cs_4.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-11" class="img-responsive" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6" id="right3">
-                                <ul class="exapmles-list">
-                                    <p>
-                                        <asp:Localize meta:resourcekey="london_paragraph2"  runat="server" ID="Localize60" Text="" />
-                                    </p>
-                                </ul>
-                            </div>
-            </div>
-            <div class="row">
-                            <div class="col-md-6" id="left4">
-                                <ul class="exapmles-list">
-
-                                    <p>
-                                        <asp:Localize meta:resourcekey="cardSort_paragraph1"  runat="server" ID="Localize62" Text="" />
-                                    </p>
-                                </ul>
-                            </div>
-                            <div class="col-md-6" id="right4">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <img src="../images/desktops/cs_5.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-12" class="img-responsive" style="margin-bottom: 30px;"/>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="../images/desktops/cs_6.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-13" class="img-responsive" style="margin-bottom: 30px;"/>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="../images/desktops/cs_7.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-14" class="img-responsive" />
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="../images/desktops/cs_1.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-8" class="img-responsive" />
-                                    </div>
-                                </div>
-                            </div>
-            </div>
-            <p>
-                <asp:Localize meta:resourcekey="cardSort_paragraph2"  runat="server" ID="Localize63" Text="" />  
-            </p>
-            <section id="Section2" runat="server">
-                <div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="circle c1 img-circle">
-                                    <h4 class="blue"><asp:Localize meta:resourcekey="CardSort_install"  runat="server" ID="Localize40" Text="" /></h4>
-                                    <span class="icon blue"><i class="fa fa-usd"></i></span>
-                                    <span class="price-large blue">499</span>
-                                    <span class="price-small">.00</span>
-                                    <p><a href="#contact" class="btn btn-info"><asp:Localize meta:resourcekey="cardSort_orderNow"  runat="server" ID="Localize24" Text="" /></a></p>
-                                    <%--     <asp:Button ID="Button2" class="btn btn-info" runat="server" OnClick="single_Click" Text="Buy Now" />--%>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <%--==================================================--%>
-
-            <%--=======================CPT===========================--%>
-            <h1><asp:Localize meta:resourcekey="CPT_title"  runat="server" ID="Localize16" Text="" /></h1>
-            <hr />
-            <div class="row">
-                            <div class="col-md-6" id="left5">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <img src="../images/desktops/CPT_1.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-15" class="img-responsive" style="margin-bottom: 30px;"/>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="../images/desktops/CPT_2.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-16" class="img-responsive" style="margin-bottom: 30px;"/>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="../images/desktops/CPT_3.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-17" class="img-responsive" />
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="../images/desktops/CPT_4.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-18" class="img-responsive" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6" id="right5">
-                                <ul class="exapmles-list">
-                                    <p>
-                                        <asp:Localize meta:resourcekey="CPT_paragraph1"  runat="server" ID="Localize18" Text="" />
-                                    </p>
-                                </ul>
-                            </div>
-            </div>
-            <div class="row">
-                            <div class="col-md-6" id="left6">
-                                <ul class="exapmles-list">
-
-                                    <p>
-                                        <asp:Localize meta:resourcekey="CPT_paragraph2"  runat="server" ID="Localize21" Text="" />
-                                    </p>
-                                </ul>
-                            </div>
-                            <div class="col-md-6" id="right6">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <img src="../images/desktops/CPT_5.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-19" class="img-responsive" style="margin-bottom: 30px;"/>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="../images/desktops/CPT_6.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-20" class="img-responsive" style="margin-bottom: 30px;"/>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="../images/desktops/CPT_7.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-21" class="img-responsive" />
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="../images/desktops/CPT_1.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-15" class="img-responsive" />
-                                    </div>
-                                </div>
-                            </div>
-            </div>
-            <section id="Section3" runat="server">
-                <div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="circle c1 img-circle">
-                                    <h4 class="blue"><asp:Localize meta:resourcekey="CPT_install"  runat="server" ID="Localize41" Text="" /></h4>
-                                    <span class="icon blue"><i class="fa fa-usd"></i></span>
-                                    <span class="price-large blue">299</span>
-                                    <span class="price-small">.00</span>
-                                    <p><a href="#contact" class="btn btn-info"><asp:Localize meta:resourcekey="CPT_orderNow"  runat="server" ID="Localize27" Text="" /></a></p>
-                                    <%--    <asp:Button ID="Button3" class="btn btn-info" runat="server" OnClick="single_Click" Text="Buy Now" />--%>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <%--==================================================--%>
-
-            <%--=======================hanoi===========================--%>
-            <h1><asp:Localize meta:resourcekey="hanoi_title"  runat="server" ID="Localize19" Text="" /></h1>
-            <hr />
-            <div class="row">
-                            <div class="col-md-6" id="left7">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <img src="../images/desktops/toh_1.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-22" class="img-responsive" style="margin-bottom: 30px;"/>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="../images/desktops/toh_2.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-23" class="img-responsive" style="margin-bottom: 30px;"/>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="../images/desktops/toh_3.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-24" class="img-responsive" />
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="../images/desktops/toh_4.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-25" class="img-responsive" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6" id="right7">
-                                <h4><asp:Localize meta:resourcekey="examples_conteiner2_title"  runat="server" ID="Localize22" Text="" /></h4>
-                                <ul class="exapmles-list">
-                                    <p>
-                                        <asp:Localize meta:resourcekey="hanoi_paragraph1"  runat="server" ID="Localize23" Text="" />
-                                    </p>
-                                </ul>
-                            </div>
-            </div>
-            <div class="row">
-                            <div class="col-md-6" id="left8">
-                                <h4><asp:Localize meta:resourcekey="examples_conteiner2_title"  runat="server" ID="Localize25" Text="" /></h4>
-                                <ul class="exapmles-list">
-
-                                    <p>
-                                        <asp:Localize meta:resourcekey="hanoi_paragraph2"  runat="server" ID="Localize26" Text="" />
-                                    </p>
-                                </ul>
-                            </div>
-                            <div class="col-md-6" id="right8">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <img src="../images/desktops/toh_5.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-26" class="img-responsive" style="margin-bottom: 30px;"/>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="../images/desktops/toh_6.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-27" class="img-responsive" style="margin-bottom: 30px;"/>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="../images/desktops/toh_7.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-28" class="img-responsive" />
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="../images/desktops/toh_1.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-22" class="img-responsive" />
-                                    </div>
-                                </div>
-                            </div>
-            </div>
-            <p>
-                 <asp:Localize meta:resourcekey="hanoi_paragraph3"  runat="server" ID="Localize17" Text="" />
-            </p>
-            <section id="Section7" runat="server">
-                <div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="circle c1 img-circle">
-                                    <h4 class="blue"><asp:Localize meta:resourcekey="hanoi_install"  runat="server" ID="Localize39" Text="" /></h4>
-                                    <span class="icon blue"><i class="fa fa-usd"></i></span>
-                                    <span class="price-large blue">299</span>
-                                    <span class="price-small">.00</span>
-                                    <p><a href="#contact" class="btn btn-info"><asp:Localize meta:resourcekey="hanoi_orderNow"  runat="server" ID="Localize59" Text="" /></a></p>
-                                    <%--    <asp:Button ID="Button3" class="btn btn-info" runat="server" OnClick="single_Click" Text="Buy Now" />--%>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <%--==================================================--%>
-
-            <%--=======================reaction===========================--%>
-            <h1><asp:Localize meta:resourcekey="reaction_title"  runat="server" ID="Localize20" Text="" /></h1>
-            <hr />
-            <div class="row">
-                            <div class="col-md-6" id="left9">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <img src="../images/DesktopTests1.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-29" class="img-responsive" style="margin-bottom: 30px; max-height: 192px;"/>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="../images/DesktopTests2.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-30" class="img-responsive" style="margin-bottom: 30px;"/>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="../images/DesktopTests3.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-31" class="img-responsive" />
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="../images/DesktopTests4.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-32" class="img-responsive" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6" id="right9">
-                                <ul class="exapmles-list">
-                                    <p>
-                                        <asp:Localize meta:resourcekey="reaction_paragraph1"  runat="server" ID="Localize28" Text="" />
-                                    </p>
-                                </ul>
-                            </div>
-            </div>
-            <div class="row">
-                            <div class="col-md-6" id="left10">
-                                <h4><asp:Localize meta:resourcekey="examples_conteiner2_title"  runat="server" ID="Localize35" Text="" /></h4>
-                                <ul class="exapmles-list">
-
-                                    <p>
-                                        <asp:Localize meta:resourcekey="reaction_paragraph2"  runat="server" ID="Localize29" Text="" />
-                                    </p>
-                                </ul>
-                            </div>
-                            <div class="col-md-6" id="right10">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <img src="../images/DesktopTests5.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-33" class="img-responsive" style="margin-bottom: 30px; max-height: 171px;"/>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="../images/DesktopTests6.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-34" class="img-responsive" style="margin-bottom: 30px;"/>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="../images/DesktopTests7.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-35" class="img-responsive" />
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="../images/DesktopTests8.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-29" class="img-responsive" />
-                                    </div>
-                                </div>
-                            </div>
-            </div>
-            <section id="Section4" runat="server">
-                <div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="circle c1 img-circle">
-                                    <h4 class="blue"><asp:Localize meta:resourcekey="reaction_install"  runat="server" ID="Localize30" Text="" /></h4>
-                                    <span class="icon blue"><i class="fa fa-usd"></i></span>
-                                    <span class="price-large blue">99</span>
-                                    <span class="price-small">.00</span>
-                                    <p><a href="#contact" class="btn btn-info"><asp:Localize meta:resourcekey="reaction_orderNow"  runat="server" ID="Localize42" Text="" /></a></p>
-                                    <%--          <asp:Button ID="Button5" class="btn btn-info" runat="server" OnClick="single_Click" Text="Buy Now" />--%>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <%--==================================================--%>
-
-            <%--=======================trails===========================--%>
-            <h1><asp:Localize meta:resourcekey="trails_title"  runat="server" ID="Localize31" Text="" /></h1>
-            <hr />
-            <div class="row">
-                            <div class="col-md-6" id="left11">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <img src="../images/desktops/tnt_1.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-36" class="img-responsive" style="margin-bottom: 30px; max-width: 206px;"/>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="../images/desktops/tnt_2.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-37" class="img-responsive" style="margin-bottom: 30px;"/>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="../images/desktops/tnt_3.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-38" class="img-responsive" />
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="../images/desktops/tnt_4.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-39" class="img-responsive" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6" id="right11">
-                                <ul class="exapmles-list">
-                                    <p>
-                                        <asp:Localize meta:resourcekey="trails_paragraph1"  runat="server" ID="Localize33" Text="" />
-                                    </p>
-                                </ul>
-                            </div>
-            </div>
-            <div class="row">
-                            <div class="col-md-6" id="left12">
-                                <ul class="exapmles-list">
-
-                                    <p>
-                                        <asp:Localize meta:resourcekey="trails_paragraph2"  runat="server" ID="Localize47" Text="" />
-                                    </p>
-                                </ul>
-                            </div>
-                            <div class="col-md-6" id="right12">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <img src="../images/desktops/tnt_5.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-40" class="img-responsive" style="margin-bottom: 30px; max-width: 207px;"/>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="../images/desktops/tnt_6.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-41" class="img-responsive" style="margin-bottom: 30px;"/>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="../images/desktops/tnt_7.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-42" class="img-responsive" />
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="../images/desktops/tnt_1.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-36" class="img-responsive" />
-                                    </div>
-                                </div>
-                            </div>
-            </div>
-            <p>
-                 <asp:Localize meta:resourcekey="trails_paragraph3"  runat="server" ID="Localize53" Text="" />
-            </p>
-            <section id="Section5" runat="server">
-                <div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="circle c1 img-circle">
-                                    <h4 class="blue"><asp:Localize meta:resourcekey="trails_install"  runat="server" ID="Localize32" Text="" /></h4>
-                                    <span class="icon blue"><i class="fa fa-usd"></i></span>
-                                    <span class="price-large blue">299</span>
-                                    <span class="price-small">.00</span>
-                                    <p><a href="#contact" class="btn btn-info"><asp:Localize meta:resourcekey="trails_orderNow"  runat="server" ID="Localize43" Text="" /></a></p>
-                                    <%--    <asp:Button ID="Button1" class="btn btn-info" runat="server" OnClick="single_Click" Text="Activate" />--%>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <%--==================================================--%>
-
-            <div class="modal fade bs-modal-1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="../images/desktops/lnd_1.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade bs-modal-2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="../images/desktops/lnd_2.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade bs-modal-3" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="../images/desktops/lnd_3.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade bs-modal-4" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="../images/desktops/lnd_4.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade bs-modal-5" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="../images/desktops/lnd_5.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade bs-modal-6" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="../images/desktops/lnd_6.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade bs-modal-7" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="../images/desktops/lnd_7.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade bs-modal-8" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="../images/desktops/cs_1.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade bs-modal-9" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="../images/desktops/cs_2.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade bs-modal-10" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="../images/desktops/cs_3.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade bs-modal-11" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="../images/desktops/cs_4.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade bs-modal-12" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="../images/desktops/cs_5.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade bs-modal-13" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="../images/desktops/cs_6.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade bs-modal-14" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="../images/desktops/cs_7.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade bs-modal-15" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="../images/desktops/CPT_1.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade bs-modal-16" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="../images/desktops/CPT_2.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade bs-modal-17" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="../images/desktops/CPT_3.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade bs-modal-18" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="../images/desktops/CPT_4.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade bs-modal-19" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="../images/desktops/CPT_5.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade bs-modal-20" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="../images/desktops/CPT_6.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade bs-modal-21" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="../images/desktops/CPT_7.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade bs-modal-22" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="../images/desktops/toh_1.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade bs-modal-23" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="../images/desktops/toh_2.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade bs-modal-24" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="../images/desktops/toh_3.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade bs-modal-25" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="../images/desktops/toh_4.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade bs-modal-26" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="../images/desktops/toh_5.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade bs-modal-27" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="../images/desktops/toh_6.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade bs-modal-28" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="../images/desktops/toh_7.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade bs-modal-29" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="../images/DesktopTests1.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade bs-modal-30" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="../images/DesktopTests2.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade bs-modal-31" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="../images/DesktopTests3.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade bs-modal-32" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="../images/DesktopTests4.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade bs-modal-33" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="../images/DesktopTests5.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade bs-modal-34" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="../images/DesktopTests6.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade bs-modal-35" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="../images/DesktopTests7.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade bs-modal-36" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="../images/desktops/tnt_1.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade bs-modal-37" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="../images/desktops/tnt_2.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade bs-modal-38" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="../images/desktops/tnt_3.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade bs-modal-39" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="../images/desktops/tnt_4.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade bs-modal-40" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="../images/desktops/tnt_5.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade bs-modal-41" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="../images/desktops/tnt_6.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade bs-modal-42" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <img src="../images/desktops/tnt_7.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
-                    </div>
-                </div>
-            </div>
-            
-
-        <section id="contact">
-            <div class="container" style="height: 300px">
-                <h4><asp:Localize meta:resourcekey="contact_title"  runat="server" ID="Localize37" Text="" /></h4>
-                <h4 id="contactError" runat="server"></h4>
-                <%--<asp:Label class="label" ID="name" runat="server" Text="Your Name:"></asp:Label>--%>
-                <asp:Label class="label" ID="name" runat="server" ><asp:Localize meta:resourcekey="contact_emailName"  runat="server" ID="Localize38" Text="" /></asp:Label>
-                <input id="emailName" class="email" type="text" runat="server" />
-                <asp:Label class="label" ID="Label2" runat="server" Text="Your Email:" meta:resourcekey="contact_emailFrom"></asp:Label>
-                <input id="emailFrom" class="email" type="text" runat="server" />
-                <asp:Label class="label" ID="Label3" runat="server" Text="Message:" meta:resourcekey="contact_emailText"></asp:Label>
-                <textarea id="emailText" style="resize: none;" class="email" cols="20" rows="5" runat="server"></textarea>
-
-                <asp:LinkButton class="bnt btn-sm btn-success" type="submit" runat="server" OnClick="clcSendButton"><asp:Localize meta:resourcekey="contact_submit"  runat="server" ID="Localize45" Text="" /></asp:LinkButton>
-
             </div>
         </section>
-</asp:content>
+        <%--==================================================--%>
+    </section>
+
+    <section class="container margin testDescription" id="cardSort">
+        <%--=======================cardSort===========================--%>
+        <h1>
+            <asp:Localize meta:resourcekey="cardSort_title" runat="server" ID="Localize57" Text="" /></h1>
+        <hr />
+        <div class="row">
+            <div class="col-md-6" id="left3">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="../images/desktops/cs_1.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-8" class="img-responsive" style="margin-bottom: 30px;" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/cs_2.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-9" class="img-responsive" style="margin-bottom: 30px;" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/cs_3.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-10" class="img-responsive" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/cs_4.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-11" class="img-responsive" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6" id="right3">
+                    <p>
+                        <asp:Localize meta:resourcekey="london_paragraph2" runat="server" ID="Localize60" Text="" />
+                    </p>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6" id="left4">
+
+                    <p>
+                        <asp:Localize meta:resourcekey="cardSort_paragraph1" runat="server" ID="Localize62" Text="" />
+                    </p>
+            </div>
+            <div class="col-md-6" id="right4">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="../images/desktops/cs_5.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-12" class="img-responsive" style="margin-bottom: 30px;" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/cs_6.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-13" class="img-responsive" style="margin-bottom: 30px;" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/cs_7.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-14" class="img-responsive" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/cs_1.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-8" class="img-responsive" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <p>
+            <asp:Localize meta:resourcekey="cardSort_paragraph2" runat="server" ID="Localize63" Text="" />
+        </p>
+        <section id="Section2" runat="server">
+            <div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="circle c1 img-circle">
+                                <h4 class="blue">
+                                    <asp:Localize meta:resourcekey="CardSort_install" runat="server" ID="Localize40" Text="" /></h4>
+                                <span class="icon blue"><i class="fa fa-usd"></i></span>
+                                <span class="price-large blue">499</span>
+                                <span class="price-small">.00</span>
+                                <p>
+                                    <a href="#contact" class="btn btn-info">
+                                        <asp:Localize meta:resourcekey="cardSort_orderNow" runat="server" ID="Localize24" Text="" /></a>
+                                </p>
+                                <%--     <asp:Button ID="Button2" class="btn btn-info" runat="server" OnClick="single_Click" Text="Buy Now" />--%>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <%--==================================================--%>
+    </section>
+
+    <section class="container margin testDescription" id="cpt">
+        <%--=======================CPT===========================--%>
+        <h1>
+            <asp:Localize meta:resourcekey="CPT_title" runat="server" ID="Localize16" Text="" /></h1>
+        <hr />
+        <div class="row">
+            <div class="col-md-6" id="left5">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="../images/desktops/CPT_1.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-15" class="img-responsive" style="margin-bottom: 30px;" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/CPT_2.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-16" class="img-responsive" style="margin-bottom: 30px;" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/CPT_3.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-17" class="img-responsive" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/CPT_4.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-18" class="img-responsive" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6" id="right5">
+                    <p>
+                        <asp:Localize meta:resourcekey="CPT_paragraph1" runat="server" ID="Localize18" Text="" />
+                    </p>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6" id="left6">
+
+                    <p>
+                        <asp:Localize meta:resourcekey="CPT_paragraph2" runat="server" ID="Localize21" Text="" />
+                    </p>
+            </div>
+            <div class="col-md-6" id="right6">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="../images/desktops/CPT_5.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-19" class="img-responsive" style="margin-bottom: 30px;" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/CPT_6.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-20" class="img-responsive" style="margin-bottom: 30px;" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/CPT_7.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-21" class="img-responsive" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/CPT_1.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-15" class="img-responsive" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section id="Section3" runat="server">
+            <div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="circle c1 img-circle">
+                                <h4 class="blue">
+                                    <asp:Localize meta:resourcekey="CPT_install" runat="server" ID="Localize41" Text="" /></h4>
+                                <span class="icon blue"><i class="fa fa-usd"></i></span>
+                                <span class="price-large blue">299</span>
+                                <span class="price-small">.00</span>
+                                <p>
+                                    <a href="#contact" class="btn btn-info">
+                                        <asp:Localize meta:resourcekey="CPT_orderNow" runat="server" ID="Localize27" Text="" /></a>
+                                </p>
+                                <%--    <asp:Button ID="Button3" class="btn btn-info" runat="server" OnClick="single_Click" Text="Buy Now" />--%>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <%--==================================================--%>
+    </section>
+
+
+    <section class="container margin testDescription" id="hanoi">
+        <%--=======================hanoi===========================--%>
+        <h1>
+            <asp:Localize meta:resourcekey="hanoi_title" runat="server" ID="Localize19" Text="" /></h1>
+        <hr />
+        <div class="row">
+            <div class="col-md-6" id="left7">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="../images/desktops/toh_1.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-22" class="img-responsive" style="margin-bottom: 30px;" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/toh_2.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-23" class="img-responsive" style="margin-bottom: 30px;" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/toh_3.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-24" class="img-responsive" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/toh_4.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-25" class="img-responsive" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6" id="right7">
+                <h4>
+                    <asp:Localize meta:resourcekey="examples_conteiner2_title" runat="server" ID="Localize22" Text="" /></h4>
+                
+                    <p>
+                        <asp:Localize meta:resourcekey="hanoi_paragraph1" runat="server" ID="Localize23" Text="" />
+                    </p>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6" id="left8">
+                <h4>
+                    <asp:Localize meta:resourcekey="examples_conteiner2_title" runat="server" ID="Localize25" Text="" /></h4>
+                
+
+                    <p>
+                        <asp:Localize meta:resourcekey="hanoi_paragraph2" runat="server" ID="Localize26" Text="" />
+                    </p>
+            </div>
+            <div class="col-md-6" id="right8">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="../images/desktops/toh_5.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-26" class="img-responsive" style="margin-bottom: 30px;" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/toh_6.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-27" class="img-responsive" style="margin-bottom: 30px;" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/toh_7.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-28" class="img-responsive" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/toh_1.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-22" class="img-responsive" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <p>
+            <asp:Localize meta:resourcekey="hanoi_paragraph3" runat="server" ID="Localize17" Text="" />
+        </p>
+        <section id="Section7" runat="server">
+            <div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="circle c1 img-circle">
+                                <h4 class="blue">
+                                    <asp:Localize meta:resourcekey="hanoi_install" runat="server" ID="Localize39" Text="" /></h4>
+                                <span class="icon blue"><i class="fa fa-usd"></i></span>
+                                <span class="price-large blue">399</span>
+                                <span class="price-small">.00</span>
+                                <p>
+                                    <a href="#contact" class="btn btn-info">
+                                        <asp:Localize meta:resourcekey="hanoi_orderNow" runat="server" ID="Localize59" Text="" /></a>
+                                </p>
+                                <%--    <asp:Button ID="Button3" class="btn btn-info" runat="server" OnClick="single_Click" Text="Buy Now" />--%>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <%--==================================================--%>
+    </section>
+
+    <section class="container margin testDescription" id="reaction">
+        <%--=======================reaction===========================--%>
+        <h1>
+            <asp:Localize meta:resourcekey="reaction_title" runat="server" ID="Localize20" Text="" /></h1>
+        <hr />
+        <div class="row">
+            <div class="col-md-6" id="left9">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="../images/DesktopTests1.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-29" class="img-responsive" style="margin-bottom: 30px; max-height: 192px;" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/DesktopTests2.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-30" class="img-responsive" style="margin-bottom: 30px;" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/DesktopTests3.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-31" class="img-responsive" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/DesktopTests4.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-32" class="img-responsive" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6" id="right9">
+                    <p>
+                        <asp:Localize meta:resourcekey="reaction_paragraph1" runat="server" ID="Localize28" Text="" />
+                    </p>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6" id="left10">
+                <h4>
+                    <asp:Localize meta:resourcekey="examples_conteiner2_title" runat="server" ID="Localize35" Text="" /></h4>
+                
+
+                    <p>
+                        <asp:Localize meta:resourcekey="reaction_paragraph2" runat="server" ID="Localize29" Text="" />
+                    </p>
+            </div>
+            <div class="col-md-6" id="right10">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="../images/DesktopTests5.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-33" class="img-responsive" style="margin-bottom: 30px; max-height: 171px;" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/DesktopTests6.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-34" class="img-responsive" style="margin-bottom: 30px;" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/DesktopTests7.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-35" class="img-responsive" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/DesktopTests8.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-29" class="img-responsive" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section id="Section4" runat="server">
+            <div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="circle c1 img-circle">
+                                <h4 class="blue">
+                                    <asp:Localize meta:resourcekey="reaction_install" runat="server" ID="Localize30" Text="" /></h4>
+                                <span class="icon blue"><i class="fa fa-usd"></i></span>
+                                <span class="price-large blue">99</span>
+                                <span class="price-small">.00</span>
+                                <p>
+                                    <a href="#contact" class="btn btn-info">
+                                        <asp:Localize meta:resourcekey="reaction_orderNow" runat="server" ID="Localize42" Text="" /></a>
+                                </p>
+                                <%--          <asp:Button ID="Button5" class="btn btn-info" runat="server" OnClick="single_Click" Text="Buy Now" />--%>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <%--==================================================--%>
+    </section>
+
+    <section class="container margin testDescription" id="trails">
+        <%--=======================trails===========================--%>
+        <h1>
+            <asp:Localize meta:resourcekey="trails_title" runat="server" ID="Localize31" Text="" /></h1>
+        <hr />
+        <div class="row">
+            <div class="col-md-6" id="left11">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="../images/desktops/tnt_1.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-36" class="img-responsive" style="margin-bottom: 30px; max-width: 206px;" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/tnt_2.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-37" class="img-responsive" style="margin-bottom: 30px;" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/tnt_3.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-38" class="img-responsive" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/tnt_4.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-39" class="img-responsive" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6" id="right11">
+                
+                    <p>
+                        <asp:Localize meta:resourcekey="trails_paragraph1" runat="server" ID="Localize33" Text="" />
+                    </p>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6" id="left12">
+
+                    <p>
+                        <asp:Localize meta:resourcekey="trails_paragraph2" runat="server" ID="Localize47" Text="" />
+                    </p>
+            </div>
+            <div class="col-md-6" id="right12">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="../images/desktops/tnt_5.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-40" class="img-responsive" style="margin-bottom: 30px; max-width: 207px;" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/tnt_6.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-41" class="img-responsive" style="margin-bottom: 30px;" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/tnt_7.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-42" class="img-responsive" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/tnt_1.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-36" class="img-responsive" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <p>
+            <asp:Localize meta:resourcekey="trails_paragraph3" runat="server" ID="Localize53" Text="" />
+        </p>
+        <section id="Section5" runat="server">
+            <div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="circle c1 img-circle">
+                                <h4 class="blue">
+                                    <asp:Localize meta:resourcekey="trails_install" runat="server" ID="Localize32" Text="" /></h4>
+                                <span class="icon blue"><i class="fa fa-usd"></i></span>
+                                <span class="price-large blue">399</span>
+                                <span class="price-small">.00</span>
+                                <p>
+                                    <a href="#contact" class="btn btn-info">
+                                        <asp:Localize meta:resourcekey="trails_orderNow" runat="server" ID="Localize43" Text="" /></a>
+                                </p>
+                                <%--    <asp:Button ID="Button1" class="btn btn-info" runat="server" OnClick="single_Click" Text="Activate" />--%>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <%--==================================================--%>
+    </section>
+
+    <section class="container margin testDescription" id="nbk">
+        <%--=======================N-Back===========================--%>
+        <h1>
+            <asp:Localize meta:resourcekey="nback_title" runat="server" ID="Localize34" Text="" /></h1>
+        <hr />
+        <div class="row">
+            <div class="col-md-6" id="left13">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="../images/desktops/nbk_1.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-43" class="img-responsive" style="margin-bottom: 30px;" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/nbk_2.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-44" class="img-responsive" style="margin-bottom: 30px;" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/nbk_3.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-45" class="img-responsive" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/nbk_4.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-46" class="img-responsive" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6" id="right13">
+                    <p>
+                        <asp:Localize meta:resourcekey="nback_paragraph1" runat="server" ID="Localize36" Text="" />
+                    </p>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6" id="left14">
+
+                    <p>
+                        <asp:Localize meta:resourcekey="nback_paragraph2" runat="server" ID="Localize58" Text="" />
+                    </p>
+            </div>
+            <div class="col-md-6" id="right14">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="../images/desktops/nbk_5.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-47" class="img-responsive" style="margin-bottom: 30px;" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/nbk_6.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-48" class="img-responsive" style="margin-bottom: 30px;" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/nbk_7.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-49" class="img-responsive" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/nbk_1.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-43" class="img-responsive" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section id="Section1" runat="server">
+            <div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="circle c1 img-circle">
+                                <h4 class="blue">
+                                    <asp:Localize meta:resourcekey="nback_install" runat="server" ID="Localize64" Text="" /></h4>
+                                <span class="icon blue"><i class="fa fa-usd"></i></span>
+                                <span class="price-large blue">499</span>
+                                <span class="price-small">.00</span>
+                                <p>
+                                    <a href="#contact" class="btn btn-info">
+                                        <asp:Localize meta:resourcekey="nback_orderNow" runat="server" ID="Localize65" Text="" />
+                                    </a>
+                                </p>
+                                <%--       <asp:Button ID="single" class="btn btn-info" runat="server" OnClick="single_Click" Text="Buy Now" />--%>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <%--==================================================--%>
+    </section>
+
+    <section class="container margin testDescription" id="vrb">
+        <%--=======================verbal===========================--%>
+        <h1>
+            <asp:Localize meta:resourcekey="verbal_title" runat="server" ID="Localize44" Text="" /></h1>
+        <hr />
+        <div class="row">
+            <div class="col-md-6" id="left15">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="../images/desktops/vrb_1.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-51" class="img-responsive" style="margin-bottom: 30px;" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/vrb_2.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-52" class="img-responsive" style="margin-bottom: 30px;" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/vrb_3.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-53" class="img-responsive" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/vrb_4.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-54" class="img-responsive" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6" id="right15">
+                    <p>
+                        <asp:Localize meta:resourcekey="verbal_paragraph1" runat="server" ID="Localize61" Text="" />
+                    </p>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6" id="left16">
+
+                    <p>
+                        <asp:Localize meta:resourcekey="verbal_paragraph2" runat="server" ID="Localize66" Text="" />
+                    </p>
+            </div>
+            <div class="col-md-6" id="right16">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="../images/desktops/vrb_5.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-55" class="img-responsive" style="margin-bottom: 30px;" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/vrb_6.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-56" class="img-responsive" style="margin-bottom: 30px;" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/vrb_7.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-57" class="img-responsive" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/vrb_8.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-58" class="img-responsive" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section id="Section8" runat="server">
+            <div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="circle c1 img-circle">
+                                <h4 class="blue">
+                                    <asp:Localize meta:resourcekey="verbal_install" runat="server" ID="Localize67" Text="" /></h4>
+                                <span class="icon blue"><i class="fa fa-usd"></i></span>
+                                <span class="price-large blue">399</span>
+                                <span class="price-small">.00</span>
+                                <p>
+                                    <a href="#contact" class="btn btn-info">
+                                        <asp:Localize meta:resourcekey="verbal_orderNow" runat="server" ID="Localize68" Text="" />
+                                    </a>
+                                </p>
+                                <%--       <asp:Button ID="single" class="btn btn-info" runat="server" OnClick="single_Click" Text="Buy Now" />--%>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <%--==================================================--%>
+    </section>
+
+    <section class="container margin testDescription" id="mmc">
+        <%--=======================memory cards===========================--%>
+        <h1>
+            <asp:Localize meta:resourcekey="memory_title" runat="server" ID="Localize69" Text="" /></h1>
+        <hr />
+        <div class="row">
+            <div class="col-md-6" id="left17">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="../images/desktops/mmc_1.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-59" class="img-responsive" style="margin-bottom: 30px;" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/mmc_2.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-60" class="img-responsive" style="margin-bottom: 30px;" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/mmc_3.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-61" class="img-responsive" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/mmc_4.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-62" class="img-responsive" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6" id="right17">
+                    <p>
+                        <asp:Localize meta:resourcekey="memory_paragraph1" runat="server" ID="Localize70" Text="" />
+                    </p>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6" id="left18">
+
+                    <p>
+                        <asp:Localize meta:resourcekey="memory_paragraph2" runat="server" ID="Localize71" Text="" />
+                    </p>
+            </div>
+            <div class="col-md-6" id="right18">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="../images/desktops/mmc_5.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-63" class="img-responsive" style="margin-bottom: 30px;" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/mmc_6.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-64" class="img-responsive" style="margin-bottom: 30px;" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/mmc_7.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-65" class="img-responsive" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/mmc_8.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-66" class="img-responsive" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section id="Section9" runat="server">
+            <div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="circle c1 img-circle">
+                                <h4 class="blue">
+                                    <asp:Localize meta:resourcekey="memory_install" runat="server" ID="Localize72" Text="" /></h4>
+                                <span class="icon blue"><i class="fa fa-usd"></i></span>
+                                <span class="price-large blue">399</span>
+                                <span class="price-small">.00</span>
+                                <p>
+                                    <a href="#contact" class="btn btn-info">
+                                        <asp:Localize meta:resourcekey="memory_orderNow" runat="server" ID="Localize73" Text="" />
+                                    </a>
+                                </p>
+                                <%--       <asp:Button ID="single" class="btn btn-info" runat="server" OnClick="single_Click" Text="Buy Now" />--%>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <%--==================================================--%>
+    </section>
+
+
+    <section class="container margin testDescription" id="spt">
+        <%--=======================SOPT===========================--%>
+        <h1>
+            <asp:Localize meta:resourcekey="sopt_title" runat="server" ID="Localize74" Text="" /></h1>
+        <hr />
+        <div class="row">
+            <div class="col-md-6" id="left19">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="../images/desktops/spt_1.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-67" class="img-responsive" style="margin-bottom: 30px;" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/spt_2.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-68" class="img-responsive" style="margin-bottom: 30px;" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/spt_3.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-69" class="img-responsive" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/spt_4.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-70" class="img-responsive" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6" id="right19">
+                    <p>
+                        <asp:Localize meta:resourcekey="sopt_paragraph1" runat="server" ID="Localize75" Text="" />
+                    </p>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6" id="left20">
+
+                    <p>
+                        <asp:Localize meta:resourcekey="sopt_paragraph2" runat="server" ID="Localize76" Text="" />
+                    </p>
+            </div>
+            <div class="col-md-6" id="right20">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="../images/desktops/spt_5.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-71" class="img-responsive" style="margin-bottom: 30px;" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/spt_6.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-72" class="img-responsive" style="margin-bottom: 30px;" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/spt_7.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-73" class="img-responsive" />
+                    </div>
+                    <div class="col-md-6">
+                        <img src="../images/desktops/spt_8.png" alt="neuropsychological questionnaire" data-toggle="modal" data-target=".bs-modal-74" class="img-responsive" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section id="Section10" runat="server">
+            <div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="circle c1 img-circle">
+                                <h4 class="blue">
+                                    <asp:Localize meta:resourcekey="sopt_install" runat="server" ID="Localize77" Text="" /></h4>
+                                <span class="icon blue"><i class="fa fa-usd"></i></span>
+                                <span class="price-large blue">299</span>
+                                <span class="price-small">.00</span>
+                                <p>
+                                    <a href="#contact" class="btn btn-info">
+                                        <asp:Localize meta:resourcekey="sopt_orderNow" runat="server" ID="Localize78" Text="" />
+                                    </a>
+                                </p>
+                                <%--       <asp:Button ID="single" class="btn btn-info" runat="server" OnClick="single_Click" Text="Buy Now" />--%>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <%--==================================================--%>
+    </section>
+
+    <div class="modal fade bs-modal-1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/lnd_1.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/lnd_2.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-3" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/lnd_3.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-4" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/lnd_4.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-5" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/lnd_5.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-6" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/lnd_6.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-7" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/lnd_7.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-8" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/cs_1.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-9" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/cs_2.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-10" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/cs_3.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-11" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/cs_4.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-12" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/cs_5.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-13" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/cs_6.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-14" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/cs_7.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-15" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/CPT_1.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-16" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/CPT_2.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-17" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/CPT_3.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-18" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/CPT_4.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-19" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/CPT_5.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-20" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/CPT_6.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-21" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/CPT_7.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-22" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/toh_1.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-23" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/toh_2.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-24" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/toh_3.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-25" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/toh_4.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-26" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/toh_5.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-27" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/toh_6.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-28" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/toh_7.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-29" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/DesktopTests1.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-30" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/DesktopTests2.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-31" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/DesktopTests3.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-32" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/DesktopTests4.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-33" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/DesktopTests5.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-34" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/DesktopTests6.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-35" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/DesktopTests7.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-36" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/tnt_1.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-37" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/tnt_2.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-38" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/tnt_3.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-39" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/tnt_4.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-40" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/tnt_5.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-41" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/tnt_6.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-42" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/tnt_7.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-43" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/nbk_1.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-44" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/nbk_2.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-45" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/nbk_3.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-46" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/nbk_4.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-47" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/nbk_5.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-48" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/nbk_6.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-49" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/nbk_7.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-50" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/nbk_8.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-51" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/vrb_1.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-52" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/vrb_2.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-53" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/vrb_3.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-54" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/vrb_4.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-55" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/vrb_5.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-56" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/vrb_6.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-57" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/vrb_7.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-58" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/vrb_8.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-59" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/mmc_1.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-60" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/mmc_2.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-61" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/mmc_3.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-62" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/mmc_4.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-63" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/mmc_5.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-64" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/mmc_6.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-65" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/mmc_7.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-66" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/mmc_8.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-67" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/spt_1.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-68" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/spt_2.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-69" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/spt_3.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-70" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/spt_4.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-71" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/spt_5.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-72" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/spt_6.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-73" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/spt_7.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-74" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/spt_8.png" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-75" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <img src="../images/desktops/TOL/DesktopTOL8.jpg" alt="neuropsychological questionnaire" data-dismiss="modal" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+
+
+    <section id="contact">
+        <div class="container" style="height: 300px">
+            <h4 class="text-center">
+                <asp:Localize meta:resourcekey="contact_title" runat="server" ID="Localize37" Text="" /></h4>
+            <h4 id="contactError" runat="server"></h4>
+            <%--<asp:Label class="label" ID="name" runat="server" Text="Your Name:"></asp:Label>--%>
+            <asp:Label class="label" ID="name" runat="server">
+                <asp:Localize meta:resourcekey="contact_emailName" runat="server" ID="Localize38" Text="" /></asp:Label>
+            <input id="emailName" class="email" type="text" runat="server" />
+            <asp:Label class="label" ID="Label2" runat="server" Text="Your Email:" meta:resourcekey="contact_emailFrom"></asp:Label>
+            <input id="emailFrom" class="email" type="text" runat="server" />
+            <asp:Label class="label  text-area-label" ID="Label3" runat="server" Text="Message:" meta:resourcekey="contact_emailText"></asp:Label>
+            <textarea id="emailText" style="resize: none;" class="email" cols="20" rows="5" runat="server"></textarea>
+
+
+            <div class="contact-btn-wrapper">
+                <asp:LinkButton class="bnt btn-sm btn-success" type="submit" runat="server" OnClick="clcSendButton">
+                    <asp:Localize meta:resourcekey="contact_submit" runat="server" ID="Localize45" Text="" />
+                </asp:LinkButton>
+            </div>
+        </div>
+    </section>
+</asp:Content>
 
 
 <asp:Content ContentPlaceHolderID="ScriptsContent" runat="server">
-<%--<script src="../js/bootstrap.min.js"></script>--%>
-<script>
+    <%--<script src="../js/bootstrap.min.js"></script>--%>
+    <script>
         $(document).ready(function () {
-            for (var i = 1; i <= 12; i++) {
+            for (var i = 1; i <= 20; i++) {
 
                 //$('#left' + (i)).css('opacity', 0);
                 //$('#right' + (i)).css('opacity', 0);
@@ -1153,5 +1782,5 @@
             });
 
         });
-</script>
-</asp:content>
+    </script>
+</asp:Content>

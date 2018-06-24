@@ -91,7 +91,9 @@ namespace TestSite
                 }
                 if(checkboxProvider.Checked == true)
                 {
-                    DAL.DataMethods.AddUserToProvider(user.ProviderUserKey.ToString(),"");
+                    //DAL.DataMethods.AddUserToProvider(user.ProviderUserKey.ToString(),"");
+                    var currentUser = Membership.GetUser(singleName.Value);
+                    DAL.DataMethods.CreateProvider(currentUser.ProviderUserKey.ToString());
                 }
                 if (user != null)
                 {

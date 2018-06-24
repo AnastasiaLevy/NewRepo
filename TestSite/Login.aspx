@@ -11,6 +11,14 @@
     <link rel="stylesheet" href="assets/css/form-elements.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="Style/style.css">
+    <style>
+        .navbar-inverse {
+            background-color: #009ACD;
+            opacity: 0.85;
+            font-size: 15px;
+            padding-top: 6px;
+        }
+    </style>
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="MainContent" runat="server">
@@ -130,6 +138,7 @@
     </div>
 </asp:Content> 
 
+<asp:Content ContentPlaceHolderID="follow" Visible="false" runat="server"></asp:Content>
 
 <asp:Content ContentPlaceHolderID="ScriptsContent" runat="server">
 
@@ -171,7 +180,7 @@
         var pwHasErrors = false;
 
         $('#<%= single_email.ClientID %>').mouseout(function () {
-            
+
             var text = $('#<%= single_email.ClientID %>').val();
             if (!validateEmail(text)) {
                 <%--$("#<%= wrong.ClientID %>").text("Please enter a valid email *")--%>
@@ -193,7 +202,7 @@
         });
 
         $("#<%= s_confPw.ClientID %>").mouseout(function () {
-            
+
             var text1 = $("#<%= s_confPw.ClientID %>").val();
             var text2 = $("#<%= singlePw.ClientID %>").val();
             if (!comparePWs(text1, text2)) {

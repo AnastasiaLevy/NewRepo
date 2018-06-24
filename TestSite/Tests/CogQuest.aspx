@@ -217,7 +217,6 @@
         <%--<asp:Label ID="existsMessage" CssClass="errorMessage" runat="server" Text=""></asp:Label>
             <asp:LinkButton ID="runTest" runat="server" class="signup-btn" OnClick="runTest_Click">Download</asp:LinkButton>--%>
 
-        <asp:LinkButton ID="paypalsimulate" runat="server" OnClick="paypalsimulate_Click" class="btn btn-primary btn-lg btn-xs-block btn-green pull-right">Paypal response simulation</asp:LinkButton>
 
 
         <div class="row">

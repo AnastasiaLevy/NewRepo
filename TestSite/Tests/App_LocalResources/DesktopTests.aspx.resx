@@ -178,7 +178,7 @@
     <value>Order Now</value>
   </data>
   <data name="CPT_paragraph1.Text" xml:space="preserve">
-    <value>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tincidunt, mauris non sodales feugiat, turpis elit accumsan nisi, et commodo metus mi ultrices nunc. Duis ac pellentesque tortor. Maecenas feugiat velit erat, ac molestie nisl suscipit eget. Nam ultricies rutrum nibh, sed venenatis tellus tempor in.</value>
+    <value>Continuous Performance Tests (CPT) used in the diagnosis of ADHD are variations of mid-twentieth century Go/No-Go tests. The test taker is instructed to press the space bar to a target stimulus such as any letter, but to do nothing when a particular designated letter appears (i.e., X).</value>
   </data>
   <data name="CPT_title.Text" xml:space="preserve">
     <value>CPT</value>
@@ -305,7 +305,7 @@ testing needs of either alternative clinical populations or cognitive science re
     <value>Tests can be analyzed using any one of three analysis protocols or the test user can print a basic analysis sheet displaying basic participant performance for “hand” analysis. The package comes with normative data collected on 2875 participants grouped in age cohorts from five to nine years, 10 to 14 years, 15 to 19 years and in 10 year groups from the 20 to &gt;80 years on the Canonical 128 Test. As Tien, et al., 1996, Feldstein, et al., 1999, and Steinmetz, 2010 have all shown significant outcome differences between manually administered card sorting tests and tests administered using a computer, this normative data set represents a considerable step forward in computer based card sorting tasks.</value>
   </data>
   <data name="CPT_paragraph2.Text" xml:space="preserve">
-    <value>Phasellus rhoncus vel libero nec lacinia. Suspendisse in varius libero. Suspendisse semper turpis ut leo commodo, et pretium mi placerat. Nullam nec sapien dui. Nam ac lorem et dui porta facilisis. Quisque ut bibendum magna. Donec orci ex, porta vitae fringilla sed, porta eu elit.</value>
+    <value>The CPT results along with questionnaires and evaluation by a licensed health care professional have been used in the diagnosis of ADHD in approximately 6 million children between 4 and 17 and an additional quarter million children between 2 and 5. This software currently contains several CPT tests that can be used to compare controls and an experimental group. Norms for the Faces test will be provided in late 2018.</value>
   </data>
   <data name="hanoi_paragraph2.Text" xml:space="preserve">
     <value>Trials can be specified as either timed (i.e., the trial is terminated after a predetermined amount of time has elapsed) or untimed. Trials can be set to terminate after a specified number of moves.
@@ -337,5 +337,89 @@ letters in part B of the more traditional TMT (Maj, et al., 1991). Your CogQuiz 
  
 You will find the TMT part A useful if you are attempting to obtain some assessment of attention, visual scanning, speed of eye-hand coordination and information processing. The TMT part B assesses the ability to alternate between stimulus sets and as such is a measure of “executive function” (Mitrushina,  
 et al., 1999).</value>
+  </data>
+  <data name="about_deskTopList_buttonmmc.text" xml:space="preserve">
+    <value>Memory Cards</value>
+  </data>
+  <data name="about_deskTopList_buttonnbk.text" xml:space="preserve">
+    <value>n-Back</value>
+  </data>
+  <data name="about_deskTopList_buttonspt.text" xml:space="preserve">
+    <value>SOPT</value>
+  </data>
+  <data name="about_deskTopList_buttonvrb.text" xml:space="preserve">
+    <value>Verbal</value>
+  </data>
+  <data name="gotommc.text" xml:space="preserve">
+    <value>Memory Cards</value>
+  </data>
+  <data name="gotonbk.text" xml:space="preserve">
+    <value>n-Back</value>
+  </data>
+  <data name="gotospt.text" xml:space="preserve">
+    <value>SOPT</value>
+  </data>
+  <data name="gotovrb.text" xml:space="preserve">
+    <value>Verbal</value>
+  </data>
+  <data name="memory_install.text" xml:space="preserve">
+    <value>Installs</value>
+  </data>
+  <data name="memory_ordernow.text" xml:space="preserve">
+    <value>Order Now</value>
+  </data>
+  <data name="memory_paragraph1.text" xml:space="preserve">
+    <value>Memory Cards Test (MCT) contains a version of the game of Memory Cards. This game can also be considered a visuospatial task. This software contains an image import tool that allows you to import visual stimuli in various picture formats (e.g., jpeg, npg, etc).</value>
+  </data>
+  <data name="memory_paragraph2.text" xml:space="preserve">
+    <value>This software contains a test with 12 matching pairs and you can easily construct additional tests using a 2 by 3 test (3 matching pairs) or a 6 by 8 format (24 matching pairs) with single or multiple trials. The Cartoons test included in you software has an N &gt;3500 and norms for individuals between 5 and 89 years of age. You can use words, colors, drawings, or pictures as stimuli.</value>
+  </data>
+  <data name="memory_title.text" xml:space="preserve">
+    <value>Memory Cards</value>
+  </data>
+  <data name="nback_install.text" xml:space="preserve">
+    <value>Installs</value>
+  </data>
+  <data name="nback_ordernow.text" xml:space="preserve">
+    <value>Order Now</value>
+  </data>
+  <data name="nback_paragraph1.text" xml:space="preserve">
+    <value>N-back tests are used to assess working memory--a form of memory that is temporarily held in conscious awareness and that requires the manipulation of information. For example, multiplying 16 times 17 in your head would require holding and manipulating information.</value>
+  </data>
+  <data name="nback_paragraph2.text" xml:space="preserve">
+    <value>This software contains several N-back tests that are visual such as faces (e.g., is the current face the same as the one n-back where n can be 1, 2, 3, etc back). This software also contains a verbal and visuospatial n-back test with norms for individuals between 5 and 89 years of age. It also allows you to create dual n-back tests (e.g., is the dot in the same location n-back and is the auditory stimuli the same as the one n-back).</value>
+  </data>
+  <data name="nback_title.text" xml:space="preserve">
+    <value>n-Back</value>
+  </data>
+  <data name="sopt_install.text" xml:space="preserve">
+    <value>Installs</value>
+  </data>
+  <data name="sopt_ordernow.text" xml:space="preserve">
+    <value>Order Now</value>
+  </data>
+  <data name="sopt_paragraph1.text" xml:space="preserve">
+    <value>The Self Ordered Pointing Test (SOPT) is a working memory test that was developed by Petrides and Milner. Typically a person is required to point or click on one of a small number of stimuli within a designated time limit (i.e., 10 seconds).</value>
+  </data>
+  <data name="sopt_paragraph2.text" xml:space="preserve">
+    <value>All the stimuli disappear for a few seconds and then reappear in a new arrangement. For example, the participant might get 8 tries to click on eight different stimuli. The participant is to click on all the different stimuli one at a time following this procedure. The number and characteristics of the stimuli can increase over trials.</value>
+  </data>
+  <data name="sopt_title.text" xml:space="preserve">
+    <value>SOPT</value>
+  </data>
+  <data name="Verbal_install.text" xml:space="preserve">
+    <value>Installs</value>
+  </data>
+  <data name="Verbal_ordernow.text" xml:space="preserve">
+    <value>Order Now</value>
+  </data>
+  <data name="Verbal_paragraph1.text" xml:space="preserve">
+    <value>Verbal recall and recognition are among the most frequently used neuropsychological tests. This software allows you to create virtually any set and/or combination of recall and recognition trials. You can collect information on the subjective organization of the test taker and you can create categories of words to examine semantic organization.</value>
+  </data>
+  <data name="Verbal_paragraph2.text" xml:space="preserve">
+    <value>Your tests comes with norms for over 3 thousand individuals between 5 and 89 years of age for a version of the Rey Auditory Verbal Learning Test and over a thousand for a recognition version of the Rey Auditory Test. You can create virtually any word recall or recognition test. The list you create can be of any length, complexity, and delays can be immediate or on the order of years.</value>
+  </data>
+  <data name="Verbal_title.text" xml:space="preserve">
+    <value>Verbal</value>
   </data>
 </root>

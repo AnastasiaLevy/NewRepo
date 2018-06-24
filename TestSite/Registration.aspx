@@ -1,5 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="TestSite.Registration"  MasterPageFile="~/Layout.Master"
-    Culture="auto" UICulture="auto"  Title="" meta:resourcekey="pagetitle"%>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="TestSite.Registration" MasterPageFile="~/Layout.Master"
+    Culture="auto" UICulture="auto" Title="" meta:resourcekey="pagetitle" %>
 
 <asp:Content ContentPlaceHolderID="HeadContent" runat="server">
     <meta charset="utf-8">
@@ -20,7 +20,7 @@
     <script src="js/jquery.js"></script>
     <link href="css/userProfilecss.css" rel="stylesheet" />
     <script src="js/sessionManager.js"></script>
-</asp:content>
+</asp:Content>
 
 <%--<asp:Content ContentPlaceHolderID="MenuItemLi" runat="server">
     <li class="active"><a id="A1" runat="server" ><asp:Localize meta:resourcekey="navbar_goback"  runat="server" ID="Localize35" Text="" />
@@ -31,7 +31,7 @@
 </asp:content>--%>
 
 <asp:Content ContentPlaceHolderID="MainContent" runat="server">
-        <%--<nav class="navbar navbar-inverse navbar-fixed-top">
+    <%--<nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -59,255 +59,282 @@
             </div>
         </nav>--%>
 
-        <header id="homeForm">
-        </header>
+    <header id="homeForm">
+    </header>
 
-        <!-- Page Content -->
+    <!-- Page Content -->
 
-        <section id="formInstructions">
-        </section>
-        <div class="alert alert-success" id="fbGood" runat="server">
-            <asp:Localize meta:resourcekey="formInstructions_profilesaved"  runat="server" ID="Localize2" Text="" />
-        </div>
-        <div class="alert alert-danger" id ="fbBad" runat="server">
-            <asp:Localize meta:resourcekey="formInstructions_errorsaved"  runat="server" ID="Localize3" Text="" />
-        </div>
-        <section id="regForm">
-            <div class="container" id="center">
-                <div class="box">
-                    <h1><asp:Localize meta:resourcekey="regForm_title1"  runat="server" ID="Localize4" Text="" /></h1>
-                    <hr />
-                    <p><asp:Localize meta:resourcekey="regForm_paragraph1"  runat="server" ID="Localize5" Text="" /></p>
-                    <p><asp:Localize meta:resourcekey="regForm_paragraph2"  runat="server" ID="Localize6" Text="" /></p>
+    <section id="formInstructions">
+    </section>
+    <div class="alert alert-success" id="fbGood" runat="server">
+        <asp:Localize meta:resourcekey="formInstructions_profilesaved" runat="server" ID="Localize2" Text="" />
+    </div>
+    <div class="alert alert-danger" id="fbBad" runat="server">
+        <asp:Localize meta:resourcekey="formInstructions_errorsaved" runat="server" ID="Localize3" Text="" />
+    </div>
+    <section id="regForm">
+        <div class="container" id="center">
+            <div class="box">
+                <h1>
+                    <asp:Localize meta:resourcekey="regForm_title1" runat="server" ID="Localize4" Text="" /></h1>
+                <hr />
+                <p>
+                    <asp:Localize meta:resourcekey="regForm_paragraph1" runat="server" ID="Localize5" Text="" /></p>
+                <p>
+                    <asp:Localize meta:resourcekey="regForm_paragraph2" runat="server" ID="Localize6" Text="" /></p>
+            </div>
+
+            <div class="box">
+                <h3>
+                    <asp:Localize meta:resourcekey="regForm_title2" runat="server" ID="Localize7" Text="" /></h3>
+                <hr />
+                <p>
+                    <asp:Localize meta:resourcekey="regForm_paragraph3" runat="server" ID="Localize8" Text="" />
+                </p>
+                <asp:CheckBox ID="cbAgree" runat="server" />
+                <asp:Localize meta:resourcekey="regForm_checkBox_agree" runat="server" ID="Localize9" Text="" />
+                <p>
+                    <asp:Label ID="error" CssClass="red" runat="server" Text=""></asp:Label>
+                </p>
+            </div>
+            <div class="box">
+                <div id="name" class="col-xs-6 col-md-6 nopadding">
+                    <asp:Label class="labelForm" ID="lbFistName" runat="server" Text="" meta:resourcekey="regForm_lbFistName"></asp:Label>
+                    <input type="text" id="txtFirstName" value="" class="form-control input-lg" runat="server" placeholder="" meta:resourcekey="regForm_txtFirstName" required />
+                    <asp:RequiredFieldValidator class="red" ID="firstNameValid" runat="server" ErrorMessage="" ControlToValidate="txtFirstName" meta:resourcekey="regForm_firstNameValid"></asp:RequiredFieldValidator>
+                </div>
+                <div class="col-xs-6 col-md-6">
+                    <asp:Label class="labelForm" ID="lbLastName" runat="server" Text="" meta:resourcekey="regForm_lbLastName"></asp:Label>
+                    <input type="text" id="txtLastName" value="" class="form-control input-lg" runat="server" placeholder="" meta:resourcekey="regForm_txtLastName" required />
+                    <asp:RequiredFieldValidator class="red" ID="lastNameValid" runat="server" ErrorMessage="" meta:resourcekey="regForm_lastNameValid"
+                        ControlToValidate="txtLastName"></asp:RequiredFieldValidator>
                 </div>
 
-                <div class="box">
-                    <h3><asp:Localize meta:resourcekey="regForm_title2"  runat="server" ID="Localize7" Text="" /></h3>
-                    <hr />
-                    <p>
-                        <asp:Localize meta:resourcekey="regForm_paragraph3"  runat="server" ID="Localize8" Text="" />
-                    </p>
-                    <asp:CheckBox ID="cbAgree" runat="server" />
-                    <asp:Localize meta:resourcekey="regForm_checkBox_agree"  runat="server" ID="Localize9" Text="" />
-                    <p>
-                        <asp:Label ID="error" CssClass="red" runat="server" Text=""></asp:Label>
-                    </p>
+
+                <hr>
+
+                <div class="col-xs-6 col-md-6  nopadding">
+                    <asp:Label ID="lbBday" class="labelForm" runat="server" Text="" required="true" meta:resourcekey="regForm_lbBday"></asp:Label>
+                    <asp:TextBox ID="txtBDay" class="form-control input-lg short" runat="server" placeholder="mm/dd/yy" meta:resourcekey="regForm_txtBDay"></asp:TextBox>
+                    <%--<asp:RequiredFieldValidator class="red" ID="RequiredFieldValidator1" runat="server" ErrorMessage="Please enter your birthday" meta:resourcekey="regForm_RequiredFieldValidator1"
+                        ControlToValidate="txtBDay"></asp:RequiredFieldValidator>--%>
                 </div>
-                <div class="box">
-                    <div id="name" class="col-xs-6 col-md-6 nopadding">
-                        <asp:Label class="labelForm" ID="lbFistName" runat="server" Text="" meta:resourcekey="regForm_lbFistName"></asp:Label>
-                        <input type="text" id="txtFirstName" value="" class="form-control input-lg" runat="server" placeholder="" meta:resourcekey="regForm_txtFirstName" required />
-                        <asp:RequiredFieldValidator class="red" ID="firstNameValid" runat="server" ErrorMessage="" ControlToValidate="txtFirstName" meta:resourcekey="regForm_firstNameValid"></asp:RequiredFieldValidator>
-                    </div>
-                    <div class="col-xs-6 col-md-6">
-                        <asp:Label class="labelForm" ID="lbLastName" runat="server" Text="" meta:resourcekey="regForm_lbLastName"></asp:Label>
-                        <input type="text" id="txtLastName" value="" class="form-control input-lg" runat="server" placeholder="" meta:resourcekey="regForm_txtLastName" required />
-                        <asp:RequiredFieldValidator class="red" ID="lastNameValid" runat="server" ErrorMessage="" meta:resourcekey="regForm_lastNameValid"
-                            ControlToValidate="txtLastName"></asp:RequiredFieldValidator>
-                    </div>
-
-
-                    <hr>
-
-                    <div class="col-xs-6 col-md-6  nopadding">
-                        <asp:Label ID="lbBday" class="labelForm" runat="server" Text="" required="true" meta:resourcekey="regForm_lbBday"></asp:Label>
-                        <asp:TextBox ID="txtBDay" class="form-control input-lg short" runat="server" placeholder="mm/dd/yy" meta:resourcekey="regForm_txtBDay"></asp:TextBox>
-                        <asp:RequiredFieldValidator class="red" ID="RequiredFieldValidator1" runat="server" ErrorMessage="Please enter your birthday" meta:resourcekey="regForm_RequiredFieldValidator1"
-                            ControlToValidate="txtBDay"></asp:RequiredFieldValidator>
-                    </div>
-                    <div id="education" class="col-xs-6 col-md-6  nopadding">
-                        <asp:Label ID="lbEducation" runat="server" class="labelForm" Text="Education:" meta:resourcekey="regForm_lbEducation"></asp:Label>
-                        <asp:DropDownList class="form-control input-lg" ID="ddlEducation" runat="server" AppendDataBoundItems="true">
-                            <asp:ListItem Text="<Select Level>" Value="0" />
-                        </asp:DropDownList>
-                    </div>
-
-                    <div class="clearfix"></div>
+                <div id="education" class="col-xs-6 col-md-6  nopadding">
+                    <asp:Label ID="lbEducation" runat="server" class="labelForm" Text="Education:" meta:resourcekey="regForm_lbEducation"></asp:Label>
+                    <asp:DropDownList class="form-control input-lg" ID="ddlEducation" runat="server" AppendDataBoundItems="true">
+                        <asp:ListItem Text="<Select Level>" Value="0" />
+                    </asp:DropDownList>
                 </div>
-                <div class="box">
-                    <div id="language">
-                        <asp:Label ID="lblLang" runat="server" class="labelForm nopadding" Text="Is English your first language?" meta:resourcekey="regForm_lblLang"></asp:Label>
-                        </br>
+
+                <div class="clearfix"></div>
+            </div>
+            <div class="box">
+                <div id="language">
+                    <asp:Label ID="lblLang" runat="server" class="labelForm nopadding" Text="Is English your first language?" meta:resourcekey="regForm_lblLang"></asp:Label>
+                    </br>
                            
-                        <asp:CheckBox ID="cbEnglYes" runat="server" class="" Text="Yes" meta:resourcekey="regForm_cbEnglYes"/>
-                        <asp:CheckBox ID="cbEnglNo" runat="server" class="" Text="No" meta:resourcekey="regForm_cbEnglNo"/>
-                        </br>
+                        <asp:CheckBox ID="cbEnglYes" runat="server" class="" Text="Yes" meta:resourcekey="regForm_cbEnglYes" />
+                    <asp:CheckBox ID="cbEnglNo" runat="server" class="" Text="No" meta:resourcekey="regForm_cbEnglNo" />
+                    </br>
                            
                         <asp:Label ID="lblFstLang" runat="server" class="labelForm nopadding" Text="Pleas Enter Your First Language:" meta:resourcekey="regForm_lblFstLang"></asp:Label>
-                        <asp:TextBox ID="firstLang" class="form-control input-lg" runat="server" placeholder="first language" meta:resourcekey="regForm_firstLang"></asp:TextBox></br>
+                    <asp:TextBox ID="firstLang" class="form-control input-lg" runat="server" placeholder="first language" meta:resourcekey="regForm_firstLang"></asp:TextBox></br>
                        
-                    </div>
+                </div>
 
-                    <hr>
+                <hr>
 
-                    <div id="gender" class="">
-                        <asp:Label ID="lbGender" class="nopadding labelForm" runat="server" Text="Gender" meta:resourcekey="regForm_lbGender"></asp:Label>
-                        </br>
+                <div id="gender" class="">
+                    <asp:Label ID="lbGender" class="nopadding labelForm" runat="server" Text="Gender" meta:resourcekey="regForm_lbGender"></asp:Label>
+                    </br>
                                
-                        <asp:CheckBox ID="cbMale" runat="server" Text="M" meta:resourcekey="regForm_cbMale"/>
-                        <asp:CheckBox ID="cbFmale" runat="server" Text="F" meta:resourcekey="regForm_cbFmale"/>
-                    </div>
-                    <hr>
-                    <div id="medications" class="">
-                        <asp:Label ID="lbMeds" class=" labelForm" runat="server" Text="Are you currently taking any medications?" meta:resourcekey="regForm_lbMeds"></asp:Label>
-                        </br>
+                        <asp:CheckBox ID="cbMale" runat="server" Text="M" meta:resourcekey="regForm_cbMale" />
+                    <asp:CheckBox ID="cbFmale" runat="server" Text="F" meta:resourcekey="regForm_cbFmale" />
+                </div>
+                <hr>
+                <div id="medications" class="">
+                    <asp:Label ID="lbMeds" class=" labelForm" runat="server" Text="Are you currently taking any medications?" meta:resourcekey="regForm_lbMeds"></asp:Label>
+                    </br>
                            
-                        <asp:CheckBox ID="cbMedicationsY" runat="server" class="" Text="Yes" meta:resourcekey="regForm_cbMedicationsY"/>
-                        <asp:CheckBox ID="cbMedicationsN" runat="server" class="" Text="No" meta:resourcekey="regForm_cbMedicationsN"/>
-                        <asp:TextBox ID="txtKindMeds" class="form-control input-lg" runat="server" placeholder="medications" meta:resourcekey="regForm_txtKindMeds"></asp:TextBox></br>
+                        <asp:CheckBox ID="cbMedicationsY" runat="server" class="" Text="Yes" meta:resourcekey="regForm_cbMedicationsY" />
+                    <asp:CheckBox ID="cbMedicationsN" runat="server" class="" Text="No" meta:resourcekey="regForm_cbMedicationsN" />
+                    <asp:TextBox ID="txtKindMeds" class="form-control input-lg" runat="server" placeholder="medications" meta:resourcekey="regForm_txtKindMeds"></asp:TextBox></br>
 
                        
-                    </div>
-                    <hr>
-                    <div id="headInj" class="">
-                        <asp:Label class="nopadding labelForm" ID="lbHeadInj" runat="server" Text="Have you ever had a head injury?" meta:resourcekey="regForm_lbHeadInj"></asp:Label></br>
+                </div>
+                <hr>
+                <div id="headInj" class="">
+                    <asp:Label class="nopadding labelForm" ID="lbHeadInj" runat="server" Text="Have you ever had a head injury?" meta:resourcekey="regForm_lbHeadInj"></asp:Label></br>
                            
-                        <asp:CheckBox ID="cbHeadInjY" runat="server" class="" Text="Yes" meta:resourcekey="regForm_cbHeadInjY"/>
-                        <asp:CheckBox ID="cbHeadInjN" runat="server" class="" Text="No" meta:resourcekey="regForm_cbHeadInjN"/></br>
+                        <asp:CheckBox ID="cbHeadInjY" runat="server" class="" Text="Yes" meta:resourcekey="regForm_cbHeadInjY" />
+                    <asp:CheckBox ID="cbHeadInjN" runat="server" class="" Text="No" meta:resourcekey="regForm_cbHeadInjN" /></br>
                        
                            
 
                         <asp:Label class="labelForm" ID="lbHeadInjNum" runat="server" Text="How Many?" meta:resourcekey="regForm_lbHeadInjNum"></asp:Label>
-                        <asp:DropDownList ID="ddlHeadInjNum" class="form-control input-lg short" runat="server" AppendDataBoundItems="true">
-                            <asp:ListItem Text="<Select>" Value="0" />
-                        </asp:DropDownList>
+                    <asp:DropDownList ID="ddlHeadInjNum" class="form-control input-lg short" runat="server" AppendDataBoundItems="true">
+                        <asp:ListItem Text="<Select>" Value="0" />
+                    </asp:DropDownList>
 
-                    </div>
-                    <div class="clearfix"></div>
                 </div>
-                <div class="box">
+                <div class="clearfix"></div>
+            </div>
+            <div class="box">
 
-                    <div id="income">
-                        <asp:Label ID="lbIncome" runat="server" class="labelForm nopadding" Text="Level of Income:" meta:resourcekey="regForm_lbIncome"></asp:Label></br>
+                <div id="income">
+                    <asp:Label ID="lbIncome" runat="server" class="labelForm nopadding" Text="Level of Income:" meta:resourcekey="regForm_lbIncome"></asp:Label></br>
                            
                         <asp:DropDownList ID="ddlIncome" class="form-control input-lg short" runat="server" AppendDataBoundItems="true">
                             <asp:ListItem Text="<Select Level>" Value="0" />
                         </asp:DropDownList>
-                    </div>
-
-                    <hr>
-                    <div id="leadingHand">
-                        <asp:Label ID="lbHand" runat="server" class="labelForm nopadding" Text="Dominant Hand" meta:resourcekey="regForm_lbHand"></asp:Label>
-                        <asp:DropDownList class="form-control input-lg short" ID="ddlHand" runat="server" AppendDataBoundItems="true">
-                            <asp:ListItem Text="<Select Level>" Value="0" />
-                        </asp:DropDownList>
-                    </div>
-                    <hr />
-                    <div id="ethnicity">
-                        <asp:Label ID="lblEthnicity" runat="server" class="labelForm nopadding" Text="Ethnicity" meta:resourcekey="regForm_lblEthnicity"></asp:Label>
-                        <asp:DropDownList class="form-control input-lg short" ID="ddlEthnicity" runat="server" AppendDataBoundItems="true">
-                            <asp:ListItem Text="<Select Level>" Value="0" />
-                        </asp:DropDownList>
-                    </div>
                 </div>
-                <div id="scaleRead" class="box">
 
-                    <label class="labelForm nopadding">
-                        <asp:Localize meta:resourcekey="regForm_scaleRead_label1"  runat="server" ID="Localize10" Text="" /></label>
-                    <ul id="brainActivity" class='likert'>
-                        <li>
-                            <input id="act1" runat="server" type="radio" name="likert">
-                            <label id="lact1" runat="server"><asp:Localize meta:resourcekey="regForm_scaleRead_brainActivity_label1"  runat="server" ID="Localize11" Text="" /></label>
-                        </li>
-                        <li>
-                            <input id="act2" runat="server" type="radio" name="likert">
-                            <label id="lact2" runat="server"><asp:Localize meta:resourcekey="regForm_scaleRead_brainActivity_label2"  runat="server" ID="Localize12" Text="" /></label>
-                        </li>
-                        <li>
-                            <input id="act3" runat="server" type="radio" name="likert">
-                            <label id="lact3" runat="server"><asp:Localize meta:resourcekey="regForm_scaleRead_brainActivity_label3"  runat="server" ID="Localize13" Text="" /></label>
-                        </li>
-                        <li>
-                            <input id="act4" runat="server" type="radio" name="likert">
-                            <label id="lact4" runat="server"><asp:Localize meta:resourcekey="regForm_scaleRead_brainActivity_label4"  runat="server" ID="Localize14" Text="" /></label>
-                        </li>
-                        <li>
-                            <input id="act5" runat="server" type="radio" name="likert">
-                            <label id="lact5" runat="server"><asp:Localize meta:resourcekey="regForm_scaleRead_brainActivity_label5"  runat="server" ID="Localize15" Text="" /></label>
-                        </li>
-                    </ul>
-
-                    <label class="labelForm nopadding"><asp:Localize meta:resourcekey="regForm_scaleRead_label2"  runat="server" ID="Localize16" Text="" /></label>
-                    <ul id="exercise" class='likert'>
-                        <li>
-                            <input id="exe1" runat="server" type="radio" name="likert2" value="0-1">
-                            <label id="lexe1" runat="server"><asp:Localize meta:resourcekey="regForm_scaleRead_exercise_label1"  runat="server" ID="Localize17" Text="" /></label>
-                        </li>
-                        <li>
-                            <input id="exe2" runat="server" type="radio" name="likert2" value="2-3">
-                            <label id="lexe2" runat="server"><asp:Localize meta:resourcekey="regForm_scaleRead_exercise_label2"  runat="server" ID="Localize18" Text="" /></label>
-                        </li>
-                        <li>
-                            <input id="exe3" runat="server" type="radio" name="likert2" value="4-5">
-                            <label id="lexe3" runat="server"><asp:Localize meta:resourcekey="regForm_scaleRead_exercise_label3"  runat="server" ID="Localize19" Text="" /></label>
-                        </li>
-
-                        <li>
-                            <input id="exe4" runat="server" type="radio" name="likert2" value="6-7">
-                            <label id="lexe4" runat="server"><asp:Localize meta:resourcekey="regForm_scaleRead_exercise_label4"  runat="server" ID="Localize20" Text="" /></label>
-                        </li>
-                        <li>
-                            <input id="exe5" runat="server" type="radio" name="likert2" value="8-9">
-                            <label id="lexe5" runat="server"><asp:Localize meta:resourcekey="regForm_scaleRead_exercise_label5"  runat="server" ID="Localize21" Text="" /></label>
-                        </li>
-
-                    </ul>
-                    <label class="labelForm nopadding"><asp:Localize meta:resourcekey="regForm_scaleRead_label3"  runat="server" ID="Localize22" Text="" /></label>
-                    <ul id="selfEsteem" class='likert'>
-                        <li>
-                            <input id="esteem1" runat="server" type="radio" name="likert3" value="">
-                            <label id="lesteem1" runat="server"><asp:Localize meta:resourcekey="regForm_scaleRead_selfEsteem_label1"  runat="server" ID="Localize23" Text="" /></label>
-                        </li>
-                        <li>
-                            <input id="esteem2" runat="server" type="radio" name="likert3" value="">
-                            <label id="lesteem2" runat="server"><asp:Localize meta:resourcekey="regForm_scaleRead_selfEsteem_label2"  runat="server" ID="Localize24" Text="" /></label>
-                        </li>
-                        <li>
-                            <input id="esteem3" runat="server" type="radio" name="likert3" value="">
-                            <label id="lesteem3" runat="server"><asp:Localize meta:resourcekey="regForm_scaleRead_selfEsteem_label3"  runat="server" ID="Localize25" Text="" /></label>
-                        </li>
-                        <li>
-                            <input id="esteem4" runat="server" type="radio" name="likert3" value="">
-                            <label id="lesteem4" runat="server"><asp:Localize meta:resourcekey="regForm_scaleRead_selfEsteem_label4"  runat="server" ID="Localize26" Text="" /></label>
-                        </li>
-                        <li>
-                            <input id="esteem5" runat="server" type="radio" name="likert3" value="">
-                            <label id="lesteem5" runat="server"><asp:Localize meta:resourcekey="regForm_scaleRead_selfEsteem_label5"  runat="server" ID="Localize27" Text="" /></label>
-                        </li>
-                    </ul>
-                    <label class="labelForm nopadding"><asp:Localize meta:resourcekey="regForm_scaleRead_label4"  runat="server" ID="Localize28" Text="" /></label>
-                    <ul id="selfHealth" class='likert'>
-                        <li>
-                            <input id="health1" runat="server" type="radio" name="likert4" value="">
-                            <label id="lhealth1" runat="server"><asp:Localize meta:resourcekey="regForm_scaleRead_selfHealth_label1"  runat="server" ID="Localize29" Text="" /></label>
-                        </li>
-                        <li>
-                            <input id="health2" runat="server" type="radio" name="likert4" value="">
-                            <label id="lhealth2" runat="server"><asp:Localize meta:resourcekey="regForm_scaleRead_selfHealth_label2"  runat="server" ID="Localize30" Text="" /></label>
-                        </li>
-                        <li>
-                            <input id="health3" runat="server" type="radio" name="likert4" value="">
-                            <label id="lhealth3" runat="server"><asp:Localize meta:resourcekey="regForm_scaleRead_selfHealth_label3"  runat="server" ID="Localize31" Text="" /></label>
-                        </li>
-                        <li>
-                            <input id="health4" runat="server" type="radio" name="likert4" value="">
-                            <label id="lhealth4" runat="server"><asp:Localize meta:resourcekey="regForm_scaleRead_selfHealth_label4"  runat="server" ID="Localize32" Text="" /></label>
-                        </li>
-                        <li>
-                            <input id="health5" runat="server" type="radio" name="likert4" value="">
-                            <label id="lhealth5" runat="server"><asp:Localize meta:resourcekey="regForm_scaleRead_selfHealth_label5"  runat="server" ID="Localize33" Text="" /></label>
-                        </li>
-                    </ul>
+                <hr>
+                <div id="leadingHand">
+                    <asp:Label ID="lbHand" runat="server" class="labelForm nopadding" Text="Dominant Hand" meta:resourcekey="regForm_lbHand"></asp:Label>
+                    <asp:DropDownList class="form-control input-lg short" ID="ddlHand" runat="server" AppendDataBoundItems="true">
+                        <asp:ListItem Text="<Select Level>" Value="0" />
+                    </asp:DropDownList>
                 </div>
-                <p>
-                    <asp:Button ID="submit" class="signup-btn" runat="server" Text="Save" OnClick="submit_Click" meta:resourcekey="regForm_btnsave"/>
-                </p>
-
+                <hr />
+                <div id="ethnicity">
+                    <asp:Label ID="lblEthnicity" runat="server" class="labelForm nopadding" Text="Ethnicity" meta:resourcekey="regForm_lblEthnicity"></asp:Label>
+                    <asp:DropDownList class="form-control input-lg short" ID="ddlEthnicity" runat="server" AppendDataBoundItems="true">
+                        <asp:ListItem Text="<Select Level>" Value="0" />
+                    </asp:DropDownList>
+                </div>
             </div>
-        </section>
+            <div id="scaleRead" class="box">
 
-    </asp:content>
- <%--   
+                <label class="labelForm nopadding">
+                    <asp:Localize meta:resourcekey="regForm_scaleRead_label1" runat="server" ID="Localize10" Text="" /></label>
+                <ul id="brainActivity" class='likert'>
+                    <li>
+                        <input id="act1" runat="server" type="radio" name="likert">
+                        <label id="lact1" runat="server">
+                            <asp:Localize meta:resourcekey="regForm_scaleRead_brainActivity_label1" runat="server" ID="Localize11" Text="" /></label>
+                    </li>
+                    <li>
+                        <input id="act2" runat="server" type="radio" name="likert">
+                        <label id="lact2" runat="server">
+                            <asp:Localize meta:resourcekey="regForm_scaleRead_brainActivity_label2" runat="server" ID="Localize12" Text="" /></label>
+                    </li>
+                    <li>
+                        <input id="act3" runat="server" type="radio" name="likert">
+                        <label id="lact3" runat="server">
+                            <asp:Localize meta:resourcekey="regForm_scaleRead_brainActivity_label3" runat="server" ID="Localize13" Text="" /></label>
+                    </li>
+                    <li>
+                        <input id="act4" runat="server" type="radio" name="likert">
+                        <label id="lact4" runat="server">
+                            <asp:Localize meta:resourcekey="regForm_scaleRead_brainActivity_label4" runat="server" ID="Localize14" Text="" /></label>
+                    </li>
+                    <li>
+                        <input id="act5" runat="server" type="radio" name="likert">
+                        <label id="lact5" runat="server">
+                            <asp:Localize meta:resourcekey="regForm_scaleRead_brainActivity_label5" runat="server" ID="Localize15" Text="" /></label>
+                    </li>
+                </ul>
+
+                <label class="labelForm nopadding">
+                    <asp:Localize meta:resourcekey="regForm_scaleRead_label2" runat="server" ID="Localize16" Text="" /></label>
+                <ul id="exercise" class='likert'>
+                    <li>
+                        <input id="exe1" runat="server" type="radio" name="likert2" value="0-1">
+                        <label id="lexe1" runat="server">
+                            <asp:Localize meta:resourcekey="regForm_scaleRead_exercise_label1" runat="server" ID="Localize17" Text="" /></label>
+                    </li>
+                    <li>
+                        <input id="exe2" runat="server" type="radio" name="likert2" value="2-3">
+                        <label id="lexe2" runat="server">
+                            <asp:Localize meta:resourcekey="regForm_scaleRead_exercise_label2" runat="server" ID="Localize18" Text="" /></label>
+                    </li>
+                    <li>
+                        <input id="exe3" runat="server" type="radio" name="likert2" value="4-5">
+                        <label id="lexe3" runat="server">
+                            <asp:Localize meta:resourcekey="regForm_scaleRead_exercise_label3" runat="server" ID="Localize19" Text="" /></label>
+                    </li>
+
+                    <li>
+                        <input id="exe4" runat="server" type="radio" name="likert2" value="6-7">
+                        <label id="lexe4" runat="server">
+                            <asp:Localize meta:resourcekey="regForm_scaleRead_exercise_label4" runat="server" ID="Localize20" Text="" /></label>
+                    </li>
+                    <li>
+                        <input id="exe5" runat="server" type="radio" name="likert2" value="8-9">
+                        <label id="lexe5" runat="server">
+                            <asp:Localize meta:resourcekey="regForm_scaleRead_exercise_label5" runat="server" ID="Localize21" Text="" /></label>
+                    </li>
+
+                </ul>
+                <label class="labelForm nopadding">
+                    <asp:Localize meta:resourcekey="regForm_scaleRead_label3" runat="server" ID="Localize22" Text="" /></label>
+                <ul id="selfEsteem" class='likert'>
+                    <li>
+                        <input id="esteem1" runat="server" type="radio" name="likert3" value="">
+                        <label id="lesteem1" runat="server">
+                            <asp:Localize meta:resourcekey="regForm_scaleRead_selfEsteem_label1" runat="server" ID="Localize23" Text="" /></label>
+                    </li>
+                    <li>
+                        <input id="esteem2" runat="server" type="radio" name="likert3" value="">
+                        <label id="lesteem2" runat="server">
+                            <asp:Localize meta:resourcekey="regForm_scaleRead_selfEsteem_label2" runat="server" ID="Localize24" Text="" /></label>
+                    </li>
+                    <li>
+                        <input id="esteem3" runat="server" type="radio" name="likert3" value="">
+                        <label id="lesteem3" runat="server">
+                            <asp:Localize meta:resourcekey="regForm_scaleRead_selfEsteem_label3" runat="server" ID="Localize25" Text="" /></label>
+                    </li>
+                    <li>
+                        <input id="esteem4" runat="server" type="radio" name="likert3" value="">
+                        <label id="lesteem4" runat="server">
+                            <asp:Localize meta:resourcekey="regForm_scaleRead_selfEsteem_label4" runat="server" ID="Localize26" Text="" /></label>
+                    </li>
+                    <li>
+                        <input id="esteem5" runat="server" type="radio" name="likert3" value="">
+                        <label id="lesteem5" runat="server">
+                            <asp:Localize meta:resourcekey="regForm_scaleRead_selfEsteem_label5" runat="server" ID="Localize27" Text="" /></label>
+                    </li>
+                </ul>
+                <label class="labelForm nopadding">
+                    <asp:Localize meta:resourcekey="regForm_scaleRead_label4" runat="server" ID="Localize28" Text="" /></label>
+                <ul id="selfHealth" class='likert'>
+                    <li>
+                        <input id="health1" runat="server" type="radio" name="likert4" value="">
+                        <label id="lhealth1" runat="server">
+                            <asp:Localize meta:resourcekey="regForm_scaleRead_selfHealth_label1" runat="server" ID="Localize29" Text="" /></label>
+                    </li>
+                    <li>
+                        <input id="health2" runat="server" type="radio" name="likert4" value="">
+                        <label id="lhealth2" runat="server">
+                            <asp:Localize meta:resourcekey="regForm_scaleRead_selfHealth_label2" runat="server" ID="Localize30" Text="" /></label>
+                    </li>
+                    <li>
+                        <input id="health3" runat="server" type="radio" name="likert4" value="">
+                        <label id="lhealth3" runat="server">
+                            <asp:Localize meta:resourcekey="regForm_scaleRead_selfHealth_label3" runat="server" ID="Localize31" Text="" /></label>
+                    </li>
+                    <li>
+                        <input id="health4" runat="server" type="radio" name="likert4" value="">
+                        <label id="lhealth4" runat="server">
+                            <asp:Localize meta:resourcekey="regForm_scaleRead_selfHealth_label4" runat="server" ID="Localize32" Text="" /></label>
+                    </li>
+                    <li>
+                        <input id="health5" runat="server" type="radio" name="likert4" value="">
+                        <label id="lhealth5" runat="server">
+                            <asp:Localize meta:resourcekey="regForm_scaleRead_selfHealth_label5" runat="server" ID="Localize33" Text="" /></label>
+                    </li>
+                </ul>
+            </div>
+            <p>
+                <asp:Button ID="submit" class="signup-btn" runat="server" Text="Save" OnClick="submit_Click" meta:resourcekey="regForm_btnsave" />
+            </p>
+
+        </div>
+    </section>
+
+</asp:Content>
+<%--   
         <div class="container">
             <div class="row">
                 <div class="container">
@@ -342,104 +369,104 @@
         ga('send', 'pageview');
 
 </script>
-    --%>
-    <asp:Content ContentPlaceHolderID="ScriptsContent" runat="server">
+--%>
+<asp:Content ContentPlaceHolderID="ScriptsContent" runat="server">
 
-<script src="https://code.jquery.com/jquery-3.1.0.js" integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk=" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.js" integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
 
 
 
-<script>
-    var cbEnglYes = document.getElementById('<%= cbEnglYes.ClientID %>');
-    var cbMedicationsY = document.getElementById('<%= cbMedicationsY.ClientID %>');
-    var cbHeadInjY = document.getElementById('<%= cbHeadInjY.ClientID %>');
+    <script>
+        var cbEnglYes = document.getElementById('<%= cbEnglYes.ClientID %>');
+        var cbMedicationsY = document.getElementById('<%= cbMedicationsY.ClientID %>');
+        var cbHeadInjY = document.getElementById('<%= cbHeadInjY.ClientID %>');
 
-    $('#<%= txtBDay.ClientID %>').datepicker({
-        dateFormat: 'mm/dd/yy',
-        changeMonth: true,
-        changeYear: true,
-        yearRange: "1900:2020"
-    });
+        $('#<%= txtBDay.ClientID %>').datepicker({
+            dateFormat: 'mm/dd/yy',
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "1900:2020"
+        });
 
-    if (cbMedicationsY.checked == true) {
-        $('#<%= txtKindMeds.ClientID %>').show();
+        if (cbMedicationsY.checked == true) {
+            $('#<%= txtKindMeds.ClientID %>').show();
         $('#<%= cbMedicationsN.ClientID %>').prop('checked', false);
     }
     else
         $('#<%= txtKindMeds.ClientID %>').hide();
 
 
-    if (cbHeadInjY.checked == true) {
-        $('#<%= ddlHeadInjNum.ClientID %>').show();
+        if (cbHeadInjY.checked == true) {
+            $('#<%= ddlHeadInjNum.ClientID %>').show();
         $('#<%= lbHeadInjNum.ClientID %>').show();
         $('#<%= cbHeadInjN.ClientID %>').prop('checked', false);
     }
     else {
         $('#<%= ddlHeadInjNum.ClientID %>').hide();
         $('#<%= lbHeadInjNum.ClientID %>').hide();
-    }
+        }
 
 
 
-    $('#<%= cbMedicationsY.ClientID %>').click(function () {
-        if (this.checked == true) {
-            $('#<%= txtKindMeds.ClientID %>').show();
+        $('#<%= cbMedicationsY.ClientID %>').click(function () {
+            if (this.checked == true) {
+                $('#<%= txtKindMeds.ClientID %>').show();
             $('#<%= cbMedicationsN.ClientID %>').prop('checked', false);
         }
         else
             $('#<%= txtKindMeds.ClientID %>').hide();
-    })
+        })
 
-    $('#<%= cbMedicationsN.ClientID %>').click(function () {
-        if (this.checked == true) {
-            $('#<%= txtKindMeds.ClientID %>').hide();
+        $('#<%= cbMedicationsN.ClientID %>').click(function () {
+            if (this.checked == true) {
+                $('#<%= txtKindMeds.ClientID %>').hide();
             $('#<%= cbMedicationsY.ClientID %>').prop('checked', false);
-        }
+            }
 
-    })
-
-
-    $('#<%= cbMale.ClientID %>').click(function () {
-        $('#<%= cbFmale.ClientID %>').prop('checked', false);
-    })
-
-    $('#<%= cbFmale.ClientID %>').click(function () {
-        $('#<%= cbMale.ClientID %>').prop('checked', false);
-    })
-
-    //$('#cbAgree').click(function () {
-    //    $('#cbDoNotAgree').prop('checked', false);
-    //})
-
-    //$('#cbDoNotAgree').click(function () {
-    //    $('#cbAgree').prop('checked', false);
-    //})
+        })
 
 
-    $('#<%= cbHeadInjY.ClientID %>').click(function () {
-        if (this.checked == true) {
-            $('#<%= ddlHeadInjNum.ClientID %>').show();
+        $('#<%= cbMale.ClientID %>').click(function () {
+            $('#<%= cbFmale.ClientID %>').prop('checked', false);
+        })
+
+        $('#<%= cbFmale.ClientID %>').click(function () {
+            $('#<%= cbMale.ClientID %>').prop('checked', false);
+        })
+
+        //$('#cbAgree').click(function () {
+        //    $('#cbDoNotAgree').prop('checked', false);
+        //})
+
+        //$('#cbDoNotAgree').click(function () {
+        //    $('#cbAgree').prop('checked', false);
+        //})
+
+
+        $('#<%= cbHeadInjY.ClientID %>').click(function () {
+            if (this.checked == true) {
+                $('#<%= ddlHeadInjNum.ClientID %>').show();
             $('#<%= lbHeadInjNum.ClientID %>').show();
             $('#<%= cbHeadInjN.ClientID %>').prop('checked', false);
         }
         else {
             $('#<%= ddlHeadInjNum.ClientID %>').hide();
             $('#<%= lbHeadInjNum.ClientID %>').hide();
-        }
-    })
+            }
+        })
 
-    $('#<%= cbHeadInjN.ClientID %>').click(function () {
-        if (this.checked == true) {
-            $('#<%= ddlHeadInjNum.ClientID %>').hide();
+        $('#<%= cbHeadInjN.ClientID %>').click(function () {
+            if (this.checked == true) {
+                $('#<%= ddlHeadInjNum.ClientID %>').hide();
             $('#<%= lbHeadInjNum.ClientID %>').hide();
             $('#<%= cbHeadInjY.ClientID %>').prop('checked', false);
-        }
+            }
 
-    })
+        })
 
-    if (cbEnglYes.checked == true) {
-        $('#<%= lblFstLang.ClientID %>').hide();
+        if (cbEnglYes.checked == true) {
+            $('#<%= lblFstLang.ClientID %>').hide();
         $('#<%= firstLang.ClientID %>').hide();
         $('#<%= cbEnglNo.ClientID %>').prop('checked', false);
     }
@@ -448,11 +475,11 @@
         $('#<%= firstLang.ClientID %>').show();
         $('#<%= cbEnglNo.ClientID %>').prop('checked', true);
 
-    }
+        }
 
-    $('#<%= cbEnglYes.ClientID %>').click(function () {
-        if (this.checked == true) {
-            $('#<%= lblFstLang.ClientID %>').hide();
+        $('#<%= cbEnglYes.ClientID %>').click(function () {
+            if (this.checked == true) {
+                $('#<%= lblFstLang.ClientID %>').hide();
             $('#<%= firstLang.ClientID %>').hide();
             $('#<%= cbEnglNo.ClientID %>').prop('checked', false);
         }
@@ -461,12 +488,12 @@
             $('#<%= firstLang.ClientID %>').show();
             $('#<%= cbEnglNo.ClientID %>').prop('checked', true);
 
-        }
-    })
+            }
+        })
 
-    $('#<%= cbEnglNo.ClientID %>').click(function () {
-        if (this.checked == true) {
-            $('#<%= lblFstLang.ClientID %>').show();
+        $('#<%= cbEnglNo.ClientID %>').click(function () {
+            if (this.checked == true) {
+                $('#<%= lblFstLang.ClientID %>').show();
             $('#<%= firstLang.ClientID %>').show();
             $('#<%= cbEnglYes.ClientID %>').prop('checked', false);
         }
@@ -474,27 +501,27 @@
             $('#<%= lblFstLang.ClientID %>').hide();
             $('#<%= firstLang.ClientID %>').hide();
             $('#<%= cbEnglYes.ClientID %>').prop('checked', true);
-        }
+            }
 
-    })
+        })
 
 
 
-    $('#<%= cbHeadInjN.ClientID %>').click(function () {
-        if (this.checked == true) {
-            $('#<%= ddlHeadInjNum.ClientID %>').hide();
+        $('#<%= cbHeadInjN.ClientID %>').click(function () {
+            if (this.checked == true) {
+                $('#<%= ddlHeadInjNum.ClientID %>').hide();
             $('#<%= lbHeadInjNum.ClientID %>').hide();
             $('#<%= cbHeadInjY.ClientID %>').prop('checked', false);
-        }
+            }
 
-    })
+        })
 
-    $('#<%= submit.ClientID %>').click(function () {
+        $('#<%= submit.ClientID %>').click(function () {
 
-    });
+        });
 
-</script>
+    </script>
 
-<script src="js/gallety.js"></script>
+    <script src="js/gallety.js"></script>
 
-        </asp:Content>
+</asp:Content>

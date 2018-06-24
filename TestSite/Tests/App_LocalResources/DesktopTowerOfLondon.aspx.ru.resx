@@ -157,16 +157,16 @@
     <value>Ваш ключ:</value>
   </data>
   <data name="testDescription_img1_span1.Text" xml:space="preserve">
-    <value>Sed imperdiet eros nec tellus fringilla, id facilisis ex tempus.</value>
+    <value>Вы можете создать свой собственный тест</value>
   </data>
   <data name="testDescription_img1_span2.Text" xml:space="preserve">
-    <value>Lorem ipsum dolor sit amet</value>
+    <value>Редактировть существующие тесты</value>
   </data>
   <data name="testDescription_img1_span3.Text" xml:space="preserve">
-    <value>Lorem ipsum dolor sit amet</value>
+    <value>Сделать тестовый прогон</value>
   </data>
   <data name="testDescription_img1_span4.Text" xml:space="preserve">
-    <value>Sed imperdiet eros nec tellus fringilla..</value>
+    <value>Удалить ненужные тесты</value>
   </data>
   <data name="testDescription_img1_title.Text" xml:space="preserve">
     <value>Создать тест</value>
@@ -203,5 +203,47 @@
   </data>
   <data name="testDescription_title.Text" xml:space="preserve">
     <value>Просмотр примеров</value>
+  </data>
+  <data name="testDescription_img2_span1.Text" xml:space="preserve">
+    <value>Вы можете добавить любое количество участников</value>
+  </data>
+  <data name="testDescription_img2_span2.Text" xml:space="preserve">
+    <value>Создание учетных записей пользователей и администраторов</value>
+  </data>
+  <data name="testDescription_img2_span3.Text" xml:space="preserve">
+    <value>Заполнить профили</value>
+  </data>
+  <data name="testDescription_img3_span1.Text" xml:space="preserve">
+    <value>Вы можете запускать и проходить тесты</value>
+  </data>
+  <data name="testDescription_img3_span2.Text" xml:space="preserve">
+    <value>Каждое движение записывается для дальнейшего анализа</value>
+  </data>
+  <data name="testDescription_img4_span1.Text" xml:space="preserve">
+    <value>На вкладке «Анализ» вы можете увидеть все результаты пройденных тестов</value>
+  </data>
+  <data name="testDescription_img4_span2.Text" xml:space="preserve">
+    <value>Смотреть подробную информацию о прохождении каждого теста</value>
+  </data>
+  <data name="testDescription_img4_span3.Text" xml:space="preserve">
+    <value>Смотреть время прохождения каждого раунда</value>
+  </data>
+  <data name="testDescription_img4_span4.Text" xml:space="preserve">
+    <value>Печать или экспорт результатов</value>
+  </data>
+  <data name="testDescription_img5_span1.Text" xml:space="preserve">
+    <value>Вы можете просмотреть воспроизведение прохождения теста</value>
+  </data>
+  <data name="testDescription_img5_span2.Text" xml:space="preserve">
+    <value>С помощью воспроизведение вы можете оценить ход мысли</value>
+  </data>
+  <data name="testDescription_img5_span3.Text" xml:space="preserve">
+    <value>Выбрать скорость воспроизведения</value>
+  </data>
+  <data name="testDescription_img6_span1.Text" xml:space="preserve">
+    <value>Сохраните результаты в файл excel</value>
+  </data>
+  <data name="testDescription_img6_span2.Text" xml:space="preserve">
+    <value>Отправить результаты участникам по электронной почте</value>
   </data>
 </root>

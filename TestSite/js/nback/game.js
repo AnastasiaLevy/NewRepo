@@ -367,7 +367,7 @@ function saveResults() {
     }
 
     goToPage();
-    if (save = true)
+    if (save == true)
         saveTextAsFile(arrData);
 
 }
