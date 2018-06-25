@@ -84,12 +84,11 @@
               
                 <%--<asp:Button runat="server" class="btn btn-success" ID="btnExport" Text="Export" OnClick="btnExport_Click" />--%>
                <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Export
-    <span class="caret"></span></button>
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><asp:Localize meta:resourcekey="btn_export"  runat="server" ID="Localize1" Text="" /><span class="caret"></span></button>
     <ul class="dropdown-menu">
-      <li><asp:Button runat="server"  ID="btnPrintR"     CssClass="selectBtn"    Text ="Print" OnClientClick="javascript:window.print();" /></li>
-      <li><asp:Button runat="server"  ID="btnExportLine" CssClass="selectBtn"  Text="Export to Excel One Line" OnClick="btnExportLine_Click"/></li>
-      <li><asp:Button runat="server"  ID="btnExportNorm" CssClass="selectBtn"  Text="Export to Excel Traditional" OnClick="btnExportNorm_Click" /></li>
+      <li><asp:Button runat="server"  ID="btnPrintR"     CssClass="selectBtn"    Text ="Print" OnClientClick="javascript:window.print();" meta:resourcekey="btnPrintR"/></li>
+      <li><asp:Button runat="server"  ID="btnExportLine" CssClass="selectBtn"  Text="Export to Excel One Line" OnClick="btnExportLine_Click" meta:resourcekey="btnExportLine"/></li>
+      <li><asp:Button runat="server"  ID="btnExportNorm" CssClass="selectBtn"  Text="Export to Excel Traditional" OnClick="btnExportNorm_Click" meta:resourcekey="btnExportNorm"/></li>
 
     
     </ul>

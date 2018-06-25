@@ -121,7 +121,7 @@
     <value>Экспорт в Excel One Line</value>
   </data>
   <data name="btnExportNorm.Text" xml:space="preserve">
-    <value>Экспорт в Excel</value>
+    <value>Экспорт в Excel таблицей</value>
   </data>
   <data name="btnPrintR.Text" xml:space="preserve">
     <value>Распечатать</value>

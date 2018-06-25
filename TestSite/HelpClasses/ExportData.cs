@@ -259,7 +259,7 @@ namespace TestSite.HelpClasses
             {
                 for (int j = 0; j < ds.Tables[0].Columns.Count; j++)
                 {
-                    sb.Append(ds.Tables[0].Rows[i][ds.Tables[0].Columns[j].ColumnName]);
+                    sb.Append(ds.Tables[0].Rows[i][ds.Tables[0].Columns[j].ColumnName].ToString().Replace(",", "."));
                     sb.Append(',');
                 }
             }
@@ -378,7 +378,7 @@ namespace TestSite.HelpClasses
             {
                 for (int i = 0; i < datatable.Columns.Count; i++)
                 {
-                    sb.Append(dr[i].ToString());
+                    sb.Append(dr[i].ToString().ToString().Replace(",", "."));
 
                     if (i < datatable.Columns.Count - 1)
                         sb.Append(',');
