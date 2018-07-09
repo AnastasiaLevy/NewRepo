@@ -145,7 +145,7 @@
     <value>Desktop Tests Collection</value>
   </data>
   <data name="CardSort_install.Text" xml:space="preserve">
-    <value>Install</value>
+    <value>Call or Email to Activate</value>
   </data>
   <data name="cardSort_orderNow.Text" xml:space="preserve">
     <value>Order Now</value>
@@ -172,7 +172,7 @@
     <value>Please fill out the order form:</value>
   </data>
   <data name="CPT_install.Text" xml:space="preserve">
-    <value>Install</value>
+    <value>Call or Email to Activate</value>
   </data>
   <data name="CPT_orderNow.Text" xml:space="preserve">
     <value>Order Now</value>
@@ -202,7 +202,7 @@
     <value>Trails</value>
   </data>
   <data name="hanoi_install.Text" xml:space="preserve">
-    <value>Install</value>
+    <value>Call or Email to Activate</value>
   </data>
   <data name="hanoi_orderNow.Text" xml:space="preserve">
     <value>Order Now</value>
@@ -218,7 +218,7 @@ Extensive age-stratified norms for included tests, broken out in ten year cohort
     <value>Tower of Hanoi</value>
   </data>
   <data name="london_install.Text" xml:space="preserve">
-    <value>Install</value>
+    <value>Call or Email to Activate</value>
   </data>
   <data name="london_orderNow.Text" xml:space="preserve">
     <value>Order Now</value>
@@ -259,7 +259,7 @@ In addition to Shallice’s (1982) original findings of deficits in individuals 
     <value>Profile</value>
   </data>
   <data name="reaction_install.Text" xml:space="preserve">
-    <value>Install</value>
+    <value>Call or Email to Activate</value>
   </data>
   <data name="reaction_orderNow.Text" xml:space="preserve">
     <value>Order Now</value>
@@ -363,7 +363,7 @@ et al., 1999).</value>
     <value>Verbal</value>
   </data>
   <data name="memory_install.text" xml:space="preserve">
-    <value>Installs</value>
+    <value>Call or Email to Activate</value>
   </data>
   <data name="memory_ordernow.text" xml:space="preserve">
     <value>Order Now</value>
@@ -378,7 +378,7 @@ et al., 1999).</value>
     <value>Memory Cards</value>
   </data>
   <data name="nback_install.text" xml:space="preserve">
-    <value>Installs</value>
+    <value>Call or Email to Activate</value>
   </data>
   <data name="nback_ordernow.text" xml:space="preserve">
     <value>Order Now</value>
@@ -393,7 +393,7 @@ et al., 1999).</value>
     <value>n-Back</value>
   </data>
   <data name="sopt_install.text" xml:space="preserve">
-    <value>Installs</value>
+    <value>Call or Email to Activate</value>
   </data>
   <data name="sopt_ordernow.text" xml:space="preserve">
     <value>Order Now</value>
@@ -408,7 +408,7 @@ et al., 1999).</value>
     <value>SOPT</value>
   </data>
   <data name="Verbal_install.text" xml:space="preserve">
-    <value>Installs</value>
+    <value>Call or Email to Activate</value>
   </data>
   <data name="Verbal_ordernow.text" xml:space="preserve">
     <value>Order Now</value>

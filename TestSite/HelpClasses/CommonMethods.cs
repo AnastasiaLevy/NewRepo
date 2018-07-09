@@ -52,7 +52,7 @@ namespace TestSite.HelpClasses
             ppHref.Append("https://www.paypal.com/cgi-bin/webscr?cmd=_xclick");//("https://www.paypal.com/cgi-bin/webscr?cmd=_xclick");
             ppHref.Append("&business=" + business);
             ppHref.Append("&item_name=" + num + "_" + itemName);
-            ppHref.Append("&amount=" + 0.01);//itemAmount.ToString("#.00")
+            ppHref.Append("&amount=" + itemAmount);//itemAmount.ToString("#.00")
             ppHref.Append("&currency_code=" + currencyCode);
             ppHref.Append("&return=" + baseUrl + pageToReturn); //"http://localhost:52606/TrailsWrapper.aspx");
             return ppHref.ToString();

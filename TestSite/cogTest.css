@@ -719,7 +719,7 @@ footer {
 }
 
 #about {
-    padding: 80px 0px 40px 0px; /*background-image:url("../images/background.jpg");background-repeat:repeat;*/
+    padding: 80px 0px 0px 0px; /*background-image:url("../images/background.jpg");background-repeat:repeat;*/
 }
 
 #Memory, #ExecutiveFunction, #ProcessingSpeed, #IntelligenceTest {
@@ -1367,7 +1367,7 @@ img.displayed {
         }
 
 #services {
-    padding-top: 60px;
+    padding-top: 56px;
 }
 
     #services p {
@@ -3694,4 +3694,10 @@ label {
 
 .port3 img {
     max-height: 100px;
+}
+
+.global-save {
+    position: fixed;
+    right: 70px;
+    bottom: 55px;
 }

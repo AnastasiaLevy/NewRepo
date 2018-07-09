@@ -42,6 +42,7 @@
             width: 500px;
             top: 100px;
             position: fixed;
+            z-index: 1;
         }
 
         #sidebar {
@@ -174,7 +175,7 @@
         </div>
         <div id="headerSlider">
             <h4>
-                <asp:Localize meta:resourcekey="GoTo" runat="server" ID="Localize46" Text="" /><span id="closeButton" class="form-slide-close pull-right" onclick="close_panel();  ">X</span></h4>
+                <asp:Localize meta:resourcekey="GoTo" runat="server" ID="Localize46" Text="" /><span id="closeButton" class="form-slide-close pull-right" onclick="close_panel();" style="cursor: pointer;">X</span></h4>
             <%--<p><a href="#intro">About Cognitive Testing</a></p>--%>
             <p>
                 <li><a href="#london">
@@ -348,7 +349,7 @@
 
     </section>
 
-    <section class="container testDescription" id="london">
+    <section class="container testDescription" id="london" style="padding-top: 60px;">
         <%--=======================LONDON===========================--%>
         <h1>
             <asp:Localize meta:resourcekey="london_title" runat="server" ID="Localize50" Text="" /></h1>
@@ -434,7 +435,7 @@
         <%--==================================================--%>
     </section>
 
-    <section class="container margin testDescription" id="cardSort">
+    <section class="container testDescription" id="cardSort" style="padding-top: 60px;">
         <%--=======================cardSort===========================--%>
         <h1>
             <asp:Localize meta:resourcekey="cardSort_title" runat="server" ID="Localize57" Text="" /></h1>
@@ -516,7 +517,7 @@
         <%--==================================================--%>
     </section>
 
-    <section class="container margin testDescription" id="cpt">
+    <section class="container testDescription" id="cpt" style="padding-top: 60px;">
         <%--=======================CPT===========================--%>
         <h1>
             <asp:Localize meta:resourcekey="CPT_title" runat="server" ID="Localize16" Text="" /></h1>
@@ -594,8 +595,7 @@
         <%--==================================================--%>
     </section>
 
-
-    <section class="container margin testDescription" id="hanoi">
+    <section class="container testDescription" id="hanoi" style="padding-top: 60px;">
         <%--=======================hanoi===========================--%>
         <h1>
             <asp:Localize meta:resourcekey="hanoi_title" runat="server" ID="Localize19" Text="" /></h1>
@@ -684,7 +684,7 @@
         <%--==================================================--%>
     </section>
 
-    <section class="container margin testDescription" id="reaction">
+    <section class="container testDescription" id="reaction" style="padding-top: 60px;">
         <%--=======================reaction===========================--%>
         <h1>
             <asp:Localize meta:resourcekey="reaction_title" runat="server" ID="Localize20" Text="" /></h1>
@@ -765,7 +765,7 @@
         <%--==================================================--%>
     </section>
 
-    <section class="container margin testDescription" id="trails">
+    <section class="container testDescription" id="trails" style="padding-top: 60px;">
         <%--=======================trails===========================--%>
         <h1>
             <asp:Localize meta:resourcekey="trails_title" runat="server" ID="Localize31" Text="" /></h1>
@@ -849,7 +849,7 @@
         <%--==================================================--%>
     </section>
 
-    <section class="container margin testDescription" id="nbk">
+    <section class="container testDescription" id="nbk" style="padding-top: 60px;">
         <%--=======================N-Back===========================--%>
         <h1>
             <asp:Localize meta:resourcekey="nback_title" runat="server" ID="Localize34" Text="" /></h1>
@@ -928,7 +928,7 @@
         <%--==================================================--%>
     </section>
 
-    <section class="container margin testDescription" id="vrb">
+    <section class="container testDescription" id="vrb" style="padding-top: 60px;">
         <%--=======================verbal===========================--%>
         <h1>
             <asp:Localize meta:resourcekey="verbal_title" runat="server" ID="Localize44" Text="" /></h1>
@@ -1007,7 +1007,7 @@
         <%--==================================================--%>
     </section>
 
-    <section class="container margin testDescription" id="mmc">
+    <section class="container testDescription" id="mmc" style="padding-top: 60px;">
         <%--=======================memory cards===========================--%>
         <h1>
             <asp:Localize meta:resourcekey="memory_title" runat="server" ID="Localize69" Text="" /></h1>
@@ -1086,8 +1086,7 @@
         <%--==================================================--%>
     </section>
 
-
-    <section class="container margin testDescription" id="spt">
+    <section class="container testDescription" id="spt" style="padding-top: 60px;">
         <%--=======================SOPT===========================--%>
         <h1>
             <asp:Localize meta:resourcekey="sopt_title" runat="server" ID="Localize74" Text="" /></h1>

@@ -67,7 +67,7 @@
         <div class="container">
         <section id="userInfo">
             <div class="row">
-                <div class="box box1">
+                <div class="box box1" style="margin-top: 70px;">
                     <div class="col-lg-12">
                         <hr>
                         <h2 class="intro-text text-center"><asp:Localize meta:resourcekey="userInfo_title"  runat="server" ID="Localize7" Text="" /> 
@@ -108,7 +108,7 @@
                             </div>
                             <div class="panel-body">
                                 <asp:Label ID="Label5" runat="server" Text="" meta:resourcekey="userInfo_Label5"></asp:Label>
-                                <asp:TextBox ID="txtUserCode" runat="server" CssClass="createUser" Width="50%"></asp:TextBox>
+                                <asp:TextBox ID="txtUserCode" runat="server" CssClass="createUser"></asp:TextBox>
                                 <asp:Button ID="btnCodeSave" class="btn btn-labeled btn-success" runat="server" Text="" OnClick="btnCodeSave_Click" meta:resourcekey="userInfo_btnCodeSave"/>
                                 <asp:Button ID="btnCodeClose" class="btn btn-labeled btn-info" runat="server" Text="" OnClick="btnCodeClose_Click" meta:resourcekey="userInfo_btnCodeClose"/>
                             </div>

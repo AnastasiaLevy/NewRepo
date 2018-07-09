@@ -145,7 +145,7 @@
     <value>Коллекция тестов для компьютера</value>
   </data>
   <data name="CardSort_install.Text" xml:space="preserve">
-    <value>Установить</value>
+    <value>Свяжитесь с нами для активации</value>
   </data>
   <data name="cardSort_orderNow.Text" xml:space="preserve">
     <value>Заказать сейчас</value>
@@ -178,7 +178,7 @@
     <value>Пожалуйста, заполните форму заказа:</value>
   </data>
   <data name="CPT_install.Text" xml:space="preserve">
-    <value>Установить</value>
+    <value>Свяжитесь с нами для активации</value>
   </data>
   <data name="CPT_orderNow.Text" xml:space="preserve">
     <value>Заказать сейчас</value>
@@ -211,7 +211,7 @@
     <value>Trails</value>
   </data>
   <data name="hanoi_install.Text" xml:space="preserve">
-    <value>Установить</value>
+    <value>Свяжитесь с нами для активации</value>
   </data>
   <data name="hanoi_orderNow.Text" xml:space="preserve">
     <value>Заказать сейчас</value>
@@ -226,7 +226,7 @@
     <value>Tower of Hanoi</value>
   </data>
   <data name="london_install.Text" xml:space="preserve">
-    <value>Установить</value>
+    <value>Свяжитесь с нами для активации</value>
   </data>
   <data name="london_orderNow.Text" xml:space="preserve">
     <value>Заказать сейчас</value>
@@ -270,7 +270,7 @@
     <value>Компьютерные тесты</value>
   </data>
   <data name="reaction_install.Text" xml:space="preserve">
-    <value>Установить</value>
+    <value>Свяжитесь с нами для активации</value>
   </data>
   <data name="reaction_orderNow.Text" xml:space="preserve">
     <value>Заказать сейчас</value>
@@ -289,7 +289,7 @@
     <value>Reaction Time</value>
   </data>
   <data name="trails_install.Text" xml:space="preserve">
-    <value>Установить</value>
+    <value>Свяжитесь с нами для активации</value>
   </data>
   <data name="trails_orderNow.Text" xml:space="preserve">
     <value>Заказать сейчас</value>
@@ -336,7 +336,7 @@
 et al., 1999).</value>
   </data>
   <data name="memory_install.text" xml:space="preserve">
-    <value>Установить</value>
+    <value>Свяжитесь с нами для активации</value>
   </data>
   <data name="memory_ordernow.text" xml:space="preserve">
     <value>Заказать сейчас</value>
@@ -351,7 +351,7 @@ et al., 1999).</value>
     <value>Memory Cards</value>
   </data>
   <data name="n-back_install.text" xml:space="preserve">
-    <value>Установить</value>
+    <value>Свяжитесь с нами для активации</value>
   </data>
   <data name="n-back_ordernow.text" xml:space="preserve">
     <value>Заказать сейчас</value>
@@ -366,7 +366,7 @@ et al., 1999).</value>
     <value>n-Back</value>
   </data>
   <data name="sopt_install.text" xml:space="preserve">
-    <value>Установить</value>
+    <value>Свяжитесь с нами для активации</value>
   </data>
   <data name="sopt_ordernow.text" xml:space="preserve">
     <value>Заказать сейчас</value>
@@ -381,7 +381,7 @@ et al., 1999).</value>
     <value>SOPT</value>
   </data>
   <data name="Verbal_install.text" xml:space="preserve">
-    <value>Установить</value>
+    <value>Свяжитесь с нами для активации</value>
   </data>
   <data name="Verbal_ordernow.text" xml:space="preserve">
     <value>Заказать сейчас</value>

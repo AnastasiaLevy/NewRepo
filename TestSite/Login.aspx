@@ -50,6 +50,8 @@
                                     <label class="sr-only" for="form-password"><asp:Localize meta:resourcekey="loginForm_LabelPass"  runat="server" ID="Localize5" Text="" /></label>
                                     <input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="userPwLg" required runat="server" meta:resourcekey="loginForm_inputPass"/>
                                 </div>
+                                <a href="/MainPage.aspx#contact">Forgot password?</a>
+                                <br />
                                 <asp:LinkButton ID="btnLogin" class="btn btn-success" type="submit" runat="server" OnClick="clcLogin"><asp:Localize meta:resourcekey="loginForm_LinkButton"  runat="server" ID="Localize6" Text="" /></asp:LinkButton>
                                 <%--<button type="submit" class="btn" runat="server" style="display: none" OnClick="javascript:__doPostBack('ctl16','')"><asp:Localize meta:resourcekey="loginForm_Button"  runat="server" ID="Localize7" Text="" /></button>--%>
                             </div>
@@ -123,7 +125,7 @@
 <asp:Content ContentPlaceHolderID="ModalContent" runat="server">
     <div>
         <div class="b-popup" id="popup1" style="display: none;">
-        <div class="b-popup-content" style="position: relative; height: 500px;">
+        <div class="b-popup-content" style="position: relative; height: auto">
             <p class="b-popup-text" style="line-height: 1.4;"><asp:Localize meta:resourcekey="popup_paragraph"  runat="server" ID="Localize16" Text="" /></p>
             <div style="display:block; margin: 0 auto;">
                 <div> 

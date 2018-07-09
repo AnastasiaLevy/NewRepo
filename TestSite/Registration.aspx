@@ -122,7 +122,7 @@
                 <div id="education" class="col-xs-6 col-md-6  nopadding">
                     <asp:Label ID="lbEducation" runat="server" class="labelForm" Text="Education:" meta:resourcekey="regForm_lbEducation"></asp:Label>
                     <asp:DropDownList class="form-control input-lg" ID="ddlEducation" runat="server" AppendDataBoundItems="true">
-                        <asp:ListItem Text="<Select Level>" Value="0" />
+                        <asp:ListItem Text="<Select Level>" disabled="disabled" Value="-1" Selected="True" />
                     </asp:DropDownList>
                 </div>
 
@@ -131,14 +131,13 @@
             <div class="box">
                 <div id="language">
                     <asp:Label ID="lblLang" runat="server" class="labelForm nopadding" Text="Is English your first language?" meta:resourcekey="regForm_lblLang"></asp:Label>
-                    </br>
-                           
-                        <asp:CheckBox ID="cbEnglYes" runat="server" class="" Text="Yes" meta:resourcekey="regForm_cbEnglYes" />
+                    <br/>
+                    <asp:CheckBox ID="cbEnglYes" runat="server" class="" Text="Yes" meta:resourcekey="regForm_cbEnglYes" />
                     <asp:CheckBox ID="cbEnglNo" runat="server" class="" Text="No" meta:resourcekey="regForm_cbEnglNo" />
-                    </br>
+                    <br/>
                            
                         <asp:Label ID="lblFstLang" runat="server" class="labelForm nopadding" Text="Pleas Enter Your First Language:" meta:resourcekey="regForm_lblFstLang"></asp:Label>
-                    <asp:TextBox ID="firstLang" class="form-control input-lg" runat="server" placeholder="first language" meta:resourcekey="regForm_firstLang"></asp:TextBox></br>
+                    <asp:TextBox ID="firstLang" class="form-control input-lg" runat="server" placeholder="first language" meta:resourcekey="regForm_firstLang"></asp:TextBox></br/>
                        
                 </div>
 
@@ -185,7 +184,7 @@
                     <asp:Label ID="lbIncome" runat="server" class="labelForm nopadding" Text="Level of Income:" meta:resourcekey="regForm_lbIncome"></asp:Label></br>
                            
                         <asp:DropDownList ID="ddlIncome" class="form-control input-lg short" runat="server" AppendDataBoundItems="true">
-                            <asp:ListItem Text="<Select Level>" Value="0" />
+                            <asp:ListItem Text="<Select Level>" disabled="disabled" Value="-1" Selected="True" />
                         </asp:DropDownList>
                 </div>
 
@@ -193,14 +192,14 @@
                 <div id="leadingHand">
                     <asp:Label ID="lbHand" runat="server" class="labelForm nopadding" Text="Dominant Hand" meta:resourcekey="regForm_lbHand"></asp:Label>
                     <asp:DropDownList class="form-control input-lg short" ID="ddlHand" runat="server" AppendDataBoundItems="true">
-                        <asp:ListItem Text="<Select Level>" Value="0" />
+                        <asp:ListItem Text="<Select Level>" disabled="disabled" Value="-1" Selected="True" />
                     </asp:DropDownList>
                 </div>
                 <hr />
                 <div id="ethnicity">
                     <asp:Label ID="lblEthnicity" runat="server" class="labelForm nopadding" Text="Ethnicity" meta:resourcekey="regForm_lblEthnicity"></asp:Label>
                     <asp:DropDownList class="form-control input-lg short" ID="ddlEthnicity" runat="server" AppendDataBoundItems="true">
-                        <asp:ListItem Text="<Select Level>" Value="0" />
+                        <asp:ListItem Text="<Select Level>" disabled="disabled" Value="-1" Selected="True" />
                     </asp:DropDownList>
                 </div>
             </div>
@@ -327,12 +326,14 @@
                 </ul>
             </div>
             <p>
-                <asp:Button ID="submit" class="signup-btn" runat="server" Text="Save" OnClick="submit_Click" meta:resourcekey="regForm_btnsave" />
+                <asp:Button ID="submit" class="signup-btn" runat="server" Text="Save" OnClick="submit_Click" href="#formInstructions" meta:resourcekey="regForm_btnsave" />
             </p>
 
         </div>
     </section>
-
+    <div class="global-save">
+        <asp:Button ID="Button1" class="signup-btn" runat="server" Text="Save" OnClick="submit_Click" href="#formInstructions" meta:resourcekey="regForm_btnsave" />
+    </div>
 </asp:Content>
 <%--   
         <div class="container">
@@ -447,62 +448,68 @@
         $('#<%= cbHeadInjY.ClientID %>').click(function () {
             if (this.checked == true) {
                 $('#<%= ddlHeadInjNum.ClientID %>').show();
-            $('#<%= lbHeadInjNum.ClientID %>').show();
-            $('#<%= cbHeadInjN.ClientID %>').prop('checked', false);
-        }
-        else {
-            $('#<%= ddlHeadInjNum.ClientID %>').hide();
-            $('#<%= lbHeadInjNum.ClientID %>').hide();
+                $('#<%= lbHeadInjNum.ClientID %>').show();
+                $('#<%= cbHeadInjN.ClientID %>').prop('checked', false);
+            }
+            else {
+                $('#<%= ddlHeadInjNum.ClientID %>').hide();
+                $('#<%= lbHeadInjNum.ClientID %>').hide();
             }
         })
 
         $('#<%= cbHeadInjN.ClientID %>').click(function () {
             if (this.checked == true) {
                 $('#<%= ddlHeadInjNum.ClientID %>').hide();
-            $('#<%= lbHeadInjNum.ClientID %>').hide();
-            $('#<%= cbHeadInjY.ClientID %>').prop('checked', false);
+                $('#<%= lbHeadInjNum.ClientID %>').hide();
+                $('#<%= cbHeadInjY.ClientID %>').prop('checked', false);
             }
-
         })
 
-        if (cbEnglYes.checked == true) {
-            $('#<%= lblFstLang.ClientID %>').hide();
-        $('#<%= firstLang.ClientID %>').hide();
-        $('#<%= cbEnglNo.ClientID %>').prop('checked', false);
-    }
-    else {
-        $('#<%= lblFstLang.ClientID %>').show();
-        $('#<%= firstLang.ClientID %>').show();
-        $('#<%= cbEnglNo.ClientID %>').prop('checked', true);
+        var isEngYes = $('#<%= cbEnglYes.ClientID %>').prop('checked');
+        var isEngNo = $('#<%= cbEnglNo.ClientID %>').prop('checked');
 
+        
+        if (isEngYes) {
+            $('#<%= lblFstLang.ClientID %>').hide();
+            $('#<%= firstLang.ClientID %>').hide();
+            $('#<%= cbEnglNo.ClientID %>').prop('checked', false);
         }
+
+        if (isEngNo) {
+            $('#<%= lblFstLang.ClientID %>').show();
+            $('#<%= firstLang.ClientID %>').show();
+        }
+
+        if (!isEngNo && !isEngYes) {
+            $('#<%= lblFstLang.ClientID %>').hide();
+            $('#<%= firstLang.ClientID %>').hide();
+        }
+        
 
         $('#<%= cbEnglYes.ClientID %>').click(function () {
             if (this.checked == true) {
                 $('#<%= lblFstLang.ClientID %>').hide();
-            $('#<%= firstLang.ClientID %>').hide();
-            $('#<%= cbEnglNo.ClientID %>').prop('checked', false);
-        }
-        else {
-            $('#<%= lblFstLang.ClientID %>').show();
-            $('#<%= firstLang.ClientID %>').show();
-            $('#<%= cbEnglNo.ClientID %>').prop('checked', true);
-
+                $('#<%= firstLang.ClientID %>').hide();
+                $('#<%= cbEnglNo.ClientID %>').prop('checked', false);
+            }
+            else {
+                $('#<%= lblFstLang.ClientID %>').show();
+                $('#<%= firstLang.ClientID %>').show();
+                $('#<%= cbEnglNo.ClientID %>').prop('checked', true);
             }
         })
 
         $('#<%= cbEnglNo.ClientID %>').click(function () {
             if (this.checked == true) {
                 $('#<%= lblFstLang.ClientID %>').show();
-            $('#<%= firstLang.ClientID %>').show();
-            $('#<%= cbEnglYes.ClientID %>').prop('checked', false);
-        }
-        else {
-            $('#<%= lblFstLang.ClientID %>').hide();
-            $('#<%= firstLang.ClientID %>').hide();
-            $('#<%= cbEnglYes.ClientID %>').prop('checked', true);
+                $('#<%= firstLang.ClientID %>').show();
+                $('#<%= cbEnglYes.ClientID %>').prop('checked', false);
             }
-
+            else {
+                $('#<%= lblFstLang.ClientID %>').hide();
+                $('#<%= firstLang.ClientID %>').hide();
+                $('#<%= cbEnglYes.ClientID %>').prop('checked', true);
+            }
         })
 
 
@@ -510,15 +517,12 @@
         $('#<%= cbHeadInjN.ClientID %>').click(function () {
             if (this.checked == true) {
                 $('#<%= ddlHeadInjNum.ClientID %>').hide();
-            $('#<%= lbHeadInjNum.ClientID %>').hide();
-            $('#<%= cbHeadInjY.ClientID %>').prop('checked', false);
+                $('#<%= lbHeadInjNum.ClientID %>').hide();
+                $('#<%= cbHeadInjY.ClientID %>').prop('checked', false);
             }
-
         })
 
-        $('#<%= submit.ClientID %>').click(function () {
-
-        });
+        $('#<%= submit.ClientID %>').click(function () { });
 
     </script>
 

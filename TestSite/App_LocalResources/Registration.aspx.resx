@@ -175,7 +175,7 @@
     <value>Please enter your last name</value>
   </data>
   <data name="regForm_lbBday.text" xml:space="preserve">
-    <value>*Birth Date:</value>
+    <value>Birth Date:</value>
   </data>
   <data name="regForm_lbEducation.text" xml:space="preserve">
     <value>Education:</value>
@@ -205,7 +205,7 @@
     <value>Ethnicity</value>
   </data>
   <data name="regForm_lblFstLang.text" xml:space="preserve">
-    <value>Pleas Enter Your First Language:</value>
+    <value>Please Enter Your First Language:</value>
   </data>
   <data name="regForm_lblLang.text" xml:space="preserve">
     <value>Is English your first language?</value>

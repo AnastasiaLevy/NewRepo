@@ -127,7 +127,7 @@
           </ul>
         </li>
     <%--<li><a href="#contact">Contact</a></li>--%>
-    <li><a href="#follow-us"><asp:Localize meta:resourcekey="navbar_connect"  runat="server" ID="Localize7" Text="Connect" /></a></li>
+    <li><a href="#contact"><asp:Localize meta:resourcekey="navbar_connect"  runat="server" ID="Localize7" Text="Connect" /></a></li>
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="MainContent" runat="server">
@@ -335,6 +335,14 @@
                             <a href="/Tests/DesktopTests.aspx#spt" id="">
                                 <img src="/images/desktops/spt_2.png" /></a>
                         </li>
+                        <li data-type="desktop" data-id="id-17" class="port3">
+                            <a href="/Tests/CogQuest.aspx" id="">
+                                <img src="/images/CogQuestPick.jpg" alt=""></a>
+                        </li>
+                        <li data-type="desktop" data-id="id-18" class="port3">
+                            <a href="/Tests/DesktopTowerOfLondon.aspx" id="">
+                                <img src="/images/desktops/TOL/DesktopTOL3.jpg" /></a>
+                        </li>
 
 
                         <%--<li data-type="personality" data-id="id-7" class="port3">
@@ -366,7 +374,7 @@
             </div>
         </section>
 
-        <section id="testsToOrder">
+        <section id="testsToOrder" style="padding-top: 56px;">
         <div class="blueback">
             <div class="container">
                 <div class="text-center homeport2" style="color: white">
@@ -414,7 +422,7 @@
         </div>
     </section>
 
-        <section id="desktopTests">
+        <section id="desktopTests" style="padding-top: 56px;">
             <div class="container">
                 <div class="text-center">
                     <h2><asp:Localize meta:resourcekey="desktop_title"  runat="server" ID="Localize62" Text="" /></h2>
@@ -724,7 +732,7 @@
                 var $target = $(target);
 
                 $('html, body').stop().animate({
-                    'scrollTop': $target.offset().top
+                    'scrollTop': $target.offset().top 
                 }, 900, 'swing', function () {
                     window.location.hash = target;
                 });

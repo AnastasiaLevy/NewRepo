@@ -246,7 +246,8 @@ namespace TestSite
         {
             if (User.Identity.IsAuthenticated)
             {
-                Response.Redirect(CommonMethods.PostPaypal(5, 1, _baseUrl, _itemName, _page), true);
+                string page = "/Provider/ProviderPortal.aspx?buyTestType=" + "1" + "&buyTestOption=" + "4" + "&buyTestNum=" + "1";
+                Response.Redirect(CommonMethods.PostPaypal(5, 1, _baseUrl, _itemName, page), true);
             }
             else
             {
@@ -259,7 +260,8 @@ namespace TestSite
             if (User.Identity.IsAuthenticated)
             {
                 //PostPaypal(40, 10, _baseUrl, _itemName, _page);
-                Response.Redirect(CommonMethods.PostPaypal(40, 10, _baseUrl, _itemName, _page), true);
+                string page = "/Provider/ProviderPortal.aspx?buyTestType=" + "1" + "&buyTestOption=" + "1" + "&buyTestNum=" + "10";
+                Response.Redirect(CommonMethods.PostPaypal(40, 10, _baseUrl, _itemName, page), true);
             }
             else
             {
@@ -272,7 +274,8 @@ namespace TestSite
             if (User.Identity.IsAuthenticated)
             {
                 //PostPaypal(80,100, _baseUrl, _itemName, _page);
-                Response.Redirect(CommonMethods.PostPaypal(80, 100, _baseUrl, _itemName, _page), true);
+                string page = "/Provider/ProviderPortal.aspx?buyTestType=" + "1" + "&buyTestOption=" + "2" + "&buyTestNum=" + "100";
+                Response.Redirect(CommonMethods.PostPaypal(80, 100, _baseUrl, _itemName, page), true);
 
             }
             else
@@ -286,7 +289,8 @@ namespace TestSite
             if (User.Identity.IsAuthenticated)
             {
                 //PostPaypal(499, 1000, _baseUrl, _itemName, _page);
-                Response.Redirect(CommonMethods.PostPaypal(499, 500, _baseUrl, _itemName, _page), true);
+                string page = "/Provider/ProviderPortal.aspx?buyTestType=" + "1" + "&buyTestOption=" + "5" + "&buyTestNum=" + "500";
+                Response.Redirect(CommonMethods.PostPaypal(250, 500, _baseUrl, _itemName, page), true);
             }
             else
             {

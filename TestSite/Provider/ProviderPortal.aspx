@@ -274,7 +274,7 @@
                                             </div>
                                         </div>
                                         <div class="dropdown">
-                                            <button class="btn btn-success dropdown-toggle" id="ExportDropdown" type="button" data-toggle="dropdown"><asp:Localize meta:resourcekey="pProviderTools_exportTestResults_btn1"  runat="server" ID="Localize24" Text="" />
+                                            <button class="btn btn-success dropdown-toggle" id="ExportDropdown" type="button" data-toggle="dropdown" style="margin-bottom:0px; margin-top: 20px;"><asp:Localize meta:resourcekey="pProviderTools_exportTestResults_btn1"  runat="server" ID="Localize24" Text="" />
                                             <span class="caret"></span></button>
                                             <ul class="dropdown-menu">
                                                 <li><asp:Button ID="btnExportTestResultsInOneRow" class="selectBtn" runat="server" Text="" OnClick="btnExportTestResultsInOneRow_Click" PostBackUrl="ProviderPortal.aspx" meta:resourcekey="pProviderTools_exportTestResults_btn2"/></li>

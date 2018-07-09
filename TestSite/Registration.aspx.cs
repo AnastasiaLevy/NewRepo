@@ -34,7 +34,7 @@ namespace TestSite
             if (!String.IsNullOrEmpty(Request.QueryString["provId"]))
             {
                 _userId = Request.QueryString["userId"];
-               _userName = Request.QueryString["userName"];
+                _userName = Request.QueryString["userName"];
                 //A1.HRef = "~/Provider/ProviderPortal.aspx";
 
             }
@@ -82,12 +82,11 @@ namespace TestSite
             {
                 date = (DateTime)data.Rows[0]["birthDate"];
                 txtBDay.Text = date.ToString("MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture);
-            } else
+            }
+            else
             {
                 txtBDay.Text = null;
             }
-            
-            ddlEducation.SelectedIndex = data.Rows[0]["education"] != null ? Convert.ToInt32(data.Rows[0]["education"]) : ddlEducation.SelectedIndex;
 
             if (data.Rows[0]["medications"] != null)
             {
@@ -99,8 +98,25 @@ namespace TestSite
             cbMedicationsY.Checked = (bool)data.Rows[0]["medications"];
 
             txtKindMeds.Text = data.Rows[0]["medName"].ToString();
-            ddlIncome.SelectedIndex = data.Rows[0]["income"] != null ? Convert.ToInt32(data.Rows[0]["income"]) : ddlIncome.SelectedIndex;
-            ddlHand.SelectedIndex = data.Rows[0]["hand"] != null ? Convert.ToInt32(data.Rows[0]["hand"]) : ddlIncome.SelectedIndex;
+
+            #region Dropdowns
+            string educationValue = data.Rows[0]["education"] != null ? data.Rows[0]["education"].ToString() : "-1";
+            ddlEducation.SelectedIndex = ddlEducation.Items.IndexOf(ddlEducation.Items.FindByValue(educationValue));
+            //data.Rows[0]["education"] != null ? Convert.ToInt32(data.Rows[0]["education"]) : ddlEducation.SelectedIndex;
+
+            string incomeValue = data.Rows[0]["income"] != null ? data.Rows[0]["income"].ToString() : "-1";
+            ddlIncome.SelectedIndex = ddlIncome.Items.IndexOf(ddlIncome.Items.FindByValue(incomeValue));
+            //ddlIncome.SelectedIndex = data.Rows[0]["income"] != null ? Convert.ToInt32(data.Rows[0]["income"]) : ddlIncome.SelectedIndex;
+
+            string handValue = data.Rows[0]["hand"] != null ? data.Rows[0]["hand"].ToString() : "-1";
+            ddlHand.SelectedIndex = ddlHand.Items.IndexOf(ddlHand.Items.FindByValue(handValue));
+            //ddlHand.SelectedIndex = data.Rows[0]["hand"] != null ? Convert.ToInt32(data.Rows[0]["hand"]) : ddlIncome.SelectedIndex;
+
+            string ethnisityValue = data.Rows[0]["ethnisity"] != null ? data.Rows[0]["ethnisity"].ToString() : "-1";
+            ddlEthnicity.SelectedIndex = ddlEthnicity.Items.IndexOf(ddlEthnicity.Items.FindByValue(ethnisityValue));
+            //ddlEthnicity.SelectedIndex = data.Rows[0]["ethnisity"] != null ? Convert.ToInt32(data.Rows[0]["ethnisity"]) : ddlEthnicity.SelectedIndex;
+            #endregion
+
             if (data.Rows[0]["gender"].ToString() != null)
             {
                 cbMale.Checked = data.Rows[0]["gender"].ToString() == "m";
@@ -119,10 +135,7 @@ namespace TestSite
                     cbHeadInjN.Checked = true;
                     ddlHeadInjNum.SelectedIndex = 0;
                 }
-
-
             }
-            ddlEthnicity.SelectedIndex = data.Rows[0]["ethnisity"] != null ? Convert.ToInt32(data.Rows[0]["ethnisity"]) : ddlEthnicity.SelectedIndex;
 
             if (data.Rows[0]["language"] != null)
             {
@@ -136,8 +149,6 @@ namespace TestSite
                     lblFstLang.Visible = true;
                     firstLang.Text = data.Rows[0]["language"].ToString();
                 }
-
-
             }
             if (data.Rows[0]["brainActivity"] != null)
                 SetBrainActivity(data.Rows[0]["brainActivity"].ToString());
@@ -213,7 +224,7 @@ namespace TestSite
 
         private void PopulateEethnicity()
         {
-            ddlEthnicity.Items.Clear();
+            //ddlEthnicity.Items.Clear();
             ddlEthnicity.Items.Add(new ListItem(GetLocalResourceObject("ddlEthnicity_item1").ToString(), "0"));
             ddlEthnicity.Items.Add(new ListItem(GetLocalResourceObject("ddlEthnicity_item2").ToString(), "1"));
             ddlEthnicity.Items.Add(new ListItem(GetLocalResourceObject("ddlEthnicity_item3").ToString(), "2"));
@@ -226,7 +237,7 @@ namespace TestSite
 
         private void PopulateEducation()
         {
-            ddlEducation.Items.Clear();
+            //ddlEducation.Items.Clear();
             ddlEducation.Items.Add(new ListItem(GetLocalResourceObject("ddlEducation_item1").ToString(), "0"));
             ddlEducation.Items.Add(new ListItem(GetLocalResourceObject("ddlEducation_item2").ToString(), "1"));
             ddlEducation.Items.Add(new ListItem(GetLocalResourceObject("ddlEducation_item3").ToString(), "2"));
@@ -237,7 +248,7 @@ namespace TestSite
 
         private void PopulateInj()
         {
-            ddlHeadInjNum.Items.Clear();
+            //ddlHeadInjNum.Items.Clear();
             for (int i = 1; i < 10; i++)
             {
                 ddlHeadInjNum.Items.Add(new ListItem(i.ToString(), i.ToString()));
@@ -250,7 +261,7 @@ namespace TestSite
 
         private void PopulateIncome()
         {
-            ddlIncome.Items.Clear();
+            //ddlIncome.Items.Clear();
             ddlIncome.Items.Add(new ListItem(GetLocalResourceObject("ddlIncome_item1").ToString(), "0"));
             ddlIncome.Items.Add(new ListItem(GetLocalResourceObject("ddlIncome_item2").ToString(), "1"));
             ddlIncome.Items.Add(new ListItem(GetLocalResourceObject("ddlIncome_item3").ToString(), "2"));
@@ -260,7 +271,7 @@ namespace TestSite
         }
         private void PopulateHand()
         {
-            ddlHand.Items.Clear();
+            //ddlHand.Items.Clear();
             ddlHand.Items.Add(new ListItem(GetLocalResourceObject("ddlHand_item1").ToString(), "0"));
             ddlHand.Items.Add(new ListItem(GetLocalResourceObject("ddlHand_item2").ToString(), "1"));
             ddlHand.Items.Add(new ListItem(GetLocalResourceObject("ddlHand_item3").ToString(), "2"));
@@ -322,13 +333,13 @@ namespace TestSite
                 try
                 {
 
-               
-                id = DataMethods.SaveRegistration(firstName, lastName, education, medications, gender, hand,
-                    brainActivity, ethnisity, language, headInjury, selfEsteem, exercise, _userName, selfHealth,
-                    birthDate, isOnMeds, isInj, isFilled, _userId, income, cbAgree.Checked, providerId);
+
+                    id = DataMethods.SaveRegistration(firstName, lastName, education, medications, gender, hand,
+                        brainActivity, ethnisity, language, headInjury, selfEsteem, exercise, _userName, selfHealth,
+                        birthDate, isOnMeds, isInj, isFilled, _userId, income, cbAgree.Checked, providerId);
                     fbGood.Visible = true;
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     fbBad.Visible = true;
                 }
@@ -346,10 +357,10 @@ namespace TestSite
 
         private int GetUserProviderId(string _userId)
         {
-         
+
             DataTable dt = DAL.DataMethods.GetUserProviderId(_userId);
 
-            return (dt.Rows.Count > 0) && dt.Rows[0]["providerId"] !=DBNull.Value ? Convert.ToInt32(dt.Rows[0]["providerId"]) : 0;
+            return (dt.Rows.Count > 0) && dt.Rows[0]["providerId"] != DBNull.Value ? Convert.ToInt32(dt.Rows[0]["providerId"]) : 0;
         }
 
         private string GetSelfHealth()

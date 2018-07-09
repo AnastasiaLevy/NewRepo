@@ -175,7 +175,7 @@
     <value>Пожалуйста, введите Вашу фамилию</value>
   </data>
   <data name="regForm_lbBday.text" xml:space="preserve">
-    <value>*Дата рождения:</value>
+    <value>Дата рождения:</value>
   </data>
   <data name="regForm_lbEducation.text" xml:space="preserve">
     <value>Образование:</value>

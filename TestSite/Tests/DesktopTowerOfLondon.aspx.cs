@@ -248,7 +248,7 @@ namespace TestSite.Tests
             }
             else
             {
-                Response.Redirect(CommonMethods.PostPaypal(10, 1, _baseUrl, _itemName, _page), true);
+                Response.Redirect(CommonMethods.PostPaypal(499, 1, _baseUrl, _itemName, _page), true);
             }
         }
 

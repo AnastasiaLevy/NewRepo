@@ -492,4 +492,13 @@
   <data name="bpopup_close.text" xml:space="preserve">
     <value>Close</value>
   </data>
+  <data name="Provider_code_save_error" xml:space="preserve">
+    <value>Error!</value>
+  </data>
+  <data name="Provider_code_save_succes" xml:space="preserve">
+    <value>Code saved!</value>
+  </data>
+  <data name="noavailabletests_title" xml:space="preserve">
+    <value>You do not have any purchased tests!</value>
+  </data>
 </root>

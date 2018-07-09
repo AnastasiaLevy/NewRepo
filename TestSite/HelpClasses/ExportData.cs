@@ -125,11 +125,11 @@ namespace TestSite.HelpClasses
             }
             else if (testId.ToString() == Enums.TestId.Nback) //pass
             {
-                ds = DataMethods.GetTestResultsNback(testId, from, to);
+                ds = DataMethods.GetTestResultsNback(testId, providerId, from, to);
             }
             else if (testId.ToString() == Enums.TestId.Syllogisms)
             {
-                ds = DataMethods.GetTestResultsSyllogisms(testId, from, to);
+                ds = DataMethods.GetTestResultsSyllogisms(testId, providerId, from, to);
             }
             else if (testId.ToString() == Enums.TestId.WisconsinCardSort)//pass
             {
@@ -182,6 +182,8 @@ namespace TestSite.HelpClasses
                     previoustId = Convert.ToInt32(ds.Tables[0].Rows[i]["tId"]);
                 }
             }
+
+            longestRow = longestRow < rowsCounter ? rowsCounter : longestRow;
 
             for (int i = 0; i < longestRow + 1; i++)
             {

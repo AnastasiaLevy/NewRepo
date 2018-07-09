@@ -150,7 +150,7 @@ namespace TestSite.Tests
         private void ShowBuyButton()
         {
             price.Visible = true;
-            runTest.Visible = false;
+            runTest.Visible = true;
             KeyValue.Visible = false;
         }
 
@@ -199,7 +199,7 @@ namespace TestSite.Tests
         {
             if (User.Identity.IsAuthenticated)
             {
-                RunPayPal("CogQuest", 45.00);
+                RunPayPal("CogQuest", 45);
             }
             else
             {
@@ -220,7 +220,7 @@ namespace TestSite.Tests
             ppHref.Append("https://www.paypal.com/cgi-bin/webscr?cmd=_xclick");//();//"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_xclick"
             ppHref.Append("&business=" + business);
             ppHref.Append("&item_name=" + itemName);
-            ppHref.Append("&amount=" + itemAmount.ToString("#.00"));
+            ppHref.Append("&amount=" + itemAmount.ToString("#.00").Replace(",","."));
             ppHref.Append("&currency_code=" + currencyCode);
             ppHref.Append("&return=" + baseUrl + "/Tests/CogQuest.aspx"); //"http://localhost:52606/Tests/NbackWrapper.aspx"
 

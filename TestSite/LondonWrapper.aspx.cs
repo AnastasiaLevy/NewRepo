@@ -294,7 +294,8 @@ namespace TestSite
             if (User.Identity.IsAuthenticated)
             {
                 //PostPaypal(5, 1);
-                Response.Redirect(CommonMethods.PostPaypal(5, 1, _baseUrl, _itemName, _page), true);
+                string page = "/Provider/ProviderPortal.aspx?buyTestType=" + "2" + "&buyTestOption=" + "4" + "&buyTestNum=" + "1";
+                Response.Redirect(CommonMethods.PostPaypal(5, 1, _baseUrl, _itemName, page), true);
             }
             else
             {
@@ -308,7 +309,9 @@ namespace TestSite
             if (User.Identity.IsAuthenticated)
             {
                 //PostPaypal(50, 10);
-                Response.Redirect(CommonMethods.PostPaypal(50, 10, _baseUrl, _itemName, _page), true);
+
+                string page = "/Provider/ProviderPortal.aspx?buyTestType=" + "2" + "&buyTestOption=" + "1" + "&buyTestNum=" + "10";
+                Response.Redirect(CommonMethods.PostPaypal(50, 10, _baseUrl, _itemName, page), true);
             }
             else
             {
@@ -321,7 +324,9 @@ namespace TestSite
             if (User.Identity.IsAuthenticated)
             {
                 //PostPaypal(50, 100);
-                Response.Redirect(CommonMethods.PostPaypal(300, 100, _baseUrl, _itemName, _page), true);
+
+                string page = "/Provider/ProviderPortal.aspx?buyTestType=" + "2" + "&buyTestOption=" + "2" + "&buyTestNum=" + "100";
+                Response.Redirect(CommonMethods.PostPaypal(300, 100, _baseUrl, _itemName, page), true);
             }
             else
             {
@@ -334,7 +339,9 @@ namespace TestSite
             if (User.Identity.IsAuthenticated)
             {
                 //PostPaypal(1000, 500);
-                Response.Redirect(CommonMethods.PostPaypal(1000, 1, _baseUrl, _itemName, _page), true);
+
+                string page = "/Provider/ProviderPortal.aspx?buyTestType=" + "2" + "&buyTestOption=" + "3" + "&buyTestNum=" + "1000";
+                Response.Redirect(CommonMethods.PostPaypal(1000, 1, _baseUrl, _itemName, page), true);
             }
             else
             {

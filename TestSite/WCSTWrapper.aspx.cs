@@ -243,7 +243,8 @@ namespace TestSite
             {
 
                 //PostPaypal(7,1);
-                Response.Redirect(CommonMethods.PostPaypal(7, 1, _baseUrl, _itemName, _page), true);
+                string page = "/Provider/ProviderPortal.aspx?buyTestType=" + "3" + "&buyTestOption=" + "4" + "&buyTestNum=" + "1";
+                Response.Redirect(CommonMethods.PostPaypal(7, 1, _baseUrl, _itemName, page), true);
             }
             else
             {
@@ -257,7 +258,8 @@ namespace TestSite
             {
 
                 //PostPaypal(50,10);
-                Response.Redirect(CommonMethods.PostPaypal(50, 10, _baseUrl, _itemName, _page), true);
+                string page = "/Provider/ProviderPortal.aspx?buyTestType=" + "3" + "&buyTestOption=" + "1" + "&buyTestNum=" + "10";
+                Response.Redirect(CommonMethods.PostPaypal(50, 10, _baseUrl, _itemName, page), true);
             }
             else
             {
@@ -271,7 +273,8 @@ namespace TestSite
             {
 
                 //PostPaypal(450,100);
-                Response.Redirect(CommonMethods.PostPaypal(450, 100, _baseUrl, _itemName, _page), true);
+                string page = "/Provider/ProviderPortal.aspx?buyTestType=" + "3" + "&buyTestOption=" + "2" + "&buyTestNum=" + "100";
+                Response.Redirect(CommonMethods.PostPaypal(450, 100, _baseUrl, _itemName, page), true);
             }
             else
             {
@@ -285,7 +288,8 @@ namespace TestSite
             {
 
                 //PostPaypal(600,1000);
-                Response.Redirect(CommonMethods.PostPaypal(1000, 500, _baseUrl, _itemName, _page), true);
+                string page = "/Provider/ProviderPortal.aspx?buyTestType=" + "3" + "&buyTestOption=" + "5" + "&buyTestNum=" + "500";
+                Response.Redirect(CommonMethods.PostPaypal(1000, 500, _baseUrl, _itemName, page), true);
             }
             else
             {

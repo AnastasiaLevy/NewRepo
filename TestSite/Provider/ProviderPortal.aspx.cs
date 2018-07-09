@@ -157,6 +157,13 @@ namespace TestSite.Provider
                 SetParticipantGrid(providerId);
                 SetProviderTestsGrid(providerId);
             }
+            if(gvProviderTests.Rows.Count == 0)
+            {
+                btnAddUserTest.Attributes.Add("disabled", "disabled");
+                btnAddUserTest.Attributes.Add("title",GetLocalResourceObject("noavailabletests_title").ToString());
+                btnModifyTest.Attributes.Add("disabled", "disabled");
+                btnModifyTest.Attributes.Add("title", GetLocalResourceObject("noavailabletests_title").ToString());
+            }
         }
 
         private void MakePanelsInvisible()
@@ -434,11 +441,9 @@ namespace TestSite.Provider
         {
             string userId = ddlAllParticipants.SelectedValue;
             string provTestId = ddlProvTests.SelectedValue;
+
             if (panelAssignIsValid(userId, provTestId))
             {
-
-
-
                 int modifiedId = String.IsNullOrEmpty(ddlModifiedID.SelectedValue) ? 0 : Convert.ToInt32(ddlModifiedID.SelectedValue);
 
                 try
@@ -503,9 +508,18 @@ namespace TestSite.Provider
 
         protected void btnCodeSave_Click(object sender, EventArgs e)
         {
-            string code = txtUserCode.Text;
-            if (code.Length > 0)
-                DAL.DataMethods.UpdateProviderTableSetCode(ViewState["pUserId"].ToString(), code);
+            try
+            {
+                string code = txtUserCode.Text;
+                if (code.Length > 0)
+                    DAL.DataMethods.UpdateProviderTableSetCode(ViewState["pUserId"].ToString(), code);
+                Label3.Text = GetLocalResourceObject("Provider_code_save_succes").ToString();
+            }
+            catch (Exception ex)
+            {
+                Label3.Text = GetLocalResourceObject("Provider_code_save_error").ToString();
+            }
+            
         }
 
         protected void btnCodeClose_Click(object sender, EventArgs e)
@@ -729,7 +743,10 @@ namespace TestSite.Provider
             foreach (DataRow dr in dt.Tables[0].Rows)
             {
                 string display = dr["Name"].ToString();// + (!string.IsNullOrEmpty(dr["Left"].ToString())?"(amount:" + dr["Left"].ToString() + ")":"");
-                TestTemplatesForExportResults.Items.Add(new ListItem(display, dr["Id"].ToString()));
+                if(display != "Syllogisms")
+                {
+                    TestTemplatesForExportResults.Items.Add(new ListItem(display, dr["testId"].ToString()));
+                }
             }
         }
 

@@ -260,7 +260,8 @@ namespace TestSite.Tests
             if (User.Identity.IsAuthenticated)
             {
                 //PostPaypal(30, 10);
-                Response.Redirect(CommonMethods.PostPaypal(30, 10, _baseUrl, _itemName, _page), true);
+                string page = "/Provider/ProviderPortal.aspx?buyTestType=" + "5" + "&buyTestOption=" + "1" + "&buyTestNum=" + "10";
+                Response.Redirect(CommonMethods.PostPaypal(30, 10, _baseUrl, _itemName, page), true);
             }
             else
             {
@@ -273,7 +274,8 @@ namespace TestSite.Tests
             if (User.Identity.IsAuthenticated)
             {
                 //PostPaypal(200, 100);
-                Response.Redirect(CommonMethods.PostPaypal(200, 100, _baseUrl, _itemName, _page), true);
+                string page = "/Provider/ProviderPortal.aspx?buyTestType=" + "5" + "&buyTestOption=" + "2" + "&buyTestNum=" + "100";
+                Response.Redirect(CommonMethods.PostPaypal(200, 100, _baseUrl, _itemName, page), true);
             }
             else
             {
@@ -286,7 +288,8 @@ namespace TestSite.Tests
             if (User.Identity.IsAuthenticated)
             {
                 //PostPaypal(300, 1000);
-                Response.Redirect(CommonMethods.PostPaypal(300, 500, _baseUrl, _itemName, _page), true);
+                string page = "/Provider/ProviderPortal.aspx?buyTestType=" + "5" + "&buyTestOption=" + "5" + "&buyTestNum=" + "500";
+                Response.Redirect(CommonMethods.PostPaypal(300, 500, _baseUrl, _itemName, page), true);
             }
             else
             {
@@ -299,7 +302,8 @@ namespace TestSite.Tests
             if (User.Identity.IsAuthenticated)
             {
                 //PostPaypal(4, 1);
-                Response.Redirect(CommonMethods.PostPaypal(4, 1, _baseUrl, _itemName, _page), true);
+                string page = "/Provider/ProviderPortal.aspx?buyTestType=" + "5" + "&buyTestOption=" + "4" + "&buyTestNum=" + "1";
+                Response.Redirect(CommonMethods.PostPaypal(4, 1, _baseUrl, _itemName, page), true);
             }
             else
             {

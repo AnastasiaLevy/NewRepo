@@ -2702,7 +2702,7 @@ namespace TestSite.DAL
             return ds;
         }
 
-        public static DataSet GetTestResultsSyllogisms(int testId, DateTime? from, DateTime? to)
+        public static DataSet GetTestResultsSyllogisms(int testId,int providerId, DateTime? from, DateTime? to)
         {
             DataSet ds = new DataSet();
             SqlConnection conn = new SqlConnection(connectionSring);
@@ -2710,6 +2710,7 @@ namespace TestSite.DAL
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@from", from);
             cmd.Parameters.AddWithValue("@to", to);
+            cmd.Parameters.AddWithValue("@providerId", providerId);
 
             try
             {
@@ -2746,7 +2747,7 @@ namespace TestSite.DAL
             return ds;
         }
 
-        internal static DataSet GetTestResultsNback(int testId, DateTime? from, DateTime? to)
+        internal static DataSet GetTestResultsNback(int testId, int providerId, DateTime? from, DateTime? to)
         {
             DataSet ds = new DataSet();
             SqlConnection conn = new SqlConnection(connectionSring);
@@ -2754,6 +2755,7 @@ namespace TestSite.DAL
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@from", from);
             cmd.Parameters.AddWithValue("@to", to);
+            cmd.Parameters.AddWithValue("@providerId", providerId);
 
             try
             {
