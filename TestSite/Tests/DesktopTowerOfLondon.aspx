@@ -100,9 +100,11 @@
             <div id="wrapper">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-2">
+                        <a class="btn btn-primary btn-lg btn-xs-block" id="manualButton" href="/Tests/CogQuiz_TOL_Manual.pdf"><asp:Localize meta:resourcekey="manual_btn"  runat="server" ID="Localize4" Text="" /></a>
+                            </div>
+                        <div class="col-md-2">
                             <a class="btn btn-primary btn-lg btn-xs-block" id="InstallButton" href="/Tests/TowerOfLondon/TOLDesktop.aspx"><asp:Localize meta:resourcekey="price_btn"  runat="server" ID="Localize8" Text="" /></a>
-                            
                         </div>
                     </div>
 

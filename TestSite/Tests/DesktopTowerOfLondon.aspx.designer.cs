@@ -49,6 +49,15 @@ namespace TestSite.Tests {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl price;
         
         /// <summary>
+        /// Localize4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Localize Localize4;
+        
+        /// <summary>
         /// Localize8 control.
         /// </summary>
         /// <remarks>

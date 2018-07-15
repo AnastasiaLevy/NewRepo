@@ -246,4 +246,7 @@
   <data name="testDescription_img6_span2.Text" xml:space="preserve">
     <value>Отправить результаты участникам по электронной почте</value>
   </data>
+  <data name="manual_btn.text" xml:space="preserve">
+    <value>Руководство пользователя</value>
+  </data>
 </root>

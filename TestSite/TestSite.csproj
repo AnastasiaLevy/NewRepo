@@ -698,6 +698,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Tests\Tower_of_London_Manual.pdf" />
+    <Content Include="Tests\CogQuiz_TOL_Manual.pdf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

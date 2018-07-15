@@ -249,4 +249,7 @@
   <data name="testDescription_img6_span2.Text" xml:space="preserve">
     <value>Send results to participants by email</value>
   </data>
+  <data name="manual_btn.text" xml:space="preserve">
+    <value>View user manual</value>
+  </data>
 </root>
