@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="availableTests_title.Text" xml:space="preserve">
+    <value>Pruebas de funciones ejecutivas:</value>
+  </data>
+  <data name="ExecutiveFunction_paragraph1.Text" xml:space="preserve">
+    <value>Las funciones ejecutivas son un conjunto de procesos cognitivos que monitorean, guían y controlan nuestro comportamiento. Estos procesos facilitan nuestra navegación exitosa del mundo. No hay consenso acordado sobre el número y la naturaleza de estos componentes. Sin embargo, existe un acuerdo general de que estos procesos están involucrados en la memoria de trabajo (manteniendo y manipulando activamente, varias piezas de información en conciencia), la inhibición (contención de una respuesta), estrategias cambiantes/que cambian, atención y resolución de problemas. Por ejemplo, imagina los procesos en los que un piloto de drones debe entablar cuando vuela. Un futuro piloto de aviones no tripulados de Amazon tiene una serie de instrumentos que debe supervisar y atender (memoria de trabajo y atención), ser capaz de cambiar de un lado a otro entre activa (desplazamiento), no dejar caer un paquete en la dirección incorrecta (la inhibición), y planificar una ruta a la correcta Dirección (resolución de problemas).</value>
+  </data>
+  <data name="ExecutiveFunction_paragraph2.Text" xml:space="preserve">
+    <value>La prueba de clasificación de la tarjeta disponible en CogQuiz se piensa para medir varios procesos diferentes de la función ejecutiva. Sin embargo, se asocia más prominente a una evaluación de poder cambiar las estrategias. En segundo lugar, la clase de la tarjeta se asocia a memoria de trabajo donde uno debe sostener en la conciencia la estrategia asociada al funcionamiento acertado. La torre de Londres se asocia principalmente a la estrategia de planificación necesaria para la resolución de problemas. Además, la memoria de trabajo desempeñará un papel en la celebración de un conjunto exitoso de movimientos en la conciencia consciente a la hora de resolver un problema particular. Las pruebas Trails tienen una velocidad de procesamiento y un componente de conmutación. La prueba Stroop tiene un componente de inhibición fuerte. Uno debe superar la tendencia prepotente a leer palabras en lugar de declarar su color.</value>
+  </data>
+  <data name="ExecutiveFunction_title1.Text" xml:space="preserve">
+    <value>Función ejecutiva</value>
+  </data>
+  <data name="ExecutiveFunction_title2.Text" xml:space="preserve">
+    <value>Función ejecutiva</value>
+  </data>
+  <data name="ExecutiveFunction_title3.Text" xml:space="preserve">
+    <value>Pruebas de función ejecutiva</value>
+  </data>
+  <data name="follow.Text" xml:space="preserve">
+    <value>SÍGANOS</value>
+  </data>
+  <data name="navbar_about.Text" xml:space="preserve">
+    <value>Función ejecutiva</value>
+  </data>
+  <data name="navbar_home.Text" xml:space="preserve">
+    <value>Inicio</value>
+  </data>
+  <data name="navbar_logIn.Text" xml:space="preserve">
+    <value>Iniciar sesión</value>
+  </data>
+  <data name="navbar_logOut.Text" xml:space="preserve">
+    <value>Salir</value>
+  </data>
+  <data name="navbar_profile.Text" xml:space="preserve">
+    <value>Perfil</value>
+  </data>
+  <data name="pagetitle.title" xml:space="preserve">
+    <value>Pruebas de función ejecutiva, Pruebas de función ejecutiva en línea- CogQuiz</value>
+  </data>
+  <data name="services_category1paragraph.Text" xml:space="preserve">
+    <value>"Pruebas de memoria a corto y largo plazo disponibles. Tome uno de nuestros cuestionarios y averigüe dónde está parado en relación con otros. ¿Es usted capaz de recordar los detalles pertinentes o relevantes, o hay motivos para preocuparse?
+"</value>
+  </data>
+  <data name="services_category1title.Text" xml:space="preserve">
+    <value>Memoria</value>
+  </data>
+  <data name="services_category2paragraph.Text" xml:space="preserve">
+    <value>La velocidad de procesamiento ha sido una variable explicativa importante para un mayor desempeño cognitivo durante el desarrollo</value>
+  </data>
+  <data name="services_category2title.Text" xml:space="preserve">
+    <value>Velocidad de procesamiento</value>
+  </data>
+  <data name="services_title.Text" xml:space="preserve">
+    <value>Categorías de prueba</value>
+  </data>
+</root>

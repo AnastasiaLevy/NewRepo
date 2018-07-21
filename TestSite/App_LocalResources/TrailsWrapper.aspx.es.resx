@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="about_paragraph.Text" xml:space="preserve">
+    <value>CogQuiz proporciona normas para niños a adultos mayores (rango de edad 5 a 89 y un N = 708). Las estadísticas descriptivas se dividen en cohortes de cinco años para el niño a adulto joven (de 5 a 19 años de edad) y diez años cohortes para el adulto joven a los ancianos.</value>
+  </data>
+  <data name="about_title.Text" xml:space="preserve">
+    <value>Realizar la prueba Trails</value>
+  </data>
+  <data name="accordion_buttonAbout.Text" xml:space="preserve">
+    <value>Acerca de</value>
+  </data>
+  <data name="accordion_buttonDetails.Text" xml:space="preserve">
+    <value>Detalles</value>
+  </data>
+  <data name="accordion_buttonMeasure.Text" xml:space="preserve">
+    <value>Medida</value>
+  </data>
+  <data name="accordion_buttonResearch.Text" xml:space="preserve">
+    <value>Investigación</value>
+  </data>
+  <data name="collapse1_paragraph.Text" xml:space="preserve">
+    <value>La prueba Trail Making Test (TMT), ideado originalmente en 1983, era conocido como "Partington's pathways Test," o "Prueba de atención dividida" (Partington y Leiter, 1949). Inicialmente fue parte de una batería de pruebas (Army Individual Test Battery) utilizada para evaluar "...una variedad de funciones intelectuales diferente de los medidos por la Escala de Inteligencia Wechsler- Bellevue." (Spreen &amp; Strauss, 1998). La prueba no es típicamente parte de una batería de prueba, sino que se administra solo en su forma original, con  papel y lápiz.</value>
+  </data>
+  <data name="collapse1_title.Text" xml:space="preserve">
+    <value>Acerca de:</value>
+  </data>
+  <data name="collapse2_paragraph.Text" xml:space="preserve">
+    <value>El TMT proporciona una medida de atención, exploración visual, rapidez de coordinación ojo-mano (Parte A), y flexibilidad mental (Strauss, Sherman, y Spreen, 2007). Además, la Parte B evalúa la capacidad de alternar entre conjuntos de estímulos y, como tal, es una medida de "función ejecutiva" (Mitrushina, et al.,1999). El rendimiento en el TMT se ha obtenido para poblaciones clínicas normales y diversas, como transtorno por déficit de atención                (TDA), Trastorno por déficit de atención con hiperactividad (TDAH), enfermedad de Alzheimer, trastorno de estrés postraumático por nombrar algunos.</value>
+  </data>
+  <data name="collapse2_title.Text" xml:space="preserve">
+    <value>Medida:</value>
+  </data>
+  <data name="collapse3_paragraph.Text" xml:space="preserve">
+    <value>El TMT y sus diversas variantes requieren que el participante, en el orden correcto, vincule un conjunto de objetos que están etiquetados de una manera que indica un orden específico (por ejemplo, numérico, alfabético). Parte A de el TMT contiene una seleción de 25 círculos que contienen los números del 1 al 25. Al hacer clic en las burbujas numeradas, el tomador de la prueba crea una línea del círculo, que contiene el número 1, al círculo que contiene el número 2 y luego al círculo que contiene el número 3 y sigue hasta que él/ella llegue al círculo que contiene el número 25. En la Parte B, se requiere que el tomador de prueba alterne entre números y letras (por ejemplo, la secuencia de 1, A, 2, B, 3, C, ...).</value>
+  </data>
+  <data name="collapse3_title.Text" xml:space="preserve">
+    <value>Descripción:</value>
+  </data>
+  <data name="collapse4_paragraph.Text" xml:space="preserve">
+    <value>El TMT y sus diversas variantes requieren que el participante, en el orden correcto, vincule un conjunto de objetos que están etiquetados de una manera que indica un orden específico (por ejemplo, numérico, alfabético). Parte A de el TMT contiene una seleción de 25 círculos que contienen los números del 1 al 25. Al hacer clic en las burbujas numeradas, el tomador de la prueba crea una línea del círculo, que contiene el número 1, al círculo que contiene el número 2 y luego al círculo que contiene el número 3 y sigue hasta que él/ella llegue al círculo que contiene el número 25. En la Parte B, se requiere que el tomador de prueba alterne entre números y letras (por ejemplo, la secuencia de 1, A, 2, B, 3, C, ...).</value>
+  </data>
+  <data name="collapse4_title.Text" xml:space="preserve">
+    <value>Investigación:</value>
+  </data>
+  <data name="errorPayment" xml:space="preserve">
+    <value>No se puede procesar el pago. Por favor contacte al administrador.</value>
+  </data>
+  <data name="follow.Text" xml:space="preserve">
+    <value>Síganos</value>
+  </data>
+  <data name="navbar_about.Text" xml:space="preserve">
+    <value>Acerca de</value>
+  </data>
+  <data name="navbar_home.Text" xml:space="preserve">
+    <value>Inicio</value>
+  </data>
+  <data name="navbar_logIn.Text" xml:space="preserve">
+    <value>Iniciar sesión</value>
+  </data>
+  <data name="navbar_logOut.Text" xml:space="preserve">
+    <value>Salir</value>
+  </data>
+  <data name="navbar_profile.Text" xml:space="preserve">
+    <value>Perfil</value>
+  </data>
+  <data name="or.Text" xml:space="preserve">
+    <value>o</value>
+  </data>
+  <data name="pagetitle.title" xml:space="preserve">
+    <value>Prueba de Trails en línea</value>
+  </data>
+  <data name="pleaseLogin.Text" xml:space="preserve">
+    <value>Por favor inicie la sesión</value>
+  </data>
+  <data name="price_hundred_buy.Text" xml:space="preserve">
+    <value>Comprar ahora</value>
+  </data>
+  <data name="price_hundred_paragraph.Text" xml:space="preserve">
+    <value>Proyecto de medio tamaño</value>
+  </data>
+  <data name="price_hundred_title.Text" xml:space="preserve">
+    <value>Conjunto de 100</value>
+  </data>
+  <data name="price_single_buy.Text" xml:space="preserve">
+    <value>Comprar ahora</value>
+  </data>
+  <data name="price_single_paragraph.Text" xml:space="preserve">
+    <value>Ejecutar una sola vez</value>
+  </data>
+  <data name="price_single_title.Text" xml:space="preserve">
+    <value>Solo una prueba</value>
+  </data>
+  <data name="price_ten_buy.Text" xml:space="preserve">
+    <value>Comprar ahora</value>
+  </data>
+  <data name="price_ten_paragraph.Text" xml:space="preserve">
+    <value>Proyecto pequeño</value>
+  </data>
+  <data name="price_ten_title.Text" xml:space="preserve">
+    <value>Conjunto de 10</value>
+  </data>
+  <data name="price_unlim_buy.Text" xml:space="preserve">
+    <value>Comprar ahora</value>
+  </data>
+  <data name="price_unlim_paragraph.Text" xml:space="preserve">
+    <value>Cualquier número de participantes</value>
+  </data>
+  <data name="price_unlim_title.Text" xml:space="preserve">
+    <value>Conjunto de 500</value>
+  </data>
+  <data name="register.Text" xml:space="preserve">
+    <value>Regístrese</value>
+  </data>
+  <data name="runtest.Text" xml:space="preserve">
+    <value>Ejecutar prueba</value>
+  </data>
+  <data name="specifications_paragraph1.Text" xml:space="preserve">
+    <value>Esta prueba tardará de 3 a 5 minutos en completarse.</value>
+  </data>
+  <data name="specifications_paragraph2.Text" xml:space="preserve">
+    <value>La resolución mínima recomendada de la pantalla es 1000 x 700.</value>
+  </data>
+  <data name="specifications_title.Text" xml:space="preserve">
+    <value>Especificaciones</value>
+  </data>
+</root>

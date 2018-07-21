@@ -16,7 +16,8 @@ namespace TestSite
     {
         public LanguageModel[] Languages = {
             new LanguageModel { Language = "EN", FlagIco = "/assets/img/united-states.png", LanguageCode = LanguageManager.LangDefault },
-            new LanguageModel { Language = "RU", FlagIco = "/assets/img/russia.png", LanguageCode = "ru" }
+            new LanguageModel { Language = "RU", FlagIco = "/assets/img/russia.png", LanguageCode = "ru" },
+            new LanguageModel { Language = "ES", FlagIco = "/assets/img/spain.png", LanguageCode = "es" }
         };
         public LanguageModel CurrentLanguage { get; set; }
 

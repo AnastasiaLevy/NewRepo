@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="about_paragraph.Text" xml:space="preserve">
+    <value>La Torre de Londres es una prueba bien conocida y utilizada en el mundo de neuropsicología clínica aplicada para la evaluación del funcionamiento ejecutivo específicamente para detectar déficits en la planificación, que puede ocurrir debido a una variedad de condiciones médicas y neuropsiquiátricas. Está relacionado con el clásico rompecabezas conocido como la Torre de Hanoi.</value>
+  </data>
+  <data name="about_title.Text" xml:space="preserve">
+    <value>Escritorio de la Torre de Londres</value>
+  </data>
+  <data name="buy_btn.Text" xml:space="preserve">
+    <value>Ordene ahora</value>
+  </data>
+  <data name="buy_title.Text" xml:space="preserve">
+    <value>Comprar lincencia</value>
+  </data>
+  <data name="follow.Text" xml:space="preserve">
+    <value>Síganos</value>
+  </data>
+  <data name="manual_btn.text" xml:space="preserve">
+    <value>View user manual</value>
+  </data>
+  <data name="navbar_about.Text" xml:space="preserve">
+    <value>Acerca de</value>
+  </data>
+  <data name="navbar_home.Text" xml:space="preserve">
+    <value>Inicio</value>
+  </data>
+  <data name="navbar_login.Text" xml:space="preserve">
+    <value>Iniciar sesión</value>
+  </data>
+  <data name="navbar_logOut.Text" xml:space="preserve">
+    <value>Salir</value>
+  </data>
+  <data name="navbar_profile.Text" xml:space="preserve">
+    <value>Perfil</value>
+  </data>
+  <data name="pageTitle.title" xml:space="preserve">
+    <value>Prueba Torre de Londres en línea- CogQuiz</value>
+  </data>
+  <data name="price_btn.Text" xml:space="preserve">
+    <value>Descargar</value>
+  </data>
+  <data name="price_key.Text" xml:space="preserve">
+    <value>Su clave:</value>
+  </data>
+  <data name="testDescription_img1_span1.Text" xml:space="preserve">
+    <value>You can create your own test</value>
+  </data>
+  <data name="testDescription_img1_span2.Text" xml:space="preserve">
+    <value>Edit existing tests</value>
+  </data>
+  <data name="testDescription_img1_span3.Text" xml:space="preserve">
+    <value>Make a test run</value>
+  </data>
+  <data name="testDescription_img1_span4.Text" xml:space="preserve">
+    <value>Delete unnecessary tests</value>
+  </data>
+  <data name="testDescription_img1_title.Text" xml:space="preserve">
+    <value>Crear prueba</value>
+  </data>
+  <data name="testDescription_img2_paragraph.Text" xml:space="preserve">
+    <value>Sed imperdiet eros nec tellus fringilla, id facilisis ex tempus. Nunc tincidunt, dui id fringilla suscipit, quam urna gravida augue, nec fermentum velit velit et risus. Praesent massa massa, porta vel justo ut, venenatis blandit metus. Fusce nec egestas erat. Etiam auctor neque nec sagittis dignissim. Duis sed sapien luctus orci elementum imperdiet. Duis maximus et lorem nec scelerisque. Vivamus ut elit ante. Proin ut sollicitudin nisl. Donec non enim ipsum.</value>
+  </data>
+  <data name="testDescription_img2_span1.Text" xml:space="preserve">
+    <value>You can add any number of participants</value>
+  </data>
+  <data name="testDescription_img2_span2.Text" xml:space="preserve">
+    <value>Create member and administrator accounts</value>
+  </data>
+  <data name="testDescription_img2_span3.Text" xml:space="preserve">
+    <value>Fill profiles</value>
+  </data>
+  <data name="testDescription_img2_title.Text" xml:space="preserve">
+    <value>2. Participantes</value>
+  </data>
+  <data name="testDescription_img3_paragraph.Text" xml:space="preserve">
+    <value>Maecenas vel lacus in ligula gravida mollis placerat ut quam. Morbi magna tellus, condimentum nec mi et, pulvinar imperdiet ligula. Morbi maximus mi eget justo tristique feugiat. Suspendisse ultrices dolor in leo congue, faucibus luctus nisi pharetra. Vivamus dapibus pellentesque orci, a rutrum risus sodales a. Nulla tempor nunc et magna egestas fermentum. Nulla magna ante, mattis elementum ipsum et, lobortis luctus lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</value>
+  </data>
+  <data name="testDescription_img3_span1.Text" xml:space="preserve">
+    <value>You can run and pass tests</value>
+  </data>
+  <data name="testDescription_img3_span2.Text" xml:space="preserve">
+    <value>Each movement is recorded for further analysis</value>
+  </data>
+  <data name="testDescription_img3_title.Text" xml:space="preserve">
+    <value>3. Ejecutar prueba</value>
+  </data>
+  <data name="testDescription_img4_paragraph.Text" xml:space="preserve">
+    <value>Nulla sagittis metus ac rutrum tempus. Fusce mollis lorem et velit fermentum rhoncus. In vestibulum fringilla odio, vitae tempus diam aliquam et. Nam vitae elementum purus. Nullam erat urna, porttitor ut risus mattis, vehicula tincidunt quam. Aliquam tempus ornare nulla at efficitur. In nec arcu sed nunc rutrum pellentesque. In hac habitasse platea dictumst. Aliquam vel rhoncus urna. Donec in purus ipsum. In non orci faucibus, ullamcorper augue vel, dignissim velit.</value>
+  </data>
+  <data name="testDescription_img4_span1.Text" xml:space="preserve">
+    <value>On analyze tab you can see all results of passed tests</value>
+  </data>
+  <data name="testDescription_img4_span2.Text" xml:space="preserve">
+    <value>See detailed information on the passage of each test</value>
+  </data>
+  <data name="testDescription_img4_span3.Text" xml:space="preserve">
+    <value>See the time of each round</value>
+  </data>
+  <data name="testDescription_img4_span4.Text" xml:space="preserve">
+    <value>Print or export results</value>
+  </data>
+  <data name="testDescription_img4_title.Text" xml:space="preserve">
+    <value>4. Análisis de pruebas</value>
+  </data>
+  <data name="testDescription_img5_paragraph.Text" xml:space="preserve">
+    <value>Maecenas vel lacus in ligula gravida mollis placerat ut quam. Morbi magna tellus, condimentum nec mi et, pulvinar imperdiet ligula. Morbi maximus mi eget justo tristique feugiat. Suspendisse ultrices dolor in leo congue, faucibus luctus nisi pharetra. Vivamus dapibus pellentesque orci, a rutrum risus sodales a. Nulla tempor nunc et magna egestas fermentum. Nulla magna ante, mattis elementum ipsum et, lobortis luctus lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</value>
+  </data>
+  <data name="testDescription_img5_span1.Text" xml:space="preserve">
+    <value>You can view playback.</value>
+  </data>
+  <data name="testDescription_img5_span2.Text" xml:space="preserve">
+    <value>Through playback you can evaluate the train of thought</value>
+  </data>
+  <data name="testDescription_img5_span3.Text" xml:space="preserve">
+    <value>Select playback speed</value>
+  </data>
+  <data name="testDescription_img5_title.Text" xml:space="preserve">
+    <value>5. Ver reproducción</value>
+  </data>
+  <data name="testDescription_img6_paragraph.Text" xml:space="preserve">
+    <value>Nulla sagittis metus ac rutrum tempus. Fusce mollis lorem et velit fermentum rhoncus. In vestibulum fringilla odio, vitae tempus diam aliquam et. Nam vitae elementum purus. Nullam erat urna, porttitor ut risus mattis, vehicula tincidunt quam. Aliquam tempus ornare nulla at efficitur. In nec arcu sed nunc rutrum pellentesque. In hac habitasse platea dictumst. Aliquam vel rhoncus urna. Donec in purus ipsum. In non orci faucibus, ullamcorper augue vel, dignissim velit.</value>
+  </data>
+  <data name="testDescription_img6_span1.Text" xml:space="preserve">
+    <value>You can export results to excel file</value>
+  </data>
+  <data name="testDescription_img6_span2.Text" xml:space="preserve">
+    <value>Send results to participants by email</value>
+  </data>
+  <data name="testDescription_img6_title.Text" xml:space="preserve">
+    <value>6. Exportar resultado a Excel</value>
+  </data>
+  <data name="testDescription_title.Text" xml:space="preserve">
+    <value>Ver ejemplos</value>
+  </data>
+</root>

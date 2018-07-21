@@ -1,0 +1,383 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ddlEducation_item1" xml:space="preserve">
+    <value>Some High School</value>
+  </data>
+  <data name="ddlEducation_item2" xml:space="preserve">
+    <value>High School Grad</value>
+  </data>
+  <data name="ddlEducation_item3" xml:space="preserve">
+    <value>Some University</value>
+  </data>
+  <data name="ddlEducation_item4" xml:space="preserve">
+    <value>Univ Undegraduate</value>
+  </data>
+  <data name="ddlEducation_item5" xml:space="preserve">
+    <value>Graduate School</value>
+  </data>
+  <data name="ddlEducation_item6" xml:space="preserve">
+    <value>PhD</value>
+  </data>
+  <data name="ddlEthnicity_item1" xml:space="preserve">
+    <value>White/Non-hispanic</value>
+  </data>
+  <data name="ddlEthnicity_item2" xml:space="preserve">
+    <value>African American/African origin</value>
+  </data>
+  <data name="ddlEthnicity_item3" xml:space="preserve">
+    <value>Hispanic or Latino</value>
+  </data>
+  <data name="ddlEthnicity_item4" xml:space="preserve">
+    <value>Asian</value>
+  </data>
+  <data name="ddlEthnicity_item5" xml:space="preserve">
+    <value>American Indian or Alaskan Native</value>
+  </data>
+  <data name="ddlEthnicity_item6" xml:space="preserve">
+    <value>Native Hawaiian or Pacific Islander</value>
+  </data>
+  <data name="ddlHand_item1" xml:space="preserve">
+    <value>left</value>
+  </data>
+  <data name="ddlHand_item2" xml:space="preserve">
+    <value>right</value>
+  </data>
+  <data name="ddlHand_item3" xml:space="preserve">
+    <value>ambidextrous</value>
+  </data>
+  <data name="ddlIncome_item1" xml:space="preserve">
+    <value>less than 10 000</value>
+  </data>
+  <data name="ddlIncome_item2" xml:space="preserve">
+    <value>10 001 -- 25 000</value>
+  </data>
+  <data name="ddlIncome_item3" xml:space="preserve">
+    <value>25 001 -- 50 000</value>
+  </data>
+  <data name="ddlIncome_item4" xml:space="preserve">
+    <value>50 001 -- 100 00</value>
+  </data>
+  <data name="ddlIncome_item5" xml:space="preserve">
+    <value>more than 100 000</value>
+  </data>
+  <data name="follow.text" xml:space="preserve">
+    <value>SÍGANOS</value>
+  </data>
+  <data name="formInstructions_errorsaved.text" xml:space="preserve">
+    <value>Hubo un error al guardar tu perfil.</value>
+  </data>
+  <data name="formInstructions_profilesaved.text" xml:space="preserve">
+    <value>Su perfil fue guardado </value>
+  </data>
+  <data name="navbar_goBack.text" xml:space="preserve">
+    <value>Volver al perfil</value>
+  </data>
+  <data name="navbar_home.text" xml:space="preserve">
+    <value>Inicio</value>
+  </data>
+  <data name="navbar_save.text" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="pagetitle.title" xml:space="preserve">
+    <value>Datos de usuario</value>
+  </data>
+  <data name="regForm_btnsave.text" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="regForm_cbEnglNo.text" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="regForm_cbEnglYes.text" xml:space="preserve">
+    <value>Sí</value>
+  </data>
+  <data name="regForm_cbFmale.text" xml:space="preserve">
+    <value>F</value>
+  </data>
+  <data name="regForm_cbHeadInjN.text" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="regForm_cbHeadInjY.text" xml:space="preserve">
+    <value>Sí</value>
+  </data>
+  <data name="regForm_cbMale.text" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="regForm_cbMedicationsN.text" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="regForm_cbMedicationsY.text" xml:space="preserve">
+    <value>Sí</value>
+  </data>
+  <data name="regForm_checkBox_agree.text" xml:space="preserve">
+    <value>He leído y entendido</value>
+  </data>
+  <data name="regForm_firstLang.placeholder" xml:space="preserve">
+    <value>primer idioma</value>
+  </data>
+  <data name="regForm_firstNameValid.ErrorMessage" xml:space="preserve">
+    <value>Por favor ingrese su nombre</value>
+  </data>
+  <data name="regForm_lastNameValid.ErrorMessage" xml:space="preserve">
+    <value>Por favor ingrese su apellido</value>
+  </data>
+  <data name="regForm_lbBday.text" xml:space="preserve">
+    <value>Fecha de Nacimientio:</value>
+  </data>
+  <data name="regForm_lbEducation.text" xml:space="preserve">
+    <value>Educación:</value>
+  </data>
+  <data name="regForm_lbFistName.text" xml:space="preserve">
+    <value>*Nombre de pila:</value>
+  </data>
+  <data name="regForm_lbGender.text" xml:space="preserve">
+    <value>Género</value>
+  </data>
+  <data name="regForm_lbHand.text" xml:space="preserve">
+    <value>Mano dominante</value>
+  </data>
+  <data name="regForm_lbHeadInj.text" xml:space="preserve">
+    <value>¿Alguna vez ha tenido una lesión en la cabeza?</value>
+  </data>
+  <data name="regForm_lbHeadInjNum.text" xml:space="preserve">
+    <value>¿Cuántos?</value>
+  </data>
+  <data name="regForm_lbIncome.text" xml:space="preserve">
+    <value>Nivel de ingreso:</value>
+  </data>
+  <data name="regForm_lbLastName.text" xml:space="preserve">
+    <value>*Apellido:</value>
+  </data>
+  <data name="regForm_lblEthnicity.text" xml:space="preserve">
+    <value>Etnia</value>
+  </data>
+  <data name="regForm_lblFstLang.text" xml:space="preserve">
+    <value>Por favor ingrese su primer idioma:</value>
+  </data>
+  <data name="regForm_lblLang.text" xml:space="preserve">
+    <value>¿Es el inglés su primer idioma?</value>
+  </data>
+  <data name="regForm_lbMeds.text" xml:space="preserve">
+    <value>¿Está tomando algún medicamento actualmente?</value>
+  </data>
+  <data name="regForm_paragraph1.text" xml:space="preserve">
+    <value>Por favor rellene el formulario para asegurar los resultados de puntuación más precisos para el examen.</value>
+  </data>
+  <data name="regForm_paragraph2.text" xml:space="preserve">
+    <value>Los campos requeridos están marcados con *</value>
+  </data>
+  <data name="regForm_paragraph3.text" xml:space="preserve">
+    <value>Para utilizar las evaluaciones en este sitio web, necesita leer y aceptar las condiciones para tomar cualquiera de las evaluaciones provistas por CogQuiz.com. Las pruebas en este sitio web se consideran y proporcionan únicamente como  evaluaciones experimentales. No son clínicamente o médicamente para diagnóstico o para el uso en tratar o prevenir condiciones clínicas o médicas. Si usted tiene preguntas o inquietudes sobre los resultados o sobre nuestros informes de los resultados  en cualquier evaluación realizada en este sitio, es posible que desee imprimir sus resultados y discuta con un médico o psicológo profesional. CogQuiz.com, CogQuiz, LLC, o los propietarios de esta empresa y/o sitio web no son responsables por cualquier error o mala interpretación de los resultados y evaluaciones por parte de los usuarios de este sitio web. Al marcar "aceptar," acepta reconocer que ha leído y entendido las condiciones para tomar cualquier evaluación provista en este sitio web.</value>
+  </data>
+  <data name="regForm_RequiredFieldValidator1.ErrorMessage" xml:space="preserve">
+    <value>Por favor ingrese su fecha de nacimiento</value>
+  </data>
+  <data name="regForm_scaleRead_brainActivity_label1.text" xml:space="preserve">
+    <value>0-5</value>
+  </data>
+  <data name="regForm_scaleRead_brainActivity_label2.text" xml:space="preserve">
+    <value>6-10</value>
+  </data>
+  <data name="regForm_scaleRead_brainActivity_label3.text" xml:space="preserve">
+    <value>11-15</value>
+  </data>
+  <data name="regForm_scaleRead_brainActivity_label4.text" xml:space="preserve">
+    <value>16-20</value>
+  </data>
+  <data name="regForm_scaleRead_brainActivity_label5.text" xml:space="preserve">
+    <value>más de 20</value>
+  </data>
+  <data name="regForm_scaleRead_exercise_label1.text" xml:space="preserve">
+    <value>0-1</value>
+  </data>
+  <data name="regForm_scaleRead_exercise_label2.text" xml:space="preserve">
+    <value>2-3</value>
+  </data>
+  <data name="regForm_scaleRead_exercise_label3.text" xml:space="preserve">
+    <value>4-5</value>
+  </data>
+  <data name="regForm_scaleRead_exercise_label4.text" xml:space="preserve">
+    <value>6-7</value>
+  </data>
+  <data name="regForm_scaleRead_exercise_label5.text" xml:space="preserve">
+    <value>8-9</value>
+  </data>
+  <data name="regForm_scaleRead_label1.text" xml:space="preserve">
+    <value>"¿Cuántas horas a la semana se dedica a estimular la actividad como sigue: 
+
+                                         lectura, escritura, naipes, conversaciones intelectuales, uso de la computadora:"</value>
+  </data>
+  <data name="regForm_scaleRead_label2.text" xml:space="preserve">
+    <value>¿Cuántas horas a la semana hace ejercicio?</value>
+  </data>
+  <data name="regForm_scaleRead_label3.text" xml:space="preserve">
+    <value>¿Cómo calificaría su autoestima?:</value>
+  </data>
+  <data name="regForm_scaleRead_label4.text" xml:space="preserve">
+    <value>¿Cómo calificaría su salud en general?:</value>
+  </data>
+  <data name="regForm_scaleRead_selfEsteem_label1.text" xml:space="preserve">
+    <value>Bajo</value>
+  </data>
+  <data name="regForm_scaleRead_selfEsteem_label2.text" xml:space="preserve">
+    <value>Debajo del promedio</value>
+  </data>
+  <data name="regForm_scaleRead_selfEsteem_label3.text" xml:space="preserve">
+    <value>Promedio</value>
+  </data>
+  <data name="regForm_scaleRead_selfEsteem_label4.text" xml:space="preserve">
+    <value>Arriba del promedio</value>
+  </data>
+  <data name="regForm_scaleRead_selfEsteem_label5.text" xml:space="preserve">
+    <value>Alto</value>
+  </data>
+  <data name="regForm_scaleRead_selfHealth_label1.text" xml:space="preserve">
+    <value>Bajo</value>
+  </data>
+  <data name="regForm_scaleRead_selfHealth_label2.text" xml:space="preserve">
+    <value>Debajo  del promedio</value>
+  </data>
+  <data name="regForm_scaleRead_selfHealth_label3.text" xml:space="preserve">
+    <value>Promedio</value>
+  </data>
+  <data name="regForm_scaleRead_selfHealth_label4.text" xml:space="preserve">
+    <value>Arriba del promedio</value>
+  </data>
+  <data name="regForm_scaleRead_selfHealth_label5.text" xml:space="preserve">
+    <value>Excelente</value>
+  </data>
+  <data name="regForm_title1.text" xml:space="preserve">
+    <value>Formulario de perfil</value>
+  </data>
+  <data name="regForm_title2.text" xml:space="preserve">
+    <value>Renuncia de responsabilidad</value>
+  </data>
+  <data name="regForm_txtBDay.placeholder" xml:space="preserve">
+    <value>mm/dd/aa</value>
+  </data>
+  <data name="regForm_txtFirstName.placeholder" xml:space="preserve">
+    <value>Nombre de pila</value>
+  </data>
+  <data name="regForm_txtKindMeds.placeholder" xml:space="preserve">
+    <value>Medicamentos</value>
+  </data>
+  <data name="regForm_txtLastName.placeholder" xml:space="preserve">
+    <value>Apellido</value>
+  </data>
+</root>

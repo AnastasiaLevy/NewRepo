@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="about_more.Text" xml:space="preserve">
+    <value>Leer más sobre:</value>
+  </data>
+  <data name="about_paragraph.Text" xml:space="preserve">
+    <value>Prueba Torre de Londres es una prueba bien conocida y utilizada en el mundo de neuropsicología clínica aplicada para la evaluación del funcionamiento ejecutivo específicamente para detectar déficits en la planificación, que puede ocurrir debido a una variedad de condiciones médicas y neuropsiquiátricas. Está relacionado con el clásico rompecabezas conocido como la Torre de Hanoi.</value>
+  </data>
+  <data name="about_title.Text" xml:space="preserve">
+    <value>Torre de Londres</value>
+  </data>
+  <data name="container_title.Text" xml:space="preserve">
+    <value>Seleccione una versión:</value>
+  </data>
+  <data name="follow.Text" xml:space="preserve">
+    <value>Síganos</value>
+  </data>
+  <data name="login.Text" xml:space="preserve">
+    <value>Por favor inicie la sesión</value>
+  </data>
+  <data name="navbar_about.Text" xml:space="preserve">
+    <value>Acerca de</value>
+  </data>
+  <data name="navbar_home.Text" xml:space="preserve">
+    <value>Inicio</value>
+  </data>
+  <data name="navbar_logIn.Text" xml:space="preserve">
+    <value>Iniciar sesión</value>
+  </data>
+  <data name="navbar_logOut.Text" xml:space="preserve">
+    <value>Salir</value>
+  </data>
+  <data name="navbar_profile.Text" xml:space="preserve">
+    <value>Perfil</value>
+  </data>
+  <data name="or.Text" xml:space="preserve">
+    <value>OR</value>
+  </data>
+  <data name="pagetitle.title" xml:space="preserve">
+    <value>Prueba Torre de Londres en línea- CogQuiz</value>
+  </data>
+  <data name="popup_item1_description" xml:space="preserve">
+    <value>Haga sus propios problemas de la Prueba Torre de Londres. Usted controla la demo, práctica y puntuación, el númer de movimientos directos e indirectos, el número total de movimientos, los movimientos máximos por ensayo y el tiempo que se le permite completar un ensayo. La figura a la extrema izquierda muestra una construcción en curso de un ensayo. Las dos cifras siguientes muestran cómo se construye el texto y los parámetros asociados a una prueba.</value>
+  </data>
+  <data name="popup_item1_imgTitle" xml:space="preserve">
+    <value>Agregar o editar ensayos.', 'Configure instrucciones o descripciones del ensayo en cualquier idioma.', 'Configure el número de ensayos de demostración, ensayos reales', 'Configurar la prueba de realimentación, Mensaje de espera, Instrucciones al fin de la prueba.', 'jquery elastic grid 9'</value>
+  </data>
+  <data name="popup_item1_title" xml:space="preserve">
+    <value>Haga sus propias pruebas</value>
+  </data>
+  <data name="popup_item2_description" xml:space="preserve">
+    <value>Obtenga resultados de prueba inmediatos. La figura 1 de la izquierda muestra un resultado típico para un conjunto de problemas de la Torre de Londres. La información de la columna es la siguiente: la columna 1 es el número de prueba, la columna 2 designa el ensayo como puntuado (ensayo) o como una prueba de práctica (la configuración permite la inclusión o no inclusión de ensayos de práctica en la puntuación); La columna rotulada El Tiempo Inicial, es el tiempo anterior al primer movimiento, en segundos y milisegundos (es el tiempo de planificación inicial); la columna Tiempo de Juego, es el tiempo total de prueba e incluye el tiempo incial de pensar; La columna Número de Movimientos es el número total de movimientos realizados en una prueba (se puede designar un límite superior en la configuración); la etiqueta de columna movimientos mínimos es el número de movimientos para una solución óptima; la columna Movimientos Excesivos da el número de movimientos por encima de la solución óptima- si se excede el movimientos o el límite de tiempo, la puntuación es el límite de movimientos menos el número de movimientos óptimos de la solución; El número de movimientos ilegales es el número de intentos iniciales para soltar una cuenta en una clavija, lo que resultaría en pilar por encima de la clavija. La columna El juego está fuera de tiempo se marca cuando se excede el límite de tiempo; el Fuera del Límite de Movimientos se verifíca cuando el número de movimientos excede el límite de movimiento superior. La segunda cifra muestra una transferencia directa a Excel. La tercera cifra muestra las pruebas transferidas a Excel como una sola línea. La tercera cifra probablemente será la más útil para las personas que quieran analizar sus datos en SPSS.</value>
+  </data>
+  <data name="popup_item2_imgTitle" xml:space="preserve">
+    <value>jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid'</value>
+  </data>
+  <data name="popup_item2_title" xml:space="preserve">
+    <value>Anotación</value>
+  </data>
+  <data name="popup_item3_description" xml:space="preserve">
+    <value>Las cifras 1 y 2 muestran un problema que está en el proceso de ser resuelto. La cifra 3 muestra una pantalla en donde puede hacer clic en Inicio en el lado izquierdo para iniciar un conjunto de problemas de Torre de Londres. Al lado derecho de esta pantalla, se muestran las pruebas que se han cumplido. Al hacer clic en el ojo, puede ver los resultados. La cifra 4 muestra una pantalla en donde puede ejecutar una prueba si tiene pruebas o comprar pruebas si no hay un botón verde.</value>
+  </data>
+  <data name="popup_item3_imgTitle" xml:space="preserve">
+    <value>'jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid'</value>
+  </data>
+  <data name="popup_item3_title" xml:space="preserve">
+    <value>Prueba Torre de Londres</value>
+  </data>
+  <data name="price_hundred_buy.Text" xml:space="preserve">
+    <value>Comprar ahora</value>
+  </data>
+  <data name="price_hundred_paragraph.Text" xml:space="preserve">
+    <value>Proyecto de medio tamaño</value>
+  </data>
+  <data name="price_hundred_title.Text" xml:space="preserve">
+    <value>Conjunto de 100</value>
+  </data>
+  <data name="price_single_buy.Text" xml:space="preserve">
+    <value>Comprar ahora</value>
+  </data>
+  <data name="price_single_paragraph.Text" xml:space="preserve">
+    <value>Ejecutar una sola vez</value>
+  </data>
+  <data name="price_single_title.Text" xml:space="preserve">
+    <value>Solo una prueba</value>
+  </data>
+  <data name="price_ten_buy.Text" xml:space="preserve">
+    <value>Comprar ahora</value>
+  </data>
+  <data name="price_ten_paragraph.Text" xml:space="preserve">
+    <value>Proyecto pequeño</value>
+  </data>
+  <data name="price_ten_title.Text" xml:space="preserve">
+    <value>Conjunto de 10</value>
+  </data>
+  <data name="price_unlim_buy.Text" xml:space="preserve">
+    <value>Comprar ahora</value>
+  </data>
+  <data name="price_unlim_paragraph.Text" xml:space="preserve">
+    <value>Proyecto grande</value>
+  </data>
+  <data name="price_unlim_title.Text" xml:space="preserve">
+    <value>500</value>
+  </data>
+  <data name="register.Text" xml:space="preserve">
+    <value>Regístrese</value>
+  </data>
+  <data name="runtest.Text" xml:space="preserve">
+    <value>Ejecutar prueba</value>
+  </data>
+  <data name="specifications_paragraph1.Text" xml:space="preserve">
+    <value>Esta prueba tardará aproximadamente 20 minutos en completarse.</value>
+  </data>
+  <data name="specifications_paragraph2.Text" xml:space="preserve">
+    <value>La resolución de pantalla mínima recomendada es 10000 x 700.</value>
+  </data>
+  <data name="specifications_title.Text" xml:space="preserve">
+    <value>Las especificaciones:</value>
+  </data>
+  <data name="tab_all" xml:space="preserve">
+    <value>ALL</value>
+  </data>
+  <data name="tab_scoring" xml:space="preserve">
+    <value>SCORING</value>
+  </data>
+  <data name="tab_setup" xml:space="preserve">
+    <value>SET UP</value>
+  </data>
+  <data name="tab_test" xml:space="preserve">
+    <value>TEST</value>
+  </data>
+</root>

@@ -124,6 +124,7 @@
     <Content Include="assets\ico\favicon.png" />
     <Content Include="assets\img\backgrounds\1.jpg" />
     <Content Include="assets\img\russia.png" />
+    <Content Include="assets\img\spain.png" />
     <Content Include="assets\img\united-states.png" />
     <Content Include="assets\js\jquery-1.11.1.js" />
     <Content Include="assets\js\jquery-1.11.1.min.js" />
@@ -1242,11 +1243,30 @@
     <Content Include="App_LocalResources\Layout.Master.ru.resx" />
     <Content Include="Create\App_LocalResources\LondonCreate.aspx.ru.resx" />
     <Content Include="Create\App_LocalResources\LondonModify.aspx.ru.resx" />
+    <Content Include="App_LocalResources\Login.aspx.es.resx" />
+    <Content Include="App_LocalResources\ErrorPage.aspx.es.resx" />
+    <Content Include="App_LocalResources\LondonPage.aspx.es.resx" />
+    <Content Include="App_LocalResources\LondonWrapper.aspx.es.resx" />
+    <Content Include="App_LocalResources\MainPage.aspx.es.resx" />
+    <Content Include="App_LocalResources\Registration.aspx.es.resx" />
+    <Content Include="App_LocalResources\ResultsPage.aspx.es.resx" />
+    <Content Include="App_LocalResources\TrailsWrapper.aspx.es.resx" />
+    <Content Include="App_LocalResources\UserProfile.aspx.es.resx" />
+    <Content Include="App_LocalResources\WCSTWrapper.aspx.es.resx" />
+    <Content Include="category\App_LocalResources\ExecutiveFunction.aspx.es.resx" />
+    <Content Include="category\App_LocalResources\IntelligenceTest.aspx.es.resx" />
+    <Content Include="category\App_LocalResources\Memory.aspx.es.resx" />
+    <Content Include="category\App_LocalResources\ProcessingSpeed.aspx.es.resx" />
+    <Content Include="Create\App_LocalResources\LondonCreate.aspx.es.resx" />
+    <Content Include="Create\App_LocalResources\LondonModify.aspx.es.resx" />
+    <Content Include="Create\App_LocalResources\MemoryCardsCreate.aspx.es.resx" />
     <EmbeddedResource Include="Create\App_LocalResources\MemoryCardsCreate.aspx.resx" />
     <Content Include="Create\App_LocalResources\MemoryCardsModify.aspx.resx" />
     <Content Include="Provider\App_LocalResources\ProviderPortal.aspx.ru.resx" />
     <Content Include="Create\App_LocalResources\MemoryCardsCreate.aspx.ru.resx" />
     <Content Include="Create\App_LocalResources\MemoryCardsModify.aspx.ru.resx" />
+    <Content Include="Create\App_LocalResources\MemoryCardsModify.aspx.es.resx" />
+    <Content Include="Provider\App_LocalResources\ProviderPortal.aspx.es.resx" />
     <EmbeddedResource Include="Resources\Text.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Text.Designer.cs</LastGenOutput>
@@ -1295,6 +1315,27 @@
     <Content Include="Tests\App_LocalResources\SyllogWrapper.aspx.ru.resx" />
     <Content Include="Results\App_LocalResources\ADHD_Result.aspx.ru.resx" />
     <Content Include="Results\App_LocalResources\adult_ADHD_Result.aspx.ru.resx" />
+    <Content Include="Results\App_LocalResources\ADHD_Result.aspx.es.resx" />
+    <Content Include="Results\App_LocalResources\adult_ADHD_Result.aspx.es.resx" />
+    <Content Include="Tests\App_LocalResources\ADHD.aspx.es.resx" />
+    <Content Include="Tests\App_LocalResources\ADHD_Page.aspx.es.resx" />
+    <Content Include="Tests\App_LocalResources\adult_ADHD.aspx.es.resx" />
+    <Content Include="Tests\App_LocalResources\adult_ADHD_page.aspx.es.resx" />
+    <Content Include="Tests\App_LocalResources\Autism.aspx.es.resx" />
+    <Content Include="Tests\App_LocalResources\CogQuest.aspx.es.resx" />
+    <Content Include="Tests\App_LocalResources\DesktopTests.aspx.es.resx" />
+    <Content Include="Tests\App_LocalResources\DesktopTowerOfLondon.aspx.es.resx" />
+    <Content Include="Tests\App_LocalResources\DesktopTowerOfLondonWinForms.aspx.es.resx" />
+    <Content Include="Tests\App_LocalResources\Horney.aspx.es.resx" />
+    <Content Include="Tests\App_LocalResources\MemoryCardsPage.aspx.es.resx" />
+    <Content Include="Tests\App_LocalResources\NbackPage.aspx.es.resx" />
+    <Content Include="Tests\App_LocalResources\NbackWrapper.aspx.es.resx" />
+    <Content Include="Tests\App_LocalResources\Personality.aspx.es.resx" />
+    <Content Include="Tests\App_LocalResources\PTSD.aspx.es.resx" />
+    <Content Include="Tests\App_LocalResources\StroopPage.aspx.es.resx" />
+    <Content Include="Tests\App_LocalResources\StroopWrapper.aspx.es.resx" />
+    <Content Include="Tests\App_LocalResources\SyllogPage.aspx.es.resx" />
+    <Content Include="Tests\App_LocalResources\SyllogWrapper.aspx.es.resx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="css\images\" />

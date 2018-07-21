@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Content3.Text" xml:space="preserve">
+    <value>Horney-Coolidge inventario tridimensional (HCTI)</value>
+  </data>
+  <data name="Content4.Text" xml:space="preserve">
+    <value>The HCTI is a 57-item personality measure based on the theory of the revolutionary psychoanalyst Karen Horney (1885-1992) that normal people move freely along three dimensions: Moving Toward Others (Compliant Type), Moving Against Others (Aggressive Type), or Moving Away from Others (Detached Type). Horney proposed that neurotic individuals were often fixated along a single dimension. The HCTI has empirically demonstrated test-retest and scale reliability and construct validity (with modern personality disorders), and the HCTI has norms on 630 purportedly normal people age 15 years old to 90 years old.</value>
+  </data>
+  <data name="Content8_paragraph1.Text" xml:space="preserve">
+    <value>Coolidge, F. L., Segal, D. L., Estey, A. J., &amp; Neuzil, P. J. (2011). Preliminary psychometric properties of a measure of Karen Horney’s tridimensional theory in children and adolescents. Journal of Clinical Psychology, 67, 383-390. [click &lt;a target="_blank" href="/content/HCTI/Coolidge2010-PreliminaryPsychometricPropertiesofaMeasureofKarenHorney’s.pdf"&gt;here&lt;/a&gt; for PDF copy]</value>
+  </data>
+  <data name="Content8_paragraph2.Text" xml:space="preserve">
+    <value>Coolidge, F. L., Segal, D. L., Benight, C. C., &amp; Danielian, J. (2004). The predictive power of Horney’s psychoanalytic approach: An empirical study. American Journal of Psychoanalysis, 64, 363-374. [click &lt;a target="_blank" href="/content/HCTI/Coolidge2004-ThepredictivepowerofHorney’spsychoanalyticapproach.pdf"&gt;here&lt;/a&gt; for PDF copy]</value>
+  </data>
+  <data name="Content8_paragraph3.Text" xml:space="preserve">
+    <value>Coolidge, F. L., Moor, C. J., Yamazaki, T. G., Stewart, S. E., &amp; Segal, D. L. (2001). On the relationship between Karen Horney's tripartite theory and personality disorder features. Personality and Individual Differences, 30, 1387-1400. [click &lt;a target="_blank" href="/content/HCTI/Coolidge2001OntherelationshipbetweenKarenHorneystripartite.pdf"&gt;here&lt;/a&gt; for PDF copy]</value>
+  </data>
+  <data name="Content8_title.Text" xml:space="preserve">
+    <value>REFERENCIAS</value>
+  </data>
+  <data name="Content9_linkbtn.Text" xml:space="preserve">
+    <value>Ejemplar de informe</value>
+  </data>
+  <data name="price_hundred_btn.Text" xml:space="preserve">
+    <value>Comprar ahora</value>
+  </data>
+  <data name="price_hundred_paragraph.Text" xml:space="preserve">
+    <value>Proyecto de medio tamaño</value>
+  </data>
+  <data name="price_hundred_title.Text" xml:space="preserve">
+    <value>Conjunto de 100</value>
+  </data>
+  <data name="price_single_btn.Text" xml:space="preserve">
+    <value>Comprar ahora</value>
+  </data>
+  <data name="price_single_paragrph.Text" xml:space="preserve">
+    <value>Ejecutar una sola vez</value>
+  </data>
+  <data name="price_single_title.Text" xml:space="preserve">
+    <value>Solo una prueba</value>
+  </data>
+  <data name="price_ten_btn.Text" xml:space="preserve">
+    <value>Comprar ahora</value>
+  </data>
+  <data name="price_ten_paragraph.Text" xml:space="preserve">
+    <value>Proyecto pequeño</value>
+  </data>
+  <data name="price_ten_title.Text" xml:space="preserve">
+    <value>Conjunto de 10</value>
+  </data>
+  <data name="price_unlim_btn.Text" xml:space="preserve">
+    <value>Comprar ahora</value>
+  </data>
+  <data name="price_unlim_paragraph.Text" xml:space="preserve">
+    <value>Cualquier número de participantes</value>
+  </data>
+  <data name="price_unlim_title.Text" xml:space="preserve">
+    <value>Conjunto de 1000</value>
+  </data>
+</root>

@@ -1,0 +1,442 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="about_deskTopList_buttonCP.Text" xml:space="preserve">
+    <value>Rendimiento Continious</value>
+  </data>
+  <data name="about_deskTopList_buttonCS.Text" xml:space="preserve">
+    <value>Prueba de clasificación de tarjeta</value>
+  </data>
+  <data name="about_deskTopList_buttonmmc.text" xml:space="preserve">
+    <value>Memory Cards</value>
+  </data>
+  <data name="about_deskTopList_buttonnbk.text" xml:space="preserve">
+    <value>n-Back</value>
+  </data>
+  <data name="about_deskTopList_buttonRT.Text" xml:space="preserve">
+    <value>Tiempo de reacción</value>
+  </data>
+  <data name="about_deskTopList_buttonspt.text" xml:space="preserve">
+    <value>SOPT</value>
+  </data>
+  <data name="about_deskTopList_buttonTOH.Text" xml:space="preserve">
+    <value>Torre de Hanoi</value>
+  </data>
+  <data name="about_deskTopList_buttonTOL.Text" xml:space="preserve">
+    <value>Torre de Londres</value>
+  </data>
+  <data name="about_deskTopList_buttonTrails.Text" xml:space="preserve">
+    <value>Prueba de la fabricación del rastros</value>
+  </data>
+  <data name="about_deskTopList_buttonvrb.text" xml:space="preserve">
+    <value>Verbal</value>
+  </data>
+  <data name="about_deskTopList_title.Text" xml:space="preserve">
+    <value>Pruebas disponibles</value>
+  </data>
+  <data name="about_paragraph.Text" xml:space="preserve">
+    <value>La colección de pruebas CogQuiz ofrece pruebas flexibles para su escritorio. Ofrece una base de datos para todas las pruebas, datos normalizados y la capacidad de realizar sus propias pruebas.</value>
+  </data>
+  <data name="about_title.Text" xml:space="preserve">
+    <value>Colección de pruebas de escritorio</value>
+  </data>
+  <data name="CardSort_install.Text" xml:space="preserve">
+    <value>Llamar o activar por correo electronico</value>
+  </data>
+  <data name="cardSort_orderNow.Text" xml:space="preserve">
+    <value>Ordenar ahora</value>
+  </data>
+  <data name="cardSort_paragraph1.Text" xml:space="preserve">
+    <value>La tarea de clasificación de tarjetas proporciona una flexibilidad considerable en la definición de tareas. El número de tarjetas de estímulo puede variar entre dos y cinco y el número de dimensiones de ordenación, de dos a cinco. Una de las categorías puede ser definida por el usuario, permitiendo la definición de clases de estímulos. La herramienta de definición de tarjetas permite a los autores de pruebas crear sus propias definiciones de tarjetas de estímulo y respuesta. Las tarjetas pueden mostrar caracteres alfa/numéricos, cualquier imagen que se pueda realizar como "dingbat" o palabras. Los mazos de tarjetas de respuesta pueden ser de cualquier tamaño y su presentación puede ser controlada tanto por el participante como por el ordenador. Los cambios en la categoría (etapa) pueden ser señalizados o no señalizados. Todos los mensajes de prueba e instrucciones se pueden adaptar para satisfacer las necesidades del autor de la prueba. Las modalidades de respuesta de los participantes incluyen "apuntar y hacer clic" y tocar.                                                                                                                                   Las pruebas se pueden analizar utilizando cualquiera de los tres protocolos de análisis o el usuario de prueba puede imprimir una hoja de análisis básica que muestre el rendimiento del participante básico para el análisis "manual". El paquete viene con datos normativos recogidos en 2875 participantes agrupados en cohortes de edad de cinco a nueve años, de 10 a 14 años, de 15 a 19 años y en grupos de 10 años de los 20 a los 80 años en la prueba canónica 128. As Tien, et al., 1996, Feldstein, et al., 1999, y Steinmetz, 2010 han demostrado diferencias significativas entre los resultados entre las pruebas de clasificación de tarjetas administradas manualmente y las pruebas administradas mediante un ordenador, este conjunto de datos normativos representa un paso considerable hacia adelante en las tareas de claficación de tarjetas computarizadas.</value>
+  </data>
+  <data name="cardSort_paragraph2.Text" xml:space="preserve">
+    <value>Tests can be analyzed using any one of three analysis protocols or the test user can print a basic analysis sheet displaying basic participant performance for “hand” analysis. The package comes with normative data collected on 2875 participants grouped in age cohorts from five to nine years, 10 to 14 years, 15 to 19 years and in 10 year groups from the 20 to &gt;80 years on the Canonical 128 Test. As Tien, et al., 1996, Feldstein, et al., 1999, and Steinmetz, 2010 have all shown significant outcome differences between manually administered card sorting tests and tests administered using a computer, this normative data set represents a considerable step forward in computer based card sorting tasks.</value>
+  </data>
+  <data name="cardSort_title.Text" xml:space="preserve">
+    <value>Clasificación de la tarjeta</value>
+  </data>
+  <data name="contactError_error" xml:space="preserve">
+    <value>Hubo un error al enviar su mensaje. Por favor inténtelo de nuevo más tarde.</value>
+  </data>
+  <data name="contactError_true" xml:space="preserve">
+    <value>Gracias. Estaremos en contacto el próximo día hábil.</value>
+  </data>
+  <data name="contact_emailFrom.Text" xml:space="preserve">
+    <value>Su correo electrónico:</value>
+  </data>
+  <data name="contact_emailName.Text" xml:space="preserve">
+    <value>Su nombre:</value>
+  </data>
+  <data name="contact_emailText.Text" xml:space="preserve">
+    <value>Mensaje:</value>
+  </data>
+  <data name="contact_submit.Text" xml:space="preserve">
+    <value>Enviar correo electrónico</value>
+  </data>
+  <data name="contact_title.Text" xml:space="preserve">
+    <value>Por favor complete el formulario de pedido:</value>
+  </data>
+  <data name="CPT_install.Text" xml:space="preserve">
+    <value>Llamar o activar por correo electronico</value>
+  </data>
+  <data name="CPT_orderNow.Text" xml:space="preserve">
+    <value>Ordenar ahora</value>
+  </data>
+  <data name="CPT_paragraph1.Text" xml:space="preserve">
+    <value>Continuous Performance Tests (CPT) used in the diagnosis of ADHD are variations of mid-twentieth century Go/No-Go tests. The test taker is instructed to press the space bar to a target stimulus such as any letter, but to do nothing when a particular designated letter appears (i.e., X).</value>
+  </data>
+  <data name="CPT_paragraph2.Text" xml:space="preserve">
+    <value>The CPT results along with questionnaires and evaluation by a licensed health care professional have been used in the diagnosis of ADHD in approximately 6 million children between 4 and 17 and an additional quarter million children between 2 and 5. This software currently contains several CPT tests that can be used to compare controls and an experimental group. Norms for the Faces test will be provided in late 2018.</value>
+  </data>
+  <data name="CPT_title.Text" xml:space="preserve">
+    <value>CPT</value>
+  </data>
+  <data name="errorPayment" xml:space="preserve">
+    <value>No se puede procesar el pago. Póngase en contacto con el administrador.</value>
+  </data>
+  <data name="GoTo.text" xml:space="preserve">
+    <value>Go to</value>
+  </data>
+  <data name="GoToCPT.Text" xml:space="preserve">
+    <value>CPT</value>
+  </data>
+  <data name="GoToCS.Text" xml:space="preserve">
+    <value>Clasificación de la tarjeta</value>
+  </data>
+  <data name="gotommc.text" xml:space="preserve">
+    <value>Memory Cards</value>
+  </data>
+  <data name="gotonbk.text" xml:space="preserve">
+    <value>n-Back</value>
+  </data>
+  <data name="GoToRT.Text" xml:space="preserve">
+    <value>Tiempo de reacción</value>
+  </data>
+  <data name="gotospt.text" xml:space="preserve">
+    <value>SOPT</value>
+  </data>
+  <data name="GoToTOH.Text" xml:space="preserve">
+    <value>Torre de Hanoi</value>
+  </data>
+  <data name="GoToTOL.Text" xml:space="preserve">
+    <value>Torre de Londres</value>
+  </data>
+  <data name="GoToTrails.Text" xml:space="preserve">
+    <value>Rastros</value>
+  </data>
+  <data name="gotovrb.text" xml:space="preserve">
+    <value>Verbal</value>
+  </data>
+  <data name="hanoi_install.Text" xml:space="preserve">
+    <value>Llamar o activar por correo electronico</value>
+  </data>
+  <data name="hanoi_orderNow.Text" xml:space="preserve">
+    <value>Ordenar ahora</value>
+  </data>
+  <data name="hanoi_paragraph1.Text" xml:space="preserve">
+    <value>Flexibilidad en el diseño del problema que permite 3 a 6 anillos que se utilizarán en el problema con control completo sobre la configuración de arranque de los anillos y la meta "PEG</value>
+  </data>
+  <data name="hanoi_paragraph2.Text" xml:space="preserve">
+    <value>Trials can be specified as either timed (i.e., the trial is terminated after a predetermined amount of time has elapsed) or untimed. Trials can be set to terminate after a specified number of moves.
+ Playback feature allows the user to view the exact moves of any test taken and facilitates the examination of participant problem solving strategies.
+Response modalities include both touch screen and mouse -- the latter offering either a point and click option or a slide bar option.
+Text-to-speech support for instructions.</value>
+  </data>
+  <data name="hanoi_paragraph3.Text" xml:space="preserve">
+    <value>Custom instructions and test captions can be written for each trial (in any language that utilizes the Roman alphabet).
+Variety of in-depth analyses can be performed and data can be exported to external tools (e.g., spreadsheets, statistical package, etc. for custom analysis).
+Standard test anaysis as well as access to the "real time" data record (i.e. , a record of all salient events and their time of occurance in milliseconds including the time between events, total time to complete a trial, and the number of correct and incorrect responses).</value>
+  </data>
+  <data name="hanoi_title.Text" xml:space="preserve">
+    <value>Torre de Hanoi</value>
+  </data>
+  <data name="london_install.Text" xml:space="preserve">
+    <value>Llamar o activar por correo electronico</value>
+  </data>
+  <data name="london_orderNow.Text" xml:space="preserve">
+    <value>Ordenar ahora</value>
+  </data>
+  <data name="london_paragraph1.Text" xml:space="preserve">
+    <value>"La mejora más significativa en el CogQuiz Tol es la sincronización y el registro de la subsistencia que se puede obtener con una prueba computarizada, y lo más notable, la capacidad de crear una serie de pruebas para diferentes poblaciones. El bajo costo relativo del Tol, la capacidad de recolectar confiablemente varios parámetros de prueba, y estandarizar el procedimiento, los investigadores son capaces de investigar los mismos procesos cognitivos con diferentes poblaciones, mostrando cómo varias condiciones pueden afectar diferencialmente la capacidad de planificación.
+"</value>
+  </data>
+  <data name="london_paragraph2.Text" xml:space="preserve">
+    <value>Mientras que el Tol fue desarrollado como una prueba manual para ser implementada usando tablas de estímulo de madera, hay una cantidad creciente evidencia para apoyar el uso de métodos computarizados de pruebas. El uso de métodos de pruebas computarizadas permite una mayor estandarización de los procedimientos de prueba y puede reducir los sesgos de los experimentadores que pueden salir durante una sesión de pruebas en persona.</value>
+  </data>
+  <data name="london_paragraph3.Text" xml:space="preserve">
+    <value>Además, puesto que la prueba se ha estandardizado, los experimentadores no necesitan ser tan altamente entrenados que sería necesario en un formato tradicional de la prueba (Zygouris &amp; Tsolaki, 2015). Puesto que los experimentadores no necesitan ser entrenados tan a fondo, el coste total y el tiempo del experimento pueden ser reducidos. Los asistentes de investigación no necesitan ser entrenados compensados. Así como la facilidad de administración, las pruebas computarizadas simplifican el proceso de recolección de datos y, en muchos casos, pueden aumentar la precisión de la medición. Dado que la administración y recopilación de datos y análisis se realizan en la misma plataforma, los datos se pueden almacenar entre pruebas y los cambios en el rendimiento pueden ser fácilmente rastreados en el tiempo (Cambridge cognición, 2012; Signos vitales del SNC, 2012; Neurotrax Corporation, 2003;).</value>
+  </data>
+  <data name="london_paragraph4.Text" xml:space="preserve">
+    <value>Desde su creación como medio de evaluación de la capacidad de planificación, el Tol ha sido implementado como una herramienta para medir varios dominios de funcionamiento ejecutivo (Bottari et al., 2009; Köstering et al., 2015; Owen, 2005) así como el planeamiento espacial (Berg &amp; Byrd, 2005; Berg, Byrd, McNamara, &amp; MacDonald, 2006; Kaller, Unterrainer, &amp; Stahl, 2012; Pulos &amp; Denzine, 2005; Shallice, 1982; Unterrainer &amp; Owen, 2006), memoria de trabajo (Albert &amp; Steinberg, 2011; Berg &amp; Byrd, 2002; Pulos &amp; Denzine, 2005), inhibition (Albert &amp; Steinberg, 2011; Berg &amp; Byrd, 2002; Shallice, 1982), y desplazamiento de tareas (Pulos &amp; Denzine, 2005). Además de los resultados originales de Shallice (1982) de déficits en individuos con lesiones del lóbulo frontal, ha emergido varias poblaciones adicionales que demuestran con frecuencia déficit en su funcionamiento en el Tol; aquellos con afecciones neurológicas y psiquiátricas como depresión o Parkinson (Jacobs &amp; Anderson, 2002), individuos que han sufrido una lesión cerebral traumática (TBI), Alzheimer y demencias relacionadas (Carlin et al., 2000), TDAH (Culbertson &amp; Zillmer, 1998), autismo (Wisley &amp; howln, 2009) y esquizofrenia (Landua &amp; Morris, 2011).</value>
+  </data>
+  <data name="london_title.Text" xml:space="preserve">
+    <value>Torre de Londres</value>
+  </data>
+  <data name="memory_install.text" xml:space="preserve">
+    <value>Llamar o activar por correo electronico</value>
+  </data>
+  <data name="memory_ordernow.text" xml:space="preserve">
+    <value>Order Now</value>
+  </data>
+  <data name="memory_paragraph1.text" xml:space="preserve">
+    <value>Memory Cards Test (MCT) contains a version of the game of Memory Cards. This game can also be considered a visuospatial task. This software contains an image import tool that allows you to import visual stimuli in various picture formats (e.g., jpeg, npg, etc).</value>
+  </data>
+  <data name="memory_paragraph2.text" xml:space="preserve">
+    <value>This software contains a test with 12 matching pairs and you can easily construct additional tests using a 2 by 3 test (3 matching pairs) or a 6 by 8 format (24 matching pairs) with single or multiple trials. The Cartoons test included in you software has an N &gt;3500 and norms for individuals between 5 and 89 years of age. You can use words, colors, drawings, or pictures as stimuli.</value>
+  </data>
+  <data name="memory_title.text" xml:space="preserve">
+    <value>Memory Cards</value>
+  </data>
+  <data name="navbar_about.Text" xml:space="preserve">
+    <value>Acerca de</value>
+  </data>
+  <data name="navbar_home.Text" xml:space="preserve">
+    <value>Inicio</value>
+  </data>
+  <data name="navbar_logIn.Text" xml:space="preserve">
+    <value>Iniciar sesión</value>
+  </data>
+  <data name="navbar_logOut.Text" xml:space="preserve">
+    <value>Salir</value>
+  </data>
+  <data name="navBar_order.Text" xml:space="preserve">
+    <value>Formulario de compra</value>
+  </data>
+  <data name="navbar_profile.Text" xml:space="preserve">
+    <value>Perfil</value>
+  </data>
+  <data name="nback_install.text" xml:space="preserve">
+    <value>Llamar o activar por correo electronico</value>
+  </data>
+  <data name="nback_ordernow.text" xml:space="preserve">
+    <value>Ordenar ahora</value>
+  </data>
+  <data name="nback_paragraph1.text" xml:space="preserve">
+    <value>N-back tests are used to assess working memory--a form of memory that is temporarily held in conscious awareness and that requires the manipulation of information. For example, multiplying 16 times 17 in your head would require holding and manipulating information.</value>
+  </data>
+  <data name="nback_paragraph2.text" xml:space="preserve">
+    <value>This software contains several N-back tests that are visual such as faces (e.g., is the current face the same as the one n-back where n can be 1, 2, 3, etc back). This software also contains a verbal and visuospatial n-back test with norms for individuals between 5 and 89 years of age. It also allows you to create dual n-back tests (e.g., is the dot in the same location n-back and is the auditory stimuli the same as the one n-back).</value>
+  </data>
+  <data name="nback_title.text" xml:space="preserve">
+    <value>n-Back</value>
+  </data>
+  <data name="pagetitle.title" xml:space="preserve">
+    <value>Desktop Tests</value>
+  </data>
+  <data name="reaction_install.Text" xml:space="preserve">
+    <value>Llamar o activar por correo electronico</value>
+  </data>
+  <data name="reaction_orderNow.Text" xml:space="preserve">
+    <value>Ordenar ahora</value>
+  </data>
+  <data name="reaction_paragraph1.Text" xml:space="preserve">
+    <value>Diseñado para evaluar la velocidad de procesamiento de los sujetos en tres tareas relativamente sencillas. que, después de Teng (1990), incluyen: una prueba de tiempo de reacción simple; una prueba de elección; y una prueba de elección condicional.  La inclusión de la prueba de tiempo de reacción simple permite que el investigador haga cancelación parcial en las variaciones de rendimiento debido a los componentes del motor y cognitivo.  
+
+La respuesta del participante puede ser a través del gatillo en un estándar pad de alfombrilla de juego; un teclado; o un teclado numérico.</value>
+  </data>
+  <data name="reaction_paragraph2.Text" xml:space="preserve">
+    <value>The analysis includes means and standard deviations for response latencies for single sessions, as well as both the participant’s reaction time and the trigger pulled.    
+Analysis also includes a running record of all test events, with a unique timestamp for each event.
+Analyses can be printed or exported to clipboard.
+Unique instructions can be written for each task within a test (in any language utilizing the Roman alphabet), as well as a unique “Thank You” message to be displayed at the end of the test.
+A “Speak Instructions” option directs the program to speak the instructions to the participant while the written instructions are being displayed on the screen</value>
+  </data>
+  <data name="reaction_title.Text" xml:space="preserve">
+    <value>Tiempo de reaccion</value>
+  </data>
+  <data name="sopt_install.text" xml:space="preserve">
+    <value>Llamar o activar por correo electronico</value>
+  </data>
+  <data name="sopt_ordernow.text" xml:space="preserve">
+    <value>Ordenar ahora</value>
+  </data>
+  <data name="sopt_paragraph1.text" xml:space="preserve">
+    <value>The Self Ordered Pointing Test (SOPT) is a working memory test that was developed by Petrides and Milner. Typically a person is required to point or click on one of a small number of stimuli within a designated time limit (i.e., 10 seconds).</value>
+  </data>
+  <data name="sopt_paragraph2.text" xml:space="preserve">
+    <value>All the stimuli disappear for a few seconds and then reappear in a new arrangement. For example, the participant might get 8 tries to click on eight different stimuli. The participant is to click on all the different stimuli one at a time following this procedure. The number and characteristics of the stimuli can increase over trials.</value>
+  </data>
+  <data name="sopt_title.text" xml:space="preserve">
+    <value>SOPT</value>
+  </data>
+  <data name="trails_install.Text" xml:space="preserve">
+    <value>Llamar o activar por correo electronico</value>
+  </data>
+  <data name="trails_orderNow.Text" xml:space="preserve">
+    <value>Ordenar ahora</value>
+  </data>
+  <data name="trails_paragraph1.Text" xml:space="preserve">
+    <value>"La prueba de la fabricación del rastro (TMT) es un gravamen neurofisiológico ampliamente utilizado (Rabin, Barr, y Burton, 2005) que fue ideado originalmente en 1938. El TMT fue conocido originalmente como la ""prueba de los caminos de Partington,"" o ""la prueba dividida de la atención"" (Partington &amp; Leader, 1949) y era inicialmente parte de una batería de pruebas (batería individual de la prueba del ejército) usada para determinar ""una variedad de funciones intelectuales diferentes de los medidos por la escala de inteligencia de Wechsler-Bellevue "". (Spreen &amp; Strauss, 1998). Mientras que la prueba es más  
+
+típicamente administrados en su forma original, se han desarrollado formas alternativas para satisfacer las  
+
+pruebas de las necesidades de las poblaciones clínicas alternativas o de las agendas de investigación de ciencias cognitivas. La versión de escritorio de la TMT que ha adquirido le permitirá producir la versión computarizada de prácticamente todo el papel comercial y la pista de lápiz haciendo pruebas.  
+
+ 
+
+Por ejemplo, la prueba de color Trails (CTT), se desarrolló como parte de una batería de prueba neuropsicológica  
+
+para el estudio intercultural de la Organización Mundial de la salud sobre la infección por el VIH-1 (MAJ, et al., 1991).        La prueba fue modificada posteriormente para el uso con los niños (Williams et al., 1995). En ambos casos  
+
+las modificaciones se presume para minimizar el sesgo cultural introducido por el uso de Roman  
+
+Letras en la parte B del TMT más tradicional (MAJ, et al., 1991). Su versión de escritorio CogQuiz le permite hacer una versión computarizada de la CTT y si así lo desea crear normas para diferentes poblaciones.  
+
+ 
+
+Además, si usted está haciendo repetidas administraciones de la TMT usted puede hacer versiones invertidas, reflejadas, e invertido/reflejadas que contienen el mismo número de burbujas que se conectarán con el espaciamiento equivalente. Esto reduce el problema del rendimiento mejorado cuando el TMT se administra repetidamente. 
+
+ 
+
+La parte TMT es útil si intenta obtener una evaluación de la atención, la exploración visual, la velocidad de la coordinación ojo-mano y el procesamiento de la información. La parte B de TMT evalúa la capacidad de alternar entre los conjuntos de estímulos y, como tal, es una medida de ""función ejecutiva"" (Mitrushina,  
+
+et al., 1999).                                                                                             "</value>
+  </data>
+  <data name="trails_paragraph2.Text" xml:space="preserve">
+    <value>For example, the Color Trails Test (CTT), was developed as part of a neuropsychological test battery  
+for the World Health Organization’s cross-cultural study of HIV-1 infection (Maj, et al., 1991).  
+The test was subsequently modified for use with children (Williams et al., 1995). In both cases  
+the modifications are presumed to minimize the cultural bias introduced by the use of Roman  
+letters in part B of the more traditional TMT (Maj, et al., 1991). Your CogQuiz desktop version allows you to make a computerized version of the CTT and if you so desired create norms for different populations.</value>
+  </data>
+  <data name="trails_paragraph3.Text" xml:space="preserve">
+    <value>Additionally, if you are doing repeated administrations of the TMT you can make inverted, reflected, and inverted/reflected versions that contain the same number of bubbles to be connected with equivalent spacing. This reduces the problem of enhanced performance when the TMT is repeatedly administered. 
+ 
+You will find the TMT part A useful if you are attempting to obtain some assessment of attention, visual scanning, speed of eye-hand coordination and information processing. The TMT part B assesses the ability to alternate between stimulus sets and as such is a measure of “executive function” (Mitrushina,  
+et al., 1999).</value>
+  </data>
+  <data name="trails_title.Text" xml:space="preserve">
+    <value>Trails</value>
+  </data>
+  <data name="Verbal_install.text" xml:space="preserve">
+    <value>Llamar o activar por correo electronico</value>
+  </data>
+  <data name="Verbal_ordernow.text" xml:space="preserve">
+    <value>Ordenar ahora</value>
+  </data>
+  <data name="Verbal_paragraph1.text" xml:space="preserve">
+    <value>Verbal recall and recognition are among the most frequently used neuropsychological tests. This software allows you to create virtually any set and/or combination of recall and recognition trials. You can collect information on the subjective organization of the test taker and you can create categories of words to examine semantic organization.</value>
+  </data>
+  <data name="Verbal_paragraph2.text" xml:space="preserve">
+    <value>Your tests comes with norms for over 3 thousand individuals between 5 and 89 years of age for a version of the Rey Auditory Verbal Learning Test and over a thousand for a recognition version of the Rey Auditory Test. You can create virtually any word recall or recognition test. The list you create can be of any length, complexity, and delays can be immediate or on the order of years.</value>
+  </data>
+  <data name="Verbal_title.text" xml:space="preserve">
+    <value>Verbal</value>
+  </data>
+</root>

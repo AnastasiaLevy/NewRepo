@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Content3.text" xml:space="preserve">
+    <value>Inventario Correccional de Coolidge (CCI)</value>
+  </data>
+  <data name="Content4.text" xml:space="preserve">
+    <value>El CCI es un auto-informe, de 250 artículos, inventario psicológico y neuropsicológico basado en el actual diagnóstico y el manual estadístico de los trastornos mentales (DSM-IV-TR). Diseñado para la evaluación de reclusos correccionales y delincuentes juveniles (de 15 años o más). El CCI fue creado (a) para ser una medida rentable de problemas psicológicos, (b) ser una medida alineada DSM-IV-TR de los síndromes clínicos del eje I y de los desordenes de la personalidad del eje II, (c) para medir síntomas neurofisiológicos tales como problemas de la memoria, disfunción de la lengua, y problemas neurosomáticos, y síndromes neurofisiológicos tales como desorden neurocognitivo, TDAH adulto, y déficits de la función ejecutiva de los lóbulos frontales, y (d) permitir el diagnóstico diferencial de aquellos reclusos con síndromes clínicamente diagnosticables de los que no lo son. Cada uno de los 250 elementos es respondido en una escala de Likert de 4 puntos que van desde 1 (fuertemente falso), 2 (más falso que verdadero), 3 (más verdadero que falso), a 4 (fuertemente cierto). El CCI ha sido normalizado y probado con miles de delincuentes criminales. Otra característica única del CCI es que tiene una forma fiable y válida de otro tipo.</value>
+  </data>
+  <data name="Content8_paragraph1.text" xml:space="preserve">
+    <value>Coolidge, f. l., Segal, d. l., Klebe, k. j., Cahill, B. S., y Whitcomb, j. m. (2009). Propiedades psicométricas del inventario Correccional de Coolidge en una muestra de 3.962 presos de prisión. Ciencias del comportamiento y la ley, 27, 713-726. [Haga clic &lt;a target="_blank" href="/content/CCI/CCI 2009.pdf"&gt;aquí&lt;/a&gt; para copia PDF]</value>
+  </data>
+  <data name="Content8_paragraph2.text" xml:space="preserve">
+    <value>Otros estudios y publicaciones de CCI</value>
+  </data>
+  <data name="Content8_paragraph3.text" xml:space="preserve">
+    <value>Evaluación de delincuentes sexuales</value>
+  </data>
+  <data name="Content8_paragraph4.text" xml:space="preserve">
+    <value>Francia, c. a., Coolidge, f. l., White, l. a., Segal, d. l., Cahill, B. S., &amp; Estey, a. j. (2010). Perfiles de trastorno de personalidad en hombres encarcelados violadores y abusadores de niños. Revista americana de Psicología forense, 28, 1-14. [Haga clic &lt;a target="_blank" href="/content/CCI/Francia and Coolidge et al AJFP 2010.pdf"&gt;aquí&lt;/a&gt; para copia PDF]</value>
+  </data>
+  <data name="Content8_paragraph5.text" xml:space="preserve">
+    <value>Evaluación psicológica de dictadores/personas locas</value>
+  </data>
+  <data name="Content8_paragraph6.text" xml:space="preserve">
+    <value>Coolidge, f. l., &amp; Segal, d. l. (2009). ¿Kim Jong-Il es como Saddam Hussein y Adolf Hitler? Una evaluación de trastorno de personalidad. Ciencias del comportamiento del terrorismo y de la agresión política, 1, 195-202. [Haga clic &lt;a target="_blank" href="/content/CCI/Kim-Jong-il 2009.pdf"&gt;aquí&lt;/a&gt; para copia PDF]</value>
+  </data>
+  <data name="Content8_paragraph7.text" xml:space="preserve">
+    <value>Coolidge, f. l., Davis, f. l., &amp; Segal, d. l. (2007). La comprensión de los locos: una evaluación DSM-IV de Adolf Hitler. Investigación individual de las diferencias, 5, 30-43. [Haga clic &lt;a target="_blank" href="/content/CCI/Hitler- Final Copy 2007.pdf"&gt;aquí&lt;/a&gt; para copia PDF]</value>
+  </data>
+  <data name="Content8_paragraph8.text" xml:space="preserve">
+    <value>Coolidge, f. l., &amp; Segal, d. l. (2007). ¿Saddam Hussein es como Adolf Hitler? Una investigación de desorden de personalidad. Psicología militar, 19, 1-11. [Haga clic &lt;a target="_blank" href="/content/CCI/Hussein and Hitler 2007 Military Psychology.pdf"&gt;aquí&lt;/a&gt; para copia PDF]</value>
+  </data>
+  <data name="Content8_title.text" xml:space="preserve">
+    <value>Referencia esencial</value>
+  </data>
+  <data name="Content9_linkButton.text" xml:space="preserve">
+    <value>Ejemplar de reporte</value>
+  </data>
+  <data name="price_hundred_btn.text" xml:space="preserve">
+    <value>Comprar ahora</value>
+  </data>
+  <data name="price_hundred_paragraph.text" xml:space="preserve">
+    <value>Proyecto de medio tamaño</value>
+  </data>
+  <data name="price_hundred_title.text" xml:space="preserve">
+    <value>Conjunto de 100</value>
+  </data>
+  <data name="price_single_btn.text" xml:space="preserve">
+    <value>Comprar ahora</value>
+  </data>
+  <data name="price_single_paragraph.text" xml:space="preserve">
+    <value>Ejecutar una sola vez</value>
+  </data>
+  <data name="price_single_title.text" xml:space="preserve">
+    <value>Solo una prueba</value>
+  </data>
+  <data name="price_ten_btn.text" xml:space="preserve">
+    <value>Comprar ahora</value>
+  </data>
+  <data name="price_ten_paragraph.text" xml:space="preserve">
+    <value>Proyecto pequeño</value>
+  </data>
+  <data name="price_ten_title.text" xml:space="preserve">
+    <value>Conjunto de 10</value>
+  </data>
+  <data name="price_unlim_btn.text" xml:space="preserve">
+    <value>Comprar ahora</value>
+  </data>
+  <data name="price_unlim_title.text" xml:space="preserve">
+    <value>Conjunto de 100</value>
+  </data>
+</root>
