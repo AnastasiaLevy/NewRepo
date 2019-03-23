@@ -295,7 +295,7 @@
     <value>About</value>
   </data>
   <data name="navbar_avalable.Text" xml:space="preserve">
-    <value>Online Tests</value>
+    <value>All Tests</value>
   </data>
   <data name="navbar_categories.Text" xml:space="preserve">
     <value>Test Categories</value>

@@ -148,7 +148,7 @@
     <value>Call or Email to Activate</value>
   </data>
   <data name="cardSort_orderNow.Text" xml:space="preserve">
-    <value>Order Now</value>
+    <value>Download</value>
   </data>
   <data name="cardSort_paragraph1.Text" xml:space="preserve">
     <value>Card Sorting task provides considerable flexibility in task definition. The number of stimulus cards can range from two to five and the number of sort dimensions, from two to five. One of the categories can be user defined, allowing for the definition of classes of stimuli. The card definition tool allows test authors to create their own stimulus and response card definitions. Cards can display alpha/numeric characters, any image that can be realized as a “dingbat” or words. Response card decks can be of any size and their presentation can be controlled either by the participant or the computer. Category (stage) shifts can be either signaled or unsignaled. All test messages and instructions can be tailored to meet the needs of the test author. Participant response modalities include “point and click” and touch.</value>
@@ -175,7 +175,7 @@
     <value>Call or Email to Activate</value>
   </data>
   <data name="CPT_orderNow.Text" xml:space="preserve">
-    <value>Order Now</value>
+    <value>Download</value>
   </data>
   <data name="CPT_paragraph1.Text" xml:space="preserve">
     <value>Continuous Performance Tests (CPT) used in the diagnosis of ADHD are variations of mid-twentieth century Go/No-Go tests. The test taker is instructed to press the space bar to a target stimulus such as any letter, but to do nothing when a particular designated letter appears (i.e., X).</value>
@@ -205,7 +205,7 @@
     <value>Call or Email to Activate</value>
   </data>
   <data name="hanoi_orderNow.Text" xml:space="preserve">
-    <value>Order Now</value>
+    <value>Download</value>
   </data>
   <data name="hanoi_paragraph1.Text" xml:space="preserve">
     <value>Flexibility in problem design allowing for 3 to 6 rings to be used in the problem with complete control over the starting configuration of the rings and the "goal" peg
@@ -221,7 +221,7 @@ Extensive age-stratified norms for included tests, broken out in ten year cohort
     <value>Call or Email to Activate</value>
   </data>
   <data name="london_orderNow.Text" xml:space="preserve">
-    <value>Order Now</value>
+    <value>Download</value>
   </data>
   <data name="london_paragraph1.Text" xml:space="preserve">
     <value>The most significant improvement in the CogQuiz TOL is the timing and record keep that can be obtained with a computerized test, and most notably, the ability to create a number of tests for varying populations. The relative low cost of the TOL, the ability to reliably collect various test parameters, and standardizing the procedure, researchers are able to investigate the same cognitive processes with different populations, showing how various conditions can differentially affect planning ability.</value>
@@ -253,7 +253,7 @@ In addition to Shallice’s (1982) original findings of deficits in individuals 
     <value>Log out</value>
   </data>
   <data name="navBar_order.Text" xml:space="preserve">
-    <value>Order Form</value>
+    <value>Download</value>
   </data>
   <data name="navbar_profile.Text" xml:space="preserve">
     <value>Profile</value>
@@ -262,7 +262,7 @@ In addition to Shallice’s (1982) original findings of deficits in individuals 
     <value>Call or Email to Activate</value>
   </data>
   <data name="reaction_orderNow.Text" xml:space="preserve">
-    <value>Order Now</value>
+    <value>Download</value>
   </data>
   <data name="reaction_paragraph1.Text" xml:space="preserve">
     <value>Designed to assess subjects’ speed of processing on three relatively simple tasks. which, following Teng (1990), include:  a simple reaction time test; a choice test; and a conditional choice test.  The inclusion of the simple reaction time test allows the investigator to partial out performance variations due to both motor and cognitive components.  
@@ -276,7 +276,7 @@ In addition to the tasks to be used in the test, the average inter-stimulus inte
     <value>Call or Email to activate</value>
   </data>
   <data name="trails_orderNow.Text" xml:space="preserve">
-    <value>Order Now</value>
+    <value>Download</value>
   </data>
   <data name="trails_paragraph1.Text" xml:space="preserve">
     <value>The Trail Making Test (TMT) is a widely used neuropsychological assessment (Rabin, Barr, &amp; Burton, 2005) that was originally devised in 1938. The TMT was originally known as the “Partington’s Pathways Test,” or “Divided Attention Test” (Partington &amp; Leiter, 1949) and was initially part of a battery of tests (Army Individual Test Battery) used to assess “a variety of intellectual functions different from those measured by the Wechsler-Bellevue Intelligence Scale.” (Spreen &amp; Strauss, 1998). While the test is most  
@@ -366,7 +366,7 @@ et al., 1999).</value>
     <value>Call or Email to Activate</value>
   </data>
   <data name="memory_ordernow.text" xml:space="preserve">
-    <value>Order Now</value>
+    <value>Download</value>
   </data>
   <data name="memory_paragraph1.text" xml:space="preserve">
     <value>Memory Cards Test (MCT) contains a version of the game of Memory Cards. This game can also be considered a visuospatial task. This software contains an image import tool that allows you to import visual stimuli in various picture formats (e.g., jpeg, npg, etc).</value>
@@ -381,7 +381,7 @@ et al., 1999).</value>
     <value>Call or Email to Activate</value>
   </data>
   <data name="nback_ordernow.text" xml:space="preserve">
-    <value>Order Now</value>
+    <value>Download</value>
   </data>
   <data name="nback_paragraph1.text" xml:space="preserve">
     <value>N-back tests are used to assess working memory--a form of memory that is temporarily held in conscious awareness and that requires the manipulation of information. For example, multiplying 16 times 17 in your head would require holding and manipulating information.</value>
@@ -396,7 +396,7 @@ et al., 1999).</value>
     <value>Call or Email to Activate</value>
   </data>
   <data name="sopt_ordernow.text" xml:space="preserve">
-    <value>Order Now</value>
+    <value>Download</value>
   </data>
   <data name="sopt_paragraph1.text" xml:space="preserve">
     <value>The Self Ordered Pointing Test (SOPT) is a working memory test that was developed by Petrides and Milner. Typically a person is required to point or click on one of a small number of stimuli within a designated time limit (i.e., 10 seconds).</value>
@@ -411,7 +411,7 @@ et al., 1999).</value>
     <value>Call or Email to Activate</value>
   </data>
   <data name="Verbal_ordernow.text" xml:space="preserve">
-    <value>Order Now</value>
+    <value>Download</value>
   </data>
   <data name="Verbal_paragraph1.text" xml:space="preserve">
     <value>Verbal recall and recognition are among the most frequently used neuropsychological tests. This software allows you to create virtually any set and/or combination of recall and recognition trials. You can collect information on the subjective organization of the test taker and you can create categories of words to examine semantic organization.</value>
